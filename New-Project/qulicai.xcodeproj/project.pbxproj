@@ -54,6 +54,8 @@
 		8435E5061F316EA700424E5E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8435E5091F31726D00424E5E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8435E50A1F31726D00424E5E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8435E50C1F31AC2F00424E5E /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		8435E50E1F31B16000424E5E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qulicai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -179,6 +181,8 @@
 		8435E4FE1F316E9200424E5E /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				8435E50C1F31AC2F00424E5E /* Macro.h */,
+				8435E50E1F31B16000424E5E /* PrefixHeader.pch */,
 			);
 			path = Headers;
 			sourceTree = "<group>";

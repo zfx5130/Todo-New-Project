@@ -1,0 +1,25 @@
+//
+//  PrefixHeader.pch
+//  qulicai
+//
+//  Created by admin on 2017/8/2.
+//  Copyright © 2017年 qurong. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#import "Macro.h"
+
+
+
+#ifdef DEBUG
+
+#import <MTLog.h>
+
+#else
+
+#define NSLog(...)
+
+#endif
