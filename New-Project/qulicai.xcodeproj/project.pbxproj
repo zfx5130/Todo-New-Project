@@ -15,6 +15,7 @@
 		8435E4D61F316BCE00424E5E /* qulicaiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E4D51F316BCE00424E5E /* qulicaiUITests.m */; };
 		8435E5071F316EA700424E5E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E5061F316EA700424E5E /* ViewController.m */; };
 		8435E50B1F31726D00424E5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E50A1F31726D00424E5E /* AppDelegate.m */; };
+		CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		777FE8CAA66E080E2873B281 /* Pods-qulicai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qulicai.debug.xcconfig"; path = "Pods/Target Support Files/Pods-qulicai/Pods-qulicai.debug.xcconfig"; sourceTree = "<group>"; };
+		8092F52885BA6EA29FD5EFA1 /* Pods-qulicai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qulicai.release.xcconfig"; path = "Pods/Target Support Files/Pods-qulicai/Pods-qulicai.release.xcconfig"; sourceTree = "<group>"; };
 		8435E4AD1F316BCE00424E5E /* qulicai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qulicai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8435E4B11F316BCE00424E5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8435E4BA1F316BCE00424E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		8435E5061F316EA700424E5E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8435E5091F31726D00424E5E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8435E50A1F31726D00424E5E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qulicai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62D4A793CC9487D88DAD8EFC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				777FE8CAA66E080E2873B281 /* Pods-qulicai.debug.xcconfig */,
+				8092F52885BA6EA29FD5EFA1 /* Pods-qulicai.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8435E4A41F316BCE00424E5E = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +99,8 @@
 				8435E4C91F316BCE00424E5E /* qulicaiTests */,
 				8435E4D41F316BCE00424E5E /* qulicaiUITests */,
 				8435E4AE1F316BCE00424E5E /* Products */,
+				62D4A793CC9487D88DAD8EFC /* Pods */,
+				85EECFC4C30A131F3D55686C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -220,6 +236,14 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
+		85EECFC4C30A131F3D55686C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -227,9 +251,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8435E4DA1F316BCE00424E5E /* Build configuration list for PBXNativeTarget "qulicai" */;
 			buildPhases = (
+				4D022C02C333BDFFAE670BF9 /* [CP] Check Pods Manifest.lock */,
 				8435E4A91F316BCE00424E5E /* Sources */,
 				8435E4AA1F316BCE00424E5E /* Frameworks */,
 				8435E4AB1F316BCE00424E5E /* Resources */,
+				5BAF2686C83487900BFD5B66 /* [CP] Embed Pods Frameworks */,
+				102B252A1387DE8FFBA3826A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -350,6 +377,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		102B252A1387DE8FFBA3826A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-qulicai/Pods-qulicai-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D022C02C333BDFFAE670BF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5BAF2686C83487900BFD5B66 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-qulicai/Pods-qulicai-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8435E4A91F316BCE00424E5E /* Sources */ = {
@@ -509,6 +584,7 @@
 		};
 		8435E4DB1F316BCE00424E5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 777FE8CAA66E080E2873B281 /* Pods-qulicai.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZK9A286AA6;
@@ -521,6 +597,7 @@
 		};
 		8435E4DC1F316BCE00424E5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8092F52885BA6EA29FD5EFA1 /* Pods-qulicai.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZK9A286AA6;

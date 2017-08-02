@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"测试";
+    self.view.backgroundColor = [UIColor greenColor];
+    
 }
 
 - (void)didReceiveMemoryWarning {
