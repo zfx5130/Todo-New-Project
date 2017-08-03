@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UITableView+FDTemplateLayoutCell.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>YTKNetwork.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,22 +62,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0F758AE6C2F1E6182C10523F645A765B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2A812F4BED4CA1AC40CABE56B2B75F21</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>3EC6019BC3C352D0699ABC1428DDAEF1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>77174801C75953FDE379DF7DF316DE1F</key>
+		<key>5C8D0C92BD274C0C5E6271528D2E632A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5E0EF69CE28AD34819703D90FD08D509</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6E58C5B646DA657676595C03355F46A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>85CEA9686DE166206C6BAB025D8CDC80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8B58EF10A8BA323A988B50FE25234792</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,12 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A31DE7E07D9626AEFD290519873E5C79</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C24BB0C674065C61C48F31F7FA97DC13</key>
+		<key>CDDC71FDB0BBE6920563FC35BEAC1215</key>
 		<dict>
 			<key>primary</key>
 			<true/>

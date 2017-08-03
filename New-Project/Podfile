@@ -9,7 +9,7 @@ pod 'SDWebImage'
 pod 'YTKNetwork'
 pod 'YYKit'
 pod 'SimpleKeychain'
-
+pod 'UITableView+FDTemplateLayoutCell'
 
 pod 'MTLog'
 
