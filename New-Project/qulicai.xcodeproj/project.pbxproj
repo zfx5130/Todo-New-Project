@@ -15,6 +15,19 @@
 		8435E4D61F316BCE00424E5E /* qulicaiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E4D51F316BCE00424E5E /* qulicaiUITests.m */; };
 		8435E5071F316EA700424E5E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E5061F316EA700424E5E /* ViewController.m */; };
 		8435E50B1F31726D00424E5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E50A1F31726D00424E5E /* AppDelegate.m */; };
+		8435E5931F399BFA00424E5E /* TDTouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E5921F399BFA00424E5E /* TDTouchID.m */; };
+		8435E5AD1F399C1E00424E5E /* CLLockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E5961F399C1E00424E5E /* CLLockVC.m */; };
+		8435E5AE1F399C1E00424E5E /* CLLockVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8435E5971F399C1E00424E5E /* CLLockVC.xib */; };
+		8435E5AF1F399C1E00424E5E /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E59B1F399C1E00424E5E /* CALayer+Anim.m */; };
+		8435E5B01F399C1E00424E5E /* CoreLockConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E59E1F399C1E00424E5E /* CoreLockConst.m */; };
+		8435E5B11F399C1E00424E5E /* CLLockNavVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E5A11F399C1E00424E5E /* CLLockNavVC.m */; };
+		8435E5B21F399C1E00424E5E /* CLLockInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E5A41F399C1E00424E5E /* CLLockInfoView.m */; };
+		8435E5B31F399C1E00424E5E /* CLLockItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E5A61F399C1E00424E5E /* CLLockItemView.m */; };
+		8435E5B41F399C1E00424E5E /* CLLockLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E5A81F399C1E00424E5E /* CLLockLabel.m */; };
+		8435E5B51F399C1E00424E5E /* CLLockMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E5AA1F399C1E00424E5E /* CLLockMainView.m */; };
+		8435E5B61F399C1E00424E5E /* CLLockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E5AC1F399C1E00424E5E /* CLLockView.m */; };
+		8435E5BF1F399C6C00424E5E /* NSString+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E5BC1F399C6C00424E5E /* NSString+File.m */; };
+		8435E5C01F399C6C00424E5E /* CoreArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E5BE1F399C6C00424E5E /* CoreArchive.m */; };
 		CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +69,32 @@
 		8435E50A1F31726D00424E5E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8435E50C1F31AC2F00424E5E /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
 		8435E50E1F31B16000424E5E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		8435E5911F399BFA00424E5E /* TDTouchID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDTouchID.h; sourceTree = "<group>"; };
+		8435E5921F399BFA00424E5E /* TDTouchID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDTouchID.m; sourceTree = "<group>"; };
+		8435E5951F399C1E00424E5E /* CLLockVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLockVC.h; sourceTree = "<group>"; };
+		8435E5961F399C1E00424E5E /* CLLockVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLLockVC.m; sourceTree = "<group>"; };
+		8435E5971F399C1E00424E5E /* CLLockVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLLockVC.xib; sourceTree = "<group>"; };
+		8435E59A1F399C1E00424E5E /* CALayer+Anim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Anim.h"; sourceTree = "<group>"; };
+		8435E59B1F399C1E00424E5E /* CALayer+Anim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Anim.m"; sourceTree = "<group>"; };
+		8435E59D1F399C1E00424E5E /* CoreLockConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreLockConst.h; sourceTree = "<group>"; };
+		8435E59E1F399C1E00424E5E /* CoreLockConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreLockConst.m; sourceTree = "<group>"; };
+		8435E5A01F399C1E00424E5E /* CLLockNavVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLockNavVC.h; sourceTree = "<group>"; };
+		8435E5A11F399C1E00424E5E /* CLLockNavVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLLockNavVC.m; sourceTree = "<group>"; };
+		8435E5A31F399C1E00424E5E /* CLLockInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLockInfoView.h; sourceTree = "<group>"; };
+		8435E5A41F399C1E00424E5E /* CLLockInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLLockInfoView.m; sourceTree = "<group>"; };
+		8435E5A51F399C1E00424E5E /* CLLockItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLockItemView.h; sourceTree = "<group>"; };
+		8435E5A61F399C1E00424E5E /* CLLockItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLLockItemView.m; sourceTree = "<group>"; };
+		8435E5A71F399C1E00424E5E /* CLLockLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLockLabel.h; sourceTree = "<group>"; };
+		8435E5A81F399C1E00424E5E /* CLLockLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLLockLabel.m; sourceTree = "<group>"; };
+		8435E5A91F399C1E00424E5E /* CLLockMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLockMainView.h; sourceTree = "<group>"; };
+		8435E5AA1F399C1E00424E5E /* CLLockMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLLockMainView.m; sourceTree = "<group>"; };
+		8435E5AB1F399C1E00424E5E /* CLLockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLockView.h; sourceTree = "<group>"; };
+		8435E5AC1F399C1E00424E5E /* CLLockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLLockView.m; sourceTree = "<group>"; };
+		8435E5B81F399C6200424E5E /* CoreConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreConst.h; sourceTree = "<group>"; };
+		8435E5BB1F399C6C00424E5E /* NSString+File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+File.h"; sourceTree = "<group>"; };
+		8435E5BC1F399C6C00424E5E /* NSString+File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+File.m"; sourceTree = "<group>"; };
+		8435E5BD1F399C6C00424E5E /* CoreArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreArchive.h; sourceTree = "<group>"; };
+		8435E5BE1F399C6C00424E5E /* CoreArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreArchive.m; sourceTree = "<group>"; };
 		ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qulicai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -220,6 +259,8 @@
 		8435E5031F316E9200424E5E /* Venders */ = {
 			isa = PBXGroup;
 			children = (
+				8435E5941F399C1E00424E5E /* CoreLock */,
+				8435E5901F399BFA00424E5E /* TDTouchID */,
 			);
 			path = Venders;
 			sourceTree = "<group>";
@@ -238,6 +279,110 @@
 				8435E50A1F31726D00424E5E /* AppDelegate.m */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		8435E5901F399BFA00424E5E /* TDTouchID */ = {
+			isa = PBXGroup;
+			children = (
+				8435E5911F399BFA00424E5E /* TDTouchID.h */,
+				8435E5921F399BFA00424E5E /* TDTouchID.m */,
+			);
+			path = TDTouchID;
+			sourceTree = "<group>";
+		};
+		8435E5941F399C1E00424E5E /* CoreLock */ = {
+			isa = PBXGroup;
+			children = (
+				8435E5951F399C1E00424E5E /* CLLockVC.h */,
+				8435E5961F399C1E00424E5E /* CLLockVC.m */,
+				8435E5971F399C1E00424E5E /* CLLockVC.xib */,
+				8435E5981F399C1E00424E5E /* Lib */,
+			);
+			path = CoreLock;
+			sourceTree = "<group>";
+		};
+		8435E5981F399C1E00424E5E /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				8435E5B91F399C6C00424E5E /* CoreArchive */,
+				8435E5B71F399C6200424E5E /* CoreExtend */,
+				8435E5991F399C1E00424E5E /* Category */,
+				8435E59C1F399C1E00424E5E /* Const */,
+				8435E59F1F399C1E00424E5E /* Controller */,
+				8435E5A21F399C1E00424E5E /* View */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		8435E5991F399C1E00424E5E /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				8435E59A1F399C1E00424E5E /* CALayer+Anim.h */,
+				8435E59B1F399C1E00424E5E /* CALayer+Anim.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		8435E59C1F399C1E00424E5E /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				8435E59D1F399C1E00424E5E /* CoreLockConst.h */,
+				8435E59E1F399C1E00424E5E /* CoreLockConst.m */,
+			);
+			path = Const;
+			sourceTree = "<group>";
+		};
+		8435E59F1F399C1E00424E5E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8435E5A01F399C1E00424E5E /* CLLockNavVC.h */,
+				8435E5A11F399C1E00424E5E /* CLLockNavVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8435E5A21F399C1E00424E5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8435E5A31F399C1E00424E5E /* CLLockInfoView.h */,
+				8435E5A41F399C1E00424E5E /* CLLockInfoView.m */,
+				8435E5A51F399C1E00424E5E /* CLLockItemView.h */,
+				8435E5A61F399C1E00424E5E /* CLLockItemView.m */,
+				8435E5A71F399C1E00424E5E /* CLLockLabel.h */,
+				8435E5A81F399C1E00424E5E /* CLLockLabel.m */,
+				8435E5A91F399C1E00424E5E /* CLLockMainView.h */,
+				8435E5AA1F399C1E00424E5E /* CLLockMainView.m */,
+				8435E5AB1F399C1E00424E5E /* CLLockView.h */,
+				8435E5AC1F399C1E00424E5E /* CLLockView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8435E5B71F399C6200424E5E /* CoreExtend */ = {
+			isa = PBXGroup;
+			children = (
+				8435E5B81F399C6200424E5E /* CoreConst.h */,
+			);
+			path = CoreExtend;
+			sourceTree = "<group>";
+		};
+		8435E5B91F399C6C00424E5E /* CoreArchive */ = {
+			isa = PBXGroup;
+			children = (
+				8435E5BA1F399C6C00424E5E /* Category */,
+				8435E5BD1F399C6C00424E5E /* CoreArchive.h */,
+				8435E5BE1F399C6C00424E5E /* CoreArchive.m */,
+			);
+			path = CoreArchive;
+			sourceTree = "<group>";
+		};
+		8435E5BA1F399C6C00424E5E /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				8435E5BB1F399C6C00424E5E /* NSString+File.h */,
+				8435E5BC1F399C6C00424E5E /* NSString+File.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		85EECFC4C30A131F3D55686C /* Frameworks */ = {
@@ -362,6 +507,7 @@
 			files = (
 				8435E4C01F316BCE00424E5E /* LaunchScreen.storyboard in Resources */,
 				8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */,
+				8435E5AE1F399C1E00424E5E /* CLLockVC.xib in Resources */,
 				8435E4BB1F316BCE00424E5E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,9 +581,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8435E5B21F399C1E00424E5E /* CLLockInfoView.m in Sources */,
+				8435E5AF1F399C1E00424E5E /* CALayer+Anim.m in Sources */,
 				8435E5071F316EA700424E5E /* ViewController.m in Sources */,
+				8435E5BF1F399C6C00424E5E /* NSString+File.m in Sources */,
+				8435E5C01F399C6C00424E5E /* CoreArchive.m in Sources */,
 				8435E4B21F316BCE00424E5E /* main.m in Sources */,
+				8435E5931F399BFA00424E5E /* TDTouchID.m in Sources */,
+				8435E5AD1F399C1E00424E5E /* CLLockVC.m in Sources */,
+				8435E5B61F399C1E00424E5E /* CLLockView.m in Sources */,
 				8435E50B1F31726D00424E5E /* AppDelegate.m in Sources */,
+				8435E5B41F399C1E00424E5E /* CLLockLabel.m in Sources */,
+				8435E5B11F399C1E00424E5E /* CLLockNavVC.m in Sources */,
+				8435E5B01F399C1E00424E5E /* CoreLockConst.m in Sources */,
+				8435E5B31F399C1E00424E5E /* CLLockItemView.m in Sources */,
+				8435E5B51F399C1E00424E5E /* CLLockMainView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
