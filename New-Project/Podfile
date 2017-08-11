@@ -10,7 +10,7 @@ pod 'YTKNetwork'
 pod 'YYKit'
 pod 'SimpleKeychain'
 pod 'UITableView+FDTemplateLayoutCell'
-
+pod 'MJExtension'
 pod 'MTLog'
 
 
