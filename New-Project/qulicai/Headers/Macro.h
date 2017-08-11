@@ -13,7 +13,6 @@
 
 #define APP_DELEGATE (AppDelegate *)[[UIApplication sharedApplication] delegate]
 
-
 #pragma mark - Vendors
 
 #pragma mark - NSUserDefaults

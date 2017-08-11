@@ -28,6 +28,8 @@
 		8435E5B61F399C1E00424E5E /* CLLockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E5AC1F399C1E00424E5E /* CLLockView.m */; };
 		8435E5BF1F399C6C00424E5E /* NSString+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E5BC1F399C6C00424E5E /* NSString+File.m */; };
 		8435E5C01F399C6C00424E5E /* CoreArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E5BE1F399C6C00424E5E /* CoreArchive.m */; };
+		8435E6031F3D885200424E5E /* QRRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E6021F3D885200424E5E /* QRRequest.m */; };
+		8435E60A1F3D9AE500424E5E /* QRRequestGetToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E6091F3D9AE500424E5E /* QRRequestGetToken.m */; };
 		CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */; };
 /* End PBXBuildFile section */
 
@@ -68,7 +70,6 @@
 		8435E5091F31726D00424E5E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8435E50A1F31726D00424E5E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8435E50C1F31AC2F00424E5E /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
-		8435E50E1F31B16000424E5E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8435E5911F399BFA00424E5E /* TDTouchID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDTouchID.h; sourceTree = "<group>"; };
 		8435E5921F399BFA00424E5E /* TDTouchID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDTouchID.m; sourceTree = "<group>"; };
 		8435E5951F399C1E00424E5E /* CLLockVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLockVC.h; sourceTree = "<group>"; };
@@ -95,6 +96,11 @@
 		8435E5BC1F399C6C00424E5E /* NSString+File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+File.m"; sourceTree = "<group>"; };
 		8435E5BD1F399C6C00424E5E /* CoreArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreArchive.h; sourceTree = "<group>"; };
 		8435E5BE1F399C6C00424E5E /* CoreArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreArchive.m; sourceTree = "<group>"; };
+		8435E6011F3D885200424E5E /* QRRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequest.h; sourceTree = "<group>"; };
+		8435E6021F3D885200424E5E /* QRRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequest.m; sourceTree = "<group>"; };
+		8435E6081F3D9AE500424E5E /* QRRequestGetToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestGetToken.h; sourceTree = "<group>"; };
+		8435E6091F3D9AE500424E5E /* QRRequestGetToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestGetToken.m; sourceTree = "<group>"; };
+		8435E60B1F3DAE9900424E5E /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qulicai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -158,6 +164,7 @@
 		8435E4AF1F316BCE00424E5E /* qulicai */ = {
 			isa = PBXGroup;
 			children = (
+				8435E6001F3D868600424E5E /* NetworkManager */,
 				8435E4FD1F316E9200424E5E /* Controllers */,
 				8435E5041F316E9200424E5E /* Views */,
 				8435E5001F316E9200424E5E /* Models */,
@@ -221,7 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				8435E50C1F31AC2F00424E5E /* Macro.h */,
-				8435E50E1F31B16000424E5E /* PrefixHeader.pch */,
+				8435E60B1F3DAE9900424E5E /* PrefixHeader.pch */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -383,6 +390,25 @@
 				8435E5BC1F399C6C00424E5E /* NSString+File.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		8435E6001F3D868600424E5E /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				8435E6071F3D9A9F00424E5E /* ApiRequest */,
+				8435E6011F3D885200424E5E /* QRRequest.h */,
+				8435E6021F3D885200424E5E /* QRRequest.m */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		8435E6071F3D9A9F00424E5E /* ApiRequest */ = {
+			isa = PBXGroup;
+			children = (
+				8435E6081F3D9AE500424E5E /* QRRequestGetToken.h */,
+				8435E6091F3D9AE500424E5E /* QRRequestGetToken.m */,
+			);
+			path = ApiRequest;
 			sourceTree = "<group>";
 		};
 		85EECFC4C30A131F3D55686C /* Frameworks */ = {
@@ -583,8 +609,10 @@
 			files = (
 				8435E5B21F399C1E00424E5E /* CLLockInfoView.m in Sources */,
 				8435E5AF1F399C1E00424E5E /* CALayer+Anim.m in Sources */,
+				8435E6031F3D885200424E5E /* QRRequest.m in Sources */,
 				8435E5071F316EA700424E5E /* ViewController.m in Sources */,
 				8435E5BF1F399C6C00424E5E /* NSString+File.m in Sources */,
+				8435E60A1F3D9AE500424E5E /* QRRequestGetToken.m in Sources */,
 				8435E5C01F399C6C00424E5E /* CoreArchive.m in Sources */,
 				8435E4B21F316BCE00424E5E /* main.m in Sources */,
 				8435E5931F399BFA00424E5E /* TDTouchID.m in Sources */,
@@ -750,6 +778,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZK9A286AA6;
+				GCC_PREFIX_HEADER = "/Users/admin/个人资料/个人项目/Todo-New-Project/New-Project/qulicai/Headers/PrefixHeader.pch";
 				INFOPLIST_FILE = qulicai/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qurong.qulicai;
@@ -763,6 +792,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZK9A286AA6;
+				GCC_PREFIX_HEADER = "/Users/admin/个人资料/个人项目/Todo-New-Project/New-Project/qulicai/Headers/PrefixHeader.pch";
 				INFOPLIST_FILE = qulicai/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qurong.qulicai;

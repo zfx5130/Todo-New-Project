@@ -7,13 +7,16 @@
 //
 
 #import "AppDelegate.h"
+#import <YTKNetworkConfig.h>
+#import <YTKNetworkAgent.h>
+#import "QRRequest.h"
+#import "QRRequestGetToken.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -24,9 +27,39 @@
        });
     });
     
+    [self configQRNetwork];
+    NSLog(@"=====fasdfasdfas");
+    [self testNetwork];
     return YES;
 }
 
+
+#pragma mark - Private
+
+- (void)configQRNetwork {
+    YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
+    config.baseUrl = kBaseUrl;
+    
+}
+
+- (void)testNetwork {
+    QRRequestGetToken *request = [[QRRequestGetToken alloc] init];
+    request.username = @"luck";
+    request.password = @"123456";
+    request.token = @"getToken";
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+        NSLog(@"request::::%@",request.responseObject);
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+        NSLog(@"faild: %ld -- %@", request.responseStatusCode, request.responseString);
+        NSLog(@"error:- %@", request.error);
+        
+    }];
+}
+
+#pragma mark -lifecycle
 
 - (void)applicationWillResignActive:(UIApplication *)application {
 }
