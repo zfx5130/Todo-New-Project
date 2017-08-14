@@ -29,6 +29,7 @@
     
     [self configQRNetwork];
     [self testNetwork];
+    [self setupGlobalUI];
     return YES;
 }
 
@@ -56,6 +57,9 @@
         NSLog(@"error:- %@", request.error);
         
     }];
+}
+
+- (void)setupGlobalUI {
 }
 
 #pragma mark -lifecycle

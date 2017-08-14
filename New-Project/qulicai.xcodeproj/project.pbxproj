@@ -33,6 +33,28 @@
 		844402401F41874C00F5AFEE /* FinanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444023F1F41874C00F5AFEE /* FinanceViewController.m */; };
 		844402431F41877A00F5AFEE /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402421F41877A00F5AFEE /* MineViewController.m */; };
 		844402461F418F1400F5AFEE /* QRTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402451F418F1400F5AFEE /* QRTabbarController.m */; };
+		8444024A1F41A0E700F5AFEE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402481F41A0E700F5AFEE /* LoginViewController.m */; };
+		8444024B1F41A0E700F5AFEE /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844402491F41A0E700F5AFEE /* LoginViewController.xib */; };
+		8444027F1F41B2B000F5AFEE /* NSArray+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444024F1F41B2AF00F5AFEE /* NSArray+Custom.m */; };
+		844402801F41B2B000F5AFEE /* NSDate+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402511F41B2AF00F5AFEE /* NSDate+Custom.m */; };
+		844402811F41B2B000F5AFEE /* NSDictionary+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402531F41B2AF00F5AFEE /* NSDictionary+Custom.m */; };
+		844402821F41B2B000F5AFEE /* NSNumber+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402551F41B2AF00F5AFEE /* NSNumber+Custom.m */; };
+		844402831F41B2B000F5AFEE /* NSObject+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402571F41B2AF00F5AFEE /* NSObject+Custom.m */; };
+		844402841F41B2B000F5AFEE /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402591F41B2AF00F5AFEE /* NSString+Check.m */; };
+		844402851F41B2B000F5AFEE /* NSString+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444025B1F41B2AF00F5AFEE /* NSString+Custom.m */; };
+		844402871F41B2B000F5AFEE /* UIColor+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444025F1F41B2AF00F5AFEE /* UIColor+Custom.m */; };
+		844402881F41B2B000F5AFEE /* UIColor+RGBValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402611F41B2AF00F5AFEE /* UIColor+RGBValues.m */; };
+		844402891F41B2B000F5AFEE /* UIFont+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402631F41B2AF00F5AFEE /* UIFont+Custom.m */; };
+		8444028A1F41B2B000F5AFEE /* UIImage+ColorAtPixel.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402651F41B2B000F5AFEE /* UIImage+ColorAtPixel.m */; };
+		8444028B1F41B2B000F5AFEE /* UIImage+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402671F41B2B000F5AFEE /* UIImage+Custom.m */; };
+		8444028C1F41B2B000F5AFEE /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402691F41B2B000F5AFEE /* UIImage+ImageEffects.m */; };
+		8444028E1F41B2B000F5AFEE /* UILabel+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444026D1F41B2B000F5AFEE /* UILabel+Custom.m */; };
+		8444028F1F41B2B000F5AFEE /* UIScrollView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444026F1F41B2B000F5AFEE /* UIScrollView+Custom.m */; };
+		844402901F41B2B000F5AFEE /* UITableView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402711F41B2B000F5AFEE /* UITableView+Custom.m */; };
+		844402911F41B2B000F5AFEE /* UITextField+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402731F41B2B000F5AFEE /* UITextField+Custom.m */; };
+		844402921F41B2B000F5AFEE /* UITextView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402751F41B2B000F5AFEE /* UITextView+Custom.m */; };
+		844402931F41B2B000F5AFEE /* UIView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402771F41B2B000F5AFEE /* UIView+Custom.m */; };
+		844402961F41B2B000F5AFEE /* UIViewController+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444027D1F41B2B000F5AFEE /* UIViewController+Custom.m */; };
 		CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +132,49 @@
 		844402421F41877A00F5AFEE /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		844402441F418F1400F5AFEE /* QRTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRTabbarController.h; sourceTree = "<group>"; };
 		844402451F418F1400F5AFEE /* QRTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRTabbarController.m; sourceTree = "<group>"; };
+		844402471F41A0E700F5AFEE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		844402481F41A0E700F5AFEE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		844402491F41A0E700F5AFEE /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		8444024E1F41B2AF00F5AFEE /* NSArray+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Custom.h"; sourceTree = "<group>"; };
+		8444024F1F41B2AF00F5AFEE /* NSArray+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Custom.m"; sourceTree = "<group>"; };
+		844402501F41B2AF00F5AFEE /* NSDate+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Custom.h"; sourceTree = "<group>"; };
+		844402511F41B2AF00F5AFEE /* NSDate+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Custom.m"; sourceTree = "<group>"; };
+		844402521F41B2AF00F5AFEE /* NSDictionary+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Custom.h"; sourceTree = "<group>"; };
+		844402531F41B2AF00F5AFEE /* NSDictionary+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Custom.m"; sourceTree = "<group>"; };
+		844402541F41B2AF00F5AFEE /* NSNumber+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Custom.h"; sourceTree = "<group>"; };
+		844402551F41B2AF00F5AFEE /* NSNumber+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Custom.m"; sourceTree = "<group>"; };
+		844402561F41B2AF00F5AFEE /* NSObject+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Custom.h"; sourceTree = "<group>"; };
+		844402571F41B2AF00F5AFEE /* NSObject+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Custom.m"; sourceTree = "<group>"; };
+		844402581F41B2AF00F5AFEE /* NSString+Check.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Check.h"; sourceTree = "<group>"; };
+		844402591F41B2AF00F5AFEE /* NSString+Check.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Check.m"; sourceTree = "<group>"; };
+		8444025A1F41B2AF00F5AFEE /* NSString+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Custom.h"; sourceTree = "<group>"; };
+		8444025B1F41B2AF00F5AFEE /* NSString+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Custom.m"; sourceTree = "<group>"; };
+		8444025E1F41B2AF00F5AFEE /* UIColor+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Custom.h"; sourceTree = "<group>"; };
+		8444025F1F41B2AF00F5AFEE /* UIColor+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Custom.m"; sourceTree = "<group>"; };
+		844402601F41B2AF00F5AFEE /* UIColor+RGBValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RGBValues.h"; sourceTree = "<group>"; };
+		844402611F41B2AF00F5AFEE /* UIColor+RGBValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RGBValues.m"; sourceTree = "<group>"; };
+		844402621F41B2AF00F5AFEE /* UIFont+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Custom.h"; sourceTree = "<group>"; };
+		844402631F41B2AF00F5AFEE /* UIFont+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Custom.m"; sourceTree = "<group>"; };
+		844402641F41B2AF00F5AFEE /* UIImage+ColorAtPixel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorAtPixel.h"; sourceTree = "<group>"; };
+		844402651F41B2B000F5AFEE /* UIImage+ColorAtPixel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorAtPixel.m"; sourceTree = "<group>"; };
+		844402661F41B2B000F5AFEE /* UIImage+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Custom.h"; sourceTree = "<group>"; };
+		844402671F41B2B000F5AFEE /* UIImage+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Custom.m"; sourceTree = "<group>"; };
+		844402681F41B2B000F5AFEE /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		844402691F41B2B000F5AFEE /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		8444026C1F41B2B000F5AFEE /* UILabel+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Custom.h"; sourceTree = "<group>"; };
+		8444026D1F41B2B000F5AFEE /* UILabel+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Custom.m"; sourceTree = "<group>"; };
+		8444026E1F41B2B000F5AFEE /* UIScrollView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Custom.h"; sourceTree = "<group>"; };
+		8444026F1F41B2B000F5AFEE /* UIScrollView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Custom.m"; sourceTree = "<group>"; };
+		844402701F41B2B000F5AFEE /* UITableView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Custom.h"; sourceTree = "<group>"; };
+		844402711F41B2B000F5AFEE /* UITableView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Custom.m"; sourceTree = "<group>"; };
+		844402721F41B2B000F5AFEE /* UITextField+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Custom.h"; sourceTree = "<group>"; };
+		844402731F41B2B000F5AFEE /* UITextField+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Custom.m"; sourceTree = "<group>"; };
+		844402741F41B2B000F5AFEE /* UITextView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Custom.h"; sourceTree = "<group>"; };
+		844402751F41B2B000F5AFEE /* UITextView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Custom.m"; sourceTree = "<group>"; };
+		844402761F41B2B000F5AFEE /* UIView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Custom.h"; sourceTree = "<group>"; };
+		844402771F41B2B000F5AFEE /* UIView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Custom.m"; sourceTree = "<group>"; };
+		8444027C1F41B2B000F5AFEE /* UIViewController+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Custom.h"; sourceTree = "<group>"; };
+		8444027D1F41B2B000F5AFEE /* UIViewController+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Custom.m"; sourceTree = "<group>"; };
 		ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qulicai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -220,6 +285,46 @@
 		8435E4FC1F316E9200424E5E /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				8444024E1F41B2AF00F5AFEE /* NSArray+Custom.h */,
+				8444024F1F41B2AF00F5AFEE /* NSArray+Custom.m */,
+				844402501F41B2AF00F5AFEE /* NSDate+Custom.h */,
+				844402511F41B2AF00F5AFEE /* NSDate+Custom.m */,
+				844402521F41B2AF00F5AFEE /* NSDictionary+Custom.h */,
+				844402531F41B2AF00F5AFEE /* NSDictionary+Custom.m */,
+				844402541F41B2AF00F5AFEE /* NSNumber+Custom.h */,
+				844402551F41B2AF00F5AFEE /* NSNumber+Custom.m */,
+				844402561F41B2AF00F5AFEE /* NSObject+Custom.h */,
+				844402571F41B2AF00F5AFEE /* NSObject+Custom.m */,
+				844402581F41B2AF00F5AFEE /* NSString+Check.h */,
+				844402591F41B2AF00F5AFEE /* NSString+Check.m */,
+				8444025A1F41B2AF00F5AFEE /* NSString+Custom.h */,
+				8444025B1F41B2AF00F5AFEE /* NSString+Custom.m */,
+				8444025E1F41B2AF00F5AFEE /* UIColor+Custom.h */,
+				8444025F1F41B2AF00F5AFEE /* UIColor+Custom.m */,
+				844402601F41B2AF00F5AFEE /* UIColor+RGBValues.h */,
+				844402611F41B2AF00F5AFEE /* UIColor+RGBValues.m */,
+				844402621F41B2AF00F5AFEE /* UIFont+Custom.h */,
+				844402631F41B2AF00F5AFEE /* UIFont+Custom.m */,
+				844402641F41B2AF00F5AFEE /* UIImage+ColorAtPixel.h */,
+				844402651F41B2B000F5AFEE /* UIImage+ColorAtPixel.m */,
+				844402661F41B2B000F5AFEE /* UIImage+Custom.h */,
+				844402671F41B2B000F5AFEE /* UIImage+Custom.m */,
+				844402681F41B2B000F5AFEE /* UIImage+ImageEffects.h */,
+				844402691F41B2B000F5AFEE /* UIImage+ImageEffects.m */,
+				8444026C1F41B2B000F5AFEE /* UILabel+Custom.h */,
+				8444026D1F41B2B000F5AFEE /* UILabel+Custom.m */,
+				8444026E1F41B2B000F5AFEE /* UIScrollView+Custom.h */,
+				8444026F1F41B2B000F5AFEE /* UIScrollView+Custom.m */,
+				844402701F41B2B000F5AFEE /* UITableView+Custom.h */,
+				844402711F41B2B000F5AFEE /* UITableView+Custom.m */,
+				844402721F41B2B000F5AFEE /* UITextField+Custom.h */,
+				844402731F41B2B000F5AFEE /* UITextField+Custom.m */,
+				844402741F41B2B000F5AFEE /* UITextView+Custom.h */,
+				844402751F41B2B000F5AFEE /* UITextView+Custom.m */,
+				844402761F41B2B000F5AFEE /* UIView+Custom.h */,
+				844402771F41B2B000F5AFEE /* UIView+Custom.m */,
+				8444027C1F41B2B000F5AFEE /* UIViewController+Custom.h */,
+				8444027D1F41B2B000F5AFEE /* UIViewController+Custom.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -235,6 +340,9 @@
 				844402421F41877A00F5AFEE /* MineViewController.m */,
 				844402441F418F1400F5AFEE /* QRTabbarController.h */,
 				844402451F418F1400F5AFEE /* QRTabbarController.m */,
+				844402471F41A0E700F5AFEE /* LoginViewController.h */,
+				844402481F41A0E700F5AFEE /* LoginViewController.m */,
+				844402491F41A0E700F5AFEE /* LoginViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -546,6 +654,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8444024B1F41A0E700F5AFEE /* LoginViewController.xib in Resources */,
 				8435E4C01F316BCE00424E5E /* LaunchScreen.storyboard in Resources */,
 				8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */,
 				8435E5AE1F399C1E00424E5E /* CLLockVC.xib in Resources */,
@@ -622,26 +731,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844402921F41B2B000F5AFEE /* UITextView+Custom.m in Sources */,
 				8435E5B21F399C1E00424E5E /* CLLockInfoView.m in Sources */,
+				844402881F41B2B000F5AFEE /* UIColor+RGBValues.m in Sources */,
 				8435E5AF1F399C1E00424E5E /* CALayer+Anim.m in Sources */,
+				844402961F41B2B000F5AFEE /* UIViewController+Custom.m in Sources */,
 				8435E6031F3D885200424E5E /* QRRequest.m in Sources */,
 				8435E5BF1F399C6C00424E5E /* NSString+File.m in Sources */,
+				844402841F41B2B000F5AFEE /* NSString+Check.m in Sources */,
+				8444027F1F41B2B000F5AFEE /* NSArray+Custom.m in Sources */,
 				8435E60A1F3D9AE500424E5E /* QRRequestGetToken.m in Sources */,
 				8435E5C01F399C6C00424E5E /* CoreArchive.m in Sources */,
+				844402871F41B2B000F5AFEE /* UIColor+Custom.m in Sources */,
+				8444028F1F41B2B000F5AFEE /* UIScrollView+Custom.m in Sources */,
 				844402431F41877A00F5AFEE /* MineViewController.m in Sources */,
+				844402901F41B2B000F5AFEE /* UITableView+Custom.m in Sources */,
+				844402931F41B2B000F5AFEE /* UIView+Custom.m in Sources */,
+				844402821F41B2B000F5AFEE /* NSNumber+Custom.m in Sources */,
 				8435E4B21F316BCE00424E5E /* main.m in Sources */,
+				844402831F41B2B000F5AFEE /* NSObject+Custom.m in Sources */,
 				8435E5931F399BFA00424E5E /* TDTouchID.m in Sources */,
 				8435E5AD1F399C1E00424E5E /* CLLockVC.m in Sources */,
 				8435E5B61F399C1E00424E5E /* CLLockView.m in Sources */,
+				8444028B1F41B2B000F5AFEE /* UIImage+Custom.m in Sources */,
+				8444024A1F41A0E700F5AFEE /* LoginViewController.m in Sources */,
+				844402811F41B2B000F5AFEE /* NSDictionary+Custom.m in Sources */,
 				8435E50B1F31726D00424E5E /* AppDelegate.m in Sources */,
 				8435E5B41F399C1E00424E5E /* CLLockLabel.m in Sources */,
 				8444023D1F4186E100F5AFEE /* MainViewController.m in Sources */,
 				844402461F418F1400F5AFEE /* QRTabbarController.m in Sources */,
+				844402851F41B2B000F5AFEE /* NSString+Custom.m in Sources */,
 				8435E5B11F399C1E00424E5E /* CLLockNavVC.m in Sources */,
 				8435E5B01F399C1E00424E5E /* CoreLockConst.m in Sources */,
 				844402401F41874C00F5AFEE /* FinanceViewController.m in Sources */,
+				8444028E1F41B2B000F5AFEE /* UILabel+Custom.m in Sources */,
 				8435E5B31F399C1E00424E5E /* CLLockItemView.m in Sources */,
+				844402891F41B2B000F5AFEE /* UIFont+Custom.m in Sources */,
+				844402911F41B2B000F5AFEE /* UITextField+Custom.m in Sources */,
+				8444028C1F41B2B000F5AFEE /* UIImage+ImageEffects.m in Sources */,
 				8435E5B51F399C1E00424E5E /* CLLockMainView.m in Sources */,
+				844402801F41B2B000F5AFEE /* NSDate+Custom.m in Sources */,
+				8444028A1F41B2B000F5AFEE /* UIImage+ColorAtPixel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
