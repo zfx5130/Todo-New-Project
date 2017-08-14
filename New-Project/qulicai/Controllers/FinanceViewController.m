@@ -1,27 +1,28 @@
 //
-//  ViewController.m
+//  FinanceViewController.m
 //  qulicai
 //
-//  Created by admin on 2017/8/2.
+//  Created by admin on 2017/8/14.
 //  Copyright © 2017年 qurong. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "FinanceViewController.h"
 
-@interface ViewController ()
+@interface FinanceViewController ()
 
 @end
 
-@implementation ViewController
+@implementation FinanceViewController
+
+#pragma mark - lifeCycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor greenColor];
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
 
 @end

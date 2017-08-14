@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="o13-Fy-mXm">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,23 +9,139 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Tabbar Controller-->
+        <scene sceneID="V3Y-Nw-Wzj">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <tabBarController id="o13-Fy-mXm" customClass="QRTabbarController" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="OBr-ye-JcW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="DcI-0I-TYN" kind="relationship" relationship="viewControllers" id="J5P-Bu-Dld"/>
+                        <segue destination="Svl-h0-Rpy" kind="relationship" relationship="viewControllers" id="lcu-CW-ZQW"/>
+                        <segue destination="phy-8C-zYC" kind="relationship" relationship="viewControllers" id="3ig-nq-eJx"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="un4-w5-Ac0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-855" y="-242"/>
+        </scene>
+        <!--我的-->
+        <scene sceneID="haD-5C-sqD">
+            <objects>
+                <navigationController id="phy-8C-zYC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="我的" image="mine_unselect_image" selectedImage="mine_selected_image" id="txV-fY-cMN"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tk3-Fu-MdF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ia3-ha-AGv" kind="relationship" relationship="rootViewController" id="ECP-Yf-S7i"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tno-Em-dNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="421" y="522"/>
+        </scene>
+        <!--Mine View Controller-->
+        <scene sceneID="9zp-Bq-6kt">
+            <objects>
+                <viewController id="Ia3-ha-AGv" customClass="MineViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="KSv-a5-pOU"/>
+                        <viewControllerLayoutGuide type="bottom" id="h7M-Sp-jtN"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="6lx-w5-Y0C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Rel-vJ-Dfx"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="42e-bA-RUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10" y="137"/>
+            <point key="canvasLocation" x="1254" y="513"/>
+        </scene>
+        <!--理财-->
+        <scene sceneID="ffm-oO-xoQ">
+            <objects>
+                <navigationController id="Svl-h0-Rpy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="理财" image="finance_unselect_image" selectedImage="finance_selected_image" id="uJk-ir-6b2"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J9D-vN-l6E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="yrO-Me-cfs" kind="relationship" relationship="rootViewController" id="jpk-Cj-HAn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ps-a4-yVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="433" y="-242"/>
+        </scene>
+        <!--Finance View Controller-->
+        <scene sceneID="50l-We-dhT">
+            <objects>
+                <viewController id="yrO-Me-cfs" customClass="FinanceViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cgg-P2-uuJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="K8v-sO-ZBb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lmg-Sv-Yk3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yds-u8-zcP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="blZ-n8-qjT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1270" y="-242"/>
+        </scene>
+        <!--首页-->
+        <scene sceneID="1WY-th-ed1">
+            <objects>
+                <navigationController id="DcI-0I-TYN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="首页" image="main_unselect_image" selectedImage="main_selected_image" id="o5c-4p-ORP"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tb3-zF-cHU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PCz-kP-Yrh" kind="relationship" relationship="rootViewController" id="bap-8G-SzO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Y1-uQ-riI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="433" y="-964"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="w0r-dz-nff">
+            <objects>
+                <viewController id="PCz-kP-Yrh" customClass="MainViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gAf-0o-c7w"/>
+                        <viewControllerLayoutGuide type="bottom" id="S4y-qh-1Vs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hEp-PE-6je">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9ME-4s-Gns"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ktA-We-idB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1270" y="-974"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="finance_selected_image" width="25" height="25"/>
+        <image name="finance_unselect_image" width="25" height="25"/>
+        <image name="main_selected_image" width="25" height="24"/>
+        <image name="main_unselect_image" width="25" height="24"/>
+        <image name="mine_selected_image" width="25" height="25"/>
+        <image name="mine_unselect_image" width="25" height="25"/>
+    </resources>
 </document>

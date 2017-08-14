@@ -28,7 +28,6 @@
     });
     
     [self configQRNetwork];
-    NSLog(@"=====fasdfasdfas");
     [self testNetwork];
     return YES;
 }
