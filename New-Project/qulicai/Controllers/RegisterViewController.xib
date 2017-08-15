@@ -158,7 +158,7 @@
                                                                 <constraint firstAttribute="height" constant="0.5" id="zE7-nW-gy0"/>
                                                             </constraints>
                                                         </view>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCu-i5-Hy3">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCu-i5-Hy3" customClass="SendVerifyCodeButton">
                                                             <rect key="frame" x="264" y="0.0" width="83" height="44"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="83" id="4ur-EH-j1u"/>

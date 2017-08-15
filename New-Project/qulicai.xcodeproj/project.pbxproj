@@ -59,6 +59,7 @@
 		8444029B1F42CB6600F5AFEE /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844402991F42CB6600F5AFEE /* RegisterViewController.xib */; };
 		8444029F1F42CB9400F5AFEE /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444029D1F42CB9400F5AFEE /* ForgetPasswordViewController.m */; };
 		844402A01F42CB9400F5AFEE /* ForgetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8444029E1F42CB9400F5AFEE /* ForgetPasswordViewController.xib */; };
+		844402A31F42F21100F5AFEE /* SendVerifyCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402A21F42F21100F5AFEE /* SendVerifyCodeButton.m */; };
 		CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */; };
 /* End PBXBuildFile section */
 
@@ -185,6 +186,8 @@
 		8444029C1F42CB9400F5AFEE /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
 		8444029D1F42CB9400F5AFEE /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
 		8444029E1F42CB9400F5AFEE /* ForgetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgetPasswordViewController.xib; sourceTree = "<group>"; };
+		844402A11F42F21100F5AFEE /* SendVerifyCodeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendVerifyCodeButton.h; sourceTree = "<group>"; };
+		844402A21F42F21100F5AFEE /* SendVerifyCodeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendVerifyCodeButton.m; sourceTree = "<group>"; };
 		ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qulicai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -414,6 +417,8 @@
 		8435E5041F316E9200424E5E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				844402A11F42F21100F5AFEE /* SendVerifyCodeButton.h */,
+				844402A21F42F21100F5AFEE /* SendVerifyCodeButton.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -784,6 +789,7 @@
 				8435E5B01F399C1E00424E5E /* CoreLockConst.m in Sources */,
 				844402401F41874C00F5AFEE /* FinanceViewController.m in Sources */,
 				8444029F1F42CB9400F5AFEE /* ForgetPasswordViewController.m in Sources */,
+				844402A31F42F21100F5AFEE /* SendVerifyCodeButton.m in Sources */,
 				8444028E1F41B2B000F5AFEE /* UILabel+Custom.m in Sources */,
 				8435E5B31F399C1E00424E5E /* CLLockItemView.m in Sources */,
 				844402891F41B2B000F5AFEE /* UIFont+Custom.m in Sources */,

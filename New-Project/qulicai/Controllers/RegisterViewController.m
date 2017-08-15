@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController.h"
+#import "SendVerifyCodeButton.h"
 
 @interface RegisterViewController ()
 <UITextViewDelegate>
@@ -24,7 +25,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *lockTextField;
 
 //验证码
-@property (weak, nonatomic) IBOutlet UIButton *verifyCodeButton;
+@property (weak, nonatomic) IBOutlet SendVerifyCodeButton *verifyCodeButton;
 
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
 
@@ -172,8 +173,23 @@
     [self updateResetButtonStatus];
 }
 
-- (IBAction)verifyCodeButtonWasPressed:(UIButton *)sender {
-    //验证码
+- (IBAction)verifyCodeButtonWasPressed:(SendVerifyCodeButton *)sender {
+    [self.view endEditing:YES];
+    if (self.phoneTextField.text.length < 11) {
+        self.errorLabel.text = @"*对不起手机号码有误";
+        [self.errorLabel addShakeAnimation];
+        return;
+    }
+    
+    //检测验证码是否已经发送
+    if ([sender canSenderVerifyCodeWithPhone:self.phoneTextField.text]) {
+        return;
+    }
+    
+    [sender sendVerifyCodeWithPhone:self.phoneTextField.text];
+    
+    //请求验证码操作
+    
 }
 
 - (IBAction)registerButtonWasPressed:(UIButton *)sender {
