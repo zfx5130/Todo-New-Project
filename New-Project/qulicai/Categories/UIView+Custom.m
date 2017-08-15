@@ -196,4 +196,17 @@ static NSUInteger const kBorderTagRight = 2125;
     self.backgroundColor = [UIColor clearColor];
 }
 
+-(void)addShakeAnimation {
+    CAKeyframeAnimation * animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.x"];
+    CGFloat currentTx = self.transform.tx;
+    
+    //    animation.delegate = self;
+    animation.duration = 0.5;
+    animation.values = @[ @(currentTx), @(currentTx + 10), @(currentTx-8), @(currentTx + 8), @(currentTx -5), @(currentTx + 5), @(currentTx) ];
+    animation.keyTimes = @[ @(0), @(0.225), @(0.425), @(0.6), @(0.75), @(0.875), @(1) ];
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    [self.layer addAnimation:animation forKey:@"kAFViewShakerAnimationKey"];
+    
+}
+
 @end

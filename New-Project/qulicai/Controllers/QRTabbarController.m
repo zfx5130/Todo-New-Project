@@ -38,7 +38,8 @@
 
 - (void)login {
     LoginViewController *loginViewController = [[LoginViewController alloc] init];
-    [self presentViewController:loginViewController
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    [self presentViewController:navigationController
                        animated:YES
                      completion:nil];
 }

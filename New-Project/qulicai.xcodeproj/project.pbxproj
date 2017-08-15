@@ -55,6 +55,10 @@
 		844402921F41B2B000F5AFEE /* UITextView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402751F41B2B000F5AFEE /* UITextView+Custom.m */; };
 		844402931F41B2B000F5AFEE /* UIView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402771F41B2B000F5AFEE /* UIView+Custom.m */; };
 		844402961F41B2B000F5AFEE /* UIViewController+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444027D1F41B2B000F5AFEE /* UIViewController+Custom.m */; };
+		8444029A1F42CB6600F5AFEE /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402981F42CB6600F5AFEE /* RegisterViewController.m */; };
+		8444029B1F42CB6600F5AFEE /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844402991F42CB6600F5AFEE /* RegisterViewController.xib */; };
+		8444029F1F42CB9400F5AFEE /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444029D1F42CB9400F5AFEE /* ForgetPasswordViewController.m */; };
+		844402A01F42CB9400F5AFEE /* ForgetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8444029E1F42CB9400F5AFEE /* ForgetPasswordViewController.xib */; };
 		CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */; };
 /* End PBXBuildFile section */
 
@@ -175,6 +179,12 @@
 		844402771F41B2B000F5AFEE /* UIView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Custom.m"; sourceTree = "<group>"; };
 		8444027C1F41B2B000F5AFEE /* UIViewController+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Custom.h"; sourceTree = "<group>"; };
 		8444027D1F41B2B000F5AFEE /* UIViewController+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Custom.m"; sourceTree = "<group>"; };
+		844402971F42CB6600F5AFEE /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		844402981F42CB6600F5AFEE /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		844402991F42CB6600F5AFEE /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		8444029C1F42CB9400F5AFEE /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
+		8444029D1F42CB9400F5AFEE /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
+		8444029E1F42CB9400F5AFEE /* ForgetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgetPasswordViewController.xib; sourceTree = "<group>"; };
 		ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qulicai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -343,6 +353,12 @@
 				844402471F41A0E700F5AFEE /* LoginViewController.h */,
 				844402481F41A0E700F5AFEE /* LoginViewController.m */,
 				844402491F41A0E700F5AFEE /* LoginViewController.xib */,
+				844402971F42CB6600F5AFEE /* RegisterViewController.h */,
+				844402981F42CB6600F5AFEE /* RegisterViewController.m */,
+				844402991F42CB6600F5AFEE /* RegisterViewController.xib */,
+				8444029C1F42CB9400F5AFEE /* ForgetPasswordViewController.h */,
+				8444029D1F42CB9400F5AFEE /* ForgetPasswordViewController.m */,
+				8444029E1F42CB9400F5AFEE /* ForgetPasswordViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -654,11 +670,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844402A01F42CB9400F5AFEE /* ForgetPasswordViewController.xib in Resources */,
 				8444024B1F41A0E700F5AFEE /* LoginViewController.xib in Resources */,
 				8435E4C01F316BCE00424E5E /* LaunchScreen.storyboard in Resources */,
 				8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */,
 				8435E5AE1F399C1E00424E5E /* CLLockVC.xib in Resources */,
 				8435E4BB1F316BCE00424E5E /* Main.storyboard in Resources */,
+				8444029B1F42CB6600F5AFEE /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -756,6 +774,7 @@
 				8444028B1F41B2B000F5AFEE /* UIImage+Custom.m in Sources */,
 				8444024A1F41A0E700F5AFEE /* LoginViewController.m in Sources */,
 				844402811F41B2B000F5AFEE /* NSDictionary+Custom.m in Sources */,
+				8444029A1F42CB6600F5AFEE /* RegisterViewController.m in Sources */,
 				8435E50B1F31726D00424E5E /* AppDelegate.m in Sources */,
 				8435E5B41F399C1E00424E5E /* CLLockLabel.m in Sources */,
 				8444023D1F4186E100F5AFEE /* MainViewController.m in Sources */,
@@ -764,6 +783,7 @@
 				8435E5B11F399C1E00424E5E /* CLLockNavVC.m in Sources */,
 				8435E5B01F399C1E00424E5E /* CoreLockConst.m in Sources */,
 				844402401F41874C00F5AFEE /* FinanceViewController.m in Sources */,
+				8444029F1F42CB9400F5AFEE /* ForgetPasswordViewController.m in Sources */,
 				8444028E1F41B2B000F5AFEE /* UILabel+Custom.m in Sources */,
 				8435E5B31F399C1E00424E5E /* CLLockItemView.m in Sources */,
 				844402891F41B2B000F5AFEE /* UIFont+Custom.m in Sources */,

@@ -39,5 +39,6 @@ static CGFloat const kDefaultBorderWidth = 0.5f;
 
 - (void)addShadowWithShadowRadius:(CGFloat)shadowRadius
                         withColor:(UIColor *)color;
+-(void)addShakeAnimation;
 
 @end

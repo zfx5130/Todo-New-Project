@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
                 <outlet property="bottomErrorViewBottomConstraint" destination="lnq-6p-irH" id="ZgH-d7-JU6"/>
+                <outlet property="errorLabel" destination="DgL-yH-XIn" id="oJI-I5-uQD"/>
                 <outlet property="lockButton" destination="zgB-QP-Kny" id="isS-uC-reK"/>
                 <outlet property="loginButton" destination="bVW-WU-Lku" id="qk4-nJ-8gl"/>
                 <outlet property="passwordTextField" destination="W2z-K5-M5l" id="8c3-oM-Jz0"/>

@@ -7,6 +7,8 @@
 //
 
 #import "LoginViewController.h"
+#import "RegisterViewController.h"
+#import "ForgetPasswordViewController.h"
 
 @interface LoginViewController ()
 
@@ -23,6 +25,7 @@
 //-50
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomErrorViewBottomConstraint;
 
+@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 
 @end
 
@@ -39,6 +42,11 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+}
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
@@ -61,7 +69,11 @@
     [self showSVProgressHUD];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [SVProgressHUD dismiss];
-        [self showErrorAlert];
+        if (self.passwordTextField.text.length < 6) {
+            [self showErrorAlert];
+        } else {
+            [self showSuccessWithTitle:@"登录成功"];
+        }
     });
 }
 
@@ -143,11 +155,15 @@
 }
 
 - (IBAction)registerButtonWasPressed:(UIButton *)sender {
-    NSLog(@"注册");
+    RegisterViewController *registerController = [[RegisterViewController alloc] init];
+    [self.navigationController pushViewController:registerController
+                                         animated:YES];
 }
 
 - (IBAction)forgetPassword:(UIButton *)sender {
-    NSLog(@"忘记密码");
+    ForgetPasswordViewController *passwordController = [[ForgetPasswordViewController alloc] init];
+    [self.navigationController pushViewController:passwordController
+                                         animated:YES];
 }
 
 
