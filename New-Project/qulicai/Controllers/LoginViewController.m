@@ -12,6 +12,15 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *phoneButtton;
 
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *lockButton;
+
+@property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
+
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+
+
 @end
 
 @implementation LoginViewController
@@ -38,6 +47,11 @@
     [self.view addTapGestureForDismissingKeyboard];
 }
 
+- (void)updateResetButtonStatus {
+    self.loginButton.enabled =
+    self.passwordTextField.text.length && self.phoneTextField.text.length;
+}
+
 #pragma mark - Handlers
 
 - (IBAction)close:(UIButton *)sender {
@@ -47,7 +61,35 @@
 }
 
 - (IBAction)phoneChange:(UITextField *)sender {
-    self.phoneButtton.selected = YES;
+    [self updateResetButtonStatus];
 }
+
+- (IBAction)editingBegin:(UITextField *)sender {
+    self.phoneButtton.selected = YES;
+    [self updateResetButtonStatus];
+}
+
+
+- (IBAction)editingEnded:(UITextField *)sender {
+    self.phoneButtton.selected = NO;
+    [self updateResetButtonStatus];
+}
+
+
+- (IBAction)passwordChanged:(UITextField *)sender {
+    [self updateResetButtonStatus];
+}
+
+- (IBAction)passwordBeginEdit:(UITextField *)sender {
+    self.phoneButtton.selected = NO;
+    self.lockButton.selected = !self.phoneButtton.selected;
+}
+
+- (IBAction)passwordEndEditing:(UITextField *)sender {
+    self.lockButton.selected = NO;
+    [self updateResetButtonStatus];
+}
+
+
 
 @end
