@@ -180,7 +180,7 @@
                                                 <constraint firstItem="bdM-x4-Oan" firstAttribute="leading" secondItem="cpT-YS-eAe" secondAttribute="leading" id="vLF-b4-BQS"/>
                                             </constraints>
                                         </view>
-                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVW-WU-Lku">
+                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVW-WU-Lku">
                                             <rect key="frame" x="30" y="178" width="315" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="32o-8w-yhs"/>

@@ -51,4 +51,9 @@ typedef NS_ENUM(NSUInteger, TrasitionStyle) {
 
 - (NSString *)getCurrentLocaleCode;
 
+
+- (void)showSVProgressHUD;
+
+- (void)showSuccessWithTitle:(NSString *)title;
+
 @end

@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 yunzao. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM (NSUInteger, BorderEdge){
     BorderEdgeBottom = 0,
@@ -13,8 +14,6 @@ typedef NS_ENUM (NSUInteger, BorderEdge){
     BorderEdgeLeft,
     BorderEdgeRight,
 };
-
-#import <UIKit/UIKit.h>
 
 static CGFloat const kDefaultBorderWidth = 0.5f;
 

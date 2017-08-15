@@ -54,6 +54,11 @@
 
 - (void)login {
     NSLog(@"登录");
+    [self.view endEditing:YES];
+    [self showSVProgressHUD];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self showSuccessWithTitle:@"登录成功"];
+    });
 }
 
 #pragma mark - UITextFieldDelegate
