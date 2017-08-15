@@ -52,7 +52,26 @@
     self.passwordTextField.text.length && self.phoneTextField.text.length;
 }
 
+- (void)login {
+    NSLog(@"登录");
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    BOOL isFlag =
+    self.passwordTextField.text.length && self.phoneTextField.text.length;
+    if (textField == self.passwordTextField && isFlag) {
+        [self login];
+    }
+    return YES;
+}
+
 #pragma mark - Handlers
+
+- (IBAction)loginButtonWasPressed:(UIButton *)sender {
+    [self login];
+}
 
 - (IBAction)close:(UIButton *)sender {
     [self.view endEditing:YES];
@@ -90,6 +109,13 @@
     [self updateResetButtonStatus];
 }
 
+- (IBAction)registerButtonWasPressed:(UIButton *)sender {
+    NSLog(@"注册");
+}
+
+- (IBAction)forgetPassword:(UIButton *)sender {
+    NSLog(@"忘记密码");
+}
 
 
 @end
