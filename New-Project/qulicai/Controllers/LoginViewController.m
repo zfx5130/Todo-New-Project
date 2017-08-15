@@ -20,6 +20,9 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
+//-50
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomErrorViewBottomConstraint;
+
 
 @end
 
@@ -57,8 +60,28 @@
     [self.view endEditing:YES];
     [self showSVProgressHUD];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self showSuccessWithTitle:@"登录成功"];
+        [SVProgressHUD dismiss];
+        [self showErrorAlert];
     });
+}
+
+
+- (void)showErrorAlert {
+    [UIView animateWithDuration:0.25 animations:^{
+        self.bottomErrorViewBottomConstraint.constant = 0.0f;
+        [self.view layoutIfNeeded];
+    }];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self dismissErrorAlert];
+    });
+}
+
+- (void)dismissErrorAlert {
+    [UIView animateWithDuration:0.25 animations:^{
+        self.bottomErrorViewBottomConstraint.constant = -50.0f;
+        [self.view layoutIfNeeded];
+    }];
 }
 
 #pragma mark - UITextFieldDelegate
@@ -73,6 +96,11 @@
 }
 
 #pragma mark - Handlers
+
+- (IBAction)errorAlertButtonWasPressed:(UIButton *)sender {
+    [self dismissErrorAlert];
+}
+
 
 - (IBAction)loginButtonWasPressed:(UIButton *)sender {
     [self login];
