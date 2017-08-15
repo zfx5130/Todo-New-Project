@@ -32,8 +32,7 @@
 #pragma mark - Private
 
 - (void)setupViews {
-    self.navigationController.navigationBarHidden = NO;
-    self.title = @"忘记密码";
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 @end
