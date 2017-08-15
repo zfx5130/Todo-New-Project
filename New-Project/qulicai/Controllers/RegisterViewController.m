@@ -8,6 +8,7 @@
 
 #import "RegisterViewController.h"
 #import "SendVerifyCodeButton.h"
+#import "QRWebViewController.h"
 
 @interface RegisterViewController ()
 <UITextViewDelegate>
@@ -198,6 +199,11 @@
 
 - (IBAction)QRAgreement:(UIButton *)sender {
     //趣融管理协议
+    NSString *urlString = @"https://www.baidu.com";
+    QRWebViewController *webViewController = [[QRWebViewController alloc] initWithTitle:@"趣融协议"
+                                                                              URLString:urlString];
+    [self.navigationController pushViewController:webViewController
+                                         animated:YES];
 }
 
 

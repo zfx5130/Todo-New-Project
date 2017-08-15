@@ -12,6 +12,7 @@ pod 'SimpleKeychain'
 pod 'UITableView+FDTemplateLayoutCell'
 pod 'MJExtension'
 pod 'SVProgressHUD'
+pod 'TOWebViewController'
 
 pod 'MTLog'
 
