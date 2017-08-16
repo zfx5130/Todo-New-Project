@@ -13,6 +13,7 @@
 #import "UIView+Custom.h"
 #import "UIViewController+Custom.h"
 #import <SVProgressHUD.h>
+#import "UIColor+Custom.h"
 
 #ifdef DEBUG
 

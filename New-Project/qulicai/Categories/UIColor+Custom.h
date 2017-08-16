@@ -15,4 +15,8 @@
 + (UIColor*)gradientFromColor:(UIColor*)fromColor
                       toColor:(UIColor*)toColor
                      withSize:(CGSize)size;
+
+//242 89 47
++ (UIColor *)appDefaultColor;
+
 @end

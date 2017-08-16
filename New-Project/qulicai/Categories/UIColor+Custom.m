@@ -52,4 +52,8 @@
     return [UIColor colorWithPatternImage:image];
 }
 
++ (UIColor *)appDefaultColor {
+    return RGBColor(242, 89, 47);
+}
+
 @end

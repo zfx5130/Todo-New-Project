@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tabBar.tintColor = RGBColor(255, 168, 0);
+    self.tabBar.tintColor = [UIColor appDefaultColor];
     [self setupTabbarControllerDelegate];
 }
 
