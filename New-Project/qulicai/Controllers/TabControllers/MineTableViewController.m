@@ -9,8 +9,20 @@
 #import "MineTableViewController.h"
 #import "UIViewController+Addition.h"
 #import <WZLBadge/WZLBadgeImport.h>
+#import "SettingsTableViewController.h"
 
 @interface MineTableViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
+
+@property (weak, nonatomic) IBOutlet UILabel *userAccountLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *vipTagLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *vipBgImageView;
+
+@property (weak, nonatomic) IBOutlet UILabel *vipCartInfoLabel;
+
 
 @end
 
@@ -34,13 +46,17 @@
 #pragma mark - Priavte
 
 - (void)setupViews {
+    if (self.userAccountLabel.text.length >= 11) {
+        NSString *str = [NSString replaceStrWithRange:NSMakeRange(3, 4)
+                                               string:self.userAccountLabel.text
+                                           withString:@"****"];
+        self.userAccountLabel.text = str;
+    }
+    self.navigationController.navigationBar.translucent = NO;
     [self setupNavigationItemRights:@[@"me_nav_news_image",@"me_nav_task_image"]];
     UIBarButtonItem *messageItem = self.navigationItem.rightBarButtonItems.lastObject;
-    messageItem.badgeCenterOffset = CGPointMake(31, 5);
-    messageItem.badgeMaximumBadgeNumber = 0.5;
-    [messageItem showBadgeWithStyle:WBadgeStyleRedDot
-                              value:0
-                      animationType:WBadgeAnimTypeNone];
+    messageItem.badgeCenterOffset = CGPointMake(31, 7);
+    [messageItem showBadge];
 }
 
 #pragma mark - TableViewDataSource
@@ -50,6 +66,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (!section) {
+        return 1;
+    } else if (section == 1) {
+        return 4;
+    }
     return 3;
 }
 
@@ -65,21 +86,92 @@
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView
+heightForHeaderInSection:(NSInteger)section {
+    return 10.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForFooterInSection:(NSInteger)section {
+    return CGFLOAT_MIN;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = [super tableView:tableView
               heightForRowAtIndexPath:indexPath];
     return height;
 }
 
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath
+                             animated:YES];
+    switch (indexPath.section) {
+        case 0: {
+        }
+            break;
+        case 1: {
+            switch (indexPath.row) {
+                case 0: {
+                    [self showSuccessWithTitle:@"总资产开发中"];
+                }
+                    break;
+                case 1: {
+                    [self showSuccessWithTitle:@"理财推手开发中"];
+                }
+                    break;
+                case 2: {
+                    [self showSuccessWithTitle:@"我的福利开发中"];
+                }
+                    break;
+                case 3: {
+                    [self showSuccessWithTitle:@"购买记录开发中"];
+                }
+                    break;
+                default:
+                    break;
+            }
+        }
+            break;
+        case 2: {
+            switch (indexPath.row) {
+                case 0: {
+                    [self showSuccessWithTitle:@"客服开发中"];
+                }
+                    break;
+                case 1: {
+                    [self showSuccessWithTitle:@"关于趣理财开发中"];
+                }
+                    break;
+                case 2: {
+                    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:kStoryBoardIdSettingsViewController
+                                                                         bundle:nil];
+                    SettingsTableViewController *settingsController = [storyBoard instantiateViewControllerWithIdentifier:kStoryBoardIdSettingsViewController];
+                    settingsController.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:settingsController
+                                                         animated:YES];
+                    
+                }
+                    break;
+                default:
+                    break;
+            }
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+#pragma mark - Handlers
 
 - (void)rightBarButtonAction0 {
-    NSLog(@"消息");
+    [self showSuccessWithTitle:@"消息开发中"];
 }
 
 - (void)rightBarButtonAction1 {
-    NSLog(@"细明");
+    [self showSuccessWithTitle:@"明细开发中"];
 }
-
 
 
 @end

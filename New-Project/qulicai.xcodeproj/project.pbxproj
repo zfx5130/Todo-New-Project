@@ -65,6 +65,8 @@
 		844402B01F43F9F600F5AFEE /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844402AE1F43F9F500F5AFEE /* ResetPasswordViewController.xib */; };
 		844402B81F441DB200F5AFEE /* MineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402B71F441DB200F5AFEE /* MineTableViewController.m */; };
 		844402BB1F44217400F5AFEE /* UIViewController+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402BA1F44217400F5AFEE /* UIViewController+Addition.m */; };
+		844402BF1F443F9A00F5AFEE /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402BE1F443F9A00F5AFEE /* SettingsTableViewController.m */; };
+		844402C11F443FAE00F5AFEE /* SettingsTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844402C01F443FAE00F5AFEE /* SettingsTableViewController.storyboard */; };
 		CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */; };
 /* End PBXBuildFile section */
 
@@ -201,6 +203,9 @@
 		844402B71F441DB200F5AFEE /* MineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewController.m; sourceTree = "<group>"; };
 		844402B91F44217400F5AFEE /* UIViewController+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Addition.h"; sourceTree = "<group>"; };
 		844402BA1F44217400F5AFEE /* UIViewController+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Addition.m"; sourceTree = "<group>"; };
+		844402BD1F443F9A00F5AFEE /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		844402BE1F443F9A00F5AFEE /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		844402C01F443FAE00F5AFEE /* SettingsTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsTableViewController.storyboard; sourceTree = "<group>"; };
 		ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qulicai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -360,6 +365,7 @@
 		8435E4FD1F316E9200424E5E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				844402BC1F443F0A00F5AFEE /* Settings */,
 				844402A61F42FC5B00F5AFEE /* General */,
 				844402A51F42FC0600F5AFEE /* TabControllers */,
 				844402A41F42FBE800F5AFEE /* Login */,
@@ -600,6 +606,16 @@
 			path = General;
 			sourceTree = "<group>";
 		};
+		844402BC1F443F0A00F5AFEE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				844402BD1F443F9A00F5AFEE /* SettingsTableViewController.h */,
+				844402BE1F443F9A00F5AFEE /* SettingsTableViewController.m */,
+				844402C01F443FAE00F5AFEE /* SettingsTableViewController.storyboard */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		85EECFC4C30A131F3D55686C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -723,6 +739,7 @@
 				844402AB1F42FC8100F5AFEE /* QRWebViewController.xib in Resources */,
 				844402A01F42CB9400F5AFEE /* ForgetPasswordViewController.xib in Resources */,
 				8444024B1F41A0E700F5AFEE /* LoginViewController.xib in Resources */,
+				844402C11F443FAE00F5AFEE /* SettingsTableViewController.storyboard in Resources */,
 				8435E4C01F316BCE00424E5E /* LaunchScreen.storyboard in Resources */,
 				8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */,
 				844402B01F43F9F600F5AFEE /* ResetPasswordViewController.xib in Resources */,
@@ -801,6 +818,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844402BF1F443F9A00F5AFEE /* SettingsTableViewController.m in Sources */,
 				844402BB1F44217400F5AFEE /* UIViewController+Addition.m in Sources */,
 				844402921F41B2B000F5AFEE /* UITextView+Custom.m in Sources */,
 				8435E5B21F399C1E00424E5E /* CLLockInfoView.m in Sources */,

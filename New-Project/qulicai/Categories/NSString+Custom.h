@@ -45,4 +45,8 @@
 
 + (NSString *)stringDataWithJsonData:(id)data;
 
++ (NSString *)replaceStrWithRange:(NSRange)range
+                           string:(NSString *)content
+                       withString:(NSString *)replaceString;
+
 @end

@@ -251,10 +251,16 @@
 
 - (void)showSVProgressHUD {
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD setForegroundColor:[UIColor appDefaultColor]];
+    [SVProgressHUD setBackgroundColor:[UIColor whiteColor]];
     [SVProgressHUD show];
 }
 
 - (void)showSuccessWithTitle:(NSString *)title {
+    [SVProgressHUD setForegroundColor:[UIColor appDefaultColor]];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD setBackgroundColor:[UIColor whiteColor]];
+    [SVProgressHUD setSuccessImage:[UIImage imageNamed:@"success_image"]];
     [SVProgressHUD showSuccessWithStatus:title];
     [SVProgressHUD dismissWithDelay:0.5];
 }

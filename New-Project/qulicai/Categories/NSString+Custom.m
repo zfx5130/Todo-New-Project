@@ -303,4 +303,13 @@
     return jsonString;
 }
 
++ (NSString *)replaceStrWithRange:(NSRange)range
+                           string:(NSString *)content
+                       withString:(NSString *)replaceString {
+    NSMutableString *string = [[NSMutableString alloc] initWithString:content];
+    [string replaceCharactersInRange:range
+                          withString:replaceString];
+    return string;
+}
+
 @end

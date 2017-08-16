@@ -1,6 +1,5 @@
 //
 //  NSString+Check.h
-//  时尚物业
 //
 //  Created by lanouhn on 15-4-11.
 //  Copyright (c) 2015年 Thomas. All rights reserved.

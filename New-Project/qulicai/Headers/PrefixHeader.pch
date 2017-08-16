@@ -12,6 +12,7 @@
 #import "Macro.h"
 #import "UIView+Custom.h"
 #import "UIViewController+Custom.h"
+#import "NSString+Custom.h"
 #import <SVProgressHUD.h>
 #import "UIColor+Custom.h"
 
