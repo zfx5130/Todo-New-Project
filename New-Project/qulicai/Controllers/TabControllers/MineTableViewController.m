@@ -8,6 +8,7 @@
 
 #import "MineTableViewController.h"
 #import "UIViewController+Addition.h"
+#import <WZLBadge/WZLBadgeImport.h>
 
 @interface MineTableViewController ()
 
@@ -34,8 +35,12 @@
 
 - (void)setupViews {
     [self setupNavigationItemRights:@[@"me_nav_news_image",@"me_nav_task_image"]];
-   //UIBarButtonItem *messageItem = self.navigationItem.rightBarButtonItems.firstObject;
-    
+    UIBarButtonItem *messageItem = self.navigationItem.rightBarButtonItems.lastObject;
+    messageItem.badgeCenterOffset = CGPointMake(31, 5);
+    messageItem.badgeMaximumBadgeNumber = 0.5;
+    [messageItem showBadgeWithStyle:WBadgeStyleRedDot
+                              value:0
+                      animationType:WBadgeAnimTypeNone];
 }
 
 #pragma mark - TableViewDataSource
