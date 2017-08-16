@@ -31,7 +31,6 @@
 		8435E60A1F3D9AE500424E5E /* QRRequestGetToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E6091F3D9AE500424E5E /* QRRequestGetToken.m */; };
 		8444023D1F4186E100F5AFEE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444023C1F4186E100F5AFEE /* MainViewController.m */; };
 		844402401F41874C00F5AFEE /* FinanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444023F1F41874C00F5AFEE /* FinanceViewController.m */; };
-		844402431F41877A00F5AFEE /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402421F41877A00F5AFEE /* MineViewController.m */; };
 		844402461F418F1400F5AFEE /* QRTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402451F418F1400F5AFEE /* QRTabbarController.m */; };
 		8444024A1F41A0E700F5AFEE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402481F41A0E700F5AFEE /* LoginViewController.m */; };
 		8444024B1F41A0E700F5AFEE /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844402491F41A0E700F5AFEE /* LoginViewController.xib */; };
@@ -64,6 +63,8 @@
 		844402AB1F42FC8100F5AFEE /* QRWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844402A91F42FC8100F5AFEE /* QRWebViewController.xib */; };
 		844402AF1F43F9F600F5AFEE /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402AD1F43F9F500F5AFEE /* ResetPasswordViewController.m */; };
 		844402B01F43F9F600F5AFEE /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844402AE1F43F9F500F5AFEE /* ResetPasswordViewController.xib */; };
+		844402B81F441DB200F5AFEE /* MineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402B71F441DB200F5AFEE /* MineTableViewController.m */; };
+		844402BB1F44217400F5AFEE /* UIViewController+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402BA1F44217400F5AFEE /* UIViewController+Addition.m */; };
 		CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */; };
 /* End PBXBuildFile section */
 
@@ -137,8 +138,6 @@
 		8444023C1F4186E100F5AFEE /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
 		8444023E1F41874C00F5AFEE /* FinanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinanceViewController.h; path = ../FinanceViewController.h; sourceTree = "<group>"; };
 		8444023F1F41874C00F5AFEE /* FinanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinanceViewController.m; path = ../FinanceViewController.m; sourceTree = "<group>"; };
-		844402411F41877A00F5AFEE /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineViewController.h; path = ../MineViewController.h; sourceTree = "<group>"; };
-		844402421F41877A00F5AFEE /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineViewController.m; path = ../MineViewController.m; sourceTree = "<group>"; };
 		844402441F418F1400F5AFEE /* QRTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QRTabbarController.h; path = ../QRTabbarController.h; sourceTree = "<group>"; };
 		844402451F418F1400F5AFEE /* QRTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QRTabbarController.m; path = ../QRTabbarController.m; sourceTree = "<group>"; };
 		844402471F41A0E700F5AFEE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = qulicai/Controllers/LoginViewController.h; sourceTree = SOURCE_ROOT; };
@@ -198,6 +197,10 @@
 		844402AC1F43F9F500F5AFEE /* ResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPasswordViewController.h; sourceTree = "<group>"; };
 		844402AD1F43F9F500F5AFEE /* ResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordViewController.m; sourceTree = "<group>"; };
 		844402AE1F43F9F500F5AFEE /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
+		844402B61F441DB200F5AFEE /* MineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewController.h; sourceTree = "<group>"; };
+		844402B71F441DB200F5AFEE /* MineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewController.m; sourceTree = "<group>"; };
+		844402B91F44217400F5AFEE /* UIViewController+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Addition.h"; sourceTree = "<group>"; };
+		844402BA1F44217400F5AFEE /* UIViewController+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Addition.m"; sourceTree = "<group>"; };
 		ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qulicai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -308,6 +311,8 @@
 		8435E4FC1F316E9200424E5E /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				844402B91F44217400F5AFEE /* UIViewController+Addition.h */,
+				844402BA1F44217400F5AFEE /* UIViewController+Addition.m */,
 				8444024E1F41B2AF00F5AFEE /* NSArray+Custom.h */,
 				8444024F1F41B2AF00F5AFEE /* NSArray+Custom.m */,
 				844402501F41B2AF00F5AFEE /* NSDate+Custom.h */,
@@ -579,8 +584,8 @@
 				8444023C1F4186E100F5AFEE /* MainViewController.m */,
 				8444023E1F41874C00F5AFEE /* FinanceViewController.h */,
 				8444023F1F41874C00F5AFEE /* FinanceViewController.m */,
-				844402411F41877A00F5AFEE /* MineViewController.h */,
-				844402421F41877A00F5AFEE /* MineViewController.m */,
+				844402B61F441DB200F5AFEE /* MineTableViewController.h */,
+				844402B71F441DB200F5AFEE /* MineTableViewController.m */,
 			);
 			path = TabControllers;
 			sourceTree = "<group>";
@@ -796,6 +801,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844402BB1F44217400F5AFEE /* UIViewController+Addition.m in Sources */,
 				844402921F41B2B000F5AFEE /* UITextView+Custom.m in Sources */,
 				8435E5B21F399C1E00424E5E /* CLLockInfoView.m in Sources */,
 				844402881F41B2B000F5AFEE /* UIColor+RGBValues.m in Sources */,
@@ -810,7 +816,6 @@
 				8435E5C01F399C6C00424E5E /* CoreArchive.m in Sources */,
 				844402871F41B2B000F5AFEE /* UIColor+Custom.m in Sources */,
 				8444028F1F41B2B000F5AFEE /* UIScrollView+Custom.m in Sources */,
-				844402431F41877A00F5AFEE /* MineViewController.m in Sources */,
 				844402901F41B2B000F5AFEE /* UITableView+Custom.m in Sources */,
 				844402AA1F42FC8100F5AFEE /* QRWebViewController.m in Sources */,
 				844402931F41B2B000F5AFEE /* UIView+Custom.m in Sources */,
@@ -821,6 +826,7 @@
 				8435E5AD1F399C1E00424E5E /* CLLockVC.m in Sources */,
 				8435E5B61F399C1E00424E5E /* CLLockView.m in Sources */,
 				8444028B1F41B2B000F5AFEE /* UIImage+Custom.m in Sources */,
+				844402B81F441DB200F5AFEE /* MineTableViewController.m in Sources */,
 				8444024A1F41A0E700F5AFEE /* LoginViewController.m in Sources */,
 				844402811F41B2B000F5AFEE /* NSDictionary+Custom.m in Sources */,
 				8444029A1F42CB6600F5AFEE /* RegisterViewController.m in Sources */,

@@ -11,6 +11,7 @@
 #import <YTKNetworkAgent.h>
 #import "QRRequest.h"
 #import "QRRequestGetToken.h"
+#import "UIImage+Custom.h"
 
 @interface AppDelegate ()
 
@@ -60,6 +61,9 @@
 }
 
 - (void)setupGlobalUI {
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]
+                                       forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
 }
 
 #pragma mark -lifecycle

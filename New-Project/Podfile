@@ -13,6 +13,7 @@ pod 'UITableView+FDTemplateLayoutCell'
 pod 'MJExtension'
 pod 'SVProgressHUD'
 pod 'TOWebViewController'
+pod 'WZLBadge'
 
 pod 'MTLog'
 

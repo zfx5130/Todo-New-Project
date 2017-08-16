@@ -7,7 +7,7 @@
 //
 
 #import "QRTabbarController.h"
-#import "MineViewController.h"
+#import "MineTableViewController.h"
 #import "LoginViewController.h"
 
 @interface QRTabbarController () <UITabBarControllerDelegate>
@@ -48,10 +48,10 @@
 
 - (void)tabBarController:(UITabBarController *)tabBarController
  didSelectViewController:(UIViewController *)viewController {
-    if ([viewController.childViewControllers.firstObject isKindOfClass:[MineViewController class]]) {
+    if ([viewController.childViewControllers.firstObject isKindOfClass:[MineTableViewController class]]) {
         
         //登录逻辑
-        BOOL isLogin = NO;
+        BOOL isLogin = YES;
         if (isLogin) {
             NSLog(@"登录成功");
         } else {

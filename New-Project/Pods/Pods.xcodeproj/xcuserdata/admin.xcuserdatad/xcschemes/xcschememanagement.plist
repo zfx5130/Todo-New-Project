@@ -64,6 +64,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>WZLBadge.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>YTKNetwork.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -77,22 +82,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>03145CBA34433EB998FE85A7193EFA19</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>04CF549EBEEE7BC87AEAE35397184D94</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0C4277209AECD66EC499745CB788F027</key>
+		<key>0F9C56E6CD987942BA76649C3F0C39F7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0CAB135E07156B7650A41687AC99AE71</key>
+		<key>2881F41FE7CC3A3DAC10C602B2999FEC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>398B873C17F11809C94EA2ECC3954A0F</key>
+		<key>290AF2171D85923F24F4331E031C5EB8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2C6ACE4B20F48534EBFEF445B881BFEB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,12 +117,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3F94CB1729820F5CD6223D5AC60DE092</key>
+		<key>5B07CA8E0B8D2AB48C8B1156A8869948</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>96968B714CDC8D0E2D8F0B36C152355D</key>
+		<key>8C41B5A5582243B58601F7E05CE65154</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,27 +137,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>9E9FE504DE1F03ACEDAF2D11447E2CAB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A316B54C67E947D23CECD230FA5BFAEF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B56759461FAF3B87064D53FFDA7E8917</key>
+		<key>A8253D8CB4A37DDDC830250C58CA9A14</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E03AEA4E117E77B3F1FB6380D31F4C76</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F9644ED9FB1696ADAA9CA34BB9F10C0C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FF0C18F26B0AA1ED7C0E572248F17AEA</key>
+		<key>D4C098BA9BE775AEF91697F3F1EC22DC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

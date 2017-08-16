@@ -27,6 +27,7 @@ PODS:
     - TOWebViewController/Core (= 2.2.6)
   - TOWebViewController/Core (2.2.6)
   - UITableView+FDTemplateLayoutCell (1.6)
+  - WZLBadge (1.2.6)
   - YTKNetwork (2.0.3):
     - AFNetworking (~> 3.0)
   - YYKit (1.0.9):
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - SVProgressHUD
   - TOWebViewController
   - UITableView+FDTemplateLayoutCell
+  - WZLBadge
   - YTKNetwork
   - YYKit
 
@@ -58,9 +60,10 @@ SPEC CHECKSUMS:
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   TOWebViewController: a29908019f7e0e0f8eccfab8a1ee8dcdf4fc5aac
   UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
+  WZLBadge: 9ec779dcfd94c825518b395e8315fccaabff1bfa
   YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: d8648d3016ef75aba4d44e4406a261aaf0017d60
+PODFILE CHECKSUM: e6b49139b8e52bcec3b972fba14a15df537819eb
 
 COCOAPODS: 1.2.1
