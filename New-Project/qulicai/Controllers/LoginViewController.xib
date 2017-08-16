@@ -18,6 +18,7 @@
                 <outlet property="passwordTextField" destination="W2z-K5-M5l" id="8c3-oM-Jz0"/>
                 <outlet property="phoneButtton" destination="0WE-vN-4LF" id="syi-Xb-qrY"/>
                 <outlet property="phoneTextField" destination="6Pl-m5-rYp" id="a2W-mp-gxz"/>
+                <outlet property="shakeErrorLabel" destination="Cag-g3-BgG" id="aoE-zH-QoS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -171,7 +172,7 @@
                                             </constraints>
                                         </view>
                                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVW-WU-Lku">
-                                            <rect key="frame" x="30" y="160" width="315" height="40"/>
+                                            <rect key="frame" x="30" y="170" width="315" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="32o-8w-yhs"/>
                                             </constraints>
@@ -189,7 +190,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saC-sP-Yjw">
-                                            <rect key="frame" x="20" y="220" width="45" height="30"/>
+                                            <rect key="frame" x="20" y="230" width="45" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="45" id="hwu-9h-mik"/>
                                                 <constraint firstAttribute="height" constant="30" id="nIq-fj-dmQ"/>
@@ -203,7 +204,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRj-a4-5un">
-                                            <rect key="frame" x="278" y="220" width="72" height="30"/>
+                                            <rect key="frame" x="278" y="230" width="72" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="6nq-mn-KT9"/>
                                                 <constraint firstAttribute="width" constant="72" id="zp9-wL-EZv"/>
@@ -260,20 +261,32 @@
                                                 <constraint firstAttribute="trailing" secondItem="Te6-Zq-pcg" secondAttribute="trailing" constant="5" id="xAj-pG-jqc"/>
                                             </constraints>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cag-g3-BgG">
+                                            <rect key="frame" x="30" y="122" width="315" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="31O-g5-a8f"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" red="0.96078431369999995" green="0.44705882349999998" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="saC-sP-Yjw" firstAttribute="top" secondItem="bVW-WU-Lku" secondAttribute="bottom" constant="20" id="Akv-lB-RJt"/>
-                                        <constraint firstItem="bVW-WU-Lku" firstAttribute="top" secondItem="cpT-YS-eAe" secondAttribute="bottom" constant="40" id="H5F-YE-VKE"/>
+                                        <constraint firstItem="bVW-WU-Lku" firstAttribute="top" secondItem="cpT-YS-eAe" secondAttribute="bottom" constant="50" id="H5F-YE-VKE"/>
                                         <constraint firstItem="bVW-WU-Lku" firstAttribute="leading" secondItem="HxS-NH-li2" secondAttribute="leading" constant="30" id="P7t-uW-0rI"/>
+                                        <constraint firstItem="Cag-g3-BgG" firstAttribute="leading" secondItem="HxS-NH-li2" secondAttribute="leading" constant="30" id="RMd-o9-Gf9"/>
                                         <constraint firstAttribute="trailing" secondItem="cpT-YS-eAe" secondAttribute="trailing" id="Tms-Ok-KTA"/>
                                         <constraint firstItem="saC-sP-Yjw" firstAttribute="leading" secondItem="HxS-NH-li2" secondAttribute="leading" constant="20" id="aFw-oS-HYG"/>
                                         <constraint firstItem="z9P-VA-stl" firstAttribute="leading" secondItem="HxS-NH-li2" secondAttribute="leading" id="fLK-oP-ccn"/>
                                         <constraint firstItem="cpT-YS-eAe" firstAttribute="top" secondItem="HxS-NH-li2" secondAttribute="top" constant="10" id="flS-8E-dDW"/>
+                                        <constraint firstAttribute="trailing" secondItem="Cag-g3-BgG" secondAttribute="trailing" constant="30" id="g9w-qy-ysq"/>
                                         <constraint firstAttribute="bottom" secondItem="z9P-VA-stl" secondAttribute="bottom" constant="-50" id="lnq-6p-irH"/>
                                         <constraint firstAttribute="trailing" secondItem="z9P-VA-stl" secondAttribute="trailing" id="mJq-en-Iok"/>
                                         <constraint firstAttribute="trailing" secondItem="bVW-WU-Lku" secondAttribute="trailing" constant="30" id="pR2-xt-wVR"/>
                                         <constraint firstItem="cpT-YS-eAe" firstAttribute="leading" secondItem="HxS-NH-li2" secondAttribute="leading" id="qLJ-BV-c8S"/>
                                         <constraint firstItem="eRj-a4-5un" firstAttribute="top" secondItem="bVW-WU-Lku" secondAttribute="bottom" constant="20" id="ufx-Dt-4hc"/>
+                                        <constraint firstItem="Cag-g3-BgG" firstAttribute="top" secondItem="cpT-YS-eAe" secondAttribute="bottom" constant="2" id="xcl-op-ar1"/>
                                         <constraint firstAttribute="trailing" secondItem="eRj-a4-5un" secondAttribute="trailing" constant="25" id="yfQ-uw-bO5"/>
                                     </constraints>
                                 </view>
@@ -316,9 +329,9 @@
         <image name="login_disabled_button_image" width="315" height="40"/>
         <image name="login_enabled_button_image" width="315" height="40"/>
         <image name="login_head_bg_image" width="375" height="148"/>
-        <image name="login_lock_selected_image" width="25" height="25"/>
+        <image name="login_lock_selected_image" width="17" height="20"/>
         <image name="login_lock_unselect_image" width="17" height="20"/>
-        <image name="login_phone_selected_image" width="25" height="25"/>
+        <image name="login_phone_selected_image" width="15" height="22"/>
         <image name="login_phone_unselect_image" width="15" height="22"/>
     </resources>
 </document>

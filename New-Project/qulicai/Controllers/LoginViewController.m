@@ -27,6 +27,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *shakeErrorLabel;
+
 @end
 
 @implementation LoginViewController
@@ -66,6 +68,13 @@
 - (void)login {
     NSLog(@"登录");
     [self.view endEditing:YES];
+    
+    if (self.phoneTextField.text.length < 11) {
+        self.shakeErrorLabel.text = @"*对不起手机号码有误";
+        [self.shakeErrorLabel addShakeAnimation];
+        return;
+    }
+    
     [self showSVProgressHUD];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [SVProgressHUD dismiss];
@@ -130,6 +139,9 @@
 
 - (IBAction)editingBegin:(UITextField *)sender {
     self.phoneButtton.selected = YES;
+    if (self.shakeErrorLabel.text.length) {
+        self.shakeErrorLabel.text = @"";
+    }
     [self updateResetButtonStatus];
 }
 
@@ -145,6 +157,9 @@
 }
 
 - (IBAction)passwordBeginEdit:(UITextField *)sender {
+    if (self.shakeErrorLabel.text.length) {
+        self.shakeErrorLabel.text = @"";
+    }
     self.phoneButtton.selected = NO;
     self.lockButton.selected = !self.phoneButtton.selected;
 }

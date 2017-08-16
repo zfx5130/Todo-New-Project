@@ -75,10 +75,12 @@ static const NSUInteger kVerifyCodeDuration = 30;
     long long senderVerifyCodeTime = [[[NSUserDefaults standardUserDefaults] objectForKey:kSendVerifyCodeTime] longLongValue];
     long long timeInterval = currentTime - senderVerifyCodeTime;
     if (timeInterval < kVerifyCodeDuration) {
-        NSString *text = [NSString stringWithFormat:@"已发送(%@s)",@(kVerifyCodeDuration - timeInterval)];
+        NSString *text = [NSString stringWithFormat:@"%@s后重新获取",@(kVerifyCodeDuration - timeInterval)];
         self.titleLabel.text = text;
         [self setTitle:text
               forState:UIControlStateNormal];
+        [self setTitleColor:RGBColor(204, 204, 204)
+                   forState:UIControlStateNormal];
 
     } else {
         [self.timer invalidate];
@@ -87,6 +89,8 @@ static const NSUInteger kVerifyCodeDuration = 30;
         self.userInteractionEnabled = YES;
         UserDefaultsRemove(kSendVerifyCodeTime);
         UserDefaultsRemove(kAcceptVerifyCodePhone);
+        [self setTitleColor:RGBColor(113, 175, 255)
+                   forState:UIControlStateNormal];
     }
 }
 

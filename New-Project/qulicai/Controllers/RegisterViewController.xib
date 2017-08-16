@@ -128,8 +128,8 @@
                                                             <state key="normal" image="login_verify_unselected_image"/>
                                                             <state key="selected" image="login_verify_selected_image"/>
                                                         </button>
-                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入短信验证码" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QFn-ak-5ym">
-                                                            <rect key="frame" x="59" y="0.0" width="195" height="44"/>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入短信验证码" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QFn-ak-5ym">
+                                                            <rect key="frame" x="59" y="0.0" width="197" height="44"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go"/>
@@ -147,13 +147,13 @@
                                                             </constraints>
                                                         </view>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCu-i5-Hy3" customClass="SendVerifyCodeButton">
-                                                            <rect key="frame" x="264" y="0.0" width="83" height="44"/>
+                                                            <rect key="frame" x="266" y="0.0" width="81" height="44"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="83" id="4ur-EH-j1u"/>
+                                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="4ur-EH-j1u"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <state key="normal" title="获取验证码&gt;">
-                                                                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="titleColor" red="0.44313725490196076" green="0.68627450980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <connections>
                                                                 <action selector="verifyCodeButtonWasPressed:" destination="-1" eventType="touchUpInside" id="fno-VH-DHN"/>
@@ -283,6 +283,7 @@
                                                     <state key="normal" image="alert_error_image"/>
                                                     <connections>
                                                         <action selector="dimissErrorButtonWasPressed:" destination="-1" eventType="touchUpInside" id="h0q-Lv-m4y"/>
+                                                        <action selector="errorDismiss:" destination="-1" eventType="touchUpInside" id="xPC-06-CwT"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -319,7 +320,7 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <state key="normal" title="《趣融账户管理协议》">
-                                                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleColor" red="0.4431372549" green="0.68627450980000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                             <connections>
                                                 <action selector="QRAgreement:" destination="-1" eventType="touchUpInside" id="d9Q-l2-4EP"/>
@@ -393,11 +394,11 @@
         <image name="login_disabled_button_image" width="315" height="40"/>
         <image name="login_enabled_button_image" width="315" height="40"/>
         <image name="login_head_bg_image" width="375" height="148"/>
-        <image name="login_lock_selected_image" width="25" height="25"/>
+        <image name="login_lock_selected_image" width="17" height="20"/>
         <image name="login_lock_unselect_image" width="17" height="20"/>
-        <image name="login_phone_selected_image" width="25" height="25"/>
+        <image name="login_phone_selected_image" width="15" height="22"/>
         <image name="login_phone_unselect_image" width="15" height="22"/>
-        <image name="login_verify_selected_image" width="25" height="25"/>
+        <image name="login_verify_selected_image" width="17" height="15"/>
         <image name="login_verify_unselected_image" width="17" height="15"/>
     </resources>
 </document>

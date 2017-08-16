@@ -193,6 +193,10 @@
     
 }
 
+- (IBAction)errorDismiss:(UIButton *)sender {
+    [self dismissErrorAlert];
+}
+
 - (IBAction)registerButtonWasPressed:(UIButton *)sender {
     [self registerUser];
 }
