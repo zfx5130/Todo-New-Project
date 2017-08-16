@@ -8,6 +8,7 @@
 
 #import "ForgetPasswordViewController.h"
 #import "SendVerifyCodeButton.h"
+#import "ResetPasswordViewController.h"
 
 @interface ForgetPasswordViewController ()
 <UITextViewDelegate>
@@ -92,6 +93,9 @@
             [self showErrorAlert];
         } else {
             //下一步操作
+            ResetPasswordViewController *resetController = [[ResetPasswordViewController alloc] init];
+            [self.navigationController pushViewController:resetController
+                                                 animated:YES];
         }
     });
     

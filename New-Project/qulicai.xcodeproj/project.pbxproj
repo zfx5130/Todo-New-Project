@@ -62,6 +62,8 @@
 		844402A31F42F21100F5AFEE /* SendVerifyCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402A21F42F21100F5AFEE /* SendVerifyCodeButton.m */; };
 		844402AA1F42FC8100F5AFEE /* QRWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402A81F42FC8100F5AFEE /* QRWebViewController.m */; };
 		844402AB1F42FC8100F5AFEE /* QRWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844402A91F42FC8100F5AFEE /* QRWebViewController.xib */; };
+		844402AF1F43F9F600F5AFEE /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402AD1F43F9F500F5AFEE /* ResetPasswordViewController.m */; };
+		844402B01F43F9F600F5AFEE /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844402AE1F43F9F500F5AFEE /* ResetPasswordViewController.xib */; };
 		CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */; };
 /* End PBXBuildFile section */
 
@@ -193,6 +195,9 @@
 		844402A71F42FC8100F5AFEE /* QRWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRWebViewController.h; sourceTree = "<group>"; };
 		844402A81F42FC8100F5AFEE /* QRWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRWebViewController.m; sourceTree = "<group>"; };
 		844402A91F42FC8100F5AFEE /* QRWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QRWebViewController.xib; sourceTree = "<group>"; };
+		844402AC1F43F9F500F5AFEE /* ResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPasswordViewController.h; sourceTree = "<group>"; };
+		844402AD1F43F9F500F5AFEE /* ResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordViewController.m; sourceTree = "<group>"; };
+		844402AE1F43F9F500F5AFEE /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
 		ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qulicai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -558,6 +563,9 @@
 				8444029C1F42CB9400F5AFEE /* ForgetPasswordViewController.h */,
 				8444029D1F42CB9400F5AFEE /* ForgetPasswordViewController.m */,
 				8444029E1F42CB9400F5AFEE /* ForgetPasswordViewController.xib */,
+				844402AC1F43F9F500F5AFEE /* ResetPasswordViewController.h */,
+				844402AD1F43F9F500F5AFEE /* ResetPasswordViewController.m */,
+				844402AE1F43F9F500F5AFEE /* ResetPasswordViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -712,6 +720,7 @@
 				8444024B1F41A0E700F5AFEE /* LoginViewController.xib in Resources */,
 				8435E4C01F316BCE00424E5E /* LaunchScreen.storyboard in Resources */,
 				8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */,
+				844402B01F43F9F600F5AFEE /* ResetPasswordViewController.xib in Resources */,
 				8435E5AE1F399C1E00424E5E /* CLLockVC.xib in Resources */,
 				8435E4BB1F316BCE00424E5E /* Main.storyboard in Resources */,
 				8444029B1F42CB6600F5AFEE /* RegisterViewController.xib in Resources */,
@@ -792,6 +801,7 @@
 				844402881F41B2B000F5AFEE /* UIColor+RGBValues.m in Sources */,
 				8435E5AF1F399C1E00424E5E /* CALayer+Anim.m in Sources */,
 				844402961F41B2B000F5AFEE /* UIViewController+Custom.m in Sources */,
+				844402AF1F43F9F600F5AFEE /* ResetPasswordViewController.m in Sources */,
 				8435E6031F3D885200424E5E /* QRRequest.m in Sources */,
 				8435E5BF1F399C6C00424E5E /* NSString+File.m in Sources */,
 				844402841F41B2B000F5AFEE /* NSString+Check.m in Sources */,
