@@ -10,6 +10,7 @@
 #import "SettingsTableViewController.h"
 #import "UIViewController+Addition.h"
 #import "ZXCImagePicker.h"
+#import "UsernameSettingViewController.h"
 
 @interface SettingsTableViewController ()
 
@@ -105,7 +106,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                 }
                     break;
                 case 1: {
-                    [self showSuccessWithTitle:@"昵称"];
+                    [self setupUsername];
                 }
                     break;
                 default:
@@ -156,6 +157,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     };
 }
 
+- (void)setupUsername {
+    UsernameSettingViewController *usernameController = [[UsernameSettingViewController alloc] init];
+    usernameController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:usernameController
+                                         animated:YES];
+}
 
 #pragma mark - Hanlders
 

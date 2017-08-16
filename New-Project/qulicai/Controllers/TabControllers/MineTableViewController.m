@@ -32,11 +32,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self setupViews];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,15 +45,15 @@
 
 #pragma mark - Priavte
 
-- (void)setupViews {
+- (void)setupView {
+    self.navigationController.navigationBar.translucent = NO;
+    [self setupNavigationItemRights:@[@"me_nav_news_image",@"me_nav_task_image"]];
     if (self.userAccountLabel.text.length >= 11) {
         NSString *str = [NSString replaceStrWithRange:NSMakeRange(3, 4)
                                                string:self.userAccountLabel.text
                                            withString:@"****"];
         self.userAccountLabel.text = str;
     }
-    self.navigationController.navigationBar.translucent = NO;
-    [self setupNavigationItemRights:@[@"me_nav_news_image",@"me_nav_task_image"]];
     UIBarButtonItem *messageItem = self.navigationItem.rightBarButtonItems.lastObject;
     messageItem.badgeCenterOffset = CGPointMake(31, 7);
     [messageItem showBadge];

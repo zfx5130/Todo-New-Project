@@ -69,6 +69,8 @@
 		844402C11F443FAE00F5AFEE /* SettingsTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844402C01F443FAE00F5AFEE /* SettingsTableViewController.storyboard */; };
 		844402C51F44516100F5AFEE /* WeiXinPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402C41F44516100F5AFEE /* WeiXinPickView.m */; };
 		844402C81F44539700F5AFEE /* ZXCImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402C71F44539700F5AFEE /* ZXCImagePicker.m */; };
+		844402CC1F44590100F5AFEE /* UsernameSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402CA1F44590100F5AFEE /* UsernameSettingViewController.m */; };
+		844402CD1F44590100F5AFEE /* UsernameSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844402CB1F44590100F5AFEE /* UsernameSettingViewController.xib */; };
 		CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */; };
 /* End PBXBuildFile section */
 
@@ -212,6 +214,9 @@
 		844402C41F44516100F5AFEE /* WeiXinPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiXinPickView.m; sourceTree = "<group>"; };
 		844402C61F44539700F5AFEE /* ZXCImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXCImagePicker.h; sourceTree = "<group>"; };
 		844402C71F44539700F5AFEE /* ZXCImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXCImagePicker.m; sourceTree = "<group>"; };
+		844402C91F44590100F5AFEE /* UsernameSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsernameSettingViewController.h; sourceTree = "<group>"; };
+		844402CA1F44590100F5AFEE /* UsernameSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsernameSettingViewController.m; sourceTree = "<group>"; };
+		844402CB1F44590100F5AFEE /* UsernameSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UsernameSettingViewController.xib; sourceTree = "<group>"; };
 		ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qulicai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -619,6 +624,9 @@
 				844402BD1F443F9A00F5AFEE /* SettingsTableViewController.h */,
 				844402BE1F443F9A00F5AFEE /* SettingsTableViewController.m */,
 				844402C01F443FAE00F5AFEE /* SettingsTableViewController.storyboard */,
+				844402C91F44590100F5AFEE /* UsernameSettingViewController.h */,
+				844402CA1F44590100F5AFEE /* UsernameSettingViewController.m */,
+				844402CB1F44590100F5AFEE /* UsernameSettingViewController.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -758,6 +766,7 @@
 				844402A01F42CB9400F5AFEE /* ForgetPasswordViewController.xib in Resources */,
 				8444024B1F41A0E700F5AFEE /* LoginViewController.xib in Resources */,
 				844402C11F443FAE00F5AFEE /* SettingsTableViewController.storyboard in Resources */,
+				844402CD1F44590100F5AFEE /* UsernameSettingViewController.xib in Resources */,
 				8435E4C01F316BCE00424E5E /* LaunchScreen.storyboard in Resources */,
 				8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */,
 				844402B01F43F9F600F5AFEE /* ResetPasswordViewController.xib in Resources */,
@@ -878,6 +887,7 @@
 				844402401F41874C00F5AFEE /* FinanceViewController.m in Sources */,
 				8444029F1F42CB9400F5AFEE /* ForgetPasswordViewController.m in Sources */,
 				844402A31F42F21100F5AFEE /* SendVerifyCodeButton.m in Sources */,
+				844402CC1F44590100F5AFEE /* UsernameSettingViewController.m in Sources */,
 				8444028E1F41B2B000F5AFEE /* UILabel+Custom.m in Sources */,
 				8435E5B31F399C1E00424E5E /* CLLockItemView.m in Sources */,
 				844402891F41B2B000F5AFEE /* UIFont+Custom.m in Sources */,
