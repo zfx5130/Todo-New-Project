@@ -67,6 +67,8 @@
 		844402BB1F44217400F5AFEE /* UIViewController+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402BA1F44217400F5AFEE /* UIViewController+Addition.m */; };
 		844402BF1F443F9A00F5AFEE /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402BE1F443F9A00F5AFEE /* SettingsTableViewController.m */; };
 		844402C11F443FAE00F5AFEE /* SettingsTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844402C01F443FAE00F5AFEE /* SettingsTableViewController.storyboard */; };
+		844402C51F44516100F5AFEE /* WeiXinPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402C41F44516100F5AFEE /* WeiXinPickView.m */; };
+		844402C81F44539700F5AFEE /* ZXCImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402C71F44539700F5AFEE /* ZXCImagePicker.m */; };
 		CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */; };
 /* End PBXBuildFile section */
 
@@ -206,6 +208,10 @@
 		844402BD1F443F9A00F5AFEE /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		844402BE1F443F9A00F5AFEE /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		844402C01F443FAE00F5AFEE /* SettingsTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsTableViewController.storyboard; sourceTree = "<group>"; };
+		844402C31F44516100F5AFEE /* WeiXinPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiXinPickView.h; sourceTree = "<group>"; };
+		844402C41F44516100F5AFEE /* WeiXinPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiXinPickView.m; sourceTree = "<group>"; };
+		844402C61F44539700F5AFEE /* ZXCImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXCImagePicker.h; sourceTree = "<group>"; };
+		844402C71F44539700F5AFEE /* ZXCImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXCImagePicker.m; sourceTree = "<group>"; };
 		ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qulicai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -415,6 +421,7 @@
 		8435E5031F316E9200424E5E /* Venders */ = {
 			isa = PBXGroup;
 			children = (
+				844402C21F44516100F5AFEE /* WeiXinPickView */,
 				8435E5941F399C1E00424E5E /* CoreLock */,
 				8435E5901F399BFA00424E5E /* TDTouchID */,
 			);
@@ -614,6 +621,17 @@
 				844402C01F443FAE00F5AFEE /* SettingsTableViewController.storyboard */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		844402C21F44516100F5AFEE /* WeiXinPickView */ = {
+			isa = PBXGroup;
+			children = (
+				844402C61F44539700F5AFEE /* ZXCImagePicker.h */,
+				844402C71F44539700F5AFEE /* ZXCImagePicker.m */,
+				844402C31F44516100F5AFEE /* WeiXinPickView.h */,
+				844402C41F44516100F5AFEE /* WeiXinPickView.m */,
+			);
+			path = WeiXinPickView;
 			sourceTree = "<group>";
 		};
 		85EECFC4C30A131F3D55686C /* Frameworks */ = {
@@ -847,12 +865,14 @@
 				844402B81F441DB200F5AFEE /* MineTableViewController.m in Sources */,
 				8444024A1F41A0E700F5AFEE /* LoginViewController.m in Sources */,
 				844402811F41B2B000F5AFEE /* NSDictionary+Custom.m in Sources */,
+				844402C81F44539700F5AFEE /* ZXCImagePicker.m in Sources */,
 				8444029A1F42CB6600F5AFEE /* RegisterViewController.m in Sources */,
 				8435E50B1F31726D00424E5E /* AppDelegate.m in Sources */,
 				8435E5B41F399C1E00424E5E /* CLLockLabel.m in Sources */,
 				8444023D1F4186E100F5AFEE /* MainViewController.m in Sources */,
 				844402461F418F1400F5AFEE /* QRTabbarController.m in Sources */,
 				844402851F41B2B000F5AFEE /* NSString+Custom.m in Sources */,
+				844402C51F44516100F5AFEE /* WeiXinPickView.m in Sources */,
 				8435E5B11F399C1E00424E5E /* CLLockNavVC.m in Sources */,
 				8435E5B01F399C1E00424E5E /* CoreLockConst.m in Sources */,
 				844402401F41874C00F5AFEE /* FinanceViewController.m in Sources */,
@@ -1022,6 +1042,7 @@
 				DEVELOPMENT_TEAM = ZK9A286AA6;
 				GCC_PREFIX_HEADER = "/Users/admin/个人资料/个人项目/Todo-New-Project/New-Project/qulicai/Headers/PrefixHeader.pch";
 				INFOPLIST_FILE = qulicai/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qurong.qulicai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1036,6 +1057,7 @@
 				DEVELOPMENT_TEAM = ZK9A286AA6;
 				GCC_PREFIX_HEADER = "/Users/admin/个人资料/个人项目/Todo-New-Project/New-Project/qulicai/Headers/PrefixHeader.pch";
 				INFOPLIST_FILE = qulicai/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qurong.qulicai;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>需要你的同意才能访问地理位置</string>
+	<key>NSCameraUsageDescription</key>
+	<string>需要你的同意才能访问你的相机</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>需要你的同意才能访问你的相册</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

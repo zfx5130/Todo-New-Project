@@ -9,8 +9,11 @@
 
 #import "SettingsTableViewController.h"
 #import "UIViewController+Addition.h"
+#import "ZXCImagePicker.h"
 
 @interface SettingsTableViewController ()
+
+@property (strong, nonatomic) ZXCImagePicker *imagePicker;
 
 @end
 
@@ -98,7 +101,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         case 1: {
             switch (indexPath.row) {
                 case 0: {
-                    [self showSuccessWithTitle:@"头像"];
+                    [self selectPhoto];
                 }
                     break;
                 case 1: {
@@ -140,6 +143,19 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
             break;
     }
 }
+
+#pragma mark - Private
+
+- (void)selectPhoto {
+    self.imagePicker = [[ZXCImagePicker alloc] init];
+    [self.imagePicker showImagePickerWithController:self];
+    //__weak typeof(self) weakSlef = self;
+    self.imagePicker.pickerBlock = ^(UIImage *image) {
+        //weakSlef.selectedImage = image;
+        NSLog(@"::::%@",image);
+    };
+}
+
 
 #pragma mark - Hanlders
 
