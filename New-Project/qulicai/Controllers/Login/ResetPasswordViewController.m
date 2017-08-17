@@ -35,6 +35,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self setupViews];
+    [self.passwordTextField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {

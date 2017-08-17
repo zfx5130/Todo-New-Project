@@ -57,6 +57,7 @@
 #pragma mark - Private
 
 - (void)setupViews {
+    [self.phoneTextField becomeFirstResponder];
     [self.view addTapGestureForDismissingKeyboard];
 }
 
