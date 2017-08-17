@@ -33,10 +33,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="修改昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgS-Xs-D19">
-                                            <rect key="frame" x="15" y="3" width="180" height="67"/>
+                                            <rect key="frame" x="15" y="0.0" width="180" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="180" id="IOp-2W-w8T"/>
-                                                <constraint firstAttribute="height" constant="67" id="MWV-9A-r7T"/>
+                                                <constraint firstAttribute="height" constant="70" id="MWV-9A-r7T"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="26"/>
                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

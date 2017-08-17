@@ -12,6 +12,7 @@
 #import "ZXCImagePicker.h"
 #import "UsernameSettingViewController.h"
 #import "UserBankCartViewController.h"
+#import "AccountCertificationViewController.h"
 
 @interface SettingsTableViewController ()
 
@@ -122,7 +123,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                 }
                     break;
                 case 1: {
-                    [self showSuccessWithTitle:@"实名认证"];
+                    [self accountCertify];
                 }
                     break;
                 case 2: {
@@ -147,6 +148,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 #pragma mark - Private
+
+- (void)accountCertify {
+    AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
+    [self.navigationController pushViewController:accountController
+                                         animated:YES];
+}
 
 - (void)bankInfo {
     UserBankCartViewController *bankController = [[UserBankCartViewController alloc] init];
