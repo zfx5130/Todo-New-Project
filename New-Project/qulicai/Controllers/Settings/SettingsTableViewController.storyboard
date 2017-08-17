@@ -166,8 +166,8 @@
                                                         <constraint firstAttribute="width" constant="8" id="pBs-6P-LS7"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1张" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0VN-9b-NBE">
-                                                    <rect key="frame" x="319" y="0.0" width="21" height="44"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无银行卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0VN-9b-NBE">
+                                                    <rect key="frame" x="268.5" y="0.0" width="71.5" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="180" id="s3N-Zg-QeH"/>
                                                     </constraints>

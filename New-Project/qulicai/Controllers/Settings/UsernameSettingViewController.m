@@ -77,7 +77,7 @@
             [self showErrorAlert];
         } else {
             [self showSuccessWithTitle:@"昵称修改成功"];
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            [self.navigationController popViewControllerAnimated:YES];
         }
     });
 

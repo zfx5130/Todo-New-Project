@@ -249,7 +249,6 @@ UIAlertViewDelegate>
 - (void)navigationController:(UINavigationController *)navigationController
       willShowViewController:(UIViewController *)viewController
                     animated:(BOOL)animated {
-    [viewController updateNavigationAppearanceWithType:NavigationAppearanceTypeBlue];
 }
 
 #pragma mark - UIImagePickerControllerDelegate
@@ -269,7 +268,7 @@ didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
             self.pickerBlock(image);
         }
     } else {
-        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"NOTIFY_MESSAGE_PICK_PIC_INVALID_FORMAT", @"NOTIFY_MESSAGE_PICK_PIC_INVALID_FORMAT")];
+        [SVProgressHUD showErrorWithStatus:@"不支持此类型"];
     }
     [picker dismissViewControllerAnimated:YES
                                completion:nil];

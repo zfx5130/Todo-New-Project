@@ -11,6 +11,7 @@
 #import "UIViewController+Addition.h"
 #import "ZXCImagePicker.h"
 #import "UsernameSettingViewController.h"
+#import "UserBankCartViewController.h"
 
 @interface SettingsTableViewController ()
 
@@ -117,7 +118,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         case 2: {
             switch (indexPath.row) {
                 case 0: {
-                    [self showSuccessWithTitle:@"银行卡"];
+                    [self bankInfo];
                 }
                     break;
                 case 1: {
@@ -146,6 +147,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 #pragma mark - Private
+
+- (void)bankInfo {
+    UserBankCartViewController *bankController = [[UserBankCartViewController alloc] init];
+    [self.navigationController pushViewController:bankController
+                                         animated:YES];
+}
 
 - (void)selectPhoto {
     self.imagePicker = [[ZXCImagePicker alloc] init];
