@@ -51,7 +51,7 @@
     if ([viewController.childViewControllers.firstObject isKindOfClass:[MineTableViewController class]]) {
         
         //登录逻辑
-        BOOL isLogin = NO;
+        BOOL isLogin = YES;
         if (isLogin) {
             NSLog(@"登录成功");
         } else {

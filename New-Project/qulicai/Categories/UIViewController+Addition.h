@@ -14,4 +14,8 @@
 -(void)setupNavigationItemRight:(UIImage *)image;
 -(void)setupNavigationItemRights:(NSArray *)images;
 
+
+-(void)leftBarButtonAction;
+-(void)rightBarButtonAction;
+
 @end

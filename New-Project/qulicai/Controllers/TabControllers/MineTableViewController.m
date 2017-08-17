@@ -23,6 +23,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *vipCartInfoLabel;
 
+@property (strong, nonatomic) UIBarButtonItem *messageItem;
+
 
 @end
 
@@ -37,6 +39,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,9 +60,9 @@
                                            withString:@"****"];
         self.userAccountLabel.text = str;
     }
-    UIBarButtonItem *messageItem = self.navigationItem.rightBarButtonItems.lastObject;
-    messageItem.badgeCenterOffset = CGPointMake(31, 7);
-    [messageItem showBadge];
+    self.messageItem = self.navigationItem.rightBarButtonItems.lastObject;
+    self.messageItem.badgeCenterOffset = CGPointMake(31, 3);
+    [self.messageItem showBadge];
 }
 
 #pragma mark - TableViewDataSource

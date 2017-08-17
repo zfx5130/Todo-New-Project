@@ -9,6 +9,7 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#import "UINavigationController+FDFullscreenPopGesture.h"
 #import "Macro.h"
 #import "UIView+Custom.h"
 #import "UIViewController+Custom.h"

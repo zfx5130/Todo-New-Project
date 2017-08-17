@@ -71,6 +71,7 @@
 		844402C81F44539700F5AFEE /* ZXCImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402C71F44539700F5AFEE /* ZXCImagePicker.m */; };
 		844402CC1F44590100F5AFEE /* UsernameSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402CA1F44590100F5AFEE /* UsernameSettingViewController.m */; };
 		844402CD1F44590100F5AFEE /* UsernameSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844402CB1F44590100F5AFEE /* UsernameSettingViewController.xib */; };
+		84825E061F453648006A921F /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E051F453648006A921F /* UINavigationController+FDFullscreenPopGesture.m */; };
 		CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */; };
 /* End PBXBuildFile section */
 
@@ -217,6 +218,8 @@
 		844402C91F44590100F5AFEE /* UsernameSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsernameSettingViewController.h; sourceTree = "<group>"; };
 		844402CA1F44590100F5AFEE /* UsernameSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsernameSettingViewController.m; sourceTree = "<group>"; };
 		844402CB1F44590100F5AFEE /* UsernameSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UsernameSettingViewController.xib; sourceTree = "<group>"; };
+		84825E041F453648006A921F /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		84825E051F453648006A921F /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qulicai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -426,6 +429,7 @@
 		8435E5031F316E9200424E5E /* Venders */ = {
 			isa = PBXGroup;
 			children = (
+				84825E031F453648006A921F /* FDFullscreenPopGesture */,
 				844402C21F44516100F5AFEE /* WeiXinPickView */,
 				8435E5941F399C1E00424E5E /* CoreLock */,
 				8435E5901F399BFA00424E5E /* TDTouchID */,
@@ -640,6 +644,15 @@
 				844402C41F44516100F5AFEE /* WeiXinPickView.m */,
 			);
 			path = WeiXinPickView;
+			sourceTree = "<group>";
+		};
+		84825E031F453648006A921F /* FDFullscreenPopGesture */ = {
+			isa = PBXGroup;
+			children = (
+				84825E041F453648006A921F /* UINavigationController+FDFullscreenPopGesture.h */,
+				84825E051F453648006A921F /* UINavigationController+FDFullscreenPopGesture.m */,
+			);
+			path = FDFullscreenPopGesture;
 			sourceTree = "<group>";
 		};
 		85EECFC4C30A131F3D55686C /* Frameworks */ = {
@@ -883,6 +896,7 @@
 				844402851F41B2B000F5AFEE /* NSString+Custom.m in Sources */,
 				844402C51F44516100F5AFEE /* WeiXinPickView.m in Sources */,
 				8435E5B11F399C1E00424E5E /* CLLockNavVC.m in Sources */,
+				84825E061F453648006A921F /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				8435E5B01F399C1E00424E5E /* CoreLockConst.m in Sources */,
 				844402401F41874C00F5AFEE /* FinanceViewController.m in Sources */,
 				8444029F1F42CB9400F5AFEE /* ForgetPasswordViewController.m in Sources */,
