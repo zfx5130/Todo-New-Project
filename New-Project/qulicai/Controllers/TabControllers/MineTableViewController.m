@@ -238,7 +238,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.isLogin) {
         [self showSuccessWithTitle:@"消息开发中"];
     } else {
-        [self isLogin];
+        [self login];
     }
 }
 
@@ -246,7 +246,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.isLogin) {
         [self showSuccessWithTitle:@"明细开发中"];
     } else {
-        [self isLogin];
+        [self login];
     }
 }
 
