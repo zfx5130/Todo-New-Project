@@ -13,6 +13,7 @@
 #import "UsernameSettingViewController.h"
 #import "UserBankCartViewController.h"
 #import "AccountCertificationViewController.h"
+#import "ModifyLoginPwViewController.h"
 
 @interface SettingsTableViewController ()
 
@@ -127,7 +128,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                 }
                     break;
                 case 2: {
-                    [self showSuccessWithTitle:@"修改登录密码"];
+                    [self modifyLoginPassword];
                 }
                     break;
                 case 3: {
@@ -148,6 +149,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 #pragma mark - Private
+
+- (void)modifyLoginPassword {
+    ModifyLoginPwViewController *modifyController = [[ModifyLoginPwViewController alloc] init];
+    [self.navigationController pushViewController:modifyController
+                                         animated:YES];
+}
 
 - (void)accountCertify {
     AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];

@@ -76,6 +76,8 @@
 		84825E0B1F456330006A921F /* UserBankCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E091F456330006A921F /* UserBankCartViewController.xib */; };
 		84825E0F1F456E2C006A921F /* AccountCertificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E0D1F456E2C006A921F /* AccountCertificationViewController.m */; };
 		84825E101F456E2C006A921F /* AccountCertificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E0E1F456E2C006A921F /* AccountCertificationViewController.xib */; };
+		84825E141F457468006A921F /* ModifyLoginPwViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E121F457468006A921F /* ModifyLoginPwViewController.m */; };
+		84825E151F457468006A921F /* ModifyLoginPwViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E131F457468006A921F /* ModifyLoginPwViewController.xib */; };
 		CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */; };
 /* End PBXBuildFile section */
 
@@ -230,6 +232,9 @@
 		84825E0C1F456E2C006A921F /* AccountCertificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountCertificationViewController.h; sourceTree = "<group>"; };
 		84825E0D1F456E2C006A921F /* AccountCertificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountCertificationViewController.m; sourceTree = "<group>"; };
 		84825E0E1F456E2C006A921F /* AccountCertificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountCertificationViewController.xib; sourceTree = "<group>"; };
+		84825E111F457468006A921F /* ModifyLoginPwViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyLoginPwViewController.h; sourceTree = "<group>"; };
+		84825E121F457468006A921F /* ModifyLoginPwViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyLoginPwViewController.m; sourceTree = "<group>"; };
+		84825E131F457468006A921F /* ModifyLoginPwViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModifyLoginPwViewController.xib; sourceTree = "<group>"; };
 		ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qulicai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -647,6 +652,9 @@
 				84825E0C1F456E2C006A921F /* AccountCertificationViewController.h */,
 				84825E0D1F456E2C006A921F /* AccountCertificationViewController.m */,
 				84825E0E1F456E2C006A921F /* AccountCertificationViewController.xib */,
+				84825E111F457468006A921F /* ModifyLoginPwViewController.h */,
+				84825E121F457468006A921F /* ModifyLoginPwViewController.m */,
+				84825E131F457468006A921F /* ModifyLoginPwViewController.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -796,6 +804,7 @@
 				8444024B1F41A0E700F5AFEE /* LoginViewController.xib in Resources */,
 				844402C11F443FAE00F5AFEE /* SettingsTableViewController.storyboard in Resources */,
 				844402CD1F44590100F5AFEE /* UsernameSettingViewController.xib in Resources */,
+				84825E151F457468006A921F /* ModifyLoginPwViewController.xib in Resources */,
 				8435E4C01F316BCE00424E5E /* LaunchScreen.storyboard in Resources */,
 				8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */,
 				844402B01F43F9F600F5AFEE /* ResetPasswordViewController.xib in Resources */,
@@ -893,6 +902,7 @@
 				844402871F41B2B000F5AFEE /* UIColor+Custom.m in Sources */,
 				8444028F1F41B2B000F5AFEE /* UIScrollView+Custom.m in Sources */,
 				844402901F41B2B000F5AFEE /* UITableView+Custom.m in Sources */,
+				84825E141F457468006A921F /* ModifyLoginPwViewController.m in Sources */,
 				844402AA1F42FC8100F5AFEE /* QRWebViewController.m in Sources */,
 				844402931F41B2B000F5AFEE /* UIView+Custom.m in Sources */,
 				844402821F41B2B000F5AFEE /* NSNumber+Custom.m in Sources */,
