@@ -100,7 +100,7 @@
                                             </constraints>
                                         </view>
                                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rk9-qH-BXb">
-                                            <rect key="frame" x="30" y="200" width="315" height="40"/>
+                                            <rect key="frame" x="30" y="175" width="315" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="0mx-hw-Gwo"/>
                                             </constraints>
@@ -174,7 +174,7 @@
                                         <constraint firstAttribute="bottom" secondItem="4Ix-Vw-CFs" secondAttribute="bottom" constant="-50" id="HeH-PY-eZj"/>
                                         <constraint firstAttribute="trailing" secondItem="NeZ-A4-jGN" secondAttribute="trailing" constant="15" id="Ifx-5l-97d"/>
                                         <constraint firstItem="rk9-qH-BXb" firstAttribute="leading" secondItem="kP9-n2-EqF" secondAttribute="leading" constant="30" id="OLS-DR-o6I"/>
-                                        <constraint firstItem="rk9-qH-BXb" firstAttribute="top" secondItem="Wam-Hm-kKh" secondAttribute="bottom" constant="155" id="QBO-La-4yB"/>
+                                        <constraint firstItem="rk9-qH-BXb" firstAttribute="top" secondItem="Wam-Hm-kKh" secondAttribute="bottom" constant="130" id="QBO-La-4yB"/>
                                         <constraint firstItem="NeZ-A4-jGN" firstAttribute="leading" secondItem="kP9-n2-EqF" secondAttribute="leading" constant="15" id="YVI-gu-BHd"/>
                                         <constraint firstAttribute="trailing" secondItem="rk9-qH-BXb" secondAttribute="trailing" constant="30" id="b99-LX-8MF"/>
                                         <constraint firstItem="4Ix-Vw-CFs" firstAttribute="leading" secondItem="kP9-n2-EqF" secondAttribute="leading" id="g0b-ht-9zy"/>
