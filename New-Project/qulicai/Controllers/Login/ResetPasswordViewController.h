@@ -10,4 +10,6 @@
 
 @interface ResetPasswordViewController : UIViewController
 
+@property (assign, nonatomic) BOOL isModifyPW;
+
 @end

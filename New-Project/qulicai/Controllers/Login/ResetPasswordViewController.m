@@ -7,6 +7,7 @@
 //
 
 #import "ResetPasswordViewController.h"
+#import "SettingsTableViewController.h"
 
 @interface ResetPasswordViewController ()
 <UITextViewDelegate>
@@ -84,7 +85,16 @@
             [self showErrorAlert];
         } else {
             [self showSuccessWithTitle:@"密码修改成功"];
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            if (self.isModifyPW) {
+                for( UIViewController *controller in self.navigationController.viewControllers ) {
+                    if( [controller isKindOfClass:[SettingsTableViewController class]] ) {
+                        [self.navigationController popToViewController:controller animated:YES];
+                        return ;
+                    }
+                }
+            } else {
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            }
         }
     });
 }

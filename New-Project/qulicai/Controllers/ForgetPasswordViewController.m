@@ -111,6 +111,7 @@
         } else {
             //下一步操作
             ResetPasswordViewController *resetController = [[ResetPasswordViewController alloc] init];
+            resetController.isModifyPW = self.isModifyPW;
             [self.navigationController pushViewController:resetController
                                                  animated:YES];
         }
