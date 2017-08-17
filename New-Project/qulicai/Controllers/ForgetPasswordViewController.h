@@ -10,4 +10,7 @@
 
 @interface ForgetPasswordViewController : UIViewController
 
+//从修改登录密码页面跳转  有导航条
+@property (assign, nonatomic) BOOL isModifyPW;
+
 @end

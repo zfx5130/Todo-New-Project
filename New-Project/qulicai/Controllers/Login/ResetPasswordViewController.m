@@ -39,6 +39,7 @@
 #pragma mark - Private
 
 - (void)setupViews {
+    self.navigationController.navigationBarHidden = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self.view addTapGestureForDismissingKeyboard];
 }
@@ -77,8 +78,8 @@
 
     [self showSVProgressHUD];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [SVProgressHUD dismiss];
         if (self.passwordTextField.text.length < 8) {
-            [SVProgressHUD dismiss];
             self.alertErrorLabel.text = @"密码修改失败";
             [self showErrorAlert];
         } else {

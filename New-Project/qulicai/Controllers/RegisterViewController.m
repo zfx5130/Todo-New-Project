@@ -50,6 +50,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
@@ -89,8 +90,8 @@
     
     [self showSVProgressHUD];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [SVProgressHUD dismiss];
         if (self.verifyTextField.text.length < 4) {
-            [SVProgressHUD dismiss];
             self.errorAlertLabel.text = @"验证码不正确";
             [self showErrorAlert];
         } else {

@@ -205,16 +205,32 @@
                                                 <constraint firstItem="3f5-Ux-Wqq" firstAttribute="top" secondItem="GC0-tA-SZs" secondAttribute="top" id="y30-8S-1ru"/>
                                             </constraints>
                                         </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hze-US-Yn1">
+                                            <rect key="frame" x="267" y="109" width="88" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="88" id="5oG-rR-3EZ"/>
+                                                <constraint firstAttribute="height" constant="30" id="7fb-2r-pcw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <state key="normal" title="忘记原密码？">
+                                                <color key="titleColor" red="0.4431372549" green="0.68627450980000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="forgerPassword:" destination="-1" eventType="touchUpInside" id="g0f-NH-oYk"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="lwU-kB-KlE" firstAttribute="leading" secondItem="DKZ-pC-J42" secondAttribute="leading" constant="30" id="1P0-PH-GPr"/>
                                         <constraint firstAttribute="trailing" secondItem="BAj-5z-brh" secondAttribute="trailing" id="4tb-sC-YXd"/>
+                                        <constraint firstAttribute="trailing" secondItem="Hze-US-Yn1" secondAttribute="trailing" constant="20" id="Jfw-fU-F82"/>
                                         <constraint firstAttribute="trailing" secondItem="7wd-Ue-dme" secondAttribute="trailing" constant="15" id="K77-y0-rPq"/>
                                         <constraint firstItem="7wd-Ue-dme" firstAttribute="top" secondItem="BAj-5z-brh" secondAttribute="bottom" constant="2" id="Luk-1T-p8F"/>
                                         <constraint firstAttribute="trailing" secondItem="lwU-kB-KlE" secondAttribute="trailing" constant="30" id="Rj8-Pk-iNX"/>
                                         <constraint firstItem="BAj-5z-brh" firstAttribute="leading" secondItem="DKZ-pC-J42" secondAttribute="leading" id="Rqh-nK-ww4"/>
                                         <constraint firstItem="lwU-kB-KlE" firstAttribute="top" secondItem="BAj-5z-brh" secondAttribute="bottom" constant="110" id="WDf-Cw-fq5"/>
                                         <constraint firstItem="BAj-5z-brh" firstAttribute="top" secondItem="DKZ-pC-J42" secondAttribute="top" id="eZz-8S-zBL"/>
+                                        <constraint firstItem="Hze-US-Yn1" firstAttribute="top" secondItem="7wd-Ue-dme" secondAttribute="bottom" constant="2" id="gDw-SZ-HFp"/>
                                         <constraint firstItem="GC0-tA-SZs" firstAttribute="leading" secondItem="DKZ-pC-J42" secondAttribute="leading" id="jUj-OS-GYP"/>
                                         <constraint firstItem="7wd-Ue-dme" firstAttribute="leading" secondItem="DKZ-pC-J42" secondAttribute="leading" constant="15" id="nah-Pj-WmM"/>
                                         <constraint firstAttribute="trailing" secondItem="GC0-tA-SZs" secondAttribute="trailing" id="peF-fQ-eBW"/>
@@ -251,6 +267,7 @@
                 <constraint firstItem="Rkk-LQ-NFM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="KFR-PF-A80"/>
                 <constraint firstAttribute="trailing" secondItem="Rkk-LQ-NFM" secondAttribute="trailing" id="YSR-40-Xqk"/>
             </constraints>
+            <point key="canvasLocation" x="4.5" y="59.5"/>
         </view>
     </objects>
     <resources>

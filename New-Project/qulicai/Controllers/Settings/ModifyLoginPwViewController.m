@@ -7,6 +7,7 @@
 //
 
 #import "ModifyLoginPwViewController.h"
+#import "ForgetPasswordViewController.h"
 
 @interface ModifyLoginPwViewController ()
 <UITextViewDelegate>
@@ -137,6 +138,15 @@
 - (IBAction)save:(UIButton *)sender {
     [self save];
 }
+
+- (IBAction)forgerPassword:(UIButton *)sender {
+    [self.view endEditing:YES];
+    ForgetPasswordViewController *forgetPasswordController = [[ForgetPasswordViewController alloc] init];
+    forgetPasswordController.isModifyPW = YES;
+    [self.navigationController pushViewController:forgetPasswordController
+                                         animated:YES];
+}
+
 
 - (void)leftBarButtonAction {
     [self.navigationController popViewControllerAnimated:YES];

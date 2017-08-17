@@ -27,6 +27,13 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *alertErrorLabel;
 
+
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+
+//130 70
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headViewHeightaConstraint;
+
+
 @end
 
 @implementation ForgetPasswordViewController
@@ -42,6 +49,10 @@
     [self setupViews];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -51,6 +62,12 @@
 - (void)setupViews {
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self.view addTapGestureForDismissingKeyboard];
+    self.headViewHeightaConstraint.constant = self.isModifyPW ? 70.0f : 130.0f;
+    self.backButton.hidden = self.isModifyPW ? YES : NO;
+    if (self.isModifyPW) {
+        [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
+    }
+    self.navigationController.navigationBarHidden =  self.isModifyPW ? NO : YES;
 }
 
 - (void)updateResetButtonStatus {
@@ -157,6 +174,10 @@
 
 - (IBAction)errorDismiss:(UIButton *)sender {
     [self dismissErrorAlert];
+}
+
+- (void)leftBarButtonAction {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
