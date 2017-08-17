@@ -15,6 +15,7 @@
 #import "AccountCertificationViewController.h"
 #import "ModifyLoginPwViewController.h"
 #import "LoginViewController.h"
+#import "ModifyTradingPdViewController.h"
 
 @interface SettingsTableViewController ()
 
@@ -133,7 +134,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                 }
                     break;
                 case 3: {
-                    [self showSuccessWithTitle:@"修改交易密码"];
+                    [self modifyTradingPassword];
                 }
                     break;
                 default:
@@ -151,6 +152,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 #pragma mark - Private
 
+- (void)modifyTradingPassword {
+    ModifyTradingPdViewController *modifyController = [[ModifyTradingPdViewController alloc] init];
+    [self.navigationController pushViewController:modifyController
+                                         animated:YES];
+}
+
 - (void)login {
     LoginViewController *loginViewController = [[LoginViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
@@ -162,7 +169,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)outLogin {
     UserDefaultsRemove(@"login");
     [self.navigationController popToRootViewControllerAnimated:NO];
-    [self login];
 }
 
 - (void)modifyLoginPassword {

@@ -12,5 +12,7 @@
 
 //从修改登录密码页面跳转  有导航条
 @property (assign, nonatomic) BOOL isModifyPW;
+//是否是修改交易密码
+@property (assign, nonatomic) BOOL isTradingPw;
 
 @end

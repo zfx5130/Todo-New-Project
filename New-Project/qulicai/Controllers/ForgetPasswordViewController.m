@@ -33,6 +33,7 @@
 //130 70
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headViewHeightaConstraint;
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 
@@ -60,6 +61,8 @@
 #pragma mark - Private
 
 - (void)setupViews {
+    
+    self.titleLabel.text = self.isTradingPw ? @"找回交易密码" : @"找回登录密码";
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self.view addTapGestureForDismissingKeyboard];
     self.headViewHeightaConstraint.constant = self.isModifyPW ? 70.0f : 130.0f;
@@ -68,6 +71,7 @@
         [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
     }
     self.navigationController.navigationBarHidden =  self.isModifyPW ? NO : YES;
+    
 }
 
 - (void)updateResetButtonStatus {
@@ -105,6 +109,7 @@
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [SVProgressHUD dismiss];
+        //交易密码 和 登录密码 两个接口
         if (self.verifyTextField.text.length < 4) {
             self.alertErrorLabel.text = @"验证码不正确";
             [self showErrorAlert];

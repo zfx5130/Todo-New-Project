@@ -78,6 +78,8 @@
 		84825E101F456E2C006A921F /* AccountCertificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E0E1F456E2C006A921F /* AccountCertificationViewController.xib */; };
 		84825E141F457468006A921F /* ModifyLoginPwViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E121F457468006A921F /* ModifyLoginPwViewController.m */; };
 		84825E151F457468006A921F /* ModifyLoginPwViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E131F457468006A921F /* ModifyLoginPwViewController.xib */; };
+		84825E191F458F02006A921F /* ModifyTradingPdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E171F458F02006A921F /* ModifyTradingPdViewController.m */; };
+		84825E1A1F458F02006A921F /* ModifyTradingPdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E181F458F02006A921F /* ModifyTradingPdViewController.xib */; };
 		CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */; };
 /* End PBXBuildFile section */
 
@@ -235,6 +237,9 @@
 		84825E111F457468006A921F /* ModifyLoginPwViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyLoginPwViewController.h; sourceTree = "<group>"; };
 		84825E121F457468006A921F /* ModifyLoginPwViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyLoginPwViewController.m; sourceTree = "<group>"; };
 		84825E131F457468006A921F /* ModifyLoginPwViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModifyLoginPwViewController.xib; sourceTree = "<group>"; };
+		84825E161F458F02006A921F /* ModifyTradingPdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyTradingPdViewController.h; sourceTree = "<group>"; };
+		84825E171F458F02006A921F /* ModifyTradingPdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyTradingPdViewController.m; sourceTree = "<group>"; };
+		84825E181F458F02006A921F /* ModifyTradingPdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModifyTradingPdViewController.xib; sourceTree = "<group>"; };
 		ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qulicai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -655,6 +660,9 @@
 				84825E111F457468006A921F /* ModifyLoginPwViewController.h */,
 				84825E121F457468006A921F /* ModifyLoginPwViewController.m */,
 				84825E131F457468006A921F /* ModifyLoginPwViewController.xib */,
+				84825E161F458F02006A921F /* ModifyTradingPdViewController.h */,
+				84825E171F458F02006A921F /* ModifyTradingPdViewController.m */,
+				84825E181F458F02006A921F /* ModifyTradingPdViewController.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -804,6 +812,7 @@
 				8444024B1F41A0E700F5AFEE /* LoginViewController.xib in Resources */,
 				844402C11F443FAE00F5AFEE /* SettingsTableViewController.storyboard in Resources */,
 				844402CD1F44590100F5AFEE /* UsernameSettingViewController.xib in Resources */,
+				84825E1A1F458F02006A921F /* ModifyTradingPdViewController.xib in Resources */,
 				84825E151F457468006A921F /* ModifyLoginPwViewController.xib in Resources */,
 				8435E4C01F316BCE00424E5E /* LaunchScreen.storyboard in Resources */,
 				8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */,
@@ -923,6 +932,7 @@
 				8444023D1F4186E100F5AFEE /* MainViewController.m in Sources */,
 				844402461F418F1400F5AFEE /* QRTabbarController.m in Sources */,
 				844402851F41B2B000F5AFEE /* NSString+Custom.m in Sources */,
+				84825E191F458F02006A921F /* ModifyTradingPdViewController.m in Sources */,
 				844402C51F44516100F5AFEE /* WeiXinPickView.m in Sources */,
 				8435E5B11F399C1E00424E5E /* CLLockNavVC.m in Sources */,
 				84825E061F453648006A921F /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
