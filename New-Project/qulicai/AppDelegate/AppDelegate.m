@@ -31,6 +31,7 @@
     [self configQRNetwork];
     [self testNetwork];
     [self setupGlobalUI];
+    UserDefaultsRemove(@"login");
     return YES;
 }
 

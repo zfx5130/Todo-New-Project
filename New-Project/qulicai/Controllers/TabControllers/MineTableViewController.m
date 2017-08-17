@@ -10,6 +10,7 @@
 #import "UIViewController+Addition.h"
 #import <WZLBadge/WZLBadgeImport.h>
 #import "SettingsTableViewController.h"
+#import "LoginViewController.h"
 
 @interface MineTableViewController ()
 
@@ -19,11 +20,23 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *vipTagLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *vipTagBgLabel;
+
 @property (weak, nonatomic) IBOutlet UIImageView *vipBgImageView;
 
 @property (weak, nonatomic) IBOutlet UILabel *vipCartInfoLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *goLoginButton;
+
 @property (strong, nonatomic) UIBarButtonItem *messageItem;
+
+@property (assign, nonatomic) BOOL isLogin;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *accountSecurityLabel;
+
+//福利
+@property (weak, nonatomic) IBOutlet UILabel *welfareLabel;
 
 
 @end
@@ -39,6 +52,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self renderUI];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -50,6 +64,22 @@
 }
 
 #pragma mark - Priavte
+
+- (void)renderUI {
+    NSString *login = UserDefaultsValue(@"login");
+    BOOL isLogin = [login isEqualToString:@"YES"];
+    self.isLogin = isLogin;
+    NSString *username = UserDefaultsValue(@"username");
+    self.userAccountLabel.text =
+    self.isLogin ? username : @"未登录";
+    self.vipTagLabel.hidden = !self.isLogin;
+    self.vipTagBgLabel.hidden = !self.isLogin;
+    self.vipCartInfoLabel.hidden = !self.isLogin;
+    self.goLoginButton.hidden = !self.vipCartInfoLabel.hidden;
+    self.vipBgImageView.image = self.isLogin ? [UIImage imageNamed:@"me_card_bg"] : [UIImage imageNamed:@"me_cart_unlogin_bg_image"];
+    self.accountSecurityLabel.hidden = self.isLogin ? NO : YES;
+    self.welfareLabel.hidden = self.isLogin ? NO : YES;
+}
 
 - (void)setupView {
     self.navigationController.navigationBar.translucent = NO;
@@ -119,19 +149,35 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         case 1: {
             switch (indexPath.row) {
                 case 0: {
-                    [self showSuccessWithTitle:@"总资产开发中"];
+                    if (self.isLogin) {
+                        [self showSuccessWithTitle:@"总资产开发中"];
+                    } else {
+                        [self login];
+                    }
                 }
                     break;
                 case 1: {
-                    [self showSuccessWithTitle:@"理财推手开发中"];
+                    if (self.isLogin) {
+                        [self showSuccessWithTitle:@"理财推手开发中"];
+                    } else {
+                        [self login];
+                    }
                 }
                     break;
                 case 2: {
-                    [self showSuccessWithTitle:@"我的福利开发中"];
+                    if (self.isLogin) {
+                        [self showSuccessWithTitle:@"我的福利开发中"];
+                    } else {
+                        [self login];
+                    }
                 }
                     break;
                 case 3: {
-                    [self showSuccessWithTitle:@"购买记录开发中"];
+                    if (self.isLogin) {
+                        [self showSuccessWithTitle:@"购买记录开发中"];
+                    } else {
+                        [self login];
+                    }
                 }
                     break;
                 default:
@@ -150,12 +196,16 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                 }
                     break;
                 case 2: {
-                    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:kStoryBoardIdSettingsViewController
-                                                                         bundle:nil];
-                    SettingsTableViewController *settingsController = [storyBoard instantiateViewControllerWithIdentifier:kStoryBoardIdSettingsViewController];
-                    settingsController.hidesBottomBarWhenPushed = YES;
-                    [self.navigationController pushViewController:settingsController
-                                                         animated:YES];
+                    if (self.isLogin) {
+                        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:kStoryBoardIdSettingsViewController
+                                                                             bundle:nil];
+                        SettingsTableViewController *settingsController = [storyBoard instantiateViewControllerWithIdentifier:kStoryBoardIdSettingsViewController];
+                        settingsController.hidesBottomBarWhenPushed = YES;
+                        [self.navigationController pushViewController:settingsController
+                                                             animated:YES];
+                    } else {
+                        [self login];
+                    }
                     
                 }
                     break;
@@ -171,12 +221,33 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 #pragma mark - Handlers
 
+
+- (void)login {
+    LoginViewController *loginViewController = [[LoginViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    [self presentViewController:navigationController
+                       animated:YES
+                     completion:nil];
+}
+- (IBAction)loginButtonWasPressed:(UIButton *)sender {
+    [self login];
+}
+
+
 - (void)rightBarButtonAction0 {
-    [self showSuccessWithTitle:@"消息开发中"];
+    if (self.isLogin) {
+        [self showSuccessWithTitle:@"消息开发中"];
+    } else {
+        [self isLogin];
+    }
 }
 
 - (void)rightBarButtonAction1 {
-    [self showSuccessWithTitle:@"明细开发中"];
+    if (self.isLogin) {
+        [self showSuccessWithTitle:@"明细开发中"];
+    } else {
+        [self isLogin];
+    }
 }
 
 

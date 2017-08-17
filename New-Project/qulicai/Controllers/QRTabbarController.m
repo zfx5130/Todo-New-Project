@@ -8,7 +8,6 @@
 
 #import "QRTabbarController.h"
 #import "MineTableViewController.h"
-#import "LoginViewController.h"
 
 @interface QRTabbarController () <UITabBarControllerDelegate>
 
@@ -36,13 +35,6 @@
     self.delegate = self;
 }
 
-- (void)login {
-    LoginViewController *loginViewController = [[LoginViewController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
-    [self presentViewController:navigationController
-                       animated:YES
-                     completion:nil];
-}
 
 #pragma mark - UITabbarControllerDelegate
 
@@ -55,7 +47,7 @@
         if (isLogin) {
             NSLog(@"登录成功");
         } else {
-            [self login];
+
         }
         
     }

@@ -81,7 +81,12 @@
         if (self.passwordTextField.text.length < 6) {
             [self showErrorAlert];
         } else {
+            UserDefaultsSave(@"username", self.phoneTextField.text);
+            UserDefaultsSave(@"password", self.passwordTextField.text);
+            UserDefaultsSave(@"login", @"YES");
             [self showSuccessWithTitle:@"登录成功"];
+            [self dismissViewControllerAnimated:YES
+                                     completion:nil];
         }
     });
 }

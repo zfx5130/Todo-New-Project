@@ -64,7 +64,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me_card_bg" translatesAutoresizingMaskIntoConstraints="NO" id="LV8-H1-2Vm">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me_cart_unlogin_bg_image" translatesAutoresizingMaskIntoConstraints="NO" id="LV8-H1-2Vm">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="200"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me_head_image" translatesAutoresizingMaskIntoConstraints="NO" id="VEf-3c-hMw">
@@ -79,8 +79,8 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当月可免费提款4次" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7S-uQ-yOE">
-                                                    <rect key="frame" x="234" y="159" width="106" height="21"/>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当月可免费提款4次" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7S-uQ-yOE">
+                                                    <rect key="frame" x="234" y="155" width="106" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="mdf-Es-pYh"/>
                                                         <constraint firstAttribute="width" constant="106" id="yS7-ZU-Erc"/>
@@ -99,19 +99,32 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card_tag_bg_image" translatesAutoresizingMaskIntoConstraints="NO" id="7xX-3i-Ceg">
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card_tag_bg_image" translatesAutoresizingMaskIntoConstraints="NO" id="7xX-3i-Ceg">
                                                     <rect key="frame" x="194" y="33" width="60" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="JOe-kt-Feb"/>
                                                         <constraint firstAttribute="height" constant="14" id="Pgw-hP-gyQ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="普卡会员" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5O-qL-Aim">
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="普卡会员" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5O-qL-Aim">
                                                     <rect key="frame" x="194" y="33" width="60" height="14"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" red="0.4431372549" green="0.68627450980000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOe-A2-lIy">
+                                                    <rect key="frame" x="283" y="155" width="57" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="57" id="YgM-Hm-Lkc"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <state key="normal" title="前往登录&gt;">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="loginButtonWasPressed:" destination="uha-je-OtP" eventType="touchUpInside" id="fjP-jV-6w1"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="7xX-3i-Ceg" firstAttribute="centerY" secondItem="BQU-ea-oUo" secondAttribute="centerY" id="35B-cz-Hqp"/>
@@ -124,8 +137,11 @@
                                                 <constraint firstItem="o5O-qL-Aim" firstAttribute="centerY" secondItem="7xX-3i-Ceg" secondAttribute="centerY" id="ZgZ-uC-0Aj"/>
                                                 <constraint firstItem="b7S-uQ-yOE" firstAttribute="trailing" secondItem="LV8-H1-2Vm" secondAttribute="trailing" constant="-20" id="baG-y0-ZlU"/>
                                                 <constraint firstAttribute="bottom" secondItem="LV8-H1-2Vm" secondAttribute="bottom" id="hHB-eA-Rb2"/>
-                                                <constraint firstItem="b7S-uQ-yOE" firstAttribute="bottom" secondItem="LV8-H1-2Vm" secondAttribute="bottom" constant="-20" id="haS-Tp-mrV"/>
+                                                <constraint firstItem="b7S-uQ-yOE" firstAttribute="bottom" secondItem="LV8-H1-2Vm" secondAttribute="bottom" constant="-24" id="haS-Tp-mrV"/>
+                                                <constraint firstItem="IOe-A2-lIy" firstAttribute="height" secondItem="b7S-uQ-yOE" secondAttribute="height" id="ham-ta-4hz"/>
                                                 <constraint firstItem="BQU-ea-oUo" firstAttribute="centerY" secondItem="VEf-3c-hMw" secondAttribute="centerY" id="rtR-y5-ZKa"/>
+                                                <constraint firstItem="IOe-A2-lIy" firstAttribute="centerY" secondItem="b7S-uQ-yOE" secondAttribute="centerY" id="s1c-dn-RDf"/>
+                                                <constraint firstAttribute="trailing" secondItem="IOe-A2-lIy" secondAttribute="trailing" constant="35" id="td2-tp-2LI"/>
                                                 <constraint firstItem="VEf-3c-hMw" firstAttribute="top" secondItem="LV8-H1-2Vm" secondAttribute="top" constant="20" id="ukA-13-TLt"/>
                                                 <constraint firstItem="o5O-qL-Aim" firstAttribute="width" secondItem="7xX-3i-Ceg" secondAttribute="width" id="uoP-Qp-sgP"/>
                                                 <constraint firstItem="LV8-H1-2Vm" firstAttribute="leading" secondItem="xUq-5p-wyC" secondAttribute="leading" constant="15" id="yG6-9N-Pia"/>
@@ -515,11 +531,15 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="P5y-UU-Isp"/>
                     <connections>
+                        <outlet property="accountSecurityLabel" destination="ae0-yi-9hi" id="Kbe-IM-tOT"/>
                         <outlet property="avatarImageView" destination="VEf-3c-hMw" id="Jep-HO-TTr"/>
+                        <outlet property="goLoginButton" destination="IOe-A2-lIy" id="G3x-bz-DzR"/>
                         <outlet property="userAccountLabel" destination="BQU-ea-oUo" id="kJd-VZ-oa3"/>
                         <outlet property="vipBgImageView" destination="LV8-H1-2Vm" id="jPe-0D-3hy"/>
                         <outlet property="vipCartInfoLabel" destination="b7S-uQ-yOE" id="WeA-P3-OIn"/>
+                        <outlet property="vipTagBgLabel" destination="7xX-3i-Ceg" id="Ibb-tY-r9C"/>
                         <outlet property="vipTagLabel" destination="o5O-qL-Aim" id="1Xq-4u-2qQ"/>
+                        <outlet property="welfareLabel" destination="YiE-Am-Fxf" id="9w4-AZ-9QE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Nq-GK-S63" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -606,7 +626,7 @@
         <image name="finance_unselect_image" width="25" height="25"/>
         <image name="main_selected_image" width="25" height="25"/>
         <image name="main_unselect_image" width="25" height="25"/>
-        <image name="me_card_bg" width="345" height="190"/>
+        <image name="me_cart_unlogin_bg_image" width="345" height="190"/>
         <image name="me_head_image" width="42" height="42"/>
         <image name="me_icon1_assets_image" width="30" height="30"/>
         <image name="me_icon2_recommend_image" width="30" height="30"/>
