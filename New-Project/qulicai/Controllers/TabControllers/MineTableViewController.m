@@ -221,7 +221,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 #pragma mark - Handlers
 
-
 - (void)login {
     LoginViewController *loginViewController = [[LoginViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
@@ -229,6 +228,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                        animated:YES
                      completion:nil];
 }
+
 - (IBAction)loginButtonWasPressed:(UIButton *)sender {
     [self login];
 }

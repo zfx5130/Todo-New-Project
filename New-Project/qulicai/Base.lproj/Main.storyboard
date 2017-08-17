@@ -113,7 +113,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOe-A2-lIy">
-                                                    <rect key="frame" x="283" y="155" width="57" height="21"/>
+                                                    <rect key="frame" x="283" y="150" width="57" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="57" id="YgM-Hm-Lkc"/>
                                                     </constraints>
@@ -138,7 +138,7 @@
                                                 <constraint firstItem="b7S-uQ-yOE" firstAttribute="trailing" secondItem="LV8-H1-2Vm" secondAttribute="trailing" constant="-20" id="baG-y0-ZlU"/>
                                                 <constraint firstAttribute="bottom" secondItem="LV8-H1-2Vm" secondAttribute="bottom" id="hHB-eA-Rb2"/>
                                                 <constraint firstItem="b7S-uQ-yOE" firstAttribute="bottom" secondItem="LV8-H1-2Vm" secondAttribute="bottom" constant="-24" id="haS-Tp-mrV"/>
-                                                <constraint firstItem="IOe-A2-lIy" firstAttribute="height" secondItem="b7S-uQ-yOE" secondAttribute="height" id="ham-ta-4hz"/>
+                                                <constraint firstItem="IOe-A2-lIy" firstAttribute="height" secondItem="b7S-uQ-yOE" secondAttribute="height" constant="10" id="ham-ta-4hz"/>
                                                 <constraint firstItem="BQU-ea-oUo" firstAttribute="centerY" secondItem="VEf-3c-hMw" secondAttribute="centerY" id="rtR-y5-ZKa"/>
                                                 <constraint firstItem="IOe-A2-lIy" firstAttribute="centerY" secondItem="b7S-uQ-yOE" secondAttribute="centerY" id="s1c-dn-RDf"/>
                                                 <constraint firstAttribute="trailing" secondItem="IOe-A2-lIy" secondAttribute="trailing" constant="35" id="td2-tp-2LI"/>

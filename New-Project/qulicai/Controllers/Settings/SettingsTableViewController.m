@@ -14,6 +14,7 @@
 #import "UserBankCartViewController.h"
 #import "AccountCertificationViewController.h"
 #import "ModifyLoginPwViewController.h"
+#import "LoginViewController.h"
 
 @interface SettingsTableViewController ()
 
@@ -141,7 +142,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         }
             break;
         case 3: {
-            [self showSuccessWithTitle:@"退出登录"];
+            [self outLogin];
         }
         default:
             break;
@@ -149,6 +150,20 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 #pragma mark - Private
+
+- (void)login {
+    LoginViewController *loginViewController = [[LoginViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    [self presentViewController:navigationController
+                       animated:YES
+                     completion:nil];
+}
+
+- (void)outLogin {
+    UserDefaultsRemove(@"login");
+    [self.navigationController popToRootViewControllerAnimated:NO];
+    [self login];
+}
 
 - (void)modifyLoginPassword {
     ModifyLoginPwViewController *modifyController = [[ModifyLoginPwViewController alloc] init];

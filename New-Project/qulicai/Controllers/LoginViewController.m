@@ -175,12 +175,14 @@
 }
 
 - (IBAction)registerButtonWasPressed:(UIButton *)sender {
+    [self.view endEditing:YES];
     RegisterViewController *registerController = [[RegisterViewController alloc] init];
     [self.navigationController pushViewController:registerController
                                          animated:YES];
 }
 
 - (IBAction)forgetPassword:(UIButton *)sender {
+    [self.view endEditing:YES];
     ForgetPasswordViewController *passwordController = [[ForgetPasswordViewController alloc] init];
     [self.navigationController pushViewController:passwordController
                                          animated:YES];
