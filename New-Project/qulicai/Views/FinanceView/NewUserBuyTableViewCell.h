@@ -29,6 +29,12 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *buyButton;
 
+//96
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *sellOutImageViewWidthConstraint;
+//47
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *sellOutImageViewHeightConstraint;
+
+
 //50
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewHeightConstraint;
 

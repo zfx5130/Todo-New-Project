@@ -29,7 +29,11 @@
 }
 
 - (void)renderDataWithBannerArray:(NSArray *)arrays {
-    self.cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 180.0f)
+    CGFloat height = 180.0f;
+    if (IS_IPHONE_5) {
+        height = IPHONE5_WIDTH * 180.0f / IPHONE6_WIDTH;
+    }
+    self.cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, height)
                                                               delegate:self
                                                       placeholderImage:[UIImage imageNamed:@"placeholder"]];
     self.cycleScrollView.currentPageDotImage = [UIImage imageNamed:@"fiscal_rotation_down_image"];

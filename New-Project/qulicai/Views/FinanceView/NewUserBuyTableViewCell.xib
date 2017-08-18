@@ -55,8 +55,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fininace_product_sell_out_image" translatesAutoresizingMaskIntoConstraints="NO" id="Tuo-rL-C0g">
-                                        <rect key="frame" x="265" y="-3" width="96" height="47"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fininace_product_sell_out_image" translatesAutoresizingMaskIntoConstraints="NO" id="Tuo-rL-C0g">
+                                        <rect key="frame" x="265" y="-1" width="96" height="47"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="47" id="FsM-IL-3zV"/>
                                             <constraint firstAttribute="width" constant="96" id="ubq-bo-ROL"/>
@@ -66,7 +66,6 @@
                                 <constraints>
                                     <constraint firstItem="SeI-6u-nZM" firstAttribute="width" secondItem="LCu-bV-CSH" secondAttribute="width" constant="-5" id="0Ny-n1-0cA"/>
                                     <constraint firstItem="vDo-Rw-92t" firstAttribute="top" secondItem="qym-b9-hdu" secondAttribute="top" id="3c8-mJ-ail"/>
-                                    <constraint firstAttribute="bottom" secondItem="Tuo-rL-C0g" secondAttribute="bottom" id="4MD-pW-Xw8"/>
                                     <constraint firstAttribute="bottom" secondItem="vDo-Rw-92t" secondAttribute="bottom" id="9dz-xL-T8w"/>
                                     <constraint firstItem="SeI-6u-nZM" firstAttribute="centerX" secondItem="LCu-bV-CSH" secondAttribute="centerX" id="AXr-Vl-E6G"/>
                                     <constraint firstItem="SeI-6u-nZM" firstAttribute="centerY" secondItem="LCu-bV-CSH" secondAttribute="centerY" id="aO1-qP-38u"/>
@@ -75,6 +74,7 @@
                                     <constraint firstItem="LCu-bV-CSH" firstAttribute="leading" secondItem="vDo-Rw-92t" secondAttribute="trailing" constant="10.5" id="nHZ-Sm-2iZ"/>
                                     <constraint firstItem="SeI-6u-nZM" firstAttribute="height" secondItem="LCu-bV-CSH" secondAttribute="height" id="nZd-lH-Jjj"/>
                                     <constraint firstAttribute="trailing" secondItem="Tuo-rL-C0g" secondAttribute="trailing" constant="15" id="qUy-UX-z3I"/>
+                                    <constraint firstItem="Tuo-rL-C0g" firstAttribute="centerY" secondItem="LCu-bV-CSH" secondAttribute="centerY" id="sYn-ie-w9u"/>
                                     <constraint firstAttribute="height" constant="44" id="u9Q-8I-afN"/>
                                 </constraints>
                             </view>
@@ -262,6 +262,8 @@
                 <outlet property="productTagLabel" destination="SeI-6u-nZM" id="q6K-T4-4mN"/>
                 <outlet property="progressView" destination="Uwx-XU-z6I" id="Abp-ez-Igb"/>
                 <outlet property="sellOutImageView" destination="Tuo-rL-C0g" id="URL-uv-RAA"/>
+                <outlet property="sellOutImageViewHeightConstraint" destination="FsM-IL-3zV" id="3Vf-eW-bl6"/>
+                <outlet property="sellOutImageViewWidthConstraint" destination="ubq-bo-ROL" id="def-D9-UgN"/>
                 <outlet property="yearSaleLabel" destination="gYj-qu-I9m" id="M9f-qb-vqc"/>
             </connections>
             <point key="canvasLocation" x="32" y="132.5"/>

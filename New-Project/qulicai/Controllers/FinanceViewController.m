@@ -139,6 +139,9 @@ FinanceCarouselTableViewCellDelegate>
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (!indexPath.section) {
+        if (IS_IPHONE_5) {
+            return 180.0f * IPHONE5_WIDTH / IPHONE6_WIDTH;
+        }
         return 180.0f;
     } else if (indexPath.section == 1) {
         return 210.0f;
@@ -158,7 +161,7 @@ heightForHeaderInSection:(NSInteger)section {
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     UIView *aView = [[UIView alloc] init];
-    aView.backgroundColor = RGBColor(244, 244, 244);
+    aView.backgroundColor = [UIColor clearColor];
     return aView;
 }
 
