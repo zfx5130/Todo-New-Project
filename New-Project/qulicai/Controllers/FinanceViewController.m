@@ -45,9 +45,9 @@ FinanceCarouselTableViewCellDelegate>
     self.navigationController.navigationBarHidden = NO;
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}
+//- (UIStatusBarStyle)preferredStatusBarStyle {
+//    return UIStatusBarStyleLightContent;
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
