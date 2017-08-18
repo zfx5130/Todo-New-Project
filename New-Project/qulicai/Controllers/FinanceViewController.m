@@ -9,7 +9,7 @@
 #import "FinanceViewController.h"
 #import <SDCycleScrollView.h>
 #import "FinanceCarouselTableViewCell.h"
-#import "FinanceCarouselTableViewCell.h"
+#import "NewUserBuyTableViewCell.h"
 
 @interface FinanceViewController ()
 <SDCycleScrollViewDelegate,
@@ -22,6 +22,7 @@ FinanceCarouselTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (copy, nonatomic) NSArray *imagesUrlString;
+@property (strong, nonatomic) NSMutableArray *dataArray;
 
 @end
 
@@ -36,8 +37,7 @@ FinanceCarouselTableViewCellDelegate>
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden = YES;
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -45,12 +45,12 @@ FinanceCarouselTableViewCellDelegate>
     self.navigationController.navigationBarHidden = NO;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
 #pragma mark - Private
@@ -60,6 +60,11 @@ FinanceCarouselTableViewCellDelegate>
                                     bundle:nil];
     [self.tableView registerNib:carouselNib
          forCellReuseIdentifier:NSStringFromClass([FinanceCarouselTableViewCell class])];
+    
+    UINib *financebuyNib = [UINib nibWithNibName:NSStringFromClass([NewUserBuyTableViewCell class])
+                                          bundle:nil];
+    [self.tableView registerNib:financebuyNib
+         forCellReuseIdentifier:NSStringFromClass([NewUserBuyTableViewCell class])];
 }
 
 #pragma mark - Getters && Setters
@@ -75,6 +80,12 @@ FinanceCarouselTableViewCellDelegate>
     return _imagesUrlString;
 }
 
+- (NSMutableArray *)dataArray {
+    if (!_dataArray) {
+        _dataArray = [[NSMutableArray alloc] init];
+    }
+    return _dataArray;
+}
 
 #pragma mark - UITableViewDataSource
 
@@ -82,11 +93,48 @@ FinanceCarouselTableViewCellDelegate>
     return 1;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    FinanceCarouselTableViewCell *cell =
-    [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([FinanceCarouselTableViewCell class])];
-    [cell renderDataWithBannerArray:self.imagesUrlString];
-    cell.delegate = self;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (!indexPath.section) {
+        FinanceCarouselTableViewCell *cell =
+        [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([FinanceCarouselTableViewCell class])];
+        [cell renderDataWithBannerArray:self.imagesUrlString];
+        cell.delegate = self;
+        return cell;
+    }
+    NewUserBuyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([NewUserBuyTableViewCell class])];
+    
+    cell.progressView.progressTintColor =
+    indexPath.section == 1 ? RGBColor(247.0f, 97.0f, 34.0f) : RGBColor(221.0f, 221.0f, 221.0f);
+    cell.progressView.progress = indexPath.section == 1 ? 0.8f : 1.0f;
+    cell.sellOutImageView.hidden = indexPath.section == 1;
+    cell.yearSaleLabel.textColor =
+    indexPath.section == 1 ? RGBColor(242.0f, 89.0f, 47.0f) : RGBColor(153.0f, 153.0f, 153.0f);
+    cell.productNameLabel.textColor = indexPath.section == 1 ? RGBColor(51.0f, 51.0f, 51.0f) : RGBColor(153.0f, 153.0f, 153.0f);
+    
+    cell.productTagImageView.image = indexPath.section == 1 ? [UIImage imageNamed:@"fininace_tag_bg_image"] : [UIImage imageNamed:@"fininace_tag_end_bg_image"];
+    cell.deadlineLabel.textColor = indexPath.section == 1 ? RGBColor(102.0f, 102.0f, 102.0f) : RGBColor(153.0f, 153.0f, 153.0f);
+    cell.balanceLabel.textColor = indexPath.section == 1 ? RGBColor(102.0f, 102.0f, 102.0f) : RGBColor(153.0f, 153.0f, 153.0f);
+    
+    cell.buyButton.hidden = indexPath.section != 1;
+    cell.bottomViewHeightConstraint.constant = indexPath.section == 1 ? 50.0f : 0.0f;
+    
+    
+    NSMutableAttributedString *numText=
+    [[NSMutableAttributedString alloc]initWithString:cell.yearSaleLabel.text
+                                                                             attributes:nil];
+    [numText addAttribute:NSFontAttributeName
+                    value:[UIFont systemFontOfSize:14.0f]
+                    range:NSMakeRange(4, 2)];
+    [numText addAttribute:NSFontAttributeName
+                    value:[UIFont systemFontOfSize:14.0f]
+                    range:NSMakeRange(cell.yearSaleLabel.text.length - 1, 1)];
+    cell.yearSaleLabel.attributedText = numText;
+    
     return cell;
 }
 
@@ -94,12 +142,27 @@ FinanceCarouselTableViewCellDelegate>
 
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 180.0f;
+    if (!indexPath.section) {
+        return 180.0f;
+    } else if (indexPath.section == 1) {
+        return 210.0f;
+    }
+    return 210.0f - 50.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForFooterInSection:(NSInteger)section {
+    return section == 2 ? CGFLOAT_MIN : 10.0f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView *aView = [[UIView alloc] init];
+    aView.backgroundColor = RGBColor(244, 244, 244);
+    return aView;
 }
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@":::::");
 }
 
 #pragma mark - FinanceCarouselTableViewCell

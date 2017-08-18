@@ -575,9 +575,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nfE-sG-3jU">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nfE-sG-3jU">
+                                <rect key="frame" x="0.0" y="24" width="375" height="643"/>
+                                <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="yrO-Me-cfs" id="pVc-CT-C9u"/>
                                     <outlet property="delegate" destination="yrO-Me-cfs" id="Yml-Wi-qji"/>
@@ -585,8 +588,8 @@
                             </tableView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="K8v-sO-ZBb" firstAttribute="top" secondItem="nfE-sG-3jU" secondAttribute="bottom" id="5ch-SC-Rm1"/>
-                            <constraint firstItem="nfE-sG-3jU" firstAttribute="top" secondItem="cgg-P2-uuJ" secondAttribute="bottom" constant="-20" id="Wde-oS-NLS"/>
+                            <constraint firstItem="K8v-sO-ZBb" firstAttribute="top" secondItem="nfE-sG-3jU" secondAttribute="bottom" constant="-49" id="5ch-SC-Rm1"/>
+                            <constraint firstItem="nfE-sG-3jU" firstAttribute="top" secondItem="cgg-P2-uuJ" secondAttribute="bottom" constant="-40" id="Wde-oS-NLS"/>
                             <constraint firstItem="nfE-sG-3jU" firstAttribute="leading" secondItem="Lmg-Sv-Yk3" secondAttribute="leading" id="aGt-ti-Def"/>
                             <constraint firstAttribute="trailing" secondItem="nfE-sG-3jU" secondAttribute="trailing" id="hmf-Oy-XLW"/>
                         </constraints>

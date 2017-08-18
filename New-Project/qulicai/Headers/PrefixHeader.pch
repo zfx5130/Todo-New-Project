@@ -17,6 +17,8 @@
 #import <SVProgressHUD.h>
 #import "UIColor+Custom.h"
 #import "UIViewController+Addition.h"
+#import "NSString+Custom.h"
+#import "UILabel+Custom.h"
 
 #ifdef DEBUG
 

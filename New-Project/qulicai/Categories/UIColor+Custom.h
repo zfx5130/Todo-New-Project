@@ -19,4 +19,7 @@
 //242 89 47
 + (UIColor *)appDefaultColor;
 
+//244 244 244
++ (UIColor *)appTableViewBgColor;
+
 @end

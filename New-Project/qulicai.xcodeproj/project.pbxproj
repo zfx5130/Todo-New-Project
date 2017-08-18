@@ -83,6 +83,8 @@
 		84825E261F45BF7E006A921F /* DZ_ScaleCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E251F45BF7E006A921F /* DZ_ScaleCircle.m */; };
 		84825E2A1F4687B6006A921F /* FinanceCarouselTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E281F4687B6006A921F /* FinanceCarouselTableViewCell.m */; };
 		84825E2B1F4687B6006A921F /* FinanceCarouselTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E291F4687B6006A921F /* FinanceCarouselTableViewCell.xib */; };
+		84825E301F469A16006A921F /* NewUserBuyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E2E1F469A16006A921F /* NewUserBuyTableViewCell.m */; };
+		84825E311F469A16006A921F /* NewUserBuyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E2F1F469A16006A921F /* NewUserBuyTableViewCell.xib */; };
 		CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */; };
 /* End PBXBuildFile section */
 
@@ -245,9 +247,12 @@
 		84825E181F458F02006A921F /* ModifyTradingPdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModifyTradingPdViewController.xib; sourceTree = "<group>"; };
 		84825E241F45BF7E006A921F /* DZ_ScaleCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZ_ScaleCircle.h; sourceTree = "<group>"; };
 		84825E251F45BF7E006A921F /* DZ_ScaleCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZ_ScaleCircle.m; sourceTree = "<group>"; };
-		84825E271F4687B6006A921F /* FinanceCarouselTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceCarouselTableViewCell.h; sourceTree = "<group>"; };
-		84825E281F4687B6006A921F /* FinanceCarouselTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceCarouselTableViewCell.m; sourceTree = "<group>"; };
-		84825E291F4687B6006A921F /* FinanceCarouselTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinanceCarouselTableViewCell.xib; sourceTree = "<group>"; };
+		84825E271F4687B6006A921F /* FinanceCarouselTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinanceCarouselTableViewCell.h; path = ../FinanceCarouselTableViewCell.h; sourceTree = "<group>"; };
+		84825E281F4687B6006A921F /* FinanceCarouselTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinanceCarouselTableViewCell.m; path = ../FinanceCarouselTableViewCell.m; sourceTree = "<group>"; };
+		84825E291F4687B6006A921F /* FinanceCarouselTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FinanceCarouselTableViewCell.xib; path = ../FinanceCarouselTableViewCell.xib; sourceTree = "<group>"; };
+		84825E2D1F469A16006A921F /* NewUserBuyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserBuyTableViewCell.h; sourceTree = "<group>"; };
+		84825E2E1F469A16006A921F /* NewUserBuyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserBuyTableViewCell.m; sourceTree = "<group>"; };
+		84825E2F1F469A16006A921F /* NewUserBuyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewUserBuyTableViewCell.xib; sourceTree = "<group>"; };
 		ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qulicai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -469,11 +474,9 @@
 		8435E5041F316E9200424E5E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				84825E2C1F46993B006A921F /* FinanceView */,
 				844402A11F42F21100F5AFEE /* SendVerifyCodeButton.h */,
 				844402A21F42F21100F5AFEE /* SendVerifyCodeButton.m */,
-				84825E271F4687B6006A921F /* FinanceCarouselTableViewCell.h */,
-				84825E281F4687B6006A921F /* FinanceCarouselTableViewCell.m */,
-				84825E291F4687B6006A921F /* FinanceCarouselTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -708,6 +711,19 @@
 			path = DZ_Scale_Circle;
 			sourceTree = "<group>";
 		};
+		84825E2C1F46993B006A921F /* FinanceView */ = {
+			isa = PBXGroup;
+			children = (
+				84825E271F4687B6006A921F /* FinanceCarouselTableViewCell.h */,
+				84825E281F4687B6006A921F /* FinanceCarouselTableViewCell.m */,
+				84825E291F4687B6006A921F /* FinanceCarouselTableViewCell.xib */,
+				84825E2D1F469A16006A921F /* NewUserBuyTableViewCell.h */,
+				84825E2E1F469A16006A921F /* NewUserBuyTableViewCell.m */,
+				84825E2F1F469A16006A921F /* NewUserBuyTableViewCell.xib */,
+			);
+			path = FinanceView;
+			sourceTree = "<group>";
+		};
 		85EECFC4C30A131F3D55686C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -831,6 +847,7 @@
 				844402AB1F42FC8100F5AFEE /* QRWebViewController.xib in Resources */,
 				844402A01F42CB9400F5AFEE /* ForgetPasswordViewController.xib in Resources */,
 				8444024B1F41A0E700F5AFEE /* LoginViewController.xib in Resources */,
+				84825E311F469A16006A921F /* NewUserBuyTableViewCell.xib in Resources */,
 				844402C11F443FAE00F5AFEE /* SettingsTableViewController.storyboard in Resources */,
 				844402CD1F44590100F5AFEE /* UsernameSettingViewController.xib in Resources */,
 				84825E1A1F458F02006A921F /* ModifyTradingPdViewController.xib in Resources */,
@@ -951,6 +968,7 @@
 				84825E0F1F456E2C006A921F /* AccountCertificationViewController.m in Sources */,
 				8435E50B1F31726D00424E5E /* AppDelegate.m in Sources */,
 				8435E5B41F399C1E00424E5E /* CLLockLabel.m in Sources */,
+				84825E301F469A16006A921F /* NewUserBuyTableViewCell.m in Sources */,
 				8444023D1F4186E100F5AFEE /* MainViewController.m in Sources */,
 				844402461F418F1400F5AFEE /* QRTabbarController.m in Sources */,
 				844402851F41B2B000F5AFEE /* NSString+Custom.m in Sources */,

@@ -53,7 +53,11 @@
 }
 
 + (UIColor *)appDefaultColor {
-    return RGBColor(242, 89, 47);
+    return RGBColor(242.0f, 89.0f, 47.0f);
+}
+
++ (UIColor *)appTableViewBgColor {
+    return RGBColor(244.0f, 244.0f, 244.0f);
 }
 
 @end
