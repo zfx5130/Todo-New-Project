@@ -45,10 +45,6 @@ FinanceCarouselTableViewCellDelegate>
     self.navigationController.navigationBarHidden = NO;
 }
 
-//- (UIStatusBarStyle)preferredStatusBarStyle {
-//    return UIStatusBarStyleLightContent;
-//}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -153,6 +149,11 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 - (CGFloat)tableView:(UITableView *)tableView
 heightForFooterInSection:(NSInteger)section {
     return section == 2 ? CGFLOAT_MIN : 10.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForHeaderInSection:(NSInteger)section {
+    return CGFLOAT_MIN;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
