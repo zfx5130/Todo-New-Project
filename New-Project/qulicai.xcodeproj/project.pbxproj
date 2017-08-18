@@ -85,6 +85,8 @@
 		84825E2B1F4687B6006A921F /* FinanceCarouselTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E291F4687B6006A921F /* FinanceCarouselTableViewCell.xib */; };
 		84825E301F469A16006A921F /* NewUserBuyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E2E1F469A16006A921F /* NewUserBuyTableViewCell.m */; };
 		84825E311F469A16006A921F /* NewUserBuyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E2F1F469A16006A921F /* NewUserBuyTableViewCell.xib */; };
+		84825E361F46E4F6006A921F /* MainHeadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E341F46E4F6006A921F /* MainHeadTableViewCell.m */; };
+		84825E371F46E4F6006A921F /* MainHeadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E351F46E4F6006A921F /* MainHeadTableViewCell.xib */; };
 		CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */; };
 /* End PBXBuildFile section */
 
@@ -253,6 +255,9 @@
 		84825E2D1F469A16006A921F /* NewUserBuyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserBuyTableViewCell.h; sourceTree = "<group>"; };
 		84825E2E1F469A16006A921F /* NewUserBuyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserBuyTableViewCell.m; sourceTree = "<group>"; };
 		84825E2F1F469A16006A921F /* NewUserBuyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewUserBuyTableViewCell.xib; sourceTree = "<group>"; };
+		84825E331F46E4F6006A921F /* MainHeadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainHeadTableViewCell.h; sourceTree = "<group>"; };
+		84825E341F46E4F6006A921F /* MainHeadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainHeadTableViewCell.m; sourceTree = "<group>"; };
+		84825E351F46E4F6006A921F /* MainHeadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainHeadTableViewCell.xib; sourceTree = "<group>"; };
 		ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qulicai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -475,6 +480,7 @@
 			isa = PBXGroup;
 			children = (
 				84825E2C1F46993B006A921F /* FinanceView */,
+				84825E321F46E4E2006A921F /* MainView */,
 				844402A11F42F21100F5AFEE /* SendVerifyCodeButton.h */,
 				844402A21F42F21100F5AFEE /* SendVerifyCodeButton.m */,
 			);
@@ -724,6 +730,16 @@
 			path = FinanceView;
 			sourceTree = "<group>";
 		};
+		84825E321F46E4E2006A921F /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				84825E331F46E4F6006A921F /* MainHeadTableViewCell.h */,
+				84825E341F46E4F6006A921F /* MainHeadTableViewCell.m */,
+				84825E351F46E4F6006A921F /* MainHeadTableViewCell.xib */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
 		85EECFC4C30A131F3D55686C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -852,6 +868,7 @@
 				844402CD1F44590100F5AFEE /* UsernameSettingViewController.xib in Resources */,
 				84825E1A1F458F02006A921F /* ModifyTradingPdViewController.xib in Resources */,
 				84825E151F457468006A921F /* ModifyLoginPwViewController.xib in Resources */,
+				84825E371F46E4F6006A921F /* MainHeadTableViewCell.xib in Resources */,
 				8435E4C01F316BCE00424E5E /* LaunchScreen.storyboard in Resources */,
 				8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */,
 				844402B01F43F9F600F5AFEE /* ResetPasswordViewController.xib in Resources */,
@@ -933,6 +950,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84825E361F46E4F6006A921F /* MainHeadTableViewCell.m in Sources */,
 				844402BF1F443F9A00F5AFEE /* SettingsTableViewController.m in Sources */,
 				844402BB1F44217400F5AFEE /* UIViewController+Addition.m in Sources */,
 				844402921F41B2B000F5AFEE /* UITextView+Custom.m in Sources */,

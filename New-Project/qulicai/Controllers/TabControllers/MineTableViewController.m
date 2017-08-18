@@ -55,10 +55,6 @@
     [self renderUI];
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -82,7 +78,6 @@
 }
 
 - (void)setupView {
-    self.navigationController.navigationBar.translucent = NO;
     [self setupNavigationItemRights:@[@"me_nav_news_image",@"me_nav_task_image"]];
     if (self.userAccountLabel.text.length >= 11) {
         NSString *str = [NSString replaceStrWithRange:NSMakeRange(3, 4)

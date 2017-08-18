@@ -14,6 +14,7 @@ pod 'MJExtension'
 pod 'SVProgressHUD'
 pod 'TOWebViewController'
 pod 'WZLBadge'
+pod 'WRNavigationBar'
 
 pod 'SDCycleScrollView','~> 1.66'
 
