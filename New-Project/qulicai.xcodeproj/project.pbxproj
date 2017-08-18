@@ -80,6 +80,9 @@
 		84825E151F457468006A921F /* ModifyLoginPwViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E131F457468006A921F /* ModifyLoginPwViewController.xib */; };
 		84825E191F458F02006A921F /* ModifyTradingPdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E171F458F02006A921F /* ModifyTradingPdViewController.m */; };
 		84825E1A1F458F02006A921F /* ModifyTradingPdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E181F458F02006A921F /* ModifyTradingPdViewController.xib */; };
+		84825E261F45BF7E006A921F /* DZ_ScaleCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E251F45BF7E006A921F /* DZ_ScaleCircle.m */; };
+		84825E2A1F4687B6006A921F /* FinanceCarouselTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E281F4687B6006A921F /* FinanceCarouselTableViewCell.m */; };
+		84825E2B1F4687B6006A921F /* FinanceCarouselTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E291F4687B6006A921F /* FinanceCarouselTableViewCell.xib */; };
 		CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */; };
 /* End PBXBuildFile section */
 
@@ -240,6 +243,11 @@
 		84825E161F458F02006A921F /* ModifyTradingPdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyTradingPdViewController.h; sourceTree = "<group>"; };
 		84825E171F458F02006A921F /* ModifyTradingPdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyTradingPdViewController.m; sourceTree = "<group>"; };
 		84825E181F458F02006A921F /* ModifyTradingPdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModifyTradingPdViewController.xib; sourceTree = "<group>"; };
+		84825E241F45BF7E006A921F /* DZ_ScaleCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZ_ScaleCircle.h; sourceTree = "<group>"; };
+		84825E251F45BF7E006A921F /* DZ_ScaleCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZ_ScaleCircle.m; sourceTree = "<group>"; };
+		84825E271F4687B6006A921F /* FinanceCarouselTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceCarouselTableViewCell.h; sourceTree = "<group>"; };
+		84825E281F4687B6006A921F /* FinanceCarouselTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceCarouselTableViewCell.m; sourceTree = "<group>"; };
+		84825E291F4687B6006A921F /* FinanceCarouselTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinanceCarouselTableViewCell.xib; sourceTree = "<group>"; };
 		ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qulicai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -449,6 +457,7 @@
 		8435E5031F316E9200424E5E /* Venders */ = {
 			isa = PBXGroup;
 			children = (
+				84825E231F45BF7E006A921F /* DZ_Scale_Circle */,
 				84825E031F453648006A921F /* FDFullscreenPopGesture */,
 				844402C21F44516100F5AFEE /* WeiXinPickView */,
 				8435E5941F399C1E00424E5E /* CoreLock */,
@@ -462,6 +471,9 @@
 			children = (
 				844402A11F42F21100F5AFEE /* SendVerifyCodeButton.h */,
 				844402A21F42F21100F5AFEE /* SendVerifyCodeButton.m */,
+				84825E271F4687B6006A921F /* FinanceCarouselTableViewCell.h */,
+				84825E281F4687B6006A921F /* FinanceCarouselTableViewCell.m */,
+				84825E291F4687B6006A921F /* FinanceCarouselTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -687,6 +699,15 @@
 			path = FDFullscreenPopGesture;
 			sourceTree = "<group>";
 		};
+		84825E231F45BF7E006A921F /* DZ_Scale_Circle */ = {
+			isa = PBXGroup;
+			children = (
+				84825E241F45BF7E006A921F /* DZ_ScaleCircle.h */,
+				84825E251F45BF7E006A921F /* DZ_ScaleCircle.m */,
+			);
+			path = DZ_Scale_Circle;
+			sourceTree = "<group>";
+		};
 		85EECFC4C30A131F3D55686C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -819,6 +840,7 @@
 				844402B01F43F9F600F5AFEE /* ResetPasswordViewController.xib in Resources */,
 				8435E5AE1F399C1E00424E5E /* CLLockVC.xib in Resources */,
 				84825E101F456E2C006A921F /* AccountCertificationViewController.xib in Resources */,
+				84825E2B1F4687B6006A921F /* FinanceCarouselTableViewCell.xib in Resources */,
 				8435E4BB1F316BCE00424E5E /* Main.storyboard in Resources */,
 				8444029B1F42CB6600F5AFEE /* RegisterViewController.xib in Resources */,
 				84825E0B1F456330006A921F /* UserBankCartViewController.xib in Resources */,
@@ -934,6 +956,7 @@
 				844402851F41B2B000F5AFEE /* NSString+Custom.m in Sources */,
 				84825E191F458F02006A921F /* ModifyTradingPdViewController.m in Sources */,
 				844402C51F44516100F5AFEE /* WeiXinPickView.m in Sources */,
+				84825E261F45BF7E006A921F /* DZ_ScaleCircle.m in Sources */,
 				8435E5B11F399C1E00424E5E /* CLLockNavVC.m in Sources */,
 				84825E061F453648006A921F /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				8435E5B01F399C1E00424E5E /* CoreLockConst.m in Sources */,
@@ -943,6 +966,7 @@
 				844402CC1F44590100F5AFEE /* UsernameSettingViewController.m in Sources */,
 				8444028E1F41B2B000F5AFEE /* UILabel+Custom.m in Sources */,
 				8435E5B31F399C1E00424E5E /* CLLockItemView.m in Sources */,
+				84825E2A1F4687B6006A921F /* FinanceCarouselTableViewCell.m in Sources */,
 				844402891F41B2B000F5AFEE /* UIFont+Custom.m in Sources */,
 				844402911F41B2B000F5AFEE /* UITextField+Custom.m in Sources */,
 				8444028C1F41B2B000F5AFEE /* UIImage+ImageEffects.m in Sources */,
