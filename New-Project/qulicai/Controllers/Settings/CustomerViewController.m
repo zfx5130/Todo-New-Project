@@ -88,7 +88,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                 }
                     break;
                 case 1: {
-                    
+                    [self callPhone];
                 }
                     break;
                 default:
@@ -105,6 +105,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 #pragma mark - Hanlders
+
+- (void)callPhone {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",self.phoneLabel.text]]];
+}
 
 - (void)leftBarButtonAction {
     [self.navigationController popViewControllerAnimated:YES];
