@@ -24,6 +24,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
+    [UIColor wr_setDefaultNavBarTintColor:RGBColor(51, 51, 51)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,7 +37,8 @@
                     URLString:(NSString *)URLString {
     self = [super initWithURLString:[NSString localizedURLString:URLString]];
     if (self) {
-        self.showPageTitles = YES;
+        self.showPageTitles = NO;
+        self.title = title;
         self.loadingBarTintColor = [UIColor appDefaultColor];
         self.buttonTintColor = [UIColor appDefaultColor];
         self.showActionButton = NO;

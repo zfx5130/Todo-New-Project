@@ -11,6 +11,8 @@
 #import <WZLBadge/WZLBadgeImport.h>
 #import "SettingsTableViewController.h"
 #import "LoginViewController.h"
+#import "AboutQRViewController.h"
+#import "CustomerViewController.h"
 
 @interface MineTableViewController ()
 
@@ -78,7 +80,8 @@
 }
 
 - (void)setupView {
-    [self setupNavigationItemRights:@[@"me_nav_news_image",@"me_nav_task_image"]];
+    //[self setupNavigationItemRights:@[@"me_nav_news_image",@"me_nav_task_image"]];
+    [self setupNavigationItemLeft:[UIImage imageNamed:@"me_nav_set_image"]];
     if (self.userAccountLabel.text.length >= 11) {
         NSString *str = [NSString replaceStrWithRange:NSMakeRange(3, 4)
                                                string:self.userAccountLabel.text
@@ -99,10 +102,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (!section) {
         return 1;
-    } else if (section == 1) {
-        return 4;
     }
-    return 3;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -153,22 +154,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                     break;
                 case 1: {
                     if (self.isLogin) {
-                        [self showSuccessWithTitle:@"理财推手开发中"];
-                    } else {
-                        [self login];
-                    }
-                }
-                    break;
-                case 2: {
-                    if (self.isLogin) {
-                        [self showSuccessWithTitle:@"我的福利开发中"];
-                    } else {
-                        [self login];
-                    }
-                }
-                    break;
-                case 3: {
-                    if (self.isLogin) {
                         [self showSuccessWithTitle:@"购买记录开发中"];
                     } else {
                         [self login];
@@ -183,25 +168,11 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         case 2: {
             switch (indexPath.row) {
                 case 0: {
-                    [self showSuccessWithTitle:@"客服开发中"];
+                    [self setupCustomer];
                 }
                     break;
                 case 1: {
-                    [self showSuccessWithTitle:@"关于趣理财开发中"];
-                }
-                    break;
-                case 2: {
-                    if (self.isLogin) {
-                        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:kStoryBoardIdSettingsViewController
-                                                                             bundle:nil];
-                        SettingsTableViewController *settingsController = [storyBoard instantiateViewControllerWithIdentifier:kStoryBoardIdSettingsViewController];
-                        settingsController.hidesBottomBarWhenPushed = YES;
-                        [self.navigationController pushViewController:settingsController
-                                                             animated:YES];
-                    } else {
-                        [self login];
-                    }
-                    
+                    [self showQRInfo];
                 }
                     break;
                 default:
@@ -216,6 +187,22 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 #pragma mark - Handlers
 
+- (void)setupCustomer {
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:NSStringFromClass([CustomerViewController class])
+                                                         bundle:nil];
+    CustomerViewController *settingsController = [storyBoard instantiateViewControllerWithIdentifier:NSStringFromClass([CustomerViewController class])];
+    settingsController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:settingsController
+                                         animated:YES];
+}
+
+- (void)showQRInfo {
+    AboutQRViewController *qrController = [[AboutQRViewController alloc] init];
+    qrController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:qrController
+                                         animated:YES];
+}
+
 - (void)login {
     LoginViewController *loginViewController = [[LoginViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
@@ -228,22 +215,34 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self login];
 }
 
-
-- (void)rightBarButtonAction0 {
+- (void)leftBarButtonAction {
     if (self.isLogin) {
-        [self showSuccessWithTitle:@"消息开发中"];
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:kStoryBoardIdSettingsViewController
+                                                             bundle:nil];
+        SettingsTableViewController *settingsController = [storyBoard instantiateViewControllerWithIdentifier:kStoryBoardIdSettingsViewController];
+        settingsController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:settingsController
+                                             animated:YES];
     } else {
         [self login];
     }
 }
 
-- (void)rightBarButtonAction1 {
-    if (self.isLogin) {
-        [self showSuccessWithTitle:@"明细开发中"];
-    } else {
-        [self login];
-    }
-}
+//- (void)rightBarButtonAction0 {
+//    if (self.isLogin) {
+//        [self showSuccessWithTitle:@"消息开发中"];
+//    } else {
+//        [self login];
+//    }
+//}
+//
+//- (void)rightBarButtonAction1 {
+//    if (self.isLogin) {
+//        [self showSuccessWithTitle:@"明细开发中"];
+//    } else {
+//        [self login];
+//    }
+//}
 
 
 @end

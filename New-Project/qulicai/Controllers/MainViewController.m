@@ -152,7 +152,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)platformDataButtonWasPressed:(UIButton *)sender {
     NSString *urlString = @"https://www.baidu.com";
-    QRWebViewController *webViewController = [[QRWebViewController alloc] initWithTitle:@"趣融协议"
+    QRWebViewController *webViewController = [[QRWebViewController alloc] initWithTitle:@"安全保障"
                                                                               URLString:urlString];
     webViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:webViewController
@@ -161,7 +161,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)qrInfoButtonWasPressed:(UIButton *)sender {
     NSString *urlString = @"https://www.baidu.com";
-    QRWebViewController *webViewController = [[QRWebViewController alloc] initWithTitle:@"趣融协议"
+    QRWebViewController *webViewController = [[QRWebViewController alloc] initWithTitle:@"平台数据"
                                                                               URLString:urlString];
     webViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:webViewController
@@ -170,7 +170,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)safeButtonWasPressed:(UIButton *)sender {
     NSString *urlString = @"https://www.baidu.com";
-    QRWebViewController *webViewController = [[QRWebViewController alloc] initWithTitle:@"趣融协议"
+    QRWebViewController *webViewController = [[QRWebViewController alloc] initWithTitle:@"企业简介"
                                                                               URLString:urlString];
     webViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:webViewController
