@@ -37,8 +37,8 @@
     self = [super initWithURLString:[NSString localizedURLString:URLString]];
     if (self) {
         self.showPageTitles = YES;
-        self.loadingBarTintColor = RGBColor(255.0f, 198.0f, 0);
-        self.buttonTintColor = RGBColor(59.0f, 183.0f, 247.0f);
+        self.loadingBarTintColor = [UIColor appDefaultColor];
+        self.buttonTintColor = [UIColor appDefaultColor];
         self.showActionButton = NO;
     }
     return self;

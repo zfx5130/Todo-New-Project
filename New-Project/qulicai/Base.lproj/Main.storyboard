@@ -632,8 +632,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Wbc-Dg-EAF">
-                                <rect key="frame" x="0.0" y="24" width="375" height="643"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Wbc-Dg-EAF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -647,7 +647,7 @@
                             <constraint firstItem="Wbc-Dg-EAF" firstAttribute="leading" secondItem="hEp-PE-6je" secondAttribute="leading" id="AUt-b8-edS"/>
                             <constraint firstAttribute="trailing" secondItem="Wbc-Dg-EAF" secondAttribute="trailing" id="RSv-MJ-u8m"/>
                             <constraint firstItem="S4y-qh-1Vs" firstAttribute="top" secondItem="Wbc-Dg-EAF" secondAttribute="bottom" constant="-49" id="vEI-he-tYT"/>
-                            <constraint firstItem="Wbc-Dg-EAF" firstAttribute="top" secondItem="gAf-0o-c7w" secondAttribute="bottom" constant="-40" id="wTO-KH-iVZ"/>
+                            <constraint firstItem="Wbc-Dg-EAF" firstAttribute="top" secondItem="gAf-0o-c7w" secondAttribute="bottom" constant="-64" id="wTO-KH-iVZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9ME-4s-Gns"/>
