@@ -9,8 +9,7 @@
 #import "QRTabbarController.h"
 #import "MineTableViewController.h"
 
-@interface QRTabbarController () <UITabBarControllerDelegate>
-
+@interface QRTabbarController ()
 
 @end
 
@@ -21,7 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tabBar.tintColor = [UIColor appDefaultColor];
-    [self setupTabbarControllerDelegate];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,25 +28,5 @@
 
 #pragma mark - Private
 
-- (void)setupTabbarControllerDelegate {
-    
-    self.delegate = self;
-}
-
-
-#pragma mark - UITabbarControllerDelegate
-
-- (void)tabBarController:(UITabBarController *)tabBarController
- didSelectViewController:(UIViewController *)viewController {
-    if ([viewController.childViewControllers.firstObject isKindOfClass:[MineTableViewController class]]) {
-        //登录逻辑
-        BOOL isLogin = NO;
-        if (isLogin) {
-            NSLog(@"登录成功");
-        } else {
-        }
-    }
-    
-}
 
 @end

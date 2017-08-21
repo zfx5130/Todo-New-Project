@@ -19,6 +19,7 @@
 #import "UIViewController+Addition.h"
 #import "NSString+Custom.h"
 #import "UILabel+Custom.h"
+#import "WRNavigationBar.h"
 
 #ifdef DEBUG
 

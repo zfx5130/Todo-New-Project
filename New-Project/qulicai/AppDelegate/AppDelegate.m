@@ -12,7 +12,6 @@
 #import "QRRequest.h"
 #import "QRRequestGetToken.h"
 #import "UIImage+Custom.h"
-#import "WRNavigationBar.h"
 
 @interface AppDelegate ()
 
@@ -33,6 +32,7 @@
     [self testNetwork];
     UserDefaultsRemove(@"login");
     [self setNavBarAppearence];
+    
     return YES;
 }
 

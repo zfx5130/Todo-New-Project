@@ -44,6 +44,16 @@ UITableViewDataSource>
     [self registerCell];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [UIColor wr_setDefaultNavBarShadowImageHidden:NO];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [UIColor wr_setDefaultNavBarShadowImageHidden:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -58,6 +68,8 @@ UITableViewDataSource>
 }
 
 - (void)setupTableViewHeadView {
+    self.title = @"理财";
+    [UIColor wr_setDefaultNavBarTitleColor:[UIColor blackColor]];
     self.tableView.contentInset = UIEdgeInsetsMake(IMAGE_HEIGHT - 64, 0, 0, 0);
     self.cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, -IMAGE_HEIGHT, SCREEN_WIDTH, IMAGE_HEIGHT)
                                                               delegate:self
@@ -167,23 +179,21 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat offsetY = scrollView.contentOffset.y;
-    
+
     if (offsetY > NAVBAR_COLORCHANGE_POINT) {
         CGFloat alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / NAV_HEIGHT;
-        NSLog(@"alpha:::::::%@",@(alpha));
         [self wr_setNavBarBackgroundAlpha:alpha];
-
+        [self wr_setNavBarTitleColor:[RGBColor(51, 51, 51) colorWithAlphaComponent:alpha]];
     } else {
         [self wr_setNavBarBackgroundAlpha:0];
+        [self wr_setNavBarTitleColor:[UIColor clearColor]];
     }
     
     //限制下拉的距离
     if(offsetY < LIMIT_OFFSET_Y) {
         [scrollView setContentOffset:CGPointMake(0, LIMIT_OFFSET_Y)];
     }
-    
-    // 改变图片框的大小 (上滑的时候不改变)
-    // 这里不能使用offsetY，因为当（offsetY < LIMIT_OFFSET_Y）的时候，y = LIMIT_OFFSET_Y 不等于 offsetY
+
     CGFloat newOffsetY = scrollView.contentOffset.y;
     if (newOffsetY < -IMAGE_HEIGHT) {
         self.cycleScrollView.frame = CGRectMake(0, newOffsetY, kScreenWidth, -newOffsetY);

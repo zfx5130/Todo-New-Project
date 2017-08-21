@@ -69,11 +69,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>WRNavigationBar.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>WZLBadge.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -97,17 +92,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1CFF79FDB6AEF921D990B278F5FECC16</key>
+		<key>0703B2DA946343F870CE1D3957A5EFBB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2F03BF309ACE795E2AEF1344A9E5317E</key>
+		<key>151DA6B434F1DC4A15296CFA910C72D8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3C8EE35B5DEA470FE32CDD88D3EE2B9F</key>
+		<key>2FD3CFD4897BBD64C698302E23BADA76</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,22 +112,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3FD44C98203DC45FBC31780EAE5958DB</key>
+		<key>405420C5ADB38C214336D89FDD842775</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>67AD686C29BD6E64BC98B5B74B58690A</key>
+		<key>6899B16B00813FF7FEE99472F52FD338</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8CD63A2FA20F086F4D0DA4308CCCE25E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8EC0DE17BC81261AD3898025F20FFCD5</key>
+		<key>74CD3F8F82C24954FF2B3E0E409DFF72</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -152,27 +142,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B1E959CFE8AC3BB2862EB762B627C17A</key>
+		<key>AD99662F39ABDE06483D887AB9898647</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B5895314DC00F51D812AF14E21420E0F</key>
+		<key>C3D0BD15173A5319CE19B0F2716713D7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B93A2245BE55D29435B039613B253588</key>
+		<key>C977166210673F0A3A4FEDBBDC4CA7C8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C1CAB629989C011B5C0CE8ACC53AD799</key>
+		<key>DF5B9D6E77018AC17BA7036BEB2D19CB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DF2F007C432EE5882164B337B0DA623E</key>
+		<key>FDBF40C38BA1A082AA108A3F803E9684</key>
 		<dict>
 			<key>primary</key>
 			<true/>

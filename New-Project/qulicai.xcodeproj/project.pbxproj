@@ -71,7 +71,6 @@
 		844402C81F44539700F5AFEE /* ZXCImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402C71F44539700F5AFEE /* ZXCImagePicker.m */; };
 		844402CC1F44590100F5AFEE /* UsernameSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402CA1F44590100F5AFEE /* UsernameSettingViewController.m */; };
 		844402CD1F44590100F5AFEE /* UsernameSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844402CB1F44590100F5AFEE /* UsernameSettingViewController.xib */; };
-		84825E061F453648006A921F /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E051F453648006A921F /* UINavigationController+FDFullscreenPopGesture.m */; };
 		84825E0A1F456330006A921F /* UserBankCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E081F456330006A921F /* UserBankCartViewController.m */; };
 		84825E0B1F456330006A921F /* UserBankCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E091F456330006A921F /* UserBankCartViewController.xib */; };
 		84825E0F1F456E2C006A921F /* AccountCertificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E0D1F456E2C006A921F /* AccountCertificationViewController.m */; };
@@ -87,6 +86,8 @@
 		84825E311F469A16006A921F /* NewUserBuyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E2F1F469A16006A921F /* NewUserBuyTableViewCell.xib */; };
 		84825E361F46E4F6006A921F /* MainHeadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E341F46E4F6006A921F /* MainHeadTableViewCell.m */; };
 		84825E371F46E4F6006A921F /* MainHeadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E351F46E4F6006A921F /* MainHeadTableViewCell.xib */; };
+		84FEBA961F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBA951F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m */; };
+		84FEBADD1F4ABB730020B42D /* WRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBADC1F4ABB730020B42D /* WRNavigationBar.m */; };
 		CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */; };
 /* End PBXBuildFile section */
 
@@ -233,8 +234,6 @@
 		844402C91F44590100F5AFEE /* UsernameSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsernameSettingViewController.h; sourceTree = "<group>"; };
 		844402CA1F44590100F5AFEE /* UsernameSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsernameSettingViewController.m; sourceTree = "<group>"; };
 		844402CB1F44590100F5AFEE /* UsernameSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UsernameSettingViewController.xib; sourceTree = "<group>"; };
-		84825E041F453648006A921F /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
-		84825E051F453648006A921F /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		84825E071F456330006A921F /* UserBankCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserBankCartViewController.h; sourceTree = "<group>"; };
 		84825E081F456330006A921F /* UserBankCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBankCartViewController.m; sourceTree = "<group>"; };
 		84825E091F456330006A921F /* UserBankCartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserBankCartViewController.xib; sourceTree = "<group>"; };
@@ -258,6 +257,10 @@
 		84825E331F46E4F6006A921F /* MainHeadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainHeadTableViewCell.h; sourceTree = "<group>"; };
 		84825E341F46E4F6006A921F /* MainHeadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainHeadTableViewCell.m; sourceTree = "<group>"; };
 		84825E351F46E4F6006A921F /* MainHeadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainHeadTableViewCell.xib; sourceTree = "<group>"; };
+		84FEBA941F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		84FEBA951F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		84FEBADB1F4ABB730020B42D /* WRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRNavigationBar.h; sourceTree = "<group>"; };
+		84FEBADC1F4ABB730020B42D /* WRNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRNavigationBar.m; sourceTree = "<group>"; };
 		ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qulicai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -467,8 +470,9 @@
 		8435E5031F316E9200424E5E /* Venders */ = {
 			isa = PBXGroup;
 			children = (
+				84FEBADA1F4ABB730020B42D /* WRNavigationBar */,
+				84FEBA931F4AA58B0020B42D /* FDFullscreenPopGesture */,
 				84825E231F45BF7E006A921F /* DZ_Scale_Circle */,
-				84825E031F453648006A921F /* FDFullscreenPopGesture */,
 				844402C21F44516100F5AFEE /* WeiXinPickView */,
 				8435E5941F399C1E00424E5E /* CoreLock */,
 				8435E5901F399BFA00424E5E /* TDTouchID */,
@@ -699,15 +703,6 @@
 			path = WeiXinPickView;
 			sourceTree = "<group>";
 		};
-		84825E031F453648006A921F /* FDFullscreenPopGesture */ = {
-			isa = PBXGroup;
-			children = (
-				84825E041F453648006A921F /* UINavigationController+FDFullscreenPopGesture.h */,
-				84825E051F453648006A921F /* UINavigationController+FDFullscreenPopGesture.m */,
-			);
-			path = FDFullscreenPopGesture;
-			sourceTree = "<group>";
-		};
 		84825E231F45BF7E006A921F /* DZ_Scale_Circle */ = {
 			isa = PBXGroup;
 			children = (
@@ -738,6 +733,24 @@
 				84825E351F46E4F6006A921F /* MainHeadTableViewCell.xib */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		84FEBA931F4AA58B0020B42D /* FDFullscreenPopGesture */ = {
+			isa = PBXGroup;
+			children = (
+				84FEBA941F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.h */,
+				84FEBA951F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m */,
+			);
+			path = FDFullscreenPopGesture;
+			sourceTree = "<group>";
+		};
+		84FEBADA1F4ABB730020B42D /* WRNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				84FEBADB1F4ABB730020B42D /* WRNavigationBar.h */,
+				84FEBADC1F4ABB730020B42D /* WRNavigationBar.m */,
+			);
+			path = WRNavigationBar;
 			sourceTree = "<group>";
 		};
 		85EECFC4C30A131F3D55686C /* Frameworks */ = {
@@ -980,6 +993,7 @@
 				8444028B1F41B2B000F5AFEE /* UIImage+Custom.m in Sources */,
 				844402B81F441DB200F5AFEE /* MineTableViewController.m in Sources */,
 				8444024A1F41A0E700F5AFEE /* LoginViewController.m in Sources */,
+				84FEBA961F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				844402811F41B2B000F5AFEE /* NSDictionary+Custom.m in Sources */,
 				844402C81F44539700F5AFEE /* ZXCImagePicker.m in Sources */,
 				8444029A1F42CB6600F5AFEE /* RegisterViewController.m in Sources */,
@@ -991,10 +1005,10 @@
 				844402461F418F1400F5AFEE /* QRTabbarController.m in Sources */,
 				844402851F41B2B000F5AFEE /* NSString+Custom.m in Sources */,
 				84825E191F458F02006A921F /* ModifyTradingPdViewController.m in Sources */,
+				84FEBADD1F4ABB730020B42D /* WRNavigationBar.m in Sources */,
 				844402C51F44516100F5AFEE /* WeiXinPickView.m in Sources */,
 				84825E261F45BF7E006A921F /* DZ_ScaleCircle.m in Sources */,
 				8435E5B11F399C1E00424E5E /* CLLockNavVC.m in Sources */,
-				84825E061F453648006A921F /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				8435E5B01F399C1E00424E5E /* CoreLockConst.m in Sources */,
 				844402401F41874C00F5AFEE /* FinanceViewController.m in Sources */,
 				8444029F1F42CB9400F5AFEE /* ForgetPasswordViewController.m in Sources */,
