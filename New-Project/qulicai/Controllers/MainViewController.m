@@ -11,6 +11,7 @@
 #import "MainHeadView.h"
 #import "QRInfoTableViewCell.h"
 #import "QRWebViewController.h"
+#import "PruductDetailViewController.h"
 
 #define NAVBAR_COLORCHANGE_POINT (-IMAGE_HEIGHT + NAV_HEIGHT*2)
 #define NAV_HEIGHT 64
@@ -82,6 +83,9 @@ UITableViewDataSource>
         NewUserBuyTableViewCell *cell =
         [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([NewUserBuyTableViewCell class])];
         cell.sellOutImageView.hidden = YES;
+        [cell.buyButton addTarget:self
+                           action:@selector(buyButtonWasPressed:)
+                 forControlEvents:UIControlEventTouchUpInside];
         return cell;
     }
     QRInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QRInfoTableViewCell class])];
@@ -146,9 +150,17 @@ heightForHeaderInSection:(NSInteger)section {
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
 }
 
 #pragma mark - Hanlders
+
+- (void)buyButtonWasPressed:(UIButton *)sender {
+    PruductDetailViewController *productController = [[PruductDetailViewController alloc] init];
+    productController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:productController
+                                         animated:YES];
+}
 
 - (void)platformDataButtonWasPressed:(UIButton *)sender {
     NSString *urlString = @"https://www.baidu.com";

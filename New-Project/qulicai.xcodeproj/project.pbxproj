@@ -15,6 +15,10 @@
 		842616801F4AEB9100A96EFD /* SuggestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8426167E1F4AEB9100A96EFD /* SuggestViewController.xib */; };
 		8426168A1F4B005E00A96EFD /* CustomerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842616891F4B005E00A96EFD /* CustomerViewController.storyboard */; };
 		842616901F4B00A700A96EFD /* CustomerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426168F1F4B00A700A96EFD /* CustomerViewController.m */; };
+		842616951F4B0BE300A96EFD /* PruductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842616931F4B0BE300A96EFD /* PruductDetailViewController.m */; };
+		842616961F4B0BE300A96EFD /* PruductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842616941F4B0BE300A96EFD /* PruductDetailViewController.xib */; };
+		8426169B1F4B0FDF00A96EFD /* ProductHeadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842616991F4B0FDF00A96EFD /* ProductHeadTableViewCell.m */; };
+		8426169C1F4B0FDF00A96EFD /* ProductHeadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8426169A1F4B0FDF00A96EFD /* ProductHeadTableViewCell.xib */; };
 		8435E4B21F316BCE00424E5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E4B11F316BCE00424E5E /* main.m */; };
 		8435E4BB1F316BCE00424E5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4B91F316BCE00424E5E /* Main.storyboard */; };
 		8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4BC1F316BCE00424E5E /* Assets.xcassets */; };
@@ -131,6 +135,12 @@
 		842616891F4B005E00A96EFD /* CustomerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CustomerViewController.storyboard; sourceTree = "<group>"; };
 		8426168E1F4B00A700A96EFD /* CustomerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerViewController.h; sourceTree = "<group>"; };
 		8426168F1F4B00A700A96EFD /* CustomerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerViewController.m; sourceTree = "<group>"; };
+		842616921F4B0BE300A96EFD /* PruductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PruductDetailViewController.h; sourceTree = "<group>"; };
+		842616931F4B0BE300A96EFD /* PruductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PruductDetailViewController.m; sourceTree = "<group>"; };
+		842616941F4B0BE300A96EFD /* PruductDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PruductDetailViewController.xib; sourceTree = "<group>"; };
+		842616981F4B0FDF00A96EFD /* ProductHeadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductHeadTableViewCell.h; sourceTree = "<group>"; };
+		842616991F4B0FDF00A96EFD /* ProductHeadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductHeadTableViewCell.m; sourceTree = "<group>"; };
+		8426169A1F4B0FDF00A96EFD /* ProductHeadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductHeadTableViewCell.xib; sourceTree = "<group>"; };
 		8435E4AD1F316BCE00424E5E /* qulicai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qulicai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8435E4B11F316BCE00424E5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8435E4BA1F316BCE00424E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -319,6 +329,27 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		842616911F4B0BC300A96EFD /* PruductController */ = {
+			isa = PBXGroup;
+			children = (
+				842616921F4B0BE300A96EFD /* PruductDetailViewController.h */,
+				842616931F4B0BE300A96EFD /* PruductDetailViewController.m */,
+				842616941F4B0BE300A96EFD /* PruductDetailViewController.xib */,
+			);
+			name = PruductController;
+			path = Pruduct;
+			sourceTree = "<group>";
+		};
+		842616971F4B0FBA00A96EFD /* ProductView */ = {
+			isa = PBXGroup;
+			children = (
+				842616981F4B0FDF00A96EFD /* ProductHeadTableViewCell.h */,
+				842616991F4B0FDF00A96EFD /* ProductHeadTableViewCell.m */,
+				8426169A1F4B0FDF00A96EFD /* ProductHeadTableViewCell.xib */,
+			);
+			path = ProductView;
+			sourceTree = "<group>";
+		};
 		8435E4A41F316BCE00424E5E = {
 			isa = PBXGroup;
 			children = (
@@ -440,6 +471,7 @@
 		8435E4FD1F316E9200424E5E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				842616911F4B0BC300A96EFD /* PruductController */,
 				844402BC1F443F0A00F5AFEE /* Settings */,
 				844402A61F42FC5B00F5AFEE /* General */,
 				844402A51F42FC0600F5AFEE /* TabControllers */,
@@ -503,6 +535,7 @@
 		8435E5041F316E9200424E5E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				842616971F4B0FBA00A96EFD /* ProductView */,
 				84825E2C1F46993B006A921F /* FinanceView */,
 				84825E321F46E4E2006A921F /* MainView */,
 				844402A11F42F21100F5AFEE /* SendVerifyCodeButton.h */,
@@ -908,6 +941,7 @@
 				844402AB1F42FC8100F5AFEE /* QRWebViewController.xib in Resources */,
 				842616761F4AD33200A96EFD /* QRInfoTableViewCell.xib in Resources */,
 				844402A01F42CB9400F5AFEE /* ForgetPasswordViewController.xib in Resources */,
+				8426169C1F4B0FDF00A96EFD /* ProductHeadTableViewCell.xib in Resources */,
 				8426168A1F4B005E00A96EFD /* CustomerViewController.storyboard in Resources */,
 				8426167B1F4ADEC900A96EFD /* AboutQRViewController.xib in Resources */,
 				8444024B1F41A0E700F5AFEE /* LoginViewController.xib in Resources */,
@@ -920,6 +954,7 @@
 				84825E151F457468006A921F /* ModifyLoginPwViewController.xib in Resources */,
 				8435E4C01F316BCE00424E5E /* LaunchScreen.storyboard in Resources */,
 				8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */,
+				842616961F4B0BE300A96EFD /* PruductDetailViewController.xib in Resources */,
 				844402B01F43F9F600F5AFEE /* ResetPasswordViewController.xib in Resources */,
 				8435E5AE1F399C1E00424E5E /* CLLockVC.xib in Resources */,
 				84825E101F456E2C006A921F /* AccountCertificationViewController.xib in Resources */,
@@ -1016,6 +1051,7 @@
 				8435E60A1F3D9AE500424E5E /* QRRequestGetToken.m in Sources */,
 				842616751F4AD33200A96EFD /* QRInfoTableViewCell.m in Sources */,
 				8435E5C01F399C6C00424E5E /* CoreArchive.m in Sources */,
+				842616951F4B0BE300A96EFD /* PruductDetailViewController.m in Sources */,
 				844402871F41B2B000F5AFEE /* UIColor+Custom.m in Sources */,
 				8444028F1F41B2B000F5AFEE /* UIScrollView+Custom.m in Sources */,
 				844402901F41B2B000F5AFEE /* UITableView+Custom.m in Sources */,
@@ -1041,6 +1077,7 @@
 				8435E5B41F399C1E00424E5E /* CLLockLabel.m in Sources */,
 				84825E301F469A16006A921F /* NewUserBuyTableViewCell.m in Sources */,
 				8444023D1F4186E100F5AFEE /* MainViewController.m in Sources */,
+				8426169B1F4B0FDF00A96EFD /* ProductHeadTableViewCell.m in Sources */,
 				844402461F418F1400F5AFEE /* QRTabbarController.m in Sources */,
 				844402851F41B2B000F5AFEE /* NSString+Custom.m in Sources */,
 				8426167A1F4ADEC900A96EFD /* AboutQRViewController.m in Sources */,
