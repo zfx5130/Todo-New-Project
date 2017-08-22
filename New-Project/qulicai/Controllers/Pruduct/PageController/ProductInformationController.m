@@ -17,6 +17,7 @@
 #import "ProductIncomeViewController.h"
 #import "ProductRecordViewController.h"
 #import "ProductBackMoneyViewController.h"
+#import <Masonry.h>
 
 static NSString * const ID = @"CELL";
 
@@ -68,15 +69,12 @@ UICollectionViewDelegate>
     twoVc.title = @"项目明细";
     [self addChildViewController:twoVc];
     
-    
     ProductRecordViewController *threeVc = [[ProductRecordViewController alloc] init];
     threeVc.title = @"投资记录";
-    threeVc.view.backgroundColor = [UIColor yellowColor];
     [self addChildViewController:threeVc];
     
     ProductBackMoneyViewController *fourVc = [[ProductBackMoneyViewController alloc] init];
     fourVc.title = @"回款计划";
-    fourVc.view.backgroundColor = [UIColor greenColor];
     [self addChildViewController:fourVc];
 }
 
@@ -194,7 +192,7 @@ UICollectionViewDelegate>
     
     // 创建UICollectionView
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0,TitleHeight+NavBarHeight * 2, YYScreenW, YYScreenH-TitleHeight-NavBarHeight * 2) collectionViewLayout:layout];
-    collectionView.backgroundColor = [UIColor redColor];
+    collectionView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:collectionView];
     _collectionView = collectionView;
     collectionView.scrollsToTop = NO;
@@ -243,6 +241,10 @@ UICollectionViewDelegate>
     UIViewController *vc = self.childViewControllers[indexPath.row];
     
     [cell.contentView addSubview:vc.view];
+    
+    [vc.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(cell.contentView);
+    }];
     
     return cell;
 }

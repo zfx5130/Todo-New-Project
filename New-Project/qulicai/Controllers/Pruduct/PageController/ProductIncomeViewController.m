@@ -10,6 +10,8 @@
 #import "ProductIncomeTableViewCell.h"
 
 @interface ProductIncomeViewController ()
+<UITableViewDataSource,
+UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
