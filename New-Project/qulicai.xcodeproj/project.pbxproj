@@ -37,6 +37,8 @@
 		842616F11F4C0C9C00A96EFD /* ProductBackMoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842616EF1F4C0C9C00A96EFD /* ProductBackMoneyViewController.xib */; };
 		842616F51F4C106B00A96EFD /* ProductIntroTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842616F31F4C106B00A96EFD /* ProductIntroTableViewCell.m */; };
 		842616F61F4C106B00A96EFD /* ProductIntroTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842616F41F4C106B00A96EFD /* ProductIntroTableViewCell.xib */; };
+		842616FA1F4C17BA00A96EFD /* ProductIncomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842616F81F4C17BA00A96EFD /* ProductIncomeTableViewCell.m */; };
+		842616FB1F4C17BA00A96EFD /* ProductIncomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842616F91F4C17BA00A96EFD /* ProductIncomeTableViewCell.xib */; };
 		8435E4B21F316BCE00424E5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E4B11F316BCE00424E5E /* main.m */; };
 		8435E4BB1F316BCE00424E5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4B91F316BCE00424E5E /* Main.storyboard */; };
 		8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4BC1F316BCE00424E5E /* Assets.xcassets */; };
@@ -187,6 +189,9 @@
 		842616F21F4C106B00A96EFD /* ProductIntroTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductIntroTableViewCell.h; sourceTree = "<group>"; };
 		842616F31F4C106B00A96EFD /* ProductIntroTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductIntroTableViewCell.m; sourceTree = "<group>"; };
 		842616F41F4C106B00A96EFD /* ProductIntroTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductIntroTableViewCell.xib; sourceTree = "<group>"; };
+		842616F71F4C17BA00A96EFD /* ProductIncomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductIncomeTableViewCell.h; sourceTree = "<group>"; };
+		842616F81F4C17BA00A96EFD /* ProductIncomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductIncomeTableViewCell.m; sourceTree = "<group>"; };
+		842616F91F4C17BA00A96EFD /* ProductIncomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductIncomeTableViewCell.xib; sourceTree = "<group>"; };
 		8435E4AD1F316BCE00424E5E /* qulicai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qulicai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8435E4B11F316BCE00424E5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8435E4BA1F316BCE00424E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -402,6 +407,9 @@
 				842616F21F4C106B00A96EFD /* ProductIntroTableViewCell.h */,
 				842616F31F4C106B00A96EFD /* ProductIntroTableViewCell.m */,
 				842616F41F4C106B00A96EFD /* ProductIntroTableViewCell.xib */,
+				842616F71F4C17BA00A96EFD /* ProductIncomeTableViewCell.h */,
+				842616F81F4C17BA00A96EFD /* ProductIncomeTableViewCell.m */,
+				842616F91F4C17BA00A96EFD /* ProductIncomeTableViewCell.xib */,
 			);
 			path = ProductView;
 			sourceTree = "<group>";
@@ -1057,6 +1065,7 @@
 				84825E101F456E2C006A921F /* AccountCertificationViewController.xib in Resources */,
 				84825E2B1F4687B6006A921F /* FinanceCarouselTableViewCell.xib in Resources */,
 				8435E4BB1F316BCE00424E5E /* Main.storyboard in Resources */,
+				842616FB1F4C17BA00A96EFD /* ProductIncomeTableViewCell.xib in Resources */,
 				8444029B1F42CB6600F5AFEE /* RegisterViewController.xib in Resources */,
 				842616F61F4C106B00A96EFD /* ProductIntroTableViewCell.xib in Resources */,
 				84825E0B1F456330006A921F /* UserBankCartViewController.xib in Resources */,
@@ -1168,6 +1177,7 @@
 				8435E5AD1F399C1E00424E5E /* CLLockVC.m in Sources */,
 				8435E5B61F399C1E00424E5E /* CLLockView.m in Sources */,
 				8444028B1F41B2B000F5AFEE /* UIImage+Custom.m in Sources */,
+				842616FA1F4C17BA00A96EFD /* ProductIncomeTableViewCell.m in Sources */,
 				844402B81F441DB200F5AFEE /* MineTableViewController.m in Sources */,
 				8444024A1F41A0E700F5AFEE /* LoginViewController.m in Sources */,
 				84FEBA961F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m in Sources */,

@@ -66,7 +66,6 @@ UICollectionViewDelegate>
     
     ProductIncomeViewController *twoVc = [[ProductIncomeViewController alloc] init];
     twoVc.title = @"项目明细";
-    twoVc.view.backgroundColor = [UIColor redColor];
     [self addChildViewController:twoVc];
     
     
