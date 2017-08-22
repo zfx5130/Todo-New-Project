@@ -25,6 +25,18 @@
 		842616A61F4BD53300A96EFD /* ProductDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842616A41F4BD53300A96EFD /* ProductDetailTableViewCell.xib */; };
 		842616AB1F4BDF1300A96EFD /* InputTextView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 842616A91F4BDF1300A96EFD /* InputTextView1.m */; };
 		842616AC1F4BDF1300A96EFD /* InputTextView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842616AA1F4BDF1300A96EFD /* InputTextView1.xib */; };
+		842616D51F4C050100A96EFD /* UIView+XJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 842616D41F4C050100A96EFD /* UIView+XJExtension.m */; };
+		842616D81F4C050800A96EFD /* ProductInformationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842616D71F4C050800A96EFD /* ProductInformationController.m */; };
+		842616E11F4C0C6C00A96EFD /* ProductIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842616DF1F4C0C6C00A96EFD /* ProductIntroViewController.m */; };
+		842616E21F4C0C6C00A96EFD /* ProductIntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842616E01F4C0C6C00A96EFD /* ProductIntroViewController.xib */; };
+		842616E61F4C0C7D00A96EFD /* ProductIncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842616E41F4C0C7D00A96EFD /* ProductIncomeViewController.m */; };
+		842616E71F4C0C7D00A96EFD /* ProductIncomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842616E51F4C0C7D00A96EFD /* ProductIncomeViewController.xib */; };
+		842616EB1F4C0C8E00A96EFD /* ProductRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842616E91F4C0C8E00A96EFD /* ProductRecordViewController.m */; };
+		842616EC1F4C0C8E00A96EFD /* ProductRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842616EA1F4C0C8E00A96EFD /* ProductRecordViewController.xib */; };
+		842616F01F4C0C9C00A96EFD /* ProductBackMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842616EE1F4C0C9C00A96EFD /* ProductBackMoneyViewController.m */; };
+		842616F11F4C0C9C00A96EFD /* ProductBackMoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842616EF1F4C0C9C00A96EFD /* ProductBackMoneyViewController.xib */; };
+		842616F51F4C106B00A96EFD /* ProductIntroTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842616F31F4C106B00A96EFD /* ProductIntroTableViewCell.m */; };
+		842616F61F4C106B00A96EFD /* ProductIntroTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842616F41F4C106B00A96EFD /* ProductIntroTableViewCell.xib */; };
 		8435E4B21F316BCE00424E5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E4B11F316BCE00424E5E /* main.m */; };
 		8435E4BB1F316BCE00424E5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4B91F316BCE00424E5E /* Main.storyboard */; };
 		8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4BC1F316BCE00424E5E /* Assets.xcassets */; };
@@ -156,6 +168,25 @@
 		842616A81F4BDF1300A96EFD /* InputTextView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputTextView1.h; sourceTree = "<group>"; };
 		842616A91F4BDF1300A96EFD /* InputTextView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputTextView1.m; sourceTree = "<group>"; };
 		842616AA1F4BDF1300A96EFD /* InputTextView1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputTextView1.xib; sourceTree = "<group>"; };
+		842616D31F4C050100A96EFD /* UIView+XJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XJExtension.h"; sourceTree = "<group>"; };
+		842616D41F4C050100A96EFD /* UIView+XJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XJExtension.m"; sourceTree = "<group>"; };
+		842616D61F4C050800A96EFD /* ProductInformationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductInformationController.h; sourceTree = "<group>"; };
+		842616D71F4C050800A96EFD /* ProductInformationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductInformationController.m; sourceTree = "<group>"; };
+		842616DE1F4C0C6C00A96EFD /* ProductIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductIntroViewController.h; sourceTree = "<group>"; };
+		842616DF1F4C0C6C00A96EFD /* ProductIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductIntroViewController.m; sourceTree = "<group>"; };
+		842616E01F4C0C6C00A96EFD /* ProductIntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductIntroViewController.xib; sourceTree = "<group>"; };
+		842616E31F4C0C7D00A96EFD /* ProductIncomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductIncomeViewController.h; sourceTree = "<group>"; };
+		842616E41F4C0C7D00A96EFD /* ProductIncomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductIncomeViewController.m; sourceTree = "<group>"; };
+		842616E51F4C0C7D00A96EFD /* ProductIncomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductIncomeViewController.xib; sourceTree = "<group>"; };
+		842616E81F4C0C8E00A96EFD /* ProductRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductRecordViewController.h; sourceTree = "<group>"; };
+		842616E91F4C0C8E00A96EFD /* ProductRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductRecordViewController.m; sourceTree = "<group>"; };
+		842616EA1F4C0C8E00A96EFD /* ProductRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductRecordViewController.xib; sourceTree = "<group>"; };
+		842616ED1F4C0C9C00A96EFD /* ProductBackMoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductBackMoneyViewController.h; sourceTree = "<group>"; };
+		842616EE1F4C0C9C00A96EFD /* ProductBackMoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductBackMoneyViewController.m; sourceTree = "<group>"; };
+		842616EF1F4C0C9C00A96EFD /* ProductBackMoneyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductBackMoneyViewController.xib; sourceTree = "<group>"; };
+		842616F21F4C106B00A96EFD /* ProductIntroTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductIntroTableViewCell.h; sourceTree = "<group>"; };
+		842616F31F4C106B00A96EFD /* ProductIntroTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductIntroTableViewCell.m; sourceTree = "<group>"; };
+		842616F41F4C106B00A96EFD /* ProductIntroTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductIntroTableViewCell.xib; sourceTree = "<group>"; };
 		8435E4AD1F316BCE00424E5E /* qulicai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qulicai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8435E4B11F316BCE00424E5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8435E4BA1F316BCE00424E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -347,6 +378,7 @@
 		842616911F4B0BC300A96EFD /* PruductController */ = {
 			isa = PBXGroup;
 			children = (
+				842616CC1F4C04EC00A96EFD /* PageController */,
 				842616921F4B0BE300A96EFD /* PruductDetailViewController.h */,
 				842616931F4B0BE300A96EFD /* PruductDetailViewController.m */,
 				842616941F4B0BE300A96EFD /* PruductDetailViewController.xib */,
@@ -367,6 +399,9 @@
 				842616A21F4BD53300A96EFD /* ProductDetailTableViewCell.h */,
 				842616A31F4BD53300A96EFD /* ProductDetailTableViewCell.m */,
 				842616A41F4BD53300A96EFD /* ProductDetailTableViewCell.xib */,
+				842616F21F4C106B00A96EFD /* ProductIntroTableViewCell.h */,
+				842616F31F4C106B00A96EFD /* ProductIntroTableViewCell.m */,
+				842616F41F4C106B00A96EFD /* ProductIntroTableViewCell.xib */,
 			);
 			path = ProductView;
 			sourceTree = "<group>";
@@ -379,6 +414,29 @@
 				842616AA1F4BDF1300A96EFD /* InputTextView1.xib */,
 			);
 			path = InputTextView;
+			sourceTree = "<group>";
+		};
+		842616CC1F4C04EC00A96EFD /* PageController */ = {
+			isa = PBXGroup;
+			children = (
+				842616D61F4C050800A96EFD /* ProductInformationController.h */,
+				842616D71F4C050800A96EFD /* ProductInformationController.m */,
+				842616D31F4C050100A96EFD /* UIView+XJExtension.h */,
+				842616D41F4C050100A96EFD /* UIView+XJExtension.m */,
+				842616DE1F4C0C6C00A96EFD /* ProductIntroViewController.h */,
+				842616DF1F4C0C6C00A96EFD /* ProductIntroViewController.m */,
+				842616E01F4C0C6C00A96EFD /* ProductIntroViewController.xib */,
+				842616E31F4C0C7D00A96EFD /* ProductIncomeViewController.h */,
+				842616E41F4C0C7D00A96EFD /* ProductIncomeViewController.m */,
+				842616E51F4C0C7D00A96EFD /* ProductIncomeViewController.xib */,
+				842616E81F4C0C8E00A96EFD /* ProductRecordViewController.h */,
+				842616E91F4C0C8E00A96EFD /* ProductRecordViewController.m */,
+				842616EA1F4C0C8E00A96EFD /* ProductRecordViewController.xib */,
+				842616ED1F4C0C9C00A96EFD /* ProductBackMoneyViewController.h */,
+				842616EE1F4C0C9C00A96EFD /* ProductBackMoneyViewController.m */,
+				842616EF1F4C0C9C00A96EFD /* ProductBackMoneyViewController.xib */,
+			);
+			path = PageController;
 			sourceTree = "<group>";
 		};
 		8435E4A41F316BCE00424E5E = {
@@ -970,10 +1028,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842616F11F4C0C9C00A96EFD /* ProductBackMoneyViewController.xib in Resources */,
 				844402AB1F42FC8100F5AFEE /* QRWebViewController.xib in Resources */,
+				842616E71F4C0C7D00A96EFD /* ProductIncomeViewController.xib in Resources */,
 				842616761F4AD33200A96EFD /* QRInfoTableViewCell.xib in Resources */,
 				844402A01F42CB9400F5AFEE /* ForgetPasswordViewController.xib in Resources */,
 				8426169C1F4B0FDF00A96EFD /* ProductHeadTableViewCell.xib in Resources */,
+				842616EC1F4C0C8E00A96EFD /* ProductRecordViewController.xib in Resources */,
 				842616AC1F4BDF1300A96EFD /* InputTextView1.xib in Resources */,
 				8426168A1F4B005E00A96EFD /* CustomerViewController.storyboard in Resources */,
 				8426167B1F4ADEC900A96EFD /* AboutQRViewController.xib in Resources */,
@@ -989,6 +1050,7 @@
 				84825E151F457468006A921F /* ModifyLoginPwViewController.xib in Resources */,
 				8435E4C01F316BCE00424E5E /* LaunchScreen.storyboard in Resources */,
 				8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */,
+				842616E21F4C0C6C00A96EFD /* ProductIntroViewController.xib in Resources */,
 				842616961F4B0BE300A96EFD /* PruductDetailViewController.xib in Resources */,
 				844402B01F43F9F600F5AFEE /* ResetPasswordViewController.xib in Resources */,
 				8435E5AE1F399C1E00424E5E /* CLLockVC.xib in Resources */,
@@ -996,6 +1058,7 @@
 				84825E2B1F4687B6006A921F /* FinanceCarouselTableViewCell.xib in Resources */,
 				8435E4BB1F316BCE00424E5E /* Main.storyboard in Resources */,
 				8444029B1F42CB6600F5AFEE /* RegisterViewController.xib in Resources */,
+				842616F61F4C106B00A96EFD /* ProductIntroTableViewCell.xib in Resources */,
 				84825E0B1F456330006A921F /* UserBankCartViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1085,6 +1148,7 @@
 				844402841F41B2B000F5AFEE /* NSString+Check.m in Sources */,
 				8444027F1F41B2B000F5AFEE /* NSArray+Custom.m in Sources */,
 				8435E60A1F3D9AE500424E5E /* QRRequestGetToken.m in Sources */,
+				842616D81F4C050800A96EFD /* ProductInformationController.m in Sources */,
 				842616751F4AD33200A96EFD /* QRInfoTableViewCell.m in Sources */,
 				8435E5C01F399C6C00424E5E /* CoreArchive.m in Sources */,
 				842616951F4B0BE300A96EFD /* PruductDetailViewController.m in Sources */,
@@ -1098,6 +1162,8 @@
 				844402821F41B2B000F5AFEE /* NSNumber+Custom.m in Sources */,
 				8435E4B21F316BCE00424E5E /* main.m in Sources */,
 				844402831F41B2B000F5AFEE /* NSObject+Custom.m in Sources */,
+				842616F51F4C106B00A96EFD /* ProductIntroTableViewCell.m in Sources */,
+				842616D51F4C050100A96EFD /* UIView+XJExtension.m in Sources */,
 				8435E5931F399BFA00424E5E /* TDTouchID.m in Sources */,
 				8435E5AD1F399C1E00424E5E /* CLLockVC.m in Sources */,
 				8435E5B61F399C1E00424E5E /* CLLockView.m in Sources */,
@@ -1110,9 +1176,11 @@
 				8444029A1F42CB6600F5AFEE /* RegisterViewController.m in Sources */,
 				84825E0F1F456E2C006A921F /* AccountCertificationViewController.m in Sources */,
 				8435E50B1F31726D00424E5E /* AppDelegate.m in Sources */,
+				842616F01F4C0C9C00A96EFD /* ProductBackMoneyViewController.m in Sources */,
 				8435E5B41F399C1E00424E5E /* CLLockLabel.m in Sources */,
 				84825E301F469A16006A921F /* NewUserBuyTableViewCell.m in Sources */,
 				842616A01F4BD13300A96EFD /* ProductCycleTableViewCell.m in Sources */,
+				842616E61F4C0C7D00A96EFD /* ProductIncomeViewController.m in Sources */,
 				8444023D1F4186E100F5AFEE /* MainViewController.m in Sources */,
 				8426169B1F4B0FDF00A96EFD /* ProductHeadTableViewCell.m in Sources */,
 				844402461F418F1400F5AFEE /* QRTabbarController.m in Sources */,
@@ -1122,6 +1190,7 @@
 				84FEBADD1F4ABB730020B42D /* WRNavigationBar.m in Sources */,
 				844402C51F44516100F5AFEE /* WeiXinPickView.m in Sources */,
 				84825E261F45BF7E006A921F /* DZ_ScaleCircle.m in Sources */,
+				842616E11F4C0C6C00A96EFD /* ProductIntroViewController.m in Sources */,
 				8435E5B11F399C1E00424E5E /* CLLockNavVC.m in Sources */,
 				8435E5B01F399C1E00424E5E /* CoreLockConst.m in Sources */,
 				844402401F41874C00F5AFEE /* FinanceViewController.m in Sources */,
@@ -1134,6 +1203,7 @@
 				84825E2A1F4687B6006A921F /* FinanceCarouselTableViewCell.m in Sources */,
 				844402891F41B2B000F5AFEE /* UIFont+Custom.m in Sources */,
 				844402911F41B2B000F5AFEE /* UITextField+Custom.m in Sources */,
+				842616EB1F4C0C8E00A96EFD /* ProductRecordViewController.m in Sources */,
 				8444028C1F41B2B000F5AFEE /* UIImage+ImageEffects.m in Sources */,
 				8435E5B51F399C1E00424E5E /* CLLockMainView.m in Sources */,
 				844402801F41B2B000F5AFEE /* NSDate+Custom.m in Sources */,

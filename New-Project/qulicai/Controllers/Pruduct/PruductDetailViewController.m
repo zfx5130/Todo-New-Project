@@ -12,6 +12,7 @@
 #import "ProductCycleTableViewCell.h"
 #import "ProductDetailTableViewCell.h"
 #import "InputTextView1.h"
+#import "ProductInformationController.h"
 
 #define NAVBAR_COLORCHANGE_POINT (IMAGE_HEIGHT - NAV_HEIGHT*2)
 #define IMAGE_HEIGHT 220
@@ -41,12 +42,10 @@ InputTextView1Delgate>
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [UIColor wr_setDefaultNavBarShadowImageHidden:NO];
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    [UIColor wr_setDefaultNavBarShadowImageHidden:YES];
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -173,20 +172,23 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath
                              animated:YES];
     if (indexPath.section == 2) {
-        NSLog(@"产品详情");
+        [self swapDetailController];
     }
 }
 
 #pragma mark InputTextView1Delgate
--(void)cancleInput1 {
-    
-}
 
 -(void)finishedInput1:(InputTextView1 *)InputTextView1 {
     
 }
 
 #pragma mark - Hanlders
+
+- (void)swapDetailController {
+    ProductInformationController *detailController = [[ProductInformationController alloc] init];
+    [self.navigationController pushViewController:detailController
+                                         animated:YES];
+}
 
 - (void)leftBarButtonAction {
     [self.navigationController popViewControllerAnimated:YES];
