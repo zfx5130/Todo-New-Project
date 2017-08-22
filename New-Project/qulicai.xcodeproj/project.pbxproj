@@ -112,6 +112,8 @@
 		844402CC1F44590100F5AFEE /* UsernameSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402CA1F44590100F5AFEE /* UsernameSettingViewController.m */; };
 		844402CD1F44590100F5AFEE /* UsernameSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844402CB1F44590100F5AFEE /* UsernameSettingViewController.xib */; };
 		844FB7FA1F4C5B8A001772AF /* Bank.plist in Resources */ = {isa = PBXBuildFile; fileRef = 844FB7F91F4C5B8A001772AF /* Bank.plist */; };
+		844FB7FE1F4C6B89001772AF /* ProductBuyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB7FC1F4C6B89001772AF /* ProductBuyViewController.m */; };
+		844FB7FF1F4C6B89001772AF /* ProductBuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB7FD1F4C6B89001772AF /* ProductBuyViewController.xib */; };
 		84825E0A1F456330006A921F /* UserBankCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E081F456330006A921F /* UserBankCartViewController.m */; };
 		84825E0B1F456330006A921F /* UserBankCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E091F456330006A921F /* UserBankCartViewController.xib */; };
 		84825E0F1F456E2C006A921F /* AccountCertificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E0D1F456E2C006A921F /* AccountCertificationViewController.m */; };
@@ -337,6 +339,9 @@
 		844402CA1F44590100F5AFEE /* UsernameSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsernameSettingViewController.m; sourceTree = "<group>"; };
 		844402CB1F44590100F5AFEE /* UsernameSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UsernameSettingViewController.xib; sourceTree = "<group>"; };
 		844FB7F91F4C5B8A001772AF /* Bank.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Bank.plist; sourceTree = "<group>"; };
+		844FB7FB1F4C6B89001772AF /* ProductBuyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductBuyViewController.h; sourceTree = "<group>"; };
+		844FB7FC1F4C6B89001772AF /* ProductBuyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductBuyViewController.m; sourceTree = "<group>"; };
+		844FB7FD1F4C6B89001772AF /* ProductBuyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductBuyViewController.xib; sourceTree = "<group>"; };
 		84825E071F456330006A921F /* UserBankCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserBankCartViewController.h; sourceTree = "<group>"; };
 		84825E081F456330006A921F /* UserBankCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBankCartViewController.m; sourceTree = "<group>"; };
 		84825E091F456330006A921F /* UserBankCartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserBankCartViewController.xib; sourceTree = "<group>"; };
@@ -409,6 +414,9 @@
 				842616921F4B0BE300A96EFD /* PruductDetailViewController.h */,
 				842616931F4B0BE300A96EFD /* PruductDetailViewController.m */,
 				842616941F4B0BE300A96EFD /* PruductDetailViewController.xib */,
+				844FB7FB1F4C6B89001772AF /* ProductBuyViewController.h */,
+				844FB7FC1F4C6B89001772AF /* ProductBuyViewController.m */,
+				844FB7FD1F4C6B89001772AF /* ProductBuyViewController.xib */,
 			);
 			name = PruductController;
 			path = Pruduct;
@@ -1094,6 +1102,7 @@
 				84825E151F457468006A921F /* ModifyLoginPwViewController.xib in Resources */,
 				8435E4C01F316BCE00424E5E /* LaunchScreen.storyboard in Resources */,
 				8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */,
+				844FB7FF1F4C6B89001772AF /* ProductBuyViewController.xib in Resources */,
 				8426170A1F4C324B00A96EFD /* AddBankCardViewController.xib in Resources */,
 				842616E21F4C0C6C00A96EFD /* ProductIntroViewController.xib in Resources */,
 				842616961F4B0BE300A96EFD /* PruductDetailViewController.xib in Resources */,
@@ -1249,6 +1258,7 @@
 				8435E5B01F399C1E00424E5E /* CoreLockConst.m in Sources */,
 				844402401F41874C00F5AFEE /* FinanceViewController.m in Sources */,
 				8444029F1F42CB9400F5AFEE /* ForgetPasswordViewController.m in Sources */,
+				844FB7FE1F4C6B89001772AF /* ProductBuyViewController.m in Sources */,
 				844402A31F42F21100F5AFEE /* SendVerifyCodeButton.m in Sources */,
 				842616AB1F4BDF1300A96EFD /* InputTextView1.m in Sources */,
 				844402CC1F44590100F5AFEE /* UsernameSettingViewController.m in Sources */,
