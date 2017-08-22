@@ -13,6 +13,7 @@
 #import "ProductDetailTableViewCell.h"
 #import "InputTextView1.h"
 #import "ProductInformationController.h"
+#import "AccountCertificationViewController.h"
 
 #define NAVBAR_COLORCHANGE_POINT (IMAGE_HEIGHT - NAV_HEIGHT*2)
 #define IMAGE_HEIGHT 220
@@ -26,6 +27,9 @@ InputTextView1Delgate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (weak, nonatomic) IBOutlet UIButton *bugButton;
+
+//是否第一次充值
+@property (assign, nonatomic) BOOL isFirstCharge;
 
 @end
 
@@ -208,7 +212,15 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 
 - (IBAction)buyProduct:(UIButton *)sender {
-    
+    self.isFirstCharge = YES;
+    if (self.isFirstCharge) {
+        AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
+        accountController.isProductPush = YES;
+        [self.navigationController pushViewController:accountController
+                                             animated:YES];
+    }  else {
+        NSLog(@"直接购买");
+    }
 }
 
 @end

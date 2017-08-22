@@ -10,4 +10,6 @@
 
 @interface AccountCertificationViewController : UIViewController
 
+@property (assign, nonatomic) BOOL isProductPush;
+
 @end
