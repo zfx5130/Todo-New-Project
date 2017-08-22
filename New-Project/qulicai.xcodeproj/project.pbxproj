@@ -19,6 +19,10 @@
 		842616961F4B0BE300A96EFD /* PruductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842616941F4B0BE300A96EFD /* PruductDetailViewController.xib */; };
 		8426169B1F4B0FDF00A96EFD /* ProductHeadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842616991F4B0FDF00A96EFD /* ProductHeadTableViewCell.m */; };
 		8426169C1F4B0FDF00A96EFD /* ProductHeadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8426169A1F4B0FDF00A96EFD /* ProductHeadTableViewCell.xib */; };
+		842616A01F4BD13300A96EFD /* ProductCycleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426169E1F4BD13300A96EFD /* ProductCycleTableViewCell.m */; };
+		842616A11F4BD13300A96EFD /* ProductCycleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8426169F1F4BD13300A96EFD /* ProductCycleTableViewCell.xib */; };
+		842616A51F4BD53300A96EFD /* ProductDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842616A31F4BD53300A96EFD /* ProductDetailTableViewCell.m */; };
+		842616A61F4BD53300A96EFD /* ProductDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842616A41F4BD53300A96EFD /* ProductDetailTableViewCell.xib */; };
 		8435E4B21F316BCE00424E5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E4B11F316BCE00424E5E /* main.m */; };
 		8435E4BB1F316BCE00424E5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4B91F316BCE00424E5E /* Main.storyboard */; };
 		8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4BC1F316BCE00424E5E /* Assets.xcassets */; };
@@ -141,6 +145,12 @@
 		842616981F4B0FDF00A96EFD /* ProductHeadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductHeadTableViewCell.h; sourceTree = "<group>"; };
 		842616991F4B0FDF00A96EFD /* ProductHeadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductHeadTableViewCell.m; sourceTree = "<group>"; };
 		8426169A1F4B0FDF00A96EFD /* ProductHeadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductHeadTableViewCell.xib; sourceTree = "<group>"; };
+		8426169D1F4BD13300A96EFD /* ProductCycleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCycleTableViewCell.h; sourceTree = "<group>"; };
+		8426169E1F4BD13300A96EFD /* ProductCycleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCycleTableViewCell.m; sourceTree = "<group>"; };
+		8426169F1F4BD13300A96EFD /* ProductCycleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCycleTableViewCell.xib; sourceTree = "<group>"; };
+		842616A21F4BD53300A96EFD /* ProductDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailTableViewCell.h; sourceTree = "<group>"; };
+		842616A31F4BD53300A96EFD /* ProductDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailTableViewCell.m; sourceTree = "<group>"; };
+		842616A41F4BD53300A96EFD /* ProductDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailTableViewCell.xib; sourceTree = "<group>"; };
 		8435E4AD1F316BCE00424E5E /* qulicai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qulicai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8435E4B11F316BCE00424E5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8435E4BA1F316BCE00424E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -346,6 +356,12 @@
 				842616981F4B0FDF00A96EFD /* ProductHeadTableViewCell.h */,
 				842616991F4B0FDF00A96EFD /* ProductHeadTableViewCell.m */,
 				8426169A1F4B0FDF00A96EFD /* ProductHeadTableViewCell.xib */,
+				8426169D1F4BD13300A96EFD /* ProductCycleTableViewCell.h */,
+				8426169E1F4BD13300A96EFD /* ProductCycleTableViewCell.m */,
+				8426169F1F4BD13300A96EFD /* ProductCycleTableViewCell.xib */,
+				842616A21F4BD53300A96EFD /* ProductDetailTableViewCell.h */,
+				842616A31F4BD53300A96EFD /* ProductDetailTableViewCell.m */,
+				842616A41F4BD53300A96EFD /* ProductDetailTableViewCell.xib */,
 			);
 			path = ProductView;
 			sourceTree = "<group>";
@@ -947,8 +963,10 @@
 				8444024B1F41A0E700F5AFEE /* LoginViewController.xib in Resources */,
 				84825E311F469A16006A921F /* NewUserBuyTableViewCell.xib in Resources */,
 				844402C11F443FAE00F5AFEE /* SettingsTableViewController.storyboard in Resources */,
+				842616A11F4BD13300A96EFD /* ProductCycleTableViewCell.xib in Resources */,
 				842616801F4AEB9100A96EFD /* SuggestViewController.xib in Resources */,
 				844402CD1F44590100F5AFEE /* UsernameSettingViewController.xib in Resources */,
+				842616A61F4BD53300A96EFD /* ProductDetailTableViewCell.xib in Resources */,
 				84825E1A1F458F02006A921F /* ModifyTradingPdViewController.xib in Resources */,
 				84FEBAE21F4ABF630020B42D /* MainHeadView.xib in Resources */,
 				84825E151F457468006A921F /* ModifyLoginPwViewController.xib in Resources */,
@@ -1037,6 +1055,7 @@
 				844402BF1F443F9A00F5AFEE /* SettingsTableViewController.m in Sources */,
 				844402BB1F44217400F5AFEE /* UIViewController+Addition.m in Sources */,
 				844402921F41B2B000F5AFEE /* UITextView+Custom.m in Sources */,
+				842616A51F4BD53300A96EFD /* ProductDetailTableViewCell.m in Sources */,
 				8435E5B21F399C1E00424E5E /* CLLockInfoView.m in Sources */,
 				84FEBAE01F4ABF510020B42D /* MainHeadView.m in Sources */,
 				844402881F41B2B000F5AFEE /* UIColor+RGBValues.m in Sources */,
@@ -1076,6 +1095,7 @@
 				8435E50B1F31726D00424E5E /* AppDelegate.m in Sources */,
 				8435E5B41F399C1E00424E5E /* CLLockLabel.m in Sources */,
 				84825E301F469A16006A921F /* NewUserBuyTableViewCell.m in Sources */,
+				842616A01F4BD13300A96EFD /* ProductCycleTableViewCell.m in Sources */,
 				8444023D1F4186E100F5AFEE /* MainViewController.m in Sources */,
 				8426169B1F4B0FDF00A96EFD /* ProductHeadTableViewCell.m in Sources */,
 				844402461F418F1400F5AFEE /* QRTabbarController.m in Sources */,

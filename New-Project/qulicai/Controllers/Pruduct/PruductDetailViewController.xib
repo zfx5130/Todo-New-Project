@@ -6,11 +6,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PruductDetailViewController">
             <connections>
+                <outlet property="bugButton" destination="TUV-hm-Anu" id="8Vc-TQ-Slk"/>
                 <outlet property="tableView" destination="Yj7-o1-QlP" id="xZE-dv-Kr9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Yj7-o1-QlP">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <connections>
@@ -29,15 +31,57 @@
                         <outlet property="delegate" destination="-1" id="UJM-RN-Hbg"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGl-m1-yol" userLabel="Bottom View">
+                    <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibk-fC-v1u">
+                            <rect key="frame" x="0.0" y="0.0" width="125" height="49"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="计算收益">
+                                <color key="titleColor" red="0.94901960784313721" green="0.34901960784313724" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="calculate:" destination="-1" eventType="touchUpInside" id="jSh-EG-AVq"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUV-hm-Anu">
+                            <rect key="frame" x="125" y="0.0" width="250" height="49"/>
+                            <state key="normal" title="立即购买" backgroundImage="buy_button_bg_image">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="buyProduct:" destination="-1" eventType="touchUpInside" id="cAr-BV-zGI"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="ibk-fC-v1u" firstAttribute="top" secondItem="tGl-m1-yol" secondAttribute="top" id="0Z1-TZ-Zde"/>
+                        <constraint firstItem="TUV-hm-Anu" firstAttribute="leading" secondItem="ibk-fC-v1u" secondAttribute="trailing" id="258-Gy-97G"/>
+                        <constraint firstItem="ibk-fC-v1u" firstAttribute="leading" secondItem="tGl-m1-yol" secondAttribute="leading" id="3zM-Et-cJt"/>
+                        <constraint firstAttribute="bottom" secondItem="ibk-fC-v1u" secondAttribute="bottom" id="EIr-O5-hK2"/>
+                        <constraint firstAttribute="trailing" secondItem="TUV-hm-Anu" secondAttribute="trailing" id="N7U-Cu-O6B"/>
+                        <constraint firstAttribute="bottom" secondItem="TUV-hm-Anu" secondAttribute="bottom" id="TcG-U9-kbh"/>
+                        <constraint firstItem="TUV-hm-Anu" firstAttribute="top" secondItem="tGl-m1-yol" secondAttribute="top" id="Tg2-l0-cRo"/>
+                        <constraint firstAttribute="height" constant="49" id="cPh-hK-Bpy"/>
+                        <constraint firstItem="ibk-fC-v1u" firstAttribute="width" secondItem="tGl-m1-yol" secondAttribute="width" multiplier="0.33333" id="uoG-Ys-zhQ"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Yj7-o1-QlP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8Zp-ix-iGo"/>
+                <constraint firstAttribute="bottom" secondItem="tGl-m1-yol" secondAttribute="bottom" id="9Ah-Cg-xdf"/>
+                <constraint firstItem="tGl-m1-yol" firstAttribute="top" secondItem="Yj7-o1-QlP" secondAttribute="bottom" id="Lwc-V2-Ev2"/>
                 <constraint firstItem="Yj7-o1-QlP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RwF-tC-zkC"/>
                 <constraint firstAttribute="trailing" secondItem="Yj7-o1-QlP" secondAttribute="trailing" id="UyW-Z3-6AL"/>
-                <constraint firstAttribute="bottom" secondItem="Yj7-o1-QlP" secondAttribute="bottom" id="cdg-aN-SH9"/>
+                <constraint firstAttribute="trailing" secondItem="tGl-m1-yol" secondAttribute="trailing" id="k56-pm-Diq"/>
+                <constraint firstItem="tGl-m1-yol" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lDy-z3-986"/>
             </constraints>
             <point key="canvasLocation" x="24.5" y="51.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="buy_button_bg_image" width="250" height="49"/>
+    </resources>
 </document>

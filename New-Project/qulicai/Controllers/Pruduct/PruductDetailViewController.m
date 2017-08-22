@@ -9,12 +9,20 @@
 #import "PruductDetailViewController.h"
 #import "QRInfoTableViewCell.h"
 #import "ProductHeadTableViewCell.h"
+#import "ProductCycleTableViewCell.h"
+#import "ProductDetailTableViewCell.h"
+
+#define NAVBAR_COLORCHANGE_POINT (IMAGE_HEIGHT - NAV_HEIGHT*2)
+#define IMAGE_HEIGHT 220
+#define NAV_HEIGHT 64
 
 @interface PruductDetailViewController ()
 <UITableViewDelegate,
 UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (weak, nonatomic) IBOutlet UIButton *bugButton;
 
 @end
 
@@ -29,6 +37,16 @@ UITableViewDataSource>
     [self wr_setNavBarBackgroundAlpha:0];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [UIColor wr_setDefaultNavBarShadowImageHidden:NO];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [UIColor wr_setDefaultNavBarShadowImageHidden:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -41,10 +59,28 @@ UITableViewDataSource>
                                     bundle:nil];
     [self.tableView registerNib:infoNib
          forCellReuseIdentifier:NSStringFromClass([ProductHeadTableViewCell class])];
+    
+    UINib *cycleNib = [UINib nibWithNibName:NSStringFromClass([ProductCycleTableViewCell class])
+                                     bundle:nil];
+    [self.tableView registerNib:cycleNib
+         forCellReuseIdentifier:NSStringFromClass([ProductCycleTableViewCell class])];
+    
+    UINib *detailNib = [UINib nibWithNibName:NSStringFromClass([ProductDetailTableViewCell class])
+                                     bundle:nil];
+    [self.tableView registerNib:detailNib
+         forCellReuseIdentifier:NSStringFromClass([ProductDetailTableViewCell class])];
 }
 
 - (void)setupViews {
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
+    
+    if (self.isSellOut) {
+    }
+    UIImage *buyButtonImage =
+    self.isSellOut ? [UIImage imageNamed:@"product_not_buy_bg_image"] : [UIImage imageNamed:@"buy_button_bg_image"];
+    [self.bugButton setBackgroundImage:buyButtonImage
+                              forState:UIControlStateNormal];
+    self.bugButton.userInteractionEnabled = !self.isSellOut;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -57,19 +93,61 @@ UITableViewDataSource>
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
- 
-    ProductHeadTableViewCell *cell =
-    [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductHeadTableViewCell class])];
-    
+    if (!indexPath.section) {
+        ProductHeadTableViewCell *cell =
+        [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductHeadTableViewCell class])];
+        NSMutableAttributedString *numText=
+        [[NSMutableAttributedString alloc]initWithString:cell.yearIncomeLabel.text
+                                              attributes:nil];
+        [numText addAttribute:NSFontAttributeName
+                        value:[UIFont systemFontOfSize:14.0f]
+                        range:NSMakeRange(4, 2)];
+        [numText addAttribute:NSFontAttributeName
+                        value:[UIFont systemFontOfSize:14.0f]
+                        range:NSMakeRange(cell.yearIncomeLabel.text.length - 1, 1)];
+        cell.yearIncomeLabel.attributedText = numText;
+        cell.yearIncomeLabel.hidden = !self.isSellOut;
+        return cell;
+    } else if (indexPath.section == 1) {
+    ProductCycleTableViewCell *cell =
+    [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductCycleTableViewCell class])];
+    return cell;
+    }
+    ProductDetailTableViewCell *cell =
+    [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductDetailTableViewCell class])];
     return cell;
 }
 
 
 #pragma mark - UITableViewDelegate
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat offsetY = scrollView.contentOffset.y;
+    if (offsetY > NAVBAR_COLORCHANGE_POINT) {
+        CGFloat alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / NAV_HEIGHT;
+        [self wr_setNavBarBackgroundAlpha:alpha];
+        [self wr_setNavBarTitleColor:[RGBColor(51, 51, 51) colorWithAlphaComponent:alpha]];
+        self.title = @"购买";
+    }
+    else {
+        [self wr_setNavBarBackgroundAlpha:0];
+        [self wr_setNavBarTitleColor:[UIColor whiteColor]];
+        self.title = @"";
+    }
+}
+
+
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 380.0f;
+    CGFloat height = 0.0f;
+    if (!indexPath.section) {
+        height = 380.0f;
+    } else if (indexPath.section == 1) {
+        height = 145.0f;
+    } else {
+        height = 45.0f;
+    }
+    return height;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView
@@ -90,7 +168,11 @@ heightForHeaderInSection:(NSInteger)section {
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [tableView deselectRowAtIndexPath:indexPath
+                             animated:YES];
+    if (indexPath.section == 2) {
+        NSLog(@"产品详情");
+    }
 }
 
 #pragma mark - Hanlders
@@ -98,5 +180,14 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)leftBarButtonAction {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (IBAction)calculate:(UIButton *)sender {
+    
+}
+
+- (IBAction)buyProduct:(UIButton *)sender {
+    
+}
+
 
 @end

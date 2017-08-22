@@ -86,6 +86,16 @@ UITableViewDataSource>
         [cell.buyButton addTarget:self
                            action:@selector(buyButtonWasPressed:)
                  forControlEvents:UIControlEventTouchUpInside];
+        NSMutableAttributedString *numText=
+        [[NSMutableAttributedString alloc]initWithString:cell.yearSaleLabel.text
+                                              attributes:nil];
+        [numText addAttribute:NSFontAttributeName
+                        value:[UIFont systemFontOfSize:14.0f]
+                        range:NSMakeRange(4, 2)];
+        [numText addAttribute:NSFontAttributeName
+                        value:[UIFont systemFontOfSize:14.0f]
+                        range:NSMakeRange(cell.yearSaleLabel.text.length - 1, 1)];
+        cell.yearSaleLabel.attributedText = numText;
         return cell;
     }
     QRInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QRInfoTableViewCell class])];

@@ -10,4 +10,10 @@
 
 @interface ProductHeadTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *yearIncomeLabel;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *sellOutImageViewWidthConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *sellOutImageViewHeightConstraint;
+
 @end

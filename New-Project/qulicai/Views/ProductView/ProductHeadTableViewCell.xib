@@ -20,10 +20,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="381"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="趣钱宝定期30天" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjv-nJ-6XG">
-                        <rect key="frame" x="15" y="65" width="345" height="65"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="趣钱宝定期30天" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="Sjv-nJ-6XG">
+                        <rect key="frame" x="15" y="65" width="187.5" height="65"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="65" id="bz0-99-f7n"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="230" id="gXO-Je-fSg"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="26"/>
                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -220,18 +221,25 @@
                             <constraint firstAttribute="width" constant="15" id="qP1-gp-Mze"/>
                         </constraints>
                     </imageView>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fininace_product_sell_out_image" translatesAutoresizingMaskIntoConstraints="NO" id="ahx-MX-yVP">
+                        <rect key="frame" x="264" y="74" width="96" height="47"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="96" id="BN5-Vj-WpW"/>
+                            <constraint firstAttribute="height" constant="47" id="vu9-0k-u05"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="7UJ-li-hPS" firstAttribute="top" secondItem="Jl0-uf-3V5" secondAttribute="bottom" constant="18" id="2qd-8Y-UyP"/>
                     <constraint firstItem="Sjv-nJ-6XG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="4ZC-eR-y79"/>
                     <constraint firstItem="ho2-nk-uGj" firstAttribute="top" secondItem="7UJ-li-hPS" secondAttribute="bottom" constant="2" id="4o9-81-R3e"/>
+                    <constraint firstItem="ahx-MX-yVP" firstAttribute="centerY" secondItem="Sjv-nJ-6XG" secondAttribute="centerY" id="7ZP-aP-huV"/>
                     <constraint firstItem="lwm-tE-yE7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ChS-EF-ree"/>
                     <constraint firstItem="Jl0-uf-3V5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="FU0-Rc-nTf"/>
                     <constraint firstAttribute="trailing" secondItem="7UJ-li-hPS" secondAttribute="trailing" constant="15" id="FeQ-qQ-GhI"/>
                     <constraint firstItem="8ev-ak-c5N" firstAttribute="top" secondItem="ho2-nk-uGj" secondAttribute="bottom" id="IvL-1j-t80"/>
                     <constraint firstAttribute="trailing" secondItem="ho2-nk-uGj" secondAttribute="trailing" constant="2" id="Lwf-AQ-swX"/>
-                    <constraint firstAttribute="trailing" secondItem="Sjv-nJ-6XG" secondAttribute="trailing" constant="15" id="QKg-AA-c81"/>
                     <constraint firstItem="8ev-ak-c5N" firstAttribute="leading" secondItem="X5P-kG-EWv" secondAttribute="trailing" id="WM0-uV-rR9"/>
                     <constraint firstItem="7UJ-li-hPS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="bcn-2q-ZFC"/>
                     <constraint firstItem="8ev-ak-c5N" firstAttribute="centerX" secondItem="ho2-nk-uGj" secondAttribute="centerX" id="gQc-EE-HUg"/>
@@ -242,12 +250,19 @@
                     <constraint firstItem="bXy-rc-tm9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="tz9-dW-Ydh"/>
                     <constraint firstItem="lwm-tE-yE7" firstAttribute="top" secondItem="Sjv-nJ-6XG" secondAttribute="bottom" id="vBZ-0c-zyl"/>
                     <constraint firstItem="ho2-nk-uGj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="1" id="wkK-iw-Kfs"/>
+                    <constraint firstAttribute="trailing" secondItem="ahx-MX-yVP" secondAttribute="trailing" constant="15" id="yq8-Zb-eNK"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="sellOutImageViewHeightConstraint" destination="vu9-0k-u05" id="iHM-wV-sj2"/>
+                <outlet property="sellOutImageViewWidthConstraint" destination="BN5-Vj-WpW" id="0ln-HF-d7n"/>
+                <outlet property="yearIncomeLabel" destination="bXy-rc-tm9" id="fsO-Au-IEq"/>
+            </connections>
             <point key="canvasLocation" x="25.5" y="43.5"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="fininace_product_sell_out_image" width="96" height="47"/>
         <image name="product_date_image" width="15" height="15"/>
         <image name="product_down_image" width="15" height="15"/>
         <image name="product_money_image" width="15" height="15"/>

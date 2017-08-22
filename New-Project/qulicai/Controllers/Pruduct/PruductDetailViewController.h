@@ -10,4 +10,6 @@
 
 @interface PruductDetailViewController : UIViewController
 
+@property (assign, nonatomic) BOOL isSellOut;
+
 @end
