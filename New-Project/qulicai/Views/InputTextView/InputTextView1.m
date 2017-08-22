@@ -30,6 +30,7 @@
     [super awakeFromNib];
     [self initKeyboardObserver];
     self.textField.delegate = self;
+    self.resultLabel.text = @"1320";
 }
 
 +(instancetype)creatInputTextView1 {
@@ -39,7 +40,7 @@
     [input setup];
     return input;
 }
-
+;
 -(void)setup {
     self.frame=CGRectMake(0, MAINSCREEN_HEIGHT, MAINSCREEN_WIDTH, DEFAULT_HEIGHT);
    
@@ -83,7 +84,7 @@
 - (void)calculateWithText:(NSString *)text {
     CGFloat value = [text floatValue];
     CGFloat result = value * 0.132;
-    self.resultLabel.text = [NSString stringWithFormat:@"%.3f",result];
+    self.resultLabel.text = [NSString stringWithFormat:@"%.2f",result];
 }
 
 #pragma mark - 键盘事件
