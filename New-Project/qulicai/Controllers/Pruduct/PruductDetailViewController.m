@@ -11,6 +11,7 @@
 #import "ProductHeadTableViewCell.h"
 #import "ProductCycleTableViewCell.h"
 #import "ProductDetailTableViewCell.h"
+#import "InputTextView1.h"
 
 #define NAVBAR_COLORCHANGE_POINT (IMAGE_HEIGHT - NAV_HEIGHT*2)
 #define IMAGE_HEIGHT 220
@@ -18,7 +19,8 @@
 
 @interface PruductDetailViewController ()
 <UITableViewDelegate,
-UITableViewDataSource>
+UITableViewDataSource,
+InputTextView1Delgate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -106,7 +108,7 @@ UITableViewDataSource>
                         value:[UIFont systemFontOfSize:14.0f]
                         range:NSMakeRange(cell.yearIncomeLabel.text.length - 1, 1)];
         cell.yearIncomeLabel.attributedText = numText;
-        cell.yearIncomeLabel.hidden = !self.isSellOut;
+        cell.sellOutImageView.hidden = !self.isSellOut;
         return cell;
     } else if (indexPath.section == 1) {
     ProductCycleTableViewCell *cell =
@@ -175,6 +177,15 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     }
 }
 
+#pragma mark InputTextView1Delgate
+-(void)cancleInput1 {
+    
+}
+
+-(void)finishedInput1:(InputTextView1 *)InputTextView1 {
+    
+}
+
 #pragma mark - Hanlders
 
 - (void)leftBarButtonAction {
@@ -182,12 +193,20 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (IBAction)calculate:(UIButton *)sender {
-    
+    InputTextView1 * input=[InputTextView1 creatInputTextView1];
+    input.delegate = self;
+    [input show];
 }
+
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches
+          withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
 
 - (IBAction)buyProduct:(UIButton *)sender {
     
 }
-
 
 @end

@@ -254,6 +254,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="sellOutImageView" destination="ahx-MX-yVP" id="w3o-8w-s8t"/>
                 <outlet property="sellOutImageViewHeightConstraint" destination="vu9-0k-u05" id="iHM-wV-sj2"/>
                 <outlet property="sellOutImageViewWidthConstraint" destination="BN5-Vj-WpW" id="0ln-HF-d7n"/>
                 <outlet property="yearIncomeLabel" destination="bXy-rc-tm9" id="fsO-Au-IEq"/>

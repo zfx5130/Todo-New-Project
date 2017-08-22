@@ -16,4 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *sellOutImageViewHeightConstraint;
 
+@property (weak, nonatomic) IBOutlet UIImageView *sellOutImageView;
+
+
 @end

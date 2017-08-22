@@ -11,6 +11,7 @@
 #import "NewUserBuyTableViewCell.h"
 #import "UIImage+Custom.h"
 #import "WRNavigationBar.h"
+#import "PruductDetailViewController.h"
 
 #define NAVBAR_COLORCHANGE_POINT (-IMAGE_HEIGHT + NAV_HEIGHT*2)
 #define NAV_HEIGHT 64
@@ -130,7 +131,7 @@ UITableViewDataSource>
     
     cell.buyButton.hidden = indexPath.section;
     cell.bottomViewHeightConstraint.constant = !indexPath.section ? 50.0f : 0.0f;
-    
+    cell.buyButton.userInteractionEnabled = NO;
     
     NSMutableAttributedString *numText=
     [[NSMutableAttributedString alloc]initWithString:cell.yearSaleLabel.text
@@ -174,7 +175,12 @@ heightForHeaderInSection:(NSInteger)section {
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    BOOL isSellOut = !indexPath.section ? NO : YES;
+    PruductDetailViewController *productController = [[PruductDetailViewController alloc] init];
+    productController.hidesBottomBarWhenPushed = YES;
+    productController.isSellOut = isSellOut;
+    [self.navigationController pushViewController:productController
+                                         animated:YES];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
