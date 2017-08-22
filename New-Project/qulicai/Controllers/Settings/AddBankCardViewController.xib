@@ -132,6 +132,9 @@
                                                                 <constraint firstAttribute="width" constant="44" id="lJp-6V-e6x"/>
                                                             </constraints>
                                                             <state key="normal" image="disclosure Indicator_image"/>
+                                                            <connections>
+                                                                <action selector="selectBankButtonWasPressed:" destination="-1" eventType="touchUpInside" id="vjL-Ab-oXa"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -157,7 +160,7 @@
                                                             <rect key="frame" x="133" y="0.0" width="227" height="44"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go"/>
                                                             <connections>
                                                                 <action selector="editingBegin:" destination="-1" eventType="editingDidBegin" id="lcL-HU-GgE"/>
                                                                 <action selector="editingChanged:" destination="-1" eventType="editingChanged" id="68k-2u-aWb"/>

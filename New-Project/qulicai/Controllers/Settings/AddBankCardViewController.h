@@ -10,4 +10,8 @@
 
 @interface AddBankCardViewController : UIViewController
 
+@property (copy, nonatomic) NSString *name;
+
+@property (copy, nonatomic) NSString *identify;
+
 @end

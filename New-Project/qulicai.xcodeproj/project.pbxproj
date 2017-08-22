@@ -43,6 +43,10 @@
 		842617001F4C1D0000A96EFD /* ProductRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842616FE1F4C1D0000A96EFD /* ProductRecordTableViewCell.xib */; };
 		842617091F4C324B00A96EFD /* AddBankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842617071F4C324B00A96EFD /* AddBankCardViewController.m */; };
 		8426170A1F4C324B00A96EFD /* AddBankCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842617081F4C324B00A96EFD /* AddBankCardViewController.xib */; };
+		8426170E1F4C4F6700A96EFD /* BankCardSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426170C1F4C4F6700A96EFD /* BankCardSelectedViewController.m */; };
+		8426170F1F4C4F6700A96EFD /* BankCardSelectedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8426170D1F4C4F6700A96EFD /* BankCardSelectedViewController.xib */; };
+		842617131F4C53EA00A96EFD /* BankCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842617111F4C53EA00A96EFD /* BankCartTableViewCell.m */; };
+		842617141F4C53EA00A96EFD /* BankCartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842617121F4C53EA00A96EFD /* BankCartTableViewCell.xib */; };
 		8435E4B21F316BCE00424E5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E4B11F316BCE00424E5E /* main.m */; };
 		8435E4BB1F316BCE00424E5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4B91F316BCE00424E5E /* Main.storyboard */; };
 		8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4BC1F316BCE00424E5E /* Assets.xcassets */; };
@@ -107,6 +111,7 @@
 		844402C81F44539700F5AFEE /* ZXCImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402C71F44539700F5AFEE /* ZXCImagePicker.m */; };
 		844402CC1F44590100F5AFEE /* UsernameSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402CA1F44590100F5AFEE /* UsernameSettingViewController.m */; };
 		844402CD1F44590100F5AFEE /* UsernameSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844402CB1F44590100F5AFEE /* UsernameSettingViewController.xib */; };
+		844FB7FA1F4C5B8A001772AF /* Bank.plist in Resources */ = {isa = PBXBuildFile; fileRef = 844FB7F91F4C5B8A001772AF /* Bank.plist */; };
 		84825E0A1F456330006A921F /* UserBankCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E081F456330006A921F /* UserBankCartViewController.m */; };
 		84825E0B1F456330006A921F /* UserBankCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E091F456330006A921F /* UserBankCartViewController.xib */; };
 		84825E0F1F456E2C006A921F /* AccountCertificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E0D1F456E2C006A921F /* AccountCertificationViewController.m */; };
@@ -202,6 +207,12 @@
 		842617061F4C324B00A96EFD /* AddBankCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBankCardViewController.h; sourceTree = "<group>"; };
 		842617071F4C324B00A96EFD /* AddBankCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBankCardViewController.m; sourceTree = "<group>"; };
 		842617081F4C324B00A96EFD /* AddBankCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddBankCardViewController.xib; sourceTree = "<group>"; };
+		8426170B1F4C4F6700A96EFD /* BankCardSelectedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardSelectedViewController.h; sourceTree = "<group>"; };
+		8426170C1F4C4F6700A96EFD /* BankCardSelectedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardSelectedViewController.m; sourceTree = "<group>"; };
+		8426170D1F4C4F6700A96EFD /* BankCardSelectedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankCardSelectedViewController.xib; sourceTree = "<group>"; };
+		842617101F4C53EA00A96EFD /* BankCartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCartTableViewCell.h; sourceTree = "<group>"; };
+		842617111F4C53EA00A96EFD /* BankCartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCartTableViewCell.m; sourceTree = "<group>"; };
+		842617121F4C53EA00A96EFD /* BankCartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankCartTableViewCell.xib; sourceTree = "<group>"; };
 		8435E4AD1F316BCE00424E5E /* qulicai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qulicai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8435E4B11F316BCE00424E5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8435E4BA1F316BCE00424E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -325,6 +336,7 @@
 		844402C91F44590100F5AFEE /* UsernameSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsernameSettingViewController.h; sourceTree = "<group>"; };
 		844402CA1F44590100F5AFEE /* UsernameSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsernameSettingViewController.m; sourceTree = "<group>"; };
 		844402CB1F44590100F5AFEE /* UsernameSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UsernameSettingViewController.xib; sourceTree = "<group>"; };
+		844FB7F91F4C5B8A001772AF /* Bank.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Bank.plist; sourceTree = "<group>"; };
 		84825E071F456330006A921F /* UserBankCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserBankCartViewController.h; sourceTree = "<group>"; };
 		84825E081F456330006A921F /* UserBankCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBankCartViewController.m; sourceTree = "<group>"; };
 		84825E091F456330006A921F /* UserBankCartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserBankCartViewController.xib; sourceTree = "<group>"; };
@@ -423,6 +435,9 @@
 				842616FC1F4C1D0000A96EFD /* ProductRecordTableViewCell.h */,
 				842616FD1F4C1D0000A96EFD /* ProductRecordTableViewCell.m */,
 				842616FE1F4C1D0000A96EFD /* ProductRecordTableViewCell.xib */,
+				842617101F4C53EA00A96EFD /* BankCartTableViewCell.h */,
+				842617111F4C53EA00A96EFD /* BankCartTableViewCell.m */,
+				842617121F4C53EA00A96EFD /* BankCartTableViewCell.xib */,
 			);
 			path = ProductView;
 			sourceTree = "<group>";
@@ -507,6 +522,7 @@
 			children = (
 				8435E4C11F316BCE00424E5E /* Info.plist */,
 				8435E4B11F316BCE00424E5E /* main.m */,
+				844FB7F91F4C5B8A001772AF /* Bank.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -864,6 +880,9 @@
 				842617061F4C324B00A96EFD /* AddBankCardViewController.h */,
 				842617071F4C324B00A96EFD /* AddBankCardViewController.m */,
 				842617081F4C324B00A96EFD /* AddBankCardViewController.xib */,
+				8426170B1F4C4F6700A96EFD /* BankCardSelectedViewController.h */,
+				8426170C1F4C4F6700A96EFD /* BankCardSelectedViewController.m */,
+				8426170D1F4C4F6700A96EFD /* BankCardSelectedViewController.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1062,6 +1081,7 @@
 				842616AC1F4BDF1300A96EFD /* InputTextView1.xib in Resources */,
 				8426168A1F4B005E00A96EFD /* CustomerViewController.storyboard in Resources */,
 				8426167B1F4ADEC900A96EFD /* AboutQRViewController.xib in Resources */,
+				844FB7FA1F4C5B8A001772AF /* Bank.plist in Resources */,
 				8444024B1F41A0E700F5AFEE /* LoginViewController.xib in Resources */,
 				84825E311F469A16006A921F /* NewUserBuyTableViewCell.xib in Resources */,
 				844402C11F443FAE00F5AFEE /* SettingsTableViewController.storyboard in Resources */,
@@ -1085,8 +1105,10 @@
 				842616FB1F4C17BA00A96EFD /* ProductIncomeTableViewCell.xib in Resources */,
 				842617001F4C1D0000A96EFD /* ProductRecordTableViewCell.xib in Resources */,
 				8444029B1F42CB6600F5AFEE /* RegisterViewController.xib in Resources */,
+				8426170F1F4C4F6700A96EFD /* BankCardSelectedViewController.xib in Resources */,
 				842616F61F4C106B00A96EFD /* ProductIntroTableViewCell.xib in Resources */,
 				84825E0B1F456330006A921F /* UserBankCartViewController.xib in Resources */,
+				842617141F4C53EA00A96EFD /* BankCartTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1171,6 +1193,7 @@
 				844402AF1F43F9F600F5AFEE /* ResetPasswordViewController.m in Sources */,
 				842616901F4B00A700A96EFD /* CustomerViewController.m in Sources */,
 				8435E6031F3D885200424E5E /* QRRequest.m in Sources */,
+				8426170E1F4C4F6700A96EFD /* BankCardSelectedViewController.m in Sources */,
 				8435E5BF1F399C6C00424E5E /* NSString+File.m in Sources */,
 				844402841F41B2B000F5AFEE /* NSString+Check.m in Sources */,
 				8444027F1F41B2B000F5AFEE /* NSArray+Custom.m in Sources */,
@@ -1203,6 +1226,7 @@
 				844402C81F44539700F5AFEE /* ZXCImagePicker.m in Sources */,
 				8444029A1F42CB6600F5AFEE /* RegisterViewController.m in Sources */,
 				84825E0F1F456E2C006A921F /* AccountCertificationViewController.m in Sources */,
+				842617131F4C53EA00A96EFD /* BankCartTableViewCell.m in Sources */,
 				8435E50B1F31726D00424E5E /* AppDelegate.m in Sources */,
 				842616F01F4C0C9C00A96EFD /* ProductBackMoneyViewController.m in Sources */,
 				8435E5B41F399C1E00424E5E /* CLLockLabel.m in Sources */,

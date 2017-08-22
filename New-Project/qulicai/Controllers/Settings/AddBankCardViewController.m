@@ -7,6 +7,7 @@
 //
 
 #import "AddBankCardViewController.h"
+#import "BankCardSelectedViewController.h"
 
 @interface AddBankCardViewController ()
 
@@ -52,6 +53,8 @@
     self.bottomContainView.hidden = YES;
     [self.view addTapGestureForDismissingKeyboard];
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@",self.name];
+    self.bankCartLabel.text = [NSString stringWithFormat:@"%@",self.identify];
 }
 
 - (void)updateResetButtonStatus {
@@ -136,6 +139,14 @@
     NSLog(@"支付服务协议");
 }
 
+- (IBAction)selectBankButtonWasPressed:(UIButton *)sender {
+    BankCardSelectedViewController *bankCardController = [[BankCardSelectedViewController alloc] init];
+    bankCardController.bankBlock = ^(NSString *bankName, NSString *bankImageName) {
+        NSLog(@"name:::::%@::::::%@",bankName,bankImageName);
+    };
+    [self.navigationController pushViewController:bankCardController
+                                         animated:YES];
+}
 
 
 

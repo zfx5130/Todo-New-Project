@@ -91,6 +91,8 @@
             [self showSuccessWithTitle:@"实名认证成功"];
             if (self.isProductPush) {
                 AddBankCardViewController *addBankController = [[AddBankCardViewController alloc] init];
+                addBankController.name = self.nameLabel.text;
+                addBankController.identify = self.userIdentifyLabel.text;
                 [self.navigationController pushViewController:addBankController
                                                      animated:YES];
             } else {
