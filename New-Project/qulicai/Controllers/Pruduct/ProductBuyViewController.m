@@ -9,12 +9,14 @@
 #import "ProductBuyViewController.h"
 
 @interface ProductBuyViewController ()
+<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewBottomConstraint;
 @property (weak, nonatomic) IBOutlet UIView *bottomContainView;
 @property (weak, nonatomic) IBOutlet UIButton *bugButton;
 @property (weak, nonatomic) IBOutlet UITextField *moneyTextField;
 @property (weak, nonatomic) IBOutlet UILabel *alertErrorLabel;
+@property (weak, nonatomic) IBOutlet UILabel *remainMoneyLabel;
 
 @end
 
@@ -42,6 +44,8 @@
     self.bottomContainView.hidden = YES;
     [self.view addTapGestureForDismissingKeyboard];
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
+    [self.remainMoneyLabel addColor:RGBColor(204, 204, 204)
+                            forText:@"剩余可购额度"];
 }
 
 - (void)updateResetButtonStatus {
@@ -71,16 +75,15 @@
 
 - (void)buy {
     [self.view endEditing:YES];
+    if ([self.moneyTextField.text floatValue] < 50) {
+        self.alertErrorLabel.text = @"购买金额小于50";
+        [self showErrorAlert];
+        return;
+    }
     [self showSVProgressHUD];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [SVProgressHUD dismiss];
-        if ([self.moneyTextField.text floatValue] < 50) {
-            self.alertErrorLabel.text = @"购买失败";
-            [self showErrorAlert];
-        } else {
-            //下一步操作
-            [self showSuccessWithTitle:@"购买成功"];
-        }
+        [self showSuccessWithTitle:@"购买成功"];
     });
 }
 
@@ -104,13 +107,21 @@
     [self updateResetButtonStatus];
 }
 
-
 - (IBAction)editingEnd:(UITextField *)sender {
     [self updateResetButtonStatus];
 }
 
 - (IBAction)save:(UIButton *)sender {
     [self buy];
+}
+
+
+- (IBAction)moneyManagePrototol:(UIButton *)sender {
+    NSLog(@"账户资金充值与管理协议");
+}
+
+- (IBAction)promise:(UIButton *)sender {
+    NSLog(@"反洗钱承诺书");
 }
 
 - (void)leftBarButtonAction {
