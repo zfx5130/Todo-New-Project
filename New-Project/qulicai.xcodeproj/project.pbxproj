@@ -116,6 +116,14 @@
 		844FB7FF1F4C6B89001772AF /* ProductBuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB7FD1F4C6B89001772AF /* ProductBuyViewController.xib */; };
 		844FB8031F4D327C001772AF /* ProductBuySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB8011F4D327C001772AF /* ProductBuySuccessViewController.m */; };
 		844FB8041F4D327C001772AF /* ProductBuySuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB8021F4D327C001772AF /* ProductBuySuccessViewController.xib */; };
+		844FB8081F4D5D1D001772AF /* YesterdayIncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB8061F4D5D1D001772AF /* YesterdayIncomeViewController.m */; };
+		844FB8091F4D5D1D001772AF /* YesterdayIncomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB8071F4D5D1D001772AF /* YesterdayIncomeViewController.xib */; };
+		844FB80C1F4D60F3001772AF /* YesterdayIncomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB80B1F4D60F3001772AF /* YesterdayIncomeView.m */; };
+		844FB80E1F4D6109001772AF /* YesterdayIncomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB80D1F4D6109001772AF /* YesterdayIncomeView.xib */; };
+		844FB8121F4D6496001772AF /* IncomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB8101F4D6496001772AF /* IncomeTableViewCell.m */; };
+		844FB8131F4D6496001772AF /* IncomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB8111F4D6496001772AF /* IncomeTableViewCell.xib */; };
+		844FB8171F4D665D001772AF /* AllIncomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB8151F4D665D001772AF /* AllIncomeTableViewCell.m */; };
+		844FB8181F4D665D001772AF /* AllIncomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB8161F4D665D001772AF /* AllIncomeTableViewCell.xib */; };
 		84825E0A1F456330006A921F /* UserBankCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E081F456330006A921F /* UserBankCartViewController.m */; };
 		84825E0B1F456330006A921F /* UserBankCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E091F456330006A921F /* UserBankCartViewController.xib */; };
 		84825E0F1F456E2C006A921F /* AccountCertificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E0D1F456E2C006A921F /* AccountCertificationViewController.m */; };
@@ -347,6 +355,18 @@
 		844FB8001F4D327C001772AF /* ProductBuySuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductBuySuccessViewController.h; sourceTree = "<group>"; };
 		844FB8011F4D327C001772AF /* ProductBuySuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductBuySuccessViewController.m; sourceTree = "<group>"; };
 		844FB8021F4D327C001772AF /* ProductBuySuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductBuySuccessViewController.xib; sourceTree = "<group>"; };
+		844FB8051F4D5D1D001772AF /* YesterdayIncomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YesterdayIncomeViewController.h; sourceTree = "<group>"; };
+		844FB8061F4D5D1D001772AF /* YesterdayIncomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YesterdayIncomeViewController.m; sourceTree = "<group>"; };
+		844FB8071F4D5D1D001772AF /* YesterdayIncomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YesterdayIncomeViewController.xib; sourceTree = "<group>"; };
+		844FB80A1F4D60F3001772AF /* YesterdayIncomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YesterdayIncomeView.h; sourceTree = "<group>"; };
+		844FB80B1F4D60F3001772AF /* YesterdayIncomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YesterdayIncomeView.m; sourceTree = "<group>"; };
+		844FB80D1F4D6109001772AF /* YesterdayIncomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YesterdayIncomeView.xib; sourceTree = "<group>"; };
+		844FB80F1F4D6496001772AF /* IncomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeTableViewCell.h; sourceTree = "<group>"; };
+		844FB8101F4D6496001772AF /* IncomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeTableViewCell.m; sourceTree = "<group>"; };
+		844FB8111F4D6496001772AF /* IncomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeTableViewCell.xib; sourceTree = "<group>"; };
+		844FB8141F4D665D001772AF /* AllIncomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllIncomeTableViewCell.h; sourceTree = "<group>"; };
+		844FB8151F4D665D001772AF /* AllIncomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllIncomeTableViewCell.m; sourceTree = "<group>"; };
+		844FB8161F4D665D001772AF /* AllIncomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllIncomeTableViewCell.xib; sourceTree = "<group>"; };
 		84825E071F456330006A921F /* UserBankCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserBankCartViewController.h; sourceTree = "<group>"; };
 		84825E081F456330006A921F /* UserBankCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBankCartViewController.m; sourceTree = "<group>"; };
 		84825E091F456330006A921F /* UserBankCartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserBankCartViewController.xib; sourceTree = "<group>"; };
@@ -425,6 +445,9 @@
 				844FB8001F4D327C001772AF /* ProductBuySuccessViewController.h */,
 				844FB8011F4D327C001772AF /* ProductBuySuccessViewController.m */,
 				844FB8021F4D327C001772AF /* ProductBuySuccessViewController.xib */,
+				844FB8051F4D5D1D001772AF /* YesterdayIncomeViewController.h */,
+				844FB8061F4D5D1D001772AF /* YesterdayIncomeViewController.m */,
+				844FB8071F4D5D1D001772AF /* YesterdayIncomeViewController.xib */,
 			);
 			name = PruductController;
 			path = Pruduct;
@@ -945,6 +968,15 @@
 				842616721F4AD33200A96EFD /* QRInfoTableViewCell.h */,
 				842616731F4AD33200A96EFD /* QRInfoTableViewCell.m */,
 				842616741F4AD33200A96EFD /* QRInfoTableViewCell.xib */,
+				844FB80A1F4D60F3001772AF /* YesterdayIncomeView.h */,
+				844FB80B1F4D60F3001772AF /* YesterdayIncomeView.m */,
+				844FB80D1F4D6109001772AF /* YesterdayIncomeView.xib */,
+				844FB80F1F4D6496001772AF /* IncomeTableViewCell.h */,
+				844FB8101F4D6496001772AF /* IncomeTableViewCell.m */,
+				844FB8111F4D6496001772AF /* IncomeTableViewCell.xib */,
+				844FB8141F4D665D001772AF /* AllIncomeTableViewCell.h */,
+				844FB8151F4D665D001772AF /* AllIncomeTableViewCell.m */,
+				844FB8161F4D665D001772AF /* AllIncomeTableViewCell.xib */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -1110,11 +1142,14 @@
 				84825E151F457468006A921F /* ModifyLoginPwViewController.xib in Resources */,
 				8435E4C01F316BCE00424E5E /* LaunchScreen.storyboard in Resources */,
 				8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */,
+				844FB8091F4D5D1D001772AF /* YesterdayIncomeViewController.xib in Resources */,
 				844FB7FF1F4C6B89001772AF /* ProductBuyViewController.xib in Resources */,
 				8426170A1F4C324B00A96EFD /* AddBankCardViewController.xib in Resources */,
+				844FB8181F4D665D001772AF /* AllIncomeTableViewCell.xib in Resources */,
 				842616E21F4C0C6C00A96EFD /* ProductIntroViewController.xib in Resources */,
 				842616961F4B0BE300A96EFD /* PruductDetailViewController.xib in Resources */,
 				844402B01F43F9F600F5AFEE /* ResetPasswordViewController.xib in Resources */,
+				844FB8131F4D6496001772AF /* IncomeTableViewCell.xib in Resources */,
 				8435E5AE1F399C1E00424E5E /* CLLockVC.xib in Resources */,
 				844FB8041F4D327C001772AF /* ProductBuySuccessViewController.xib in Resources */,
 				84825E101F456E2C006A921F /* AccountCertificationViewController.xib in Resources */,
@@ -1122,6 +1157,7 @@
 				8435E4BB1F316BCE00424E5E /* Main.storyboard in Resources */,
 				842616FB1F4C17BA00A96EFD /* ProductIncomeTableViewCell.xib in Resources */,
 				842617001F4C1D0000A96EFD /* ProductRecordTableViewCell.xib in Resources */,
+				844FB80E1F4D6109001772AF /* YesterdayIncomeView.xib in Resources */,
 				8444029B1F42CB6600F5AFEE /* RegisterViewController.xib in Resources */,
 				8426170F1F4C4F6700A96EFD /* BankCardSelectedViewController.xib in Resources */,
 				842616F61F4C106B00A96EFD /* ProductIntroTableViewCell.xib in Resources */,
@@ -1225,8 +1261,10 @@
 				8444028F1F41B2B000F5AFEE /* UIScrollView+Custom.m in Sources */,
 				844402901F41B2B000F5AFEE /* UITableView+Custom.m in Sources */,
 				8426167F1F4AEB9100A96EFD /* SuggestViewController.m in Sources */,
+				844FB8171F4D665D001772AF /* AllIncomeTableViewCell.m in Sources */,
 				84825E141F457468006A921F /* ModifyLoginPwViewController.m in Sources */,
 				844402AA1F42FC8100F5AFEE /* QRWebViewController.m in Sources */,
+				844FB80C1F4D60F3001772AF /* YesterdayIncomeView.m in Sources */,
 				844402931F41B2B000F5AFEE /* UIView+Custom.m in Sources */,
 				844402821F41B2B000F5AFEE /* NSNumber+Custom.m in Sources */,
 				8435E4B21F316BCE00424E5E /* main.m in Sources */,
@@ -1257,11 +1295,13 @@
 				842617091F4C324B00A96EFD /* AddBankCardViewController.m in Sources */,
 				844402461F418F1400F5AFEE /* QRTabbarController.m in Sources */,
 				844402851F41B2B000F5AFEE /* NSString+Custom.m in Sources */,
+				844FB8121F4D6496001772AF /* IncomeTableViewCell.m in Sources */,
 				842616FF1F4C1D0000A96EFD /* ProductRecordTableViewCell.m in Sources */,
 				8426167A1F4ADEC900A96EFD /* AboutQRViewController.m in Sources */,
 				84825E191F458F02006A921F /* ModifyTradingPdViewController.m in Sources */,
 				84FEBADD1F4ABB730020B42D /* WRNavigationBar.m in Sources */,
 				844402C51F44516100F5AFEE /* WeiXinPickView.m in Sources */,
+				844FB8081F4D5D1D001772AF /* YesterdayIncomeViewController.m in Sources */,
 				84825E261F45BF7E006A921F /* DZ_ScaleCircle.m in Sources */,
 				842616E11F4C0C6C00A96EFD /* ProductIntroViewController.m in Sources */,
 				8435E5B11F399C1E00424E5E /* CLLockNavVC.m in Sources */,

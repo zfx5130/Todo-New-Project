@@ -12,6 +12,8 @@
 #import "QRInfoTableViewCell.h"
 #import "QRWebViewController.h"
 #import "PruductDetailViewController.h"
+#import "LoginViewController.h"
+#import "YesterdayIncomeViewController.h"
 
 #define NAVBAR_COLORCHANGE_POINT (-IMAGE_HEIGHT + NAV_HEIGHT*2)
 #define NAV_HEIGHT 64
@@ -27,6 +29,8 @@ UITableViewDataSource>
 
 @property (strong, nonatomic) MainHeadView *headView;
 
+@property (assign, nonatomic) CGFloat balance;
+
 @end
 
 @implementation MainViewController
@@ -38,12 +42,22 @@ UITableViewDataSource>
     [self registerCell];
     [self wr_setNavBarBackgroundAlpha:0];
     [self setupTableHeadView];
+    [self setupNavigationItemLeft:[UIImage imageNamed:@""]];
+    self.balance = 10.0f;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSString *login = UserDefaultsValue(@"login");
+    BOOL isLogin = [login isEqualToString:@"YES"];
+    self.headView.pickTagImageView.hidden = !(isLogin && self.balance > 0);
+    self.headView.allMoneyLabel.text = isLogin ? @"2343242432" : @"0.0";
+    self.headView.yesterdayEarningLabel.text = isLogin ? @"345.54" : @"0.0";
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
 
 #pragma mark - Private
 
@@ -62,6 +76,12 @@ UITableViewDataSource>
     self.tableView.contentInset = UIEdgeInsetsMake(IMAGE_HEIGHT-64, 0, 0, 0);
     self.headView = [[MainHeadView alloc] initWithFrame:CGRectMake(0, -IMAGE_HEIGHT,SCREEN_WIDTH, IMAGE_HEIGHT)];
     [self.tableView addSubview:self.headView];
+    [self.headView.pickMoneyButton addTarget:self
+                                      action:@selector(pickMoneyWasPressed:)
+                            forControlEvents:UIControlEventTouchUpInside];
+    [self.headView.incomeButton addTarget:self
+                                   action:@selector(incomeButtonWasPressed:)
+                         forControlEvents:UIControlEventTouchUpInside];
 }
 
 #pragma mark - Getters && Setters
@@ -165,6 +185,45 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 #pragma mark - Hanlders
 
+- (void)pickupMoney {
+    NSString *login = UserDefaultsValue(@"login");
+    BOOL isLogin = [login isEqualToString:@"YES"];
+    if (isLogin) {
+        if (self.balance > 0) {
+            [self showSuccessWithTitle:@"体现"];
+        } else {
+            [self showSuccessWithTitle:@"余额不足"];
+        }
+    } else {
+        [self login];
+    }
+}
+
+- (void)login {
+    LoginViewController *loginViewController = [[LoginViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    [self presentViewController:navigationController
+                       animated:YES
+                     completion:nil];
+}
+
+- (void)pickMoneyWasPressed:(UIButton *)sender {
+    [self pickupMoney];
+}
+
+- (void)incomeButtonWasPressed:(UIButton *)sender {
+    NSString *login = UserDefaultsValue(@"login");
+    BOOL isLogin = [login isEqualToString:@"YES"];
+    if (isLogin) {
+        YesterdayIncomeViewController *incomeController = [[YesterdayIncomeViewController alloc] init];
+        incomeController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:incomeController
+                                             animated:YES];
+    } else {
+        [self login];
+    }
+}
+
 - (void)buyButtonWasPressed:(UIButton *)sender {
     PruductDetailViewController *productController = [[PruductDetailViewController alloc] init];
     productController.hidesBottomBarWhenPushed = YES;
@@ -197,6 +256,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     webViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:webViewController
                                          animated:YES];
+}
+
+- (void)leftBarButtonAction {
+    [self pickupMoney];
 }
 
 

@@ -86,6 +86,10 @@ InputTextView1Delgate>
     [self.bugButton setBackgroundImage:buyButtonImage
                               forState:UIControlStateNormal];
     self.bugButton.userInteractionEnabled = !self.isSellOut;
+    
+    NSString *name = self.isSellOut ? @"已售罄" : @"立即购买";
+    [self.bugButton setTitle:name
+                    forState:UIControlStateNormal];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

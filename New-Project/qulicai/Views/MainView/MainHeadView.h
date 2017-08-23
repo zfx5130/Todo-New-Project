@@ -18,4 +18,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *allMoneyLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *pickTagImageView;
+
+@property (weak, nonatomic) IBOutlet UIButton *incomeButton;
+
 @end
