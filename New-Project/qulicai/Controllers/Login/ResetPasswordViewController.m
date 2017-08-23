@@ -22,6 +22,8 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headViewHeightConstraint;
 
+@property (weak, nonatomic) IBOutlet UILabel *titleNameLabel;
+
 @end
 
 @implementation ResetPasswordViewController
@@ -53,6 +55,7 @@
     if (self.isModifyPW) {
         [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
     }
+    self.titleNameLabel.text = self.isTradingPw ? @"设置交易密码" : @"设置登录密码";
 }
 
 - (void)updateResetButtonStatus {
@@ -91,19 +94,23 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [SVProgressHUD dismiss];
         if (self.passwordTextField.text.length < 8) {
-            self.alertErrorLabel.text = @"密码修改失败";
+            self.alertErrorLabel.text = @"密码设置失败";
             [self showErrorAlert];
         } else {
-            [self showSuccessWithTitle:@"密码修改成功"];
-            if (self.isModifyPW) {
-                for( UIViewController *controller in self.navigationController.viewControllers ) {
-                    if( [controller isKindOfClass:[SettingsTableViewController class]] ) {
-                        [self.navigationController popToViewController:controller animated:YES];
-                        return ;
-                    }
-                }
-            } else {
+            [self showSuccessWithTitle:@"密码设置成功"];
+            if (self.isTradingPw) {
                 [self.navigationController popToRootViewControllerAnimated:YES];
+            } else {
+                if (self.isModifyPW) {
+                    for( UIViewController *controller in self.navigationController.viewControllers ) {
+                        if( [controller isKindOfClass:[SettingsTableViewController class]] ) {
+                            [self.navigationController popToViewController:controller animated:YES];
+                            return ;
+                        }
+                    }
+                } else {
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                }
             }
         }
     });

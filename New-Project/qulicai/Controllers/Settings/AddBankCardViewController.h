@@ -14,4 +14,6 @@
 
 @property (copy, nonatomic) NSString *identify;
 
+@property (assign, nonatomic) BOOL isFirstBuy;
+
 @end

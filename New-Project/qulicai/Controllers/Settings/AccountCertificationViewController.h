@@ -12,4 +12,6 @@
 
 @property (assign, nonatomic) BOOL isProductPush;
 
+@property (assign, nonatomic) BOOL isFirstBuy;
+
 @end

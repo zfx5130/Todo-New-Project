@@ -17,6 +17,7 @@
                 <outlet property="bottomContainView" destination="OWx-jf-ymz" id="cYc-2h-XTJ"/>
                 <outlet property="bottomViewBottomConstraint" destination="Afp-lu-Gad" id="Ojm-mb-akf"/>
                 <outlet property="bugButton" destination="T83-OV-MCD" id="bW3-lO-Vd8"/>
+                <outlet property="incomeLabel" destination="81E-1M-SqC" id="g6u-b3-WRq"/>
                 <outlet property="moneyTextField" destination="TXA-A4-dYn" id="hse-HA-KfU"/>
                 <outlet property="remainMoneyLabel" destination="wex-X1-e8T" id="t7E-gN-vsa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

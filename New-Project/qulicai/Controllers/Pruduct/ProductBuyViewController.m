@@ -26,6 +26,8 @@
 
 @property (assign, nonatomic) BOOL isFirstBuy;
 
+@property (weak, nonatomic) IBOutlet UILabel *incomeLabel;
+
 @end
 
 @implementation ProductBuyViewController
@@ -94,10 +96,15 @@
     [self showSVProgressHUD];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [SVProgressHUD dismiss];
-        AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
-        accountController.isProductPush = YES;
-        [self.navigationController pushViewController:accountController
-                                             animated:YES];
+        if (self.isFirstBuy) {
+            AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
+            accountController.isProductPush = YES;
+            accountController.isFirstBuy = YES;
+            [self.navigationController pushViewController:accountController
+                                                 animated:YES];
+        } else {
+            NSLog(@"dsfas");
+        }
     });
 }
 
@@ -115,10 +122,13 @@
 
 - (IBAction)editingChanged:(UITextField *)sender {
     [self updateResetButtonStatus];
+    CGFloat value = [sender.text floatValue] * 0.132;
+    self.incomeLabel.text = [NSString stringWithFormat:@"预计收益(元)%.2f",value];
 }
 
 - (IBAction)editingBegin:(UITextField *)sender {
     [self updateResetButtonStatus];
+    self.incomeLabel.text = [NSString stringWithFormat:@"预计收益(元)0.00"];
 }
 
 - (IBAction)editingEnd:(UITextField *)sender {

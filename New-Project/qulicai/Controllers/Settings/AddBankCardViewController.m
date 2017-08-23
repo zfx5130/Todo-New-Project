@@ -9,6 +9,7 @@
 #import "AddBankCardViewController.h"
 #import "BankCardSelectedViewController.h"
 #import "ProductBuyViewController.h"
+#import "ProductBuySuccessViewController.h"
 
 @interface AddBankCardViewController ()
 
@@ -92,11 +93,10 @@
             [self showErrorAlert];
         } else {
             //下一步操作
-            //[self showSuccessWithTitle:@"添加银行卡成功"];
-//            ProductBuyViewController *productController = [[ProductBuyViewController alloc] init];
-//            [self.navigationController pushViewController:productController
-//                                                 animated:YES];
-            NSLog(@"跳转练练---购买陈宫");
+            ProductBuySuccessViewController *productController = [[ProductBuySuccessViewController alloc] init];
+            productController.isFirstBuy = YES;
+            [self.navigationController pushViewController:productController
+                                                 animated:YES];
         }
     });
 }

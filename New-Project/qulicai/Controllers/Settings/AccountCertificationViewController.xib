@@ -98,7 +98,7 @@
                                                             <rect key="frame" x="15" y="0.0" width="345" height="44"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="go"/>
                                                             <connections>
                                                                 <action selector="editingBegin:" destination="-1" eventType="editingDidBegin" id="hqe-Sd-AbB"/>
                                                                 <action selector="editingChanged:" destination="-1" eventType="editingChanged" id="Rbb-nH-lLv"/>

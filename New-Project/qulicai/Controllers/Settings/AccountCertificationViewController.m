@@ -93,6 +93,7 @@
                 AddBankCardViewController *addBankController = [[AddBankCardViewController alloc] init];
                 addBankController.name = self.nameLabel.text;
                 addBankController.identify = self.userIdentifyLabel.text;
+                addBankController.isFirstBuy = YES;
                 [self.navigationController pushViewController:addBankController
                                                      animated:YES];
             } else {
