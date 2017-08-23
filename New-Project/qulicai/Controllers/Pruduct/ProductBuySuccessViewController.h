@@ -10,6 +10,4 @@
 
 @interface ProductBuySuccessViewController : UIViewController
 
-@property (assign, nonatomic) BOOL isFirstBuy;
-
 @end

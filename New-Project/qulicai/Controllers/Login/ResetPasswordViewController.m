@@ -8,6 +8,7 @@
 
 #import "ResetPasswordViewController.h"
 #import "SettingsTableViewController.h"
+#import "ProductBuySuccessViewController.h"
 
 @interface ResetPasswordViewController ()
 <UITextViewDelegate>
@@ -99,7 +100,9 @@
         } else {
             [self showSuccessWithTitle:@"密码设置成功"];
             if (self.isTradingPw) {
-                [self.navigationController popToRootViewControllerAnimated:YES];
+                ProductBuySuccessViewController *productController = [[ProductBuySuccessViewController alloc] init];
+                [self.navigationController pushViewController:productController
+                                                     animated:YES];
             } else {
                 if (self.isModifyPW) {
                     for( UIViewController *controller in self.navigationController.viewControllers ) {

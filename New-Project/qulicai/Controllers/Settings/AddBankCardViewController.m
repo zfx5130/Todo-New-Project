@@ -9,7 +9,7 @@
 #import "AddBankCardViewController.h"
 #import "BankCardSelectedViewController.h"
 #import "ProductBuyViewController.h"
-#import "ProductBuySuccessViewController.h"
+#import "ResetPasswordViewController.h"
 
 @interface AddBankCardViewController ()
 
@@ -93,9 +93,9 @@
             [self showErrorAlert];
         } else {
             //下一步操作
-            ProductBuySuccessViewController *productController = [[ProductBuySuccessViewController alloc] init];
-            productController.isFirstBuy = YES;
-            [self.navigationController pushViewController:productController
+            ResetPasswordViewController *modifyController = [[ResetPasswordViewController alloc] init];
+            modifyController.isTradingPw = YES;
+            [self.navigationController pushViewController:modifyController
                                                  animated:YES];
         }
     });

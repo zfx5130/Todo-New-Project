@@ -44,14 +44,7 @@
 #pragma mark - Handlers
 
 - (IBAction)config:(UIButton *)sender {
-    if (self.isFirstBuy) {
-        ResetPasswordViewController *modifyController = [[ResetPasswordViewController alloc] init];
-        modifyController.isTradingPw = YES;
-        [self.navigationController pushViewController:modifyController
-                                             animated:YES];
-    } else {
-        [self.navigationController popToRootViewControllerAnimated:YES];
-    }
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 
