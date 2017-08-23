@@ -37,11 +37,12 @@
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
 }
 
+
+#pragma mark - Handlers
+
 - (void)leftBarButtonAction {
     [self.navigationController popViewControllerAnimated:YES];
 }
-
-#pragma mark - Handlers
 
 - (IBAction)config:(UIButton *)sender {
     [self.navigationController popToRootViewControllerAnimated:YES];

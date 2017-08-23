@@ -13,6 +13,7 @@
 #import "LoginViewController.h"
 #import "AboutQRViewController.h"
 #import "CustomerViewController.h"
+#import "BuyHistoryViewController.h"
 
 @interface MineTableViewController ()
 
@@ -154,7 +155,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                     break;
                 case 1: {
                     if (self.isLogin) {
-                        [self showSuccessWithTitle:@"购买记录开发中"];
+                        [self history];
                     } else {
                         [self login];
                     }
@@ -186,6 +187,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 #pragma mark - Handlers
+
+- (void)history {
+    BuyHistoryViewController *historyController = [[BuyHistoryViewController alloc] init];
+    historyController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:historyController
+                                         animated:YES];
+}
 
 - (void)setupCustomer {
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:NSStringFromClass([CustomerViewController class])

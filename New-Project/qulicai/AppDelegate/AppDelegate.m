@@ -30,7 +30,7 @@
     
     [self configQRNetwork];
     [self testNetwork];
-    UserDefaultsRemove(@"login");
+    //UserDefaultsRemove(@"login");
     [self setNavBarAppearence];
     
     return YES;
@@ -56,17 +56,16 @@
 - (void)configQRNetwork {
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
     config.baseUrl = kBaseUrl;
-    
 }
 
 - (void)testNetwork {
     QRRequestGetToken *request = [[QRRequestGetToken alloc] init];
-    request.username = @"luck";
-    request.password = @"123456";
+    request.username = @"node_h5";
+    request.password = @"EDA70AF62F2D3D2B96BE3C455060AF4A";
     request.token = @"getToken";
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         
-        NSLog(@"request::::%@",request.responseObject);
+        NSLog(@"请求结果::::%@",request.responseObject);
         
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         

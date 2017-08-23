@@ -124,6 +124,12 @@
 		844FB8131F4D6496001772AF /* IncomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB8111F4D6496001772AF /* IncomeTableViewCell.xib */; };
 		844FB8171F4D665D001772AF /* AllIncomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB8151F4D665D001772AF /* AllIncomeTableViewCell.m */; };
 		844FB8181F4D665D001772AF /* AllIncomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB8161F4D665D001772AF /* AllIncomeTableViewCell.xib */; };
+		844FB8211F4D7AA4001772AF /* BuyHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB81F1F4D7AA4001772AF /* BuyHistoryViewController.m */; };
+		844FB8221F4D7AA4001772AF /* BuyHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB8201F4D7AA4001772AF /* BuyHistoryViewController.xib */; };
+		844FB8261F4D9233001772AF /* ProductHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB8241F4D9233001772AF /* ProductHistoryViewController.m */; };
+		844FB8271F4D9233001772AF /* ProductHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB8251F4D9233001772AF /* ProductHistoryViewController.xib */; };
+		844FB82B1F4DA4A7001772AF /* ProductHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB8291F4DA4A7001772AF /* ProductHistoryTableViewCell.m */; };
+		844FB82C1F4DA4A7001772AF /* ProductHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB82A1F4DA4A7001772AF /* ProductHistoryTableViewCell.xib */; };
 		84825E0A1F456330006A921F /* UserBankCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E081F456330006A921F /* UserBankCartViewController.m */; };
 		84825E0B1F456330006A921F /* UserBankCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E091F456330006A921F /* UserBankCartViewController.xib */; };
 		84825E0F1F456E2C006A921F /* AccountCertificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E0D1F456E2C006A921F /* AccountCertificationViewController.m */; };
@@ -367,6 +373,15 @@
 		844FB8141F4D665D001772AF /* AllIncomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllIncomeTableViewCell.h; sourceTree = "<group>"; };
 		844FB8151F4D665D001772AF /* AllIncomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllIncomeTableViewCell.m; sourceTree = "<group>"; };
 		844FB8161F4D665D001772AF /* AllIncomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllIncomeTableViewCell.xib; sourceTree = "<group>"; };
+		844FB81E1F4D7AA4001772AF /* BuyHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyHistoryViewController.h; sourceTree = "<group>"; };
+		844FB81F1F4D7AA4001772AF /* BuyHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyHistoryViewController.m; sourceTree = "<group>"; };
+		844FB8201F4D7AA4001772AF /* BuyHistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuyHistoryViewController.xib; sourceTree = "<group>"; };
+		844FB8231F4D9233001772AF /* ProductHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductHistoryViewController.h; sourceTree = "<group>"; };
+		844FB8241F4D9233001772AF /* ProductHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductHistoryViewController.m; sourceTree = "<group>"; };
+		844FB8251F4D9233001772AF /* ProductHistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductHistoryViewController.xib; sourceTree = "<group>"; };
+		844FB8281F4DA4A7001772AF /* ProductHistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductHistoryTableViewCell.h; sourceTree = "<group>"; };
+		844FB8291F4DA4A7001772AF /* ProductHistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductHistoryTableViewCell.m; sourceTree = "<group>"; };
+		844FB82A1F4DA4A7001772AF /* ProductHistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		84825E071F456330006A921F /* UserBankCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserBankCartViewController.h; sourceTree = "<group>"; };
 		84825E081F456330006A921F /* UserBankCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBankCartViewController.m; sourceTree = "<group>"; };
 		84825E091F456330006A921F /* UserBankCartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserBankCartViewController.xib; sourceTree = "<group>"; };
@@ -448,6 +463,12 @@
 				844FB8051F4D5D1D001772AF /* YesterdayIncomeViewController.h */,
 				844FB8061F4D5D1D001772AF /* YesterdayIncomeViewController.m */,
 				844FB8071F4D5D1D001772AF /* YesterdayIncomeViewController.xib */,
+				844FB81E1F4D7AA4001772AF /* BuyHistoryViewController.h */,
+				844FB81F1F4D7AA4001772AF /* BuyHistoryViewController.m */,
+				844FB8201F4D7AA4001772AF /* BuyHistoryViewController.xib */,
+				844FB8231F4D9233001772AF /* ProductHistoryViewController.h */,
+				844FB8241F4D9233001772AF /* ProductHistoryViewController.m */,
+				844FB8251F4D9233001772AF /* ProductHistoryViewController.xib */,
 			);
 			name = PruductController;
 			path = Pruduct;
@@ -477,6 +498,9 @@
 				842617101F4C53EA00A96EFD /* BankCartTableViewCell.h */,
 				842617111F4C53EA00A96EFD /* BankCartTableViewCell.m */,
 				842617121F4C53EA00A96EFD /* BankCartTableViewCell.xib */,
+				844FB8281F4DA4A7001772AF /* ProductHistoryTableViewCell.h */,
+				844FB8291F4DA4A7001772AF /* ProductHistoryTableViewCell.m */,
+				844FB82A1F4DA4A7001772AF /* ProductHistoryTableViewCell.xib */,
 			);
 			path = ProductView;
 			sourceTree = "<group>";
@@ -1119,6 +1143,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844FB8221F4D7AA4001772AF /* BuyHistoryViewController.xib in Resources */,
 				842616F11F4C0C9C00A96EFD /* ProductBackMoneyViewController.xib in Resources */,
 				844402AB1F42FC8100F5AFEE /* QRWebViewController.xib in Resources */,
 				842616E71F4C0C7D00A96EFD /* ProductIncomeViewController.xib in Resources */,
@@ -1136,6 +1161,7 @@
 				842616A11F4BD13300A96EFD /* ProductCycleTableViewCell.xib in Resources */,
 				842616801F4AEB9100A96EFD /* SuggestViewController.xib in Resources */,
 				844402CD1F44590100F5AFEE /* UsernameSettingViewController.xib in Resources */,
+				844FB82C1F4DA4A7001772AF /* ProductHistoryTableViewCell.xib in Resources */,
 				842616A61F4BD53300A96EFD /* ProductDetailTableViewCell.xib in Resources */,
 				84825E1A1F458F02006A921F /* ModifyTradingPdViewController.xib in Resources */,
 				84FEBAE21F4ABF630020B42D /* MainHeadView.xib in Resources */,
@@ -1144,6 +1170,7 @@
 				8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */,
 				844FB8091F4D5D1D001772AF /* YesterdayIncomeViewController.xib in Resources */,
 				844FB7FF1F4C6B89001772AF /* ProductBuyViewController.xib in Resources */,
+				844FB8271F4D9233001772AF /* ProductHistoryViewController.xib in Resources */,
 				8426170A1F4C324B00A96EFD /* AddBankCardViewController.xib in Resources */,
 				844FB8181F4D665D001772AF /* AllIncomeTableViewCell.xib in Resources */,
 				842616E21F4C0C6C00A96EFD /* ProductIntroViewController.xib in Resources */,
@@ -1305,6 +1332,7 @@
 				84825E261F45BF7E006A921F /* DZ_ScaleCircle.m in Sources */,
 				842616E11F4C0C6C00A96EFD /* ProductIntroViewController.m in Sources */,
 				8435E5B11F399C1E00424E5E /* CLLockNavVC.m in Sources */,
+				844FB8211F4D7AA4001772AF /* BuyHistoryViewController.m in Sources */,
 				8435E5B01F399C1E00424E5E /* CoreLockConst.m in Sources */,
 				844402401F41874C00F5AFEE /* FinanceViewController.m in Sources */,
 				8444029F1F42CB9400F5AFEE /* ForgetPasswordViewController.m in Sources */,
@@ -1313,6 +1341,8 @@
 				842616AB1F4BDF1300A96EFD /* InputTextView1.m in Sources */,
 				844402CC1F44590100F5AFEE /* UsernameSettingViewController.m in Sources */,
 				8444028E1F41B2B000F5AFEE /* UILabel+Custom.m in Sources */,
+				844FB82B1F4DA4A7001772AF /* ProductHistoryTableViewCell.m in Sources */,
+				844FB8261F4D9233001772AF /* ProductHistoryViewController.m in Sources */,
 				8435E5B31F399C1E00424E5E /* CLLockItemView.m in Sources */,
 				84825E2A1F4687B6006A921F /* FinanceCarouselTableViewCell.m in Sources */,
 				844402891F41B2B000F5AFEE /* UIFont+Custom.m in Sources */,

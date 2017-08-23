@@ -15,14 +15,13 @@
 }
 
 - (NSString *)requestUrl {
-    return @"/getToken";
+    return @"getToken";
 }
 
 - (id)requestArgument {
     return @{
-             @"serviceName" : self.token,
-             @"userName" : self.username,
-             @"pass" : self.password
+             @"head" : @{ @"serviceName" : self.token },
+             @"body" : @{ @"userName" : self.username, @"passWord" : self.password }
              };
 }
 
