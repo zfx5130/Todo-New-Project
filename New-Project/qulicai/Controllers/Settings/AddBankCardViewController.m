@@ -93,10 +93,10 @@
         } else {
             //下一步操作
             //[self showSuccessWithTitle:@"添加银行卡成功"];
-            ProductBuyViewController *productController = [[ProductBuyViewController alloc] init];
-            [self.navigationController pushViewController:productController
-                                                 animated:YES];
-        
+//            ProductBuyViewController *productController = [[ProductBuyViewController alloc] init];
+//            [self.navigationController pushViewController:productController
+//                                                 animated:YES];
+            NSLog(@"跳转练练---购买陈宫");
         }
     });
 }

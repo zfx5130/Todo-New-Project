@@ -13,7 +13,7 @@
 #import "ProductDetailTableViewCell.h"
 #import "InputTextView1.h"
 #import "ProductInformationController.h"
-#import "AccountCertificationViewController.h"
+#import "ProductBuyViewController.h"
 
 #define NAVBAR_COLORCHANGE_POINT (IMAGE_HEIGHT - NAV_HEIGHT*2)
 #define IMAGE_HEIGHT 220
@@ -214,9 +214,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 - (IBAction)buyProduct:(UIButton *)sender {
     self.isFirstCharge = YES;
     if (self.isFirstCharge) {
-        AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
-        accountController.isProductPush = YES;
-        [self.navigationController pushViewController:accountController
+        ProductBuyViewController *productController = [[ProductBuyViewController alloc] init];
+        [self.navigationController pushViewController:productController
                                              animated:YES];
     }  else {
         NSLog(@"直接购买");

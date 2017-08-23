@@ -7,6 +7,7 @@
 //
 
 #import "ProductBuyViewController.h"
+#import "AccountCertificationViewController.h"
 
 @interface ProductBuyViewController ()
 <UITextFieldDelegate>
@@ -18,6 +19,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *alertErrorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *remainMoneyLabel;
 
+@property (weak, nonatomic) IBOutlet UIView *bankView;
+
+//155 110
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bankViewHeightConstraint;
+
+@property (assign, nonatomic) BOOL isFirstBuy;
+
 @end
 
 @implementation ProductBuyViewController
@@ -26,6 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.isFirstBuy = YES;
     [self setupViews];
 }
 
@@ -46,6 +55,8 @@
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
     [self.remainMoneyLabel addColor:RGBColor(204, 204, 204)
                             forText:@"剩余可购额度"];
+    self.bankViewHeightConstraint.constant = self.isFirstBuy ? 110.0f : 155.0f;
+    self.bankView.hidden = self.isFirstBuy;
 }
 
 - (void)updateResetButtonStatus {
@@ -83,7 +94,10 @@
     [self showSVProgressHUD];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [SVProgressHUD dismiss];
-        [self showSuccessWithTitle:@"购买成功"];
+        AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
+        accountController.isProductPush = YES;
+        [self.navigationController pushViewController:accountController
+                                             animated:YES];
     });
 }
 
