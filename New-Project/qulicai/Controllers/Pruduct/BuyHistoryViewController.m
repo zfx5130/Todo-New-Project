@@ -74,10 +74,10 @@ UICollectionViewDelegate>
     [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, YYScreenW, TitleHeight)];
     topView.backgroundColor = [UIColor whiteColor];
     _topView = topView;
-    UILabel *aLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, TitleHeight - 0.5f, YYScreenW, 0.5f)];
-    aLabel.backgroundColor = RGBColor(221.0f, 221.0f, 221.0f);
+    //UILabel *aLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, TitleHeight - 0.5f, YYScreenW, 0.5f)];
+    //aLabel.backgroundColor = RGBColor(221.0f, 221.0f, 221.0f);
     [self.bottomPageContainView addSubview:topView];
-    [self.bottomPageContainView addSubview:aLabel];
+    //[self.bottomPageContainView addSubview:aLabel];
     
 }
 
