@@ -9,6 +9,7 @@
 #import "ResetPasswordViewController.h"
 #import "SettingsTableViewController.h"
 #import "ProductBuySuccessViewController.h"
+#import "PropertyPickupViewController.h"
 
 @interface ResetPasswordViewController ()
 <UITextViewDelegate>
@@ -100,9 +101,19 @@
         } else {
             [self showSuccessWithTitle:@"密码设置成功"];
             if (self.isTradingPw) {
-                ProductBuySuccessViewController *productController = [[ProductBuySuccessViewController alloc] init];
-                [self.navigationController pushViewController:productController
-                                                     animated:YES];
+                if (self.isPickUpPw) {
+                    for( UIViewController *controller in self.navigationController.viewControllers ) {
+                        if( [controller isKindOfClass:[PropertyPickupViewController class]] ) {
+                            [self.navigationController popToViewController:controller animated:YES];
+                            return ;
+                        }
+                    }
+                } else {
+                    ProductBuySuccessViewController *productController = [[ProductBuySuccessViewController alloc] init];
+                    productController.isBuySuccess = YES;
+                    [self.navigationController pushViewController:productController
+                                                         animated:YES];
+                }
             } else {
                 if (self.isModifyPW) {
                     for( UIViewController *controller in self.navigationController.viewControllers ) {

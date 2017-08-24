@@ -15,4 +15,7 @@
 //是否是修改交易密码
 @property (assign, nonatomic) BOOL isTradingPw;
 
+//是否提现交易密码
+@property (assign, nonatomic) BOOL isPickUpPw;
+
 @end

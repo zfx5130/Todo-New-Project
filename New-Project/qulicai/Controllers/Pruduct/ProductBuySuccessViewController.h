@@ -10,4 +10,13 @@
 
 @interface ProductBuySuccessViewController : UIViewController
 
+//提现成功
+@property (assign, nonatomic) BOOL isPickupSuccess;
+
+//购买成功
+@property (assign, nonatomic) BOOL isBuySuccess;
+
+//充值成功
+@property (assign, nonatomic) BOOL isChargeSuccess;
+
 @end

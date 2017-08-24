@@ -171,6 +171,8 @@
 		84DCF3531F4EE46E002F117A /* ProductPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF3511F4EE46E002F117A /* ProductPasswordView.m */; };
 		84DCF3541F4EE46E002F117A /* ProductPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DCF3521F4EE46E002F117A /* ProductPasswordView.xib */; };
 		84DCF3571F4EE58E002F117A /* JCRBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF3561F4EE58E002F117A /* JCRBlurView.m */; };
+		84DCF35B1F4F08F7002F117A /* PropertyIncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF3591F4F08F7002F117A /* PropertyIncomeViewController.m */; };
+		84DCF35C1F4F08F7002F117A /* PropertyIncomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DCF35A1F4F08F7002F117A /* PropertyIncomeViewController.xib */; };
 		84FEBA961F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBA951F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m */; };
 		84FEBADD1F4ABB730020B42D /* WRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBADC1F4ABB730020B42D /* WRNavigationBar.m */; };
 		84FEBAE01F4ABF510020B42D /* MainHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBADF1F4ABF510020B42D /* MainHeadView.m */; };
@@ -475,6 +477,9 @@
 		84DCF3521F4EE46E002F117A /* ProductPasswordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductPasswordView.xib; sourceTree = "<group>"; };
 		84DCF3551F4EE58E002F117A /* JCRBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCRBlurView.h; sourceTree = "<group>"; };
 		84DCF3561F4EE58E002F117A /* JCRBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCRBlurView.m; sourceTree = "<group>"; };
+		84DCF3581F4F08F7002F117A /* PropertyIncomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyIncomeViewController.h; sourceTree = "<group>"; };
+		84DCF3591F4F08F7002F117A /* PropertyIncomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyIncomeViewController.m; sourceTree = "<group>"; };
+		84DCF35A1F4F08F7002F117A /* PropertyIncomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropertyIncomeViewController.xib; sourceTree = "<group>"; };
 		84FEBA941F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		84FEBA951F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		84FEBADB1F4ABB730020B42D /* WRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRNavigationBar.h; sourceTree = "<group>"; };
@@ -1058,6 +1063,9 @@
 				844FB85C1F4ECE65001772AF /* PropertyPickupViewController.h */,
 				844FB85D1F4ECE65001772AF /* PropertyPickupViewController.m */,
 				844FB85E1F4ECE65001772AF /* PropertyPickupViewController.xib */,
+				84DCF3581F4F08F7002F117A /* PropertyIncomeViewController.h */,
+				84DCF3591F4F08F7002F117A /* PropertyIncomeViewController.m */,
+				84DCF35A1F4F08F7002F117A /* PropertyIncomeViewController.xib */,
 			);
 			path = propertyController;
 			sourceTree = "<group>";
@@ -1321,6 +1329,7 @@
 				842616AC1F4BDF1300A96EFD /* InputTextView1.xib in Resources */,
 				844FB85B1F4EC604001772AF /* PropertyInfoTableViewCell.xib in Resources */,
 				8426168A1F4B005E00A96EFD /* CustomerViewController.storyboard in Resources */,
+				84DCF35C1F4F08F7002F117A /* PropertyIncomeViewController.xib in Resources */,
 				8426167B1F4ADEC900A96EFD /* AboutQRViewController.xib in Resources */,
 				844FB7FA1F4C5B8A001772AF /* Bank.plist in Resources */,
 				8444024B1F41A0E700F5AFEE /* LoginViewController.xib in Resources */,
@@ -1484,6 +1493,7 @@
 				842616D51F4C050100A96EFD /* UIView+XJExtension.m in Sources */,
 				8435E5931F399BFA00424E5E /* TDTouchID.m in Sources */,
 				8435E5AD1F399C1E00424E5E /* CLLockVC.m in Sources */,
+				84DCF35B1F4F08F7002F117A /* PropertyIncomeViewController.m in Sources */,
 				84DCF34B1F4EE43A002F117A /* ASPopupController.m in Sources */,
 				8435E5B61F399C1E00424E5E /* CLLockView.m in Sources */,
 				8444028B1F41B2B000F5AFEE /* UIImage+Custom.m in Sources */,

@@ -118,6 +118,8 @@
             //下一步操作
             ResetPasswordViewController *resetController = [[ResetPasswordViewController alloc] init];
             resetController.isModifyPW = self.isModifyPW;
+            resetController.isTradingPw = self.isTradingPw;
+            resetController.isPickUpPw = self.isPickUpPw;
             [self.navigationController pushViewController:resetController
                                                  animated:YES];
         }

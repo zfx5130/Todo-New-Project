@@ -12,6 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductBuySuccessViewController">
             <connections>
+                <outlet property="secondLabel" destination="tZP-5E-ScE" id="XDq-nT-sNA"/>
+                <outlet property="thirdLabel" destination="n3f-Bi-KjD" id="DuU-Dm-KgS"/>
+                <outlet property="titleLabel" destination="l9Y-3i-CAa" id="eG6-XT-atQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

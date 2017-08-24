@@ -14,6 +14,7 @@
 #import "EmptyPropertyTableViewCell.h"
 #import "PropertyInfoTableViewCell.h"
 #import "PropertyPickupViewController.h"
+#import "PropertyIncomeViewController.h"
 
 @interface TotalPropertyViewController ()
 
@@ -174,6 +175,11 @@ heightForFooterInSection:(NSInteger)section {
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath
                              animated:YES];
+    if (indexPath.section == 1) {
+        PropertyIncomeViewController *incomeController = [[PropertyIncomeViewController alloc] init];
+        [self.navigationController pushViewController:incomeController
+                                             animated:YES];
+    }
 }
 
 #pragma mark - Handlers

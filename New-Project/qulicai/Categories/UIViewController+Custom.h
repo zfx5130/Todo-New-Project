@@ -26,4 +26,6 @@
 
 - (void)showSuccessWithTitle:(NSString *)title;
 
+- (void)showErrorWithTitle:(NSString *)title;
+
 @end

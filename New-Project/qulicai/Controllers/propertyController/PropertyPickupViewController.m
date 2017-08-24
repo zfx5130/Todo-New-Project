@@ -9,6 +9,8 @@
 #import "PropertyPickupViewController.h"
 #import "ProductPasswordView.h"
 #import "ASPopupController.h"
+#import "ProductBuySuccessViewController.h"
+#import "ForgetPasswordViewController.h"
 
 @interface PropertyPickupViewController ()
 <UITextViewDelegate>
@@ -146,8 +148,12 @@
 }
 
 - (void)forgetButtonWasPressed {
-    NSLog(@"忘记密码");
     [self passwordDismiss];
+    ForgetPasswordViewController *passwordController = [[ForgetPasswordViewController alloc] init];
+    passwordController.isPickUpPw = YES;
+    passwordController.isTradingPw = YES;
+    [self.navigationController pushViewController:passwordController
+                                         animated:YES];
 }
 
 - (void)passwordDismiss {
@@ -166,6 +172,19 @@
     }
     [self passwordDismiss];
     NSLog(@"pass:::::::%@",self.passwordView.passwordTextField.text);
+    [self showSVProgressHUD];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [SVProgressHUD dismiss];
+        if (self.passwordView.passwordTextField.text.length > 12) {
+            [self showErrorWithTitle:@"提现失败"];
+        } else {
+            [self showSuccessWithTitle:@"提现成功"];
+            ProductBuySuccessViewController *successController = [[ProductBuySuccessViewController alloc] init];
+            successController.isPickupSuccess = YES;
+            [self.navigationController pushViewController:successController
+                                                 animated:YES];
+        }
+    });
 }
 
 - (IBAction)editingChanged:(UITextField *)sender {
