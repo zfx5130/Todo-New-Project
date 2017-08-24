@@ -12,4 +12,10 @@
 
 @property (weak, nonatomic) IBOutlet UIView *propertyCircleView;
 
+@property (weak, nonatomic) IBOutlet UILabel *totalPropertyLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *balanceLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *regularLabel;
+
 @end

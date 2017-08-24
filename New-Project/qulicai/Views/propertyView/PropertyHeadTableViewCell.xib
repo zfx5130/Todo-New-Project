@@ -160,7 +160,10 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="balanceLabel" destination="h2a-i3-zGX" id="xD7-4e-Wux"/>
                 <outlet property="propertyCircleView" destination="eyd-DH-3lH" id="dd4-5F-ypf"/>
+                <outlet property="regularLabel" destination="zq2-4k-TeR" id="mFH-OR-cEp"/>
+                <outlet property="totalPropertyLabel" destination="hnO-Q5-2YL" id="QQi-iw-h80"/>
             </connections>
             <point key="canvasLocation" x="24.5" y="52"/>
         </tableViewCell>

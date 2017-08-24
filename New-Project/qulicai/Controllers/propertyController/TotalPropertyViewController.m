@@ -12,10 +12,13 @@
 #import "DZ_ScaleCircle.h"
 #import "MorePropertyTableViewCell.h"
 #import "EmptyPropertyTableViewCell.h"
+#import "PropertyInfoTableViewCell.h"
 
 @interface TotalPropertyViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (assign, nonatomic) BOOL hasPreporty;
 
 @end
 
@@ -40,6 +43,7 @@
 #pragma mark - Private
 
 - (void)setupViews {
+    self.hasPreporty = YES;
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
 }
 
@@ -63,14 +67,28 @@
                                      bundle:nil];
     [self.tableView registerNib:emptyNib
          forCellReuseIdentifier:NSStringFromClass([EmptyPropertyTableViewCell class])];
+    
+    UINib *propertyInfoNib = [UINib nibWithNibName:NSStringFromClass([PropertyInfoTableViewCell class])
+                                     bundle:nil];
+    [self.tableView registerNib:propertyInfoNib
+         forCellReuseIdentifier:NSStringFromClass([PropertyInfoTableViewCell class])];
 }
 
 - (void)addScacleCircleWithCell:(PropertyHeadTableViewCell *)cell {
     DZ_ScaleCircle *circle =
     [[DZ_ScaleCircle alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 100.0f, 100.0f)];
-    circle.firstColor = RGBColor(204.0f, 204.0f, 204.0f);
-    circle.firstScale = 1.0f;
-    circle.lineWith = 20;
+    
+    if (self.hasPreporty) {
+        circle.firstColor = [UIColor colorWithRed:113.0f / 255 green:175.0f / 255 blue:255.0f / 255 alpha:1.0];
+        circle.secondColor =[UIColor colorWithRed:255.0f / 255 green:168.0f / 255 blue:0 alpha:1.0];
+        circle.firstScale = 0.7;
+        circle.secondScale = 0.3;
+        circle.lineWith = 20;
+    } else {
+        circle.firstColor = RGBColor(204.0f, 204.0f, 204.0f);
+        circle.firstScale = 1.0f;
+        circle.lineWith = 20;
+    }
     circle.unfillColor = [UIColor whiteColor];
     circle.animation_time = 0.001;
     circle.centerLable.text = @"";
@@ -81,7 +99,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    NSInteger num = 1;
+    if (section == 2) {
+        num = self.hasPreporty ? 4 : 1;
+    }
+    return num;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -93,14 +115,24 @@
     if (!indexPath.section) {
         PropertyHeadTableViewCell *cell =
         [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PropertyHeadTableViewCell class])];
+        cell.totalPropertyLabel.text = self.hasPreporty ? @"193424234" : @"0.00";
+        cell.balanceLabel.text = self.hasPreporty ? @"423242" : @"0.00";
+        cell.regularLabel.text = self.hasPreporty ? @"3434243" : @"0.00";
         [self addScacleCircleWithCell:cell];
         return cell;
-    } else if (indexPath.section == 1) {
-        MorePropertyTableViewCell *cell =
-        [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MorePropertyTableViewCell class])];
-        return cell;
+    } else if (indexPath.section == 2) {
+        if (!self.hasPreporty) {
+            EmptyPropertyTableViewCell *cell =
+            [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EmptyPropertyTableViewCell class])];
+            return cell;
+        } else {
+            PropertyInfoTableViewCell *cell =
+            [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PropertyInfoTableViewCell class])];
+            return cell;
+        }
     }
-    EmptyPropertyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EmptyPropertyTableViewCell class])];
+    MorePropertyTableViewCell *cell =
+    [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MorePropertyTableViewCell class])];
     return cell;
 }
 
@@ -108,11 +140,13 @@
 
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat height = 250.0f;
+    CGFloat height = 0.0f;
     if (!indexPath.section) {
         height = 250.0f;
     } else if (indexPath.section == 1) {
         height = 45.0f;
+    } else if (indexPath.section == 2) {
+        height = self.hasPreporty ? 60.0f : 250.0f;
     }
     return height;
 }

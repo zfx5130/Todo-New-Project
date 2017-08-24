@@ -146,6 +146,8 @@
 		844FB8511F4EB950001772AF /* MorePropertyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB84F1F4EB950001772AF /* MorePropertyTableViewCell.xib */; };
 		844FB8551F4EC229001772AF /* EmptyPropertyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB8531F4EC229001772AF /* EmptyPropertyTableViewCell.m */; };
 		844FB8561F4EC229001772AF /* EmptyPropertyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB8541F4EC229001772AF /* EmptyPropertyTableViewCell.xib */; };
+		844FB85A1F4EC604001772AF /* PropertyInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB8581F4EC604001772AF /* PropertyInfoTableViewCell.m */; };
+		844FB85B1F4EC604001772AF /* PropertyInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB8591F4EC604001772AF /* PropertyInfoTableViewCell.xib */; };
 		84825E0A1F456330006A921F /* UserBankCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E081F456330006A921F /* UserBankCartViewController.m */; };
 		84825E0B1F456330006A921F /* UserBankCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E091F456330006A921F /* UserBankCartViewController.xib */; };
 		84825E0F1F456E2C006A921F /* AccountCertificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E0D1F456E2C006A921F /* AccountCertificationViewController.m */; };
@@ -422,6 +424,9 @@
 		844FB8521F4EC229001772AF /* EmptyPropertyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyPropertyTableViewCell.h; sourceTree = "<group>"; };
 		844FB8531F4EC229001772AF /* EmptyPropertyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyPropertyTableViewCell.m; sourceTree = "<group>"; };
 		844FB8541F4EC229001772AF /* EmptyPropertyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyPropertyTableViewCell.xib; sourceTree = "<group>"; };
+		844FB8571F4EC604001772AF /* PropertyInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyInfoTableViewCell.h; sourceTree = "<group>"; };
+		844FB8581F4EC604001772AF /* PropertyInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyInfoTableViewCell.m; sourceTree = "<group>"; };
+		844FB8591F4EC604001772AF /* PropertyInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropertyInfoTableViewCell.xib; sourceTree = "<group>"; };
 		84825E071F456330006A921F /* UserBankCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserBankCartViewController.h; sourceTree = "<group>"; };
 		84825E081F456330006A921F /* UserBankCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBankCartViewController.m; sourceTree = "<group>"; };
 		84825E091F456330006A921F /* UserBankCartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserBankCartViewController.xib; sourceTree = "<group>"; };
@@ -1037,6 +1042,9 @@
 				844FB8521F4EC229001772AF /* EmptyPropertyTableViewCell.h */,
 				844FB8531F4EC229001772AF /* EmptyPropertyTableViewCell.m */,
 				844FB8541F4EC229001772AF /* EmptyPropertyTableViewCell.xib */,
+				844FB8571F4EC604001772AF /* PropertyInfoTableViewCell.h */,
+				844FB8581F4EC604001772AF /* PropertyInfoTableViewCell.m */,
+				844FB8591F4EC604001772AF /* PropertyInfoTableViewCell.xib */,
 			);
 			path = propertyView;
 			sourceTree = "<group>";
@@ -1233,6 +1241,7 @@
 				8426169C1F4B0FDF00A96EFD /* ProductHeadTableViewCell.xib in Resources */,
 				842616EC1F4C0C8E00A96EFD /* ProductRecordViewController.xib in Resources */,
 				842616AC1F4BDF1300A96EFD /* InputTextView1.xib in Resources */,
+				844FB85B1F4EC604001772AF /* PropertyInfoTableViewCell.xib in Resources */,
 				8426168A1F4B005E00A96EFD /* CustomerViewController.storyboard in Resources */,
 				8426167B1F4ADEC900A96EFD /* AboutQRViewController.xib in Resources */,
 				844FB7FA1F4C5B8A001772AF /* Bank.plist in Resources */,
@@ -1420,6 +1429,7 @@
 				8426167A1F4ADEC900A96EFD /* AboutQRViewController.m in Sources */,
 				84825E191F458F02006A921F /* ModifyTradingPdViewController.m in Sources */,
 				84FEBADD1F4ABB730020B42D /* WRNavigationBar.m in Sources */,
+				844FB85A1F4EC604001772AF /* PropertyInfoTableViewCell.m in Sources */,
 				844402C51F44516100F5AFEE /* WeiXinPickView.m in Sources */,
 				844FB8081F4D5D1D001772AF /* YesterdayIncomeViewController.m in Sources */,
 				84825E261F45BF7E006A921F /* DZ_ScaleCircle.m in Sources */,
