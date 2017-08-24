@@ -33,11 +33,11 @@
                                         <constraint firstAttribute="width" constant="65" id="tOg-Ne-Pif"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="购买成功！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9Y-3i-CAa">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="购买成功！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="l9Y-3i-CAa">
                                     <rect key="frame" x="155" y="185" width="71.5" height="17"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="17" id="6hP-cF-8N5"/>
-                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="71.5" id="KV4-XN-X2g"/>
+                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="90" id="KV4-XN-X2g"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>

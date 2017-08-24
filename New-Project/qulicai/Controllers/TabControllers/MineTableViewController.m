@@ -133,7 +133,11 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = [super tableView:tableView
               heightForRowAtIndexPath:indexPath];
     if (!indexPath.section) {
-        height = (IPHONE5_WIDTH * height) / IPHONE6_WIDTH;
+        if (IS_IPHONE_5 || IS_IPHONE_6) {
+            height = (IPHONE5_WIDTH * height) / IPHONE6_WIDTH;
+        } else if (IS_IPHONE_6P) {
+            height = (IPHONE6P_WIDTH * height) / IPHONE6_WIDTH - 25;
+        }
     }
     return height;
 }
