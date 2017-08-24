@@ -8,6 +8,7 @@
 
 #import "ProductHistoryViewController.h"
 #import "ProductHistoryTableViewCell.h"
+#import "BuyProductDetailViewController.h"
 
 @interface ProductHistoryViewController ()
 
@@ -81,6 +82,8 @@ heightForHeaderInSection:(NSInteger)section {
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath
                              animated:YES];
+    BuyProductDetailViewController *productController = [[BuyProductDetailViewController alloc] init];
+    [self.navigationController pushViewController:productController animated:YES];
 }
 
 

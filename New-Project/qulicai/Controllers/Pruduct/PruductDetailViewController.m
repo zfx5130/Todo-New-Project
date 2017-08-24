@@ -41,7 +41,6 @@ InputTextView1Delgate>
     [super viewDidLoad];
     [self registerCell];
     [self setupViews];
-    [self wr_setNavBarBackgroundAlpha:0];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

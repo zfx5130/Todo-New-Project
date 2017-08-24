@@ -1,10 +1,11 @@
 //
-//  BuyHistoryViewController.m
+//  BuyProductDetailViewController.m
 //  qulicai
 //
-//  Created by admin on 2017/8/23.
+//  Created by admin on 2017/8/24.
 //  Copyright © 2017年 qurong. All rights reserved.
 //
+
 
 #define TitleHeight 40  //头高度
 #define NavBarHeight 64  //nav高度
@@ -12,21 +13,18 @@
 #define YYScreenW [UIScreen mainScreen].bounds.size.width
 static NSString * const ID = @"CELL";
 
-#import "BuyHistoryViewController.h"
 #import "AppDelegate.h"
 #import "UIView+XJExtension.h"
-#import "ProductHistoryViewController.h"
+#import "ProductIntroViewController.h"
 #import <Masonry.h>
+#import "BuyProductDetailViewController.h"
+#import "ProductDetailListViewController.h"
 
-@interface BuyHistoryViewController ()
+@interface BuyProductDetailViewController ()
 <UICollectionViewDataSource,
 UICollectionViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *noBuyHistoryView;
-
 @property (assign, nonatomic) BOOL hasHistory;
-
-@property (weak, nonatomic) IBOutlet UIView *historyView;
 
 @property (weak, nonatomic) IBOutlet UIView *bottomPageContainView;
 
@@ -42,15 +40,15 @@ UICollectionViewDelegate>
 
 @end
 
-@implementation BuyHistoryViewController
+@implementation BuyProductDetailViewController
+
 
 #pragma mark - lifeCycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.hasHistory = YES;
-    [self setupViews];
     
+    [self setupViews];
     [self setupTopView];
     [self setupBottomContentView];
     [self setupAllChildViewController];
@@ -65,8 +63,6 @@ UICollectionViewDelegate>
 
 - (void)setupViews {
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
-    self.historyView.hidden = !self.hasHistory;
-    self.noBuyHistoryView.hidden = !self.historyView.hidden;
 }
 
 - (void)setupTopView {
@@ -78,22 +74,17 @@ UICollectionViewDelegate>
     aLabel.backgroundColor = RGBColor(221.0f, 221.0f, 221.0f);
     [self.bottomPageContainView addSubview:topView];
     [self.bottomPageContainView addSubview:aLabel];
-    
 }
 
 - (void)setupAllChildViewController {
     
-    ProductHistoryViewController *oneVc = [[ProductHistoryViewController alloc] init];
-    oneVc.title = @"待生息";
+    ProductIntroViewController *oneVc = [[ProductIntroViewController alloc] init];
+    oneVc.title = @"项目简介";
     [self addChildViewController:oneVc];
     
-    ProductHistoryViewController *twoVc = [[ProductHistoryViewController alloc] init];
-    twoVc.title = @"持有中";
+    ProductDetailListViewController *twoVc = [[ProductDetailListViewController alloc] init];
+    twoVc.title = @"借款人列表";
     [self addChildViewController:twoVc];
-    
-    ProductHistoryViewController *threeVc = [[ProductHistoryViewController alloc] init];
-    threeVc.title = @"已完成";
-    [self addChildViewController:threeVc];
 
 }
 
@@ -156,7 +147,7 @@ UICollectionViewDelegate>
 - (void)setupBottomContentView {
     // 创建一个流水布局
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.itemSize = CGSizeMake(YYScreenW, YYScreenH - 230 - TitleHeight);
+    layout.itemSize = CGSizeMake(YYScreenW, YYScreenH - 127 - TitleHeight);
     
     // 设置水平滚动方向
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -165,7 +156,7 @@ UICollectionViewDelegate>
     
     // 创建UICollectionView
     UICollectionView *collectionView =
-    [[UICollectionView alloc] initWithFrame:CGRectMake(0,TitleHeight, YYScreenW, YYScreenH - 230 - TitleHeight) collectionViewLayout:layout];
+    [[UICollectionView alloc] initWithFrame:CGRectMake(0,TitleHeight, YYScreenW, YYScreenH - 127 - TitleHeight) collectionViewLayout:layout];
     collectionView.backgroundColor = [UIColor whiteColor];
     [self.bottomPageContainView addSubview:collectionView];
     
@@ -240,7 +231,7 @@ UICollectionViewDelegate>
     if (titleButton == _selectButton) {
     }
     [self selButton:titleButton];
-
+    
     CGFloat offsetX = i * YYScreenW;
     _collectionView.contentOffset = CGPointMake(offsetX, 0);
 }
@@ -250,7 +241,7 @@ UICollectionViewDelegate>
     _selectButton.selected = NO;
     titleButton.selected = YES;
     _selectButton = titleButton;
-
+    
     [UIView animateWithDuration:0.25 animations:^{
         _lineView.xj_centerX = titleButton.xj_centerX;
     }];

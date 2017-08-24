@@ -130,6 +130,14 @@
 		844FB8271F4D9233001772AF /* ProductHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB8251F4D9233001772AF /* ProductHistoryViewController.xib */; };
 		844FB82B1F4DA4A7001772AF /* ProductHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB8291F4DA4A7001772AF /* ProductHistoryTableViewCell.m */; };
 		844FB82C1F4DA4A7001772AF /* ProductHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB82A1F4DA4A7001772AF /* ProductHistoryTableViewCell.xib */; };
+		844FB8301F4E755A001772AF /* BuyProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB82E1F4E755A001772AF /* BuyProductDetailViewController.m */; };
+		844FB8311F4E755A001772AF /* BuyProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB82F1F4E755A001772AF /* BuyProductDetailViewController.xib */; };
+		844FB8351F4E7871001772AF /* ProductDetailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB8331F4E7871001772AF /* ProductDetailListViewController.m */; };
+		844FB8361F4E7871001772AF /* ProductDetailListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB8341F4E7871001772AF /* ProductDetailListViewController.xib */; };
+		844FB83A1F4E7913001772AF /* ProductDetailListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB8381F4E7913001772AF /* ProductDetailListTableViewCell.m */; };
+		844FB83B1F4E7913001772AF /* ProductDetailListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB8391F4E7913001772AF /* ProductDetailListTableViewCell.xib */; };
+		844FB83E1F4E7BC2001772AF /* BorrowMoneyDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB83D1F4E7BC2001772AF /* BorrowMoneyDetailTableViewController.m */; };
+		844FB8401F4E7BD0001772AF /* BorrowMoneyDetailTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844FB83F1F4E7BD0001772AF /* BorrowMoneyDetailTableViewController.storyboard */; };
 		84825E0A1F456330006A921F /* UserBankCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E081F456330006A921F /* UserBankCartViewController.m */; };
 		84825E0B1F456330006A921F /* UserBankCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E091F456330006A921F /* UserBankCartViewController.xib */; };
 		84825E0F1F456E2C006A921F /* AccountCertificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E0D1F456E2C006A921F /* AccountCertificationViewController.m */; };
@@ -382,6 +390,18 @@
 		844FB8281F4DA4A7001772AF /* ProductHistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductHistoryTableViewCell.h; sourceTree = "<group>"; };
 		844FB8291F4DA4A7001772AF /* ProductHistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductHistoryTableViewCell.m; sourceTree = "<group>"; };
 		844FB82A1F4DA4A7001772AF /* ProductHistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		844FB82D1F4E755A001772AF /* BuyProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyProductDetailViewController.h; sourceTree = "<group>"; };
+		844FB82E1F4E755A001772AF /* BuyProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyProductDetailViewController.m; sourceTree = "<group>"; };
+		844FB82F1F4E755A001772AF /* BuyProductDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuyProductDetailViewController.xib; sourceTree = "<group>"; };
+		844FB8321F4E7871001772AF /* ProductDetailListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailListViewController.h; sourceTree = "<group>"; };
+		844FB8331F4E7871001772AF /* ProductDetailListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailListViewController.m; sourceTree = "<group>"; };
+		844FB8341F4E7871001772AF /* ProductDetailListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailListViewController.xib; sourceTree = "<group>"; };
+		844FB8371F4E7913001772AF /* ProductDetailListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailListTableViewCell.h; sourceTree = "<group>"; };
+		844FB8381F4E7913001772AF /* ProductDetailListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailListTableViewCell.m; sourceTree = "<group>"; };
+		844FB8391F4E7913001772AF /* ProductDetailListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailListTableViewCell.xib; sourceTree = "<group>"; };
+		844FB83C1F4E7BC2001772AF /* BorrowMoneyDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorrowMoneyDetailTableViewController.h; sourceTree = "<group>"; };
+		844FB83D1F4E7BC2001772AF /* BorrowMoneyDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorrowMoneyDetailTableViewController.m; sourceTree = "<group>"; };
+		844FB83F1F4E7BD0001772AF /* BorrowMoneyDetailTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BorrowMoneyDetailTableViewController.storyboard; sourceTree = "<group>"; };
 		84825E071F456330006A921F /* UserBankCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserBankCartViewController.h; sourceTree = "<group>"; };
 		84825E081F456330006A921F /* UserBankCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBankCartViewController.m; sourceTree = "<group>"; };
 		84825E091F456330006A921F /* UserBankCartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserBankCartViewController.xib; sourceTree = "<group>"; };
@@ -469,6 +489,15 @@
 				844FB8231F4D9233001772AF /* ProductHistoryViewController.h */,
 				844FB8241F4D9233001772AF /* ProductHistoryViewController.m */,
 				844FB8251F4D9233001772AF /* ProductHistoryViewController.xib */,
+				844FB82D1F4E755A001772AF /* BuyProductDetailViewController.h */,
+				844FB82E1F4E755A001772AF /* BuyProductDetailViewController.m */,
+				844FB82F1F4E755A001772AF /* BuyProductDetailViewController.xib */,
+				844FB8321F4E7871001772AF /* ProductDetailListViewController.h */,
+				844FB8331F4E7871001772AF /* ProductDetailListViewController.m */,
+				844FB8341F4E7871001772AF /* ProductDetailListViewController.xib */,
+				844FB83C1F4E7BC2001772AF /* BorrowMoneyDetailTableViewController.h */,
+				844FB83D1F4E7BC2001772AF /* BorrowMoneyDetailTableViewController.m */,
+				844FB83F1F4E7BD0001772AF /* BorrowMoneyDetailTableViewController.storyboard */,
 			);
 			name = PruductController;
 			path = Pruduct;
@@ -501,6 +530,9 @@
 				844FB8281F4DA4A7001772AF /* ProductHistoryTableViewCell.h */,
 				844FB8291F4DA4A7001772AF /* ProductHistoryTableViewCell.m */,
 				844FB82A1F4DA4A7001772AF /* ProductHistoryTableViewCell.xib */,
+				844FB8371F4E7913001772AF /* ProductDetailListTableViewCell.h */,
+				844FB8381F4E7913001772AF /* ProductDetailListTableViewCell.m */,
+				844FB8391F4E7913001772AF /* ProductDetailListTableViewCell.xib */,
 			);
 			path = ProductView;
 			sourceTree = "<group>";
@@ -1157,6 +1189,7 @@
 				844FB7FA1F4C5B8A001772AF /* Bank.plist in Resources */,
 				8444024B1F41A0E700F5AFEE /* LoginViewController.xib in Resources */,
 				84825E311F469A16006A921F /* NewUserBuyTableViewCell.xib in Resources */,
+				844FB8311F4E755A001772AF /* BuyProductDetailViewController.xib in Resources */,
 				844402C11F443FAE00F5AFEE /* SettingsTableViewController.storyboard in Resources */,
 				842616A11F4BD13300A96EFD /* ProductCycleTableViewCell.xib in Resources */,
 				842616801F4AEB9100A96EFD /* SuggestViewController.xib in Resources */,
@@ -1166,8 +1199,10 @@
 				84825E1A1F458F02006A921F /* ModifyTradingPdViewController.xib in Resources */,
 				84FEBAE21F4ABF630020B42D /* MainHeadView.xib in Resources */,
 				84825E151F457468006A921F /* ModifyLoginPwViewController.xib in Resources */,
+				844FB83B1F4E7913001772AF /* ProductDetailListTableViewCell.xib in Resources */,
 				8435E4C01F316BCE00424E5E /* LaunchScreen.storyboard in Resources */,
 				8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */,
+				844FB8401F4E7BD0001772AF /* BorrowMoneyDetailTableViewController.storyboard in Resources */,
 				844FB8091F4D5D1D001772AF /* YesterdayIncomeViewController.xib in Resources */,
 				844FB7FF1F4C6B89001772AF /* ProductBuyViewController.xib in Resources */,
 				844FB8271F4D9233001772AF /* ProductHistoryViewController.xib in Resources */,
@@ -1178,6 +1213,7 @@
 				844402B01F43F9F600F5AFEE /* ResetPasswordViewController.xib in Resources */,
 				844FB8131F4D6496001772AF /* IncomeTableViewCell.xib in Resources */,
 				8435E5AE1F399C1E00424E5E /* CLLockVC.xib in Resources */,
+				844FB8361F4E7871001772AF /* ProductDetailListViewController.xib in Resources */,
 				844FB8041F4D327C001772AF /* ProductBuySuccessViewController.xib in Resources */,
 				84825E101F456E2C006A921F /* AccountCertificationViewController.xib in Resources */,
 				84825E2B1F4687B6006A921F /* FinanceCarouselTableViewCell.xib in Resources */,
@@ -1262,6 +1298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844FB8301F4E755A001772AF /* BuyProductDetailViewController.m in Sources */,
 				844402BF1F443F9A00F5AFEE /* SettingsTableViewController.m in Sources */,
 				844402BB1F44217400F5AFEE /* UIViewController+Addition.m in Sources */,
 				844402921F41B2B000F5AFEE /* UITextView+Custom.m in Sources */,
@@ -1337,7 +1374,9 @@
 				844402401F41874C00F5AFEE /* FinanceViewController.m in Sources */,
 				8444029F1F42CB9400F5AFEE /* ForgetPasswordViewController.m in Sources */,
 				844FB7FE1F4C6B89001772AF /* ProductBuyViewController.m in Sources */,
+				844FB83A1F4E7913001772AF /* ProductDetailListTableViewCell.m in Sources */,
 				844402A31F42F21100F5AFEE /* SendVerifyCodeButton.m in Sources */,
+				844FB8351F4E7871001772AF /* ProductDetailListViewController.m in Sources */,
 				842616AB1F4BDF1300A96EFD /* InputTextView1.m in Sources */,
 				844402CC1F44590100F5AFEE /* UsernameSettingViewController.m in Sources */,
 				8444028E1F41B2B000F5AFEE /* UILabel+Custom.m in Sources */,
@@ -1347,6 +1386,7 @@
 				84825E2A1F4687B6006A921F /* FinanceCarouselTableViewCell.m in Sources */,
 				844402891F41B2B000F5AFEE /* UIFont+Custom.m in Sources */,
 				844402911F41B2B000F5AFEE /* UITextField+Custom.m in Sources */,
+				844FB83E1F4E7BC2001772AF /* BorrowMoneyDetailTableViewController.m in Sources */,
 				842616EB1F4C0C8E00A96EFD /* ProductRecordViewController.m in Sources */,
 				8444028C1F41B2B000F5AFEE /* UIImage+ImageEffects.m in Sources */,
 				8435E5B51F399C1E00424E5E /* CLLockMainView.m in Sources */,

@@ -1,24 +1,24 @@
 //
-//  ProductRecordViewController.m
+//  ProductDetailListViewController.m
 //  qulicai
 //
-//  Created by admin on 2017/8/22.
+//  Created by admin on 2017/8/24.
 //  Copyright © 2017年 qurong. All rights reserved.
 //
 
-#import "ProductRecordViewController.h"
-#import "ProductRecordTableViewCell.h"
+#import "ProductDetailListViewController.h"
+#import "ProductDetailListTableViewCell.h"
+#import "BorrowMoneyDetailTableViewController.h"
 
-@interface ProductRecordViewController ()
-<UITableViewDataSource,
-UITableViewDelegate>
+@interface ProductDetailListViewController ()
+<UITableViewDelegate,
+UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-
 @end
 
-@implementation ProductRecordViewController
+@implementation ProductDetailListViewController
 
 #pragma mark - lifeCycle
 
@@ -38,10 +38,10 @@ UITableViewDelegate>
 #pragma mark - Private
 
 - (void)registerCell {
-    UINib *infoNib = [UINib nibWithNibName:NSStringFromClass([ProductRecordTableViewCell class])
+    UINib *infoNib = [UINib nibWithNibName:NSStringFromClass([ProductDetailListTableViewCell class])
                                     bundle:nil];
     [self.tableView registerNib:infoNib
-         forCellReuseIdentifier:NSStringFromClass([ProductRecordTableViewCell class])];
+         forCellReuseIdentifier:NSStringFromClass([ProductDetailListTableViewCell class])];
 }
 
 #pragma mark - UITableViewDataSource
@@ -57,7 +57,7 @@ UITableViewDelegate>
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ProductRecordTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductRecordTableViewCell class])];
+    ProductDetailListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductDetailListTableViewCell class])];
     return cell;
 }
 
@@ -75,7 +75,16 @@ heightForFooterInSection:(NSInteger)section {
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath
+                             animated:YES];
     
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:NSStringFromClass([BorrowMoneyDetailTableViewController class])
+                                                         bundle:nil];
+    BorrowMoneyDetailTableViewController *borrowController =
+    [storyBoard instantiateViewControllerWithIdentifier:NSStringFromClass([BorrowMoneyDetailTableViewController class])];
+    [self.navigationController pushViewController:borrowController
+                                         animated:YES];
 }
+
 
 @end
