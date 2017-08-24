@@ -132,6 +132,9 @@ heightForFooterInSection:(NSInteger)section {
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = [super tableView:tableView
               heightForRowAtIndexPath:indexPath];
+    if (!indexPath.section) {
+        height = (IPHONE5_WIDTH * height) / IPHONE6_WIDTH;
+    }
     return height;
 }
 

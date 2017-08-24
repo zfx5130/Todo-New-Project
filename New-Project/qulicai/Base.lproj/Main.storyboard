@@ -64,7 +64,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me_cart_unlogin_bg_image" translatesAutoresizingMaskIntoConstraints="NO" id="LV8-H1-2Vm">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me_cart_unlogin_bg_image" translatesAutoresizingMaskIntoConstraints="NO" id="LV8-H1-2Vm">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="200"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me_head_image" translatesAutoresizingMaskIntoConstraints="NO" id="VEf-3c-hMw">
