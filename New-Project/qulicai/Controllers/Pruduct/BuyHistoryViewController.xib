@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EaH-ZH-hQc">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pS7-GE-FU7" userLabel="Head View">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
@@ -48,10 +48,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1iQ-Od-8oN" userLabel=" Bottom View">
-                            <rect key="frame" x="0.0" y="63" width="375" height="604"/>
+                            <rect key="frame" x="0.0" y="63" width="375" height="540"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IJa-FE-iq7" userLabel="Holder View">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="604"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="540"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list_buy_no_image" translatesAutoresizingMaskIntoConstraints="NO" id="IZc-Dd-0sR">
                                             <rect key="frame" x="127" y="81" width="120" height="120"/>
@@ -100,7 +100,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MzR-Wj-tOe">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="604"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="540"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9wX-9Q-aol" userLabel="Head View">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
@@ -136,7 +136,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72c-8S-XtF" userLabel="Bottom View">
-                                            <rect key="frame" x="0.0" y="100" width="375" height="504"/>
+                                            <rect key="frame" x="0.0" y="100" width="375" height="440"/>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -180,7 +180,7 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="EaH-ZH-hQc" secondAttribute="bottom" id="0tv-0t-xUO"/>
                 <constraint firstAttribute="trailing" secondItem="EaH-ZH-hQc" secondAttribute="trailing" id="4rB-63-c9a"/>
-                <constraint firstItem="EaH-ZH-hQc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="XpU-KP-3Tq"/>
+                <constraint firstItem="EaH-ZH-hQc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="XpU-KP-3Tq"/>
                 <constraint firstItem="EaH-ZH-hQc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yA0-UY-rJQ"/>
             </constraints>
             <point key="canvasLocation" x="24.5" y="52.5"/>

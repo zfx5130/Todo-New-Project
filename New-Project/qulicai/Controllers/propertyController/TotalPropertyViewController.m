@@ -13,6 +13,7 @@
 #import "MorePropertyTableViewCell.h"
 #import "EmptyPropertyTableViewCell.h"
 #import "PropertyInfoTableViewCell.h"
+#import "PropertyPickupViewController.h"
 
 @interface TotalPropertyViewController ()
 
@@ -177,8 +178,34 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 #pragma mark - Handlers
 
+- (void)pickUpMoney {
+    PropertyPickupViewController *pickContoller = [[PropertyPickupViewController alloc] init];
+    [self.navigationController pushViewController:pickContoller animated:YES];
+}
+
+- (void)showAlert {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:@"对不起，你无余额可提现!"
+                                                       delegate:self
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:nil, nil];
+    [alertView show];
+}
+
 - (void)leftBarButtonAction {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)charge:(UIButton *)sender {
+    NSLog(@"充值");
+}
+
+- (IBAction)pickup:(UIButton *)sender {
+    if (!self.hasPreporty) {
+        [self showAlert];
+    } else {
+        [self pickUpMoney];
+    }
 }
 
 @end

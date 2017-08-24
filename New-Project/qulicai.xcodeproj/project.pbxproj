@@ -148,6 +148,8 @@
 		844FB8561F4EC229001772AF /* EmptyPropertyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB8541F4EC229001772AF /* EmptyPropertyTableViewCell.xib */; };
 		844FB85A1F4EC604001772AF /* PropertyInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB8581F4EC604001772AF /* PropertyInfoTableViewCell.m */; };
 		844FB85B1F4EC604001772AF /* PropertyInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB8591F4EC604001772AF /* PropertyInfoTableViewCell.xib */; };
+		844FB85F1F4ECE65001772AF /* PropertyPickupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB85D1F4ECE65001772AF /* PropertyPickupViewController.m */; };
+		844FB8601F4ECE65001772AF /* PropertyPickupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB85E1F4ECE65001772AF /* PropertyPickupViewController.xib */; };
 		84825E0A1F456330006A921F /* UserBankCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E081F456330006A921F /* UserBankCartViewController.m */; };
 		84825E0B1F456330006A921F /* UserBankCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E091F456330006A921F /* UserBankCartViewController.xib */; };
 		84825E0F1F456E2C006A921F /* AccountCertificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E0D1F456E2C006A921F /* AccountCertificationViewController.m */; };
@@ -427,6 +429,9 @@
 		844FB8571F4EC604001772AF /* PropertyInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyInfoTableViewCell.h; sourceTree = "<group>"; };
 		844FB8581F4EC604001772AF /* PropertyInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyInfoTableViewCell.m; sourceTree = "<group>"; };
 		844FB8591F4EC604001772AF /* PropertyInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropertyInfoTableViewCell.xib; sourceTree = "<group>"; };
+		844FB85C1F4ECE65001772AF /* PropertyPickupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyPickupViewController.h; sourceTree = "<group>"; };
+		844FB85D1F4ECE65001772AF /* PropertyPickupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyPickupViewController.m; sourceTree = "<group>"; };
+		844FB85E1F4ECE65001772AF /* PropertyPickupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropertyPickupViewController.xib; sourceTree = "<group>"; };
 		84825E071F456330006A921F /* UserBankCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserBankCartViewController.h; sourceTree = "<group>"; };
 		84825E081F456330006A921F /* UserBankCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBankCartViewController.m; sourceTree = "<group>"; };
 		84825E091F456330006A921F /* UserBankCartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserBankCartViewController.xib; sourceTree = "<group>"; };
@@ -1026,6 +1031,9 @@
 				844FB8421F4EAF69001772AF /* TotalPropertyViewController.h */,
 				844FB8431F4EAF69001772AF /* TotalPropertyViewController.m */,
 				844FB8441F4EAF69001772AF /* TotalPropertyViewController.xib */,
+				844FB85C1F4ECE65001772AF /* PropertyPickupViewController.h */,
+				844FB85D1F4ECE65001772AF /* PropertyPickupViewController.m */,
+				844FB85E1F4ECE65001772AF /* PropertyPickupViewController.xib */,
 			);
 			path = propertyController;
 			sourceTree = "<group>";
@@ -1247,6 +1255,7 @@
 				844FB7FA1F4C5B8A001772AF /* Bank.plist in Resources */,
 				8444024B1F41A0E700F5AFEE /* LoginViewController.xib in Resources */,
 				84825E311F469A16006A921F /* NewUserBuyTableViewCell.xib in Resources */,
+				844FB8601F4ECE65001772AF /* PropertyPickupViewController.xib in Resources */,
 				844FB8311F4E755A001772AF /* BuyProductDetailViewController.xib in Resources */,
 				844402C11F443FAE00F5AFEE /* SettingsTableViewController.storyboard in Resources */,
 				844FB8461F4EAF69001772AF /* TotalPropertyViewController.xib in Resources */,
@@ -1423,6 +1432,7 @@
 				8426169B1F4B0FDF00A96EFD /* ProductHeadTableViewCell.m in Sources */,
 				842617091F4C324B00A96EFD /* AddBankCardViewController.m in Sources */,
 				844402461F418F1400F5AFEE /* QRTabbarController.m in Sources */,
+				844FB85F1F4ECE65001772AF /* PropertyPickupViewController.m in Sources */,
 				844402851F41B2B000F5AFEE /* NSString+Custom.m in Sources */,
 				844FB8121F4D6496001772AF /* IncomeTableViewCell.m in Sources */,
 				842616FF1F4C1D0000A96EFD /* ProductRecordTableViewCell.m in Sources */,
