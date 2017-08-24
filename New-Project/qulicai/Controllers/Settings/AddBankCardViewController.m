@@ -29,6 +29,8 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLeftLabelConstraint;
+
 @end
 
 @implementation AddBankCardViewController
@@ -56,6 +58,9 @@
     [self.view addTapGestureForDismissingKeyboard];
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
     self.nameLabel.text = [NSString stringWithFormat:@"%@",self.name];
+    if (IS_IPHONE_5) {
+        self.bottomLeftLabelConstraint.constant = -88.0f;
+    }
 }
 
 - (void)updateResetButtonStatus {

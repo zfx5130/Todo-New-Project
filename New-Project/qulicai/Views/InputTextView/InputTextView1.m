@@ -79,6 +79,11 @@
     return YES;
 }
 
+- (IBAction)editingChanged:(UITextField *)sender {
+    [self calculateWithText:sender.text];
+}
+
+
 #pragma mark - Private
 
 - (void)calculateWithText:(NSString *)text {

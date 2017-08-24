@@ -129,20 +129,20 @@ InputTextView1Delgate>
 
 #pragma mark - UITableViewDelegate
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat offsetY = scrollView.contentOffset.y;
-    if (offsetY > NAVBAR_COLORCHANGE_POINT) {
-        CGFloat alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / NAV_HEIGHT;
-        [self wr_setNavBarBackgroundAlpha:alpha];
-        [self wr_setNavBarTitleColor:[RGBColor(51, 51, 51) colorWithAlphaComponent:alpha]];
-        self.title = @"购买";
-    }
-    else {
-        [self wr_setNavBarBackgroundAlpha:0];
-        [self wr_setNavBarTitleColor:[UIColor whiteColor]];
-        self.title = @"";
-    }
-}
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    CGFloat offsetY = scrollView.contentOffset.y;
+//    if (offsetY > NAVBAR_COLORCHANGE_POINT) {
+//        CGFloat alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / NAV_HEIGHT;
+//        [self wr_setNavBarBackgroundAlpha:alpha];
+//        [self wr_setNavBarTitleColor:[RGBColor(51, 51, 51) colorWithAlphaComponent:alpha]];
+//        self.title = @"购买";
+//    }
+//    else {
+//        [self wr_setNavBarBackgroundAlpha:0];
+//        [self wr_setNavBarTitleColor:[UIColor whiteColor]];
+//        self.title = @"";
+//    }
+//}
 
 
 - (CGFloat)tableView:(UITableView *)tableView

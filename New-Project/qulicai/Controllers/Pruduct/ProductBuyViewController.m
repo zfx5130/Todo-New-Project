@@ -27,6 +27,8 @@
 @property (assign, nonatomic) BOOL isFirstBuy;
 
 @property (weak, nonatomic) IBOutlet UILabel *incomeLabel;
+// -100
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLabelCenterYConstraint;
 
 @end
 
@@ -59,6 +61,9 @@
                             forText:@"剩余可购额度"];
     self.bankViewHeightConstraint.constant = self.isFirstBuy ? 110.0f : 155.0f;
     self.bankView.hidden = self.isFirstBuy;
+    if (IS_IPHONE_5) {
+        self.bottomLabelCenterYConstraint.constant = -80.0f;
+    }
 }
 
 - (void)updateResetButtonStatus {

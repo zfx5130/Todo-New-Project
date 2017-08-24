@@ -66,6 +66,9 @@
                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
                             <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                            <connections>
+                                <action selector="editingChanged:" destination="GW8-bq-82B" eventType="editingChanged" id="Aiy-Lj-uCn"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <constraints>

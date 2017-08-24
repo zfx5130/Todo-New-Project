@@ -15,6 +15,7 @@
                 <outlet property="bankCartLabel" destination="jkX-35-jLl" id="wxe-xg-OXm"/>
                 <outlet property="bankCartNumberLabel" destination="Nj4-cc-2QB" id="ban-IO-gka"/>
                 <outlet property="bottomContainView" destination="HJY-Ee-mxe" id="1Sn-Kl-kXx"/>
+                <outlet property="bottomLeftLabelConstraint" destination="7ry-6p-sVD" id="bqH-Ee-PFu"/>
                 <outlet property="bottomViewBottomConstraint" destination="q08-MQ-grj" id="u4x-Dg-m9t"/>
                 <outlet property="nameLabel" destination="uBp-uP-C5n" id="iy0-Vw-uBO"/>
                 <outlet property="nextButton" destination="bXF-mh-Edh" id="7gY-nD-tKj"/>

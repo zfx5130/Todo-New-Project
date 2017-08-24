@@ -15,6 +15,7 @@
                 <outlet property="bankView" destination="jqh-Zp-ytc" id="dZg-91-z21"/>
                 <outlet property="bankViewHeightConstraint" destination="zxt-E9-gvn" id="Avu-9n-OQ4"/>
                 <outlet property="bottomContainView" destination="OWx-jf-ymz" id="cYc-2h-XTJ"/>
+                <outlet property="bottomLabelCenterYConstraint" destination="Vvx-Y5-63e" id="8rm-fI-ETp"/>
                 <outlet property="bottomViewBottomConstraint" destination="Afp-lu-Gad" id="Ojm-mb-akf"/>
                 <outlet property="bugButton" destination="T83-OV-MCD" id="bW3-lO-Vd8"/>
                 <outlet property="incomeLabel" destination="81E-1M-SqC" id="g6u-b3-WRq"/>

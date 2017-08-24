@@ -110,12 +110,12 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (CGFloat)tableView:(UITableView *)tableView
 heightForFooterInSection:(NSInteger)section {
-    return 60.0f;
+    return 100.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView
 heightForHeaderInSection:(NSInteger)section {
-    return 30.0f;
+    return 25.0f;
 }
 
 - (UIView *)tableView:(UITableView *)tableView
@@ -127,8 +127,8 @@ viewForHeaderInSection:(NSInteger)section {
 
 - (UIView *)tableView:(UITableView *)tableView
 viewForFooterInSection:(NSInteger)section {
-    UIView *aView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, SCREEN_WIDTH, 85.0f)];
-    UILabel *aLabel = [[UILabel alloc] initWithFrame:CGRectMake(15.0f, 25.0f, SCREEN_WIDTH - 30.0f, 60.0f)];
+    UIView *aView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, SCREEN_WIDTH, 100.0f)];
+    UILabel *aLabel = [[UILabel alloc] initWithFrame:CGRectMake(15.0f, 15.0f, SCREEN_WIDTH - 30.0f, 60.0f)];
     aLabel.text = @"本产品是由杭州趣融信息科技有限公司匹配给个人供投资者提供投资信息的资产管理工具，趣钱宝提供5-30天短期灵活的资产配置方案，供投资者选择。";
     aLabel.font = [UIFont systemFontOfSize:14.0f];
     aLabel.textColor = RGBColor(153.0f, 153.0f, 153.0f);
