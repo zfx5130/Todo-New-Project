@@ -156,7 +156,7 @@ UICollectionViewDelegate>
 - (void)setupBottomContentView {
     // 创建一个流水布局
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.itemSize = CGSizeMake(YYScreenW, YYScreenH - 230 - TitleHeight);
+    layout.itemSize = CGSizeMake(YYScreenW, YYScreenH - 166 - TitleHeight);
     
     // 设置水平滚动方向
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -165,7 +165,7 @@ UICollectionViewDelegate>
     
     // 创建UICollectionView
     UICollectionView *collectionView =
-    [[UICollectionView alloc] initWithFrame:CGRectMake(0,TitleHeight, YYScreenW, YYScreenH - 230 - TitleHeight) collectionViewLayout:layout];
+    [[UICollectionView alloc] initWithFrame:CGRectMake(0,TitleHeight, YYScreenW, YYScreenH - 166 - TitleHeight) collectionViewLayout:layout];
     collectionView.backgroundColor = [UIColor whiteColor];
     [self.bottomPageContainView addSubview:collectionView];
     
