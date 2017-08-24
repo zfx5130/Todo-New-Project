@@ -163,6 +163,8 @@
 		84825E2B1F4687B6006A921F /* FinanceCarouselTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E291F4687B6006A921F /* FinanceCarouselTableViewCell.xib */; };
 		84825E301F469A16006A921F /* NewUserBuyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E2E1F469A16006A921F /* NewUserBuyTableViewCell.m */; };
 		84825E311F469A16006A921F /* NewUserBuyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E2F1F469A16006A921F /* NewUserBuyTableViewCell.xib */; };
+		84CE16F51F4F0CD300E61C7D /* MoneyRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CE16F31F4F0CD300E61C7D /* MoneyRechargeViewController.m */; };
+		84CE16F61F4F0CD300E61C7D /* MoneyRechargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CE16F41F4F0CD300E61C7D /* MoneyRechargeViewController.xib */; };
 		84DCF34B1F4EE43A002F117A /* ASPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF33F1F4EE43A002F117A /* ASPopupController.m */; };
 		84DCF34C1F4EE43A002F117A /* ASPopupDismissAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF3421F4EE43A002F117A /* ASPopupDismissAnimator.m */; };
 		84DCF34D1F4EE43A002F117A /* ASPopupPresentAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF3461F4EE43A002F117A /* ASPopupPresentAnimator.m */; };
@@ -462,6 +464,9 @@
 		84825E2D1F469A16006A921F /* NewUserBuyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserBuyTableViewCell.h; sourceTree = "<group>"; };
 		84825E2E1F469A16006A921F /* NewUserBuyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserBuyTableViewCell.m; sourceTree = "<group>"; };
 		84825E2F1F469A16006A921F /* NewUserBuyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewUserBuyTableViewCell.xib; sourceTree = "<group>"; };
+		84CE16F21F4F0CD300E61C7D /* MoneyRechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyRechargeViewController.h; sourceTree = "<group>"; };
+		84CE16F31F4F0CD300E61C7D /* MoneyRechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyRechargeViewController.m; sourceTree = "<group>"; };
+		84CE16F41F4F0CD300E61C7D /* MoneyRechargeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoneyRechargeViewController.xib; sourceTree = "<group>"; };
 		84DCF33E1F4EE43A002F117A /* ASPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPopupController.h; sourceTree = "<group>"; };
 		84DCF33F1F4EE43A002F117A /* ASPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPopupController.m; sourceTree = "<group>"; };
 		84DCF3411F4EE43A002F117A /* ASPopupDismissAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPopupDismissAnimator.h; sourceTree = "<group>"; };
@@ -1066,6 +1071,9 @@
 				84DCF3581F4F08F7002F117A /* PropertyIncomeViewController.h */,
 				84DCF3591F4F08F7002F117A /* PropertyIncomeViewController.m */,
 				84DCF35A1F4F08F7002F117A /* PropertyIncomeViewController.xib */,
+				84CE16F21F4F0CD300E61C7D /* MoneyRechargeViewController.h */,
+				84CE16F31F4F0CD300E61C7D /* MoneyRechargeViewController.m */,
+				84CE16F41F4F0CD300E61C7D /* MoneyRechargeViewController.xib */,
 			);
 			path = propertyController;
 			sourceTree = "<group>";
@@ -1345,6 +1353,7 @@
 				842616A61F4BD53300A96EFD /* ProductDetailTableViewCell.xib in Resources */,
 				84825E1A1F458F02006A921F /* ModifyTradingPdViewController.xib in Resources */,
 				84FEBAE21F4ABF630020B42D /* MainHeadView.xib in Resources */,
+				84CE16F61F4F0CD300E61C7D /* MoneyRechargeViewController.xib in Resources */,
 				84825E151F457468006A921F /* ModifyLoginPwViewController.xib in Resources */,
 				84DCF34E1F4EE43A002F117A /* ASPopupController.bundle in Resources */,
 				844FB83B1F4E7913001772AF /* ProductDetailListTableViewCell.xib in Resources */,
@@ -1548,6 +1557,7 @@
 				84DCF34F1F4EE43A002F117A /* ASPopupView.m in Sources */,
 				8435E5B31F399C1E00424E5E /* CLLockItemView.m in Sources */,
 				84825E2A1F4687B6006A921F /* FinanceCarouselTableViewCell.m in Sources */,
+				84CE16F51F4F0CD300E61C7D /* MoneyRechargeViewController.m in Sources */,
 				844402891F41B2B000F5AFEE /* UIFont+Custom.m in Sources */,
 				844402911F41B2B000F5AFEE /* UITextField+Custom.m in Sources */,
 				844FB83E1F4E7BC2001772AF /* BorrowMoneyDetailTableViewController.m in Sources */,
