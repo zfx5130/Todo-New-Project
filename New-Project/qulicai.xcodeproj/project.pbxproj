@@ -163,6 +163,14 @@
 		84825E2B1F4687B6006A921F /* FinanceCarouselTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E291F4687B6006A921F /* FinanceCarouselTableViewCell.xib */; };
 		84825E301F469A16006A921F /* NewUserBuyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E2E1F469A16006A921F /* NewUserBuyTableViewCell.m */; };
 		84825E311F469A16006A921F /* NewUserBuyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E2F1F469A16006A921F /* NewUserBuyTableViewCell.xib */; };
+		84DCF34B1F4EE43A002F117A /* ASPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF33F1F4EE43A002F117A /* ASPopupController.m */; };
+		84DCF34C1F4EE43A002F117A /* ASPopupDismissAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF3421F4EE43A002F117A /* ASPopupDismissAnimator.m */; };
+		84DCF34D1F4EE43A002F117A /* ASPopupPresentAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF3461F4EE43A002F117A /* ASPopupPresentAnimator.m */; };
+		84DCF34E1F4EE43A002F117A /* ASPopupController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84DCF3481F4EE43A002F117A /* ASPopupController.bundle */; };
+		84DCF34F1F4EE43A002F117A /* ASPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF34A1F4EE43A002F117A /* ASPopupView.m */; };
+		84DCF3531F4EE46E002F117A /* ProductPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF3511F4EE46E002F117A /* ProductPasswordView.m */; };
+		84DCF3541F4EE46E002F117A /* ProductPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DCF3521F4EE46E002F117A /* ProductPasswordView.xib */; };
+		84DCF3571F4EE58E002F117A /* JCRBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF3561F4EE58E002F117A /* JCRBlurView.m */; };
 		84FEBA961F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBA951F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m */; };
 		84FEBADD1F4ABB730020B42D /* WRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBADC1F4ABB730020B42D /* WRNavigationBar.m */; };
 		84FEBAE01F4ABF510020B42D /* MainHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBADF1F4ABF510020B42D /* MainHeadView.m */; };
@@ -452,6 +460,21 @@
 		84825E2D1F469A16006A921F /* NewUserBuyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserBuyTableViewCell.h; sourceTree = "<group>"; };
 		84825E2E1F469A16006A921F /* NewUserBuyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserBuyTableViewCell.m; sourceTree = "<group>"; };
 		84825E2F1F469A16006A921F /* NewUserBuyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewUserBuyTableViewCell.xib; sourceTree = "<group>"; };
+		84DCF33E1F4EE43A002F117A /* ASPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPopupController.h; sourceTree = "<group>"; };
+		84DCF33F1F4EE43A002F117A /* ASPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPopupController.m; sourceTree = "<group>"; };
+		84DCF3411F4EE43A002F117A /* ASPopupDismissAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPopupDismissAnimator.h; sourceTree = "<group>"; };
+		84DCF3421F4EE43A002F117A /* ASPopupDismissAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPopupDismissAnimator.m; sourceTree = "<group>"; };
+		84DCF3431F4EE43A002F117A /* ASPopupHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPopupHeader.h; sourceTree = "<group>"; };
+		84DCF3451F4EE43A002F117A /* ASPopupPresentAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPopupPresentAnimator.h; sourceTree = "<group>"; };
+		84DCF3461F4EE43A002F117A /* ASPopupPresentAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPopupPresentAnimator.m; sourceTree = "<group>"; };
+		84DCF3481F4EE43A002F117A /* ASPopupController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ASPopupController.bundle; sourceTree = "<group>"; };
+		84DCF3491F4EE43A002F117A /* ASPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPopupView.h; sourceTree = "<group>"; };
+		84DCF34A1F4EE43A002F117A /* ASPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPopupView.m; sourceTree = "<group>"; };
+		84DCF3501F4EE46E002F117A /* ProductPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductPasswordView.h; sourceTree = "<group>"; };
+		84DCF3511F4EE46E002F117A /* ProductPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductPasswordView.m; sourceTree = "<group>"; };
+		84DCF3521F4EE46E002F117A /* ProductPasswordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductPasswordView.xib; sourceTree = "<group>"; };
+		84DCF3551F4EE58E002F117A /* JCRBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCRBlurView.h; sourceTree = "<group>"; };
+		84DCF3561F4EE58E002F117A /* JCRBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCRBlurView.m; sourceTree = "<group>"; };
 		84FEBA941F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		84FEBA951F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		84FEBADB1F4ABB730020B42D /* WRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRNavigationBar.h; sourceTree = "<group>"; };
@@ -774,6 +797,7 @@
 		8435E5031F316E9200424E5E /* Venders */ = {
 			isa = PBXGroup;
 			children = (
+				84DCF33D1F4EE43A002F117A /* ASPopupController */,
 				84FEBADA1F4ABB730020B42D /* WRNavigationBar */,
 				84FEBA931F4AA58B0020B42D /* FDFullscreenPopGesture */,
 				84825E231F45BF7E006A921F /* DZ_Scale_Circle */,
@@ -1041,6 +1065,11 @@
 		844FB8471F4EB205001772AF /* propertyView */ = {
 			isa = PBXGroup;
 			children = (
+				84DCF3551F4EE58E002F117A /* JCRBlurView.h */,
+				84DCF3561F4EE58E002F117A /* JCRBlurView.m */,
+				84DCF3501F4EE46E002F117A /* ProductPasswordView.h */,
+				84DCF3511F4EE46E002F117A /* ProductPasswordView.m */,
+				84DCF3521F4EE46E002F117A /* ProductPasswordView.xib */,
 				844FB8481F4EB21B001772AF /* PropertyHeadTableViewCell.h */,
 				844FB8491F4EB21B001772AF /* PropertyHeadTableViewCell.m */,
 				844FB84A1F4EB21B001772AF /* PropertyHeadTableViewCell.xib */,
@@ -1099,6 +1128,47 @@
 				844FB8161F4D665D001772AF /* AllIncomeTableViewCell.xib */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		84DCF33D1F4EE43A002F117A /* ASPopupController */ = {
+			isa = PBXGroup;
+			children = (
+				84DCF33E1F4EE43A002F117A /* ASPopupController.h */,
+				84DCF33F1F4EE43A002F117A /* ASPopupController.m */,
+				84DCF3401F4EE43A002F117A /* ASPopupDismissAnimator */,
+				84DCF3431F4EE43A002F117A /* ASPopupHeader.h */,
+				84DCF3441F4EE43A002F117A /* ASPopupPresentAnimator */,
+				84DCF3471F4EE43A002F117A /* ASPopupView */,
+			);
+			path = ASPopupController;
+			sourceTree = "<group>";
+		};
+		84DCF3401F4EE43A002F117A /* ASPopupDismissAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				84DCF3411F4EE43A002F117A /* ASPopupDismissAnimator.h */,
+				84DCF3421F4EE43A002F117A /* ASPopupDismissAnimator.m */,
+			);
+			path = ASPopupDismissAnimator;
+			sourceTree = "<group>";
+		};
+		84DCF3441F4EE43A002F117A /* ASPopupPresentAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				84DCF3451F4EE43A002F117A /* ASPopupPresentAnimator.h */,
+				84DCF3461F4EE43A002F117A /* ASPopupPresentAnimator.m */,
+			);
+			path = ASPopupPresentAnimator;
+			sourceTree = "<group>";
+		};
+		84DCF3471F4EE43A002F117A /* ASPopupView */ = {
+			isa = PBXGroup;
+			children = (
+				84DCF3481F4EE43A002F117A /* ASPopupController.bundle */,
+				84DCF3491F4EE43A002F117A /* ASPopupView.h */,
+				84DCF34A1F4EE43A002F117A /* ASPopupView.m */,
+			);
+			path = ASPopupView;
 			sourceTree = "<group>";
 		};
 		84FEBA931F4AA58B0020B42D /* FDFullscreenPopGesture */ = {
@@ -1267,6 +1337,7 @@
 				84825E1A1F458F02006A921F /* ModifyTradingPdViewController.xib in Resources */,
 				84FEBAE21F4ABF630020B42D /* MainHeadView.xib in Resources */,
 				84825E151F457468006A921F /* ModifyLoginPwViewController.xib in Resources */,
+				84DCF34E1F4EE43A002F117A /* ASPopupController.bundle in Resources */,
 				844FB83B1F4E7913001772AF /* ProductDetailListTableViewCell.xib in Resources */,
 				8435E4C01F316BCE00424E5E /* LaunchScreen.storyboard in Resources */,
 				8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */,
@@ -1287,6 +1358,7 @@
 				844FB8041F4D327C001772AF /* ProductBuySuccessViewController.xib in Resources */,
 				84825E101F456E2C006A921F /* AccountCertificationViewController.xib in Resources */,
 				84825E2B1F4687B6006A921F /* FinanceCarouselTableViewCell.xib in Resources */,
+				84DCF3541F4EE46E002F117A /* ProductPasswordView.xib in Resources */,
 				8435E4BB1F316BCE00424E5E /* Main.storyboard in Resources */,
 				842616FB1F4C17BA00A96EFD /* ProductIncomeTableViewCell.xib in Resources */,
 				842617001F4C1D0000A96EFD /* ProductRecordTableViewCell.xib in Resources */,
@@ -1399,8 +1471,10 @@
 				844402901F41B2B000F5AFEE /* UITableView+Custom.m in Sources */,
 				8426167F1F4AEB9100A96EFD /* SuggestViewController.m in Sources */,
 				844FB8171F4D665D001772AF /* AllIncomeTableViewCell.m in Sources */,
+				84DCF34D1F4EE43A002F117A /* ASPopupPresentAnimator.m in Sources */,
 				84825E141F457468006A921F /* ModifyLoginPwViewController.m in Sources */,
 				844402AA1F42FC8100F5AFEE /* QRWebViewController.m in Sources */,
+				84DCF3531F4EE46E002F117A /* ProductPasswordView.m in Sources */,
 				844FB80C1F4D60F3001772AF /* YesterdayIncomeView.m in Sources */,
 				844402931F41B2B000F5AFEE /* UIView+Custom.m in Sources */,
 				844402821F41B2B000F5AFEE /* NSNumber+Custom.m in Sources */,
@@ -1410,6 +1484,7 @@
 				842616D51F4C050100A96EFD /* UIView+XJExtension.m in Sources */,
 				8435E5931F399BFA00424E5E /* TDTouchID.m in Sources */,
 				8435E5AD1F399C1E00424E5E /* CLLockVC.m in Sources */,
+				84DCF34B1F4EE43A002F117A /* ASPopupController.m in Sources */,
 				8435E5B61F399C1E00424E5E /* CLLockView.m in Sources */,
 				8444028B1F41B2B000F5AFEE /* UIImage+Custom.m in Sources */,
 				842616FA1F4C17BA00A96EFD /* ProductIncomeTableViewCell.m in Sources */,
@@ -1435,6 +1510,7 @@
 				844FB85F1F4ECE65001772AF /* PropertyPickupViewController.m in Sources */,
 				844402851F41B2B000F5AFEE /* NSString+Custom.m in Sources */,
 				844FB8121F4D6496001772AF /* IncomeTableViewCell.m in Sources */,
+				84DCF3571F4EE58E002F117A /* JCRBlurView.m in Sources */,
 				842616FF1F4C1D0000A96EFD /* ProductRecordTableViewCell.m in Sources */,
 				8426167A1F4ADEC900A96EFD /* AboutQRViewController.m in Sources */,
 				84825E191F458F02006A921F /* ModifyTradingPdViewController.m in Sources */,
@@ -1448,6 +1524,7 @@
 				844FB8211F4D7AA4001772AF /* BuyHistoryViewController.m in Sources */,
 				8435E5B01F399C1E00424E5E /* CoreLockConst.m in Sources */,
 				844402401F41874C00F5AFEE /* FinanceViewController.m in Sources */,
+				84DCF34C1F4EE43A002F117A /* ASPopupDismissAnimator.m in Sources */,
 				8444029F1F42CB9400F5AFEE /* ForgetPasswordViewController.m in Sources */,
 				844FB7FE1F4C6B89001772AF /* ProductBuyViewController.m in Sources */,
 				844FB83A1F4E7913001772AF /* ProductDetailListTableViewCell.m in Sources */,
@@ -1458,6 +1535,7 @@
 				8444028E1F41B2B000F5AFEE /* UILabel+Custom.m in Sources */,
 				844FB82B1F4DA4A7001772AF /* ProductHistoryTableViewCell.m in Sources */,
 				844FB8261F4D9233001772AF /* ProductHistoryViewController.m in Sources */,
+				84DCF34F1F4EE43A002F117A /* ASPopupView.m in Sources */,
 				8435E5B31F399C1E00424E5E /* CLLockItemView.m in Sources */,
 				84825E2A1F4687B6006A921F /* FinanceCarouselTableViewCell.m in Sources */,
 				844402891F41B2B000F5AFEE /* UIFont+Custom.m in Sources */,
