@@ -14,6 +14,7 @@
 #import "AboutQRViewController.h"
 #import "CustomerViewController.h"
 #import "BuyHistoryViewController.h"
+#import "TotalPropertyViewController.h"
 
 @interface MineTableViewController ()
 
@@ -154,7 +155,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
             switch (indexPath.row) {
                 case 0: {
                     if (self.isLogin) {
-                        [self showSuccessWithTitle:@"总资产开发中"];
+                        [self showTotalProperty];
                     } else {
                         [self login];
                     }
@@ -194,6 +195,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 #pragma mark - Handlers
+
+- (void)showTotalProperty {
+    TotalPropertyViewController *propertyController = [[TotalPropertyViewController alloc] init];
+    propertyController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:propertyController
+                                         animated:YES];
+}
 
 - (void)history {
     BuyHistoryViewController *historyController = [[BuyHistoryViewController alloc] init];

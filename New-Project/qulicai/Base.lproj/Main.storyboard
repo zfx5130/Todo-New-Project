@@ -93,7 +93,7 @@
                                                     <rect key="frame" x="83" y="30" width="103" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Mjn-gt-pAg"/>
-                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="120" id="kfK-mn-Gdb"/>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="130" id="kfK-mn-Gdb"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
