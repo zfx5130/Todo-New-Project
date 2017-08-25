@@ -22,4 +22,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *incomeButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *totalPropertyButton;
+
 @end

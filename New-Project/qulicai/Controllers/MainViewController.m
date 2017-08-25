@@ -14,6 +14,7 @@
 #import "PruductDetailViewController.h"
 #import "LoginViewController.h"
 #import "YesterdayIncomeViewController.h"
+#import "TotalPropertyViewController.h"
 
 #define NAVBAR_COLORCHANGE_POINT (-IMAGE_HEIGHT + NAV_HEIGHT*2)
 #define NAV_HEIGHT 64
@@ -82,10 +83,10 @@ UITableViewDataSource>
     [self.headView.incomeButton addTarget:self
                                    action:@selector(incomeButtonWasPressed:)
                          forControlEvents:UIControlEventTouchUpInside];
+    [self.headView.totalPropertyButton addTarget:self
+                                          action:@selector(totalPropertyButtonWasPressed:)
+                                forControlEvents:UIControlEventTouchUpInside];
 }
-
-#pragma mark - Getters && Setters
-
 
 #pragma mark - UITableViewDataSource
 
@@ -184,6 +185,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 #pragma mark - Hanlders
+
+- (void)totalPropertyButtonWasPressed:(UIButton *)sender {
+    TotalPropertyViewController *propertyController = [[TotalPropertyViewController alloc] init];
+    propertyController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:propertyController
+                                         animated:YES];
+}
 
 - (void)pickupMoney {
     NSString *login = UserDefaultsValue(@"login");
