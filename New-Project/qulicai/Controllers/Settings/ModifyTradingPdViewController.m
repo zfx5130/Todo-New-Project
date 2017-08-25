@@ -144,7 +144,6 @@
 - (IBAction)forgerPassword:(UIButton *)sender {
     [self.view endEditing:YES];
     ForgetPasswordViewController *forgetPasswordController = [[ForgetPasswordViewController alloc] init];
-    forgetPasswordController.isModifyPW = YES;
     forgetPasswordController.isTradingPw = YES;
     [self.navigationController pushViewController:forgetPasswordController
                                          animated:YES];

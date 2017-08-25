@@ -39,24 +39,11 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_head_bg_image" translatesAutoresizingMaskIntoConstraints="NO" id="cZ5-EZ-DFY">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlg-gB-DrS">
-                                            <rect key="frame" x="325" y="25" width="50" height="26"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="FYQ-sj-97C"/>
-                                                <constraint firstAttribute="height" constant="26" id="jbd-Gx-SDV"/>
-                                            </constraints>
-                                            <state key="normal" image="close_image"/>
-                                            <connections>
-                                                <action selector="close:" destination="-1" eventType="touchUpInside" id="QDQ-Hz-blk"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="150" id="7nB-l2-22l"/>
-                                        <constraint firstAttribute="trailing" secondItem="dlg-gB-DrS" secondAttribute="trailing" id="TVs-Ci-gwc"/>
                                         <constraint firstItem="cZ5-EZ-DFY" firstAttribute="leading" secondItem="Xwf-lT-Jot" secondAttribute="leading" id="fTj-88-aKT"/>
-                                        <constraint firstItem="dlg-gB-DrS" firstAttribute="top" secondItem="Xwf-lT-Jot" secondAttribute="top" constant="25" id="gKb-Pa-JuH"/>
                                         <constraint firstAttribute="bottom" secondItem="cZ5-EZ-DFY" secondAttribute="bottom" id="ryn-87-H44"/>
                                         <constraint firstItem="cZ5-EZ-DFY" firstAttribute="top" secondItem="Xwf-lT-Jot" secondAttribute="top" id="shY-03-IsR"/>
                                         <constraint firstAttribute="trailing" secondItem="cZ5-EZ-DFY" secondAttribute="trailing" id="u2u-cp-gcz"/>
@@ -325,7 +312,6 @@
     </objects>
     <resources>
         <image name="alert_error_image" width="13" height="12"/>
-        <image name="close_image" width="15" height="15"/>
         <image name="login_disabled_button_image" width="315" height="40"/>
         <image name="login_enabled_button_image" width="315" height="40"/>
         <image name="login_head_bg_image" width="375" height="148"/>

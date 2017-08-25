@@ -18,11 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *confirmButton;
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *alertErrorLabel;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewButtomConstraint;
-
-@property (weak, nonatomic) IBOutlet UIButton *backButton;
-
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headViewHeightConstraint;
 
 @property (weak, nonatomic) IBOutlet UILabel *titleNameLabel;
 
@@ -49,14 +46,8 @@
 #pragma mark - Private
 
 - (void)setupViews {
-    self.automaticallyAdjustsScrollViewInsets = NO;
     [self.view addTapGestureForDismissingKeyboard];
-    self.navigationController.navigationBarHidden = self.isModifyPW ? NO : YES;
-    self.headViewHeightConstraint.constant = self.isModifyPW ? 70.0f : 130.0f;
-    self.backButton.hidden = self.isModifyPW ? YES : NO;
-    if (self.isModifyPW) {
-        [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
-    }
+    [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
     self.titleNameLabel.text = self.isTradingPw ? @"设置交易密码" : @"设置登录密码";
 }
 
@@ -148,10 +139,6 @@
 
 - (IBAction)editingEnded:(UITextField *)sender {
     [self updateResetButtonStatus];
-}
-
-- (IBAction)back:(UIButton *)sender {
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)confirm:(UIButton *)sender {

@@ -27,10 +27,10 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQL-R8-y3i" userLabel="Head View">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于趣理财" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRE-58-4Ge">
-                                            <rect key="frame" x="15" y="63" width="180" height="67"/>
+                                            <rect key="frame" x="15" y="0.0" width="180" height="67"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="67" id="Fva-1S-etS"/>
                                                 <constraint firstAttribute="width" constant="180" id="VW2-5b-mu8"/>
@@ -42,13 +42,13 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="130" id="O0i-wg-emL"/>
+                                        <constraint firstAttribute="height" constant="67" id="O0i-wg-emL"/>
                                         <constraint firstItem="kRE-58-4Ge" firstAttribute="leading" secondItem="QQL-R8-y3i" secondAttribute="leading" constant="15" id="jNu-qf-Moq"/>
                                         <constraint firstAttribute="bottom" secondItem="kRE-58-4Ge" secondAttribute="bottom" id="t0j-wy-1WM"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tyS-13-ofx" userLabel=" Bottom View">
-                                    <rect key="frame" x="0.0" y="130" width="375" height="537"/>
+                                    <rect key="frame" x="0.0" y="67" width="375" height="600"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Adc-qe-0rm">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>

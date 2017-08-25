@@ -58,7 +58,6 @@ InputTextView1Delgate>
 #pragma mark - Private
 
 - (void)registerCell {
-    self.automaticallyAdjustsScrollViewInsets = NO;
     UINib *infoNib = [UINib nibWithNibName:NSStringFromClass([ProductHeadTableViewCell class])
                                     bundle:nil];
     [self.tableView registerNib:infoNib
@@ -76,10 +75,9 @@ InputTextView1Delgate>
 }
 
 - (void)setupViews {
+    self.automaticallyAdjustsScrollViewInsets = NO;
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
     
-    if (self.isSellOut) {
-    }
     UIImage *buyButtonImage =
     self.isSellOut ? [UIImage imageNamed:@"product_not_buy_bg_image"] : [UIImage imageNamed:@"buy_button_bg_image"];
     [self.bugButton setBackgroundImage:buyButtonImage
@@ -128,22 +126,6 @@ InputTextView1Delgate>
 
 
 #pragma mark - UITableViewDelegate
-
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    CGFloat offsetY = scrollView.contentOffset.y;
-//    if (offsetY > NAVBAR_COLORCHANGE_POINT) {
-//        CGFloat alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / NAV_HEIGHT;
-//        [self wr_setNavBarBackgroundAlpha:alpha];
-//        [self wr_setNavBarTitleColor:[RGBColor(51, 51, 51) colorWithAlphaComponent:alpha]];
-//        self.title = @"购买";
-//    }
-//    else {
-//        [self wr_setNavBarBackgroundAlpha:0];
-//        [self wr_setNavBarTitleColor:[UIColor whiteColor]];
-//        self.title = @"";
-//    }
-//}
-
 
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {

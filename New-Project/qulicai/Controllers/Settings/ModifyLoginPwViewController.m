@@ -143,11 +143,9 @@
 - (IBAction)forgerPassword:(UIButton *)sender {
     [self.view endEditing:YES];
     ForgetPasswordViewController *forgetPasswordController = [[ForgetPasswordViewController alloc] init];
-    forgetPasswordController.isModifyPW = YES;
     [self.navigationController pushViewController:forgetPasswordController
                                          animated:YES];
 }
-
 
 - (void)leftBarButtonAction {
     [self.navigationController popViewControllerAnimated:YES];

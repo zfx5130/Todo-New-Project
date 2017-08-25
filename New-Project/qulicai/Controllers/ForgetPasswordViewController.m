@@ -43,6 +43,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -61,18 +62,13 @@
 
 #pragma mark - Private
 
-- (void)setupViews {
-    
-    self.titleLabel.text = self.isTradingPw ? @"找回交易密码" : @"找回登录密码";
-    self.automaticallyAdjustsScrollViewInsets = NO;
+- (void)setupView {
     [self.view addTapGestureForDismissingKeyboard];
-    self.headViewHeightaConstraint.constant = self.isModifyPW ? 70.0f : 130.0f;
-    self.backButton.hidden = self.isModifyPW ? YES : NO;
-    if (self.isModifyPW) {
-        [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
-    }
-    self.navigationController.navigationBarHidden =  self.isModifyPW ? NO : YES;
-    
+    [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
+}
+
+- (void)setupViews {
+    self.titleLabel.text = self.isTradingPw ? @"找回交易密码" : @"找回登录密码";
 }
 
 - (void)updateResetButtonStatus {
@@ -117,7 +113,6 @@
         } else {
             //下一步操作
             ResetPasswordViewController *resetController = [[ResetPasswordViewController alloc] init];
-            resetController.isModifyPW = self.isModifyPW;
             resetController.isTradingPw = self.isTradingPw;
             resetController.isPickUpPw = self.isPickUpPw;
             [self.navigationController pushViewController:resetController
@@ -171,10 +166,6 @@
 
 - (IBAction)editingEnded:(UITextField *)sender {
     [self updateResetButtonStatus];
-}
-
-- (IBAction)back:(UIButton *)sender {
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)next:(UIButton *)sender {

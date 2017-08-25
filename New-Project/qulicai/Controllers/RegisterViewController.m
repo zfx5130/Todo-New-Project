@@ -50,8 +50,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
-    self.automaticallyAdjustsScrollViewInsets = NO;
     [self.phoneTextField becomeFirstResponder];
 }
 
@@ -67,6 +65,9 @@
 
 - (void)setupViews {
     [self.view addTapGestureForDismissingKeyboard];
+    [self wr_setNavBarBackgroundAlpha:0];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    [self setupNavigationItemLeft:[UIImage imageNamed:@"back_image"]];
 }
 
 - (void)updateResetButtonStatus {
@@ -135,7 +136,7 @@
 
 #pragma mark - Handlers
 
-- (IBAction)back:(UIButton *)sender {
+- (void)leftBarButtonAction {
     [self.navigationController popViewControllerAnimated:YES];
 }
 

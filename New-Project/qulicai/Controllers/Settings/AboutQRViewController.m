@@ -35,7 +35,6 @@
 
 - (void)setupViews {
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
-    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 #pragma mark - Handlers

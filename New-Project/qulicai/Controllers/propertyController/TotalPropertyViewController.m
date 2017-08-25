@@ -15,6 +15,7 @@
 #import "PropertyInfoTableViewCell.h"
 #import "PropertyPickupViewController.h"
 #import "PropertyIncomeViewController.h"
+#import "MoneyRechargeViewController.h"
 
 @interface TotalPropertyViewController ()
 
@@ -203,7 +204,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (IBAction)charge:(UIButton *)sender {
-    NSLog(@"充值");
+    MoneyRechargeViewController *rechargeController = [[MoneyRechargeViewController alloc] init];
+    [self.navigationController pushViewController:rechargeController
+                                         animated:YES];
 }
 
 - (IBAction)pickup:(UIButton *)sender {

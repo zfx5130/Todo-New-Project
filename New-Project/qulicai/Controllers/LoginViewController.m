@@ -46,8 +46,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
-    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -59,6 +57,9 @@
 - (void)setupViews {
     [self.phoneTextField becomeFirstResponder];
     [self.view addTapGestureForDismissingKeyboard];
+    [self wr_setNavBarBackgroundAlpha:0.0f];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    [self setupNavigationItemRight:[UIImage imageNamed:@"close_image"]];
 }
 
 - (void)updateResetButtonStatus {
@@ -133,7 +134,7 @@
     [self login];
 }
 
-- (IBAction)close:(UIButton *)sender {
+- (void)rightBarButtonAction {
     [self.view endEditing:YES];
     [self dismissViewControllerAnimated:YES
                              completion:nil];

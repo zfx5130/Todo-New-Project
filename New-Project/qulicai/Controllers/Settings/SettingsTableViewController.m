@@ -43,7 +43,6 @@
 #pragma mark - Priavte
 
 - (void)setupViews {
-    self.navigationController.navigationBar.translucent = NO;
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
 }
 

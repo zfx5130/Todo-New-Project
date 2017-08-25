@@ -40,7 +40,6 @@
 - (void)setupViews {
     [self.view addTapGestureForDismissingKeyboardCancelsInView:NO];;
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
-    self.automaticallyAdjustsScrollViewInsets = NO;
 
     self.textView =
     [[YYTextView alloc] initWithFrame:CGRectMake(10.0f, 10.0f, SCREEN_WIDTH - 20, 150.0f)];

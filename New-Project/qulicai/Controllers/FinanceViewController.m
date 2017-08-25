@@ -47,12 +47,12 @@ UITableViewDataSource>
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [UIColor wr_setDefaultNavBarShadowImageHidden:NO];
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    [UIColor wr_setDefaultNavBarShadowImageHidden:YES];
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
 }
 
 - (void)didReceiveMemoryWarning {

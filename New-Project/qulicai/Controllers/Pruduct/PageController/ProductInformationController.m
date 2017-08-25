@@ -55,7 +55,6 @@ UICollectionViewDelegate>
     
     // 不添加额外滚动区域
     self.view.backgroundColor = [UIColor whiteColor];
-    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 #pragma mark - 添加所有的子控制器
