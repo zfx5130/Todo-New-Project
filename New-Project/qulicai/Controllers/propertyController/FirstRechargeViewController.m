@@ -31,6 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.isIdentityOK = YES;
     [self setupViews];
 }
 
@@ -99,7 +100,10 @@
         } else {
             [self showSuccessWithTitle:@"充值成功"];
             if (self.isIdentityOK) {
-                
+                AddBankCardViewController *addBankController = [[AddBankCardViewController alloc] init];
+                addBankController.name = @"张三";
+                [self.navigationController pushViewController:addBankController
+                                                     animated:YES];
             } else {
                 AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
                 accountController.isRechargePush = YES;
