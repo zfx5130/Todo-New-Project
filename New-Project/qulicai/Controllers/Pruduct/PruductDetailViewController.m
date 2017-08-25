@@ -197,14 +197,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 
 - (IBAction)buyProduct:(UIButton *)sender {
-    self.isFirstCharge = YES;
-    if (self.isFirstCharge) {
-        ProductBuyViewController *productController = [[ProductBuyViewController alloc] init];
-        [self.navigationController pushViewController:productController
-                                             animated:YES];
-    }  else {
-        NSLog(@"直接购买");
-    }
+    
+    ProductBuyViewController *productController = [[ProductBuyViewController alloc] init];
+    [self.navigationController pushViewController:productController
+                                         animated:YES];
 }
 
 @end

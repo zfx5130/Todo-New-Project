@@ -6,9 +6,9 @@
 //  Copyright © 2017年 qurong. All rights reserved.
 //
 
-#import "QRRequestGetToken.h"
+#import "QRRequestCertificationLogin.h"
 
-@implementation QRRequestGetToken
+@implementation QRRequestCertificationLogin
 
 - (YTKRequestMethod)requestMethod {
     return YTKRequestMethodPOST;
@@ -20,11 +20,10 @@
 
 - (id)requestArgument {
     return @{
-             @"head" : @{ @"serviceName" : self.token },
-             @"body" : @{ @"userName" : self.username, @"passWord" : self.password }
+             @"head" : @{ @"serviceName" : self.serviceName },
+             @"body" : @{ @"userName" : self.userName, @"passWord" : self.passWord }
              };
 }
-
 
 
 @end

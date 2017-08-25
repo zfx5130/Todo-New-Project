@@ -68,7 +68,7 @@
 		8435E5BF1F399C6C00424E5E /* NSString+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E5BC1F399C6C00424E5E /* NSString+File.m */; };
 		8435E5C01F399C6C00424E5E /* CoreArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E5BE1F399C6C00424E5E /* CoreArchive.m */; };
 		8435E6031F3D885200424E5E /* QRRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E6021F3D885200424E5E /* QRRequest.m */; };
-		8435E60A1F3D9AE500424E5E /* QRRequestGetToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E6091F3D9AE500424E5E /* QRRequestGetToken.m */; };
+		8435E60A1F3D9AE500424E5E /* QRRequestCertificationLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E6091F3D9AE500424E5E /* QRRequestCertificationLogin.m */; };
 		8444023D1F4186E100F5AFEE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444023C1F4186E100F5AFEE /* MainViewController.m */; };
 		844402401F41874C00F5AFEE /* FinanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444023F1F41874C00F5AFEE /* FinanceViewController.m */; };
 		844402461F418F1400F5AFEE /* QRTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402451F418F1400F5AFEE /* QRTabbarController.m */; };
@@ -308,8 +308,8 @@
 		8435E5BE1F399C6C00424E5E /* CoreArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreArchive.m; sourceTree = "<group>"; };
 		8435E6011F3D885200424E5E /* QRRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequest.h; sourceTree = "<group>"; };
 		8435E6021F3D885200424E5E /* QRRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequest.m; sourceTree = "<group>"; };
-		8435E6081F3D9AE500424E5E /* QRRequestGetToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestGetToken.h; sourceTree = "<group>"; };
-		8435E6091F3D9AE500424E5E /* QRRequestGetToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestGetToken.m; sourceTree = "<group>"; };
+		8435E6081F3D9AE500424E5E /* QRRequestCertificationLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestCertificationLogin.h; sourceTree = "<group>"; };
+		8435E6091F3D9AE500424E5E /* QRRequestCertificationLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestCertificationLogin.m; sourceTree = "<group>"; };
 		8435E60B1F3DAE9900424E5E /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8444023B1F4186E100F5AFEE /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../MainViewController.h; sourceTree = "<group>"; };
 		8444023C1F4186E100F5AFEE /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
@@ -963,8 +963,8 @@
 		8435E6071F3D9A9F00424E5E /* ApiRequest */ = {
 			isa = PBXGroup;
 			children = (
-				8435E6081F3D9AE500424E5E /* QRRequestGetToken.h */,
-				8435E6091F3D9AE500424E5E /* QRRequestGetToken.m */,
+				8435E6081F3D9AE500424E5E /* QRRequestCertificationLogin.h */,
+				8435E6091F3D9AE500424E5E /* QRRequestCertificationLogin.m */,
 			);
 			path = ApiRequest;
 			sourceTree = "<group>";
@@ -1487,7 +1487,7 @@
 				844FB8031F4D327C001772AF /* ProductBuySuccessViewController.m in Sources */,
 				8444027F1F41B2B000F5AFEE /* NSArray+Custom.m in Sources */,
 				844FB84B1F4EB21B001772AF /* PropertyHeadTableViewCell.m in Sources */,
-				8435E60A1F3D9AE500424E5E /* QRRequestGetToken.m in Sources */,
+				8435E60A1F3D9AE500424E5E /* QRRequestCertificationLogin.m in Sources */,
 				842616D81F4C050800A96EFD /* ProductInformationController.m in Sources */,
 				842616751F4AD33200A96EFD /* QRInfoTableViewCell.m in Sources */,
 				844FB8501F4EB950001772AF /* MorePropertyTableViewCell.m in Sources */,

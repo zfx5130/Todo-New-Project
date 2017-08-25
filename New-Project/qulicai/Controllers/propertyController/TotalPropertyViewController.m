@@ -39,7 +39,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.isFirstRechange = YES;
+    self.isFirstRechange = ![UserDefaultsValue(@"isIdentity") isEqualToString:@"YES"];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,7 +10,7 @@
 #import <YTKNetworkConfig.h>
 #import <YTKNetworkAgent.h>
 #import "QRRequest.h"
-#import "QRRequestGetToken.h"
+#import "QRRequestCertificationLogin.h"
 #import "UIImage+Custom.h"
 
 @interface AppDelegate ()
@@ -21,25 +21,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        //耗时操作
-       dispatch_async(dispatch_get_main_queue(), ^{
-           //更新界面
-       });
-    });
-    
     [self configQRNetwork];
-    [self testNetwork];
-    //UserDefaultsRemove(@"login");
     [self setNavBarAppearence];
-    
-    NSLog(@"%@",[NSString countNumAndChangeformat:@"23.343"]);
-    NSLog(@"%@",[NSString addDotWithString:@"2343*******343"]);
+    [self certificateApi];
+    UserDefaultsSet(@"isIdentity", @"NO");
     return YES;
 }
 
 
-#pragma mark - Private
+#pragma mark - Privat
 
 - (void)setNavBarAppearence {
     // 设置导航栏默认的背景颜色
@@ -60,21 +50,19 @@
     config.baseUrl = kBaseUrl;
 }
 
-- (void)testNetwork {
-    QRRequestGetToken *request = [[QRRequestGetToken alloc] init];
-    request.username = @"node_h5";
-    request.password = @"EDA70AF62F2D3D2B96BE3C455060AF4A";
-    request.token = @"getToken";
+- (void)certificateApi {
+    
+    QRRequestCertificationLogin *request = [[QRRequestCertificationLogin alloc] init];
+    request.userName = @"node_h5";
+    request.passWord = @"EDA70AF62F2D3D2B96BE3C455060AF4A";
+    request.serviceName = @"getToken";
+    
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        
         NSLog(@"请求结果::::%@",request.responseObject);
-        
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        
-        NSLog(@"faild: %ld -- %@", request.responseStatusCode, request.responseString);
         NSLog(@"error:- %@", request.error);
-        
     }];
+    
 }
 
 #pragma mark -lifecycle

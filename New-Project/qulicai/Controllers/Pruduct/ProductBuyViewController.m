@@ -8,6 +8,7 @@
 
 #import "ProductBuyViewController.h"
 #import "AccountCertificationViewController.h"
+#import "ProductBuySuccessViewController.h"
 
 @interface ProductBuyViewController ()
 <UITextFieldDelegate>
@@ -30,6 +31,8 @@
 // -100
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLabelCenterYConstraint;
 
+@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
+
 @end
 
 @implementation ProductBuyViewController
@@ -38,7 +41,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.isFirstBuy = YES;
+    self.isFirstBuy = ![UserDefaultsValue(@"isIdentity") isEqualToString:@"YES"];
     [self setupViews];
 }
 
@@ -94,8 +97,8 @@
 - (void)buy {
     [self.view endEditing:YES];
     if ([self.moneyTextField.text floatValue] < 50) {
-        self.alertErrorLabel.text = @"购买金额小于50";
-        [self showErrorAlert];
+        self.errorLabel.text = @"*购买金额不得少于50";
+        [self.errorLabel addShakeAnimation];
         return;
     }
     [self showSVProgressHUD];
@@ -107,7 +110,11 @@
             [self.navigationController pushViewController:accountController
                                                  animated:YES];
         } else {
-            NSLog(@"dsfas");
+            [self showSuccessWithTitle:@"购买成功"];
+            ProductBuySuccessViewController *successController = [[ProductBuySuccessViewController alloc] init];
+            successController.isBuySuccess = YES;
+            [self.navigationController pushViewController:successController
+                                                 animated:YES];
         }
     });
 }
@@ -115,10 +122,7 @@
 #pragma mark - UITextViewDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    BOOL isFlag = [self.moneyTextField.text floatValue] > 0;
-    if (isFlag) {
-        [self buy];
-    }
+    [self buy];
     return YES;
 }
 
@@ -131,6 +135,7 @@
 }
 
 - (IBAction)editingBegin:(UITextField *)sender {
+    self.errorLabel.text = @"";
     [self updateResetButtonStatus];
     self.incomeLabel.text = [NSString stringWithFormat:@"预计收益(元)0.00"];
 }

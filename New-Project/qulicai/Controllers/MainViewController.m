@@ -15,6 +15,9 @@
 #import "LoginViewController.h"
 #import "YesterdayIncomeViewController.h"
 #import "TotalPropertyViewController.h"
+#import "PropertyPickupViewController.h"
+#import "ProductInformationController.h"
+#import "ProductBuyViewController.h"
 
 #define NAVBAR_COLORCHANGE_POINT (-IMAGE_HEIGHT + NAV_HEIGHT*2)
 #define NAV_HEIGHT 64
@@ -181,7 +184,12 @@ heightForHeaderInSection:(NSInteger)section {
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    if (!indexPath.section) {
+        PruductDetailViewController *productController = [[PruductDetailViewController alloc] init];
+        productController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:productController
+                                             animated:YES];
+    }
 }
 
 #pragma mark - Hanlders
@@ -198,7 +206,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     BOOL isLogin = [login isEqualToString:@"YES"];
     if (isLogin) {
         if (self.balance > 0) {
-            [self showSuccessWithTitle:@"体现"];
+            PropertyPickupViewController *pickContoller = [[PropertyPickupViewController alloc] init];
+            [self.navigationController pushViewController:pickContoller animated:YES];
         } else {
             [self showSuccessWithTitle:@"余额不足"];
         }
@@ -233,7 +242,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)buyButtonWasPressed:(UIButton *)sender {
-    PruductDetailViewController *productController = [[PruductDetailViewController alloc] init];
+    ProductBuyViewController *productController = [[ProductBuyViewController alloc] init];
     productController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:productController
                                          animated:YES];

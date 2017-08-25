@@ -12,6 +12,7 @@
 #import "UIImage+Custom.h"
 #import "WRNavigationBar.h"
 #import "PruductDetailViewController.h"
+#import "ProductBuyViewController.h"
 
 #define NAVBAR_COLORCHANGE_POINT (-IMAGE_HEIGHT + NAV_HEIGHT*2)
 #define NAV_HEIGHT 64
@@ -70,17 +71,17 @@ UITableViewDataSource>
 
 - (void)setupTableViewHeadView {
     self.title = @"理财";
-    [UIColor wr_setDefaultNavBarTitleColor:[UIColor blackColor]];
-    self.tableView.contentInset = UIEdgeInsetsMake(IMAGE_HEIGHT - 64, 0, 0, 0);
-    self.cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, -IMAGE_HEIGHT, SCREEN_WIDTH, IMAGE_HEIGHT)
-                                                              delegate:self
-                                                      placeholderImage:[UIImage imageNamed:@"fiscal_bg_image"]];
-    self.cycleScrollView.currentPageDotImage = [UIImage imageNamed:@"fiscal_rotation_down_image"];
-    self.cycleScrollView.pageDotImage = [UIImage imageNamed:@"fiscal_rotation_up_image"];
-    self.cycleScrollView.imageURLStringsGroup = self.imagesUrlString;
-    self.cycleScrollView.bannerImageViewContentMode = UIViewContentModeScaleAspectFill;
-    [self.tableView addSubview:self.cycleScrollView];
-    [self wr_setNavBarBackgroundAlpha:0];
+//    [UIColor wr_setDefaultNavBarTitleColor:[UIColor blackColor]];
+//    self.tableView.contentInset = UIEdgeInsetsMake(IMAGE_HEIGHT - 64, 0, 0, 0);
+//    self.cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, -IMAGE_HEIGHT, SCREEN_WIDTH, IMAGE_HEIGHT)
+//                                                              delegate:self
+//                                                      placeholderImage:[UIImage imageNamed:@"fiscal_bg_image"]];
+//    self.cycleScrollView.currentPageDotImage = [UIImage imageNamed:@"fiscal_rotation_down_image"];
+//    self.cycleScrollView.pageDotImage = [UIImage imageNamed:@"fiscal_rotation_up_image"];
+//    self.cycleScrollView.imageURLStringsGroup = self.imagesUrlString;
+//    self.cycleScrollView.bannerImageViewContentMode = UIViewContentModeScaleAspectFill;
+//    [self.tableView addSubview:self.cycleScrollView];
+    //[self wr_setNavBarBackgroundAlpha:1.0f];
 }
 
 #pragma mark - Getters && Setters
@@ -131,7 +132,12 @@ UITableViewDataSource>
     
     cell.buyButton.hidden = indexPath.section;
     cell.bottomViewHeightConstraint.constant = !indexPath.section ? 50.0f : 0.0f;
-    cell.buyButton.userInteractionEnabled = NO;
+    
+    if (!indexPath.section) {
+        [cell.buyButton addTarget:self
+                           action:@selector(buyButtonWasPressed:)
+                 forControlEvents:UIControlEventTouchUpInside];
+    }
     
     NSMutableAttributedString *numText=
     [[NSMutableAttributedString alloc]initWithString:cell.yearSaleLabel.text
@@ -183,35 +189,44 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                                          animated:YES];
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat offsetY = scrollView.contentOffset.y;
+#pragma mark - Hanlders
 
-    if (offsetY > NAVBAR_COLORCHANGE_POINT) {
-        CGFloat alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / NAV_HEIGHT;
-        [self wr_setNavBarBackgroundAlpha:alpha];
-        [self wr_setNavBarTitleColor:[RGBColor(51, 51, 51) colorWithAlphaComponent:alpha]];
-    } else {
-        [self wr_setNavBarBackgroundAlpha:0];
-        [self wr_setNavBarTitleColor:[UIColor clearColor]];
-    }
-    
-    //限制下拉的距离
-    if(offsetY < LIMIT_OFFSET_Y) {
-        [scrollView setContentOffset:CGPointMake(0, LIMIT_OFFSET_Y)];
-    }
-
-    CGFloat newOffsetY = scrollView.contentOffset.y;
-    if (newOffsetY < -IMAGE_HEIGHT) {
-        self.cycleScrollView.frame = CGRectMake(0, newOffsetY, kScreenWidth, -newOffsetY);
-    }
+- (void)buyButtonWasPressed:(UIButton *)sender {
+    ProductBuyViewController *productController = [[ProductBuyViewController alloc] init];
+    productController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:productController
+                                         animated:YES];
 }
 
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    CGFloat offsetY = scrollView.contentOffset.y;
+//
+//    if (offsetY > NAVBAR_COLORCHANGE_POINT) {
+//        CGFloat alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / NAV_HEIGHT;
+//        [self wr_setNavBarBackgroundAlpha:alpha];
+//        [self wr_setNavBarTitleColor:[RGBColor(51, 51, 51) colorWithAlphaComponent:alpha]];
+//    } else {
+//        [self wr_setNavBarBackgroundAlpha:0];
+//        [self wr_setNavBarTitleColor:[UIColor clearColor]];
+//    }
+//    
+//    //限制下拉的距离
+//    if(offsetY < LIMIT_OFFSET_Y) {
+//        [scrollView setContentOffset:CGPointMake(0, LIMIT_OFFSET_Y)];
+//    }
+//
+//    CGFloat newOffsetY = scrollView.contentOffset.y;
+//    if (newOffsetY < -IMAGE_HEIGHT) {
+//        self.cycleScrollView.frame = CGRectMake(0, newOffsetY, kScreenWidth, -newOffsetY);
+//    }
+//}
 
-#pragma mark - SDCycleScrollViewDelegate
 
-- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView
-   didSelectItemAtIndex:(NSInteger)index {
-    NSLog(@"index:::::::%@",@(index));
-}
+//#pragma mark - SDCycleScrollViewDelegate
+//
+//- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView
+//   didSelectItemAtIndex:(NSInteger)index {
+//    NSLog(@"index:::::::%@",@(index));
+//}
 
 @end

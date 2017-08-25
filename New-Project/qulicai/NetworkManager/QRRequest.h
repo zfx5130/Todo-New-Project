@@ -14,10 +14,9 @@ static NSString *const kBaseUrl = @"http://116.62.190.43:8999/p2p-api/";
 
 #else
 
-static NSString *const kBaseUrl = @"http://116.62.190.43:8999";
+static NSString *const kBaseUrl = @"http://116.62.190.43:8999/p2p-api/";
 
 #endif
-
 
 @interface QRRequest : YTKRequest
 

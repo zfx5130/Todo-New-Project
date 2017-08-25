@@ -17,7 +17,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *thirdLabel;
 
-
 @end
 
 @implementation ProductBuySuccessViewController

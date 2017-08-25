@@ -102,6 +102,7 @@
                 } else {
                     ProductBuySuccessViewController *productController = [[ProductBuySuccessViewController alloc] init];
                     productController.isBuySuccess = YES;
+                    UserDefaultsSet(@"isIdentity", @"YES");
                     [self.navigationController pushViewController:productController
                                                          animated:YES];
                 }
