@@ -94,13 +94,13 @@ heightForFooterInSection:(NSInteger)section {
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath
                              animated:YES];
-    NSDictionary *dic = self.bankArray[indexPath.row];
-    NSString *bankImageName = [NSString stringWithFormat:@"%@",dic[@"bankImageName"]];
-    NSString *bankName = [NSString stringWithFormat:@"%@",dic[@"bankName"]];
-    if (self.bankBlock) {
-        self.bankBlock(bankName, bankImageName);
-    }
-    [self.navigationController popViewControllerAnimated:YES];
+//    NSDictionary *dic = self.bankArray[indexPath.row];
+//    NSString *bankImageName = [NSString stringWithFormat:@"%@",dic[@"bankImageName"]];
+//    NSString *bankName = [NSString stringWithFormat:@"%@",dic[@"bankName"]];
+//    if (self.bankBlock) {
+//        self.bankBlock(bankName, bankImageName);
+//    }
+//    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Handlers

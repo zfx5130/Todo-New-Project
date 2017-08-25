@@ -10,8 +10,10 @@
 
 @interface AccountCertificationViewController : UIViewController
 
+//购买的时候添加银行卡
 @property (assign, nonatomic) BOOL isProductPush;
 
-@property (assign, nonatomic) BOOL isFirstBuy;
+//充值第一次认证
+@property (assign, nonatomic) BOOL isRechargePush;
 
 @end

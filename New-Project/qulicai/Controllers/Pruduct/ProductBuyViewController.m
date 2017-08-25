@@ -104,7 +104,6 @@
         if (self.isFirstBuy) {
             AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
             accountController.isProductPush = YES;
-            accountController.isFirstBuy = YES;
             [self.navigationController pushViewController:accountController
                                                  animated:YES];
         } else {

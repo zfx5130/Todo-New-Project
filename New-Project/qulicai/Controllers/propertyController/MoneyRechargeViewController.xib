@@ -121,6 +121,7 @@
                                                     <connections>
                                                         <action selector="editingBegined:" destination="-1" eventType="editingDidBegin" id="u91-9v-2ll"/>
                                                         <action selector="editingChanged:" destination="-1" eventType="editingChanged" id="HyD-gH-DM5"/>
+                                                        <outlet property="delegate" destination="-1" id="GEo-MZ-74v"/>
                                                     </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7t-Ln-Jpr">

@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^BankCardBlock)(NSString *bankName, NSString *bankImageName);
+//typedef void (^BankCardBlock)(NSString *bankName, NSString *bankImageName);
 
 @interface BankCardSelectedViewController : UIViewController
 
-@property (copy, nonatomic) BankCardBlock bankBlock;
+//@property (copy, nonatomic) BankCardBlock bankBlock;
 
 @end

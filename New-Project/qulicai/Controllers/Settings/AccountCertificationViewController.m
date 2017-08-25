@@ -89,11 +89,10 @@
         } else {
             //下一步操作
             [self showSuccessWithTitle:@"实名认证成功"];
-            if (self.isProductPush) {
+            if (self.isProductPush || self.isRechargePush) {
                 AddBankCardViewController *addBankController = [[AddBankCardViewController alloc] init];
                 addBankController.name = self.nameLabel.text;
                 addBankController.identify = self.userIdentifyLabel.text;
-                addBankController.isFirstBuy = YES;
                 [self.navigationController pushViewController:addBankController
                                                      animated:YES];
             } else {

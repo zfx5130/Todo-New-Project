@@ -1,15 +1,16 @@
 //
-//  MoneyRechargeViewController.m
+//  FirstRechargeViewController.m
 //  qulicai
 //
-//  Created by admin on 2017/8/24.
+//  Created by admin on 2017/8/25.
 //  Copyright © 2017年 qurong. All rights reserved.
 //
 
-#import "MoneyRechargeViewController.h"
-#import "ProductBuySuccessViewController.h"
+#import "FirstRechargeViewController.h"
+#import "AccountCertificationViewController.h"
+#import "AddBankCardViewController.h"
 
-@interface MoneyRechargeViewController ()
+@interface FirstRechargeViewController ()
 <UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *moneyTextField;
@@ -19,9 +20,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *alertErrorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 
+//是否是第一次身份认证
+@property (assign, nonatomic) BOOL isIdentityOK;
+
 @end
 
-@implementation MoneyRechargeViewController
+@implementation FirstRechargeViewController
 
 #pragma mark - lifeCycle
 
@@ -71,6 +75,7 @@
 #pragma mark - UITextViewDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
     [self config];
     return YES;
 }
@@ -93,10 +98,16 @@
             [self showErrorAlert];
         } else {
             [self showSuccessWithTitle:@"充值成功"];
-            ProductBuySuccessViewController *successController = [[ProductBuySuccessViewController alloc] init];
-            successController.isChargeSuccess = YES;
-            [self.navigationController pushViewController:successController
-                                                 animated:YES];
+            if (self.isIdentityOK) {
+                
+            } else {
+                AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
+                accountController.isRechargePush = YES;
+                [self.navigationController pushViewController:accountController
+                                                     animated:YES];
+                
+            }
+            
         }
     });
 }

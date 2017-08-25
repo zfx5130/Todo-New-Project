@@ -16,12 +16,14 @@
 #import "PropertyPickupViewController.h"
 #import "PropertyIncomeViewController.h"
 #import "MoneyRechargeViewController.h"
+#import "FirstRechargeViewController.h"
 
 @interface TotalPropertyViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (assign, nonatomic) BOOL hasPreporty;
+@property (assign, nonatomic) BOOL isFirstRechange;
 
 @end
 
@@ -37,6 +39,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.isFirstRechange = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -204,9 +207,15 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (IBAction)charge:(UIButton *)sender {
-    MoneyRechargeViewController *rechargeController = [[MoneyRechargeViewController alloc] init];
-    [self.navigationController pushViewController:rechargeController
-                                         animated:YES];
+    if (self.isFirstRechange) {
+        FirstRechargeViewController *firstController = [[FirstRechargeViewController alloc] init];
+        [self.navigationController pushViewController:firstController
+                                             animated:YES];
+    } else {
+        MoneyRechargeViewController *rechargeController = [[MoneyRechargeViewController alloc] init];
+        [self.navigationController pushViewController:rechargeController
+                                             animated:YES];
+    }
 }
 
 - (IBAction)pickup:(UIButton *)sender {

@@ -15,8 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *nameLabel;
 
-@property (weak, nonatomic) IBOutlet UITextField *bankCartLabel;
-
 @property (weak, nonatomic) IBOutlet UITextField *bankCartNumberLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
@@ -118,6 +116,12 @@
 
 #pragma mark - Handlers
 
+- (IBAction)showBankList:(UIButton *)sender {
+    BankCardSelectedViewController *bankCardController = [[BankCardSelectedViewController alloc] init];
+    [self.navigationController pushViewController:bankCardController
+                                         animated:YES];
+}
+
 - (IBAction)editingChanged:(UITextField *)sender {
     [self updateResetButtonStatus];
 }
@@ -146,17 +150,5 @@
 - (IBAction)applyProtocol:(UIButton *)sender {
     NSLog(@"支付服务协议");
 }
-
-- (IBAction)selectBankButtonWasPressed:(UIButton *)sender {
-    BankCardSelectedViewController *bankCardController = [[BankCardSelectedViewController alloc] init];
-    bankCardController.bankBlock = ^(NSString *bankName, NSString *bankImageName) {
-        NSLog(@"name:::::%@::::::%@",bankName,bankImageName);
-        self.bankCartLabel.text = bankName;
-    };
-    [self.navigationController pushViewController:bankCardController
-                                         animated:YES];
-}
-
-
 
 @end

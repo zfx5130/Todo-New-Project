@@ -12,7 +12,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddBankCardViewController">
             <connections>
                 <outlet property="alertErrorLabel" destination="mim-Er-3Pr" id="bjV-Pd-Ddm"/>
-                <outlet property="bankCartLabel" destination="jkX-35-jLl" id="wxe-xg-OXm"/>
                 <outlet property="bankCartNumberLabel" destination="Nj4-cc-2QB" id="ban-IO-gka"/>
                 <outlet property="bottomContainView" destination="HJY-Ee-mxe" id="1Sn-Kl-kXx"/>
                 <outlet property="bottomLeftLabelConstraint" destination="7ry-6p-sVD" id="bqH-Ee-PFu"/>
@@ -46,20 +45,40 @@
                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="银行卡支持列表" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wr-bw-U9A">
+                                            <rect key="frame" x="195" y="0.0" width="165" height="70"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.44313725490196076" green="0.68627450980392157" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kz8-NO-aMG">
+                                            <rect key="frame" x="195" y="0.0" width="165" height="70"/>
+                                            <connections>
+                                                <action selector="showBankList:" destination="-1" eventType="touchUpInside" id="DOY-f8-aLl"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstItem="3Wr-bw-U9A" firstAttribute="top" secondItem="z1d-tJ-368" secondAttribute="top" id="6FS-TW-24B"/>
                                         <constraint firstAttribute="height" constant="70" id="8nx-G5-fxk"/>
                                         <constraint firstItem="Hl8-9J-wuk" firstAttribute="top" secondItem="z1d-tJ-368" secondAttribute="top" id="Cd7-iU-a7z"/>
+                                        <constraint firstItem="Kz8-NO-aMG" firstAttribute="top" secondItem="z1d-tJ-368" secondAttribute="top" id="GCb-8v-edA"/>
                                         <constraint firstAttribute="bottom" secondItem="Hl8-9J-wuk" secondAttribute="bottom" id="Lwd-Wg-yqR"/>
                                         <constraint firstItem="Hl8-9J-wuk" firstAttribute="leading" secondItem="z1d-tJ-368" secondAttribute="leading" constant="15" id="aUI-lH-bWm"/>
+                                        <constraint firstItem="Kz8-NO-aMG" firstAttribute="leading" secondItem="Hl8-9J-wuk" secondAttribute="trailing" id="d23-Uz-sXZ"/>
+                                        <constraint firstAttribute="bottom" secondItem="Kz8-NO-aMG" secondAttribute="bottom" id="gkX-hn-fP0"/>
+                                        <constraint firstAttribute="trailing" secondItem="3Wr-bw-U9A" secondAttribute="trailing" constant="15" id="mkm-CY-Bbc"/>
+                                        <constraint firstItem="3Wr-bw-U9A" firstAttribute="leading" secondItem="Hl8-9J-wuk" secondAttribute="trailing" id="rNY-1H-L7u"/>
+                                        <constraint firstAttribute="trailing" secondItem="Kz8-NO-aMG" secondAttribute="trailing" constant="15" id="uTr-QS-mD1"/>
+                                        <constraint firstAttribute="bottom" secondItem="3Wr-bw-U9A" secondAttribute="bottom" id="xuo-7T-BSi"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCs-Ps-MfA" userLabel=" Bottom View">
                                     <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgB-wX-auk" userLabel="Login View">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEr-8a-ynd" userLabel="Left View">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
@@ -101,61 +120,8 @@
                                                         <constraint firstAttribute="trailing" secondItem="uBp-uP-C5n" secondAttribute="trailing" constant="15" id="t53-sR-zgs"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFb-0S-RWU" userLabel="Center View">
-                                                    <rect key="frame" x="0.0" y="45" width="375" height="45"/>
-                                                    <subviews>
-                                                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="招商银行" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jkX-35-jLl">
-                                                            <rect key="frame" x="133" y="0.0" width="227" height="44"/>
-                                                            <nil key="textColor"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits" returnKeyType="go"/>
-                                                        </textField>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A7a-cE-hPC">
-                                                            <rect key="frame" x="0.0" y="44" width="375" height="1"/>
-                                                            <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="0.5" id="ftW-E6-cJw"/>
-                                                            </constraints>
-                                                        </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择银行" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN4-hQ-QKY">
-                                                            <rect key="frame" x="15" y="0.0" width="118" height="44"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="118" id="EST-Zo-C0J"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7SW-gF-f0c">
-                                                            <rect key="frame" x="323" y="1" width="44" height="44"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="44" id="4a2-Cg-NR2"/>
-                                                                <constraint firstAttribute="width" constant="44" id="lJp-6V-e6x"/>
-                                                            </constraints>
-                                                            <state key="normal" image="disclosure Indicator_image"/>
-                                                            <connections>
-                                                                <action selector="selectBankButtonWasPressed:" destination="-1" eventType="touchUpInside" id="vjL-Ab-oXa"/>
-                                                            </connections>
-                                                        </button>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="7SW-gF-f0c" secondAttribute="trailing" constant="8" id="BWP-tD-xbI"/>
-                                                        <constraint firstAttribute="trailing" secondItem="A7a-cE-hPC" secondAttribute="trailing" id="GlV-Ua-WBz"/>
-                                                        <constraint firstAttribute="height" constant="45" id="IbO-zc-C1A"/>
-                                                        <constraint firstItem="xN4-hQ-QKY" firstAttribute="leading" secondItem="FFb-0S-RWU" secondAttribute="leading" constant="15" id="PHg-fL-Jxl"/>
-                                                        <constraint firstItem="A7a-cE-hPC" firstAttribute="top" secondItem="jkX-35-jLl" secondAttribute="bottom" id="Pjc-V3-yOW"/>
-                                                        <constraint firstItem="A7a-cE-hPC" firstAttribute="leading" secondItem="FFb-0S-RWU" secondAttribute="leading" id="TTQ-Zn-Wrk"/>
-                                                        <constraint firstItem="xN4-hQ-QKY" firstAttribute="top" secondItem="FFb-0S-RWU" secondAttribute="top" id="XQd-lv-oeN"/>
-                                                        <constraint firstItem="jkX-35-jLl" firstAttribute="top" secondItem="FFb-0S-RWU" secondAttribute="top" id="ZCw-dR-u9Y"/>
-                                                        <constraint firstItem="A7a-cE-hPC" firstAttribute="top" secondItem="xN4-hQ-QKY" secondAttribute="bottom" id="Zq0-v0-ztg"/>
-                                                        <constraint firstAttribute="trailing" secondItem="jkX-35-jLl" secondAttribute="trailing" constant="15" id="cUH-24-OUU"/>
-                                                        <constraint firstItem="jkX-35-jLl" firstAttribute="leading" secondItem="xN4-hQ-QKY" secondAttribute="trailing" id="caQ-K9-kEc"/>
-                                                        <constraint firstAttribute="bottom" secondItem="A7a-cE-hPC" secondAttribute="bottom" id="dfA-4U-9yl"/>
-                                                        <constraint firstItem="7SW-gF-f0c" firstAttribute="centerY" secondItem="FFb-0S-RWU" secondAttribute="centerY" id="nRR-PC-2Mm"/>
-                                                    </constraints>
-                                                </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prN-b1-C3q" userLabel="Right View">
-                                                    <rect key="frame" x="0.0" y="90" width="375" height="45"/>
+                                                    <rect key="frame" x="0.0" y="45" width="375" height="45"/>
                                                     <subviews>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入银行卡号" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Nj4-cc-2QB">
                                                             <rect key="frame" x="133" y="0.0" width="227" height="44"/>
@@ -202,21 +168,17 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="FFb-0S-RWU" firstAttribute="top" secondItem="yEr-8a-ynd" secondAttribute="bottom" id="40J-Gf-ubI"/>
-                                                <constraint firstItem="FFb-0S-RWU" firstAttribute="leading" secondItem="kgB-wX-auk" secondAttribute="leading" id="7N6-hU-ytr"/>
-                                                <constraint firstAttribute="trailing" secondItem="FFb-0S-RWU" secondAttribute="trailing" id="8mT-Mp-FPd"/>
-                                                <constraint firstItem="prN-b1-C3q" firstAttribute="top" secondItem="FFb-0S-RWU" secondAttribute="bottom" id="9hj-Qn-dOy"/>
                                                 <constraint firstItem="yEr-8a-ynd" firstAttribute="leading" secondItem="kgB-wX-auk" secondAttribute="leading" id="EwU-cF-jdx"/>
                                                 <constraint firstAttribute="trailing" secondItem="yEr-8a-ynd" secondAttribute="trailing" id="GMz-fO-UiN"/>
                                                 <constraint firstAttribute="trailing" secondItem="prN-b1-C3q" secondAttribute="trailing" id="Jqs-Ll-KEf"/>
-                                                <constraint firstAttribute="height" constant="135" id="Nkw-26-gXS"/>
+                                                <constraint firstAttribute="height" constant="90" id="Nkw-26-gXS"/>
                                                 <constraint firstItem="yEr-8a-ynd" firstAttribute="top" secondItem="kgB-wX-auk" secondAttribute="top" id="TNy-9D-LAl"/>
                                                 <constraint firstItem="prN-b1-C3q" firstAttribute="leading" secondItem="kgB-wX-auk" secondAttribute="leading" id="haC-Ok-Sod"/>
                                                 <constraint firstAttribute="bottom" secondItem="prN-b1-C3q" secondAttribute="bottom" id="vaK-RL-KyZ"/>
                                             </constraints>
                                         </view>
                                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXF-mh-Edh">
-                                            <rect key="frame" x="30" y="245" width="315" height="40"/>
+                                            <rect key="frame" x="30" y="200" width="315" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="EP0-Ic-whK"/>
                                             </constraints>
@@ -234,7 +196,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="为保账您的账户安全，将依照充值和提现同进同出原则，银行卡一经绑定，只能通过人工服务修改。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="aTh-43-Owk">
-                                            <rect key="frame" x="15" y="150" width="345" height="35"/>
+                                            <rect key="frame" x="15" y="105" width="345" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="BPZ-uL-eMu"/>
                                             </constraints>
@@ -243,7 +205,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击下一步表示您同意" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5d-1E-WNR">
-                                            <rect key="frame" x="26" y="303" width="123" height="21"/>
+                                            <rect key="frame" x="26" y="258" width="123" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="126" id="N1C-gB-RCs"/>
                                                 <constraint firstAttribute="height" constant="21" id="hoj-gU-NNB"/>
@@ -253,7 +215,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VaQ-rq-xhZ">
-                                            <rect key="frame" x="149" y="298" width="184" height="30"/>
+                                            <rect key="frame" x="149" y="253" width="184" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="189" id="J2v-It-9uf"/>
                                                 <constraint firstAttribute="height" constant="30" id="y0E-AU-an2"/>
@@ -267,7 +229,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZk-T5-JXR">
-                                            <rect key="frame" x="137.5" y="328" width="99" height="30"/>
+                                            <rect key="frame" x="138" y="283" width="99" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="3vG-0q-QNH"/>
                                                 <constraint firstAttribute="height" constant="30" id="Ckr-p3-9fE"/>
@@ -281,7 +243,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="与" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivt-at-Efl">
-                                            <rect key="frame" x="125" y="333" width="12.5" height="21"/>
+                                            <rect key="frame" x="125" y="288" width="13" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="42" id="UIS-y8-2cV"/>
                                                 <constraint firstAttribute="height" constant="21" id="rJE-kF-IIB"/>
@@ -390,7 +352,6 @@
     </objects>
     <resources>
         <image name="alert_error_image" width="13" height="12"/>
-        <image name="disclosure Indicator_image" width="8" height="13"/>
         <image name="login_disabled_button_image" width="315" height="40"/>
         <image name="login_enabled_button_image" width="315" height="40"/>
     </resources>
