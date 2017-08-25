@@ -49,4 +49,9 @@
                            string:(NSString *)content
                        withString:(NSString *)replaceString;
 
+
++ (NSString *)addDotWithString:(NSString *)string;
+
++ (NSString *)countNumAndChangeformat:(NSString *)num;
+
 @end

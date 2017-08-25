@@ -114,6 +114,25 @@
     return YES;
 }
 
+- (BOOL)textField:(UITextField *)textField
+shouldChangeCharactersInRange:(NSRange)range
+replacementString:(NSString *)string {
+    if (textField == self.bankCartNumberLabel) {
+        if ([string isEqualToString:@""]) { 
+            if ((textField.text.length - 2) % 5 == 0) {
+                textField.text = [textField.text substringToIndex:textField.text.length - 1];
+            }
+            return YES;
+        } else {
+            if (textField.text.length % 5 == 0) {
+                textField.text = [NSString stringWithFormat:@"%@ ", textField.text];
+            }
+        }
+        return YES;
+    }
+    return YES;
+}
+
 #pragma mark - Handlers
 
 - (IBAction)showBankList:(UIButton *)sender {

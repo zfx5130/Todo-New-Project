@@ -33,6 +33,8 @@
     //UserDefaultsRemove(@"login");
     [self setNavBarAppearence];
     
+    NSLog(@"%@",[NSString countNumAndChangeformat:@"23.343"]);
+    NSLog(@"%@",[NSString addDotWithString:@"2343*******343"]);
     return YES;
 }
 

@@ -312,4 +312,65 @@
     return string;
 }
 
++ (NSString *)addDotWithString:(NSString *)string {
+    
+    NSString *dotString = @"";
+    int count = 0;
+    for (int i = 0; i < string.length; i++) {
+        count++;
+        dotString = [dotString stringByAppendingString:[string substringWithRange:NSMakeRange(i, 1)]];
+        if (count == 4) {
+            dotString = [NSString stringWithFormat:@"%@ ", dotString];
+            count = 0;
+        }
+    }
+    return dotString;
+}
+
+
++ (NSString *)countNumAndChangeformat:(NSString *)num {
+
+    NSString* str11;
+    NSString* str22;
+    if ([num containsString:@"."]) {
+        NSArray* array = [num componentsSeparatedByString:@"."];
+        str11 = array[0];
+        str22 = array[1];
+    } else {
+        str11 = num;
+    }
+    int count = 0;
+    long long int a = str11.longLongValue;
+    while (a != 0) {
+        count++;
+        a /= 10;
+    }
+    
+    NSMutableString *string = [NSMutableString stringWithString:str11];
+    NSMutableString *newstring = [NSMutableString string];
+    while (count > 3) {
+        count -= 3;
+        NSRange rang = NSMakeRange(string.length - 3, 3);
+        NSString *str = [string substringWithRange:rang];
+        [newstring insertString:str atIndex:0];
+        [newstring insertString:@"," atIndex:0];
+        [string deleteCharactersInRange:rang];
+    }
+    
+    [newstring insertString:string atIndex:0];
+    
+    if ([num containsString:@"."]) {
+        NSString* str33;
+        if (str22.length > 0) {
+            str33 = [NSString stringWithFormat:@"%@.%@",newstring,str22];
+        } else {
+            str33 = [NSString stringWithFormat:@"%@",newstring];
+        }
+        return str33;
+    } else {
+        return newstring;
+        
+    }
+}
+
 @end

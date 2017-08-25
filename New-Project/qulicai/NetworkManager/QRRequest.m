@@ -17,7 +17,6 @@ static NSString *const kRequestLogSeparatorSingleLine = @"----------------------
     return @{
              @"user-agent" : @"qulicaiapp",
 //             @"Authorization" : @"BearereyJhbGciOiJIUzI1NiJ9.eyJleHQiOjE1MDM1MDAzOTEyOTcsInVpZCI6MSwidXNlcklkIjoibm9kZV9oNSIsImlhdCI6MTUwMzQ5MzE5MTI5N30.IZSXeDLpEV62CVLRPK8ADDlq9gOzQP-s696xNQAia3U"
-             
               };
 }
 

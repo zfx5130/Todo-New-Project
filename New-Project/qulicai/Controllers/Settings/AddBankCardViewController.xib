@@ -132,6 +132,7 @@
                                                                 <action selector="editingBegin:" destination="-1" eventType="editingDidBegin" id="lcL-HU-GgE"/>
                                                                 <action selector="editingChanged:" destination="-1" eventType="editingChanged" id="68k-2u-aWb"/>
                                                                 <action selector="editingEnd:" destination="-1" eventType="editingDidEnd" id="YNB-71-vdW"/>
+                                                                <outlet property="delegate" destination="-1" id="ar7-Tp-l69"/>
                                                             </connections>
                                                         </textField>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QvP-Gw-gxb">
