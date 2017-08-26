@@ -10,9 +10,6 @@
 
 @interface QRRequestCertificationLogin : QRRequest
 
-//接口方法名
-@property (copy, nonatomic) NSString *serviceName;
-
 //账号
 @property (copy, nonatomic) NSString *userName;
 

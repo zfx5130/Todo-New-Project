@@ -12,8 +12,11 @@
 #import "QRRequest.h"
 #import "QRRequestCertificationLogin.h"
 #import "UIImage+Custom.h"
+#import "CertificationLogin.h"
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) NSTimer *timer;
 
 @end
 
@@ -51,23 +54,47 @@
 }
 
 - (void)certificateApi {
+    //每10分钟请求一次
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:10 * 60
+                                                  target:self
+                                                selector:@selector(handleRequestApi)
+                                                userInfo:nil
+                                                 repeats:YES];
+    [self.timer fire];
+}
+
+- (void)handleRequestApi {
     
-    QRRequestCertificationLogin *request = [[QRRequestCertificationLogin alloc] init];
-    request.userName = @"node_h5";
-    request.passWord = @"EDA70AF62F2D3D2B96BE3C455060AF4A";
-    request.serviceName = @"getToken";
-    
-    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        NSLog(@"请求结果::::%@",request.responseObject);
-    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        NSLog(@"error:- %@", request.error);
-    }];
-    
+    NSString *endTime = UserDefaultsValue(QR_ENDTIME_EXT);
+    //NSLog(@"endtime:::::::%@",@([endTime integerValue] / 1000));
+    NSString  *currentTime = [NSString getCurrentTimestamp];
+    //NSLog(@"currentTime::::::::%@",currentTime);
+    NSInteger value  = [endTime integerValue] / 1000 - [currentTime integerValue];
+    NSLog(@"时间戳差值::::::::%@",@(value));
+    if (value < 30 * 60) {
+        QRRequestCertificationLogin *request = [[QRRequestCertificationLogin alloc] init];
+        request.userName = QR_IDENTITY_USERNAME;
+        request.passWord = QR_IDENTITY_PASSWROD;
+        [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+            CertificationLogin *certification = [CertificationLogin mj_objectWithKeyValues:request.responseJSONObject];
+            if (certification.statusType == IndentityStatusSuccess) {
+                NSLog(@"登录认证成功");
+                NSString *identityKey = [NSString stringWithFormat:@"%@",certification.identityKey];
+                UserDefaultsSet(QR_ENDTIME_EXT, certification.endTime);
+                UserDefaultsSet(QR_IDENTITY_KEY, identityKey);
+            } else {
+                NSLog(@"登录认证失败");
+            }
+        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+            NSLog(@"error:- %@", request.error);
+        }];
+    }
 }
 
 #pragma mark -lifecycle
 
 - (void)applicationWillResignActive:(UIApplication *)application {
+    
 }
 
 

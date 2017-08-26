@@ -14,6 +14,7 @@
 #import "InputTextView1.h"
 #import "ProductInformationController.h"
 #import "ProductBuyViewController.h"
+#import "LoginViewController.h"
 
 #define NAVBAR_COLORCHANGE_POINT (IMAGE_HEIGHT - NAV_HEIGHT*2)
 #define IMAGE_HEIGHT 220
@@ -184,7 +185,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (IBAction)calculate:(UIButton *)sender {
-    InputTextView1 * input=[InputTextView1 creatInputTextView1];
+    InputTextView1 *input = [InputTextView1 creatInputTextView1];
     input.delegate = self;
     [input show];
 }
@@ -197,10 +198,23 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 
 - (IBAction)buyProduct:(UIButton *)sender {
-    
-    ProductBuyViewController *productController = [[ProductBuyViewController alloc] init];
-    [self.navigationController pushViewController:productController
-                                         animated:YES];
+    NSString *login = UserDefaultsValue(@"login");
+    BOOL isLogin = [login isEqualToString:@"YES"];
+    if (isLogin) {
+        ProductBuyViewController *productController = [[ProductBuyViewController alloc] init];
+        [self.navigationController pushViewController:productController
+                                             animated:YES];
+    } else {
+        [self login];
+    }
+}
+
+- (void)login {
+    LoginViewController *loginViewController = [[LoginViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    [self presentViewController:navigationController
+                       animated:YES
+                     completion:nil];
 }
 
 @end

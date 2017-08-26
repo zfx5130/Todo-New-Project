@@ -20,6 +20,7 @@
 #import "NSString+Custom.h"
 #import "UILabel+Custom.h"
 #import "WRNavigationBar.h"
+#import  <MJExtension/MJExtension.h>
 
 #ifdef DEBUG
 

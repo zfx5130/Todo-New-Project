@@ -373,4 +373,12 @@
     }
 }
 
++ (NSString*)getCurrentTimestamp {
+    NSDate *date = [NSDate dateWithTimeIntervalSinceNow:0];
+    NSTimeInterval currentStamp = [date timeIntervalSince1970];
+    NSString *currentStampString = [NSString stringWithFormat:@"%0.f", currentStamp];
+    return currentStampString;
+}
+
+
 @end

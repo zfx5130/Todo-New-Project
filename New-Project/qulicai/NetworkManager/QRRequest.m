@@ -14,9 +14,10 @@ static NSString *const kRequestLogSeparatorSingleLine = @"----------------------
 @implementation QRRequest
 
 - (NSDictionary *)requestHeaderFieldValueDictionary {
+    NSString *identityKey = UserDefaultsValue(QR_IDENTITY_KEY);
     return @{
              @"user-agent" : @"qulicaiapp",
-//             @"Authorization" : @"BearereyJhbGciOiJIUzI1NiJ9.eyJleHQiOjE1MDM1MDAzOTEyOTcsInVpZCI6MSwidXNlcklkIjoibm9kZV9oNSIsImlhdCI6MTUwMzQ5MzE5MTI5N30.IZSXeDLpEV62CVLRPK8ADDlq9gOzQP-s696xNQAia3U"
+             @"Authorization" : [NSString stringWithFormat:@"Bearer %@",identityKey]
               };
 }
 
@@ -64,10 +65,14 @@ static NSString *const kRequestLogSeparatorSingleLine = @"----------------------
     NSString *requestUrl = [NSString stringWithFormat:@"%@%@",kBaseUrl,[self requestUrl]];
     NSString *requestParam = [self requestArgument];
     NSString *method = [self gerRequestMethod];
-    NSLog(@"\n%@\nRequest URL：\n(%@) %@\n%@\nParameters：\n%@\n%@\n",
+    NSString *authorizationKey =
+    [NSString stringWithFormat:@"Authorization Key:\n%@",self.requestHeaderFieldValueDictionary[@"Authorization"]];
+    NSLog(@"\n%@\nRequest URL：\n(%@) %@\n%@\n%@\n%@\nParameters：\n%@\n%@\n",
           kRequestLogSeparatorDoubleLines,
           method,
           requestUrl,
+          kRequestLogSeparatorSingleLine,
+          authorizationKey,
           kRequestLogSeparatorSingleLine,
           requestParam,
           kRequestLogSeparatorDoubleLines);

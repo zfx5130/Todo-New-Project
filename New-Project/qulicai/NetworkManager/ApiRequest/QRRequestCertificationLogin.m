@@ -20,7 +20,7 @@
 
 - (id)requestArgument {
     return @{
-             @"head" : @{ @"serviceName" : self.serviceName },
+             @"head" : @{ @"serviceName" : @"getToken" },
              @"body" : @{ @"userName" : self.userName, @"passWord" : self.passWord }
              };
 }

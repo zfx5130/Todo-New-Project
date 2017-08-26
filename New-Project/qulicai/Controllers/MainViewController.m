@@ -242,10 +242,16 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)buyButtonWasPressed:(UIButton *)sender {
-    ProductBuyViewController *productController = [[ProductBuyViewController alloc] init];
-    productController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:productController
-                                         animated:YES];
+    NSString *login = UserDefaultsValue(@"login");
+    BOOL isLogin = [login isEqualToString:@"YES"];
+    if (isLogin) {
+        ProductBuyViewController *productController = [[ProductBuyViewController alloc] init];
+        productController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:productController
+                                             animated:YES];
+    } else {
+        [self login];
+    }
 }
 
 - (void)platformDataButtonWasPressed:(UIButton *)sender {

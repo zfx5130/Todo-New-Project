@@ -54,4 +54,6 @@
 
 + (NSString *)countNumAndChangeformat:(NSString *)num;
 
++ (NSString*)getCurrentTimestamp;
+
 @end

@@ -167,6 +167,7 @@
 		84CE16F61F4F0CD300E61C7D /* MoneyRechargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CE16F41F4F0CD300E61C7D /* MoneyRechargeViewController.xib */; };
 		84CE16FA1F4FCF3800E61C7D /* FirstRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CE16F81F4FCF3800E61C7D /* FirstRechargeViewController.m */; };
 		84CE16FB1F4FCF3800E61C7D /* FirstRechargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CE16F91F4FCF3800E61C7D /* FirstRechargeViewController.xib */; };
+		84CE16FE1F502EF600E61C7D /* CertificationLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CE16FD1F502EF600E61C7D /* CertificationLogin.m */; };
 		84DCF34B1F4EE43A002F117A /* ASPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF33F1F4EE43A002F117A /* ASPopupController.m */; };
 		84DCF34C1F4EE43A002F117A /* ASPopupDismissAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF3421F4EE43A002F117A /* ASPopupDismissAnimator.m */; };
 		84DCF34D1F4EE43A002F117A /* ASPopupPresentAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF3461F4EE43A002F117A /* ASPopupPresentAnimator.m */; };
@@ -472,6 +473,8 @@
 		84CE16F71F4FCF3800E61C7D /* FirstRechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstRechargeViewController.h; sourceTree = "<group>"; };
 		84CE16F81F4FCF3800E61C7D /* FirstRechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstRechargeViewController.m; sourceTree = "<group>"; };
 		84CE16F91F4FCF3800E61C7D /* FirstRechargeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstRechargeViewController.xib; sourceTree = "<group>"; };
+		84CE16FC1F502EF600E61C7D /* CertificationLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CertificationLogin.h; sourceTree = "<group>"; };
+		84CE16FD1F502EF600E61C7D /* CertificationLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CertificationLogin.m; sourceTree = "<group>"; };
 		84DCF33E1F4EE43A002F117A /* ASPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPopupController.h; sourceTree = "<group>"; };
 		84DCF33F1F4EE43A002F117A /* ASPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPopupController.m; sourceTree = "<group>"; };
 		84DCF3411F4EE43A002F117A /* ASPopupDismissAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPopupDismissAnimator.h; sourceTree = "<group>"; };
@@ -789,6 +792,8 @@
 		8435E5001F316E9200424E5E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				84CE16FC1F502EF600E61C7D /* CertificationLogin.h */,
+				84CE16FD1F502EF600E61C7D /* CertificationLogin.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1553,6 +1558,7 @@
 				844FB8211F4D7AA4001772AF /* BuyHistoryViewController.m in Sources */,
 				8435E5B01F399C1E00424E5E /* CoreLockConst.m in Sources */,
 				844402401F41874C00F5AFEE /* FinanceViewController.m in Sources */,
+				84CE16FE1F502EF600E61C7D /* CertificationLogin.m in Sources */,
 				84DCF34C1F4EE43A002F117A /* ASPopupDismissAnimator.m in Sources */,
 				8444029F1F42CB9400F5AFEE /* ForgetPasswordViewController.m in Sources */,
 				844FB7FE1F4C6B89001772AF /* ProductBuyViewController.m in Sources */,
