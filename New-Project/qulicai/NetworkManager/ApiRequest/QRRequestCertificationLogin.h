@@ -16,4 +16,5 @@
 //密码
 @property (copy, nonatomic) NSString *passWord;
 
+
 @end

@@ -9,8 +9,7 @@
 #import "AppDelegate.h"
 #import <YTKNetworkConfig.h>
 #import <YTKNetworkAgent.h>
-#import "QRRequest.h"
-#import "QRRequestCertificationLogin.h"
+#import "QRRequestHeader.h"
 #import "UIImage+Custom.h"
 #import "CertificationLogin.h"
 
@@ -65,7 +64,7 @@
 
 - (void)handleRequestApi {
     
-    NSString *endTime = UserDefaultsValue(QR_ENDTIME_EXT);
+    NSString *endTime = [[A0SimpleKeychain keychain] stringForKey:QR_ENDTIME_EXT];
     //NSLog(@"endtime:::::::%@",@([endTime integerValue] / 1000));
     NSString  *currentTime = [NSString getCurrentTimestamp];
     //NSLog(@"currentTime::::::::%@",currentTime);
@@ -80,8 +79,9 @@
             if (certification.statusType == IndentityStatusSuccess) {
                 NSLog(@"登录认证成功");
                 NSString *identityKey = [NSString stringWithFormat:@"%@",certification.identityKey];
-                UserDefaultsSet(QR_ENDTIME_EXT, certification.endTime);
-                UserDefaultsSet(QR_IDENTITY_KEY, identityKey);
+                [[A0SimpleKeychain keychain] setString:identityKey forKey:QR_IDENTITY_KEY];
+                [[A0SimpleKeychain keychain] setString:certification.endTime forKey:QR_ENDTIME_EXT];
+                
             } else {
                 NSLog(@"登录认证失败");
             }

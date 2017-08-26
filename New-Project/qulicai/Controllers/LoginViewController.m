@@ -9,6 +9,8 @@
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
 #import "ForgetPasswordViewController.h"
+#import "QRRequestHeader.h"
+#import "User.h"
 
 @interface LoginViewController ()
 
@@ -78,19 +80,29 @@
     }
     
     [self showSVProgressHUD];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    QRRequestLogin *request = [[QRRequestLogin alloc] init];
+    request.mobilePhone = self.phoneTextField.text;
+    request.password = self.passwordTextField.text;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [SVProgressHUD dismiss];
-        if (self.passwordTextField.text.length < 6) {
-            [self showErrorAlert];
-        } else {
-            UserDefaultsSave(@"username", self.phoneTextField.text);
-            UserDefaultsSave(@"password", self.passwordTextField.text);
-            UserDefaultsSave(@"login", @"YES");
+        User *user = [User mj_objectWithKeyValues:request.responseJSONObject];
+        NSLog(@"reuqest结果:::::::::%@",user.desc);
+        if (user.statusType == IndentityStatusSuccess) {
+            NSLog(@"登录成功");
             [self showSuccessWithTitle:@"登录成功"];
+            [User saveUserLocallyWithUser:user];
             [self dismissViewControllerAnimated:YES
                                      completion:nil];
+        } else {
+            NSString *error = user.desc;
+            self.errorLabel.text = error;
+            [self showErrorAlert];
         }
-    });
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSLog(@"error:- %@", request.error);
+    }];
+    //15811334223 1234567
 }
 
 
@@ -132,6 +144,7 @@
 
 - (IBAction)loginButtonWasPressed:(UIButton *)sender {
     [self login];
+    NSLog(@"userimi:::::%@",[User currentUser]);
 }
 
 - (void)rightBarButtonAction {

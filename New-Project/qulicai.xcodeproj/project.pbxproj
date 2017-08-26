@@ -168,6 +168,10 @@
 		84CE16FA1F4FCF3800E61C7D /* FirstRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CE16F81F4FCF3800E61C7D /* FirstRechargeViewController.m */; };
 		84CE16FB1F4FCF3800E61C7D /* FirstRechargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CE16F91F4FCF3800E61C7D /* FirstRechargeViewController.xib */; };
 		84CE16FE1F502EF600E61C7D /* CertificationLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CE16FD1F502EF600E61C7D /* CertificationLogin.m */; };
+		84CE17011F512FB300E61C7D /* QRRequestLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CE17001F512FB300E61C7D /* QRRequestLogin.m */; };
+		84CE17041F5149E200E61C7D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CE17031F5149E200E61C7D /* User.m */; };
+		84CE17091F5156F300E61C7D /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CE17081F5156F300E61C7D /* BaseModel.m */; };
+		84CE170C1F5164A500E61C7D /* Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CE170B1F5164A500E61C7D /* Bank.m */; };
 		84DCF34B1F4EE43A002F117A /* ASPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF33F1F4EE43A002F117A /* ASPopupController.m */; };
 		84DCF34C1F4EE43A002F117A /* ASPopupDismissAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF3421F4EE43A002F117A /* ASPopupDismissAnimator.m */; };
 		84DCF34D1F4EE43A002F117A /* ASPopupPresentAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF3461F4EE43A002F117A /* ASPopupPresentAnimator.m */; };
@@ -475,6 +479,15 @@
 		84CE16F91F4FCF3800E61C7D /* FirstRechargeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstRechargeViewController.xib; sourceTree = "<group>"; };
 		84CE16FC1F502EF600E61C7D /* CertificationLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CertificationLogin.h; sourceTree = "<group>"; };
 		84CE16FD1F502EF600E61C7D /* CertificationLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CertificationLogin.m; sourceTree = "<group>"; };
+		84CE16FF1F512FB300E61C7D /* QRRequestLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestLogin.h; sourceTree = "<group>"; };
+		84CE17001F512FB300E61C7D /* QRRequestLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestLogin.m; sourceTree = "<group>"; };
+		84CE17021F5149E200E61C7D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		84CE17031F5149E200E61C7D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		84CE17061F514BCC00E61C7D /* QRRequestHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestHeader.h; sourceTree = "<group>"; };
+		84CE17071F5156F300E61C7D /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		84CE17081F5156F300E61C7D /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		84CE170A1F5164A500E61C7D /* Bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bank.h; sourceTree = "<group>"; };
+		84CE170B1F5164A500E61C7D /* Bank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bank.m; sourceTree = "<group>"; };
 		84DCF33E1F4EE43A002F117A /* ASPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPopupController.h; sourceTree = "<group>"; };
 		84DCF33F1F4EE43A002F117A /* ASPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPopupController.m; sourceTree = "<group>"; };
 		84DCF3411F4EE43A002F117A /* ASPopupDismissAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPopupDismissAnimator.h; sourceTree = "<group>"; };
@@ -792,8 +805,14 @@
 		8435E5001F316E9200424E5E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				84CE17071F5156F300E61C7D /* BaseModel.h */,
+				84CE17081F5156F300E61C7D /* BaseModel.m */,
 				84CE16FC1F502EF600E61C7D /* CertificationLogin.h */,
 				84CE16FD1F502EF600E61C7D /* CertificationLogin.m */,
+				84CE17021F5149E200E61C7D /* User.h */,
+				84CE17031F5149E200E61C7D /* User.m */,
+				84CE170A1F5164A500E61C7D /* Bank.h */,
+				84CE170B1F5164A500E61C7D /* Bank.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -961,6 +980,7 @@
 				8435E6071F3D9A9F00424E5E /* ApiRequest */,
 				8435E6011F3D885200424E5E /* QRRequest.h */,
 				8435E6021F3D885200424E5E /* QRRequest.m */,
+				84CE17061F514BCC00E61C7D /* QRRequestHeader.h */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -970,6 +990,8 @@
 			children = (
 				8435E6081F3D9AE500424E5E /* QRRequestCertificationLogin.h */,
 				8435E6091F3D9AE500424E5E /* QRRequestCertificationLogin.m */,
+				84CE16FF1F512FB300E61C7D /* QRRequestLogin.h */,
+				84CE17001F512FB300E61C7D /* QRRequestLogin.m */,
 			);
 			path = ApiRequest;
 			sourceTree = "<group>";
@@ -1488,9 +1510,11 @@
 				8435E6031F3D885200424E5E /* QRRequest.m in Sources */,
 				8426170E1F4C4F6700A96EFD /* BankCardSelectedViewController.m in Sources */,
 				8435E5BF1F399C6C00424E5E /* NSString+File.m in Sources */,
+				84CE17011F512FB300E61C7D /* QRRequestLogin.m in Sources */,
 				844402841F41B2B000F5AFEE /* NSString+Check.m in Sources */,
 				844FB8031F4D327C001772AF /* ProductBuySuccessViewController.m in Sources */,
 				8444027F1F41B2B000F5AFEE /* NSArray+Custom.m in Sources */,
+				84CE170C1F5164A500E61C7D /* Bank.m in Sources */,
 				844FB84B1F4EB21B001772AF /* PropertyHeadTableViewCell.m in Sources */,
 				8435E60A1F3D9AE500424E5E /* QRRequestCertificationLogin.m in Sources */,
 				842616D81F4C050800A96EFD /* ProductInformationController.m in Sources */,
@@ -1507,6 +1531,7 @@
 				84825E141F457468006A921F /* ModifyLoginPwViewController.m in Sources */,
 				844402AA1F42FC8100F5AFEE /* QRWebViewController.m in Sources */,
 				84DCF3531F4EE46E002F117A /* ProductPasswordView.m in Sources */,
+				84CE17091F5156F300E61C7D /* BaseModel.m in Sources */,
 				844FB80C1F4D60F3001772AF /* YesterdayIncomeView.m in Sources */,
 				844402931F41B2B000F5AFEE /* UIView+Custom.m in Sources */,
 				844402821F41B2B000F5AFEE /* NSNumber+Custom.m in Sources */,
@@ -1517,6 +1542,7 @@
 				8435E5931F399BFA00424E5E /* TDTouchID.m in Sources */,
 				8435E5AD1F399C1E00424E5E /* CLLockVC.m in Sources */,
 				84DCF35B1F4F08F7002F117A /* PropertyIncomeViewController.m in Sources */,
+				84CE17041F5149E200E61C7D /* User.m in Sources */,
 				84DCF34B1F4EE43A002F117A /* ASPopupController.m in Sources */,
 				8435E5B61F399C1E00424E5E /* CLLockView.m in Sources */,
 				8444028B1F41B2B000F5AFEE /* UIImage+Custom.m in Sources */,
