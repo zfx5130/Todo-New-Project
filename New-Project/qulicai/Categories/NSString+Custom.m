@@ -381,7 +381,7 @@
 }
 
 + (NSString *)UIImageToBase64Str:(UIImage *)image {
-    NSData *data = UIImageJPEGRepresentation(image, 0.1f);
+    NSData *data = UIImageJPEGRepresentation(image, 0.001f);
     NSString *encodedImageStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     return encodedImageStr;
 }

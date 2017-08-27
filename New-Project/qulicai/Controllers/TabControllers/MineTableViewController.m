@@ -17,6 +17,7 @@
 #import "TotalPropertyViewController.h"
 #import "UserUtil.h"
 #import "User.h"
+#import "UIImage+Custom.h"
 
 @interface MineTableViewController ()
 
@@ -82,6 +83,8 @@
                                            withString:@"****"];
         self.userAccountLabel.text = str;
     }
+     self.avatarImageView.image =
+    ![UIImage Base64StrToUIImage:user.headPortrait] ? [UIImage imageNamed:@"me_head_image"] : [UIImage Base64StrToUIImage:user.headPortrait];
 }
 
 - (void)setupView {

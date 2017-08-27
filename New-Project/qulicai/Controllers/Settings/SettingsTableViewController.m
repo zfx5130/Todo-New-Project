@@ -68,6 +68,8 @@
         idCardNum = @"未认证";
     }
     self.authenticationLabel.text = idCardNum;
+    self.avatarImageView.image =
+    ![UIImage Base64StrToUIImage:user.headPortrait] ? [UIImage imageNamed:@"me_head_image"] : [UIImage Base64StrToUIImage:user.headPortrait];
 }
 
 #pragma mark - TableViewDataSource
@@ -236,7 +238,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                                                    width:60.0f
                                                   height:60.0f];
         NSString *imageString = [NSString UIImageToBase64Str:smallImage];
-        //NSLog(@"lenth:::::%@",@(imageString.length));
+        NSLog(@"lenth:::::%@",@(imageString.length));
         [weakSelf showSVProgressHUD];
         QRRequestUserAvatar *request = [[QRRequestUserAvatar alloc] init];
         request.userId = [UserUtil currentUser].userId;
@@ -247,8 +249,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
             [SVProgressHUD dismiss];
             if (!status) {
                 [weakSelf showSuccessWithTitle:@"头像修改成功"];
-                weakSelf.avatarImageView.image = image;
                 [UserUtil currentUser].headPortrait = imageString;
+                [weakSelf.tableView reloadData];
             } else {
                 [weakSelf showErrorWithTitle:@"头像修改失败"];
             }
