@@ -47,6 +47,7 @@
 		8426170F1F4C4F6700A96EFD /* BankCardSelectedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8426170D1F4C4F6700A96EFD /* BankCardSelectedViewController.xib */; };
 		842617131F4C53EA00A96EFD /* BankCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842617111F4C53EA00A96EFD /* BankCartTableViewCell.m */; };
 		842617141F4C53EA00A96EFD /* BankCartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842617121F4C53EA00A96EFD /* BankCartTableViewCell.xib */; };
+		842A92F11F527759001822EF /* UserUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A92F01F527759001822EF /* UserUtil.m */; };
 		8435E4B21F316BCE00424E5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E4B11F316BCE00424E5E /* main.m */; };
 		8435E4BB1F316BCE00424E5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4B91F316BCE00424E5E /* Main.storyboard */; };
 		8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4BC1F316BCE00424E5E /* Assets.xcassets */; };
@@ -270,6 +271,8 @@
 		842617101F4C53EA00A96EFD /* BankCartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCartTableViewCell.h; sourceTree = "<group>"; };
 		842617111F4C53EA00A96EFD /* BankCartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCartTableViewCell.m; sourceTree = "<group>"; };
 		842617121F4C53EA00A96EFD /* BankCartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankCartTableViewCell.xib; sourceTree = "<group>"; };
+		842A92EF1F527759001822EF /* UserUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserUtil.h; sourceTree = "<group>"; };
+		842A92F01F527759001822EF /* UserUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserUtil.m; sourceTree = "<group>"; };
 		8435E4AD1F316BCE00424E5E /* qulicai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qulicai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8435E4B11F316BCE00424E5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8435E4BA1F316BCE00424E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -811,6 +814,8 @@
 				84CE16FD1F502EF600E61C7D /* CertificationLogin.m */,
 				84CE17021F5149E200E61C7D /* User.h */,
 				84CE17031F5149E200E61C7D /* User.m */,
+				842A92EF1F527759001822EF /* UserUtil.h */,
+				842A92F01F527759001822EF /* UserUtil.m */,
 				84CE170A1F5164A500E61C7D /* Bank.h */,
 				84CE170B1F5164A500E61C7D /* Bank.m */,
 			);
@@ -1318,7 +1323,7 @@
 				TargetAttributes = {
 					8435E4AC1F316BCE00424E5E = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = ZK9A286AA6;
+						DevelopmentTeam = A76S262L77;
 						ProvisioningStyle = Automatic;
 					};
 					8435E4C51F316BCE00424E5E = {
@@ -1548,6 +1553,7 @@
 				8444028B1F41B2B000F5AFEE /* UIImage+Custom.m in Sources */,
 				842616FA1F4C17BA00A96EFD /* ProductIncomeTableViewCell.m in Sources */,
 				844402B81F441DB200F5AFEE /* MineTableViewController.m in Sources */,
+				842A92F11F527759001822EF /* UserUtil.m in Sources */,
 				8444024A1F41A0E700F5AFEE /* LoginViewController.m in Sources */,
 				84FEBA961F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				844402811F41B2B000F5AFEE /* NSDictionary+Custom.m in Sources */,
@@ -1762,12 +1768,12 @@
 			baseConfigurationReference = 777FE8CAA66E080E2873B281 /* Pods-qulicai.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZK9A286AA6;
+				DEVELOPMENT_TEAM = A76S262L77;
 				GCC_PREFIX_HEADER = "/Users/admin/个人资料/个人项目/Todo-New-Project/New-Project/qulicai/Headers/PrefixHeader.pch";
 				INFOPLIST_FILE = qulicai/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = qurong.qulicai;
+				PRODUCT_BUNDLE_IDENTIFIER = qurong.qulicai.3435;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1777,12 +1783,12 @@
 			baseConfigurationReference = 8092F52885BA6EA29FD5EFA1 /* Pods-qulicai.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZK9A286AA6;
+				DEVELOPMENT_TEAM = A76S262L77;
 				GCC_PREFIX_HEADER = "/Users/admin/个人资料/个人项目/Todo-New-Project/New-Project/qulicai/Headers/PrefixHeader.pch";
 				INFOPLIST_FILE = qulicai/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = qurong.qulicai;
+				PRODUCT_BUNDLE_IDENTIFIER = qurong.qulicai.3435;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

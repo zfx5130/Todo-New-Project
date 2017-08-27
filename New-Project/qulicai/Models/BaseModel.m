@@ -10,4 +10,10 @@
 
 @implementation BaseModel
 
+- (NSString *)description {
+    NSString *headCode =
+    [NSString stringWithFormat:@"code:::::%@ desc:::::::%@ statustype::::::%@", self.code, self.desc, @(self.statusType)];
+    return headCode;
+}
+
 @end

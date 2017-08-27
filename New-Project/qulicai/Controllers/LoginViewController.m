@@ -11,6 +11,7 @@
 #import "ForgetPasswordViewController.h"
 #import "QRRequestHeader.h"
 #import "User.h"
+#import "UserUtil.h"
 
 @interface LoginViewController ()
 
@@ -70,9 +71,8 @@
 }
 
 - (void)login {
-    NSLog(@"登录");
-    [self.view endEditing:YES];
     
+    [self.view endEditing:YES];
     if (self.phoneTextField.text.length < 11) {
         self.shakeErrorLabel.text = @"*对不起手机号码有误";
         [self.shakeErrorLabel addShakeAnimation];
@@ -86,11 +86,10 @@
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [SVProgressHUD dismiss];
         User *user = [User mj_objectWithKeyValues:request.responseJSONObject];
-        NSLog(@"reuqest结果:::::::::%@",user.desc);
+        NSLog(@"reuqestResult:::::::::%@",request.responseJSONObject);
         if (user.statusType == IndentityStatusSuccess) {
-            NSLog(@"登录成功");
             [self showSuccessWithTitle:@"登录成功"];
-            [User saveUserLocallyWithUser:user];
+            [UserUtil saving:user];
             [self dismissViewControllerAnimated:YES
                                      completion:nil];
         } else {
@@ -144,7 +143,6 @@
 
 - (IBAction)loginButtonWasPressed:(UIButton *)sender {
     [self login];
-    NSLog(@"userimi:::::%@",[User currentUser]);
 }
 
 - (void)rightBarButtonAction {

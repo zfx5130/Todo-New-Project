@@ -65,12 +65,12 @@
 - (void)handleRequestApi {
     
     NSString *endTime = [[A0SimpleKeychain keychain] stringForKey:QR_ENDTIME_EXT];
-    //NSLog(@"endtime:::::::%@",@([endTime integerValue] / 1000));
     NSString  *currentTime = [NSString getCurrentTimestamp];
-    //NSLog(@"currentTime::::::::%@",currentTime);
     NSInteger value  = [endTime integerValue] / 1000 - [currentTime integerValue];
-    NSLog(@"时间戳差值::::::::%@",@(value));
-    if (value < 30 * 60) {
+    //NSLog(@"时间戳差值::::::::%@",@(value));
+    NSString *indentityKey = [[A0SimpleKeychain keychain] stringForKey:QR_IDENTITY_KEY];
+    NSLog(@"令牌秘钥：：：：：：%@",indentityKey);
+    if (value < 30 * 60 || !indentityKey) {
         QRRequestCertificationLogin *request = [[QRRequestCertificationLogin alloc] init];
         request.userName = QR_IDENTITY_USERNAME;
         request.passWord = QR_IDENTITY_PASSWROD;

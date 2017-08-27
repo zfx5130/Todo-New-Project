@@ -12,34 +12,27 @@
 
 MJExtensionCodingImplementation
 
-+ (User *)currentUser {
-    NSString *tmpPath = NSTemporaryDirectory();
-    NSString *file = [tmpPath stringByAppendingPathComponent:@"user.data"];
-    User *user = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
-    NSLog(@"user::aasdf:::::%@",user);
-    return user;
-}
-
-+ (void)saveUserLocallyWithUser:(User *)user {
-    NSString *tmpPath = NSTemporaryDirectory();
-    NSString *file = [tmpPath stringByAppendingPathComponent:@"user.data"];
-    [NSKeyedArchiver archiveRootObject:user
-                                toFile:file];
-    User *user2 = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
-    NSLog(@"user::aasdffsdfsd:::::%@",user2);
-}
-
-+ (NSArray *)mj_allowedPropertyNames {
-   return @[@"userId",@"name",@"realName",@"mobilePhone",@"authStatusType",@"totalMoney"];
-}
-
 + (NSDictionary *)mj_replacedKeyFromPropertyName {
     return @{
              @"code" : @"head.responseCode",
              @"desc" : @"head.responseDescription",
-             @"statusType" : @"head.status"
+             @"statusType" : @"head.status",
+             @"appBanks" : @"body.appBanks",
+             @"createTime" : @"body.createTime",
+             @"accumulatedIncome" : @"body.accumulatedIncome",
+             @"dailyEarnings" : @"body.dailyEarnings",
+             @"currentMoney" : @"body.currentMoney",
+             @"regularMoney" : @"body.regularMoney",
+             @"freezeMoney" : @"body.freezeMoney",
+             @"availableMoney" : @"body.availableMoney",
+             @"totalMoney" : @"body.totalMoney",
+             @"authStatusType" : @"body.authentication",
+             @"addTime" : @"body.addTime",
+             @"mobilePhone" : @"body.mobilePhone",
+             @"realName" : @"body.realName",
+             @"name" : @"body.name",
+             @"userId": @"body.userId"
              };
-    
 }
 
 + (NSDictionary *)mj_objectClassInArray {
@@ -49,7 +42,7 @@ MJExtensionCodingImplementation
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"name::%@::phone:::%@:password:::%@:totalMoney::::%@",self.name, self.mobilePhone, self.realName, @(self.totalMoney)];
+    return [NSString stringWithFormat:@"head:::%@::::name::%@::phone:::%@:password:::%@:totalMoney::::%@", [super description], self.name, self.mobilePhone, self.realName, @(self.totalMoney)];
 }
 
 @end

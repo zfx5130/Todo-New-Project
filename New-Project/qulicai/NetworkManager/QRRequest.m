@@ -17,7 +17,7 @@ static NSString *const kRequestLogSeparatorSingleLine = @"----------------------
     NSString *identityKey = [[A0SimpleKeychain keychain] stringForKey:QR_IDENTITY_KEY];
     return @{
              @"user-agent" : @"qulicaiapp",
-             @"Authorization" : [NSString stringWithFormat:@"%@",identityKey]
+             @"Authorization" : [NSString stringWithFormat:@"heheheh%@",identityKey]
               };
 }
 

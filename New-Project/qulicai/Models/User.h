@@ -60,8 +60,4 @@ typedef NS_ENUM(NSUInteger, AuthenticationStatusType) {
 //银行列表
 @property (copy, nonatomic) NSArray *appBanks;
 
-+ (User *)currentUser;
-
-+ (void)saveUserLocallyWithUser:(User *)user ;
-
 @end
