@@ -17,10 +17,15 @@
 #import "LoginViewController.h"
 #import "ModifyTradingPdViewController.h"
 #import "UserUtil.h"
+#import "User.h"
 
 @interface SettingsTableViewController ()
 
 @property (strong, nonatomic) ZXCImagePicker *imagePicker;
+
+@property (weak, nonatomic) IBOutlet UILabel *bankCartLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *authenticationLabel;
 
 @end
 
@@ -45,6 +50,20 @@
 
 - (void)setupViews {
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
+    User *user = [UserUtil currentUser];
+    self.bankCartLabel.text = user.appBanks.count ? @"1张" : @"暂无银行卡";
+    NSString *idCardNum = user.cardId;
+    if (user.cardId.length > 0 && user.authStatusType != AuthenticationStatusFail) {
+        if (idCardNum.length > 15) {
+            NSString *str = [NSString replaceStrWithRange:NSMakeRange(6, 8)
+                                                   string:idCardNum
+                                               withString:@"*******"];
+            idCardNum = str;
+        }
+    } else {
+        idCardNum = @"未认证";
+    }
+    self.authenticationLabel.text = idCardNum;
 }
 
 #pragma mark - TableViewDataSource
@@ -182,15 +201,25 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)accountCertify {
-    AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
-    [self.navigationController pushViewController:accountController
-                                         animated:YES];
+    User *user = [UserUtil currentUser];
+    if(user.cardId.length > 0 && user.authStatusType != AuthenticationStatusFail) {
+        [self showSuccessWithTitle:@"已认证"];
+    } else {
+        AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
+        [self.navigationController pushViewController:accountController
+                                             animated:YES];
+    }
 }
 
 - (void)bankInfo {
-    UserBankCartViewController *bankController = [[UserBankCartViewController alloc] init];
-    [self.navigationController pushViewController:bankController
-                                         animated:YES];
+    User *user = [UserUtil currentUser];
+    if (user.appBanks.count) {
+        UserBankCartViewController *bankController = [[UserBankCartViewController alloc] init];
+        [self.navigationController pushViewController:bankController
+                                             animated:YES];
+    } else {
+        [self showSuccessWithTitle:@"暂无银行卡"];
+    }
 }
 
 - (void)selectPhoto {

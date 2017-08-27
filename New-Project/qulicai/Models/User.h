@@ -9,8 +9,8 @@
 #import "BaseModel.h"
 
 typedef NS_ENUM(NSUInteger, AuthenticationStatusType) {
-    AuthenticationStatusSuccess = 0, //未认证
-    AuthenticationStatusFail //已认证
+    AuthenticationStatusSuccess = 0, //已认证
+    AuthenticationStatusFail //未认证
 };
 
 @class User;

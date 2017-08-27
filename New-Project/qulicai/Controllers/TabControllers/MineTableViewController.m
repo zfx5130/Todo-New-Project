@@ -16,6 +16,7 @@
 #import "BuyHistoryViewController.h"
 #import "TotalPropertyViewController.h"
 #import "UserUtil.h"
+#import "User.h"
 
 @interface MineTableViewController ()
 
@@ -65,8 +66,9 @@
 
 - (void)renderUI {
     BOOL isLogin = [UserUtil isLoginIn];
-    NSString *username = UserDefaultsValue(@"username");
-    self.userAccountLabel.text = isLogin ? username : @"未登录";
+    User *user = [UserUtil currentUser];
+    NSString *nickName = user.name.length > 0 ? user.name : user.mobilePhone;
+    self.userAccountLabel.text = isLogin ? nickName : @"未登录";
     self.vipTagLabel.hidden = !isLogin;
     self.vipTagBgLabel.hidden = !isLogin;
     self.vipCartInfoLabel.hidden = !isLogin;
@@ -74,20 +76,20 @@
     self.vipBgImageView.image = isLogin ? [UIImage imageNamed:@"me_card_bg"] : [UIImage imageNamed:@"me_cart_unlogin_bg_image"];
     self.accountSecurityLabel.hidden = isLogin ? NO : YES;
     self.welfareLabel.hidden = isLogin ? NO : YES;
-}
-
-- (void)setupView {
-    //[self setupNavigationItemRights:@[@"me_nav_news_image",@"me_nav_task_image"]];
-    [self setupNavigationItemLeft:[UIImage imageNamed:@"me_nav_set_image"]];
-    if (self.userAccountLabel.text.length >= 11) {
+    if (self.userAccountLabel.text.length >= 11 && !user.name.length) {
         NSString *str = [NSString replaceStrWithRange:NSMakeRange(3, 4)
                                                string:self.userAccountLabel.text
                                            withString:@"****"];
         self.userAccountLabel.text = str;
     }
-    self.messageItem = self.navigationItem.rightBarButtonItems.lastObject;
-    self.messageItem.badgeCenterOffset = CGPointMake(31, 3);
-    [self.messageItem showBadge];
+}
+
+- (void)setupView {
+    //[self setupNavigationItemRights:@[@"me_nav_news_image",@"me_nav_task_image"]];
+    [self setupNavigationItemLeft:[UIImage imageNamed:@"me_nav_set_image"]];
+//    self.messageItem = self.navigationItem.rightBarButtonItems.lastObject;
+//    self.messageItem.badgeCenterOffset = CGPointMake(31, 3);
+//    [self.messageItem showBadge];
 }
 
 #pragma mark - TableViewDataSource

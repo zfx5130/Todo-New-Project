@@ -358,6 +358,10 @@
                             <outlet property="delegate" destination="rd7-LC-dl4" id="gRA-jS-jNU"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="authenticationLabel" destination="bVC-zJ-9au" id="jds-Vz-6Zn"/>
+                        <outlet property="bankCartLabel" destination="0VN-9b-NBE" id="3Jz-KR-WIG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rht-F7-JHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
