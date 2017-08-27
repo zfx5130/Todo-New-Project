@@ -74,8 +74,11 @@
 #define SCREEN_RECT CGRectMake(0.0f, 0.0f, SCREEN_WIDTH, SCREEN_HEIGHT)
 
 
-#pragma mark - Log
-#pragma mark - Log Coordinate
+#ifdef DEBUG
+#define SLog(format, ...) printf("class: <%p %s:(%d) > method: %s \n%s\n", self, [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, __PRETTY_FUNCTION__, [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] )
+#else
+#define SLog(format, ...)
+#endif
 
 #define LogRect(rect, desc) NSLog(@"%@---%@", NSStringFromCGRect(rect), desc)
 #define LogSize(size, desc) NSLog(@"%@---%@", NSStringFromCGSize(size), desc)

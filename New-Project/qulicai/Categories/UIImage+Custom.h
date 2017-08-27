@@ -36,4 +36,10 @@ typedef void(^ImageBlock)(UIImage *image, NSError *error);
 
 + (UIImage *)imageGradientFromColors:(NSArray *)colors bounds:(CGRect)bounds;
 
++ (UIImage *)Base64StrToUIImage:(NSString *)_encodedImageStr;
+
++ (UIImage *)drawWithWithImage:(UIImage *)imageCope width:(CGFloat)dWidth height:(CGFloat)dHeight;
+
++ (UIImage *)scaleImage:(UIImage *)image toKb:(NSInteger)kb;
+
 @end

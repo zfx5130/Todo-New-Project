@@ -360,6 +360,7 @@
                     </tableView>
                     <connections>
                         <outlet property="authenticationLabel" destination="bVC-zJ-9au" id="jds-Vz-6Zn"/>
+                        <outlet property="avatarImageView" destination="iSk-Z4-sLq" id="BOA-fw-58i"/>
                         <outlet property="bankCartLabel" destination="0VN-9b-NBE" id="3Jz-KR-WIG"/>
                     </connections>
                 </tableViewController>

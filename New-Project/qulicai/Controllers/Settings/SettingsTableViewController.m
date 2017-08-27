@@ -18,6 +18,8 @@
 #import "ModifyTradingPdViewController.h"
 #import "UserUtil.h"
 #import "User.h"
+#import "QRRequestUserAvatar.h"
+#import "UIImage+Custom.h"
 
 @interface SettingsTableViewController ()
 
@@ -26,6 +28,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *bankCartLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *authenticationLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 
 @end
 
@@ -225,10 +229,34 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)selectPhoto {
     self.imagePicker = [[ZXCImagePicker alloc] init];
     [self.imagePicker showImagePickerWithController:self];
-    //__weak typeof(self) weakSlef = self;
+    
+    __weak typeof(self) weakSelf = self;
     self.imagePicker.pickerBlock = ^(UIImage *image) {
-        //weakSlef.selectedImage = image;
-        NSLog(@"::::%@",image);
+        UIImage *smallImage = [UIImage drawWithWithImage:image
+                                                   width:60.0f
+                                                  height:60.0f];
+        NSString *imageString = [NSString UIImageToBase64Str:smallImage];
+        //NSLog(@"lenth:::::%@",@(imageString.length));
+        [weakSelf showSVProgressHUD];
+        QRRequestUserAvatar *request = [[QRRequestUserAvatar alloc] init];
+        request.userId = [UserUtil currentUser].userId;
+        request.headPortrait = imageString;
+        [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+            NSInteger status = [request.responseJSONObject[@"head"][@"status"] integerValue];
+            NSLog(@"requestResult::::::%@",request.responseJSONObject);
+            [SVProgressHUD dismiss];
+            if (!status) {
+                [weakSelf showSuccessWithTitle:@"头像修改成功"];
+                weakSelf.avatarImageView.image = image;
+                [UserUtil currentUser].headPortrait = imageString;
+            } else {
+                [weakSelf showErrorWithTitle:@"头像修改失败"];
+            }
+        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+            [SVProgressHUD dismiss];
+            NSLog(@"error-:::::%@",request.error);
+        }];
+        
     };
 }
 

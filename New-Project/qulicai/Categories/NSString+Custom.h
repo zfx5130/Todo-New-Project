@@ -56,4 +56,7 @@
 
 + (NSString*)getCurrentTimestamp;
 
++ (NSString *)UIImageToBase64Str:(UIImage *)image;
+
+
 @end

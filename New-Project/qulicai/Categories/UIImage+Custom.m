@@ -154,4 +154,41 @@
     return gradientImage;
 }
 
++ (UIImage *)Base64StrToUIImage:(NSString *)_encodedImageStr {
+    NSData *_decodedImageData =
+    [[NSData alloc] initWithBase64EncodedString:_encodedImageStr
+                                        options:0];
+    UIImage *_decodedImage = [UIImage imageWithData:_decodedImageData];
+    return _decodedImage;
+}
+
++ (UIImage *)drawWithWithImage:(UIImage *)imageCope width:(CGFloat)dWidth height:(CGFloat)dHeight {
+    UIGraphicsBeginImageContext(CGSizeMake(dWidth, dHeight));
+    [imageCope drawInRect:CGRectMake(0, 0, dWidth, dHeight)];
+    imageCope = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return imageCope;
+}
+
++ (UIImage *)scaleImage:(UIImage *)image toKb:(NSInteger)kb {
+    if (!image) {
+        return image;
+    }
+    if (kb<1) {
+        return image;
+    }
+    kb*=1024;
+    
+    CGFloat compression = 0.9f;
+    CGFloat maxCompression = 0.1f;
+    NSData *imageData = UIImageJPEGRepresentation(image, compression);
+    while ([imageData length] > kb && compression > maxCompression) {
+        compression -= 0.1;
+        imageData = UIImageJPEGRepresentation(image, compression);
+    }
+    NSLog(@"当前大小:%fkb",(float)[imageData length]/1024.0f);
+    UIImage *compressedImage = [UIImage imageWithData:imageData];
+    return compressedImage;
+}
+
 @end

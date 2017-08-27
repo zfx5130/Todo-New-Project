@@ -67,15 +67,15 @@ static NSString *const kRequestLogSeparatorSingleLine = @"----------------------
     NSString *method = [self gerRequestMethod];
     NSString *authorizationKey =
     [NSString stringWithFormat:@"Authorization Key:\n%@",self.requestHeaderFieldValueDictionary[@"Authorization"]];
-    NSLog(@"\n%@\nRequest URL：\n(%@) %@\n%@\n%@\n%@\nParameters：\n%@\n%@\n",
-          kRequestLogSeparatorDoubleLines,
-          method,
-          requestUrl,
-          kRequestLogSeparatorSingleLine,
-          authorizationKey,
-          kRequestLogSeparatorSingleLine,
-          requestParam,
-          kRequestLogSeparatorDoubleLines);
+    SLog(@"\n%@\nRequest URL：\n(%@) %@\n%@\n%@\n%@\nParameters：\n%@\n%@\n",
+         kRequestLogSeparatorDoubleLines,
+         method,
+         requestUrl,
+         kRequestLogSeparatorSingleLine,
+         authorizationKey,
+         kRequestLogSeparatorSingleLine,
+         requestParam,
+         kRequestLogSeparatorDoubleLines);
 }
 
 @end

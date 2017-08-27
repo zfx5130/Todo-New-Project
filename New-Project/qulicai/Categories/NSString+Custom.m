@@ -380,5 +380,11 @@
     return currentStampString;
 }
 
++ (NSString *)UIImageToBase64Str:(UIImage *)image {
+    NSData *data = UIImageJPEGRepresentation(image, 0.1f);
+    NSString *encodedImageStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    return encodedImageStr;
+}
+
 
 @end

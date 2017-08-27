@@ -263,7 +263,7 @@ didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
         } else {
             image = [info objectForKey:UIImagePickerControllerOriginalImage];
         }
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+        //UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
         if (self.pickerBlock) {
             self.pickerBlock(image);
         }
