@@ -94,7 +94,7 @@
                 User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
                 NSLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
                 if (userInfo.statusType == IndentityStatusSuccess) {
-                    [UserUtil saving:user];
+                    [UserUtil saving:userInfo];
                     [self showSuccessWithTitle:@"登录成功"];
                     [self dismissViewControllerAnimated:YES
                                              completion:nil];

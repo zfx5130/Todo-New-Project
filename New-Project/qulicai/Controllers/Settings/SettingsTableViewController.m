@@ -18,8 +18,8 @@
 #import "ModifyTradingPdViewController.h"
 #import "UserUtil.h"
 #import "User.h"
-#import "QRRequestUserAvatar.h"
 #import "UIImage+Custom.h"
+#import "QRRequestHeader.h"
 
 @interface SettingsTableViewController ()
 
@@ -39,11 +39,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupViews];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self setupViews];
+    [self updateUserInfo];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,6 +52,29 @@
 }
 
 #pragma mark - Priavte
+
+- (void)updateUserInfo {
+    QRRequestGetUserInfo *request = [[QRRequestGetUserInfo alloc] init];
+    request.userId = [UserUtil currentUser].userId;
+    __weak typeof(self) weakSelf = self;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
+        NSLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
+        if (userInfo.statusType == IndentityStatusSuccess) {
+            [UserUtil saving:userInfo];
+            [weakSelf reloadUI];
+        } else {
+            NSLog(@"error:::::%@",request.error);
+        }
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSLog(@"error:- %@", request.error);
+    }];
+}
+
+- (void)reloadUI {
+    [self setupViews];
+    [self.tableView reloadData];
+}
 
 - (void)setupViews {
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
@@ -207,14 +231,14 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)accountCertify {
-//    User *user = [UserUtil currentUser];
-//    if(user.cardId.length > 0 && user.authStatusType != AuthenticationStatusFail) {
-//        [self showSuccessWithTitle:@"已认证"];
-//    } else {
+    User *user = [UserUtil currentUser];
+    if(user.cardId.length > 0 && user.authStatusType != AuthenticationStatusFail) {
+        [self showSuccessWithTitle:@"已认证"];
+    } else {
         AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
         [self.navigationController pushViewController:accountController
                                              animated:YES];
-//    }
+    }
 }
 
 - (void)bankInfo {
