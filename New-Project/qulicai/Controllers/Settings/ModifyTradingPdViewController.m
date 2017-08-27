@@ -8,6 +8,10 @@
 
 #import "ModifyTradingPdViewController.h"
 #import "ForgetPasswordViewController.h"
+#import "UserUtil.h"
+#import "User.h"
+#import "QRRequestHeader.h"
+#import "UpdateTransactionPassword.h"
 
 @interface ModifyTradingPdViewController ()
 <UITextViewDelegate>
@@ -76,7 +80,7 @@
 }
 
 - (void)save {
-    
+    [self.view endEditing:YES];
     if (self.oldPasswordLabel.text.length < 6 || self.oldPasswordLabel.text.length > 16) {
         self.errorLabel.text = @"*旧密码输入格式不正确";
         [self.errorLabel addShakeAnimation];
@@ -95,29 +99,34 @@
         return;
     }
     
-    [self.view endEditing:YES];
     [self showSVProgressHUD];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    QRRequestModifyTransPassword *request = [[QRRequestModifyTransPassword alloc] init];
+    request.userId = [UserUtil currentUser].userId;
+    request.transactionPwd = self.oldPasswordLabel.text;
+    request.lastestTransactionPwd = self.nowPasswordLabel.text;
+    __weak typeof(self) weakSelf = self;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [SVProgressHUD dismiss];
-        if (self.nowPasswordLabel.text.length < 7) {
-            self.alertErrorLabel.text = @"密码修改失败";
-            [self showErrorAlert];
+        NSLog(@"reuqreresult:::::%@",request.responseJSONObject);
+        UpdateTransactionPassword *password = [UpdateTransactionPassword mj_objectWithKeyValues:request.responseJSONObject];
+        if (password.statusType == IndentityStatusSuccess) {
+            [weakSelf showSuccessWithTitle:@"密码修改成功"];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
         } else {
-            //下一步操作
-            [self showSuccessWithTitle:@"密码修改成功"];
-            [self.navigationController popViewControllerAnimated:YES];
+            weakSelf.alertErrorLabel.text = password.desc;
+            [weakSelf showErrorAlert];
         }
-    });
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        NSLog(@"error-::::%@",request.error);
+    }];
+
 }
 
 #pragma mark - UITextViewDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    BOOL isFlag =
-    self.oldPasswordLabel.text.length && self.nowPasswordLabel.text.length && (self.oldPasswordLabel.text != self.nowPasswordLabel.text);
-    if (textField == self.nowPasswordLabel && isFlag) {
-        [self save];
-    }
+    [self save];
     return YES;
 }
 

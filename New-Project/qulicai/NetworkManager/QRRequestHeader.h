@@ -16,5 +16,6 @@
 #import "QRRequestUserAvatar.h"
 #import "QRRequestNameAuthorware.h"
 #import "QRRequestModifyLoginPassword.h"
+#import "QRRequestModifyTransPassword.h"
 
 #endif /* QRRequestHeader_h */

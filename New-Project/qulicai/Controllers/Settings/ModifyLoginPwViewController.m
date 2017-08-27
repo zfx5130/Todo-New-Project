@@ -99,6 +99,7 @@
     }
 
     [self showSVProgressHUD];
+    __weak typeof(self) weakSelf = self;
     QRRequestModifyLoginPassword *request = [[QRRequestModifyLoginPassword alloc] init];
     request.userId = [UserUtil currentUser].userId;
     request.loginPwd = self.oldPasswordLabel.text;
@@ -108,11 +109,11 @@
         //NSLog(@"reuqre343:::::%@",request.responseJSONObject]);
         UpdateLoginPassword *password = [UpdateLoginPassword mj_objectWithKeyValues:request.responseJSONObject];
         if (password.statusType == IndentityStatusSuccess) {
-            [self showSuccessWithTitle:@"密码修改成功"];
-            [self.navigationController popViewControllerAnimated:YES];
+            [weakSelf showSuccessWithTitle:@"密码修改成功"];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
         } else {
-            self.alertErrorLabel.text = password.desc;
-            [self showErrorAlert];
+            weakSelf.alertErrorLabel.text = password.desc;
+            [weakSelf showErrorAlert];
         }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         [SVProgressHUD dismiss];
