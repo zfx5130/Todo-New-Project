@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSUInteger, BankStatusType) {
-    BankStatusSuccess = 0, //未激活
-    BankStatusFail // 激活
+    BankStatusUnActivate = 0, //未激活
+    BankStatusActivate // 激活
 };
 
 @interface Bank : NSObject

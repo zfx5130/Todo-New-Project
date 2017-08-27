@@ -7,6 +7,9 @@
 //
 
 #import "UserBankCartViewController.h"
+#import "UserUtil.h"
+#import "User.h"
+#import "Bank.h"
 
 @interface UserBankCartViewController ()
 <UIAlertViewDelegate>
@@ -19,6 +22,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *bankCartLabel;
 
+@property (copy, nonatomic) NSArray *bankArray;
+
 @end
 
 @implementation UserBankCartViewController
@@ -27,6 +32,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self setupViews];
     [self replaceBankCartNumber];
 }
@@ -35,16 +44,46 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - Setters && Getters
+
+
+- (NSArray *)bankArray {
+    if (!_bankArray) {
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Bank" ofType:@"plist"];
+        NSMutableArray *bankArr = [[NSMutableArray alloc] initWithContentsOfFile:filePath];
+        _bankArray = [bankArr copy];
+    }
+    return _bankArray;
+}
+
 #pragma mark - Private
 
 - (void)replaceBankCartNumber {
-    if (self.bankCartLabel.text.length >= 19) {
-        NSString *str = [NSString replaceStrWithRange:NSMakeRange(4, 12)
-                                               string:self.bankCartLabel.text
-                                           withString:@" **** **** **** "];
-        self.bankCartLabel.text = str;
+    User *user = [UserUtil currentUser];
+    if (user.appBanks.count) {
+        Bank *bank = [user.appBanks firstObject];
+        self.bankCartLabel.text = bank.bankNo;
+        self.bankNameLabel.text = bank.bankName;
+        if (self.bankCartLabel.text.length >= 16) {
+            NSString *str = [NSString replaceStrWithRange:NSMakeRange(4, 12)
+                                                   string:self.bankCartLabel.text
+                                               withString:@" **** **** **** "];
+            self.bankCartLabel.text = str;
+        }
+        for (int i = 0; i < [self.bankArray count]; i++) {
+            NSDictionary *dic = self.bankArray[i];
+            NSString *bankName = dic[@"bankName"];
+            if ([bank.bankName isEqualToString:bankName]) {
+                NSString *bankImageName = dic[@"bankImageName"];
+                self.bankLogoImageView.image = [UIImage imageNamed:bankImageName];
+            }
+        }
+        
     }
 }
+
+
+
 
 - (void)setupViews {
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];

@@ -362,6 +362,7 @@
                         <outlet property="authenticationLabel" destination="bVC-zJ-9au" id="jds-Vz-6Zn"/>
                         <outlet property="avatarImageView" destination="iSk-Z4-sLq" id="BOA-fw-58i"/>
                         <outlet property="bankCartLabel" destination="0VN-9b-NBE" id="3Jz-KR-WIG"/>
+                        <outlet property="nickNameLabel" destination="wZz-bB-z2X" id="7Qi-bt-zLL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rht-F7-JHX" userLabel="First Responder" sceneMemberID="firstResponder"/>

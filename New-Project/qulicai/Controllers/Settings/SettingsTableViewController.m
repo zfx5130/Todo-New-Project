@@ -31,6 +31,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 
+@property (weak, nonatomic) IBOutlet UILabel *nickNameLabel;
+
 @end
 
 @implementation SettingsTableViewController
@@ -39,6 +41,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
     [self setupViews];
 }
 
@@ -77,8 +80,8 @@
 }
 
 - (void)setupViews {
-    [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
     User *user = [UserUtil currentUser];
+    self.nickNameLabel.text = user.name.length ? user.name : @"未设置昵称";
     self.bankCartLabel.text = user.appBanks.count ? @"1张" : @"暂无银行卡";
     NSString *idCardNum = user.cardId;
     if (user.cardId.length > 0 && user.authStatusType != AuthenticationStatusFail) {
