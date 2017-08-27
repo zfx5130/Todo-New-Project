@@ -16,6 +16,7 @@
 #import "ModifyLoginPwViewController.h"
 #import "LoginViewController.h"
 #import "ModifyTradingPdViewController.h"
+#import "UserUtil.h"
 
 @interface SettingsTableViewController ()
 
@@ -166,8 +167,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)outLogin {
-    UserDefaultsRemove(@"login");
-    [self.navigationController popToRootViewControllerAnimated:NO];
+    if ([UserUtil outLoginIn]) {
+        [self showSuccessWithTitle:@"退出成功"];
+        [self.navigationController popToRootViewControllerAnimated:NO];
+    } else {
+        [self showErrorWithTitle:@"退出失败"];
+    }
 }
 
 - (void)modifyLoginPassword {

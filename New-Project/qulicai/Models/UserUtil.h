@@ -17,4 +17,10 @@
 // 取出User信息
 + (User *)currentUser;
 
+//是否登录
++ (BOOL)isLoginIn;
+
+//退出登录
++ (BOOL)outLoginIn;
+
 @end

@@ -15,6 +15,7 @@
 #import "CustomerViewController.h"
 #import "BuyHistoryViewController.h"
 #import "TotalPropertyViewController.h"
+#import "UserUtil.h"
 
 @interface MineTableViewController ()
 
@@ -33,9 +34,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *goLoginButton;
 
 @property (strong, nonatomic) UIBarButtonItem *messageItem;
-
-@property (assign, nonatomic) BOOL isLogin;
-
 
 @property (weak, nonatomic) IBOutlet UILabel *accountSecurityLabel;
 
@@ -66,19 +64,16 @@
 #pragma mark - Priavte
 
 - (void)renderUI {
-    NSString *login = UserDefaultsValue(@"login");
-    BOOL isLogin = [login isEqualToString:@"YES"];
-    self.isLogin = isLogin;
+    BOOL isLogin = [UserUtil isLoginIn];
     NSString *username = UserDefaultsValue(@"username");
-    self.userAccountLabel.text =
-    self.isLogin ? username : @"未登录";
-    self.vipTagLabel.hidden = !self.isLogin;
-    self.vipTagBgLabel.hidden = !self.isLogin;
-    self.vipCartInfoLabel.hidden = !self.isLogin;
+    self.userAccountLabel.text = isLogin ? username : @"未登录";
+    self.vipTagLabel.hidden = !isLogin;
+    self.vipTagBgLabel.hidden = !isLogin;
+    self.vipCartInfoLabel.hidden = !isLogin;
     self.goLoginButton.hidden = !self.vipCartInfoLabel.hidden;
-    self.vipBgImageView.image = self.isLogin ? [UIImage imageNamed:@"me_card_bg"] : [UIImage imageNamed:@"me_cart_unlogin_bg_image"];
-    self.accountSecurityLabel.hidden = self.isLogin ? NO : YES;
-    self.welfareLabel.hidden = self.isLogin ? NO : YES;
+    self.vipBgImageView.image = isLogin ? [UIImage imageNamed:@"me_card_bg"] : [UIImage imageNamed:@"me_cart_unlogin_bg_image"];
+    self.accountSecurityLabel.hidden = isLogin ? NO : YES;
+    self.welfareLabel.hidden = isLogin ? NO : YES;
 }
 
 - (void)setupView {
@@ -154,7 +149,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         case 1: {
             switch (indexPath.row) {
                 case 0: {
-                    if (self.isLogin) {
+                    if ([UserUtil isLoginIn]) {
                         [self showTotalProperty];
                     } else {
                         [self login];
@@ -162,7 +157,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                 }
                     break;
                 case 1: {
-                    if (self.isLogin) {
+                    if ([UserUtil isLoginIn]) {
                         [self history];
                     } else {
                         [self login];
@@ -239,7 +234,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)leftBarButtonAction {
-    if (self.isLogin) {
+    if ([UserUtil isLoginIn]) {
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:kStoryBoardIdSettingsViewController
                                                              bundle:nil];
         SettingsTableViewController *settingsController = [storyBoard instantiateViewControllerWithIdentifier:kStoryBoardIdSettingsViewController];

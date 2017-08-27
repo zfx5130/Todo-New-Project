@@ -18,6 +18,7 @@
 #import "PropertyPickupViewController.h"
 #import "ProductInformationController.h"
 #import "ProductBuyViewController.h"
+#import "UserUtil.h"
 
 #define NAVBAR_COLORCHANGE_POINT (-IMAGE_HEIGHT + NAV_HEIGHT*2)
 #define NAV_HEIGHT 64
@@ -52,8 +53,7 @@ UITableViewDataSource>
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    NSString *login = UserDefaultsValue(@"login");
-    BOOL isLogin = [login isEqualToString:@"YES"];
+    BOOL isLogin = [UserUtil isLoginIn];
     self.headView.pickTagImageView.hidden = !(isLogin && self.balance > 0);
     self.headView.allMoneyLabel.text = isLogin ? @"2343242432" : @"0.0";
     self.headView.yesterdayEarningLabel.text = isLogin ? @"345.54" : @"0.0";
@@ -90,6 +90,8 @@ UITableViewDataSource>
                                           action:@selector(totalPropertyButtonWasPressed:)
                                 forControlEvents:UIControlEventTouchUpInside];
 }
+
+//判断是否登录
 
 #pragma mark - UITableViewDataSource
 
@@ -142,7 +144,6 @@ UITableViewDataSource>
     CGFloat offsetY = scrollView.contentOffset.y;
     
     if (offsetY > NAVBAR_COLORCHANGE_POINT) {
-       // CGFloat alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / NAV_HEIGHT;
         [self wr_setNavBarBackgroundAlpha:0];
     }
     else {
@@ -202,9 +203,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)pickupMoney {
-    NSString *login = UserDefaultsValue(@"login");
-    BOOL isLogin = [login isEqualToString:@"YES"];
-    if (isLogin) {
+    if ([UserUtil isLoginIn]) {
         if (self.balance > 0) {
             PropertyPickupViewController *pickContoller = [[PropertyPickupViewController alloc] init];
             [self.navigationController pushViewController:pickContoller animated:YES];
@@ -229,9 +228,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)incomeButtonWasPressed:(UIButton *)sender {
-    NSString *login = UserDefaultsValue(@"login");
-    BOOL isLogin = [login isEqualToString:@"YES"];
-    if (isLogin) {
+    if ([UserUtil isLoginIn]) {
         YesterdayIncomeViewController *incomeController = [[YesterdayIncomeViewController alloc] init];
         incomeController.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:incomeController
@@ -242,9 +239,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)buyButtonWasPressed:(UIButton *)sender {
-    NSString *login = UserDefaultsValue(@"login");
-    BOOL isLogin = [login isEqualToString:@"YES"];
-    if (isLogin) {
+    if ([UserUtil isLoginIn]) {
         ProductBuyViewController *productController = [[ProductBuyViewController alloc] init];
         productController.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:productController

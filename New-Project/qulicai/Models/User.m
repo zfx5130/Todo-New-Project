@@ -31,7 +31,9 @@ MJExtensionCodingImplementation
              @"mobilePhone" : @"body.mobilePhone",
              @"realName" : @"body.realName",
              @"name" : @"body.name",
-             @"userId": @"body.userId"
+             @"userId": @"body.userId",
+             @"cardId" : @"body.cardId",
+             @"headPortrait" : @"body.headPortrait"
              };
 }
 

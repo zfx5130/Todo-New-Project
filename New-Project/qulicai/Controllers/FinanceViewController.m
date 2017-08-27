@@ -13,6 +13,8 @@
 #import "WRNavigationBar.h"
 #import "PruductDetailViewController.h"
 #import "ProductBuyViewController.h"
+#import "UserUtil.h"
+#import "LoginViewController.h"
 
 #define NAVBAR_COLORCHANGE_POINT (-IMAGE_HEIGHT + NAV_HEIGHT*2)
 #define NAV_HEIGHT 64
@@ -192,10 +194,22 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 #pragma mark - Hanlders
 
 - (void)buyButtonWasPressed:(UIButton *)sender {
-    ProductBuyViewController *productController = [[ProductBuyViewController alloc] init];
-    productController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:productController
-                                         animated:YES];
+    if ([UserUtil isLoginIn]) {
+        ProductBuyViewController *productController = [[ProductBuyViewController alloc] init];
+        productController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:productController
+                                             animated:YES];
+    } else {
+        [self login];
+    }
+}
+
+- (void)login {
+    LoginViewController *loginViewController = [[LoginViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    [self presentViewController:navigationController
+                       animated:YES
+                     completion:nil];
 }
 
 //- (void)scrollViewDidScroll:(UIScrollView *)scrollView {

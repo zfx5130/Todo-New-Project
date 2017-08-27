@@ -57,6 +57,12 @@ typedef NS_ENUM(NSUInteger, AuthenticationStatusType) {
 //注册时间
 @property (copy, nonatomic) NSString *createTime;
 
+//身份证号
+@property (copy, nonatomic) NSString *cardId;
+
+//头像
+@property (copy, nonatomic) NSString *headPortrait;
+
 //银行列表
 @property (copy, nonatomic) NSArray *appBanks;
 
