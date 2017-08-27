@@ -52,6 +52,8 @@
 		842A92F71F52A3F9001822EF /* QRRequestUserAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A92F61F52A3F9001822EF /* QRRequestUserAvatar.m */; };
 		842A92FA1F52B6F7001822EF /* QRRequestNameAuthorware.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A92F91F52B6F7001822EF /* QRRequestNameAuthorware.m */; };
 		842A92FD1F52B8FE001822EF /* Authorware.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A92FC1F52B8FE001822EF /* Authorware.m */; };
+		842A93001F52CE18001822EF /* QRRequestModifyLoginPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A92FF1F52CE18001822EF /* QRRequestModifyLoginPassword.m */; };
+		842A93031F52D1F2001822EF /* UpdateLoginPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A93021F52D1F2001822EF /* UpdateLoginPassword.m */; };
 		8435E4B21F316BCE00424E5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E4B11F316BCE00424E5E /* main.m */; };
 		8435E4BB1F316BCE00424E5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4B91F316BCE00424E5E /* Main.storyboard */; };
 		8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4BC1F316BCE00424E5E /* Assets.xcassets */; };
@@ -285,6 +287,10 @@
 		842A92F91F52B6F7001822EF /* QRRequestNameAuthorware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestNameAuthorware.m; sourceTree = "<group>"; };
 		842A92FB1F52B8FE001822EF /* Authorware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Authorware.h; sourceTree = "<group>"; };
 		842A92FC1F52B8FE001822EF /* Authorware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Authorware.m; sourceTree = "<group>"; };
+		842A92FE1F52CE18001822EF /* QRRequestModifyLoginPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestModifyLoginPassword.h; sourceTree = "<group>"; };
+		842A92FF1F52CE18001822EF /* QRRequestModifyLoginPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestModifyLoginPassword.m; sourceTree = "<group>"; };
+		842A93011F52D1F2001822EF /* UpdateLoginPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateLoginPassword.h; sourceTree = "<group>"; };
+		842A93021F52D1F2001822EF /* UpdateLoginPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateLoginPassword.m; sourceTree = "<group>"; };
 		8435E4AD1F316BCE00424E5E /* qulicai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qulicai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8435E4B11F316BCE00424E5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8435E4BA1F316BCE00424E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -832,6 +838,8 @@
 				84CE170B1F5164A500E61C7D /* Bank.m */,
 				842A92FB1F52B8FE001822EF /* Authorware.h */,
 				842A92FC1F52B8FE001822EF /* Authorware.m */,
+				842A93011F52D1F2001822EF /* UpdateLoginPassword.h */,
+				842A93021F52D1F2001822EF /* UpdateLoginPassword.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1017,6 +1025,8 @@
 				842A92F61F52A3F9001822EF /* QRRequestUserAvatar.m */,
 				842A92F81F52B6F7001822EF /* QRRequestNameAuthorware.h */,
 				842A92F91F52B6F7001822EF /* QRRequestNameAuthorware.m */,
+				842A92FE1F52CE18001822EF /* QRRequestModifyLoginPassword.h */,
+				842A92FF1F52CE18001822EF /* QRRequestModifyLoginPassword.m */,
 			);
 			path = ApiRequest;
 			sourceTree = "<group>";
@@ -1538,6 +1548,7 @@
 				8435E6031F3D885200424E5E /* QRRequest.m in Sources */,
 				8426170E1F4C4F6700A96EFD /* BankCardSelectedViewController.m in Sources */,
 				8435E5BF1F399C6C00424E5E /* NSString+File.m in Sources */,
+				842A93031F52D1F2001822EF /* UpdateLoginPassword.m in Sources */,
 				84CE17011F512FB300E61C7D /* QRRequestLogin.m in Sources */,
 				844402841F41B2B000F5AFEE /* NSString+Check.m in Sources */,
 				844FB8031F4D327C001772AF /* ProductBuySuccessViewController.m in Sources */,
@@ -1558,6 +1569,7 @@
 				84DCF34D1F4EE43A002F117A /* ASPopupPresentAnimator.m in Sources */,
 				84825E141F457468006A921F /* ModifyLoginPwViewController.m in Sources */,
 				844402AA1F42FC8100F5AFEE /* QRWebViewController.m in Sources */,
+				842A93001F52CE18001822EF /* QRRequestModifyLoginPassword.m in Sources */,
 				84DCF3531F4EE46E002F117A /* ProductPasswordView.m in Sources */,
 				84CE17091F5156F300E61C7D /* BaseModel.m in Sources */,
 				844FB80C1F4D60F3001772AF /* YesterdayIncomeView.m in Sources */,
