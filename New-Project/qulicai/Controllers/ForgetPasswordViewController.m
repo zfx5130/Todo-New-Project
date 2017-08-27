@@ -9,6 +9,10 @@
 #import "ForgetPasswordViewController.h"
 #import "SendVerifyCodeButton.h"
 #import "ResetPasswordViewController.h"
+#import "User.h"
+#import "UserUtil.h"
+#import "QRRequestHeader.h"
+#import "VerifyCode.h"
 
 @interface ForgetPasswordViewController ()
 <UITextViewDelegate>
@@ -27,13 +31,12 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *alertErrorLabel;
 
-
-@property (weak, nonatomic) IBOutlet UIButton *backButton;
-
 //130 70
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headViewHeightaConstraint;
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@property (copy, nonatomic) NSString *verifyCode;
 
 @end
 
@@ -95,41 +98,31 @@
 }
 
 - (void)nextStep {
-    NSLog(@"下一步");
+    
     [self.view endEditing:YES];
     if (self.phoneTextField.text.length < 11) {
         self.errorLabel.text = @"*对不起手机号码有误";
         [self.errorLabel addShakeAnimation];
         return;
     }
-    [self showSVProgressHUD];
+    if (![self.verifyTextField.text isEqualToString:self.verifyCode]) {
+        self.errorLabel.text = @"*验证码输入不正确";
+        [self.errorLabel addShakeAnimation];
+        return;
+    }
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [SVProgressHUD dismiss];
-        //交易密码 和 登录密码 两个接口
-        if (self.verifyTextField.text.length < 4) {
-            self.alertErrorLabel.text = @"验证码不正确";
-            [self showErrorAlert];
-        } else {
-            //下一步操作
-            ResetPasswordViewController *resetController = [[ResetPasswordViewController alloc] init];
-            resetController.isTradingPw = self.isTradingPw;
-            resetController.isPickUpPw = self.isPickUpPw;
-            [self.navigationController pushViewController:resetController
-                                                 animated:YES];
-        }
-    });
+    ResetPasswordViewController *resetController = [[ResetPasswordViewController alloc] init];
+    resetController.isTradingPw = self.isTradingPw;
+    resetController.isPickUpPw = self.isPickUpPw;
+    [self.navigationController pushViewController:resetController
+                                         animated:YES];
     
 }
 
 #pragma mark - UITextViewDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    BOOL isFlag =
-    self.verifyTextField.text.length && self.phoneTextField.text.length;
-    if (textField == self.verifyTextField && isFlag) {
-        [self nextStep];
-    }
+    [self nextStep];
     return YES;
 }
 
@@ -142,15 +135,32 @@
         [self.errorLabel addShakeAnimation];
         return;
     }
-    
     //检测验证码是否已经发送
     if ([sender canSenderVerifyCodeWithPhone:self.phoneTextField.text]) {
         return;
     }
-    
-    [sender sendVerifyCodeWithPhone:self.phoneTextField.text];
-    
     //请求验证码操作
+    [self showSVProgressHUD];
+    QRRequestVerifyCode *request = [[QRRequestVerifyCode alloc] init];
+    request.mobilePhone = self.phoneTextField.text;
+    request.codeType = VerifyCodeTypeLogin;
+    __weak typeof(self) weakSelf = self;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        NSLog(@"reuqreresult:::::%@",request.responseJSONObject);
+        VerifyCode *verify = [VerifyCode mj_objectWithKeyValues:request.responseJSONObject];
+        if (verify.statusType == IndentityStatusSuccess) {
+            [weakSelf showSuccessWithTitle:@"发送验证码成功"];
+            [sender sendVerifyCodeWithPhone:self.phoneTextField.text];
+            weakSelf.verifyCode = verify.verifyCode;
+        } else {
+            weakSelf.alertErrorLabel.text = verify.desc;
+            [weakSelf showErrorAlert];
+        }
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        NSLog(@"error-::::%@",request.error);
+    }];
     
 }
 

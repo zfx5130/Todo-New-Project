@@ -14,7 +14,7 @@ NSString *const kAcceptVerifyCodePhone = @"kAcceptVerifyCodePhone";
 #define UserDefaultsSave(key, value) [[NSUserDefaults standardUserDefaults] setObject:value forKey:key]; [[NSUserDefaults standardUserDefaults] synchronize]
 #define UserDefaultsRemove(key) [[NSUserDefaults standardUserDefaults] removeObjectForKey:key]
 
-static const NSUInteger kVerifyCodeDuration = 30;
+static const NSUInteger kVerifyCodeDuration = 60;
 
 #import "SendVerifyCodeButton.h"
 
