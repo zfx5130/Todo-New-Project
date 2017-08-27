@@ -30,6 +30,17 @@ typedef NS_ENUM(NSUInteger, AuthenticationStatusType) {
 //注册时间
 @property (copy, nonatomic) NSString *addTime;
 
+//登录状态 1.锁定 0 解锁
+@property (assign, nonatomic) NSInteger loginStatus;
+
+//交易状态 1.锁定 0 解锁
+@property (assign, nonatomic) NSInteger payStatus;
+
+//版本
+@property (copy, nonatomic) NSString *version;
+
+@property (assign,  nonatomic) NSInteger loginFailCounts;
+
 //是否实名认证
 @property (assign, nonatomic) AuthenticationStatusType authStatusType;
 
@@ -65,5 +76,7 @@ typedef NS_ENUM(NSUInteger, AuthenticationStatusType) {
 
 //银行列表
 @property (copy, nonatomic) NSArray *appBanks;
+
+
 
 @end

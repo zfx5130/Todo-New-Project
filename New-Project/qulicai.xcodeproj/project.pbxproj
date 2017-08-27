@@ -48,6 +48,7 @@
 		842617131F4C53EA00A96EFD /* BankCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842617111F4C53EA00A96EFD /* BankCartTableViewCell.m */; };
 		842617141F4C53EA00A96EFD /* BankCartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842617121F4C53EA00A96EFD /* BankCartTableViewCell.xib */; };
 		842A92F11F527759001822EF /* UserUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A92F01F527759001822EF /* UserUtil.m */; };
+		842A92F41F5290DB001822EF /* QRRequestGetUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A92F31F5290DB001822EF /* QRRequestGetUserInfo.m */; };
 		8435E4B21F316BCE00424E5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E4B11F316BCE00424E5E /* main.m */; };
 		8435E4BB1F316BCE00424E5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4B91F316BCE00424E5E /* Main.storyboard */; };
 		8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4BC1F316BCE00424E5E /* Assets.xcassets */; };
@@ -273,6 +274,8 @@
 		842617121F4C53EA00A96EFD /* BankCartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankCartTableViewCell.xib; sourceTree = "<group>"; };
 		842A92EF1F527759001822EF /* UserUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserUtil.h; sourceTree = "<group>"; };
 		842A92F01F527759001822EF /* UserUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserUtil.m; sourceTree = "<group>"; };
+		842A92F21F5290DB001822EF /* QRRequestGetUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestGetUserInfo.h; sourceTree = "<group>"; };
+		842A92F31F5290DB001822EF /* QRRequestGetUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestGetUserInfo.m; sourceTree = "<group>"; };
 		8435E4AD1F316BCE00424E5E /* qulicai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qulicai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8435E4B11F316BCE00424E5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8435E4BA1F316BCE00424E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -997,6 +1000,8 @@
 				8435E6091F3D9AE500424E5E /* QRRequestCertificationLogin.m */,
 				84CE16FF1F512FB300E61C7D /* QRRequestLogin.h */,
 				84CE17001F512FB300E61C7D /* QRRequestLogin.m */,
+				842A92F21F5290DB001822EF /* QRRequestGetUserInfo.h */,
+				842A92F31F5290DB001822EF /* QRRequestGetUserInfo.m */,
 			);
 			path = ApiRequest;
 			sourceTree = "<group>";
@@ -1507,6 +1512,7 @@
 				842616A51F4BD53300A96EFD /* ProductDetailTableViewCell.m in Sources */,
 				8435E5B21F399C1E00424E5E /* CLLockInfoView.m in Sources */,
 				84FEBAE01F4ABF510020B42D /* MainHeadView.m in Sources */,
+				842A92F41F5290DB001822EF /* QRRequestGetUserInfo.m in Sources */,
 				844402881F41B2B000F5AFEE /* UIColor+RGBValues.m in Sources */,
 				8435E5AF1F399C1E00424E5E /* CALayer+Anim.m in Sources */,
 				844402961F41B2B000F5AFEE /* UIViewController+Custom.m in Sources */,

@@ -71,7 +71,6 @@
 }
 
 - (void)login {
-    
     [self.view endEditing:YES];
     if (self.phoneTextField.text.length < 11) {
         self.shakeErrorLabel.text = @"*对不起手机号码有误";
@@ -84,21 +83,39 @@
     request.mobilePhone = self.phoneTextField.text;
     request.password = self.passwordTextField.text;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        [SVProgressHUD dismiss];
         User *user = [User mj_objectWithKeyValues:request.responseJSONObject];
-        NSLog(@"reuqestResult:::::::::%@",request.responseJSONObject);
+        //NSLog(@"reuqestResult:::::::::%@",request.responseJSONObject);
         if (user.statusType == IndentityStatusSuccess) {
-            [self showSuccessWithTitle:@"登录成功"];
-            [UserUtil saving:user];
-            [self dismissViewControllerAnimated:YES
-                                     completion:nil];
+            //获取用户信息
+            QRRequestGetUserInfo *request = [[QRRequestGetUserInfo alloc] init];
+            request.userId = user.userId;
+            [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+                [SVProgressHUD dismiss];
+                User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
+                NSLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
+                if (userInfo.statusType == IndentityStatusSuccess) {
+                    [UserUtil saving:user];
+                    [self showSuccessWithTitle:@"登录成功"];
+                    [self dismissViewControllerAnimated:YES
+                                             completion:nil];
+                } else {
+                    NSString *error = user.desc;
+                    self.errorLabel.text = error;
+                    [self showErrorAlert];
+                }
+            } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+                 NSLog(@"error:- %@", request.error);
+            }];
+            
         } else {
+            [SVProgressHUD dismiss];
             NSString *error = user.desc;
             self.errorLabel.text = error;
             [self showErrorAlert];
         }
         
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
         NSLog(@"error:- %@", request.error);
     }];
 }
