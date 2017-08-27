@@ -207,14 +207,14 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)accountCertify {
-    User *user = [UserUtil currentUser];
-    if(user.cardId.length > 0 && user.authStatusType != AuthenticationStatusFail) {
-        [self showSuccessWithTitle:@"已认证"];
-    } else {
+//    User *user = [UserUtil currentUser];
+//    if(user.cardId.length > 0 && user.authStatusType != AuthenticationStatusFail) {
+//        [self showSuccessWithTitle:@"已认证"];
+//    } else {
         AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
         [self.navigationController pushViewController:accountController
                                              animated:YES];
-    }
+//    }
 }
 
 - (void)bankInfo {

@@ -8,6 +8,10 @@
 
 #import "AccountCertificationViewController.h"
 #import "AddBankCardViewController.h"
+#import "QRRequestNameAuthorware.h"
+#import "UserUtil.h"
+#import "User.h"
+#import "Authorware.h"
 
 @interface AccountCertificationViewController ()
 <UITextViewDelegate>
@@ -80,36 +84,50 @@
 
 - (void)save {
     [self.view endEditing:YES];
+    BOOL isFlag = self.nameLabel.text.length && self.userIdentifyLabel.text.length;
+    if (!isFlag) {
+        return;
+    }
     [self showSVProgressHUD];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [SVProgressHUD dismiss];
-        if (self.userIdentifyLabel.text.length < 5) {
-            self.alertErrorLabel.text = @"身份信息有误";
-            [self showErrorAlert];
-        } else {
-            //下一步操作
-            [self showSuccessWithTitle:@"实名认证成功"];
-            if (self.isProductPush || self.isRechargePush) {
-                AddBankCardViewController *addBankController = [[AddBankCardViewController alloc] init];
-                addBankController.name = self.nameLabel.text;
-                addBankController.identify = self.userIdentifyLabel.text;
-                [self.navigationController pushViewController:addBankController
-                                                     animated:YES];
+        
+        QRRequestNameAuthorware *request = [[QRRequestNameAuthorware alloc] init];
+        request.userId = [UserUtil currentUser].userId;
+        request.userName = self.nameLabel.text;
+        request.idCard = self.userIdentifyLabel.text;
+        
+        [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+            [SVProgressHUD dismiss];
+            Authorware *authorware = [Authorware mj_objectWithKeyValues:request.responseJSONObject];
+            NSLog(@"reuqre:::::%@",request.responseJSONObject);
+            if (authorware.statusType == IndentityStatusSuccess) {
+                [self showSuccessWithTitle:@"实名认证成功"];
+                if (self.isProductPush || self.isRechargePush) {
+                    AddBankCardViewController *addBankController = [[AddBankCardViewController alloc] init];
+                    addBankController.name = self.nameLabel.text;
+                    addBankController.identify = self.userIdentifyLabel.text;
+                    [self.navigationController pushViewController:addBankController
+                                                         animated:YES];
+                } else {
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
+
             } else {
-                [self.navigationController popViewControllerAnimated:YES];
+                self.alertErrorLabel.text = authorware.desc;
+                [self showErrorAlert];
             }
-        }
+        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+            [SVProgressHUD dismiss];
+            NSLog(@"error-::::%@",request.error);
+        }];
     });
 }
 
 #pragma mark - UITextViewDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    BOOL isFlag =
-    self.nameLabel.text.length && self.userIdentifyLabel.text.length;
-    if (textField == self.userIdentifyLabel && isFlag) {
-        [self save];
-    }
+    [self save];
     return YES;
 }
 
