@@ -278,6 +278,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (!indexPath.section) {
         PruductDetailViewController *productController = [[PruductDetailViewController alloc] init];
         productController.hidesBottomBarWhenPushed = YES;
+        productController.pickId = self.product.productId;
         [self.navigationController pushViewController:productController
                                              animated:YES];
     }

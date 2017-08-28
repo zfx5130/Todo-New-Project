@@ -10,6 +10,12 @@
 
 @interface ProductHeadTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *subNameLabel;
+
+
+
 @property (weak, nonatomic) IBOutlet UILabel *yearIncomeLabel;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *sellOutImageViewWidthConstraint;
@@ -17,6 +23,17 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *sellOutImageViewHeightConstraint;
 
 @property (weak, nonatomic) IBOutlet UIImageView *sellOutImageView;
+
+@property (weak, nonatomic) IBOutlet UILabel *periodsDayLabel;
+
+//50起投
+@property (weak, nonatomic) IBOutlet UILabel *lastMoneyLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *balanceLabel;
+
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
+
+@property (weak, nonatomic) IBOutlet UILabel *totalProgressLabel;
 
 
 @end

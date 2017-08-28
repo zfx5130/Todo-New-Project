@@ -22,6 +22,7 @@
 #import "WRNavigationBar.h"
 #import  <MJExtension/MJExtension.h>
 #import <SimpleKeychain/SimpleKeychain.h>
+#import "NSString+Addition.h"
 
 #ifdef DEBUG
 

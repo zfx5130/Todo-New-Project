@@ -30,7 +30,7 @@
     [super awakeFromNib];
     [self initKeyboardObserver];
     self.textField.delegate = self;
-    self.resultLabel.text = @"1320";
+    self.resultLabel.text = @"0";
 }
 
 +(instancetype)creatInputTextView1 {
@@ -88,7 +88,7 @@
 
 - (void)calculateWithText:(NSString *)text {
     CGFloat value = [text floatValue];
-    CGFloat result = value * 0.132;
+    CGFloat result = value * self.rate / 365 * self.periodDay;
     self.resultLabel.text = [NSString stringWithFormat:@"%.2f",result];
 }
 

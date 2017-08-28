@@ -26,7 +26,6 @@
              @"periodDays" : @"packRule.periodDays",
              @"packName" : @"packRule.packName",
              @"limitAmount" : @"packRule.limitAmount",
-             @"statusType" : @"head.status"
              };
 }
 

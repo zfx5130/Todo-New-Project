@@ -254,9 +254,16 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="balanceLabel" destination="w0g-7Q-BgO" id="rKv-3a-h8x"/>
+                <outlet property="lastMoneyLabel" destination="VZM-UM-9Nq" id="QPs-iu-JR3"/>
+                <outlet property="periodsDayLabel" destination="mXG-LH-iHf" id="H8p-mN-k5s"/>
+                <outlet property="productNameLabel" destination="Sjv-nJ-6XG" id="2OS-uZ-cmp"/>
+                <outlet property="progressView" destination="3Gj-V0-6rS" id="O0m-Nl-xJl"/>
                 <outlet property="sellOutImageView" destination="ahx-MX-yVP" id="w3o-8w-s8t"/>
                 <outlet property="sellOutImageViewHeightConstraint" destination="vu9-0k-u05" id="iHM-wV-sj2"/>
                 <outlet property="sellOutImageViewWidthConstraint" destination="BN5-Vj-WpW" id="0ln-HF-d7n"/>
+                <outlet property="subNameLabel" destination="lwm-tE-yE7" id="9Da-yC-UHD"/>
+                <outlet property="totalProgressLabel" destination="3ct-lx-xL0" id="ZIC-7D-o5Z"/>
                 <outlet property="yearIncomeLabel" destination="bXy-rc-tm9" id="fsO-Au-IEq"/>
             </connections>
             <point key="canvasLocation" x="25.5" y="43.5"/>

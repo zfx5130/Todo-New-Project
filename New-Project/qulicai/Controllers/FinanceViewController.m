@@ -273,10 +273,10 @@ heightForHeaderInSection:(NSInteger)section {
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    BOOL isSellOut = !indexPath.section ? NO : YES;
+    Product *product = self.productArray[indexPath.section];
     PruductDetailViewController *productController = [[PruductDetailViewController alloc] init];
+    productController.pickId = product.productId;
     productController.hidesBottomBarWhenPushed = YES;
-    productController.isSellOut = isSellOut;
     [self.navigationController pushViewController:productController
                                          animated:YES];
 }

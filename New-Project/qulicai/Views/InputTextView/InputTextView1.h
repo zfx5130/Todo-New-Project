@@ -23,6 +23,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *descPeriodDayLabel;
+
+@property (assign, nonatomic) NSInteger periodDay;
+
+@property (assign, nonatomic) CGFloat rate;
+
 +(instancetype)creatInputTextView1;
 
 -(void)show;

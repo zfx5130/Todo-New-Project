@@ -15,6 +15,9 @@
 #import "ProductInformationController.h"
 #import "ProductBuyViewController.h"
 #import "LoginViewController.h"
+#import "QRRequestHeader.h"
+#import "ProductDetail.h"
+#import "ProductBody.h"
 
 #define NAVBAR_COLORCHANGE_POINT (IMAGE_HEIGHT - NAV_HEIGHT*2)
 #define IMAGE_HEIGHT 220
@@ -32,6 +35,10 @@ InputTextView1Delgate>
 //是否第一次充值
 @property (assign, nonatomic) BOOL isFirstCharge;
 
+@property (assign, nonatomic) BOOL isSellOut;
+
+@property (strong, nonatomic) ProductDetail *productDetail;
+
 @end
 
 @implementation PruductDetailViewController
@@ -42,6 +49,7 @@ InputTextView1Delgate>
     [super viewDidLoad];
     [self registerCell];
     [self setupViews];
+    [self requestProductDetail];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -57,6 +65,30 @@ InputTextView1Delgate>
 }
 
 #pragma mark - Private
+
+- (void)requestProductDetail {
+    [self showSVProgressHUD];
+    QRRequestProductDetail *request = [[QRRequestProductDetail alloc] init];
+    request.packId = self.pickId;
+    
+    __weak typeof(self) weakSelf = self;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        ProductBody *productBody = [ProductBody mj_objectWithKeyValues:request.responseJSONObject];
+        if (productBody.statusType == IndentityStatusSuccess) {
+            SLog(@"reuqe::++++::::%@",request.responseJSONObject);
+            weakSelf.productDetail = [productBody.productBody firstObject];
+            [weakSelf.tableView reloadData];
+        } else {
+            [weakSelf showErrorWithTitle:@"请求失败"];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        }
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        [weakSelf showErrorWithTitle:@"请求失败"];
+        [weakSelf.navigationController popViewControllerAnimated:YES];
+    }];
+}
 
 - (void)registerCell {
     UINib *infoNib = [UINib nibWithNibName:NSStringFromClass([ProductHeadTableViewCell class])
@@ -103,22 +135,42 @@ InputTextView1Delgate>
     if (!indexPath.section) {
         ProductHeadTableViewCell *cell =
         [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductHeadTableViewCell class])];
+        CGFloat rate = self.productDetail.interestRate * 100;
+        CGFloat actRate = self.productDetail.activityRate * 100;
+        cell.yearIncomeLabel.text = [NSString stringWithFormat:@"%.1f%%+%.1f%%", rate, actRate];
         NSMutableAttributedString *numText=
         [[NSMutableAttributedString alloc]initWithString:cell.yearIncomeLabel.text
                                               attributes:nil];
-        [numText addAttribute:NSFontAttributeName
-                        value:[UIFont systemFontOfSize:14.0f]
-                        range:NSMakeRange(4, 2)];
+        if (rate < 10 && cell.yearIncomeLabel.text.length > 6) {
+            [numText addAttribute:NSFontAttributeName
+                            value:[UIFont systemFontOfSize:14.0f]
+                            range:NSMakeRange(3, 2)];
+        } else {
+            [numText addAttribute:NSFontAttributeName
+                            value:[UIFont systemFontOfSize:14.0f]
+                            range:NSMakeRange(4, 2)];
+        }
         [numText addAttribute:NSFontAttributeName
                         value:[UIFont systemFontOfSize:14.0f]
                         range:NSMakeRange(cell.yearIncomeLabel.text.length - 1, 1)];
         cell.yearIncomeLabel.attributedText = numText;
-        cell.sellOutImageView.hidden = !self.isSellOut;
+        BOOL isSellOut = self.productDetail.residualAmount > 0 ? NO : YES;
+        cell.sellOutImageView.hidden = !isSellOut;
+
+        cell.productNameLabel.text = [NSString stringWithFormat:@"%@",[NSString getStringWithString:self.productDetail.productName]];
+        cell.subNameLabel.text = [NSString stringWithFormat:@"%@",[NSString getStringWithString:self.productDetail.subName]];
+        cell.lastMoneyLabel.text = [NSString stringWithFormat:@"%@起投", [NSString getStringWithString:self.productDetail.limitAmount]];
+        cell.periodsDayLabel.text = [NSString stringWithFormat:@"%@天期限", [NSString getStringWithString:self.productDetail.periods]];
+        
+        cell.progressView.progress = self.productDetail.residualAmount * 1.0f / self.productDetail.totalAmount;
+        cell.balanceLabel.text = [NSString stringWithFormat:@"剩余%@",@(self.productDetail.residualAmount)];
+        cell.totalProgressLabel.text = [NSString stringWithFormat:@"%@/%@",@(self.productDetail.residualAmount), @(self.productDetail.totalAmount)];
+        
         return cell;
     } else if (indexPath.section == 1) {
-    ProductCycleTableViewCell *cell =
-    [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductCycleTableViewCell class])];
-    return cell;
+        ProductCycleTableViewCell *cell =
+        [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductCycleTableViewCell class])];
+        return cell;
     }
     ProductDetailTableViewCell *cell =
     [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductDetailTableViewCell class])];
@@ -187,6 +239,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 - (IBAction)calculate:(UIButton *)sender {
     InputTextView1 *input = [InputTextView1 creatInputTextView1];
     input.delegate = self;
+    input.periodDay = [self.productDetail.periods integerValue];
+    CGFloat rate = self.productDetail.activityRate + self.productDetail.interestRate;
+    input.rate  = rate;
     [input show];
 }
 

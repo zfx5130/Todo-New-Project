@@ -98,6 +98,7 @@
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="descPeriodDayLabel" destination="7Xh-PD-Eey" id="IRY-4a-p3z"/>
                 <outlet property="publishBtn" destination="0Oc-Wu-yjl" id="LBd-v0-JhY"/>
                 <outlet property="resultLabel" destination="kge-bI-QgV" id="qD6-rb-XBI"/>
                 <outlet property="textField" destination="pVD-1s-CD2" id="XX8-I4-ozJ"/>

@@ -10,6 +10,6 @@
 
 @interface PruductDetailViewController : UIViewController
 
-@property (assign, nonatomic) BOOL isSellOut;
+@property (copy, nonatomic) NSString *pickId;
 
 @end
