@@ -70,10 +70,10 @@ UICollectionViewDelegate>
     incomeController.productDetail = self.productDetail;
     [self addChildViewController:incomeController];
     
-    
-    ProductRecordViewController *threeVc = [[ProductRecordViewController alloc] init];
-    threeVc.title = @"投资记录";
-    [self addChildViewController:threeVc];
+    ProductRecordViewController *recordController = [[ProductRecordViewController alloc] init];
+    recordController.title = @"投资记录";
+    recordController.productDetail = self.productDetail;
+    [self addChildViewController:recordController];
     
     ProductBackMoneyViewController *fourVc = [[ProductBackMoneyViewController alloc] init];
     fourVc.title = @"回款计划";

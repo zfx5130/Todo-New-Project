@@ -23,5 +23,6 @@
 #import "QRRequestProductList.h"
 #import "QRRequestProductDetail.h"
 #import "QRRequestProductMarkList.h"
+#import "QRRequestProductPackList.h"
 
 #endif /* QRRequestHeader_h */

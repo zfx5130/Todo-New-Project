@@ -10,6 +10,8 @@
 #import "ProductIncomeTableViewCell.h"
 #import "UIScrollView+Custom.h"
 #import "QRRequestHeader.h"
+#import "MaskList.h"
+#import "ProductMask.h"
 
 @interface ProductIncomeViewController ()
 <UITableViewDataSource,
@@ -76,33 +78,30 @@ UITableViewDelegate>
     QRRequestProductMarkList *request = [[QRRequestProductMarkList alloc] init];
     request.pageIndex = [NSString stringWithFormat:@"%@",@(self.currentPage)];
     request.pageSize = [NSString stringWithFormat:@"%@",@(self.limit)];
-    NSLog(@":::______::::%@",self.productDetail.packRuleId);
     request.packId = self.productDetail.packRuleId;
     __weak typeof(self) weakSelf = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [weakSelf.tableView.mj_header endRefreshing];
         [weakSelf.tableView.mj_footer endRefreshing];
         SLog(@"------%@",request.responseJSONObject);
-//        ProductList *productList = [ProductList mj_objectWithKeyValues:request.responseJSONObject];
-//        if (productList.statusType == IndentityStatusSuccess) {
-//            SLog(@"------%@",request.responseJSONObject);
-//            // NSLog(@"count:::::%@",@(productList.products.count));
-//            if (weakSelf.currentPage == 1) {
-//                weakSelf.productArray = [NSMutableArray arrayWithArray:productList.products];
-//            } else {
-//                [weakSelf.productArray addObjectsFromArray:[productList.products copy]];
-//            }
-//            
-//            if ([productList.products count]) {
-//                weakSelf.currentPage += 1;
-//            } else {
-//                [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
-//            }
-//            [weakSelf renderProductInfo];
-//        
-//        } else {
-//            [self showErrorWithTitle:@"请求失败"];
-//        }
+        MaskList *maskList = [MaskList mj_objectWithKeyValues:request.responseJSONObject];
+        if (maskList.statusType == IndentityStatusSuccess) {
+            // NSLog(@"count:::::%@",@(productList.products.count));
+            if (weakSelf.currentPage == 1) {
+                weakSelf.maskArray = [NSMutableArray arrayWithArray:maskList.masks];
+            } else {
+                [weakSelf.maskArray addObjectsFromArray:[maskList.masks copy]];
+            }
+            
+            if ([maskList.masks count]) {
+                weakSelf.currentPage += 1;
+            } else {
+                [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
+            }
+            [weakSelf renderProductInfo];
+        } else {
+            [self showErrorWithTitle:@"请求失败"];
+        }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         [self showErrorWithTitle:@"网络请求错误"];
     }];
@@ -111,7 +110,6 @@ UITableViewDelegate>
 - (void)renderProductInfo {
     [self.tableView reloadData];
 }
-
 
 - (void)registerCell {
     UINib *infoNib = [UINib nibWithNibName:NSStringFromClass([ProductIncomeTableViewCell class])
@@ -134,7 +132,7 @@ UITableViewDelegate>
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    return 8;
+    return [self.maskArray count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -143,7 +141,23 @@ UITableViewDelegate>
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ProductIncomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductIncomeTableViewCell class])];
+    ProductIncomeTableViewCell *cell =
+    [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductIncomeTableViewCell class])];
+    ProductMask *mask = self.maskArray[indexPath.row];
+    
+    cell.nameLabel.text =
+    [NSString getStringWithString:[NSString stringWithFormat:@"%@",mask.userName]];
+    cell.moneyLabel.text = [NSString stringWithFormat:@"%@",@(mask.amount)];
+    
+    NSString *cardId = [NSString stringWithFormat:@"%@",[NSString getStringWithString:mask.userCardId]];
+    cell.indentifyLabel.text = cardId;
+    if (cardId.length >= 14) {
+        NSString *str = [NSString replaceStrWithRange:NSMakeRange(4, 10)
+                                               string:cardId
+                                           withString:@"*******"];
+        cell.indentifyLabel.text = str;
+    }
+    
     return cell;
 }
 

@@ -8,7 +8,7 @@
 
 #import "BaseModel.h"
 
-@interface ProductDetail : BaseModel
+@interface ProductDetail : NSObject
 
 //灵活利率
 @property (assign, nonatomic) CGFloat activityRate;

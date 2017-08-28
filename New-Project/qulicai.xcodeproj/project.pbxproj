@@ -211,6 +211,11 @@
 		84FEBAE01F4ABF510020B42D /* MainHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBADF1F4ABF510020B42D /* MainHeadView.m */; };
 		84FEBAE21F4ABF630020B42D /* MainHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FEBAE11F4ABF630020B42D /* MainHeadView.xib */; };
 		CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */; };
+		CE30A3D21F5469A900FB7763 /* ProductMask.m in Sources */ = {isa = PBXBuildFile; fileRef = CE30A3D11F5469A900FB7763 /* ProductMask.m */; };
+		CE30A3D51F546A5900FB7763 /* MaskList.m in Sources */ = {isa = PBXBuildFile; fileRef = CE30A3D41F546A5900FB7763 /* MaskList.m */; };
+		CE30A3D81F5478F600FB7763 /* QRRequestProductPackList.m in Sources */ = {isa = PBXBuildFile; fileRef = CE30A3D71F5478F600FB7763 /* QRRequestProductPackList.m */; };
+		CE30A3DB1F547AEE00FB7763 /* PackList.m in Sources */ = {isa = PBXBuildFile; fileRef = CE30A3DA1F547AEE00FB7763 /* PackList.m */; };
+		CE30A3DE1F547B0100FB7763 /* ProductPack.m in Sources */ = {isa = PBXBuildFile; fileRef = CE30A3DD1F547B0100FB7763 /* ProductPack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -586,6 +591,16 @@
 		84FEBADF1F4ABF510020B42D /* MainHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainHeadView.m; sourceTree = "<group>"; };
 		84FEBAE11F4ABF630020B42D /* MainHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainHeadView.xib; sourceTree = "<group>"; };
 		ABE7D3238FBC3E3D00EEEB5E /* libPods-qulicai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qulicai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE30A3D01F5469A900FB7763 /* ProductMask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductMask.h; sourceTree = "<group>"; };
+		CE30A3D11F5469A900FB7763 /* ProductMask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductMask.m; sourceTree = "<group>"; };
+		CE30A3D31F546A5900FB7763 /* MaskList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaskList.h; sourceTree = "<group>"; };
+		CE30A3D41F546A5900FB7763 /* MaskList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaskList.m; sourceTree = "<group>"; };
+		CE30A3D61F5478F600FB7763 /* QRRequestProductPackList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestProductPackList.h; sourceTree = "<group>"; };
+		CE30A3D71F5478F600FB7763 /* QRRequestProductPackList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestProductPackList.m; sourceTree = "<group>"; };
+		CE30A3D91F547AEE00FB7763 /* PackList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackList.h; sourceTree = "<group>"; };
+		CE30A3DA1F547AEE00FB7763 /* PackList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackList.m; sourceTree = "<group>"; };
+		CE30A3DC1F547B0100FB7763 /* ProductPack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductPack.h; sourceTree = "<group>"; };
+		CE30A3DD1F547B0100FB7763 /* ProductPack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductPack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -911,6 +926,14 @@
 				842A932F1F541ED8001822EF /* ProductDetail.m */,
 				842A93311F543215001822EF /* ProductBody.h */,
 				842A93321F543215001822EF /* ProductBody.m */,
+				CE30A3D01F5469A900FB7763 /* ProductMask.h */,
+				CE30A3D11F5469A900FB7763 /* ProductMask.m */,
+				CE30A3D31F546A5900FB7763 /* MaskList.h */,
+				CE30A3D41F546A5900FB7763 /* MaskList.m */,
+				CE30A3D91F547AEE00FB7763 /* PackList.h */,
+				CE30A3DA1F547AEE00FB7763 /* PackList.m */,
+				CE30A3DC1F547B0100FB7763 /* ProductPack.h */,
+				CE30A3DD1F547B0100FB7763 /* ProductPack.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1112,6 +1135,8 @@
 				842A932C1F541E07001822EF /* QRRequestProductDetail.m */,
 				842A93371F544AAA001822EF /* QRRequestProductMarkList.h */,
 				842A93381F544AAA001822EF /* QRRequestProductMarkList.m */,
+				CE30A3D61F5478F600FB7763 /* QRRequestProductPackList.h */,
+				CE30A3D71F5478F600FB7763 /* QRRequestProductPackList.m */,
 			);
 			path = ApiRequest;
 			sourceTree = "<group>";
@@ -1622,6 +1647,7 @@
 				842616A51F4BD53300A96EFD /* ProductDetailTableViewCell.m in Sources */,
 				8435E5B21F399C1E00424E5E /* CLLockInfoView.m in Sources */,
 				84FEBAE01F4ABF510020B42D /* MainHeadView.m in Sources */,
+				CE30A3DE1F547B0100FB7763 /* ProductPack.m in Sources */,
 				842A92F71F52A3F9001822EF /* QRRequestUserAvatar.m in Sources */,
 				842A92FA1F52B6F7001822EF /* QRRequestNameAuthorware.m in Sources */,
 				842A92F41F5290DB001822EF /* QRRequestGetUserInfo.m in Sources */,
@@ -1631,6 +1657,7 @@
 				844402961F41B2B000F5AFEE /* UIViewController+Custom.m in Sources */,
 				844402AF1F43F9F600F5AFEE /* ResetPasswordViewController.m in Sources */,
 				842616901F4B00A700A96EFD /* CustomerViewController.m in Sources */,
+				CE30A3D51F546A5900FB7763 /* MaskList.m in Sources */,
 				8435E6031F3D885200424E5E /* QRRequest.m in Sources */,
 				8426170E1F4C4F6700A96EFD /* BankCardSelectedViewController.m in Sources */,
 				8435E5BF1F399C6C00424E5E /* NSString+File.m in Sources */,
@@ -1680,6 +1707,7 @@
 				8444028B1F41B2B000F5AFEE /* UIImage+Custom.m in Sources */,
 				842616FA1F4C17BA00A96EFD /* ProductIncomeTableViewCell.m in Sources */,
 				844402B81F441DB200F5AFEE /* MineTableViewController.m in Sources */,
+				CE30A3DB1F547AEE00FB7763 /* PackList.m in Sources */,
 				842A92F11F527759001822EF /* UserUtil.m in Sources */,
 				8444024A1F41A0E700F5AFEE /* LoginViewController.m in Sources */,
 				84FEBA961F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
@@ -1702,7 +1730,9 @@
 				842617091F4C324B00A96EFD /* AddBankCardViewController.m in Sources */,
 				844402461F418F1400F5AFEE /* QRTabbarController.m in Sources */,
 				844FB85F1F4ECE65001772AF /* PropertyPickupViewController.m in Sources */,
+				CE30A3D81F5478F600FB7763 /* QRRequestProductPackList.m in Sources */,
 				844402851F41B2B000F5AFEE /* NSString+Custom.m in Sources */,
+				CE30A3D21F5469A900FB7763 /* ProductMask.m in Sources */,
 				844FB8121F4D6496001772AF /* IncomeTableViewCell.m in Sources */,
 				84DCF3571F4EE58E002F117A /* JCRBlurView.m in Sources */,
 				842A93361F5443E1001822EF /* NSString+Addition.m in Sources */,

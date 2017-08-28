@@ -10,4 +10,10 @@
 
 @interface ProductRecordTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *addTimeLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
+
 @end
