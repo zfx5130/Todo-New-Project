@@ -115,6 +115,7 @@
     
     ResetPasswordViewController *resetController = [[ResetPasswordViewController alloc] init];
     resetController.phone = self.phoneTextField.text;
+    resetController.isTradingPw = self.isTradingPw;
     [self.navigationController pushViewController:resetController
                                          animated:YES];
     

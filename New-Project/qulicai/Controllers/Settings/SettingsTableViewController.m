@@ -62,7 +62,7 @@
     __weak typeof(self) weakSelf = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
-        NSLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
+        //NSLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
         if (userInfo.statusType == IndentityStatusSuccess) {
             [UserUtil saving:userInfo];
             [weakSelf reloadUI];
@@ -94,9 +94,11 @@
     } else {
         idCardNum = @"未认证";
     }
+    NSLog(@"___________:::::::::::%@",user.headPortrait);
     self.authenticationLabel.text = idCardNum;
     self.avatarImageView.image =
-    ![UIImage Base64StrToUIImage:user.headPortrait] ? [UIImage imageNamed:@"me_head_image"] : [UIImage Base64StrToUIImage:user.headPortrait];
+    ![UIImage dataURL2Image:user.headPortrait] ? [UIImage imageNamed:@"me_head_image"] : [UIImage dataURL2Image:user.headPortrait];
+
 }
 
 #pragma mark - TableViewDataSource
@@ -262,22 +264,21 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     __weak typeof(self) weakSelf = self;
     self.imagePicker.pickerBlock = ^(UIImage *image) {
         UIImage *smallImage = [UIImage drawWithWithImage:image
-                                                   width:60.0f
-                                                  height:60.0f];
-        NSString *imageString = [NSString UIImageToBase64Str:smallImage];
-        NSLog(@"lenth:::::%@",@(imageString.length));
+                                                   width:100.0f
+                                                  height:100.0f];
+        NSString *imageString = [NSString image2DataURL:smallImage];
+        //NSLog(@"lenth:::::%@",@(imageString.length));
         [weakSelf showSVProgressHUD];
         QRRequestUserAvatar *request = [[QRRequestUserAvatar alloc] init];
         request.userId = [UserUtil currentUser].userId;
         request.headPortrait = imageString;
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-            NSInteger status = [request.responseJSONObject[@"head"][@"status"] integerValue];
-            NSLog(@"requestResult::::::%@",request.responseJSONObject);
             [SVProgressHUD dismiss];
+            NSInteger status = [request.responseJSONObject[@"head"][@"status"] integerValue];
+            //NSLog(@"requestResult::::::%@",request.responseJSONObject);
             if (!status) {
+                [weakSelf updateUserInfo];
                 [weakSelf showSuccessWithTitle:@"头像修改成功"];
-                [UserUtil currentUser].headPortrait = imageString;
-                [weakSelf.tableView reloadData];
             } else {
                 [weakSelf showErrorWithTitle:@"头像修改失败"];
             }

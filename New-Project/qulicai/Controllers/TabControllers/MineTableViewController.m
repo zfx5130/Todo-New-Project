@@ -84,7 +84,7 @@
         self.userAccountLabel.text = str;
     }
      self.avatarImageView.image =
-    ![UIImage Base64StrToUIImage:user.headPortrait] ? [UIImage imageNamed:@"me_head_image"] : [UIImage Base64StrToUIImage:user.headPortrait];
+    ![UIImage dataURL2Image:user.headPortrait] ? [UIImage imageNamed:@"me_head_image"] : [UIImage dataURL2Image:user.headPortrait];
 }
 
 - (void)setupView {

@@ -42,4 +42,5 @@ typedef void(^ImageBlock)(UIImage *image, NSError *error);
 
 + (UIImage *)scaleImage:(UIImage *)image toKb:(NSInteger)kb;
 
++ (UIImage *)dataURL2Image:(NSString *)imgSrc;
 @end

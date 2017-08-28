@@ -58,5 +58,6 @@
 
 + (NSString *)UIImageToBase64Str:(UIImage *)image;
 
++ (NSString *)image2DataURL:(UIImage *)image;
 
 @end

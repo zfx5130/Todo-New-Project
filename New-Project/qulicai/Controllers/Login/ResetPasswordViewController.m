@@ -102,7 +102,7 @@
             SettingTransPassword *transPassword = [SettingTransPassword mj_objectWithKeyValues:request.responseJSONObject];
             if (transPassword.statusType == IndentityStatusSuccess) {
                 //设置交易密码跳转
-                [weakSelf showSuccessWithTitle:@"密码设置成功"];
+                [weakSelf showSuccessWithTitle:@"交易密码设置成功"];
                 for( UIViewController *controller in self.navigationController.viewControllers ) {
                     if( [controller isKindOfClass:[SettingsTableViewController class]] ) {
                         [self.navigationController popToViewController:controller animated:YES];
@@ -129,7 +129,7 @@
             NSLog(@"resulr:设置登录密码___::::%@",request.responseJSONObject);
             FindLoginPassword *findPassword = [FindLoginPassword mj_objectWithKeyValues:request.responseJSONObject];
             if (findPassword.statusType == IndentityStatusSuccess) {
-                [weakSelf showSuccessWithTitle:@"密码设置成功"];
+                [weakSelf showSuccessWithTitle:@"登录密码设置成功"];
                 for( UIViewController *controller in self.navigationController.viewControllers ) {
                     if( [controller isKindOfClass:[SettingsTableViewController class]] ) {
                         [self.navigationController popToViewController:controller animated:YES];

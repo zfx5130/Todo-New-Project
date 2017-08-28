@@ -73,13 +73,13 @@ UITableViewDataSource>
 }
 
 - (void)updateUserInfo {
-    if ([UserUtil isLoginIn]) {        
+    if ([UserUtil isLoginIn]) {
         QRRequestGetUserInfo *request = [[QRRequestGetUserInfo alloc] init];
         request.userId = [UserUtil currentUser].userId;
         __weak typeof(self) weakSelf = self;
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
-            NSLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
+           // SLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
             if (userInfo.statusType == IndentityStatusSuccess) {
                 [UserUtil saving:userInfo];
                 [weakSelf reloadUI];

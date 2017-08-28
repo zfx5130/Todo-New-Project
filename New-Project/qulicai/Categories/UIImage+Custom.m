@@ -194,4 +194,11 @@
     return compressedImage;
 }
 
++ (UIImage *)dataURL2Image:(NSString *)imgSrc {
+    NSURL *url = [NSURL URLWithString: imgSrc];
+    NSData *data = [NSData dataWithContentsOfURL: url];
+    UIImage *image = [UIImage imageWithData: data];
+    return image;
+}
+
 @end

@@ -62,6 +62,7 @@
 		842A93151F52E439001822EF /* FindLoginPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A93141F52E439001822EF /* FindLoginPassword.m */; };
 		842A93181F53C38D001822EF /* QRRequestSetingTranPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A93171F53C38D001822EF /* QRRequestSetingTranPassword.m */; };
 		842A931B1F53C40D001822EF /* SettingTransPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A931A1F53C40D001822EF /* SettingTransPassword.m */; };
+		842A931E1F53D8E8001822EF /* QRRequestProductList.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A931D1F53D8E8001822EF /* QRRequestProductList.m */; };
 		8435E4B21F316BCE00424E5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E4B11F316BCE00424E5E /* main.m */; };
 		8435E4BB1F316BCE00424E5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4B91F316BCE00424E5E /* Main.storyboard */; };
 		8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4BC1F316BCE00424E5E /* Assets.xcassets */; };
@@ -315,6 +316,8 @@
 		842A93171F53C38D001822EF /* QRRequestSetingTranPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestSetingTranPassword.m; sourceTree = "<group>"; };
 		842A93191F53C40D001822EF /* SettingTransPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTransPassword.h; sourceTree = "<group>"; };
 		842A931A1F53C40D001822EF /* SettingTransPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTransPassword.m; sourceTree = "<group>"; };
+		842A931C1F53D8E8001822EF /* QRRequestProductList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestProductList.h; sourceTree = "<group>"; };
+		842A931D1F53D8E8001822EF /* QRRequestProductList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestProductList.m; sourceTree = "<group>"; };
 		8435E4AD1F316BCE00424E5E /* qulicai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qulicai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8435E4B11F316BCE00424E5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8435E4BA1F316BCE00424E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1067,6 +1070,8 @@
 				842A93111F52E3BF001822EF /* QRRequestFindLoginPassword.m */,
 				842A93161F53C38D001822EF /* QRRequestSetingTranPassword.h */,
 				842A93171F53C38D001822EF /* QRRequestSetingTranPassword.m */,
+				842A931C1F53D8E8001822EF /* QRRequestProductList.h */,
+				842A931D1F53D8E8001822EF /* QRRequestProductList.m */,
 			);
 			path = ApiRequest;
 			sourceTree = "<group>";
@@ -1623,6 +1628,7 @@
 				8435E5931F399BFA00424E5E /* TDTouchID.m in Sources */,
 				842A92FD1F52B8FE001822EF /* Authorware.m in Sources */,
 				8435E5AD1F399C1E00424E5E /* CLLockVC.m in Sources */,
+				842A931E1F53D8E8001822EF /* QRRequestProductList.m in Sources */,
 				842A93121F52E3BF001822EF /* QRRequestFindLoginPassword.m in Sources */,
 				84DCF35B1F4F08F7002F117A /* PropertyIncomeViewController.m in Sources */,
 				842A93091F52D4F8001822EF /* UpdateTransactionPassword.m in Sources */,
