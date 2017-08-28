@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProductDetail.h"
 
 @interface ProductBackMoneyViewController : UIViewController
+
+@property (strong, nonatomic) ProductDetail *productDetail;
 
 @end

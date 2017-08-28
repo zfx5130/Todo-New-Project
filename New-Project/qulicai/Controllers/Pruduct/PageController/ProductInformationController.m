@@ -75,9 +75,9 @@ UICollectionViewDelegate>
     recordController.productDetail = self.productDetail;
     [self addChildViewController:recordController];
     
-    ProductBackMoneyViewController *fourVc = [[ProductBackMoneyViewController alloc] init];
-    fourVc.title = @"回款计划";
-    [self addChildViewController:fourVc];
+    ProductBackMoneyViewController *backMoneyController = [[ProductBackMoneyViewController alloc] init];
+    backMoneyController.title = @"回款计划";
+    [self addChildViewController:backMoneyController];
 }
 
 #pragma mark - 设置导航条内容
