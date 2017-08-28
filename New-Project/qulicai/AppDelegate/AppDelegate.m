@@ -26,7 +26,6 @@
     [self configQRNetwork];
     [self setNavBarAppearence];
     [self certificateApi];
-    UserDefaultsSet(@"isIdentity", @"NO");
     return YES;
 }
 

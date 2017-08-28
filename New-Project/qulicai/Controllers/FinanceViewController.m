@@ -141,6 +141,7 @@ UITableViewDataSource>
                  forControlEvents:UIControlEventTouchUpInside];
     }
     
+    cell.yearSaleLabel.text = @"8.6%+0.5%";
     NSMutableAttributedString *numText=
     [[NSMutableAttributedString alloc]initWithString:cell.yearSaleLabel.text
                                                                              attributes:nil];

@@ -22,6 +22,8 @@
 #import "QRRequestHeader.h"
 #import "UserUtil.h"
 #import "User.h"
+#import "ProductList.h"
+#import "Product.h"
 
 #define NAVBAR_COLORCHANGE_POINT (-IMAGE_HEIGHT + NAV_HEIGHT*2)
 #define NAV_HEIGHT 64
@@ -37,6 +39,8 @@ UITableViewDataSource>
 
 @property (strong, nonatomic) MainHeadView *headView;
 
+@property (strong, nonatomic) Product *product;
+
 @end
 
 @implementation MainViewController
@@ -49,12 +53,13 @@ UITableViewDataSource>
     [self wr_setNavBarBackgroundAlpha:0];
     [self setupTableHeadView];
     [self setupNavigationItemLeft:[UIImage imageNamed:@""]];
+    [self reloadUI];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self reloadUI];
     [self updateUserInfo];
+    [self requestProduct];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,13 +68,33 @@ UITableViewDataSource>
 
 #pragma mark - Priavte
 
+- (void)requestProduct {
+    QRRequestProductList *request = [[QRRequestProductList alloc] init];
+    __weak typeof(self) weakSelf = self;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        ProductList *productList = [ProductList mj_objectWithKeyValues:request.responseJSONObject];
+        if (productList.statusType == IndentityStatusSuccess) {
+            weakSelf.product = [productList.products firstObject];
+            NSLog(@"------%@",request.responseJSONObject);
+            [weakSelf renderProductInfo];
+        } else {
+            [self showErrorWithTitle:@"请求失败"];
+        }
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [self showErrorWithTitle:@"网络请求错误"];
+    }];
+}
+
+- (void)renderProductInfo {
+    [self.tableView reloadData];
+}
+
 - (void)reloadUI {
     User *user = [UserUtil currentUser];
     BOOL isLogin = [UserUtil isLoginIn];
     self.headView.pickTagImageView.hidden = !isLogin;
     self.headView.allMoneyLabel.text = isLogin ? [NSString stringWithFormat:@"%.2f",user.totalMoney] : @"0.0";
     self.headView.yesterdayEarningLabel.text = isLogin ? [NSString stringWithFormat:@"%.2f",user.dailyEarnings] : @"0.0";
-    [self.tableView reloadData];
 }
 
 - (void)updateUserInfo {
@@ -79,7 +104,7 @@ UITableViewDataSource>
         __weak typeof(self) weakSelf = self;
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
-           // SLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
+            //NSLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
             if (userInfo.statusType == IndentityStatusSuccess) {
                 [UserUtil saving:userInfo];
                 [weakSelf reloadUI];
@@ -136,20 +161,52 @@ UITableViewDataSource>
     if (!indexPath.section) {
         NewUserBuyTableViewCell *cell =
         [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([NewUserBuyTableViewCell class])];
-        cell.sellOutImageView.hidden = YES;
         [cell.buyButton addTarget:self
                            action:@selector(buyButtonWasPressed:)
                  forControlEvents:UIControlEventTouchUpInside];
+        
+        CGFloat rate = self.product.interestRate * 100;
+        CGFloat actRate = self.product.activityRate * 100;
+        cell.yearSaleLabel.text = [NSString stringWithFormat:@"%.1f%%+%.1f%%", rate, actRate];
         NSMutableAttributedString *numText=
         [[NSMutableAttributedString alloc]initWithString:cell.yearSaleLabel.text
                                               attributes:nil];
-        [numText addAttribute:NSFontAttributeName
-                        value:[UIFont systemFontOfSize:14.0f]
-                        range:NSMakeRange(4, 2)];
+        if (rate < 10 && cell.yearSaleLabel.text.length > 6) {
+            [numText addAttribute:NSFontAttributeName
+                            value:[UIFont systemFontOfSize:14.0f]
+                            range:NSMakeRange(3, 2)];
+        } else {
+            [numText addAttribute:NSFontAttributeName
+                            value:[UIFont systemFontOfSize:14.0f]
+                            range:NSMakeRange(4, 2)];
+        }
         [numText addAttribute:NSFontAttributeName
                         value:[UIFont systemFontOfSize:14.0f]
                         range:NSMakeRange(cell.yearSaleLabel.text.length - 1, 1)];
         cell.yearSaleLabel.attributedText = numText;
+        
+        cell.deadlineLabel.text = self.product.periods;
+        cell.productTagLabel.text = cell.yearSaleLabel.text;
+        cell.balanceLabel.text = [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%@",@(self.product.residualAmount)]];
+        cell.productNameLabel.text = [NSString stringWithFormat:@"%@", self.product.productName];
+        cell.progressView.progress = self.product.residualAmount * 1.0 / self.product.totalAmount;
+        
+        BOOL isSellOut = self.product.residualAmount > 0 ? NO : YES;
+        cell.sellOutImageView.hidden = !isSellOut ;
+        cell.buyButton.hidden = isSellOut;
+        cell.bottomViewHeightConstraint.constant = !isSellOut ? 50.0f : 0.0f;
+        
+        cell.progressView.progressTintColor = !isSellOut ? RGBColor(247.0f, 97.0f, 34.0f) : RGBColor(221.0f, 221.0f, 221.0f);
+        cell.progressView.progress = !isSellOut ? 0.8f : 1.0f;
+        cell.sellOutImageView.hidden = !isSellOut;
+        cell.yearSaleLabel.textColor =
+       !isSellOut ? RGBColor(242.0f, 89.0f, 47.0f) : RGBColor(153.0f, 153.0f, 153.0f);
+        cell.productNameLabel.textColor = !isSellOut ? RGBColor(51.0f, 51.0f, 51.0f) : RGBColor(153.0f, 153.0f, 153.0f);
+        
+        cell.productTagImageView.image = !isSellOut ? [UIImage imageNamed:@"fininace_tag_bg_image"] : [UIImage imageNamed:@"fininace_tag_end_bg_image"];
+        cell.deadlineLabel.textColor = !isSellOut ? RGBColor(102.0f, 102.0f, 102.0f) : RGBColor(153.0f, 153.0f, 153.0f);
+        cell.balanceLabel.textColor = !isSellOut ? RGBColor(102.0f, 102.0f, 102.0f) : RGBColor(153.0f, 153.0f, 153.0f);
+        
         return cell;
     }
     QRInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QRInfoTableViewCell class])];
@@ -164,7 +221,6 @@ UITableViewDataSource>
               forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
-
 
 #pragma mark - UITableViewDelegate
 
@@ -192,7 +248,11 @@ UITableViewDataSource>
 
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return !indexPath.section ? 210.0f : 150.0f;
+    CGFloat height = 150.0f;
+    if (!indexPath.section) {
+        height = self.product.residualAmount > 0 ? 210.0f : 160.0f;
+    }
+    return height;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView
