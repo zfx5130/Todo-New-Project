@@ -7,63 +7,99 @@
 //
 
 #import "UIScrollView+Custom.h"
+#import "UIColor+Custom.h"
 
 @implementation UIScrollView (Custom)
 
-- (void)addHeaderRefreshControlWithTarget:(id)target
-                                 selector:(SEL)selector {
-    [self addHeaderControlWithIdleTitle:NSLocalizedString(@"REFRESH_TOP_PULL_TO_REFRESH", nil)
-                                 target:target
-                               selector:selector];
-}
 
-- (void)addHeaderLoadingMoreControlWithTarget:(id)target
-                                     selector:(SEL)selector {
-    [self addHeaderControlWithIdleTitle:NSLocalizedString(@"REFRESH_TOP_PULL_TO_LOAD_MORE", nil)
-                                 target:target
-                               selector:selector];
+- (void)addHeaderControlWithtarget:(id)target
+                          selector:(SEL)selector {
+    MJRefreshStateHeader *stateHeader =
+    [MJRefreshStateHeader headerWithRefreshingTarget:target
+                                    refreshingAction:selector];
+    
+    stateHeader.lastUpdatedTimeLabel.hidden = YES;
+    stateHeader.stateLabel.font = [UIFont systemFontOfSize:14.0f];
+    stateHeader.lastUpdatedTimeLabel.font = [UIFont systemFontOfSize:13.0f];
+    stateHeader.stateLabel.textColor = RGBColor(51.0f, 51.0f, 51.0f);
+    self.mj_header = stateHeader;
 }
 
 - (void)addHeaderControlWithIdleTitle:(NSString *)idleTitle
+                         pullingTitle:(NSString *)pullingTitle
+                      refreshingTitle:(NSString *)refreshingTitle
                                target:(id)target
                              selector:(SEL)selector {
+    
     MJRefreshStateHeader *stateHeader =
     [MJRefreshStateHeader headerWithRefreshingTarget:target
                                     refreshingAction:selector];
     [stateHeader setTitle:idleTitle
                  forState:MJRefreshStateIdle];
-    [stateHeader setTitle:NSLocalizedString(@"REFRESH_TOP_RELEASE_TO_REFRESH", nil)
+    [stateHeader setTitle:pullingTitle
                  forState:MJRefreshStatePulling];
-    [stateHeader setTitle:NSLocalizedString(@"REFRESH_TOP_LOADING", nil)
+    [stateHeader setTitle:refreshingTitle
                  forState:MJRefreshStateRefreshing];
-    
-    stateHeader.stateLabel.font = [UIFont systemFontOfSize:14.0f];
-    stateHeader.lastUpdatedTimeLabel.font = [UIFont systemFontOfSize:12.0f];
-    
-    //stateHeader.stateLabel.textColor = [YBColor appThemeGrayColor];
     stateHeader.lastUpdatedTimeLabel.hidden = YES;
-    
+    stateHeader.stateLabel.font = [UIFont systemFontOfSize:14.0f];
+    stateHeader.backgroundColor = [UIColor appTableViewBgColor];
+    stateHeader.lastUpdatedTimeLabel.font = [UIFont systemFontOfSize:13.0f];
+    stateHeader.stateLabel.textColor = RGBColor(51.0f, 51.0f, 51.0f);
     self.mj_header = stateHeader;
+    
 }
 
-- (void)addFooterRefreshControlWithTarget:(id)target
-                                 selector:(SEL)selector {
+- (void)addFooterRefreshControlIdleTitle:(NSString *)idleTitle
+                              noMoreData:(NSString *)noMoreData
+                         refreshingTitle:(NSString *)refreshingTitle
+                                  target:(id)target
+                                 selector:(SEL)selector
+                             autoRefresh:(BOOL)autoRefresh {
     MJRefreshAutoNormalFooter *footer =
     [MJRefreshAutoNormalFooter footerWithRefreshingTarget:target
                                          refreshingAction:selector];
-    
-    [footer setTitle:NSLocalizedString(@"REFRESH_BOTTOM_CLICK_OR_PULL_UP_TO_LOAD_MORE", nil)
+    [footer setTitle:idleTitle
             forState:MJRefreshStateIdle];
-    [footer setTitle:NSLocalizedString(@"REFRESH_TOP_LOADING", nil)
+    [footer setTitle:refreshingTitle
             forState:MJRefreshStateRefreshing];
-    [footer setTitle:NSLocalizedString(@"REFRESH_BOTTOM_ALL_LOADED", nil)
+    [footer setTitle:noMoreData
             forState:MJRefreshStateNoMoreData];
+    footer.automaticallyRefresh = autoRefresh;
+    footer.stateLabel.font = [UIFont systemFontOfSize:14.0f];
+    footer.stateLabel.textColor = RGBColor(51.0f, 51.0f, 51.0f);
+    self.mj_footer = footer;
+    
+}
+
+- (void)addBackFooterRefreshControlIdleTitle:(NSString *)idleTitle
+                                  noMoreData:(NSString *)noMoreData
+                             refreshingTitle:(NSString *)refreshingTitle
+                                pullingTitle:(NSString *)pullingTitle
+                                      target:(id)target
+                                    selector:(SEL)selector
+                                      bottom:(CGFloat)bottomPadding {
+    
+    MJRefreshBackNormalFooter *footer =
+    [MJRefreshBackNormalFooter footerWithRefreshingTarget:target
+                                         refreshingAction:selector];
+    [footer setTitle:idleTitle
+            forState:MJRefreshStateIdle];
+    [footer setTitle:refreshingTitle
+            forState:MJRefreshStateRefreshing];
+    [footer setTitle:noMoreData
+            forState:MJRefreshStateNoMoreData];
+    [footer setTitle:pullingTitle
+            forState:MJRefreshStatePulling];
     
     footer.stateLabel.font = [UIFont systemFontOfSize:14.0f];
-    //footer.stateLabel.textColor = [YBColor appThemeGrayColor];
-    
+    footer.stateLabel.textColor = RGBColor(51.0f, 51.0f, 51.0f);
+    self.contentInset = UIEdgeInsetsMake(0, 0, bottomPadding, 0);
+    self.mj_footer.ignoredScrollViewContentInsetBottom = bottomPadding;
+    footer.arrowView.image = [UIImage imageNamed:@""];
     self.mj_footer = footer;
+    //footer.automaticallyRefresh = autoRefresh;
 }
+
 
 - (CGRect)zoomedRectOfUIView:(UIView *)view {
     NSLog(@"%@", NSStringFromCGRect(view.frame));

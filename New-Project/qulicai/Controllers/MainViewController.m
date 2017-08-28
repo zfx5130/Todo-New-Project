@@ -70,12 +70,14 @@ UITableViewDataSource>
 
 - (void)requestProduct {
     QRRequestProductList *request = [[QRRequestProductList alloc] init];
+    request.currentPage = @"1";
+    request.pageSize = @"8";
     __weak typeof(self) weakSelf = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         ProductList *productList = [ProductList mj_objectWithKeyValues:request.responseJSONObject];
         if (productList.statusType == IndentityStatusSuccess) {
             weakSelf.product = [productList.products firstObject];
-            NSLog(@"------%@",request.responseJSONObject);
+           // NSLog(@"------%@",request.responseJSONObject);
             [weakSelf renderProductInfo];
         } else {
             [self showErrorWithTitle:@"请求失败"];

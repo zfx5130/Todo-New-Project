@@ -14,7 +14,11 @@
 #import "PruductDetailViewController.h"
 #import "ProductBuyViewController.h"
 #import "UserUtil.h"
+#import "QRRequestHeader.h"
 #import "LoginViewController.h"
+#import "ProductList.h"
+#import "UIScrollView+Custom.h"
+#import "Product.h"
 
 #define NAVBAR_COLORCHANGE_POINT (-IMAGE_HEIGHT + NAV_HEIGHT*2)
 #define NAV_HEIGHT 64
@@ -34,7 +38,10 @@ UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (copy, nonatomic) NSArray *imagesUrlString;
-@property (strong, nonatomic) NSMutableArray *dataArray;
+@property (strong, nonatomic) NSMutableArray *productArray;
+
+@property (assign, nonatomic) NSInteger currentPage;
+@property (assign, nonatomic) NSInteger limit;
 
 @end
 
@@ -44,12 +51,14 @@ UITableViewDataSource>
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupTableViewHeadView];
     [self registerCell];
+    [self setupTableViewHeadView];
+    [self addRefreshControl];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+   // [self requestProduct];
 }
 
 
@@ -63,6 +72,70 @@ UITableViewDataSource>
 }
 
 #pragma mark - Private
+
+- (void)addRefreshControl {
+    [self.tableView addBackFooterRefreshControlIdleTitle:@"上拉加载更多"
+                                              noMoreData:@"没有更多产品"
+                                         refreshingTitle:@"正在加载"
+                                            pullingTitle:@"释放加载更多"
+                                                  target:self
+                                                selector:@selector(loadMoreData)
+                                                  bottom:0];
+    [self.tableView addHeaderControlWithIdleTitle:@"下拉刷新"
+                                     pullingTitle:@"松开刷新"
+                                  refreshingTitle:@"正在刷新"
+                                           target:self
+                                         selector:@selector(loadNewData)];
+    self.currentPage = 1;
+    self.limit = 8;
+    [self.tableView.mj_header beginRefreshing];
+}
+
+- (void)loadNewData {
+    self.currentPage = 1;
+    [self requestProduct];
+}
+
+- (void)loadMoreData {
+    [self requestProduct];
+}
+
+- (void)requestProduct {
+    QRRequestProductList *request = [[QRRequestProductList alloc] init];
+    request.currentPage = [NSString stringWithFormat:@"%@",@(self.currentPage)];
+    request.pageSize = [NSString stringWithFormat:@"%@",@(self.limit)];
+    __weak typeof(self) weakSelf = self;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView.mj_footer endRefreshing];
+        ProductList *productList = [ProductList mj_objectWithKeyValues:request.responseJSONObject];
+        if (productList.statusType == IndentityStatusSuccess) {
+            SLog(@"------%@",request.responseJSONObject);
+           // NSLog(@"count:::::%@",@(productList.products.count));
+            if (weakSelf.currentPage == 1) {
+                weakSelf.productArray = [NSMutableArray arrayWithArray:productList.products];
+            } else {
+                [weakSelf.productArray addObjectsFromArray:[productList.products copy]];
+            }
+            
+            if ([productList.products count]) {
+                weakSelf.currentPage += 1;
+            } else {
+                [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
+            }
+            [weakSelf renderProductInfo];
+            
+        } else {
+            [self showErrorWithTitle:@"请求失败"];
+        }
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [self showErrorWithTitle:@"网络请求错误"];
+    }];
+}
+
+- (void)renderProductInfo {
+    [self.tableView reloadData];
+}
 
 - (void)registerCell {
     UINib *financebuyNib = [UINib nibWithNibName:NSStringFromClass([NewUserBuyTableViewCell class])
@@ -99,11 +172,11 @@ UITableViewDataSource>
     return _imagesUrlString;
 }
 
-- (NSMutableArray *)dataArray {
-    if (!_dataArray) {
-        _dataArray = [[NSMutableArray alloc] init];
+- (NSMutableArray *)productArray {
+    if (!_productArray) {
+        _productArray = [[NSMutableArray alloc] init];
     }
-    return _dataArray;
+    return _productArray;
 }
 
 #pragma mark - UITableViewDataSource
@@ -113,45 +186,61 @@ UITableViewDataSource>
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 5;
+    return [self.productArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NewUserBuyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([NewUserBuyTableViewCell class])];
-    cell.progressView.progressTintColor =
-    !indexPath.section ? RGBColor(247.0f, 97.0f, 34.0f) : RGBColor(221.0f, 221.0f, 221.0f);
-    cell.progressView.progress = !indexPath.section ? 0.8f : 1.0f;
-    cell.sellOutImageView.hidden = !indexPath.section;
-    cell.yearSaleLabel.textColor =
-    !indexPath.section ? RGBColor(242.0f, 89.0f, 47.0f) : RGBColor(153.0f, 153.0f, 153.0f);
-    cell.productNameLabel.textColor = !indexPath.section ? RGBColor(51.0f, 51.0f, 51.0f) : RGBColor(153.0f, 153.0f, 153.0f);
-    
-    cell.productTagImageView.image = !indexPath.section ? [UIImage imageNamed:@"fininace_tag_bg_image"] : [UIImage imageNamed:@"fininace_tag_end_bg_image"];
-    cell.deadlineLabel.textColor = !indexPath.section ? RGBColor(102.0f, 102.0f, 102.0f) : RGBColor(153.0f, 153.0f, 153.0f);
-    cell.balanceLabel.textColor = !indexPath.section ? RGBColor(102.0f, 102.0f, 102.0f) : RGBColor(153.0f, 153.0f, 153.0f);
-    
-    cell.buyButton.hidden = indexPath.section;
-    cell.bottomViewHeightConstraint.constant = !indexPath.section ? 50.0f : 0.0f;
-    
+
     if (!indexPath.section) {
         [cell.buyButton addTarget:self
                            action:@selector(buyButtonWasPressed:)
                  forControlEvents:UIControlEventTouchUpInside];
     }
-    
-    cell.yearSaleLabel.text = @"8.6%+0.5%";
+    Product *product = self.productArray[indexPath.section];
+    CGFloat rate = product.interestRate * 100;
+    CGFloat actRate = product.activityRate * 100;
+    cell.yearSaleLabel.text = [NSString stringWithFormat:@"%.1f%%+%.1f%%", rate, actRate];
     NSMutableAttributedString *numText=
     [[NSMutableAttributedString alloc]initWithString:cell.yearSaleLabel.text
-                                                                             attributes:nil];
-    [numText addAttribute:NSFontAttributeName
-                    value:[UIFont systemFontOfSize:14.0f]
-                    range:NSMakeRange(4, 2)];
+                                          attributes:nil];
+    if (rate < 10 && cell.yearSaleLabel.text.length > 6) {
+        [numText addAttribute:NSFontAttributeName
+                        value:[UIFont systemFontOfSize:14.0f]
+                        range:NSMakeRange(3, 2)];
+    } else {
+        [numText addAttribute:NSFontAttributeName
+                        value:[UIFont systemFontOfSize:14.0f]
+                        range:NSMakeRange(4, 2)];
+    }
     [numText addAttribute:NSFontAttributeName
                     value:[UIFont systemFontOfSize:14.0f]
                     range:NSMakeRange(cell.yearSaleLabel.text.length - 1, 1)];
     cell.yearSaleLabel.attributedText = numText;
+    
+    cell.deadlineLabel.text = product.periods;
+    cell.productTagLabel.text = cell.yearSaleLabel.text;
+    cell.balanceLabel.text = [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%@",@(product.residualAmount)]];
+    cell.productNameLabel.text = [NSString stringWithFormat:@"%@", product.productName];
+    cell.progressView.progress = product.residualAmount * 1.0 / product.totalAmount;
+    
+    BOOL isSellOut = product.residualAmount > 0 ? NO : YES;
+    cell.sellOutImageView.hidden = !isSellOut ;
+    cell.buyButton.hidden = isSellOut;
+    cell.bottomViewHeightConstraint.constant = !isSellOut ? 50.0f : 0.0f;
+    
+    cell.progressView.progressTintColor = !isSellOut ? RGBColor(247.0f, 97.0f, 34.0f) : RGBColor(221.0f, 221.0f, 221.0f);
+    cell.progressView.progress = !isSellOut ? 0.8f : 1.0f;
+    cell.sellOutImageView.hidden = !isSellOut;
+    cell.yearSaleLabel.textColor =
+    !isSellOut ? RGBColor(242.0f, 89.0f, 47.0f) : RGBColor(153.0f, 153.0f, 153.0f);
+    cell.productNameLabel.textColor = !isSellOut ? RGBColor(51.0f, 51.0f, 51.0f) : RGBColor(153.0f, 153.0f, 153.0f);
+    
+    cell.productTagImageView.image = !isSellOut ? [UIImage imageNamed:@"fininace_tag_bg_image"] : [UIImage imageNamed:@"fininace_tag_end_bg_image"];
+    cell.deadlineLabel.textColor = !isSellOut ? RGBColor(102.0f, 102.0f, 102.0f) : RGBColor(153.0f, 153.0f, 153.0f);
+    cell.balanceLabel.textColor = !isSellOut ? RGBColor(102.0f, 102.0f, 102.0f) : RGBColor(153.0f, 153.0f, 153.0f);
     
     return cell;
 }
@@ -160,10 +249,10 @@ UITableViewDataSource>
 
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (!indexPath.section) {
-        return 210.0f;
-    }
-    return 210.0f - 50.0f;
+    Product *product = self.productArray[indexPath.section];
+    BOOL isSellOut = product.residualAmount > 0 ? NO : YES;
+    CGFloat height = isSellOut ? 161.0f : 210.0f;
+    return height;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView

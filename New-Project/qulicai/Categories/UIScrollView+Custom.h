@@ -12,14 +12,30 @@
 
 @interface UIScrollView (Custom)
 
-- (void)addHeaderRefreshControlWithTarget:(id)target
-                                 selector:(SEL)selector;
+- (void)addHeaderControlWithtarget:(id)target
+                          selector:(SEL)selector;
 
-- (void)addFooterRefreshControlWithTarget:(id)target
-                                 selector:(SEL)selector;
+- (void)addHeaderControlWithIdleTitle:(NSString *)idleTitle
+                         pullingTitle:(NSString *)pullingTitle
+                      refreshingTitle:(NSString *)refreshingTitle
+                               target:(id)target
+                             selector:(SEL)selector;
 
-- (void)addHeaderLoadingMoreControlWithTarget:(id)target
-                                     selector:(SEL)selector;
+- (void)addBackFooterRefreshControlIdleTitle:(NSString *)idleTitle
+                                  noMoreData:(NSString *)noMoreData
+                             refreshingTitle:(NSString *)refreshingTitle
+                                pullingTitle:(NSString *)pullingTitle
+                                      target:(id)target
+                                    selector:(SEL)selector
+                                      bottom:(CGFloat)bottomPadding;
+
+- (void)addFooterRefreshControlIdleTitle:(NSString *)idleTitle
+                              noMoreData:(NSString *)noMoreData
+                         refreshingTitle:(NSString *)refreshingTitle
+                                  target:(id)target
+                                selector:(SEL)selector
+                             autoRefresh:(BOOL)autoRefresh;
 
 - (CGRect)zoomedRectOfUIView:(UIView *)view;
+
 @end

@@ -25,7 +25,7 @@
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="Uwx-XU-z6I">
                                 <rect key="frame" x="0.0" y="0.0" width="376" height="2.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="G44-0I-dmJ"/>
+                                    <constraint firstAttribute="height" constant="1.5" id="G44-0I-dmJ"/>
                                 </constraints>
                                 <color key="progressTintColor" red="0.96862745098039216" green="0.38039215686274508" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="trackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
