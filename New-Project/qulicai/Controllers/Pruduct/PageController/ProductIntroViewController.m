@@ -87,15 +87,17 @@ UITableViewDataSource>
 
 - (NSArray *)contentArrays {
     if (!_contentArrays) {
+        
+        CGFloat rate= (self.productDetail.activityRate + self.productDetail.interestRate) * 100;
         _contentArrays = @[
-                           @"趣钱宝定期30天",
-                           @"50元起投",
-                           @"30天",
+                           [NSString getStringWithString:[NSString stringWithFormat:@"%@",self.productDetail.productName]],
+                           [NSString getStringWithString:[NSString stringWithFormat:@"%@元起投",self.productDetail.limitAmount]],
+                           [NSString getStringWithString:[NSString stringWithFormat:@"%@天",self.productDetail.periods]],
                            @"到期一次性还本付息",
-                           @"10.6%",
-                           @"2017年8月25日",
-                           @"2017年8月29日",
-                           @"2017年9月25日"
+                           [NSString stringWithFormat:@"%.1f%%",rate],
+                           [NSString getStringWithString:[NSString stringWithFormat:@"%@",self.productDetail.startTime]],
+                           [NSString getStringWithString:[NSString stringWithFormat:@"%@",self.productDetail.interestTime]],
+                           [NSString getStringWithString:[NSString stringWithFormat:@"%@",self.productDetail.endTime]]
                            ];
     }
     return _contentArrays;

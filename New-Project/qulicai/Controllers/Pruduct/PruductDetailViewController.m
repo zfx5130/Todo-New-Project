@@ -228,6 +228,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)swapDetailController {
     ProductInformationController *detailController = [[ProductInformationController alloc] init];
+    detailController.productDetail = self.productDetail;
     [self.navigationController pushViewController:detailController
                                          animated:YES];
 }

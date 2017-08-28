@@ -64,7 +64,7 @@
 //安全保障
 @property (copy, nonatomic) NSString *safetyGuarantee;
 
-//合作方介绍
+//产品简介
 @property (copy, nonatomic) NSString *productIntroduction;
 
 //可购买余额

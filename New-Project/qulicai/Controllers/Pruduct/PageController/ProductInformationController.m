@@ -60,9 +60,10 @@ UICollectionViewDelegate>
 #pragma mark - 添加所有的子控制器
 - (void)setupAllChildViewController {
   
-    ProductIntroViewController *oneVc = [[ProductIntroViewController alloc] init];
-    oneVc.title = @"项目简介";
-    [self addChildViewController:oneVc];
+    ProductIntroViewController *productInfoController = [[ProductIntroViewController alloc] init];
+    productInfoController.title = @"项目简介";
+    productInfoController.productDetail = self.productDetail;
+    [self addChildViewController:productInfoController];
     
     ProductIncomeViewController *twoVc = [[ProductIncomeViewController alloc] init];
     twoVc.title = @"项目明细";
