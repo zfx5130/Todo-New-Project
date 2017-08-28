@@ -155,6 +155,9 @@
 }
 
 + (UIImage *)Base64StrToUIImage:(NSString *)_encodedImageStr {
+    if (!_encodedImageStr.length) {
+        return nil;
+    }
     NSData *_decodedImageData =
     [[NSData alloc] initWithBase64EncodedString:_encodedImageStr
                                         options:0];

@@ -105,6 +105,8 @@
         [self.errorLabel addShakeAnimation];
         return;
     }
+    
+//真数据
     if (![self.verifyTextField.text isEqualToString:self.verifyCode]) {
         self.errorLabel.text = @"*验证码输入不正确";
         [self.errorLabel addShakeAnimation];
@@ -112,8 +114,7 @@
     }
     
     ResetPasswordViewController *resetController = [[ResetPasswordViewController alloc] init];
-    resetController.isTradingPw = self.isTradingPw;
-    resetController.isPickUpPw = self.isPickUpPw;
+    resetController.phone = self.phoneTextField.text;
     [self.navigationController pushViewController:resetController
                                          animated:YES];
     
@@ -168,6 +169,7 @@
     if (self.errorLabel.text.length) {
         self.errorLabel.text = @"";
     }
+    [self updateResetButtonStatus];
 }
 
 - (IBAction)editingChanged:(UITextField *)sender {

@@ -10,6 +10,12 @@
 #import "SettingsTableViewController.h"
 #import "ProductBuySuccessViewController.h"
 #import "PropertyPickupViewController.h"
+#import "QRRequestHeader.h"
+#import "FindLoginPassword.h"
+#import "SettingTransPassword.h"
+#import "UserUtil.h"
+#import "User.h"
+
 
 @interface ResetPasswordViewController ()
 <UITextViewDelegate>
@@ -75,49 +81,107 @@
 }
 
 - (void)confirm {
+    
     [self.view endEditing:YES];
     if (self.passwordTextField.text.length < 6 || self.passwordTextField.text.length > 16) {
         self.errorLabel.text =
-        self.passwordTextField.text.length >16 ? @"*对不起密码仅支持16以内的数字或字母" : @"*对不起密码不足6位";
+        self.passwordTextField.text.length > 16 ? @"*对不起密码仅支持16以内的数字或字母" : @"*对不起密码不足6位";
         [self.errorLabel addShakeAnimation];
         return;
     }
-
+    
     [self showSVProgressHUD];
+    if (self.isTradingPw) {
+        QRRequestSetingTranPassword *request = [[QRRequestSetingTranPassword alloc] init];
+        request.userId = [UserUtil currentUser].userId;
+        request.transactionPwd = self.passwordTextField.text;
+        __weak typeof(self) weakSelf = self;
+        [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+            [SVProgressHUD dismiss];
+            NSLog(@"resulr:_设置交易密码__::::%@",request.responseJSONObject);
+            SettingTransPassword *transPassword = [SettingTransPassword mj_objectWithKeyValues:request.responseJSONObject];
+            if (transPassword.statusType == IndentityStatusSuccess) {
+                //设置交易密码跳转
+                [weakSelf showSuccessWithTitle:@"密码设置成功"];
+                for( UIViewController *controller in self.navigationController.viewControllers ) {
+                    if( [controller isKindOfClass:[SettingsTableViewController class]] ) {
+                        [self.navigationController popToViewController:controller animated:YES];
+                        return ;
+                    }
+                }
+            } else {
+                weakSelf.alertErrorLabel.text = transPassword.desc;
+                [weakSelf showErrorAlert];
+            }
+            
+        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+            [SVProgressHUD dismiss];
+            NSLog(@"error:::--%@",request.error);
+        }];
+        
+    } else {
+        QRRequestFindLoginPassword *request = [[QRRequestFindLoginPassword alloc] init];
+        request.mobilePhone = self.phone;
+        request.pwd = self.passwordTextField.text;
+        __weak typeof(self) weakSelf = self;
+        [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+            [SVProgressHUD dismiss];
+            NSLog(@"resulr:设置登录密码___::::%@",request.responseJSONObject);
+            FindLoginPassword *findPassword = [FindLoginPassword mj_objectWithKeyValues:request.responseJSONObject];
+            if (findPassword.statusType == IndentityStatusSuccess) {
+                [weakSelf showSuccessWithTitle:@"密码设置成功"];
+                for( UIViewController *controller in self.navigationController.viewControllers ) {
+                    if( [controller isKindOfClass:[SettingsTableViewController class]] ) {
+                        [self.navigationController popToViewController:controller animated:YES];
+                        return ;
+                    }
+                }
+            } else {
+                weakSelf.alertErrorLabel.text = findPassword.desc;
+                [weakSelf showErrorAlert];
+            }
+        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+            [SVProgressHUD dismiss];
+            NSLog(@"error-:::%@",request.error);
+        }];
+    }
+    
+    
+
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [SVProgressHUD dismiss];
         if (self.passwordTextField.text.length < 8) {
             self.alertErrorLabel.text = @"密码设置失败";
             [self showErrorAlert];
         } else {
-            [self showSuccessWithTitle:@"密码设置成功"];
-            if (self.isTradingPw) {
-                if (self.isPickUpPw) {
-                    for( UIViewController *controller in self.navigationController.viewControllers ) {
-                        if( [controller isKindOfClass:[PropertyPickupViewController class]] ) {
-                            [self.navigationController popToViewController:controller animated:YES];
-                            return ;
-                        }
-                    }
-                } else {
-                    ProductBuySuccessViewController *productController = [[ProductBuySuccessViewController alloc] init];
-                    productController.isBuySuccess = YES;
-                    UserDefaultsSet(@"isIdentity", @"YES");
-                    [self.navigationController pushViewController:productController
-                                                         animated:YES];
-                }
-            } else {
-                if (self.isModifyPW) {
-                    for( UIViewController *controller in self.navigationController.viewControllers ) {
-                        if( [controller isKindOfClass:[SettingsTableViewController class]] ) {
-                            [self.navigationController popToViewController:controller animated:YES];
-                            return ;
-                        }
-                    }
-                } else {
-                    [self.navigationController popToRootViewControllerAnimated:YES];
-                }
-            }
+//            [self showSuccessWithTitle:@"密码设置成功"];
+//            if (self.isTradingPw) {
+//                if (self.isPickUpPw) {
+//                    for( UIViewController *controller in self.navigationController.viewControllers ) {
+//                        if( [controller isKindOfClass:[PropertyPickupViewController class]] ) {
+//                            [self.navigationController popToViewController:controller animated:YES];
+//                            return ;
+//                        }
+//                    }
+//                } else {
+//                    ProductBuySuccessViewController *productController = [[ProductBuySuccessViewController alloc] init];
+//                    productController.isBuySuccess = YES;
+//                    UserDefaultsSet(@"isIdentity", @"YES");
+//                    [self.navigationController pushViewController:productController
+//                                                         animated:YES];
+//                }
+//            } else {
+//                if (self.isModifyPW) {
+//                    for( UIViewController *controller in self.navigationController.viewControllers ) {
+//                        if( [controller isKindOfClass:[SettingsTableViewController class]] ) {
+//                            [self.navigationController popToViewController:controller animated:YES];
+//                            return ;
+//                        }
+//                    }
+//                } else {
+//                    [self.navigationController popToRootViewControllerAnimated:YES];
+//                }
+//            }
         }
     });
 }
@@ -125,10 +189,7 @@
 #pragma mark - UITextViewDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    BOOL isFlag = self.passwordTextField.text.length;
-    if (isFlag) {
-        [self confirm];
-    }
+    [self confirm];
     return YES;
 }
 

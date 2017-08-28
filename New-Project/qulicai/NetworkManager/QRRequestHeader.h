@@ -19,5 +19,6 @@
 #import "QRRequestModifyTransPassword.h"
 #import "QRRequestVerifyCode.h"
 #import "QRRequestFindLoginPassword.h"
+#import "QRRequestSetingTranPassword.h"
 
 #endif /* QRRequestHeader_h */
