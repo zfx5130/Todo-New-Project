@@ -65,9 +65,11 @@ UICollectionViewDelegate>
     productInfoController.productDetail = self.productDetail;
     [self addChildViewController:productInfoController];
     
-    ProductIncomeViewController *twoVc = [[ProductIncomeViewController alloc] init];
-    twoVc.title = @"项目明细";
-    [self addChildViewController:twoVc];
+    ProductIncomeViewController *incomeController = [[ProductIncomeViewController alloc] init];
+    incomeController.title = @"项目明细";
+    incomeController.productDetail = self.productDetail;
+    [self addChildViewController:incomeController];
+    
     
     ProductRecordViewController *threeVc = [[ProductRecordViewController alloc] init];
     threeVc.title = @"投资记录";

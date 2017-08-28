@@ -22,5 +22,6 @@
 #import "QRRequestSetingTranPassword.h"
 #import "QRRequestProductList.h"
 #import "QRRequestProductDetail.h"
+#import "QRRequestProductMarkList.h"
 
 #endif /* QRRequestHeader_h */

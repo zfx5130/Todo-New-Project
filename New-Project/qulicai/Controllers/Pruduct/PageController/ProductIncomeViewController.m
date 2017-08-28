@@ -8,12 +8,20 @@
 
 #import "ProductIncomeViewController.h"
 #import "ProductIncomeTableViewCell.h"
+#import "UIScrollView+Custom.h"
+#import "QRRequestHeader.h"
 
 @interface ProductIncomeViewController ()
 <UITableViewDataSource,
 UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (assign, nonatomic) NSInteger currentPage;
+
+@property (assign, nonatomic) NSInteger limit;
+
+@property (strong, nonatomic) NSMutableArray *maskArray;
 
 @end
 
@@ -24,6 +32,7 @@ UITableViewDelegate>
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registerCell];
+    [self addRefreshControl];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -36,12 +45,90 @@ UITableViewDelegate>
 
 #pragma mark - Private
 
+- (void)addRefreshControl {
+    [self.tableView addBackFooterRefreshControlIdleTitle:@"上拉加载更多"
+                                              noMoreData:@"没有更多产品"
+                                         refreshingTitle:@"正在加载"
+                                            pullingTitle:@"释放加载更多"
+                                                  target:self
+                                                selector:@selector(loadMoreData)
+                                                  bottom:0];
+    [self.tableView addHeaderControlWithIdleTitle:@"下拉刷新"
+                                     pullingTitle:@"松开刷新"
+                                  refreshingTitle:@"正在刷新"
+                                           target:self
+                                         selector:@selector(loadNewData)];
+    self.currentPage = 1;
+    self.limit = 20;
+    [self.tableView.mj_header beginRefreshing];
+}
+
+- (void)loadNewData {
+    self.currentPage = 1;
+    [self requestProduct];
+}
+
+- (void)loadMoreData {
+    [self requestProduct];
+}
+
+- (void)requestProduct {
+    QRRequestProductMarkList *request = [[QRRequestProductMarkList alloc] init];
+    request.pageIndex = [NSString stringWithFormat:@"%@",@(self.currentPage)];
+    request.pageSize = [NSString stringWithFormat:@"%@",@(self.limit)];
+    NSLog(@":::______::::%@",self.productDetail.packRuleId);
+    request.packId = self.productDetail.packRuleId;
+    __weak typeof(self) weakSelf = self;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView.mj_footer endRefreshing];
+        SLog(@"------%@",request.responseJSONObject);
+//        ProductList *productList = [ProductList mj_objectWithKeyValues:request.responseJSONObject];
+//        if (productList.statusType == IndentityStatusSuccess) {
+//            SLog(@"------%@",request.responseJSONObject);
+//            // NSLog(@"count:::::%@",@(productList.products.count));
+//            if (weakSelf.currentPage == 1) {
+//                weakSelf.productArray = [NSMutableArray arrayWithArray:productList.products];
+//            } else {
+//                [weakSelf.productArray addObjectsFromArray:[productList.products copy]];
+//            }
+//            
+//            if ([productList.products count]) {
+//                weakSelf.currentPage += 1;
+//            } else {
+//                [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
+//            }
+//            [weakSelf renderProductInfo];
+//        
+//        } else {
+//            [self showErrorWithTitle:@"请求失败"];
+//        }
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [self showErrorWithTitle:@"网络请求错误"];
+    }];
+}
+
+- (void)renderProductInfo {
+    [self.tableView reloadData];
+}
+
+
 - (void)registerCell {
     UINib *infoNib = [UINib nibWithNibName:NSStringFromClass([ProductIncomeTableViewCell class])
                                     bundle:nil];
     [self.tableView registerNib:infoNib
          forCellReuseIdentifier:NSStringFromClass([ProductIncomeTableViewCell class])];
 }
+
+#pragma mark - Setters && Getters
+
+- (NSMutableArray *)maskArray {
+    if (!_maskArray) {
+        _maskArray = [[NSMutableArray alloc] init];
+    }
+    return _maskArray;
+}
+
 
 #pragma mark - UITableViewDataSource
 
