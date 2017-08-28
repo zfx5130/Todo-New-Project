@@ -19,6 +19,9 @@
 #import "ProductInformationController.h"
 #import "ProductBuyViewController.h"
 #import "UserUtil.h"
+#import "QRRequestHeader.h"
+#import "UserUtil.h"
+#import "User.h"
 
 #define NAVBAR_COLORCHANGE_POINT (-IMAGE_HEIGHT + NAV_HEIGHT*2)
 #define NAV_HEIGHT 64
@@ -34,8 +37,6 @@ UITableViewDataSource>
 
 @property (strong, nonatomic) MainHeadView *headView;
 
-@property (assign, nonatomic) CGFloat balance;
-
 @end
 
 @implementation MainViewController
@@ -48,22 +49,49 @@ UITableViewDataSource>
     [self wr_setNavBarBackgroundAlpha:0];
     [self setupTableHeadView];
     [self setupNavigationItemLeft:[UIImage imageNamed:@""]];
-    self.balance = 10.0f;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    BOOL isLogin = [UserUtil isLoginIn];
-    self.headView.pickTagImageView.hidden = !(isLogin && self.balance > 0);
-    self.headView.allMoneyLabel.text = isLogin ? @"2343242432" : @"0.0";
-    self.headView.yesterdayEarningLabel.text = isLogin ? @"345.54" : @"0.0";
+    [self reloadUI];
+    [self updateUserInfo];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Private
+#pragma mark - Priavte
+
+- (void)reloadUI {
+    User *user = [UserUtil currentUser];
+    BOOL isLogin = [UserUtil isLoginIn];
+    self.headView.pickTagImageView.hidden = !isLogin;
+    self.headView.allMoneyLabel.text = isLogin ? [NSString stringWithFormat:@"%.2f",user.totalMoney] : @"0.0";
+    self.headView.yesterdayEarningLabel.text = isLogin ? [NSString stringWithFormat:@"%.2f",user.dailyEarnings] : @"0.0";
+    [self.tableView reloadData];
+}
+
+- (void)updateUserInfo {
+    if ([UserUtil isLoginIn]) {        
+        QRRequestGetUserInfo *request = [[QRRequestGetUserInfo alloc] init];
+        request.userId = [UserUtil currentUser].userId;
+        __weak typeof(self) weakSelf = self;
+        [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+            User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
+            NSLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
+            if (userInfo.statusType == IndentityStatusSuccess) {
+                [UserUtil saving:userInfo];
+                [weakSelf reloadUI];
+            } else {
+                NSLog(@"error:::::%@",request.error);
+            }
+        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+            NSLog(@"error:- %@", request.error);
+        }];
+    }
+}
+
 
 - (void)registerCell {
     UINib *mainNib = [UINib nibWithNibName:NSStringFromClass([NewUserBuyTableViewCell class])
@@ -204,7 +232,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)pickupMoney {
     if ([UserUtil isLoginIn]) {
-        if (self.balance > 0) {
+        if ([UserUtil currentUser].totalMoney > 0) {
             PropertyPickupViewController *pickContoller = [[PropertyPickupViewController alloc] init];
             [self.navigationController pushViewController:pickContoller animated:YES];
         } else {
