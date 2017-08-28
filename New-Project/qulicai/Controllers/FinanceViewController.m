@@ -54,6 +54,10 @@ UITableViewDataSource>
     [self registerCell];
     [self setupTableViewHeadView];
     [self addRefreshControl];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(requestProduct)
+                                                 name:QR_NOTIFICATION_IDENTITY_SUCCEED
+                                               object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -54,6 +54,10 @@ UITableViewDataSource>
     [self setupTableHeadView];
     [self setupNavigationItemLeft:[UIImage imageNamed:@""]];
     [self reloadUI];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(requestProduct)
+                                                 name:QR_NOTIFICATION_IDENTITY_SUCCEED
+                                               object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -146,7 +150,6 @@ UITableViewDataSource>
                                 forControlEvents:UIControlEventTouchUpInside];
 }
 
-//判断是否登录
 
 #pragma mark - UITableViewDataSource
 
@@ -190,7 +193,7 @@ UITableViewDataSource>
         cell.deadlineLabel.text = self.product.periods;
         cell.productTagLabel.text = cell.yearSaleLabel.text;
         cell.balanceLabel.text = [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%@",@(self.product.residualAmount)]];
-        cell.productNameLabel.text = [NSString stringWithFormat:@"%@", self.product.productName];
+        cell.productNameLabel.text = [NSString stringWithFormat:@"%@", [NSString getStringWithString:self.product.productName]];
         cell.progressView.progress = self.product.residualAmount * 1.0 / self.product.totalAmount;
         
         BOOL isSellOut = self.product.residualAmount > 0 ? NO : YES;
@@ -287,10 +290,14 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 #pragma mark - Hanlders
 
 - (void)totalPropertyButtonWasPressed:(UIButton *)sender {
-    TotalPropertyViewController *propertyController = [[TotalPropertyViewController alloc] init];
-    propertyController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:propertyController
-                                         animated:YES];
+    if ([UserUtil isLoginIn]) {
+        TotalPropertyViewController *propertyController = [[TotalPropertyViewController alloc] init];
+        propertyController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:propertyController
+                                             animated:YES];
+    } else {
+        [self login];
+    }
 }
 
 - (void)pickupMoney {

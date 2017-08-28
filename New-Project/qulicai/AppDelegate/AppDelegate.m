@@ -80,6 +80,9 @@
                 NSString *identityKey = [NSString stringWithFormat:@"%@",certification.identityKey];
                 [[A0SimpleKeychain keychain] setString:identityKey forKey:QR_IDENTITY_KEY];
                 [[A0SimpleKeychain keychain] setString:certification.endTime forKey:QR_ENDTIME_EXT];
+                //认证成功推送
+                [[NSNotificationCenter defaultCenter] postNotificationName:QR_NOTIFICATION_IDENTITY_SUCCEED
+                                                                    object:nil];
                 
             } else {
                 NSLog(@"登录认证失败");

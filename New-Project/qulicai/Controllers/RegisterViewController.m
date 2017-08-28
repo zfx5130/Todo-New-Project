@@ -51,6 +51,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.phoneTextField becomeFirstResponder];
+    [self wr_setNavBarBackgroundAlpha:0];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -65,7 +66,6 @@
 
 - (void)setupViews {
     [self.view addTapGestureForDismissingKeyboard];
-    [self wr_setNavBarBackgroundAlpha:0];
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self setupNavigationItemLeft:[UIImage imageNamed:@"back_image"]];
 }

@@ -1907,7 +1907,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A76S262L77;
-				GCC_PREFIX_HEADER = "/Users/admin/个人资料/个人项目/Todo-New-Project/New-Project/qulicai/Headers/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "/Users/zhaofuxing/个人/Project/Todo-New-Project/New-Project/qulicai/Headers/PrefixHeader.pch";
 				INFOPLIST_FILE = qulicai/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1922,7 +1922,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A76S262L77;
-				GCC_PREFIX_HEADER = "/Users/admin/个人资料/个人项目/Todo-New-Project/New-Project/qulicai/Headers/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "/Users/zhaofuxing/个人/Project/Todo-New-Project/New-Project/qulicai/Headers/PrefixHeader.pch";
 				INFOPLIST_FILE = qulicai/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
