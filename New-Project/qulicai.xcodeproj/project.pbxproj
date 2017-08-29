@@ -211,6 +211,9 @@
 		84DCF35C1F4F08F7002F117A /* PropertyIncomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DCF35A1F4F08F7002F117A /* PropertyIncomeViewController.xib */; };
 		84E5F6371F553DD9004432BF /* QRRequestSettingUserName.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F6361F553DD9004432BF /* QRRequestSettingUserName.m */; };
 		84E5F63A1F553E9D004432BF /* SettingUserName.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F6391F553E9D004432BF /* SettingUserName.m */; };
+		84E5F63D1F5541B3004432BF /* QRRequestYesterdayIncome.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F63C1F5541B3004432BF /* QRRequestYesterdayIncome.m */; };
+		84E5F6401F554362004432BF /* YesterdayIncomeList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F63F1F554362004432BF /* YesterdayIncomeList.m */; };
+		84E5F6431F55437C004432BF /* YesterdayIncome.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F6421F55437C004432BF /* YesterdayIncome.m */; };
 		84FEBA961F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBA951F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m */; };
 		84FEBADD1F4ABB730020B42D /* WRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBADC1F4ABB730020B42D /* WRNavigationBar.m */; };
 		84FEBAE01F4ABF510020B42D /* MainHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBADF1F4ABF510020B42D /* MainHeadView.m */; };
@@ -598,6 +601,12 @@
 		84E5F6361F553DD9004432BF /* QRRequestSettingUserName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestSettingUserName.m; sourceTree = "<group>"; };
 		84E5F6381F553E9D004432BF /* SettingUserName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingUserName.h; sourceTree = "<group>"; };
 		84E5F6391F553E9D004432BF /* SettingUserName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingUserName.m; sourceTree = "<group>"; };
+		84E5F63B1F5541B3004432BF /* QRRequestYesterdayIncome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestYesterdayIncome.h; sourceTree = "<group>"; };
+		84E5F63C1F5541B3004432BF /* QRRequestYesterdayIncome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestYesterdayIncome.m; sourceTree = "<group>"; };
+		84E5F63E1F554362004432BF /* YesterdayIncomeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YesterdayIncomeList.h; sourceTree = "<group>"; };
+		84E5F63F1F554362004432BF /* YesterdayIncomeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YesterdayIncomeList.m; sourceTree = "<group>"; };
+		84E5F6411F55437C004432BF /* YesterdayIncome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YesterdayIncome.h; sourceTree = "<group>"; };
+		84E5F6421F55437C004432BF /* YesterdayIncome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YesterdayIncome.m; sourceTree = "<group>"; };
 		84FEBA941F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		84FEBA951F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		84FEBADB1F4ABB730020B42D /* WRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRNavigationBar.h; sourceTree = "<group>"; };
@@ -953,6 +962,10 @@
 				842A933E1F55070D001822EF /* BackMoneyDetail.m */,
 				84E5F6381F553E9D004432BF /* SettingUserName.h */,
 				84E5F6391F553E9D004432BF /* SettingUserName.m */,
+				84E5F63E1F554362004432BF /* YesterdayIncomeList.h */,
+				84E5F63F1F554362004432BF /* YesterdayIncomeList.m */,
+				84E5F6411F55437C004432BF /* YesterdayIncome.h */,
+				84E5F6421F55437C004432BF /* YesterdayIncome.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1162,6 +1175,8 @@
 				842A93411F552B38001822EF /* QRRequestUserRegister.m */,
 				84E5F6351F553DD9004432BF /* QRRequestSettingUserName.h */,
 				84E5F6361F553DD9004432BF /* QRRequestSettingUserName.m */,
+				84E5F63B1F5541B3004432BF /* QRRequestYesterdayIncome.h */,
+				84E5F63C1F5541B3004432BF /* QRRequestYesterdayIncome.m */,
 			);
 			path = ApiRequest;
 			sourceTree = "<group>";
@@ -1745,6 +1760,7 @@
 				8444029A1F42CB6600F5AFEE /* RegisterViewController.m in Sources */,
 				84825E0F1F456E2C006A921F /* AccountCertificationViewController.m in Sources */,
 				84E5F63A1F553E9D004432BF /* SettingUserName.m in Sources */,
+				84E5F6431F55437C004432BF /* YesterdayIncome.m in Sources */,
 				844FB8551F4EC229001772AF /* EmptyPropertyTableViewCell.m in Sources */,
 				842617131F4C53EA00A96EFD /* BankCartTableViewCell.m in Sources */,
 				8435E50B1F31726D00424E5E /* AppDelegate.m in Sources */,
@@ -1772,6 +1788,7 @@
 				842A93301F541ED8001822EF /* ProductDetail.m in Sources */,
 				84FEBADD1F4ABB730020B42D /* WRNavigationBar.m in Sources */,
 				844FB85A1F4EC604001772AF /* PropertyInfoTableViewCell.m in Sources */,
+				84E5F6401F554362004432BF /* YesterdayIncomeList.m in Sources */,
 				844402C51F44516100F5AFEE /* WeiXinPickView.m in Sources */,
 				842A93181F53C38D001822EF /* QRRequestSetingTranPassword.m in Sources */,
 				844FB8081F4D5D1D001772AF /* YesterdayIncomeViewController.m in Sources */,
@@ -1790,6 +1807,7 @@
 				844FB8351F4E7871001772AF /* ProductDetailListViewController.m in Sources */,
 				842616AB1F4BDF1300A96EFD /* InputTextView1.m in Sources */,
 				844402CC1F44590100F5AFEE /* UsernameSettingViewController.m in Sources */,
+				84E5F63D1F5541B3004432BF /* QRRequestYesterdayIncome.m in Sources */,
 				8444028E1F41B2B000F5AFEE /* UILabel+Custom.m in Sources */,
 				842A93211F53EBC6001822EF /* ProductList.m in Sources */,
 				844FB82B1F4DA4A7001772AF /* ProductHistoryTableViewCell.m in Sources */,

@@ -33,8 +33,8 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="98.09" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3I-JH-DI4">
-                    <rect key="frame" x="153.5" y="132" width="69.5" height="56"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3I-JH-DI4">
+                    <rect key="frame" x="187.5" y="132" width="0.0" height="56"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="56" id="3RC-Rv-Xsa"/>
                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="180" id="BBQ-n6-F4d"/>
@@ -43,8 +43,8 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08月10号" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCr-9I-lQ5">
-                    <rect key="frame" x="158" y="188" width="61.5" height="20"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCr-9I-lQ5">
+                    <rect key="frame" x="188" y="188" width="0.0" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="auv-ur-P75"/>
                         <constraint firstAttribute="height" constant="20" id="cc5-U4-bvT"/>

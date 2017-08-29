@@ -15,11 +15,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="趣钱宝定期30天" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7H-VN-Cf4">
-                        <rect key="frame" x="15" y="0.0" width="103" height="40"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7H-VN-Cf4">
+                        <rect key="frame" x="15" y="0.0" width="0.0" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="210" id="1GT-ay-Qdj"/>
                         </constraints>
@@ -27,8 +27,8 @@
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+34.43" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sfe-LQ-6Xi">
-                        <rect key="frame" x="312.5" y="0.0" width="47.5" height="39.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sfe-LQ-6Xi">
+                        <rect key="frame" x="360" y="0.0" width="0.0" height="39.5"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="120" id="xtr-9k-q9V"/>
                         </constraints>
@@ -46,6 +46,10 @@
                     <constraint firstAttribute="trailing" secondItem="Sfe-LQ-6Xi" secondAttribute="trailing" constant="15" id="qqI-wi-sLp"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="earningLabel" destination="Sfe-LQ-6Xi" id="cpf-Qr-zd1"/>
+                <outlet property="nameLabel" destination="a7H-VN-Cf4" id="66c-Pb-LVF"/>
+            </connections>
             <point key="canvasLocation" x="24.5" y="52"/>
         </tableViewCell>
     </objects>

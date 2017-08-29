@@ -11,7 +11,11 @@
 #import "YesterdayIncomeView.h"
 #import "IncomeTableViewCell.h"
 #import "AllIncomeTableViewCell.h"
-
+#import "UserUtil.h"
+#import "User.h"
+#import "QRRequestYesterdayIncome.h"
+#import "YesterdayIncomeList.h"
+#import "YesterdayIncome.h"
 
 #define NAVBAR_COLORCHANGE_POINT (-IMAGE_HEIGHT + NAV_HEIGHT*2)
 #define NAV_HEIGHT 64
@@ -26,6 +30,8 @@ UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) YesterdayIncomeView *headView;
+
+@property (strong, nonatomic) YesterdayIncomeList *incomeList;
 
 @end
 
@@ -42,6 +48,7 @@ UITableViewDataSource>
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self loadNewData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,6 +56,35 @@ UITableViewDataSource>
 }
 
 #pragma mark - Private
+
+- (void)loadNewData {
+    User *user = [UserUtil currentUser];
+    QRRequestYesterdayIncome *request = [[QRRequestYesterdayIncome alloc] init];
+    request.userId = [NSString getStringWithString:user.userId];
+    request.pageSize = @"10";
+    request.currentPage = @"0";
+    [SVProgressHUD show];
+    __weak typeof(self) weakSelf = self;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSLog(@"数据：:：：：%@",request.responseJSONObject);
+        [SVProgressHUD dismiss];
+        YesterdayIncomeList *incomeList = [YesterdayIncomeList mj_objectWithKeyValues:request.responseJSONObject];
+        if (incomeList.statusType == IndentityStatusSuccess) {
+            weakSelf.incomeList = incomeList;
+            [weakSelf.tableView reloadData];
+        } else {
+            [weakSelf showErrorWithTitle:incomeList.desc];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        }
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSLog(@"error");
+        [SVProgressHUD dismiss];
+        [weakSelf showErrorWithTitle:@"请求失败"];
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+    
+}
 
 - (void)registerCell {
     UINib *mainNib = [UINib nibWithNibName:NSStringFromClass([IncomeTableViewCell class])
@@ -65,13 +101,17 @@ UITableViewDataSource>
     [self setupNavigationItemLeft:[UIImage imageNamed:@"white_back_image"]];
     self.tableView.contentInset = UIEdgeInsetsMake(IMAGE_HEIGHT-64, 0, 0, 0);
     self.headView = [[YesterdayIncomeView alloc] initWithFrame:CGRectMake(0, -IMAGE_HEIGHT,SCREEN_WIDTH, IMAGE_HEIGHT)];
+    self.headView.incomeMoneyLabel.text = [NSString stringWithFormat:@"%.2f",self.incomeList.totalYestEaring];
+    NSString *dateTime = [[[NSString getStringWithString:self.incomeList.settleDate] componentsSeparatedByString:@" "] firstObject];
+    self.headView.dateLabel.text = dateTime;
     [self.tableView addSubview:self.headView];
 }
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return !section ? 2 : 1;
+    NSInteger count = self.incomeList.incomes.count;
+    return !section ? count : 1;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -83,10 +123,14 @@ UITableViewDataSource>
     if (!indexPath.section) {
         IncomeTableViewCell *cell =
         [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([IncomeTableViewCell class])];
+        YesterdayIncome *income = self.incomeList.incomes[indexPath.row];
+        cell.nameLabel.text = [NSString getStringWithString:income.name];
+        cell.earningLabel.text = [NSString stringWithFormat:@"+%.2f",income.yestardayEaring];
         return cell;
     }
     AllIncomeTableViewCell *cell =
     [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([AllIncomeTableViewCell class])];
+    cell.incomeLabel.text = [NSString stringWithFormat:@"%.2f", self.incomeList.totalEarning];
     return cell;
 }
 

@@ -100,7 +100,7 @@
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             [SVProgressHUD dismiss];
             Authorware *authorware = [Authorware mj_objectWithKeyValues:request.responseJSONObject];
-            NSLog(@"reuqre:::::%@",request.responseJSONObject);
+            NSLog(@"实名认证:::::%@",request.responseJSONObject);
             if (authorware.statusType == IndentityStatusSuccess) {
                 [self showSuccessWithTitle:@"实名认证成功"];
                 if (self.isProductPush || self.isRechargePush) {
