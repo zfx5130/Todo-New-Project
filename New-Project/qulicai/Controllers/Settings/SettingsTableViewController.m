@@ -270,7 +270,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         //NSLog(@"lenth:::::%@",@(imageString.length));
         [weakSelf showSVProgressHUD];
         QRRequestUserAvatar *request = [[QRRequestUserAvatar alloc] init];
-        request.userId = [UserUtil currentUser].userId;
+        request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
         request.headPortrait = imageString;
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             [SVProgressHUD dismiss];

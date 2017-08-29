@@ -163,7 +163,7 @@ InputTextView1Delgate>
         cell.lastMoneyLabel.text = [NSString stringWithFormat:@"%@起投", [NSString getStringWithString:self.productDetail.limitAmount]];
         cell.periodsDayLabel.text = [NSString stringWithFormat:@"%@天期限", [NSString getStringWithString:self.productDetail.periods]];
         
-        cell.progressView.progress = self.productDetail.residualAmount * 1.0f / self.productDetail.totalAmount;
+        cell.progressView.progress = (1 - self.productDetail.residualAmount * 1.0f / self.productDetail.totalAmount);
         cell.balanceLabel.text = [NSString stringWithFormat:@"剩余%@",@(self.productDetail.residualAmount)];
         cell.totalProgressLabel.text = [NSString stringWithFormat:@"%@/%@",@(self.productDetail.residualAmount), @(self.productDetail.totalAmount)];
         

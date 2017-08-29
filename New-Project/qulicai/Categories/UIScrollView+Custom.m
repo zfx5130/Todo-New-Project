@@ -21,7 +21,7 @@
     stateHeader.lastUpdatedTimeLabel.hidden = YES;
     stateHeader.stateLabel.font = [UIFont systemFontOfSize:14.0f];
     stateHeader.lastUpdatedTimeLabel.font = [UIFont systemFontOfSize:13.0f];
-    stateHeader.stateLabel.textColor = RGBColor(51.0f, 51.0f, 51.0f);
+    stateHeader.stateLabel.textColor = RGBColor(153.0f, 153.0f, 153.0f);
     self.mj_header = stateHeader;
 }
 
@@ -44,7 +44,7 @@
     stateHeader.stateLabel.font = [UIFont systemFontOfSize:14.0f];
     stateHeader.backgroundColor = [UIColor appTableViewBgColor];
     stateHeader.lastUpdatedTimeLabel.font = [UIFont systemFontOfSize:13.0f];
-    stateHeader.stateLabel.textColor = RGBColor(51.0f, 51.0f, 51.0f);
+    stateHeader.stateLabel.textColor = RGBColor(153.0f, 153.0f, 153.0f);
     self.mj_header = stateHeader;
     
 }
@@ -66,7 +66,7 @@
             forState:MJRefreshStateNoMoreData];
     footer.automaticallyRefresh = autoRefresh;
     footer.stateLabel.font = [UIFont systemFontOfSize:14.0f];
-    footer.stateLabel.textColor = RGBColor(51.0f, 51.0f, 51.0f);
+    footer.stateLabel.textColor = RGBColor(153.0f, 153.0f, 153.0f);
     self.mj_footer = footer;
     
 }
@@ -92,7 +92,7 @@
             forState:MJRefreshStatePulling];
     
     footer.stateLabel.font = [UIFont systemFontOfSize:14.0f];
-    footer.stateLabel.textColor = RGBColor(51.0f, 51.0f, 51.0f);
+    footer.stateLabel.textColor = RGBColor(153.0f, 153.0f, 153.0f);
     self.contentInset = UIEdgeInsetsMake(0, 0, bottomPadding, 0);
     self.mj_footer.ignoredScrollViewContentInsetBottom = bottomPadding;
     footer.arrowView.image = [UIImage imageNamed:@""];

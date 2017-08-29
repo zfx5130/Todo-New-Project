@@ -12,7 +12,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductBackMoneyViewController">
             <connections>
+                <outlet property="endTimeLabel" destination="DBa-pI-Y6R" id="WgO-Xu-Q3K"/>
+                <outlet property="endTotalMoneyLabel" destination="3cT-gI-qhh" id="Nyt-An-yqO"/>
+                <outlet property="endTotalRateLabel" destination="Efj-WK-ycn" id="C0r-V9-zed"/>
+                <outlet property="holderView" destination="i5M-Pr-FkT" id="MVZ-ra-xBT"/>
+                <outlet property="periodLabel" destination="Q1f-sg-oiY" id="4yp-dZ-lsa"/>
+                <outlet property="planStatusLabel" destination="XBe-ec-0y6" id="qQ6-mx-Lf0"/>
                 <outlet property="scrollView" destination="9Ak-58-5Ng" id="lBd-6g-NaS"/>
+                <outlet property="totalMoneyLabel" destination="zgx-bs-8gt" id="ayf-u5-qlN"/>
                 <outlet property="view" destination="KW8-OG-oKt" id="zZF-3Q-zhl"/>
             </connections>
         </placeholder>
@@ -88,13 +95,13 @@
                                                     <color key="textColor" red="1" green="0.6588235294117647" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1f-sg-oiY">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1f-sg-oiY">
                                                     <rect key="frame" x="0.0" y="0.0" width="75" height="39"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017-07-23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.60000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="DBa-pI-Y6R">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.60000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="DBa-pI-Y6R">
                                                     <rect key="frame" x="75" y="0.0" width="94" height="39"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -111,7 +118,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <inset key="contentEdgeInsets" minX="-65" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     <inset key="imageEdgeInsets" minX="133" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" title="12000" image="principal_image">
+                                                    <state key="normal" image="principal_image">
                                                         <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                 </button>
@@ -166,8 +173,8 @@
                                         <constraint firstAttribute="height" constant="127" id="lJG-9e-qec"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="3cT-gI-qhh">
-                                    <rect key="frame" x="52" y="120" width="75.5" height="37"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="3cT-gI-qhh">
+                                    <rect key="frame" x="52" y="120" width="0.0" height="37"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="37" id="LCK-97-o2q"/>
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="120" id="idc-gl-n5H"/>
@@ -186,8 +193,8 @@
                                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="Efj-WK-ycn">
-                                    <rect key="frame" x="207.5" y="120" width="60.5" height="37"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="Efj-WK-ycn">
+                                    <rect key="frame" x="132" y="120" width="0.0" height="37"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="37" id="LTM-Za-pZX"/>
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="120" id="Tif-B2-xA1"/>
@@ -207,7 +214,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="到期收益(元)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5n-Ky-y7s">
-                                    <rect key="frame" x="207.5" y="165" width="70" height="17"/>
+                                    <rect key="frame" x="132" y="165" width="70" height="17"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="17" id="C7B-r8-8PH"/>
                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="110" id="J7Z-Pn-cQW"/>

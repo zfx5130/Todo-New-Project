@@ -107,7 +107,7 @@ UITableViewDataSource>
 - (void)updateUserInfo {
     if ([UserUtil isLoginIn]) {
         QRRequestGetUserInfo *request = [[QRRequestGetUserInfo alloc] init];
-        request.userId = [UserUtil currentUser].userId;
+        request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
         __weak typeof(self) weakSelf = self;
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
@@ -195,7 +195,7 @@ UITableViewDataSource>
         cell.productTagLabel.text = cell.yearSaleLabel.text;
         cell.balanceLabel.text = [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%@",@(self.product.residualAmount)]];
         cell.productNameLabel.text = [NSString stringWithFormat:@"%@", [NSString getStringWithString:self.product.productName]];
-        cell.progressView.progress = self.product.residualAmount * 1.0 / self.product.totalAmount;
+        cell.progressView.progress = (1 - self.product.residualAmount * 1.0 / self.product.totalAmount);
         
         BOOL isSellOut = self.product.residualAmount > 0 ? NO : YES;
         cell.sellOutImageView.hidden = !isSellOut ;

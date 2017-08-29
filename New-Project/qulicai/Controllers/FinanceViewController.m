@@ -136,7 +136,7 @@ UITableViewDataSource>
             }
         }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        [self showErrorWithTitle:@"网络请求错误"];
+        [self showErrorWithTitle:@"请求失败"];
         [weakSelf.tableView.mj_header endRefreshing];
         [weakSelf.tableView.mj_footer endRefreshing];
     }];
@@ -233,7 +233,7 @@ UITableViewDataSource>
     cell.productTagLabel.text = cell.yearSaleLabel.text;
     cell.balanceLabel.text = [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%@",@(product.residualAmount)]];
     cell.productNameLabel.text = [NSString stringWithFormat:@"%@", product.productName];
-    cell.progressView.progress = product.residualAmount * 1.0 / product.totalAmount;
+    cell.progressView.progress = (1 - product.residualAmount * 1.0 / product.totalAmount);
     
     BOOL isSellOut = product.residualAmount > 0 ? NO : YES;
     cell.sellOutImageView.hidden = !isSellOut ;

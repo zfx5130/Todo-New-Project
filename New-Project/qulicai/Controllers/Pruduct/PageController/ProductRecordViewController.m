@@ -87,7 +87,7 @@ UITableViewDelegate>
     QRRequestProductPackList *request = [[QRRequestProductPackList alloc] init];
     request.pageIndex = [NSString stringWithFormat:@"%@",@(self.currentPage)];
     request.pageSize = [NSString stringWithFormat:@"%@",@(self.limit)];
-    request.packId = self.productDetail.packRuleId;
+    request.packId = [NSString getStringWithString:self.productDetail.packRuleId];
     __weak typeof(self) weakSelf = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [weakSelf.tableView.mj_header endRefreshing];
