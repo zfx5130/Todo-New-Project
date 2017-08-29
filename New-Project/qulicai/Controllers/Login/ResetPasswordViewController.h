@@ -15,4 +15,7 @@
 
 @property (copy, nonatomic) NSString *phone;
 
+//注册页面忘记密码跳转
+@property (assign, nonatomic) BOOL isRegisterSwip;
+
 @end

@@ -215,6 +215,7 @@
     [self.view endEditing:YES];
     ForgetPasswordViewController *passwordController = [[ForgetPasswordViewController alloc] init];
     passwordController.isRegisterSwip = YES;
+    passwordController.isTradingPw = NO;
     [self.navigationController pushViewController:passwordController
                                          animated:YES];
 }

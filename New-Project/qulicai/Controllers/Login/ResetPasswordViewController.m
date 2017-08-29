@@ -15,6 +15,7 @@
 #import "SettingTransPassword.h"
 #import "UserUtil.h"
 #import "User.h"
+#import "LoginViewController.h"
 
 
 @interface ResetPasswordViewController ()
@@ -130,10 +131,19 @@
             FindLoginPassword *findPassword = [FindLoginPassword mj_objectWithKeyValues:request.responseJSONObject];
             if (findPassword.statusType == IndentityStatusSuccess) {
                 [weakSelf showSuccessWithTitle:@"登录密码设置成功"];
-                for( UIViewController *controller in self.navigationController.viewControllers ) {
-                    if( [controller isKindOfClass:[SettingsTableViewController class]] ) {
-                        [self.navigationController popToViewController:controller animated:YES];
-                        return ;
+                if (self.isRegisterSwip) {
+                    for( UIViewController *controller in self.navigationController.viewControllers ) {
+                        if( [controller isKindOfClass:[LoginViewController class]] ) {
+                            [self.navigationController popToViewController:controller animated:YES];
+                            return ;
+                        }
+                    }
+                } else {
+                    for( UIViewController *controller in self.navigationController.viewControllers ) {
+                        if( [controller isKindOfClass:[SettingsTableViewController class]] ) {
+                            [self.navigationController popToViewController:controller animated:YES];
+                            return ;
+                        }
                     }
                 }
             } else {
