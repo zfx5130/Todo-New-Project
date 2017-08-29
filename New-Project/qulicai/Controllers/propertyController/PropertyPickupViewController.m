@@ -14,6 +14,9 @@
 #import "Bank.h"
 #import "UserUtil.h"
 #import "User.h"
+#import "PickupMoney.h"
+#import "TransactionPwd.h"
+#import "QRRequestHeader.h"
 
 @interface PropertyPickupViewController ()
 <UITextViewDelegate>
@@ -33,9 +36,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *balanceLabel;
 
-
-@property (assign, nonatomic) CGFloat totalProperty;
-
 @property (strong, nonatomic) ProductPasswordView *passwordView;
 
 @property (strong, nonatomic) ASPopupController *popController;
@@ -53,7 +53,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.totalProperty = 2000;
     [self setupViews];
     [self replaceBankCartNumber];
     
@@ -135,10 +134,7 @@
 #pragma mark - UITextViewDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    BOOL isFlag = ([self.moneyTextField.text floatValue] > 100) && ([self.moneyTextField.text floatValue] < self.totalProperty);
-    if (isFlag) {
-        [self config];
-    }
+    [self config];
     return YES;
 }
 
@@ -146,27 +142,18 @@
 
 - (void)config {
     [self.view endEditing:YES];
-    
-    if ([self.moneyTextField.text floatValue] < 100) {
+    if ([self.moneyTextField.text floatValue] < 0.001) {
         self.errorLabel.text = @"*提现金额小于最低取现金额";
         [self.errorLabel addShakeAnimation];
         return;
-    } else if ([self.moneyTextField.text floatValue] > self.totalProperty) {
+    } else if ([self.moneyTextField.text floatValue] > [UserUtil currentUser].availableMoney) {
         self.errorLabel.text = @"*提现金额不得超过可用余额";
         [self.errorLabel addShakeAnimation];
         return;
     }
+    //输入交易密码
+    [self inputPickPW];
     
-    [self showSVProgressHUD];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [SVProgressHUD dismiss];
-        if ([self.moneyTextField.text floatValue] > 800) {
-            self.alertErrorLabel.text = @"提现失败";
-            [self showErrorAlert];
-        } else {
-            [self inputPickPW];
-        }
-    });
 }
 
 - (void)inputPickPW {
@@ -220,20 +207,53 @@
         return;
     }
     [self passwordDismiss];
-    NSLog(@"pass:::::::%@",self.passwordView.passwordTextField.text);
     [self showSVProgressHUD];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    
+    QRrequestVerifyTrasPwd *request = [[QRrequestVerifyTrasPwd alloc] init];
+    request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
+    request.transactionPwd = [NSString getStringWithString:self.passwordView.passwordTextField.text];
+    [self showSVProgressHUD];
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        TransactionPwd *pickup = [TransactionPwd mj_objectWithKeyValues:request.responseJSONObject];
         [SVProgressHUD dismiss];
-        if (self.passwordView.passwordTextField.text.length > 12) {
-            [self showErrorWithTitle:@"提现失败"];
+        NSLog(@"验证交易密码接口::::%@",request.responseJSONObject[@"head"][@"responseDescription"]);
+        NSLog(@"验证交易密码接口::::%@",request.responseJSONObject);
+        if (pickup.statusType == IndentityStatusSuccess) {
+            [self showSuccessWithTitle:@"验证成功提现中"];
+            //提现接口
+            QRRequestMoneyPickup *request = [[QRRequestMoneyPickup alloc] init];
+            request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
+            request.money = [self.moneyTextField.text floatValue];
+            Bank *bank = [[UserUtil currentUser].appBanks firstObject];
+            request.bankNo = [NSString getStringWithString:bank.bankNo];
+            [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+                [SVProgressHUD dismiss];
+                NSLog(@"提现接口::::%@",request.responseJSONObject[@"head"][@"responseDescription"]);
+                NSLog(@"提现接口::::%@",request.responseJSONObject);
+                PickupMoney *pickup = [PickupMoney mj_objectWithKeyValues:request.responseJSONObject];
+                if (pickup.statusType == IndentityStatusSuccess) {
+                    [self showSuccessWithTitle:@"提现成功"];
+                    ProductBuySuccessViewController *successController = [[ProductBuySuccessViewController alloc] init];
+                    successController.isPickupSuccess = YES;
+                    [self.navigationController pushViewController:successController
+                                                         animated:YES];
+                } else {
+                    [self showErrorWithTitle:@"提现失败"];
+                }
+                
+            } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+                [SVProgressHUD dismiss];
+                [self showErrorWithTitle:@"提现失败"];
+            }];
+            
         } else {
-            [self showSuccessWithTitle:@"提现成功"];
-            ProductBuySuccessViewController *successController = [[ProductBuySuccessViewController alloc] init];
-            successController.isPickupSuccess = YES;
-            [self.navigationController pushViewController:successController
-                                                 animated:YES];
+            [self showErrorWithTitle:@"交易验证失败"];
         }
-    });
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        [self showErrorWithTitle:@"交易验证失败"];
+    }];
 }
 
 - (IBAction)editingChanged:(UITextField *)sender {

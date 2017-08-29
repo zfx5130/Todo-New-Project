@@ -47,8 +47,7 @@
     } else if (self.isBuySuccess) {
         self.titleLabel.text = @"购买成功!";
         self.secondLabel.text = @"认购金额(元)  2000";
-        self.thirdLabel.hidden = NO;
-        self.thirdLabel.text = @"获得成长值+5";
+        self.thirdLabel.hidden = YES;
     } else if (self.isChargeSuccess) {
         self.titleLabel.text = @"充值成功!";
         self.secondLabel.text = @"快去选购定期产品赚钱吧！";

@@ -190,6 +190,10 @@
 		84825E2B1F4687B6006A921F /* FinanceCarouselTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E291F4687B6006A921F /* FinanceCarouselTableViewCell.xib */; };
 		84825E301F469A16006A921F /* NewUserBuyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E2E1F469A16006A921F /* NewUserBuyTableViewCell.m */; };
 		84825E311F469A16006A921F /* NewUserBuyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E2F1F469A16006A921F /* NewUserBuyTableViewCell.xib */; };
+		84B51CC31F55A36300840F94 /* QRRequestMoneyPickup.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B51CC21F55A36300840F94 /* QRRequestMoneyPickup.m */; };
+		84B51CC61F55A3F800840F94 /* PickupMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B51CC51F55A3F800840F94 /* PickupMoney.m */; };
+		84B51CC91F55A79400840F94 /* QRrequestVerifyTrasPwd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B51CC81F55A79400840F94 /* QRrequestVerifyTrasPwd.m */; };
+		84B51CCC1F55A81000840F94 /* TransactionPwd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B51CCB1F55A81000840F94 /* TransactionPwd.m */; };
 		84CE16F51F4F0CD300E61C7D /* MoneyRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CE16F31F4F0CD300E61C7D /* MoneyRechargeViewController.m */; };
 		84CE16F61F4F0CD300E61C7D /* MoneyRechargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CE16F41F4F0CD300E61C7D /* MoneyRechargeViewController.xib */; };
 		84CE16FA1F4FCF3800E61C7D /* FirstRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CE16F81F4FCF3800E61C7D /* FirstRechargeViewController.m */; };
@@ -579,6 +583,14 @@
 		84825E2D1F469A16006A921F /* NewUserBuyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserBuyTableViewCell.h; sourceTree = "<group>"; };
 		84825E2E1F469A16006A921F /* NewUserBuyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserBuyTableViewCell.m; sourceTree = "<group>"; };
 		84825E2F1F469A16006A921F /* NewUserBuyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewUserBuyTableViewCell.xib; sourceTree = "<group>"; };
+		84B51CC11F55A36300840F94 /* QRRequestMoneyPickup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestMoneyPickup.h; sourceTree = "<group>"; };
+		84B51CC21F55A36300840F94 /* QRRequestMoneyPickup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestMoneyPickup.m; sourceTree = "<group>"; };
+		84B51CC41F55A3F800840F94 /* PickupMoney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickupMoney.h; sourceTree = "<group>"; };
+		84B51CC51F55A3F800840F94 /* PickupMoney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickupMoney.m; sourceTree = "<group>"; };
+		84B51CC71F55A79400840F94 /* QRrequestVerifyTrasPwd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRrequestVerifyTrasPwd.h; sourceTree = "<group>"; };
+		84B51CC81F55A79400840F94 /* QRrequestVerifyTrasPwd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRrequestVerifyTrasPwd.m; sourceTree = "<group>"; };
+		84B51CCA1F55A81000840F94 /* TransactionPwd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionPwd.h; sourceTree = "<group>"; };
+		84B51CCB1F55A81000840F94 /* TransactionPwd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionPwd.m; sourceTree = "<group>"; };
 		84CE16F21F4F0CD300E61C7D /* MoneyRechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyRechargeViewController.h; sourceTree = "<group>"; };
 		84CE16F31F4F0CD300E61C7D /* MoneyRechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyRechargeViewController.m; sourceTree = "<group>"; };
 		84CE16F41F4F0CD300E61C7D /* MoneyRechargeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoneyRechargeViewController.xib; sourceTree = "<group>"; };
@@ -1037,6 +1049,10 @@
 				84E5F6731F5594B3004432BF /* TotalMoneyList.m */,
 				84E5F6751F5594FE004432BF /* TotalMoney.h */,
 				84E5F6761F5594FE004432BF /* TotalMoney.m */,
+				84B51CC41F55A3F800840F94 /* PickupMoney.h */,
+				84B51CC51F55A3F800840F94 /* PickupMoney.m */,
+				84B51CCA1F55A81000840F94 /* TransactionPwd.h */,
+				84B51CCB1F55A81000840F94 /* TransactionPwd.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1258,6 +1274,10 @@
 				84E5F6671F5571CF004432BF /* QRRequestLoanContract.m */,
 				84E5F66F1F5592E4004432BF /* QRRequestTotalMoneyDetail.h */,
 				84E5F6701F5592E4004432BF /* QRRequestTotalMoneyDetail.m */,
+				84B51CC11F55A36300840F94 /* QRRequestMoneyPickup.h */,
+				84B51CC21F55A36300840F94 /* QRRequestMoneyPickup.m */,
+				84B51CC71F55A79400840F94 /* QRrequestVerifyTrasPwd.h */,
+				84B51CC81F55A79400840F94 /* QRrequestVerifyTrasPwd.m */,
 			);
 			path = ApiRequest;
 			sourceTree = "<group>";
@@ -1775,6 +1795,7 @@
 				CE30A3DE1F547B0100FB7763 /* ProductPack.m in Sources */,
 				842A92F71F52A3F9001822EF /* QRRequestUserAvatar.m in Sources */,
 				842A92FA1F52B6F7001822EF /* QRRequestNameAuthorware.m in Sources */,
+				84B51CC91F55A79400840F94 /* QRrequestVerifyTrasPwd.m in Sources */,
 				842A92F41F5290DB001822EF /* QRRequestGetUserInfo.m in Sources */,
 				844402881F41B2B000F5AFEE /* UIColor+RGBValues.m in Sources */,
 				842A932A1F54094D001822EF /* UIScrollView+Custom.m in Sources */,
@@ -1803,6 +1824,7 @@
 				844FB8501F4EB950001772AF /* MorePropertyTableViewCell.m in Sources */,
 				8435E5C01F399C6C00424E5E /* CoreArchive.m in Sources */,
 				842616951F4B0BE300A96EFD /* PruductDetailViewController.m in Sources */,
+				84B51CC31F55A36300840F94 /* QRRequestMoneyPickup.m in Sources */,
 				844402871F41B2B000F5AFEE /* UIColor+Custom.m in Sources */,
 				844402901F41B2B000F5AFEE /* UITableView+Custom.m in Sources */,
 				8426167F1F4AEB9100A96EFD /* SuggestViewController.m in Sources */,
@@ -1838,6 +1860,7 @@
 				84CE17041F5149E200E61C7D /* User.m in Sources */,
 				84DCF34B1F4EE43A002F117A /* ASPopupController.m in Sources */,
 				8435E5B61F399C1E00424E5E /* CLLockView.m in Sources */,
+				84B51CC61F55A3F800840F94 /* PickupMoney.m in Sources */,
 				84E5F6771F5594FE004432BF /* TotalMoney.m in Sources */,
 				8444028B1F41B2B000F5AFEE /* UIImage+Custom.m in Sources */,
 				842616FA1F4C17BA00A96EFD /* ProductIncomeTableViewCell.m in Sources */,
@@ -1874,6 +1897,7 @@
 				CE30A3D81F5478F600FB7763 /* QRRequestProductPackList.m in Sources */,
 				844402851F41B2B000F5AFEE /* NSString+Custom.m in Sources */,
 				CE30A3D21F5469A900FB7763 /* ProductMask.m in Sources */,
+				84B51CCC1F55A81000840F94 /* TransactionPwd.m in Sources */,
 				844FB8121F4D6496001772AF /* IncomeTableViewCell.m in Sources */,
 				84DCF3571F4EE58E002F117A /* JCRBlurView.m in Sources */,
 				842A93361F5443E1001822EF /* NSString+Addition.m in Sources */,
