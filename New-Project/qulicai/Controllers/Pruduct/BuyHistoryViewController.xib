@@ -15,6 +15,7 @@
                 <outlet property="bottomPageContainView" destination="72c-8S-XtF" id="3YR-jH-AXX"/>
                 <outlet property="historyView" destination="MzR-Wj-tOe" id="1UY-Gd-A1z"/>
                 <outlet property="noBuyHistoryView" destination="IJa-FE-iq7" id="UdM-qc-ISY"/>
+                <outlet property="totalMoneyLabel" destination="uif-eS-YkM" id="Ozk-yI-1Or"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -105,7 +106,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9wX-9Q-aol" userLabel="Head View">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="98.03" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uif-eS-YkM">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uif-eS-YkM">
                                                     <rect key="frame" x="115" y="0.0" width="145" height="56"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="56" id="ggD-gP-H55"/>

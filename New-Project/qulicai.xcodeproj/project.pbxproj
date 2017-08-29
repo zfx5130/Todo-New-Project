@@ -216,6 +216,8 @@
 		84E5F6431F55437C004432BF /* YesterdayIncome.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F6421F55437C004432BF /* YesterdayIncome.m */; };
 		84E5F6461F554C91004432BF /* QRRequestSendSuggest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F6451F554C91004432BF /* QRRequestSendSuggest.m */; };
 		84E5F6491F554CFD004432BF /* Suggest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F6481F554CFD004432BF /* Suggest.m */; };
+		84E5F64C1F555390004432BF /* QRRequestExpectedInterest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F64B1F555390004432BF /* QRRequestExpectedInterest.m */; };
+		84E5F64F1F5553D9004432BF /* ExpectedTotal.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F64E1F5553D9004432BF /* ExpectedTotal.m */; };
 		84FEBA961F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBA951F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m */; };
 		84FEBADD1F4ABB730020B42D /* WRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBADC1F4ABB730020B42D /* WRNavigationBar.m */; };
 		84FEBAE01F4ABF510020B42D /* MainHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBADF1F4ABF510020B42D /* MainHeadView.m */; };
@@ -613,6 +615,10 @@
 		84E5F6451F554C91004432BF /* QRRequestSendSuggest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestSendSuggest.m; sourceTree = "<group>"; };
 		84E5F6471F554CFD004432BF /* Suggest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Suggest.h; sourceTree = "<group>"; };
 		84E5F6481F554CFD004432BF /* Suggest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Suggest.m; sourceTree = "<group>"; };
+		84E5F64A1F555390004432BF /* QRRequestExpectedInterest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestExpectedInterest.h; sourceTree = "<group>"; };
+		84E5F64B1F555390004432BF /* QRRequestExpectedInterest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestExpectedInterest.m; sourceTree = "<group>"; };
+		84E5F64D1F5553D9004432BF /* ExpectedTotal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpectedTotal.h; sourceTree = "<group>"; };
+		84E5F64E1F5553D9004432BF /* ExpectedTotal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpectedTotal.m; sourceTree = "<group>"; };
 		84FEBA941F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		84FEBA951F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		84FEBADB1F4ABB730020B42D /* WRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRNavigationBar.h; sourceTree = "<group>"; };
@@ -974,6 +980,8 @@
 				84E5F6421F55437C004432BF /* YesterdayIncome.m */,
 				84E5F6471F554CFD004432BF /* Suggest.h */,
 				84E5F6481F554CFD004432BF /* Suggest.m */,
+				84E5F64D1F5553D9004432BF /* ExpectedTotal.h */,
+				84E5F64E1F5553D9004432BF /* ExpectedTotal.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1187,6 +1195,8 @@
 				84E5F63C1F5541B3004432BF /* QRRequestYesterdayIncome.m */,
 				84E5F6441F554C91004432BF /* QRRequestSendSuggest.h */,
 				84E5F6451F554C91004432BF /* QRRequestSendSuggest.m */,
+				84E5F64A1F555390004432BF /* QRRequestExpectedInterest.h */,
+				84E5F64B1F555390004432BF /* QRRequestExpectedInterest.m */,
 			);
 			path = ApiRequest;
 			sourceTree = "<group>";
@@ -1741,6 +1751,7 @@
 				844FB80C1F4D60F3001772AF /* YesterdayIncomeView.m in Sources */,
 				844402931F41B2B000F5AFEE /* UIView+Custom.m in Sources */,
 				844402821F41B2B000F5AFEE /* NSNumber+Custom.m in Sources */,
+				84E5F64F1F5553D9004432BF /* ExpectedTotal.m in Sources */,
 				8435E4B21F316BCE00424E5E /* main.m in Sources */,
 				844402831F41B2B000F5AFEE /* NSObject+Custom.m in Sources */,
 				842A931B1F53C40D001822EF /* SettingTransPassword.m in Sources */,
@@ -1838,6 +1849,7 @@
 				8444028C1F41B2B000F5AFEE /* UIImage+ImageEffects.m in Sources */,
 				842A93421F552B38001822EF /* QRRequestUserRegister.m in Sources */,
 				842A93151F52E439001822EF /* FindLoginPassword.m in Sources */,
+				84E5F64C1F555390004432BF /* QRRequestExpectedInterest.m in Sources */,
 				8435E5B51F399C1E00424E5E /* CLLockMainView.m in Sources */,
 				842A93391F544AAA001822EF /* QRRequestProductMarkList.m in Sources */,
 				844402801F41B2B000F5AFEE /* NSDate+Custom.m in Sources */,

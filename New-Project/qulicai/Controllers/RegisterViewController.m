@@ -109,7 +109,7 @@
     request.password = self.lockTextField.text;
     __weak typeof(self) weakSelf = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        SLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
+        //SLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
         User *user = [User mj_objectWithKeyValues:request.responseJSONObject];
         
         if (user.statusType == IndentityStatusSuccess) {
@@ -122,7 +122,7 @@
             [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
                 [SVProgressHUD dismiss];
                 User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
-                SLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
+               // SLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
                 if (userInfo.statusType == IndentityStatusSuccess) {
                     [UserUtil saving:userInfo];
                     [weakSelf showSuccessWithTitle:@"登录成功"];
