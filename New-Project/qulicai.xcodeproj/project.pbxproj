@@ -225,6 +225,9 @@
 		84E5F65D1F556381004432BF /* ProductHistoryTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E5F65B1F556381004432BF /* ProductHistoryTwoViewController.xib */; };
 		84E5F6611F5563E6004432BF /* ProductHistoryThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F65F1F5563E6004432BF /* ProductHistoryThreeViewController.m */; };
 		84E5F6621F5563E6004432BF /* ProductHistoryThreeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E5F6601F5563E6004432BF /* ProductHistoryThreeViewController.xib */; };
+		84E5F6681F5571CF004432BF /* QRRequestLoanContract.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F6671F5571CF004432BF /* QRRequestLoanContract.m */; };
+		84E5F66B1F557292004432BF /* ContractList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F66A1F557292004432BF /* ContractList.m */; };
+		84E5F66E1F557750004432BF /* Contract.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F66D1F557750004432BF /* Contract.m */; };
 		84FEBA961F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBA951F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m */; };
 		84FEBADD1F4ABB730020B42D /* WRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBADC1F4ABB730020B42D /* WRNavigationBar.m */; };
 		84FEBAE01F4ABF510020B42D /* MainHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBADF1F4ABF510020B42D /* MainHeadView.m */; };
@@ -638,6 +641,12 @@
 		84E5F65E1F5563E6004432BF /* ProductHistoryThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductHistoryThreeViewController.h; sourceTree = "<group>"; };
 		84E5F65F1F5563E6004432BF /* ProductHistoryThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductHistoryThreeViewController.m; sourceTree = "<group>"; };
 		84E5F6601F5563E6004432BF /* ProductHistoryThreeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductHistoryThreeViewController.xib; sourceTree = "<group>"; };
+		84E5F6661F5571CF004432BF /* QRRequestLoanContract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestLoanContract.h; sourceTree = "<group>"; };
+		84E5F6671F5571CF004432BF /* QRRequestLoanContract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestLoanContract.m; sourceTree = "<group>"; };
+		84E5F6691F557292004432BF /* ContractList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractList.h; sourceTree = "<group>"; };
+		84E5F66A1F557292004432BF /* ContractList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractList.m; sourceTree = "<group>"; };
+		84E5F66C1F557750004432BF /* Contract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contract.h; sourceTree = "<group>"; };
+		84E5F66D1F557750004432BF /* Contract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contract.m; sourceTree = "<group>"; };
 		84FEBA941F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		84FEBA951F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		84FEBADB1F4ABB730020B42D /* WRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRNavigationBar.h; sourceTree = "<group>"; };
@@ -1011,6 +1020,10 @@
 				84E5F6541F5557E5004432BF /* BuyHistoryList.m */,
 				84E5F6561F5557F1004432BF /* BuyHistory.h */,
 				84E5F6571F5557F1004432BF /* BuyHistory.m */,
+				84E5F6691F557292004432BF /* ContractList.h */,
+				84E5F66A1F557292004432BF /* ContractList.m */,
+				84E5F66C1F557750004432BF /* Contract.h */,
+				84E5F66D1F557750004432BF /* Contract.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1228,6 +1241,8 @@
 				84E5F64B1F555390004432BF /* QRRequestExpectedInterest.m */,
 				84E5F6501F5556B5004432BF /* QRRequestBuyHistory.h */,
 				84E5F6511F5556B5004432BF /* QRRequestBuyHistory.m */,
+				84E5F6661F5571CF004432BF /* QRRequestLoanContract.h */,
+				84E5F6671F5571CF004432BF /* QRRequestLoanContract.m */,
 			);
 			path = ApiRequest;
 			sourceTree = "<group>";
@@ -1748,6 +1763,7 @@
 				842A92F41F5290DB001822EF /* QRRequestGetUserInfo.m in Sources */,
 				844402881F41B2B000F5AFEE /* UIColor+RGBValues.m in Sources */,
 				842A932A1F54094D001822EF /* UIScrollView+Custom.m in Sources */,
+				84E5F6681F5571CF004432BF /* QRRequestLoanContract.m in Sources */,
 				8435E5AF1F399C1E00424E5E /* CALayer+Anim.m in Sources */,
 				844402961F41B2B000F5AFEE /* UIViewController+Custom.m in Sources */,
 				844402AF1F43F9F600F5AFEE /* ResetPasswordViewController.m in Sources */,
@@ -1825,6 +1841,8 @@
 				842617131F4C53EA00A96EFD /* BankCartTableViewCell.m in Sources */,
 				8435E50B1F31726D00424E5E /* AppDelegate.m in Sources */,
 				842616F01F4C0C9C00A96EFD /* ProductBackMoneyViewController.m in Sources */,
+				84E5F66B1F557292004432BF /* ContractList.m in Sources */,
+				84E5F66E1F557750004432BF /* Contract.m in Sources */,
 				8435E5B41F399C1E00424E5E /* CLLockLabel.m in Sources */,
 				84825E301F469A16006A921F /* NewUserBuyTableViewCell.m in Sources */,
 				842616A01F4BD13300A96EFD /* ProductCycleTableViewCell.m in Sources */,

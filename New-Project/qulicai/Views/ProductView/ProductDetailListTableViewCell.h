@@ -10,4 +10,10 @@
 
 @interface ProductDetailListTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *contractLabel;
+
 @end

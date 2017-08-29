@@ -67,6 +67,11 @@
                     <constraint firstAttribute="bottom" secondItem="vLi-vU-Se3" secondAttribute="bottom" id="zdX-tH-qkq"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="contractLabel" destination="I1w-2B-VGP" id="21f-u2-IRg"/>
+                <outlet property="moneyLabel" destination="waG-in-Pr2" id="urB-OK-zWO"/>
+                <outlet property="nameLabel" destination="SZj-dd-W9n" id="J3T-WV-T3g"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

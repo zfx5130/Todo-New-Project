@@ -67,7 +67,7 @@
 - (void)requestProduct {
     QRRequestBuyHistory *request = [[QRRequestBuyHistory alloc] init];
     request.statusType = HistoryStatusWaiting;
-    request.userId = @"1";//[NSString getStringWithString:[UserUtil currentUser].userId];
+    request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
     __weak typeof(self) weakSelf = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [weakSelf.tableView.mj_header endRefreshing];

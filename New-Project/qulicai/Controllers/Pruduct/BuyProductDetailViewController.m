@@ -85,6 +85,7 @@ UICollectionViewDelegate>
     
     ProductDetailListViewController *twoVc = [[ProductDetailListViewController alloc] init];
     twoVc.title = @"借款人列表";
+    twoVc.pickId = self.pickId;
     [self addChildViewController:twoVc];
 
 }
