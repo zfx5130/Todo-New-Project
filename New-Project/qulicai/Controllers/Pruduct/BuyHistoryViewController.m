@@ -15,20 +15,20 @@ static NSString * const ID = @"CELL";
 #import "BuyHistoryViewController.h"
 #import "AppDelegate.h"
 #import "UIView+XJExtension.h"
-#import "ProductHistoryViewController.h"
 #import <Masonry.h>
 #import "UserUtil.h"
 #import "User.h"
 #import "QRRequestHeader.h"
 #import "ExpectedTotal.h"
+#import "ProductHistoryViewController.h"
+#import "ProductHistoryTwoViewController.h"
+#import "ProductHistoryThreeViewController.h"
 
 @interface BuyHistoryViewController ()
 <UICollectionViewDataSource,
 UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *noBuyHistoryView;
-
-@property (assign, nonatomic) BOOL hasHistory;
 
 @property (weak, nonatomic) IBOutlet UIView *historyView;
 
@@ -57,7 +57,6 @@ UICollectionViewDelegate>
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.hasHistory = YES;
     [self setupViews];
     
     [self setupTopView];
@@ -103,12 +102,13 @@ UICollectionViewDelegate>
 
 - (void)renderData {
     self.totalMoneyLabel.text = [NSString stringWithFormat:@"%.2f",self.expectedTotal.collectionPAI];
+    //方便车市
+    //self.historyView.hidden = !(self.expectedTotal.collectionPAI > 0) ;
+    //self.noBuyHistoryView.hidden = !self.historyView.hidden;
 }
 
 - (void)setupViews {
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
-    self.historyView.hidden = !self.hasHistory;
-    self.noBuyHistoryView.hidden = !self.historyView.hidden;
 }
 
 - (void)setupTopView {
@@ -124,19 +124,19 @@ UICollectionViewDelegate>
 }
 
 - (void)setupAllChildViewController {
-    
+     
     ProductHistoryViewController *oneVc = [[ProductHistoryViewController alloc] init];
     oneVc.title = @"待生息";
     [self addChildViewController:oneVc];
     
-    ProductHistoryViewController *twoVc = [[ProductHistoryViewController alloc] init];
+    ProductHistoryTwoViewController *twoVc = [[ProductHistoryTwoViewController alloc] init];
     twoVc.title = @"持有中";
     [self addChildViewController:twoVc];
     
-    ProductHistoryViewController *threeVc = [[ProductHistoryViewController alloc] init];
+    ProductHistoryThreeViewController *threeVc = [[ProductHistoryThreeViewController alloc] init];
     threeVc.title = @"已完成";
     [self addChildViewController:threeVc];
-
+    
 }
 
 - (void)setupAllTitle {

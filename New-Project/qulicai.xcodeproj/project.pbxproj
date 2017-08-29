@@ -218,6 +218,13 @@
 		84E5F6491F554CFD004432BF /* Suggest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F6481F554CFD004432BF /* Suggest.m */; };
 		84E5F64C1F555390004432BF /* QRRequestExpectedInterest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F64B1F555390004432BF /* QRRequestExpectedInterest.m */; };
 		84E5F64F1F5553D9004432BF /* ExpectedTotal.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F64E1F5553D9004432BF /* ExpectedTotal.m */; };
+		84E5F6521F5556B5004432BF /* QRRequestBuyHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F6511F5556B5004432BF /* QRRequestBuyHistory.m */; };
+		84E5F6551F5557E5004432BF /* BuyHistoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F6541F5557E5004432BF /* BuyHistoryList.m */; };
+		84E5F6581F5557F1004432BF /* BuyHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F6571F5557F1004432BF /* BuyHistory.m */; };
+		84E5F65C1F556381004432BF /* ProductHistoryTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F65A1F556381004432BF /* ProductHistoryTwoViewController.m */; };
+		84E5F65D1F556381004432BF /* ProductHistoryTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E5F65B1F556381004432BF /* ProductHistoryTwoViewController.xib */; };
+		84E5F6611F5563E6004432BF /* ProductHistoryThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F65F1F5563E6004432BF /* ProductHistoryThreeViewController.m */; };
+		84E5F6621F5563E6004432BF /* ProductHistoryThreeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E5F6601F5563E6004432BF /* ProductHistoryThreeViewController.xib */; };
 		84FEBA961F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBA951F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m */; };
 		84FEBADD1F4ABB730020B42D /* WRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBADC1F4ABB730020B42D /* WRNavigationBar.m */; };
 		84FEBAE01F4ABF510020B42D /* MainHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBADF1F4ABF510020B42D /* MainHeadView.m */; };
@@ -619,6 +626,18 @@
 		84E5F64B1F555390004432BF /* QRRequestExpectedInterest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestExpectedInterest.m; sourceTree = "<group>"; };
 		84E5F64D1F5553D9004432BF /* ExpectedTotal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpectedTotal.h; sourceTree = "<group>"; };
 		84E5F64E1F5553D9004432BF /* ExpectedTotal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpectedTotal.m; sourceTree = "<group>"; };
+		84E5F6501F5556B5004432BF /* QRRequestBuyHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestBuyHistory.h; sourceTree = "<group>"; };
+		84E5F6511F5556B5004432BF /* QRRequestBuyHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestBuyHistory.m; sourceTree = "<group>"; };
+		84E5F6531F5557E5004432BF /* BuyHistoryList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyHistoryList.h; sourceTree = "<group>"; };
+		84E5F6541F5557E5004432BF /* BuyHistoryList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyHistoryList.m; sourceTree = "<group>"; };
+		84E5F6561F5557F1004432BF /* BuyHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyHistory.h; sourceTree = "<group>"; };
+		84E5F6571F5557F1004432BF /* BuyHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyHistory.m; sourceTree = "<group>"; };
+		84E5F6591F556381004432BF /* ProductHistoryTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductHistoryTwoViewController.h; sourceTree = "<group>"; };
+		84E5F65A1F556381004432BF /* ProductHistoryTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductHistoryTwoViewController.m; sourceTree = "<group>"; };
+		84E5F65B1F556381004432BF /* ProductHistoryTwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductHistoryTwoViewController.xib; sourceTree = "<group>"; };
+		84E5F65E1F5563E6004432BF /* ProductHistoryThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductHistoryThreeViewController.h; sourceTree = "<group>"; };
+		84E5F65F1F5563E6004432BF /* ProductHistoryThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductHistoryThreeViewController.m; sourceTree = "<group>"; };
+		84E5F6601F5563E6004432BF /* ProductHistoryThreeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductHistoryThreeViewController.xib; sourceTree = "<group>"; };
 		84FEBA941F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		84FEBA951F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		84FEBADB1F4ABB730020B42D /* WRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRNavigationBar.h; sourceTree = "<group>"; };
@@ -696,6 +715,12 @@
 				844FB8231F4D9233001772AF /* ProductHistoryViewController.h */,
 				844FB8241F4D9233001772AF /* ProductHistoryViewController.m */,
 				844FB8251F4D9233001772AF /* ProductHistoryViewController.xib */,
+				84E5F6591F556381004432BF /* ProductHistoryTwoViewController.h */,
+				84E5F65A1F556381004432BF /* ProductHistoryTwoViewController.m */,
+				84E5F65B1F556381004432BF /* ProductHistoryTwoViewController.xib */,
+				84E5F65E1F5563E6004432BF /* ProductHistoryThreeViewController.h */,
+				84E5F65F1F5563E6004432BF /* ProductHistoryThreeViewController.m */,
+				84E5F6601F5563E6004432BF /* ProductHistoryThreeViewController.xib */,
 				844FB82D1F4E755A001772AF /* BuyProductDetailViewController.h */,
 				844FB82E1F4E755A001772AF /* BuyProductDetailViewController.m */,
 				844FB82F1F4E755A001772AF /* BuyProductDetailViewController.xib */,
@@ -982,6 +1007,10 @@
 				84E5F6481F554CFD004432BF /* Suggest.m */,
 				84E5F64D1F5553D9004432BF /* ExpectedTotal.h */,
 				84E5F64E1F5553D9004432BF /* ExpectedTotal.m */,
+				84E5F6531F5557E5004432BF /* BuyHistoryList.h */,
+				84E5F6541F5557E5004432BF /* BuyHistoryList.m */,
+				84E5F6561F5557F1004432BF /* BuyHistory.h */,
+				84E5F6571F5557F1004432BF /* BuyHistory.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1197,6 +1226,8 @@
 				84E5F6451F554C91004432BF /* QRRequestSendSuggest.m */,
 				84E5F64A1F555390004432BF /* QRRequestExpectedInterest.h */,
 				84E5F64B1F555390004432BF /* QRRequestExpectedInterest.m */,
+				84E5F6501F5556B5004432BF /* QRRequestBuyHistory.h */,
+				84E5F6511F5556B5004432BF /* QRRequestBuyHistory.m */,
 			);
 			path = ApiRequest;
 			sourceTree = "<group>";
@@ -1587,6 +1618,7 @@
 				844402C11F443FAE00F5AFEE /* SettingsTableViewController.storyboard in Resources */,
 				844FB8461F4EAF69001772AF /* TotalPropertyViewController.xib in Resources */,
 				842616A11F4BD13300A96EFD /* ProductCycleTableViewCell.xib in Resources */,
+				84E5F65D1F556381004432BF /* ProductHistoryTwoViewController.xib in Resources */,
 				842616801F4AEB9100A96EFD /* SuggestViewController.xib in Resources */,
 				844402CD1F44590100F5AFEE /* UsernameSettingViewController.xib in Resources */,
 				844FB82C1F4DA4A7001772AF /* ProductHistoryTableViewCell.xib in Resources */,
@@ -1596,6 +1628,7 @@
 				84CE16F61F4F0CD300E61C7D /* MoneyRechargeViewController.xib in Resources */,
 				84825E151F457468006A921F /* ModifyLoginPwViewController.xib in Resources */,
 				84DCF34E1F4EE43A002F117A /* ASPopupController.bundle in Resources */,
+				84E5F6621F5563E6004432BF /* ProductHistoryThreeViewController.xib in Resources */,
 				844FB83B1F4E7913001772AF /* ProductDetailListTableViewCell.xib in Resources */,
 				8435E4C01F316BCE00424E5E /* LaunchScreen.storyboard in Resources */,
 				8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */,
@@ -1723,6 +1756,7 @@
 				8435E6031F3D885200424E5E /* QRRequest.m in Sources */,
 				8426170E1F4C4F6700A96EFD /* BankCardSelectedViewController.m in Sources */,
 				8435E5BF1F399C6C00424E5E /* NSString+File.m in Sources */,
+				84E5F65C1F556381004432BF /* ProductHistoryTwoViewController.m in Sources */,
 				842A93031F52D1F2001822EF /* UpdateLoginPassword.m in Sources */,
 				84CE17011F512FB300E61C7D /* QRRequestLogin.m in Sources */,
 				842A93241F53EC32001822EF /* Product.m in Sources */,
@@ -1746,6 +1780,7 @@
 				84825E141F457468006A921F /* ModifyLoginPwViewController.m in Sources */,
 				844402AA1F42FC8100F5AFEE /* QRWebViewController.m in Sources */,
 				842A93001F52CE18001822EF /* QRRequestModifyLoginPassword.m in Sources */,
+				84E5F6611F5563E6004432BF /* ProductHistoryThreeViewController.m in Sources */,
 				84DCF3531F4EE46E002F117A /* ProductPasswordView.m in Sources */,
 				84CE17091F5156F300E61C7D /* BaseModel.m in Sources */,
 				844FB80C1F4D60F3001772AF /* YesterdayIncomeView.m in Sources */,
@@ -1756,6 +1791,7 @@
 				844402831F41B2B000F5AFEE /* NSObject+Custom.m in Sources */,
 				842A931B1F53C40D001822EF /* SettingTransPassword.m in Sources */,
 				842A933C1F5506BE001822EF /* QRRequestBackMoneyDetail.m in Sources */,
+				84E5F6551F5557E5004432BF /* BuyHistoryList.m in Sources */,
 				842616F51F4C106B00A96EFD /* ProductIntroTableViewCell.m in Sources */,
 				842A93331F543215001822EF /* ProductBody.m in Sources */,
 				842616D51F4C050100A96EFD /* UIView+XJExtension.m in Sources */,
@@ -1776,6 +1812,7 @@
 				CE30A3DB1F547AEE00FB7763 /* PackList.m in Sources */,
 				842A92F11F527759001822EF /* UserUtil.m in Sources */,
 				8444024A1F41A0E700F5AFEE /* LoginViewController.m in Sources */,
+				84E5F6521F5556B5004432BF /* QRRequestBuyHistory.m in Sources */,
 				84FEBA961F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				844402811F41B2B000F5AFEE /* NSDictionary+Custom.m in Sources */,
 				844402C81F44539700F5AFEE /* ZXCImagePicker.m in Sources */,
@@ -1820,6 +1857,7 @@
 				8435E5B11F399C1E00424E5E /* CLLockNavVC.m in Sources */,
 				844FB8211F4D7AA4001772AF /* BuyHistoryViewController.m in Sources */,
 				8435E5B01F399C1E00424E5E /* CoreLockConst.m in Sources */,
+				84E5F6581F5557F1004432BF /* BuyHistory.m in Sources */,
 				844402401F41874C00F5AFEE /* FinanceViewController.m in Sources */,
 				84CE16FE1F502EF600E61C7D /* CertificationLogin.m in Sources */,
 				84DCF34C1F4EE43A002F117A /* ASPopupDismissAnimator.m in Sources */,

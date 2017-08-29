@@ -6,7 +6,7 @@
 //  Copyright © 2017年 qurong. All rights reserved.
 //
 
-#import "ProductHistoryViewController.h"
+#import "ProductHistoryTwoViewController.h"
 #import "ProductHistoryTableViewCell.h"
 #import "BuyProductDetailViewController.h"
 #import "UIScrollView+Custom.h"
@@ -16,7 +16,7 @@
 #import "User.h"
 #import "UserUtil.h"
 
-@interface ProductHistoryViewController ()
+@interface ProductHistoryTwoViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -26,7 +26,7 @@
 
 @end
 
-@implementation ProductHistoryViewController
+@implementation ProductHistoryTwoViewController
 
 #pragma mark - lifeCycle
 
@@ -66,7 +66,7 @@
 
 - (void)requestProduct {
     QRRequestBuyHistory *request = [[QRRequestBuyHistory alloc] init];
-    request.statusType = HistoryStatusWaiting;
+    request.statusType = HistoryStatusHolding;
     request.userId = @"1";//[NSString getStringWithString:[UserUtil currentUser].userId];
     __weak typeof(self) weakSelf = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
@@ -103,7 +103,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
- 
+    
     ProductHistoryTableViewCell *cell =
     [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductHistoryTableViewCell class])];
     BuyHistory *history = self.historys[indexPath.row];
@@ -113,7 +113,7 @@
     cell.timeLabel.text = timeString;
     cell.balanceLabel.text = [NSString stringWithFormat:@"%.2f",history.totalRate];
     return cell;
-
+    
 }
 
 #pragma mark - Setters && Getters

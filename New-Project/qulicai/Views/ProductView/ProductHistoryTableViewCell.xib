@@ -35,7 +35,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7XQ-ds-sUd" userLabel="Left View">
                                 <rect key="frame" x="0.0" y="0.0" width="115" height="47.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nI0-wS-yfs">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nI0-wS-yfs">
                                         <rect key="frame" x="0.0" y="0.0" width="115.5" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="5W3-OR-kGp"/>
@@ -65,7 +65,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PD2-AR-n9p" userLabel="Center View">
                                 <rect key="frame" x="115" y="0.0" width="115" height="47.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017-08-11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOL-cf-YSb">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOL-cf-YSb">
                                         <rect key="frame" x="0.0" y="0.0" width="115.5" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="tYw-0a-E5g"/>
@@ -95,7 +95,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DXd-6b-db6" userLabel="Right View">
                                 <rect key="frame" x="230" y="0.0" width="115" height="47.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.9" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySy-jM-hPT">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySy-jM-hPT">
                                         <rect key="frame" x="0.0" y="0.0" width="115.5" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="aUW-LF-SMd"/>
@@ -149,6 +149,12 @@
                     <constraint firstAttribute="trailing" secondItem="ery-HY-3f6" secondAttribute="trailing" constant="15" id="xdx-5J-P02"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="balanceLabel" destination="ySy-jM-hPT" id="Lmz-qp-Rjp"/>
+                <outlet property="holdMoneyLabel" destination="nI0-wS-yfs" id="KiG-kw-nZ1"/>
+                <outlet property="productNameLabel" destination="5Pg-RS-qck" id="G0i-Sk-ASL"/>
+                <outlet property="timeLabel" destination="yOL-cf-YSb" id="UnP-yS-i8K"/>
+            </connections>
             <point key="canvasLocation" x="24.5" y="52"/>
         </tableViewCell>
     </objects>

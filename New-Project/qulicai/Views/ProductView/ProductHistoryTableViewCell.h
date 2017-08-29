@@ -10,4 +10,13 @@
 
 @interface ProductHistoryTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *holdMoneyLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *balanceLabel;
+
+
 @end

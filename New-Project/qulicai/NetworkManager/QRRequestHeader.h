@@ -30,5 +30,6 @@
 #import "QRRequestYesterdayIncome.h"
 #import "QRRequestSendSuggest.h"
 #import "QRRequestExpectedInterest.h"
+#import "QRRequestBuyHistory.h"
 
 #endif /* QRRequestHeader_h */

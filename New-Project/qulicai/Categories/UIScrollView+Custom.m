@@ -42,7 +42,7 @@
                  forState:MJRefreshStateRefreshing];
     stateHeader.lastUpdatedTimeLabel.hidden = YES;
     stateHeader.stateLabel.font = [UIFont systemFontOfSize:14.0f];
-    stateHeader.backgroundColor = [UIColor appTableViewBgColor];
+    stateHeader.backgroundColor = [UIColor clearColor];
     stateHeader.lastUpdatedTimeLabel.font = [UIFont systemFontOfSize:13.0f];
     stateHeader.stateLabel.textColor = RGBColor(153.0f, 153.0f, 153.0f);
     self.mj_header = stateHeader;
