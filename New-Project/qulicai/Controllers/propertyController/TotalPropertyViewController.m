@@ -117,8 +117,8 @@
         circle.firstColor = [UIColor colorWithRed:113.0f / 255 green:175.0f / 255 blue:255.0f / 255 alpha:1.0];
         circle.secondColor =[UIColor colorWithRed:255.0f / 255 green:168.0f / 255 blue:0 alpha:1.0];
         CGFloat rate = user.availableMoney * 1.0f / (user.availableMoney + user.regularMoney);
-        circle.firstScale = rate;
-        circle.secondScale = 1 - rate;
+        circle.firstScale = 1 - rate;
+        circle.secondScale = rate;
         circle.lineWith = 20;
     } else {
         circle.firstColor = RGBColor(204.0f, 204.0f, 204.0f);
@@ -170,6 +170,7 @@
         if (!self.totalMoneys.count) {
             EmptyPropertyTableViewCell *cell =
             [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EmptyPropertyTableViewCell class])];
+            cell.contentView.hidden = NO;
             return cell;
         } else {
             PropertyInfoTableViewCell *cell =

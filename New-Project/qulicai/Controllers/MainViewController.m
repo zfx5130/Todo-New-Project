@@ -309,6 +309,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([UserUtil isLoginIn]) {
         if ([UserUtil currentUser].totalMoney > 0) {
             PropertyPickupViewController *pickContoller = [[PropertyPickupViewController alloc] init];
+            pickContoller.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:pickContoller animated:YES];
         } else {
             [self showSuccessWithTitle:@"余额不足"];

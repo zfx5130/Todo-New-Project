@@ -12,6 +12,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PropertyPickupViewController">
             <connections>
                 <outlet property="alertErrorLabel" destination="UuQ-Jr-R3T" id="BYJ-bW-h72"/>
+                <outlet property="balanceLabel" destination="fdb-kM-ozG" id="GQ3-9e-buw"/>
+                <outlet property="bankCartLabel" destination="b1V-Ry-8an" id="Wmc-8Q-1c6"/>
+                <outlet property="bankLogoImageView" destination="Ec3-m5-w3l" id="Tu6-Xw-xWe"/>
+                <outlet property="bankNameLabel" destination="4DP-O5-B69" id="RjG-2N-9rw"/>
                 <outlet property="bottomViewHeightConstraint" destination="gYZ-oY-Bdo" id="rGK-RA-JTB"/>
                 <outlet property="errorLabel" destination="7vs-Fk-otb" id="78q-FL-YE9"/>
                 <outlet property="moneyTextField" destination="P90-SV-sw2" id="gf0-du-zN4"/>
@@ -60,7 +64,7 @@
                                                 <constraint firstAttribute="height" constant="100" id="IuJ-8R-bOg"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bank_gongs_image" translatesAutoresizingMaskIntoConstraints="NO" id="Ec3-m5-w3l">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ec3-m5-w3l">
                                             <rect key="frame" x="30" y="21" width="36" height="36"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -73,7 +77,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中国工商银行" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4DP-O5-B69">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4DP-O5-B69">
                                             <rect key="frame" x="75" y="18" width="251" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="vK4-gw-xbI"/>
@@ -91,7 +95,7 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6214556666666666534" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1V-Ry-8an">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1V-Ry-8an">
                                             <rect key="frame" x="65" y="55" width="280" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="gna-o5-TXt"/>
@@ -116,7 +120,7 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入提现金额，100起" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="P90-SV-sw2">
                                                     <rect key="frame" x="35.5" y="0.0" width="324.5" height="55"/>
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="go"/>
                                                     <connections>
                                                         <action selector="editingBegined:" destination="-1" eventType="editingDidBegin" id="XzA-MC-AtU"/>
@@ -145,7 +149,7 @@
                                                 <constraint firstItem="P90-SV-sw2" firstAttribute="top" secondItem="drU-A0-ViL" secondAttribute="top" id="chF-1o-Spx"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账户余额2000元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdb-kM-ozG">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdb-kM-ozG">
                                             <rect key="frame" x="15" y="195" width="190" height="17"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="17" id="7SI-T5-TQc"/>
@@ -317,7 +321,6 @@
     <resources>
         <image name="alert_error_image" width="13" height="12"/>
         <image name="bank_cart_bg_image" width="345" height="101"/>
-        <image name="bank_gongs_image" width="25" height="25"/>
         <image name="login_disabled_button_image" width="315" height="40"/>
         <image name="login_enabled_button_image" width="315" height="40"/>
     </resources>

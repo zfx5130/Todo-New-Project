@@ -11,9 +11,14 @@
 #import "ASPopupController.h"
 #import "ProductBuySuccessViewController.h"
 #import "ForgetPasswordViewController.h"
+#import "Bank.h"
+#import "UserUtil.h"
+#import "User.h"
 
 @interface PropertyPickupViewController ()
 <UITextViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UILabel *bankCartLabel;
 
 @property (weak, nonatomic) IBOutlet UITextField *moneyTextField;
 
@@ -22,8 +27,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *pickUpButton;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIImageView *bankLogoImageView;
 
 @property (weak, nonatomic) IBOutlet UILabel *alertErrorLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *balanceLabel;
+
 
 @property (assign, nonatomic) CGFloat totalProperty;
 
@@ -32,6 +41,9 @@
 @property (strong, nonatomic) ASPopupController *popController;
 
 @property (copy, nonatomic) NSString *password;
+
+@property (copy, nonatomic) NSArray *bankArray;
+@property (weak, nonatomic) IBOutlet UILabel *bankNameLabel;
 
 @end
 
@@ -43,6 +55,8 @@
     [super viewDidLoad];
     self.totalProperty = 2000;
     [self setupViews];
+    [self replaceBankCartNumber];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -53,7 +67,42 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - Setters && Getters
+
+- (NSArray *)bankArray {
+    if (!_bankArray) {
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Bank" ofType:@"plist"];
+        NSMutableArray *bankArr = [[NSMutableArray alloc] initWithContentsOfFile:filePath];
+        _bankArray = [bankArr copy];
+    }
+    return _bankArray;
+}
+
 #pragma mark - Private
+
+- (void)replaceBankCartNumber {
+    User *user = [UserUtil currentUser];
+    Bank *bank = [user.appBanks firstObject];
+    self.bankCartLabel.text = [NSString getStringWithString:bank.bankNo];
+    self.bankNameLabel.text = [NSString getStringWithString:[NSString stringWithFormat:@"%@",bank.bankName]];
+    if (self.bankCartLabel.text.length >= 16) {
+        NSString *str = [NSString replaceStrWithRange:NSMakeRange(4, 12)
+                                               string:[NSString getStringWithString:self.bankCartLabel.text]
+                                           withString:@" **** **** **** "];
+        self.bankCartLabel.text = str;
+    }
+    for (int i = 0; i < [self.bankArray count]; i++) {
+        NSDictionary *dic = self.bankArray[i];
+        NSString *bankName = dic[@"bankName"];
+        if ([bank.bankName isEqualToString:bankName]) {
+            NSString *bankImageName = dic[@"bankImageName"];
+            self.bankLogoImageView.image = [UIImage imageNamed:bankImageName];
+        }
+    }
+    self.balanceLabel.text = [NSString stringWithFormat:@"账户余额%.2f元",user.availableMoney];
+    
+    
+}
 
 - (void)setupViews {
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
