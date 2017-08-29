@@ -8,6 +8,10 @@
 
 #import "ProductIntroViewController.h"
 #import "ProductIntroTableViewCell.h"
+#import "QRRequestHeader.h"
+#import "ProductBody.h"
+#import "ProductDetail.h"
+#import "UIScrollView+Custom.h"
 
 @interface ProductIntroViewController ()
 <UITableViewDelegate,
@@ -17,7 +21,7 @@ UITableViewDataSource>
 
 @property (copy, nonatomic) NSArray *titleArrays;
 
-@property (copy, nonatomic) NSArray *contentArrays;
+@property (strong, nonatomic) NSMutableArray *contentArrays;
 
 @end
 
@@ -28,6 +32,9 @@ UITableViewDataSource>
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registerCell];
+    if (self.pickId) {
+        [self addRefreshControl];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -39,6 +46,65 @@ UITableViewDataSource>
 }
 
 #pragma mark - Private
+
+- (void)addRefreshControl {
+    [self.tableView addHeaderControlWithIdleTitle:@"下拉刷新"
+                                     pullingTitle:@"松开刷新"
+                                  refreshingTitle:@"正在刷新"
+                                           target:self
+                                         selector:@selector(loadNewData)];
+    [self.tableView.mj_header beginRefreshing];
+}
+
+- (void)loadNewData {
+    [self requestProductDetail];
+}
+
+- (void)renderUI {
+    CGFloat rate = (self.productDetail.activityRate + self.productDetail.interestRate) * 100;
+    NSString *name = [NSString getStringWithString:self.productDetail.productName];
+    NSString *limit = [NSString stringWithFormat:@"%@元起投",[NSString getStringWithString:self.productDetail.limitAmount]];
+    NSString *period = [NSString stringWithFormat:@"%@天",[NSString getStringWithString:self.productDetail.periods]];
+    NSString *bala = @"到期一次性还本付息";
+    NSString *rateStr = [NSString stringWithFormat:@"%.1f%%",rate];
+    NSString *startTime = [NSString stringWithFormat:@"%@",[NSString getStringWithString:self.productDetail.startTime]];
+    NSString *inerTime = [NSString stringWithFormat:@"%@",[NSString getStringWithString:self.productDetail.interestTime]];
+    NSString *endTime = [NSString stringWithFormat:@"%@",[NSString getStringWithString:self.productDetail.endTime]];
+    [self.contentArrays removeAllObjects];
+    [self.contentArrays addObject:name];
+    [self.contentArrays addObject:limit];
+    [self.contentArrays addObject:period];
+    [self.contentArrays addObject:bala];
+    [self.contentArrays addObject:rateStr];
+    [self.contentArrays addObject:startTime];
+    [self.contentArrays addObject:inerTime];
+    [self.contentArrays addObject:endTime];
+    [self.tableView  reloadData];
+
+}
+
+- (void)requestProductDetail {
+    [self showSVProgressHUD];
+    QRRequestProductDetail *request = [[QRRequestProductDetail alloc] init];
+    request.packId = [NSString getStringWithString:self.pickId];
+    __weak typeof(self) weakSelf = self;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        [weakSelf.tableView.mj_header endRefreshing];
+        ProductBody *productBody = [ProductBody mj_objectWithKeyValues:request.responseJSONObject];
+        if (productBody.statusType == IndentityStatusSuccess) {
+            weakSelf.productDetail = [productBody.productBody firstObject];
+            [weakSelf renderUI];
+        } else {
+            [weakSelf showErrorWithTitle:@"请求失败"];
+        }
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf showErrorWithTitle:@"请求失败"];
+    }];
+    
+}
 
 - (void)registerCell {
     UINib *infoNib = [UINib nibWithNibName:NSStringFromClass([ProductIntroTableViewCell class])
@@ -85,20 +151,20 @@ UITableViewDataSource>
     return _titleArrays;
 }
 
-- (NSArray *)contentArrays {
+- (NSMutableArray *)contentArrays {
     if (!_contentArrays) {
         
         CGFloat rate= (self.productDetail.activityRate + self.productDetail.interestRate) * 100;
-        _contentArrays = @[
-                           [NSString getStringWithString:[NSString stringWithFormat:@"%@",self.productDetail.productName]],
-                           [NSString getStringWithString:[NSString stringWithFormat:@"%@元起投",self.productDetail.limitAmount]],
-                           [NSString getStringWithString:[NSString stringWithFormat:@"%@天",self.productDetail.periods]],
+        _contentArrays = [@[
+                           [NSString getStringWithString:self.productDetail.productName],
+                           [NSString stringWithFormat:@"%@元起投",[NSString getStringWithString:self.productDetail.limitAmount]],
+                           [NSString stringWithFormat:@"%@天",[NSString getStringWithString:self.productDetail.periods]],
                            @"到期一次性还本付息",
                            [NSString stringWithFormat:@"%.1f%%",rate],
-                           [NSString getStringWithString:[NSString stringWithFormat:@"%@",self.productDetail.startTime]],
-                           [NSString getStringWithString:[NSString stringWithFormat:@"%@",self.productDetail.interestTime]],
-                           [NSString getStringWithString:[NSString stringWithFormat:@"%@",self.productDetail.endTime]]
-                           ];
+                           [NSString stringWithFormat:@"%@",[NSString getStringWithString:self.productDetail.startTime]],
+                           [NSString stringWithFormat:@"%@",[NSString getStringWithString:self.productDetail.interestTime]],
+                           [NSString stringWithFormat:@"%@",[NSString getStringWithString:self.productDetail.endTime]]
+                           ] mutableCopy];
     }
     return _contentArrays;
 }

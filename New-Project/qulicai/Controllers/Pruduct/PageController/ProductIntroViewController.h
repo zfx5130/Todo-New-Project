@@ -13,5 +13,7 @@
 
 @property (strong, nonatomic) ProductDetail *productDetail;
 
+@property (copy, nonatomic) NSString *pickId;
+
 @end
 

@@ -10,4 +10,6 @@
 
 @interface BuyProductDetailViewController : UIViewController
 
+@property (copy, nonatomic) NSString *pickId;
+
 @end

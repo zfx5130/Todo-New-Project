@@ -77,25 +77,25 @@ UICollectionViewDelegate>
 #pragma mark - Private
 
 - (void)requestApi {
-    [self showSVProgressHUD];
+    //[self showSVProgressHUD];
     QRRequestExpectedInterest *request = [[QRRequestExpectedInterest alloc] init];
     request.userId = @"1";//[NSString getStringWithString:[UserUtil currentUser].userId];
     __weak typeof(self) weakSlef = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        [SVProgressHUD dismiss];
+      //  [SVProgressHUD dismiss];
         NSLog(@"code::::::::%@",request.responseJSONObject);
         ExpectedTotal *expectedTotal = [ExpectedTotal mj_objectWithKeyValues:request.responseJSONObject];
         if (weakSlef.expectedTotal.statusType == IndentityStatusSuccess) {
             self.expectedTotal = expectedTotal;
             [weakSlef renderData];
         } else {
-            [weakSlef showErrorWithTitle:@"提交失败"];
+            //[weakSlef showErrorWithTitle:@"提交失败"];
             [weakSlef.navigationController popViewControllerAnimated:YES];
         }
         
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         [SVProgressHUD dismiss];
-        [weakSlef showErrorWithTitle:@"提交失败"];
+       // [weakSlef showErrorWithTitle:@"提交失败"];
         [weakSlef.navigationController popViewControllerAnimated:YES];
     }];
 }

@@ -80,6 +80,7 @@ UICollectionViewDelegate>
     
     ProductIntroViewController *oneVc = [[ProductIntroViewController alloc] init];
     oneVc.title = @"项目简介";
+    oneVc.pickId = self.pickId;
     [self addChildViewController:oneVc];
     
     ProductDetailListViewController *twoVc = [[ProductDetailListViewController alloc] init];

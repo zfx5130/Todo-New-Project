@@ -67,7 +67,7 @@ InputTextView1Delgate>
 #pragma mark - Private
 
 - (void)requestProductDetail {
-        [self showSVProgressHUD];
+    [self showSVProgressHUD];
     QRRequestProductDetail *request = [[QRRequestProductDetail alloc] init];
     request.packId = [NSString getStringWithString:self.pickId];
     
