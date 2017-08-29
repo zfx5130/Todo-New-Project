@@ -79,7 +79,7 @@ UICollectionViewDelegate>
 - (void)requestApi {
     //[self showSVProgressHUD];
     QRRequestExpectedInterest *request = [[QRRequestExpectedInterest alloc] init];
-    request.userId = @"1";//[NSString getStringWithString:[UserUtil currentUser].userId];
+    request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
     __weak typeof(self) weakSlef = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
       //  [SVProgressHUD dismiss];
