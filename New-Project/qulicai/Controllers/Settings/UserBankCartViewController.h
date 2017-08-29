@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Bank.h"
 
 @interface UserBankCartViewController : UIViewController
+
+@property (strong, nonatomic) Bank *bank;
 
 @end

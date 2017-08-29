@@ -32,12 +32,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     [self replaceBankCartNumber];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self setupViews];
-    [self replaceBankCartNumber];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,7 +45,6 @@
 }
 
 #pragma mark - Setters && Getters
-
 
 - (NSArray *)bankArray {
     if (!_bankArray) {
@@ -59,27 +58,25 @@
 #pragma mark - Private
 
 - (void)replaceBankCartNumber {
-    User *user = [UserUtil currentUser];
-    if (user.appBanks.count) {
-        Bank *bank = [user.appBanks firstObject];
-        self.bankCartLabel.text = bank.bankNo;
-        self.bankNameLabel.text = bank.bankName;
-        if (self.bankCartLabel.text.length >= 16) {
-            NSString *str = [NSString replaceStrWithRange:NSMakeRange(4, 12)
-                                                   string:self.bankCartLabel.text
-                                               withString:@" **** **** **** "];
-            self.bankCartLabel.text = str;
-        }
-        for (int i = 0; i < [self.bankArray count]; i++) {
-            NSDictionary *dic = self.bankArray[i];
-            NSString *bankName = dic[@"bankName"];
-            if ([bank.bankName isEqualToString:bankName]) {
-                NSString *bankImageName = dic[@"bankImageName"];
-                self.bankLogoImageView.image = [UIImage imageNamed:bankImageName];
-            }
-        }
-        
+    
+    Bank *bank = self.bank;
+    self.bankCartLabel.text = [NSString getStringWithString:bank.bankNo];
+    self.bankNameLabel.text = [NSString getStringWithString:[NSString stringWithFormat:@"%@",bank.bankName]];
+    if (self.bankCartLabel.text.length >= 16) {
+        NSString *str = [NSString replaceStrWithRange:NSMakeRange(4, 12)
+                                               string:[NSString getStringWithString:self.bankCartLabel.text]
+                                           withString:@" **** **** **** "];
+        self.bankCartLabel.text = str;
     }
+    for (int i = 0; i < [self.bankArray count]; i++) {
+        NSDictionary *dic = self.bankArray[i];
+        NSString *bankName = dic[@"bankName"];
+        if ([bank.bankName isEqualToString:bankName]) {
+            NSString *bankImageName = dic[@"bankImageName"];
+            self.bankLogoImageView.image = [UIImage imageNamed:bankImageName];
+        }
+    }
+    
 }
 
 

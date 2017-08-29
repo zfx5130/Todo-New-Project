@@ -59,7 +59,7 @@
                                                 <constraint firstAttribute="height" constant="100" id="yxB-rk-dLo"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bank_gongs_image" translatesAutoresizingMaskIntoConstraints="NO" id="ucd-xJ-beI">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ucd-xJ-beI">
                                             <rect key="frame" x="30" y="21" width="36" height="36"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -72,7 +72,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中国工商银行" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABB-zM-2Q3">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABB-zM-2Q3">
                                             <rect key="frame" x="75" y="18" width="251" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="uSF-0t-6ay"/>
@@ -90,7 +90,7 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6214556666666666534" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACn-Sq-6sQ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACn-Sq-6sQ">
                                             <rect key="frame" x="65" y="55" width="280" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="pmJ-Xk-SHx"/>
@@ -191,6 +191,5 @@
     </objects>
     <resources>
         <image name="bank_cart_bg_image" width="345" height="101"/>
-        <image name="bank_gongs_image" width="25" height="25"/>
     </resources>
 </document>

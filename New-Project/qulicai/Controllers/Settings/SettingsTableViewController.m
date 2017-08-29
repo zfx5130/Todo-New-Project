@@ -62,7 +62,7 @@
     __weak typeof(self) weakSelf = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
-        //NSLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
+        //SLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
         if (userInfo.statusType == IndentityStatusSuccess) {
             [UserUtil saving:userInfo];
             [weakSelf reloadUI];
@@ -85,7 +85,7 @@
     self.bankCartLabel.text = user.appBanks.count ? @"1张" : @"暂无银行卡";
     NSString *idCardNum = user.cardId;
     if (user.cardId.length > 0 && user.authStatusType != AuthenticationStatusFail) {
-        if (idCardNum.length > 15 && !user.nickName.length) {
+        if (idCardNum.length > 15) {
             NSString *str = [NSString replaceStrWithRange:NSMakeRange(6, 8)
                                                    string:idCardNum
                                                withString:@"*******"];
@@ -94,7 +94,6 @@
     } else {
         idCardNum = @"未认证";
     }
-    NSLog(@"___________:::::::::::%@",user.headPortrait);
     self.authenticationLabel.text = idCardNum;
     self.avatarImageView.image =
     ![UIImage dataURL2Image:user.headPortrait] ? [UIImage imageNamed:@"me_head_image"] : [UIImage dataURL2Image:user.headPortrait];
@@ -250,6 +249,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     User *user = [UserUtil currentUser];
     if (user.appBanks.count) {
         UserBankCartViewController *bankController = [[UserBankCartViewController alloc] init];
+        bankController.bank = [user.appBanks firstObject];
         [self.navigationController pushViewController:bankController
                                              animated:YES];
     } else {

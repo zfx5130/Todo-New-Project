@@ -27,7 +27,6 @@
         
         id value = [property valueForObject:self];
         if (value == nil) return;
-        NSLog(@"name::::%@::::%@",property.name,value);
         [encoder encodeObject:value forKey:property.name];
     }];
 }

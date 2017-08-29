@@ -86,6 +86,10 @@ UITableViewDataSource>
         } else {
             [self showErrorWithTitle:@"请求失败"];
             NSLog(@"error::::::::%@", request.error);
+            if ([productList.desc isEqualToString:QR_IDENTITY_ERROR]) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:QR_NOTIFICATIONCENTER_INDENTITY_KEY_IS_NULL
+                                                                    object:nil];
+            }
         }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         [self showErrorWithTitle:@"请求失败"];
