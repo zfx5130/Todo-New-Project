@@ -58,11 +58,11 @@
 
 - (void)updateUserInfo {
     QRRequestGetUserInfo *request = [[QRRequestGetUserInfo alloc] init];
-    request.userId = [UserUtil currentUser].userId;
+    request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
     __weak typeof(self) weakSelf = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
-        //SLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
+        SLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
         if (userInfo.statusType == IndentityStatusSuccess) {
             [UserUtil saving:userInfo];
             [weakSelf reloadUI];
@@ -271,7 +271,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         [weakSelf showSVProgressHUD];
         QRRequestUserAvatar *request = [[QRRequestUserAvatar alloc] init];
         request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
-        request.headPortrait = imageString;
+        request.headPortrait = [NSString getStringWithString:imageString];
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             [SVProgressHUD dismiss];
             NSInteger status = [request.responseJSONObject[@"head"][@"status"] integerValue];

@@ -8,6 +8,10 @@
 
 #import "UsernameSettingViewController.h"
 #import "UIViewController+Addition.h"
+#import "QRRequestSettingUserName.h"
+#import "SettingUserName.h"
+#import "UserUtil.h"
+#import "User.h"
 
 @interface UsernameSettingViewController ()
 <UITextViewDelegate>
@@ -75,17 +79,24 @@
 - (void)save {
     [self.view endEditing:YES];
     [self showSVProgressHUD];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    QRRequestSettingUserName *request = [[QRRequestSettingUserName alloc] init];
+    request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
+    request.nickName = self.usernameTextField.text;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [SVProgressHUD dismiss];
-        if (self.usernameTextField.text.length < 3) {
-            self.alertErrorLabel.text = @"昵称修改失败";
-            [self showErrorAlert];
-        } else {
-            [self showSuccessWithTitle:@"昵称修改成功"];
+        SettingUserName *userName = [SettingUserName mj_objectWithKeyValues:request.responseJSONObject];
+        if (userName.statusType == IndentityStatusSuccess) {
+            [self showSuccessWithTitle:@"昵称设置成功"];
             [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            self.alertErrorLabel.text = userName.desc;
+            [self showErrorAlert];
         }
-    });
-
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        [self showErrorWithTitle:@"昵称设置失败"];
+    }];
+    
 }
 
 #pragma mark - UITextViewDelegate
