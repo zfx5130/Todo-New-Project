@@ -84,12 +84,12 @@ UITableViewDataSource>
 }
 
 - (void)requestProductDetail {
-    [self showSVProgressHUD];
+    //[self showSVProgressHUD];
     QRRequestProductDetail *request = [[QRRequestProductDetail alloc] init];
     request.packId = [NSString getStringWithString:self.pickId];
     __weak typeof(self) weakSelf = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        [SVProgressHUD dismiss];
+        //[SVProgressHUD dismiss];
         [weakSelf.tableView.mj_header endRefreshing];
         ProductBody *productBody = [ProductBody mj_objectWithKeyValues:request.responseJSONObject];
         if (productBody.statusType == IndentityStatusSuccess) {
@@ -99,7 +99,7 @@ UITableViewDataSource>
             [weakSelf showErrorWithTitle:@"请求失败"];
         }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        [SVProgressHUD dismiss];
+        //[SVProgressHUD dismiss];
         [weakSelf.tableView.mj_header endRefreshing];
         [weakSelf showErrorWithTitle:@"请求失败"];
     }];

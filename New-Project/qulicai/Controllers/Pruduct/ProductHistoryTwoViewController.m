@@ -146,7 +146,9 @@ heightForHeaderInSection:(NSInteger)section {
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath
                              animated:YES];
+    BuyHistory *history = self.historys[indexPath.row];
     BuyProductDetailViewController *productController = [[BuyProductDetailViewController alloc] init];
+    productController.pickId = history.pack_id;
     [self.navigationController pushViewController:productController animated:YES];
 }
 
