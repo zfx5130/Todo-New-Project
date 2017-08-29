@@ -77,6 +77,7 @@ UICollectionViewDelegate>
     
     ProductBackMoneyViewController *backMoneyController = [[ProductBackMoneyViewController alloc] init];
     backMoneyController.title = @"回款计划";
+    backMoneyController.productDetail = self.productDetail;
     [self addChildViewController:backMoneyController];
 }
 

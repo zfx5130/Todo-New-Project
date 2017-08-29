@@ -85,9 +85,10 @@ UITableViewDataSource>
             [weakSelf renderProductInfo];
         } else {
             [self showErrorWithTitle:@"请求失败"];
+            NSLog(@"error::::::::%@", request.error);
         }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        [self showErrorWithTitle:@"网络请求错误"];
+        [self showErrorWithTitle:@"请求失败"];
     }];
 }
 

@@ -26,6 +26,10 @@
     [self configQRNetwork];
     [self setNavBarAppearence];
     [self certificateApi];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleRequestApi)
+                                                 name:QR_NOTIFICATIONCENTER_INDENTITY_KEY_IS_NULL
+                                               object:nil];
     return YES;
 }
 

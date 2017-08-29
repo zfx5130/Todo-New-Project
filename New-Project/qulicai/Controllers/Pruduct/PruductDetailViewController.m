@@ -67,16 +67,16 @@ InputTextView1Delgate>
 #pragma mark - Private
 
 - (void)requestProductDetail {
-    [self showSVProgressHUD];
+        [self showSVProgressHUD];
     QRRequestProductDetail *request = [[QRRequestProductDetail alloc] init];
-    request.packId = self.pickId;
+    request.packId = [NSString getStringWithString:self.pickId];
     
     __weak typeof(self) weakSelf = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [SVProgressHUD dismiss];
         ProductBody *productBody = [ProductBody mj_objectWithKeyValues:request.responseJSONObject];
         if (productBody.statusType == IndentityStatusSuccess) {
-            SLog(@"reuqe::++++::::%@",request.responseJSONObject);
+            //SLog(@"reuqe::++++::::%@",request.responseJSONObject);
             weakSelf.productDetail = [productBody.productBody firstObject];
             [weakSelf.tableView reloadData];
         } else {
@@ -88,6 +88,7 @@ InputTextView1Delgate>
         [weakSelf showErrorWithTitle:@"请求失败"];
         [weakSelf.navigationController popViewControllerAnimated:YES];
     }];
+    
 }
 
 - (void)registerCell {

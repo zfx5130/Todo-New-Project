@@ -130,9 +130,15 @@ UITableViewDataSource>
             
         } else {
             [self showErrorWithTitle:@"请求失败"];
+            if ([productList.desc isEqualToString:QR_IDENTITY_ERROR]) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:QR_NOTIFICATIONCENTER_INDENTITY_KEY_IS_NULL
+                                                                    object:nil];
+            }
         }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         [self showErrorWithTitle:@"网络请求错误"];
+        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView.mj_footer endRefreshing];
     }];
 }
 
