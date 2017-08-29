@@ -34,7 +34,7 @@ MJExtensionCodingImplementation
              @"mobilePhone" : @"body.mobilePhone",
              @"realName" : @"body.realName",
              @"loginFailCounts" : @"boby.loginFailCounts",
-             @"name" : @"body.name",
+             @"nickName" : @"body.nickName",
              @"userId": @"body.userId",
              @"cardId" : @"body.cardId",
              @"headPortrait" : @"body.headPortrait"
@@ -48,7 +48,7 @@ MJExtensionCodingImplementation
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"head:::%@::::name::%@::phone:::%@:password:::%@:totalMoney::::%@", [super description], self.name, self.mobilePhone, self.realName, @(self.totalMoney)];
+    return [NSString stringWithFormat:@"head:::%@::::name::%@::phone:::%@:password:::%@:totalMoney::::%@", [super description], self.nickName, self.mobilePhone, self.realName, @(self.totalMoney)];
 }
 
 @end

@@ -68,7 +68,7 @@
 - (void)renderUI {
     BOOL isLogin = [UserUtil isLoginIn];
     User *user = [UserUtil currentUser];
-    NSString *nickName = user.name.length > 0 ? user.name : user.mobilePhone;
+    NSString *nickName = user.nickName.length > 0 ? user.nickName : user.mobilePhone;
     self.userAccountLabel.text = isLogin ? nickName : @"未登录";
     self.vipTagLabel.hidden = !isLogin;
     self.vipTagBgLabel.hidden = !isLogin;
@@ -77,7 +77,7 @@
     self.vipBgImageView.image = isLogin ? [UIImage imageNamed:@"me_card_bg"] : [UIImage imageNamed:@"me_cart_unlogin_bg_image"];
     self.accountSecurityLabel.hidden = isLogin ? NO : YES;
     self.welfareLabel.hidden = isLogin ? NO : YES;
-    if (self.userAccountLabel.text.length >= 11 && !user.name.length) {
+    if (self.userAccountLabel.text.length >= 11 && !user.nickName.length) {
         NSString *str = [NSString replaceStrWithRange:NSMakeRange(3, 4)
                                                string:self.userAccountLabel.text
                                            withString:@"****"];

@@ -84,7 +84,7 @@
     request.password = self.passwordTextField.text;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         User *user = [User mj_objectWithKeyValues:request.responseJSONObject];
-        NSLog(@"reuqestResult:::::::::%@",request.responseJSONObject);
+        SLog(@"reuqestResult:::::::::%@",request.responseJSONObject);
         //NSLog(@"reuqestResult:::::::::%@",request.responseJSONObject[@"head"][@"responseDescription"]);
         if (user.statusType == IndentityStatusSuccess) {
             //获取用户信息
@@ -93,7 +93,7 @@
             [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
                 [SVProgressHUD dismiss];
                 User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
-                NSLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
+                SLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
                 if (userInfo.statusType == IndentityStatusSuccess) {
                     [UserUtil saving:userInfo];
                     [self showSuccessWithTitle:@"登录成功"];

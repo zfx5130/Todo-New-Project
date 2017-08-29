@@ -81,11 +81,11 @@
 
 - (void)setupViews {
     User *user = [UserUtil currentUser];
-    self.nickNameLabel.text = user.name.length ? user.name : @"未设置昵称";
+    self.nickNameLabel.text = user.nickName.length ? user.nickName : @"未设置昵称";
     self.bankCartLabel.text = user.appBanks.count ? @"1张" : @"暂无银行卡";
     NSString *idCardNum = user.cardId;
     if (user.cardId.length > 0 && user.authStatusType != AuthenticationStatusFail) {
-        if (idCardNum.length > 15) {
+        if (idCardNum.length > 15 && !user.nickName.length) {
             NSString *str = [NSString replaceStrWithRange:NSMakeRange(6, 8)
                                                    string:idCardNum
                                                withString:@"*******"];

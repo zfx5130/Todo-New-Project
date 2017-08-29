@@ -10,6 +10,8 @@
 
 @implementation Bank
 
+MJExtensionCodingImplementation
+
 + (NSDictionary *)mj_replacedKeyFromPropertyName {
     
     return @{

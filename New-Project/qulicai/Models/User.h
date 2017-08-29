@@ -19,7 +19,7 @@ typedef NS_ENUM(NSUInteger, AuthenticationStatusType) {
 @property (copy, nonatomic) NSString *userId;
 
 //昵称
-@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *nickName;
 
 //真实名字
 @property (copy, nonatomic) NSString *realName;
