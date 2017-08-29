@@ -8,6 +8,11 @@
 
 #import "SuggestViewController.h"
 #import <YYKit/YYTextView.h>
+#import "User.h"
+#import "UserUtil.h"
+#import "QRRequestHeader.h"
+#import "Suggest.h"
+
 
 @interface SuggestViewController ()
 <YYTextViewDelegate>
@@ -62,9 +67,31 @@
 #pragma mark - Handlers
 
 - (IBAction)submit:(UIButton *)sender {
-    self.textView.text = nil;
     [self.view endEditing:YES];
-    [self showSuccessWithTitle:@"提交成功"];
+    if (!self.textView.text.length) {
+        return;
+    }
+    
+    [self showSVProgressHUD];
+    QRRequestSendSuggest *request = [[QRRequestSendSuggest alloc] init];
+    request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
+    request.content = self.textView.text;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        //NSLog(@"code::::%@",request.responseJSONObject);
+        Suggest *suggest = [Suggest mj_objectWithKeyValues:request.responseJSONObject];
+        if (suggest.statusType == IndentityStatusSuccess) {
+            [self showSuccessWithTitle:@"提交成功"];
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            [self showErrorWithTitle:@"提交失败"];
+        }
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        [self showErrorWithTitle:@"提交失败"];
+    }];
+    
 }
 
 - (void)leftBarButtonAction {

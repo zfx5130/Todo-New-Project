@@ -57,21 +57,28 @@ UITableViewDataSource>
 
 #pragma mark - Private
 
+- (void)renderUI {
+    self.headView.incomeMoneyLabel.text = [NSString stringWithFormat:@"%.2f",self.incomeList.totalYestEaring];
+    NSString *dateTime = [[[NSString getStringWithString:self.incomeList.settleDate] componentsSeparatedByString:@" "] firstObject];
+    self.headView.dateLabel.text = dateTime;
+    [self.tableView reloadData];
+}
+
 - (void)loadNewData {
     User *user = [UserUtil currentUser];
     QRRequestYesterdayIncome *request = [[QRRequestYesterdayIncome alloc] init];
     request.userId = [NSString getStringWithString:user.userId];
     request.pageSize = @"10";
     request.currentPage = @"0";
-    [SVProgressHUD show];
+    [self showSVProgressHUD];
     __weak typeof(self) weakSelf = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        NSLog(@"数据：:：：：%@",request.responseJSONObject);
+        //NSLog(@"数据：:：：：%@",request.responseJSONObject);
         [SVProgressHUD dismiss];
         YesterdayIncomeList *incomeList = [YesterdayIncomeList mj_objectWithKeyValues:request.responseJSONObject];
         if (incomeList.statusType == IndentityStatusSuccess) {
             weakSelf.incomeList = incomeList;
-            [weakSelf.tableView reloadData];
+            [weakSelf renderUI];
         } else {
             [weakSelf showErrorWithTitle:incomeList.desc];
             [weakSelf.navigationController popViewControllerAnimated:YES];
@@ -101,9 +108,6 @@ UITableViewDataSource>
     [self setupNavigationItemLeft:[UIImage imageNamed:@"white_back_image"]];
     self.tableView.contentInset = UIEdgeInsetsMake(IMAGE_HEIGHT-64, 0, 0, 0);
     self.headView = [[YesterdayIncomeView alloc] initWithFrame:CGRectMake(0, -IMAGE_HEIGHT,SCREEN_WIDTH, IMAGE_HEIGHT)];
-    self.headView.incomeMoneyLabel.text = [NSString stringWithFormat:@"%.2f",self.incomeList.totalYestEaring];
-    NSString *dateTime = [[[NSString getStringWithString:self.incomeList.settleDate] componentsSeparatedByString:@" "] firstObject];
-    self.headView.dateLabel.text = dateTime;
     [self.tableView addSubview:self.headView];
 }
 

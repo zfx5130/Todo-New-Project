@@ -214,6 +214,8 @@
 		84E5F63D1F5541B3004432BF /* QRRequestYesterdayIncome.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F63C1F5541B3004432BF /* QRRequestYesterdayIncome.m */; };
 		84E5F6401F554362004432BF /* YesterdayIncomeList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F63F1F554362004432BF /* YesterdayIncomeList.m */; };
 		84E5F6431F55437C004432BF /* YesterdayIncome.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F6421F55437C004432BF /* YesterdayIncome.m */; };
+		84E5F6461F554C91004432BF /* QRRequestSendSuggest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F6451F554C91004432BF /* QRRequestSendSuggest.m */; };
+		84E5F6491F554CFD004432BF /* Suggest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F6481F554CFD004432BF /* Suggest.m */; };
 		84FEBA961F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBA951F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m */; };
 		84FEBADD1F4ABB730020B42D /* WRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBADC1F4ABB730020B42D /* WRNavigationBar.m */; };
 		84FEBAE01F4ABF510020B42D /* MainHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FEBADF1F4ABF510020B42D /* MainHeadView.m */; };
@@ -607,6 +609,10 @@
 		84E5F63F1F554362004432BF /* YesterdayIncomeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YesterdayIncomeList.m; sourceTree = "<group>"; };
 		84E5F6411F55437C004432BF /* YesterdayIncome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YesterdayIncome.h; sourceTree = "<group>"; };
 		84E5F6421F55437C004432BF /* YesterdayIncome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YesterdayIncome.m; sourceTree = "<group>"; };
+		84E5F6441F554C91004432BF /* QRRequestSendSuggest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestSendSuggest.h; sourceTree = "<group>"; };
+		84E5F6451F554C91004432BF /* QRRequestSendSuggest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestSendSuggest.m; sourceTree = "<group>"; };
+		84E5F6471F554CFD004432BF /* Suggest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Suggest.h; sourceTree = "<group>"; };
+		84E5F6481F554CFD004432BF /* Suggest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Suggest.m; sourceTree = "<group>"; };
 		84FEBA941F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		84FEBA951F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		84FEBADB1F4ABB730020B42D /* WRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRNavigationBar.h; sourceTree = "<group>"; };
@@ -966,6 +972,8 @@
 				84E5F63F1F554362004432BF /* YesterdayIncomeList.m */,
 				84E5F6411F55437C004432BF /* YesterdayIncome.h */,
 				84E5F6421F55437C004432BF /* YesterdayIncome.m */,
+				84E5F6471F554CFD004432BF /* Suggest.h */,
+				84E5F6481F554CFD004432BF /* Suggest.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1177,6 +1185,8 @@
 				84E5F6361F553DD9004432BF /* QRRequestSettingUserName.m */,
 				84E5F63B1F5541B3004432BF /* QRRequestYesterdayIncome.h */,
 				84E5F63C1F5541B3004432BF /* QRRequestYesterdayIncome.m */,
+				84E5F6441F554C91004432BF /* QRRequestSendSuggest.h */,
+				84E5F6451F554C91004432BF /* QRRequestSendSuggest.m */,
 			);
 			path = ApiRequest;
 			sourceTree = "<group>";
@@ -1685,6 +1695,7 @@
 				84E5F6371F553DD9004432BF /* QRRequestSettingUserName.m in Sources */,
 				844402BB1F44217400F5AFEE /* UIViewController+Addition.m in Sources */,
 				844402921F41B2B000F5AFEE /* UITextView+Custom.m in Sources */,
+				84E5F6461F554C91004432BF /* QRRequestSendSuggest.m in Sources */,
 				842616A51F4BD53300A96EFD /* ProductDetailTableViewCell.m in Sources */,
 				8435E5B21F399C1E00424E5E /* CLLockInfoView.m in Sources */,
 				84FEBAE01F4ABF510020B42D /* MainHeadView.m in Sources */,
@@ -1742,6 +1753,7 @@
 				8435E5AD1F399C1E00424E5E /* CLLockVC.m in Sources */,
 				842A931E1F53D8E8001822EF /* QRRequestProductList.m in Sources */,
 				842A93121F52E3BF001822EF /* QRRequestFindLoginPassword.m in Sources */,
+				84E5F6491F554CFD004432BF /* Suggest.m in Sources */,
 				84DCF35B1F4F08F7002F117A /* PropertyIncomeViewController.m in Sources */,
 				842A93091F52D4F8001822EF /* UpdateTransactionPassword.m in Sources */,
 				84CE17041F5149E200E61C7D /* User.m in Sources */,
