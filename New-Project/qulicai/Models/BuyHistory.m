@@ -20,6 +20,7 @@
              @"pack_name" : @"pack.name",
              @"pack_periods" : @"pack.periods",
              @"pack_planEndTime" : @"pack.planEndTime",
+             @"pack_endTime" : @"pack.endTime",
              @"pack_residualAmount" : @"pack.residualAmount",
              @"pack_startTime" : @"pack.startTime",
              @"pack_status" : @"pack.status",

@@ -153,7 +153,7 @@
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是趣融金服旗下的P2P网络借贷平台理财端，专注于提供安全、便捷与高收益的理财服务；" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rWn-E0-E6w">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="趣理财推出的固定期限内不得进行债转赎回的网络借贷产品，有多种投资期限可以选择，投资期限到期后投资本金和投资收益自动进入可用余额。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rWn-E0-E6w">
                                                     <rect key="frame" x="28" y="48" width="319" height="66.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -198,7 +198,7 @@
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是趣融金服旗下的P2P网络借贷平台理财端，专注于提供安全、便捷与高收益的理财服务；" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TqP-Ht-qVF">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="趣理财不收取任何申购、资金保管等费用。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TqP-Ht-qVF">
                                                     <rect key="frame" x="28" y="48" width="319" height="66.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -243,7 +243,7 @@
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是趣融金服旗下的P2P网络借贷平台理财端，专注于提供安全、便捷与高收益的理财服务；" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ebJ-kO-hcB">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="起始投资金额最低为人民币50元，根据不同理财产品起投金额会有所不同，以实际理财项目为准。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ebJ-kO-hcB">
                                                     <rect key="frame" x="28" y="48" width="319" height="66.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -288,7 +288,7 @@
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是趣融金服旗下的P2P网络借贷平台理财端，专注于提供安全、便捷与高收益的理财服务；" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tjK-sn-l6a">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="根据国家相关法律法规，为了确保投资人的资金安全，一级发洗钱的需求，我们严格对用户身份进行认证，只有通过实名认证的投资人才能在趣理财平台上进行投资。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tjK-sn-l6a">
                                                     <rect key="frame" x="28" y="48" width="319" height="66.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -307,6 +307,141 @@
                                                 <constraint firstItem="VRt-z7-hTF" firstAttribute="leading" secondItem="Qh2-v6-aW8" secondAttribute="leading" constant="15" id="sfE-Cc-S6H"/>
                                                 <constraint firstAttribute="bottom" secondItem="VRt-z7-hTF" secondAttribute="bottom" constant="5" id="uPm-Mx-gpR"/>
                                                 <constraint firstItem="tjK-sn-l6a" firstAttribute="centerX" secondItem="59k-s5-MnG" secondAttribute="centerX" id="whf-L5-k9V"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="u2c-GA-Kx9">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="130" id="pXS-cG-0PZ">
+                                        <rect key="frame" x="0.0" y="1026" width="375" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pXS-cG-0PZ" id="77K-X7-lMx">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="customer_bg_image" translatesAutoresizingMaskIntoConstraints="NO" id="roZ-3X-Wmj">
+                                                    <rect key="frame" x="15" y="5" width="345" height="119.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="如何充值？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3J3-da-eTj">
+                                                    <rect key="frame" x="28" y="6" width="319" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="36" id="xc4-qP-m81"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击充值按钮，根据提示信息完成相应操作即可完成充值。充值金额将会进入您的可用余额。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6ZI-wo-3VP">
+                                                    <rect key="frame" x="28" y="48" width="319" height="66.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="roZ-3X-Wmj" firstAttribute="leading" secondItem="77K-X7-lMx" secondAttribute="leading" constant="15" id="7ar-Gb-EhV"/>
+                                                <constraint firstItem="3J3-da-eTj" firstAttribute="leading" secondItem="77K-X7-lMx" secondAttribute="leading" constant="28" id="ABa-vc-aIo"/>
+                                                <constraint firstItem="3J3-da-eTj" firstAttribute="top" secondItem="77K-X7-lMx" secondAttribute="top" constant="6" id="AWK-gb-yDs"/>
+                                                <constraint firstItem="6ZI-wo-3VP" firstAttribute="centerX" secondItem="3J3-da-eTj" secondAttribute="centerX" id="K2P-z8-Q38"/>
+                                                <constraint firstItem="6ZI-wo-3VP" firstAttribute="width" secondItem="3J3-da-eTj" secondAttribute="width" id="N0g-co-fyD"/>
+                                                <constraint firstItem="roZ-3X-Wmj" firstAttribute="top" secondItem="77K-X7-lMx" secondAttribute="top" constant="5" id="NFE-Ck-WdV"/>
+                                                <constraint firstAttribute="bottom" secondItem="6ZI-wo-3VP" secondAttribute="bottom" constant="15" id="TWz-Sw-27g"/>
+                                                <constraint firstAttribute="bottom" secondItem="roZ-3X-Wmj" secondAttribute="bottom" constant="5" id="WTH-BP-iw5"/>
+                                                <constraint firstAttribute="trailing" secondItem="3J3-da-eTj" secondAttribute="trailing" constant="28" id="dvs-Bm-CES"/>
+                                                <constraint firstItem="6ZI-wo-3VP" firstAttribute="top" secondItem="3J3-da-eTj" secondAttribute="bottom" constant="6" id="ph8-RK-d6G"/>
+                                                <constraint firstAttribute="trailing" secondItem="roZ-3X-Wmj" secondAttribute="trailing" constant="15" id="u8H-vO-lz0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="lgm-1l-Bd2">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="130" id="afs-Gx-x6i">
+                                        <rect key="frame" x="0.0" y="1192" width="375" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="afs-Gx-x6i" id="QVr-WM-fx6">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="customer_bg_image" translatesAutoresizingMaskIntoConstraints="NO" id="NKi-lI-mJw">
+                                                    <rect key="frame" x="15" y="5" width="345" height="119.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="如何取现？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8j-bv-iN1">
+                                                    <rect key="frame" x="28" y="6" width="319" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="36" id="KBH-xC-eGA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击取现按钮，根据提示信息完成相应操作即可发起取现申请。取现金额不能超过您的可用余额，为保障您的资金安全，趣理财将严格执行同卡进出原则，取现款项将在一个工作日内汇入您用于充值的银行卡中。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IkD-Ec-JhC">
+                                                    <rect key="frame" x="28" y="48" width="319" height="66.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="j8j-bv-iN1" firstAttribute="top" secondItem="QVr-WM-fx6" secondAttribute="top" constant="6" id="2vJ-8n-d6f"/>
+                                                <constraint firstItem="NKi-lI-mJw" firstAttribute="leading" secondItem="QVr-WM-fx6" secondAttribute="leading" constant="15" id="8AD-iM-p2F"/>
+                                                <constraint firstAttribute="trailing" secondItem="NKi-lI-mJw" secondAttribute="trailing" constant="15" id="GHn-Of-AhP"/>
+                                                <constraint firstItem="IkD-Ec-JhC" firstAttribute="top" secondItem="j8j-bv-iN1" secondAttribute="bottom" constant="6" id="Jji-3C-HRO"/>
+                                                <constraint firstAttribute="trailing" secondItem="j8j-bv-iN1" secondAttribute="trailing" constant="28" id="KGB-FL-uRJ"/>
+                                                <constraint firstItem="IkD-Ec-JhC" firstAttribute="centerX" secondItem="j8j-bv-iN1" secondAttribute="centerX" id="NmR-4M-Ch1"/>
+                                                <constraint firstAttribute="bottom" secondItem="NKi-lI-mJw" secondAttribute="bottom" constant="5" id="O4m-RJ-sV1"/>
+                                                <constraint firstAttribute="bottom" secondItem="IkD-Ec-JhC" secondAttribute="bottom" constant="15" id="ZHY-7l-mTL"/>
+                                                <constraint firstItem="IkD-Ec-JhC" firstAttribute="width" secondItem="j8j-bv-iN1" secondAttribute="width" id="dyK-eZ-kMv"/>
+                                                <constraint firstItem="NKi-lI-mJw" firstAttribute="top" secondItem="QVr-WM-fx6" secondAttribute="top" constant="5" id="fvp-W9-kTK"/>
+                                                <constraint firstItem="j8j-bv-iN1" firstAttribute="leading" secondItem="QVr-WM-fx6" secondAttribute="leading" constant="28" id="l2A-ag-sPh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="Cy9-zb-Iuu">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="130" id="eqe-ae-cPv">
+                                        <rect key="frame" x="0.0" y="1358" width="375" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eqe-ae-cPv" id="dlS-rn-dsn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="customer_bg_image" translatesAutoresizingMaskIntoConstraints="NO" id="bYE-3T-EfB">
+                                                    <rect key="frame" x="15" y="5" width="345" height="119.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="什么是昨日收益？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4f-4H-u0G">
+                                                    <rect key="frame" x="28" y="6" width="319" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="36" id="9hG-Lj-BfA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昨日收益为趣理财根据您在投项目计算的预计昨日收益，没有进入您的可用余额，实际收益以项目项目到期后的最终收益结算为准。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="g7U-kd-lT6">
+                                                    <rect key="frame" x="28" y="48" width="319" height="66.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bYE-3T-EfB" firstAttribute="top" secondItem="dlS-rn-dsn" secondAttribute="top" constant="5" id="7N1-js-09o"/>
+                                                <constraint firstAttribute="trailing" secondItem="B4f-4H-u0G" secondAttribute="trailing" constant="28" id="Ekf-NV-3A6"/>
+                                                <constraint firstItem="B4f-4H-u0G" firstAttribute="leading" secondItem="dlS-rn-dsn" secondAttribute="leading" constant="28" id="G3F-CB-Cml"/>
+                                                <constraint firstItem="g7U-kd-lT6" firstAttribute="top" secondItem="B4f-4H-u0G" secondAttribute="bottom" constant="6" id="IUu-hs-Pmb"/>
+                                                <constraint firstItem="bYE-3T-EfB" firstAttribute="leading" secondItem="dlS-rn-dsn" secondAttribute="leading" constant="15" id="Usk-GA-HIh"/>
+                                                <constraint firstAttribute="bottom" secondItem="bYE-3T-EfB" secondAttribute="bottom" constant="5" id="pz0-Mj-9UF"/>
+                                                <constraint firstItem="B4f-4H-u0G" firstAttribute="top" secondItem="dlS-rn-dsn" secondAttribute="top" constant="6" id="qBg-ZK-OnP"/>
+                                                <constraint firstAttribute="bottom" secondItem="g7U-kd-lT6" secondAttribute="bottom" constant="15" id="rrN-ex-Cz0"/>
+                                                <constraint firstItem="g7U-kd-lT6" firstAttribute="centerX" secondItem="B4f-4H-u0G" secondAttribute="centerX" id="wty-EL-wAd"/>
+                                                <constraint firstAttribute="trailing" secondItem="bYE-3T-EfB" secondAttribute="trailing" constant="15" id="xKr-yP-yTL"/>
+                                                <constraint firstItem="g7U-kd-lT6" firstAttribute="width" secondItem="B4f-4H-u0G" secondAttribute="width" id="ysb-9K-ejM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

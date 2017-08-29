@@ -18,5 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *balanceLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *titleDescLabel;
 
 @end

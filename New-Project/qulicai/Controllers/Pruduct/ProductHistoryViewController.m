@@ -107,6 +107,7 @@
     ProductHistoryTableViewCell *cell =
     [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductHistoryTableViewCell class])];
     BuyHistory *history = self.historys[indexPath.row];
+    cell.titleDescLabel.text = @"预计生息时间";
     cell.productNameLabel.text = [NSString getStringWithString:[NSString stringWithFormat:@"%@",history.pack_name]];
     cell.holdMoneyLabel.text = [NSString stringWithFormat:@"%.2f",history.money];
     NSString *timeString = [[[NSString getStringWithString:history.pack_startTime] componentsSeparatedByString:@" "] firstObject];

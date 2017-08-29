@@ -22,6 +22,8 @@
 
 @property (copy, nonatomic) NSString *pack_insertTime;
 
+@property (copy, nonatomic) NSString *pack_endTime;
+
 @property (assign, nonatomic) CGFloat pack_interestRate;
 
 @property (copy, nonatomic) NSString *pack_name;

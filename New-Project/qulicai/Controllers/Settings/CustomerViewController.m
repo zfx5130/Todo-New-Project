@@ -39,7 +39,7 @@
 #pragma mark - TableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 6;
+    return 9;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView

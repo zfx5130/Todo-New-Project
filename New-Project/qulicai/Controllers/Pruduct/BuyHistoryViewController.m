@@ -77,12 +77,10 @@ UICollectionViewDelegate>
 #pragma mark - Private
 
 - (void)requestApi {
-    //[self showSVProgressHUD];
     QRRequestExpectedInterest *request = [[QRRequestExpectedInterest alloc] init];
     request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
     __weak typeof(self) weakSlef = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-      //  [SVProgressHUD dismiss];
         NSLog(@"code::::::::%@",request.responseJSONObject);
         ExpectedTotal *expectedTotal = [ExpectedTotal mj_objectWithKeyValues:request.responseJSONObject];
         if (weakSlef.expectedTotal.statusType == IndentityStatusSuccess) {

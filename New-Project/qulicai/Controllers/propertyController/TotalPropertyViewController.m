@@ -17,13 +17,14 @@
 #import "PropertyIncomeViewController.h"
 #import "MoneyRechargeViewController.h"
 #import "FirstRechargeViewController.h"
+#import "User.h"
+#import "UserUtil.h"
 
 @interface TotalPropertyViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (assign, nonatomic) BOOL hasPreporty;
-@property (assign, nonatomic) BOOL isFirstRechange;
 
 @end
 
@@ -39,7 +40,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.isFirstRechange = ![UserDefaultsValue(@"isIdentity") isEqualToString:@"YES"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,7 +49,6 @@
 #pragma mark - Private
 
 - (void)setupViews {
-    self.hasPreporty = YES;
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
 }
 
@@ -84,11 +83,14 @@
     DZ_ScaleCircle *circle =
     [[DZ_ScaleCircle alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 100.0f, 100.0f)];
     
-    if (self.hasPreporty) {
+    
+    User *user = [UserUtil currentUser];
+    if (user.totalMoney > 0) {
         circle.firstColor = [UIColor colorWithRed:113.0f / 255 green:175.0f / 255 blue:255.0f / 255 alpha:1.0];
         circle.secondColor =[UIColor colorWithRed:255.0f / 255 green:168.0f / 255 blue:0 alpha:1.0];
-        circle.firstScale = 0.7;
-        circle.secondScale = 0.3;
+        CGFloat rate = user.availableMoney * 1.0f / (user.availableMoney + user.regularMoney);
+        circle.firstScale = rate;
+        circle.secondScale = 1 - rate;
         circle.lineWith = 20;
     } else {
         circle.firstColor = RGBColor(204.0f, 204.0f, 204.0f);
@@ -121,9 +123,10 @@
     if (!indexPath.section) {
         PropertyHeadTableViewCell *cell =
         [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PropertyHeadTableViewCell class])];
-        cell.totalPropertyLabel.text = self.hasPreporty ? @"193424234" : @"0.00";
-        cell.balanceLabel.text = self.hasPreporty ? @"423242" : @"0.00";
-        cell.regularLabel.text = self.hasPreporty ? @"3434243" : @"0.00";
+        User *user = [UserUtil currentUser];
+        cell.totalPropertyLabel.text = [NSString stringWithFormat:@"%.2f",user.totalMoney];
+        cell.balanceLabel.text = [NSString stringWithFormat:@"%.2f", user.availableMoney];
+        cell.regularLabel.text = [NSString stringWithFormat:@"%.2f",user.regularMoney];
         [self addScacleCircleWithCell:cell];
         return cell;
     } else if (indexPath.section == 2) {
@@ -207,15 +210,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (IBAction)charge:(UIButton *)sender {
-    if (self.isFirstRechange) {
-        FirstRechargeViewController *firstController = [[FirstRechargeViewController alloc] init];
-        [self.navigationController pushViewController:firstController
-                                             animated:YES];
-    } else {
-        MoneyRechargeViewController *rechargeController = [[MoneyRechargeViewController alloc] init];
-        [self.navigationController pushViewController:rechargeController
-                                             animated:YES];
-    }
+
+    FirstRechargeViewController *firstController = [[FirstRechargeViewController alloc] init];
+    [self.navigationController pushViewController:firstController
+                                         animated:YES];
+    //        MoneyRechargeViewController *rechargeController = [[MoneyRechargeViewController alloc] init];
+    //        [self.navigationController pushViewController:rechargeController
+    //                                             animated:YES];
 }
 
 - (IBAction)pickup:(UIButton *)sender {

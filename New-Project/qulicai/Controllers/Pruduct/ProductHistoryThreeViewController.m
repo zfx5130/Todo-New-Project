@@ -107,9 +107,10 @@
     ProductHistoryTableViewCell *cell =
     [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductHistoryTableViewCell class])];
     BuyHistory *history = self.historys[indexPath.row];
+    cell.titleDescLabel.text = @"完成时间";
     cell.productNameLabel.text = [NSString getStringWithString:[NSString stringWithFormat:@"%@",history.pack_name]];
     cell.holdMoneyLabel.text = [NSString stringWithFormat:@"%.2f",history.money];
-    NSString *timeString = [[[NSString getStringWithString:history.pack_startTime] componentsSeparatedByString:@" "] firstObject];
+    NSString *timeString = [[[NSString getStringWithString:history.pack_endTime] componentsSeparatedByString:@" "] firstObject];
     cell.timeLabel.text = timeString;
     cell.balanceLabel.text = [NSString stringWithFormat:@"%.2f",history.totalRate];
     return cell;

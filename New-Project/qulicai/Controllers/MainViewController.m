@@ -81,7 +81,7 @@ UITableViewDataSource>
         ProductList *productList = [ProductList mj_objectWithKeyValues:request.responseJSONObject];
         if (productList.statusType == IndentityStatusSuccess) {
             weakSelf.product = [productList.products firstObject];
-           // NSLog(@"------%@",request.responseJSONObject);
+            SLog(@"------%@",request.responseJSONObject);
             [weakSelf renderProductInfo];
         } else {
             [self showErrorWithTitle:@"请求失败"];

@@ -154,6 +154,7 @@
                 <outlet property="holdMoneyLabel" destination="nI0-wS-yfs" id="KiG-kw-nZ1"/>
                 <outlet property="productNameLabel" destination="5Pg-RS-qck" id="G0i-Sk-ASL"/>
                 <outlet property="timeLabel" destination="yOL-cf-YSb" id="UnP-yS-i8K"/>
+                <outlet property="titleDescLabel" destination="yYx-UA-B3A" id="TNA-Pp-wc8"/>
             </connections>
             <point key="canvasLocation" x="24.5" y="52"/>
         </tableViewCell>
