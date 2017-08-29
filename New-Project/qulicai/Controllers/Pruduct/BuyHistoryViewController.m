@@ -79,7 +79,7 @@ UICollectionViewDelegate>
 - (void)requestApi {
     [self showSVProgressHUD];
     QRRequestExpectedInterest *request = [[QRRequestExpectedInterest alloc] init];
-    request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
+    request.userId = @"1";//[NSString getStringWithString:[UserUtil currentUser].userId];
     __weak typeof(self) weakSlef = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [SVProgressHUD dismiss];
@@ -103,8 +103,8 @@ UICollectionViewDelegate>
 - (void)renderData {
     self.totalMoneyLabel.text = [NSString stringWithFormat:@"%.2f",self.expectedTotal.collectionPAI];
     //方便车市
-    //self.historyView.hidden = !(self.expectedTotal.collectionPAI > 0) ;
-    //self.noBuyHistoryView.hidden = !self.historyView.hidden;
+    self.historyView.hidden = !(self.expectedTotal.collectionPAI > 0) ;
+    self.noBuyHistoryView.hidden = !self.historyView.hidden;
 }
 
 - (void)setupViews {
