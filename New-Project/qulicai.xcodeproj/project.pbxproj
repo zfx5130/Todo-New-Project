@@ -74,6 +74,7 @@
 		842A93391F544AAA001822EF /* QRRequestProductMarkList.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A93381F544AAA001822EF /* QRRequestProductMarkList.m */; };
 		842A933C1F5506BE001822EF /* QRRequestBackMoneyDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A933B1F5506BE001822EF /* QRRequestBackMoneyDetail.m */; };
 		842A933F1F55070D001822EF /* BackMoneyDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A933E1F55070D001822EF /* BackMoneyDetail.m */; };
+		842A93421F552B38001822EF /* QRRequestUserRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 842A93411F552B38001822EF /* QRRequestUserRegister.m */; };
 		8435E4B21F316BCE00424E5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E4B11F316BCE00424E5E /* main.m */; };
 		8435E4BB1F316BCE00424E5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4B91F316BCE00424E5E /* Main.storyboard */; };
 		8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4BC1F316BCE00424E5E /* Assets.xcassets */; };
@@ -355,6 +356,8 @@
 		842A933B1F5506BE001822EF /* QRRequestBackMoneyDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestBackMoneyDetail.m; sourceTree = "<group>"; };
 		842A933D1F55070D001822EF /* BackMoneyDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackMoneyDetail.h; sourceTree = "<group>"; };
 		842A933E1F55070D001822EF /* BackMoneyDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackMoneyDetail.m; sourceTree = "<group>"; };
+		842A93401F552B38001822EF /* QRRequestUserRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestUserRegister.h; sourceTree = "<group>"; };
+		842A93411F552B38001822EF /* QRRequestUserRegister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestUserRegister.m; sourceTree = "<group>"; };
 		8435E4AD1F316BCE00424E5E /* qulicai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qulicai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8435E4B11F316BCE00424E5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8435E4BA1F316BCE00424E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1147,6 +1150,8 @@
 				CE30A3D71F5478F600FB7763 /* QRRequestProductPackList.m */,
 				842A933A1F5506BE001822EF /* QRRequestBackMoneyDetail.h */,
 				842A933B1F5506BE001822EF /* QRRequestBackMoneyDetail.m */,
+				842A93401F552B38001822EF /* QRRequestUserRegister.h */,
+				842A93411F552B38001822EF /* QRRequestUserRegister.m */,
 			);
 			path = ApiRequest;
 			sourceTree = "<group>";
@@ -1789,6 +1794,7 @@
 				844FB83E1F4E7BC2001772AF /* BorrowMoneyDetailTableViewController.m in Sources */,
 				842616EB1F4C0C8E00A96EFD /* ProductRecordViewController.m in Sources */,
 				8444028C1F41B2B000F5AFEE /* UIImage+ImageEffects.m in Sources */,
+				842A93421F552B38001822EF /* QRRequestUserRegister.m in Sources */,
 				842A93151F52E439001822EF /* FindLoginPassword.m in Sources */,
 				8435E5B51F399C1E00424E5E /* CLLockMainView.m in Sources */,
 				842A93391F544AAA001822EF /* QRRequestProductMarkList.m in Sources */,

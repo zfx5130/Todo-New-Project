@@ -9,6 +9,10 @@
 #import "RegisterViewController.h"
 #import "SendVerifyCodeButton.h"
 #import "QRWebViewController.h"
+#import "QRRequestHeader.h"
+#import "User.h"
+#import "VerifyCode.h"
+#import "UserUtil.h"
 
 @interface RegisterViewController ()
 <UITextViewDelegate>
@@ -37,6 +41,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *errorAlertLabel;
 
+@property (copy, nonatomic) NSString *verifyCode;
+
 @end
 
 @implementation RegisterViewController
@@ -64,6 +70,7 @@
 
 #pragma mark - Private
 
+
 - (void)setupViews {
     [self.view addTapGestureForDismissingKeyboard];
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -90,18 +97,58 @@
         return;
     }
     
+//    if (![self.verifyTextField.text isEqualToString:self.verifyCode]) {
+//        self.errorLabel.text = @"*验证码输入不正确";
+//        [self.errorLabel addShakeAnimation];
+//        return;
+//    }
+    
     [self showSVProgressHUD];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [SVProgressHUD dismiss];
-        if (self.verifyTextField.text.length < 4) {
-            self.errorAlertLabel.text = @"验证码不正确";
-            [self showErrorAlert];
+    QRRequestUserRegister *request = [[QRRequestUserRegister alloc] init];
+    request.mobilePhone = self.phoneTextField.text;
+    request.password = self.lockTextField.text;
+    __weak typeof(self) weakSelf = self;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        SLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
+        User *user = [User mj_objectWithKeyValues:request.responseJSONObject];
+        
+        if (user.statusType == IndentityStatusSuccess) {
+            //获取用户信息
+            [SVProgressHUD dismiss];
+            [weakSelf showSuccessWithTitle:@"注册成功"];
+            
+            QRRequestGetUserInfo *request = [[QRRequestGetUserInfo alloc] init];
+            request.userId = [NSString getStringWithString:[NSString stringWithFormat:@"%@",user.userId]];
+            [weakSelf showSuccessWithTitle:@"登录跳转中"];
+            [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+                [SVProgressHUD dismiss];
+                User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
+                 SLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
+                if (userInfo.statusType == IndentityStatusSuccess) {
+                    [UserUtil saving:userInfo];
+                    [weakSelf showSuccessWithTitle:@"登录成功"];
+                    [weakSelf.navigationController dismissViewControllerAnimated:YES
+                                                                  completion:nil];
+                } else {
+                    NSString *error = user.desc;
+                    weakSelf.errorAlertLabel.text = error;
+                    [weakSelf showErrorAlert];
+                }
+            } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+                NSLog(@"error:- %@", request.error);
+            }];
+            
         } else {
-            [self showSuccessWithTitle:@"注册成功"];
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            [SVProgressHUD dismiss];
+            NSString *error = user.desc;
+            self.errorAlertLabel.text = error;
+            [self showErrorAlert];
         }
-    });
-
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        NSLog(@"error:- %@", request.error);
+    }];
 }
 
 - (void)showErrorAlert {
@@ -126,11 +173,7 @@
 #pragma mark - UITextViewDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    BOOL isFlag =
-    self.lockTextField.text.length && self.phoneTextField.text.length && self.verifyTextField.text.length;
-    if (textField == self.lockTextField && isFlag) {
-        [self registerUser];
-    }
+    [self registerUser];
     return YES;
 }
 
@@ -185,15 +228,32 @@
         [self.errorLabel addShakeAnimation];
         return;
     }
-    
     //检测验证码是否已经发送
     if ([sender canSenderVerifyCodeWithPhone:self.phoneTextField.text]) {
         return;
     }
-    
-    [sender sendVerifyCodeWithPhone:self.phoneTextField.text];
-    
     //请求验证码操作
+    [self showSVProgressHUD];
+    QRRequestVerifyCode *request = [[QRRequestVerifyCode alloc] init];
+    request.mobilePhone = self.phoneTextField.text;
+    request.codeType = VerifyCodeTypeRegister;
+    __weak typeof(self) weakSelf = self;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        NSLog(@"reuqreresult:code::::%@",request.responseJSONObject);
+        VerifyCode *verify = [VerifyCode mj_objectWithKeyValues:request.responseJSONObject];
+        if (verify.statusType == IndentityStatusSuccess) {
+            [weakSelf showSuccessWithTitle:@"发送验证码成功"];
+            [sender sendVerifyCodeWithPhone:self.phoneTextField.text];
+            weakSelf.verifyCode = verify.verifyCode;
+        } else {
+            weakSelf.errorAlertLabel.text = verify.desc;
+            [weakSelf showErrorAlert];
+        }
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        NSLog(@"error-::::%@",request.error);
+    }];
     
 }
 
