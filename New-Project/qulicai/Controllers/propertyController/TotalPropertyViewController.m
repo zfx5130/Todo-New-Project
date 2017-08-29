@@ -19,12 +19,15 @@
 #import "FirstRechargeViewController.h"
 #import "User.h"
 #import "UserUtil.h"
+#import "QRRequestHeader.h"
+#import "TotalMoneyList.h"
+#import "TotalMoney.h"
 
 @interface TotalPropertyViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (assign, nonatomic) BOOL hasPreporty;
+@property (copy, nonatomic) NSArray *totalMoneys;
 
 @end
 
@@ -36,6 +39,7 @@
     [super viewDidLoad];
     [self setupViews];
     [self registerCell];
+    [self reloadTotalProperty];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -47,6 +51,31 @@
 }
 
 #pragma mark - Private
+
+- (void)reloadTotalProperty {
+    QRRequestTotalMoneyDetail *request = [[QRRequestTotalMoneyDetail alloc] init];
+    request.currentPage = @"0";
+    request.pageSize = @"4";
+    request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
+    __weak typeof(self) weakSelf = self;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        TotalMoneyList *list = [TotalMoneyList mj_objectWithKeyValues:request.responseJSONObject];
+        if (list.statusType == IndentityStatusSuccess) {
+            NSLog(@"reque:__success_:::::::%@",request.responseJSONObject);
+            weakSelf.totalMoneys = list.moneys;
+            [weakSelf renderUI];
+        } else {
+            [weakSelf showErrorWithTitle:@"请求失败"];
+        }
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [weakSelf showErrorWithTitle:@"请求失败"];
+    }];
+    
+}
+
+- (void)renderUI {
+    [self.tableView reloadData];
+}
 
 - (void)setupViews {
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
@@ -83,7 +112,6 @@
     DZ_ScaleCircle *circle =
     [[DZ_ScaleCircle alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 100.0f, 100.0f)];
     
-    
     User *user = [UserUtil currentUser];
     if (user.totalMoney > 0) {
         circle.firstColor = [UIColor colorWithRed:113.0f / 255 green:175.0f / 255 blue:255.0f / 255 alpha:1.0];
@@ -103,13 +131,22 @@
     [cell.propertyCircleView addSubview:circle];
 }
 
+#pragma mark - Setters && Getters
+
+- (NSArray *)totalMoneys {
+    if (!_totalMoneys) {
+        _totalMoneys = [[NSArray alloc] init];
+    }
+    return _totalMoneys;
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
     NSInteger num = 1;
     if (section == 2) {
-        num = self.hasPreporty ? 4 : 1;
+        num = self.totalMoneys.count > 0 ? self.totalMoneys.count : 1;
     }
     return num;
 }
@@ -130,13 +167,19 @@
         [self addScacleCircleWithCell:cell];
         return cell;
     } else if (indexPath.section == 2) {
-        if (!self.hasPreporty) {
+        if (!self.totalMoneys.count) {
             EmptyPropertyTableViewCell *cell =
             [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EmptyPropertyTableViewCell class])];
             return cell;
         } else {
             PropertyInfoTableViewCell *cell =
             [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PropertyInfoTableViewCell class])];
+            TotalMoney *money = self.totalMoneys[indexPath.row];
+            cell.nameLabel.text = [money getNameWithType:money.type];
+            cell.timeLabel.text = [NSString getStringWithString:money.transactionDate];
+            cell.moneyLabel.text = [NSString stringWithFormat:@"%.2f",money.money];
+            cell.moneyLabel.textColor =
+            money.money > 0 ? RGBColor(52.0f, 198.0f, 61.0f) : RGBColor(255.0f, 0.0f, 0.0f);
             return cell;
         }
     }
@@ -155,7 +198,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     } else if (indexPath.section == 1) {
         height = 45.0f;
     } else if (indexPath.section == 2) {
-        height = self.hasPreporty ? 60.0f : 250.0f;
+        height = self.totalMoneys.count ? 60.0f : 250.0f;
     }
     return height;
 }
@@ -220,7 +263,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (IBAction)pickup:(UIButton *)sender {
-    if (!self.hasPreporty) {
+    User *user = [UserUtil currentUser];
+    if (user.totalMoney <= 0) {
         [self showAlert];
     } else {
         [self pickUpMoney];

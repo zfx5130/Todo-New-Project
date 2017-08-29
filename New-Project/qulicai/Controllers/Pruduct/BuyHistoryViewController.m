@@ -48,7 +48,6 @@ UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *totalMoneyLabel;
 
-
 @end
 
 @implementation BuyHistoryViewController
@@ -68,6 +67,10 @@ UICollectionViewDelegate>
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self requestApi];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -303,6 +306,7 @@ UICollectionViewDelegate>
 
 - (IBAction)goBuy:(UIButton *)sender {
     self.tabBarController.selectedIndex = 1;
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 

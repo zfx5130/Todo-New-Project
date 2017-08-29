@@ -1,20 +1,19 @@
 //
-//  ProductList.m
+//  TotalMoneyList.m
 //  qulicai
 //
-//  Created by admin on 2017/8/28.
+//  Created by admin on 2017/8/29.
 //  Copyright © 2017年 qurong. All rights reserved.
 //
 
-#import "ProductList.h"
+#import "TotalMoneyList.h"
 
-@implementation ProductList
-
+@implementation TotalMoneyList
 
 + (NSDictionary *)mj_replacedKeyFromPropertyName {
     return @{
              @"total" : @"body.total",
-             @"products" : @"body.rows",
+             @"moneys" : @"body.rows",
              @"code" : @"head.responseCode",
              @"desc" : @"head.responseDescription",
              @"statusType" : @"head.status"
@@ -23,7 +22,7 @@
 
 + (NSDictionary *)mj_objectClassInArray {
     return @{
-             @"products" : @"Product"
+             @"moneys" : @"TotalMoney"
              };
 }
 
