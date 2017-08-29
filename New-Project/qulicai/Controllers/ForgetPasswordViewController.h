@@ -16,4 +16,6 @@
 //是否提现交易密码
 @property (assign, nonatomic) BOOL isPickUpPw;
 
+@property (assign, nonatomic) BOOL isRegisterSwip;
+
 @end

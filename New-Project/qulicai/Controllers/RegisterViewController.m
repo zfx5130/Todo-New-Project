@@ -97,11 +97,11 @@
         return;
     }
     
-//    if (![self.verifyTextField.text isEqualToString:self.verifyCode]) {
-//        self.errorLabel.text = @"*验证码输入不正确";
-//        [self.errorLabel addShakeAnimation];
-//        return;
-//    }
+    if (![self.verifyTextField.text isEqualToString:self.verifyCode]) {
+        self.errorLabel.text = @"*验证码输入不正确";
+        [self.errorLabel addShakeAnimation];
+        return;
+    }
     
     [self showSVProgressHUD];
     QRRequestUserRegister *request = [[QRRequestUserRegister alloc] init];
@@ -115,15 +115,14 @@
         if (user.statusType == IndentityStatusSuccess) {
             //获取用户信息
             [SVProgressHUD dismiss];
-            [weakSelf showSuccessWithTitle:@"注册成功"];
             
             QRRequestGetUserInfo *request = [[QRRequestGetUserInfo alloc] init];
             request.userId = [NSString getStringWithString:[NSString stringWithFormat:@"%@",user.userId]];
-            [weakSelf showSuccessWithTitle:@"登录跳转中"];
+            [weakSelf showSuccessWithTitle:@"注册成功跳转中"];
             [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
                 [SVProgressHUD dismiss];
                 User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
-                 SLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
+                SLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
                 if (userInfo.statusType == IndentityStatusSuccess) {
                     [UserUtil saving:userInfo];
                     [weakSelf showSuccessWithTitle:@"登录成功"];

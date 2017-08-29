@@ -214,6 +214,7 @@
 - (IBAction)forgetPassword:(UIButton *)sender {
     [self.view endEditing:YES];
     ForgetPasswordViewController *passwordController = [[ForgetPasswordViewController alloc] init];
+    passwordController.isRegisterSwip = YES;
     [self.navigationController pushViewController:passwordController
                                          animated:YES];
 }
