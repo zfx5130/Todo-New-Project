@@ -254,13 +254,16 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (IBAction)charge:(UIButton *)sender {
-
-    FirstRechargeViewController *firstController = [[FirstRechargeViewController alloc] init];
-    [self.navigationController pushViewController:firstController
-                                         animated:YES];
-    //        MoneyRechargeViewController *rechargeController = [[MoneyRechargeViewController alloc] init];
-    //        [self.navigationController pushViewController:rechargeController
-    //                                             animated:YES];
+    User *currentUser = [UserUtil currentUser];
+    if (currentUser.appBanks.count) {
+        MoneyRechargeViewController *rechargeController = [[MoneyRechargeViewController alloc] init];
+        [self.navigationController pushViewController:rechargeController
+                                             animated:YES];
+    } else {
+        FirstRechargeViewController *firstController = [[FirstRechargeViewController alloc] init];
+        [self.navigationController pushViewController:firstController
+                                             animated:YES];
+    }
 }
 
 - (IBAction)pickup:(UIButton *)sender {

@@ -21,8 +21,8 @@
 - (id)requestArgument {
     return @{
              @"head" : @{ @"serviceName" : @"getAppUserByUserId" },
-//             @"body" : @{ @"userId" : self.userId }
-             @"body" : @{ @"userId" : @"2" }
+             @"body" : @{ @"userId" : self.userId }
+//             @"body" : @{ @"userId" : @"2" }
              };
 }
 

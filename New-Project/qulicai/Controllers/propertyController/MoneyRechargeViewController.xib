@@ -12,6 +12,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoneyRechargeViewController">
             <connections>
                 <outlet property="alertErrorLabel" destination="1IC-xL-D9Z" id="zJK-5f-0hH"/>
+                <outlet property="bankCartLabel" destination="9Kb-vT-FYN" id="H6a-Fc-nqy"/>
+                <outlet property="bankLogoImageView" destination="fJC-wI-VKA" id="cKQ-95-p5U"/>
+                <outlet property="bankNameLabel" destination="ywQ-bw-mOQ" id="PRt-0n-UsQ"/>
                 <outlet property="bottomViewBottomConstraint" destination="e8w-Xe-fCd" id="esl-uY-TZh"/>
                 <outlet property="errorLabel" destination="arZ-Xd-TPe" id="UZW-aW-qWP"/>
                 <outlet property="moneyTextField" destination="Y2P-o0-RIB" id="3vP-30-EG1"/>
@@ -60,7 +63,7 @@
                                                 <constraint firstAttribute="height" constant="100" id="p4z-c8-0bW"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bank_gongs_image" translatesAutoresizingMaskIntoConstraints="NO" id="fJC-wI-VKA">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fJC-wI-VKA">
                                             <rect key="frame" x="30" y="21" width="36" height="36"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -73,7 +76,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中国工商银行" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywQ-bw-mOQ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywQ-bw-mOQ">
                                             <rect key="frame" x="75" y="18" width="251" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="JbJ-L2-40y"/>
@@ -91,7 +94,7 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6214556666666666534" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Kb-vT-FYN">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Kb-vT-FYN">
                                             <rect key="frame" x="65" y="55" width="280" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="Uya-f3-NoN"/>
@@ -116,7 +119,7 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入提现金额，50起" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Y2P-o0-RIB">
                                                     <rect key="frame" x="36" y="0.0" width="324" height="55"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="go"/>
                                                     <connections>
                                                         <action selector="editingBegined:" destination="-1" eventType="editingDidBegin" id="u91-9v-2ll"/>
@@ -218,7 +221,7 @@
                                                 <action selector="xiqianPromise:" destination="-1" eventType="touchUpInside" id="bte-wT-gLY"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="该卡本次最多能充值5000元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXJ-Yz-mmk">
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="该卡本次最多能充值5000元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXJ-Yz-mmk">
                                             <rect key="frame" x="83" y="115" width="153" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="awB-lD-0o7"/>
@@ -346,7 +349,6 @@
     <resources>
         <image name="alert_error_image" width="13" height="12"/>
         <image name="bank_cart_bg_image" width="345" height="101"/>
-        <image name="bank_gongs_image" width="25" height="25"/>
         <image name="login_disabled_button_image" width="315" height="40"/>
         <image name="login_enabled_button_image" width="315" height="40"/>
     </resources>

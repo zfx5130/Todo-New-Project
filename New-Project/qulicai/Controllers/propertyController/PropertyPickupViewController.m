@@ -85,9 +85,9 @@
     self.bankCartLabel.text = [NSString getStringWithString:bank.bankNo];
     self.bankNameLabel.text = [NSString getStringWithString:[NSString stringWithFormat:@"%@",bank.bankName]];
     if (self.bankCartLabel.text.length >= 16) {
-        NSString *str = [NSString replaceStrWithRange:NSMakeRange(4, 12)
+        NSString *str = [NSString replaceStrWithRange:NSMakeRange(4, 8)
                                                string:[NSString getStringWithString:self.bankCartLabel.text]
-                                           withString:@" **** **** **** "];
+                                           withString:@" **** **** "];
         self.bankCartLabel.text = str;
     }
     for (int i = 0; i < [self.bankArray count]; i++) {
@@ -99,7 +99,6 @@
         }
     }
     self.balanceLabel.text = [NSString stringWithFormat:@"账户余额%.2f元",user.availableMoney];
-    
     
 }
 

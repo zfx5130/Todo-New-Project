@@ -115,7 +115,7 @@ UITableViewDataSource>
         __weak typeof(self) weakSelf = self;
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
-            //NSLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
+            NSLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
             if (userInfo.statusType == IndentityStatusSuccess) {
                 [UserUtil saving:userInfo];
                 [weakSelf reloadUI];
