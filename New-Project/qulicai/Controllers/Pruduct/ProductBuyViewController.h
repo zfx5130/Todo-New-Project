@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Product.h"
+#import "ProductDetail.h"
 
 @interface ProductBuyViewController : UIViewController
 
 @property (strong, nonatomic) Product *product;
+
+@property (strong, nonatomic) ProductDetail *productDetail;
+
+@property (assign, nonatomic) BOOL isDetailSwap;
 
 @end

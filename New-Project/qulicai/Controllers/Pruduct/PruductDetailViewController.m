@@ -18,6 +18,8 @@
 #import "QRRequestHeader.h"
 #import "ProductDetail.h"
 #import "ProductBody.h"
+#import "User.h"
+#import "UserUtil.h"
 
 #define NAVBAR_COLORCHANGE_POINT (IMAGE_HEIGHT - NAV_HEIGHT*2)
 #define IMAGE_HEIGHT 220
@@ -34,8 +36,6 @@ InputTextView1Delgate>
 
 //是否第一次充值
 @property (assign, nonatomic) BOOL isFirstCharge;
-
-@property (assign, nonatomic) BOOL isSellOut;
 
 @property (strong, nonatomic) ProductDetail *productDetail;
 
@@ -78,7 +78,7 @@ InputTextView1Delgate>
         if (productBody.statusType == IndentityStatusSuccess) {
             //SLog(@"reuqe::++++::::%@",request.responseJSONObject);
             weakSelf.productDetail = [productBody.productBody firstObject];
-            [weakSelf.tableView reloadData];
+            [self renderUI];
         } else {
             [weakSelf showErrorWithTitle:@"请求失败"];
             [weakSelf.navigationController popViewControllerAnimated:YES];
@@ -89,6 +89,20 @@ InputTextView1Delgate>
         [weakSelf.navigationController popViewControllerAnimated:YES];
     }];
     
+}
+
+- (void)renderUI {
+    BOOL isSellOut = self.productDetail.residualAmount <= 0;
+    UIImage *buyButtonImage =
+    isSellOut ? [UIImage imageNamed:@"product_not_buy_bg_image"] : [UIImage imageNamed:@"buy_button_bg_image"];
+    [self.bugButton setBackgroundImage:buyButtonImage
+                              forState:UIControlStateNormal];
+    self.bugButton.userInteractionEnabled = !isSellOut;
+    
+    NSString *name = isSellOut ? @"已售罄" : @"立即购买";
+    [self.bugButton setTitle:name
+                    forState:UIControlStateNormal];
+    [self.tableView reloadData];
 }
 
 - (void)registerCell {
@@ -111,16 +125,6 @@ InputTextView1Delgate>
 - (void)setupViews {
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
-    
-    UIImage *buyButtonImage =
-    self.isSellOut ? [UIImage imageNamed:@"product_not_buy_bg_image"] : [UIImage imageNamed:@"buy_button_bg_image"];
-    [self.bugButton setBackgroundImage:buyButtonImage
-                              forState:UIControlStateNormal];
-    self.bugButton.userInteractionEnabled = !self.isSellOut;
-    
-    NSString *name = self.isSellOut ? @"已售罄" : @"立即购买";
-    [self.bugButton setTitle:name
-                    forState:UIControlStateNormal];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -255,10 +259,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 
 - (IBAction)buyProduct:(UIButton *)sender {
-    NSString *login = UserDefaultsValue(@"login");
-    BOOL isLogin = [login isEqualToString:@"YES"];
-    if (isLogin) {
+    if ([UserUtil isLoginIn]) {
         ProductBuyViewController *productController = [[ProductBuyViewController alloc] init];
+        productController.productDetail = self.productDetail;
+        productController.isDetailSwap = YES;
         [self.navigationController pushViewController:productController
                                              animated:YES];
     } else {

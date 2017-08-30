@@ -113,8 +113,10 @@
     
     
     self.balanceLabel.text = [NSString stringWithFormat:@"%.2f",balance];
+    
+    CGFloat amount = self.isDetailSwap ? self.productDetail.residualAmount : self.product.residualAmount;
     self.remainMoneyLabel.text =
-    [NSString stringWithFormat:@"剩余可购额度%ld",self.product.residualAmount];
+    [NSString stringWithFormat:@"剩余可购额度%.0f",amount];
     
     [self.remainMoneyLabel addColor:RGBColor(204, 204, 204)
                             forText:@"剩余可购额度"];
@@ -208,7 +210,6 @@
     sender.selected = !sender.selected;
     if (sender.selected) {
         [sender setImage:[UIImage imageNamed:@"buy_icon_unchoose_down_image"] forState:UIControlStateNormal];
-        
         NSLog(@"去掉余额.不扣余额");
     } else {
         [sender setImage:[UIImage imageNamed:@"buy_icon_choose_down_image"] forState:UIControlStateNormal];
@@ -219,11 +220,16 @@
 
 - (IBAction)editingChanged:(UITextField *)sender {
     [self updateResetButtonStatus];
-    NSInteger periodDay = [self.product.periods integerValue];
-    CGFloat rate = self.product.activityRate + self.product.interestRate;
+    
+    NSInteger period = self.isDetailSwap ? [self.productDetail.periods integerValue]: [self.product.periods integerValue];
+    NSInteger periodDay = period;
+    CGFloat activityRate= self.isDetailSwap ? self.productDetail.activityRate : self.product.activityRate;
+    CGFloat interestRate = self.isDetailSwap ? self.productDetail.interestRate : self.product.interestRate;
+    CGFloat rate = activityRate + interestRate;
     CGFloat value = [sender.text floatValue];
     CGFloat result = value * rate / 365 * periodDay;
     self.rateMoneyLabel.text = [NSString stringWithFormat:@"+%.2f",result];
+    
 }
 
 - (IBAction)editingBegin:(UITextField *)sender {

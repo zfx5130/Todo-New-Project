@@ -30,7 +30,7 @@
     [super awakeFromNib];
     [self initKeyboardObserver];
     self.textField.delegate = self;
-    self.resultLabel.text = @"0";
+    self.resultLabel.text = @"0.0";
 }
 
 +(instancetype)creatInputTextView1 {
