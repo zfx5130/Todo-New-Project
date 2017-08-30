@@ -16,6 +16,7 @@
 #import "LLOrder.h"
 #import "UserUtil.h"
 #import "User.h"
+#import "LLCardBinOrder.h"
 
 @interface AddBankCardViewController ()
 <LLPaySdkDelegate>
@@ -112,8 +113,8 @@
 }
 
 - (void)requestLLPayWithCardNumber:(NSString *)cartNumber {
-    NSLog(@"连连支付");
     
+    NSLog(@"连连支付");
     self.llOrder = [[LLOrder alloc] initWithLLPayType:LLPayTypeVerify];
     NSString *timeStamp = [LLOrder timeStamp];
     self.llOrder.oid_partner = QR_PARTNER_ID;
@@ -125,21 +126,21 @@
     self.llOrder.notify_url = QR_NOTIFY_URL;
     self.llOrder.acct_name = [NSString getStringWithString:[UserUtil currentUser].realName];
     
-//  NSString *cardNameStr = [[NSString getStringWithString:cartNumber] stringByReplacingOccurrencesOfString:@" "
-//                                                                                                withString:@""];
+//    NSString *cardNameStr = [[NSString getStringWithString:cartNumber] stringByReplacingOccurrencesOfString:@" "
+//                                                                                                 withString:@""];
+    
     self.llOrder.card_no = @"6214855712479407";
-    NSLog(@":::cardNo:::::%@",self.llOrder.card_no);
     
     self.llOrder.id_no = [NSString getStringWithString:[UserUtil currentUser].cardId];
     self.llOrder.risk_item = [LLOrder llJsonStringOfObj:@{@"user_info_dt_register" : @"20131030122130"}];
     self.llOrder.user_id = @"88888";//[UserUtil currentUser].userId;
     self.llOrder.name_goods = @"充值";
-
+    
     self.resultTitle = @"充值结果";
     
     self.orderDic = [[self.llOrder tradeInfoForPayment] mutableCopy];
     LLPayUtil *payUtil = [[LLPayUtil alloc] init];
-    // 进行签名
+    //进行签名
     NSDictionary *signedOrder = [payUtil signedOrderDic:self.orderDic andSignKey:QR_MD5_KEY];
     
     [LLPaySdk sharedSdk].sdkDelegate = self;
@@ -148,22 +149,34 @@
     [[LLPaySdk sharedSdk] presentLLPaySDKInViewController:self
                                               withPayType:LLPayTypeVerify
                                             andTraderInfo:signedOrder];
-    
 
-    NSLog(@"::::::%@",signedOrder);
     
+    
+//    LLCardBinOrder *order = [[LLCardBinOrder alloc] init];
+//    order.oid_partner = QR_PARTNER_ID;
+//    order.sign_type = QR_SING_TYPE;
+//    order.card_no = @"6214855712479407";
+//    self.orderDic = [[order tradeInfoForSign] mutableCopy];
+//    
+//    LLPayUtil *payUtl = [[LLPayUtil alloc] init];
+//    // 进行签名
+//    NSLog(@"order:::::%@:::::",self.orderDic);
+//    NSDictionary *sign = [payUtl signedOrderDic:self.orderDic andSignKey:QR_MD5_KEY];
+//    
+//    NSLog(@"sing::::::::%@",sign);
+//    
 //    QRRequestLLPayBinQuery *request = [[QRRequestLLPayBinQuery alloc] init];
-//    request.oid_partner = signedOrder[@"oid_partner"];
-//    request.sign_type = signedOrder[@"sign_type"];
-//    request.card_no = signedOrder[@"card_no"];
-//    request.sign = signedOrder[@"sign"];
+//    request.oid_partner = sign[@"oid_partner"];
+//    request.sign_type = sign[@"sign_type"];
+//    request.card_no = sign[@"card_no"];
+//    request.sign = sign[@"sign"];
 //    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
 //        NSLog(@"sycee::::::%@",request.responseJSONObject);
 //        NSLog(@"sycee::::::%@",request.responseJSONObject[@"ret_msg"]);
 //    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
 //        NSLog(@"errror::::::%@",request.error);
 //    }];
-    
+//    
     
 }
 
