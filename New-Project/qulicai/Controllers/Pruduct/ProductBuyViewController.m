@@ -9,6 +9,9 @@
 #import "ProductBuyViewController.h"
 #import "AccountCertificationViewController.h"
 #import "ProductBuySuccessViewController.h"
+#import "User.h"
+#import "UserUtil.h"
+#import "Bank.h"
 
 @interface ProductBuyViewController ()
 <UITextFieldDelegate>
@@ -20,14 +23,24 @@
 @property (weak, nonatomic) IBOutlet UILabel *alertErrorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *remainMoneyLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *balanceLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *selectButton;
+
+@property (weak, nonatomic) IBOutlet UILabel *balanceRechangeLabel;
+
+//收益
+@property (weak, nonatomic) IBOutlet UILabel *rateMoneyLabel;
+
+//240  +- 55
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *loginViewHeightConstraint;
+//90
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *backViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIView *balanceHeadView;
+@property (weak, nonatomic) IBOutlet UIView *balanceCenterView;
+
 @property (weak, nonatomic) IBOutlet UIView *bankView;
 
-//155 110
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bankViewHeightConstraint;
-
-@property (assign, nonatomic) BOOL isFirstBuy;
-
-@property (weak, nonatomic) IBOutlet UILabel *incomeLabel;
 // -100
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLabelCenterYConstraint;
 
@@ -41,7 +54,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.isFirstBuy = ![UserDefaultsValue(@"isIdentity") isEqualToString:@"YES"];
     [self setupViews];
 }
 
@@ -60,13 +72,28 @@
     self.bottomContainView.hidden = YES;
     [self.view addTapGestureForDismissingKeyboard];
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
+    
+    User *user = [UserUtil currentUser];
+    
+    CGFloat balance = user.availableMoney;
+    self.backViewHeightConstraint.constant = balance > 0 ? 90.0f : 28.0f;
+    self.loginViewHeightConstraint.constant = balance > 0 ? 240.0f : 178.0f;
+    self.balanceHeadView.hidden = balance > 0 ? NO : YES;
+    self.balanceCenterView.hidden = balance > 0 ? NO : YES;
+    
+    self.bankView.hidden = (user.appBanks.count > 0);
+    CGFloat value = user.appBanks.count > 0 ? 0.0f : 55.0f;
+    self.loginViewHeightConstraint.constant = self.loginViewHeightConstraint.constant - value;
+    
+    self.remainMoneyLabel.text =
+    [NSString stringWithFormat:@"剩余可购额度%ld",self.product.residualAmount];
+    
     [self.remainMoneyLabel addColor:RGBColor(204, 204, 204)
                             forText:@"剩余可购额度"];
-    self.bankViewHeightConstraint.constant = self.isFirstBuy ? 110.0f : 155.0f;
-    self.bankView.hidden = self.isFirstBuy;
     if (IS_IPHONE_5) {
         self.bottomLabelCenterYConstraint.constant = -80.0f;
     }
+    
 }
 
 - (void)updateResetButtonStatus {
@@ -104,18 +131,18 @@
     [self showSVProgressHUD];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [SVProgressHUD dismiss];
-        if (self.isFirstBuy) {
-            AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
-            accountController.isProductPush = YES;
-            [self.navigationController pushViewController:accountController
-                                                 animated:YES];
-        } else {
-            [self showSuccessWithTitle:@"购买成功"];
-            ProductBuySuccessViewController *successController = [[ProductBuySuccessViewController alloc] init];
-            successController.isBuySuccess = YES;
-            [self.navigationController pushViewController:successController
-                                                 animated:YES];
-        }
+//        if (self.isFirstBuy) {
+//            AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
+//            accountController.isProductPush = YES;
+//            [self.navigationController pushViewController:accountController
+//                                                 animated:YES];
+//        } else {
+//            [self showSuccessWithTitle:@"购买成功"];
+//            ProductBuySuccessViewController *successController = [[ProductBuySuccessViewController alloc] init];
+//            successController.isBuySuccess = YES;
+//            [self.navigationController pushViewController:successController
+//                                                 animated:YES];
+//        }
     });
 }
 
@@ -130,14 +157,17 @@
 
 - (IBAction)editingChanged:(UITextField *)sender {
     [self updateResetButtonStatus];
-    CGFloat value = [sender.text floatValue] * 0.132;
-    self.incomeLabel.text = [NSString stringWithFormat:@"预计收益(元)%.2f",value];
+    NSInteger periodDay = [self.product.periods integerValue];
+    CGFloat rate = self.product.activityRate + self.product.interestRate;
+    CGFloat value = [sender.text floatValue];
+    CGFloat result = value * rate / 365 * periodDay;
+    self.rateMoneyLabel.text = [NSString stringWithFormat:@"+%.2f",result];
 }
 
 - (IBAction)editingBegin:(UITextField *)sender {
     self.errorLabel.text = @"";
     [self updateResetButtonStatus];
-    self.incomeLabel.text = [NSString stringWithFormat:@"预计收益(元)0.00"];
+    self.rateMoneyLabel.text = [NSString stringWithFormat:@"+0.0"];
 }
 
 - (IBAction)editingEnd:(UITextField *)sender {
