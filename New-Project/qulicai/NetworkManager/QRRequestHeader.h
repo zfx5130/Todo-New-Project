@@ -35,5 +35,6 @@
 #import "QRRequestTotalMoneyDetail.h"
 #import "QRRequestMoneyPickup.h"
 #import "QRrequestVerifyTrasPwd.h"
+#import "QRRequestGetMarkDetail.h"
 
 #endif /* QRRequestHeader_h */

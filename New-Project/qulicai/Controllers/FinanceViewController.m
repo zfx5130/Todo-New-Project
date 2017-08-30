@@ -52,8 +52,8 @@ UITableViewDataSource>
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registerCell];
-    [self setupTableViewHeadView];
     [self addRefreshControl];
+    [self setupTableViewHeadView];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(requestProduct)
                                                  name:QR_NOTIFICATION_IDENTITY_SUCCEED
@@ -64,10 +64,8 @@ UITableViewDataSource>
     [super viewWillAppear:animated];
 }
 
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -155,17 +153,17 @@ UITableViewDataSource>
 
 - (void)setupTableViewHeadView {
     self.title = @"理财";
-//    [UIColor wr_setDefaultNavBarTitleColor:[UIColor blackColor]];
-//    self.tableView.contentInset = UIEdgeInsetsMake(IMAGE_HEIGHT - 64, 0, 0, 0);
-//    self.cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, -IMAGE_HEIGHT, SCREEN_WIDTH, IMAGE_HEIGHT)
-//                                                              delegate:self
-//                                                      placeholderImage:[UIImage imageNamed:@"fiscal_bg_image"]];
-//    self.cycleScrollView.currentPageDotImage = [UIImage imageNamed:@"fiscal_rotation_down_image"];
-//    self.cycleScrollView.pageDotImage = [UIImage imageNamed:@"fiscal_rotation_up_image"];
-//    self.cycleScrollView.imageURLStringsGroup = self.imagesUrlString;
-//    self.cycleScrollView.bannerImageViewContentMode = UIViewContentModeScaleAspectFill;
-//    [self.tableView addSubview:self.cycleScrollView];
-    //[self wr_setNavBarBackgroundAlpha:1.0f];
+    [UIColor wr_setDefaultNavBarTitleColor:[UIColor blackColor]];
+    self.tableView.contentInset = UIEdgeInsetsMake(IMAGE_HEIGHT - 64, 0, 0, 0);
+    self.cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, -IMAGE_HEIGHT, SCREEN_WIDTH, IMAGE_HEIGHT)
+                                                              delegate:self
+                                                      placeholderImage:[UIImage imageNamed:@"fiscal_bg_image"]];
+    self.cycleScrollView.currentPageDotImage = [UIImage imageNamed:@"fiscal_rotation_down_image"];
+    self.cycleScrollView.pageDotImage = [UIImage imageNamed:@"fiscal_rotation_up_image"];
+    self.cycleScrollView.imageURLStringsGroup = self.imagesUrlString;
+    self.cycleScrollView.bannerImageViewContentMode = UIViewContentModeScaleAspectFill;
+    [self.tableView addSubview:self.cycleScrollView];
+    [self wr_setNavBarBackgroundAlpha:1.0f];
 }
 
 #pragma mark - Getters && Setters
@@ -311,19 +309,19 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                      completion:nil];
 }
 
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    CGFloat offsetY = scrollView.contentOffset.y;
-//
-//    if (offsetY > NAVBAR_COLORCHANGE_POINT) {
-//        CGFloat alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / NAV_HEIGHT;
-//        [self wr_setNavBarBackgroundAlpha:alpha];
-//        [self wr_setNavBarTitleColor:[RGBColor(51, 51, 51) colorWithAlphaComponent:alpha]];
-//    } else {
-//        [self wr_setNavBarBackgroundAlpha:0];
-//        [self wr_setNavBarTitleColor:[UIColor clearColor]];
-//    }
-//    
-//    //限制下拉的距离
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat offsetY = scrollView.contentOffset.y;
+
+    if (offsetY > NAVBAR_COLORCHANGE_POINT) {
+        CGFloat alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / NAV_HEIGHT;
+        [self wr_setNavBarBackgroundAlpha:alpha];
+        [self wr_setNavBarTitleColor:[RGBColor(51, 51, 51) colorWithAlphaComponent:alpha]];
+    } else {
+        [self wr_setNavBarBackgroundAlpha:0];
+        [self wr_setNavBarTitleColor:[UIColor clearColor]];
+    }
+    
+    //限制下拉的距离
 //    if(offsetY < LIMIT_OFFSET_Y) {
 //        [scrollView setContentOffset:CGPointMake(0, LIMIT_OFFSET_Y)];
 //    }
@@ -332,14 +330,14 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 //    if (newOffsetY < -IMAGE_HEIGHT) {
 //        self.cycleScrollView.frame = CGRectMake(0, newOffsetY, kScreenWidth, -newOffsetY);
 //    }
-//}
+}
 
 
-//#pragma mark - SDCycleScrollViewDelegate
-//
-//- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView
-//   didSelectItemAtIndex:(NSInteger)index {
-//    NSLog(@"index:::::::%@",@(index));
-//}
+#pragma mark - SDCycleScrollViewDelegate
+
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView
+   didSelectItemAtIndex:(NSInteger)index {
+    NSLog(@"index:::::::%@",@(index));
+}
 
 @end

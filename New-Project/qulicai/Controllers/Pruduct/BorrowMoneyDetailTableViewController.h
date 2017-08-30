@@ -10,4 +10,6 @@
 
 @interface BorrowMoneyDetailTableViewController : UITableViewController
 
+@property (copy, nonatomic) NSString *markId;
+
 @end

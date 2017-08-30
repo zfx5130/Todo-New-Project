@@ -86,7 +86,7 @@ UICollectionViewDelegate>
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         NSLog(@"code::::::::%@",request.responseJSONObject);
         ExpectedTotal *expectedTotal = [ExpectedTotal mj_objectWithKeyValues:request.responseJSONObject];
-        if (weakSlef.expectedTotal.statusType == IndentityStatusSuccess) {
+        if (expectedTotal.statusType == IndentityStatusSuccess) {
             self.expectedTotal = expectedTotal;
             [weakSlef renderData];
         } else {
