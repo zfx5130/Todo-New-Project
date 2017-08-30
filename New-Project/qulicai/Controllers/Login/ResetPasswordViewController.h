@@ -10,6 +10,9 @@
 
 @interface ResetPasswordViewController : UIViewController
 
+//第一次充值设置交易密码
+@property (assign, nonatomic) BOOL isFirstSetingTradPw;
+
 //是否时交易密码
 @property (assign, nonatomic) BOOL isTradingPw;
 

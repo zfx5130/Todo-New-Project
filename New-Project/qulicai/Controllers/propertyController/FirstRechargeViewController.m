@@ -9,6 +9,9 @@
 #import "FirstRechargeViewController.h"
 #import "AccountCertificationViewController.h"
 #import "AddBankCardViewController.h"
+#import "User.h"
+#import "UserUtil.h"
+#import "ResetPasswordViewController.h"
 
 @interface FirstRechargeViewController ()
 <UITextViewDelegate>
@@ -20,9 +23,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *alertErrorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 
-//是否是第一次身份认证
-@property (assign, nonatomic) BOOL isIdentityOK;
-
 @end
 
 @implementation FirstRechargeViewController
@@ -31,7 +31,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.isIdentityOK = YES;
     [self setupViews];
 }
 
@@ -84,36 +83,41 @@
 #pragma mark - Handlers
 
 - (void)config {
-    [self.view endEditing:YES];
     
+    [self.view endEditing:YES];
     if ([self.moneyTextField.text floatValue] < 50) {
         self.errorLabel.text = @"*充值金额小于最低充值金额";
         [self.errorLabel addShakeAnimation];
         return;
     }
-    [self showSVProgressHUD];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [SVProgressHUD dismiss];
-        if ([self.moneyTextField.text floatValue] > 1000) {
-            self.alertErrorLabel.text = @"充值失败";
-            [self showErrorAlert];
+    
+    User *user = [UserUtil currentUser];
+    
+    if (!user.hasTransactionPwd) {
+        //未设置交易密码
+        ResetPasswordViewController *modifyController = [[ResetPasswordViewController alloc] init];
+        modifyController.isFirstSetingTradPw = YES;
+        modifyController.isTradingPw = YES;
+        [self.navigationController pushViewController:modifyController
+                                             animated:YES];
+    } else {
+        //设置过交易密码
+        if (user.authStatusType == AuthenticationStatusSuccess) {
+                //已实名认证
+            AddBankCardViewController *addBankController = [[AddBankCardViewController alloc] init];
+            addBankController.name = [NSString getStringWithString:[UserUtil currentUser].realName];
+            addBankController.identify = [NSString getStringWithString:[UserUtil currentUser].cardId];
+            [self.navigationController pushViewController:addBankController
+                                                 animated:YES];
         } else {
-            [self showSuccessWithTitle:@"充值成功"];
-            if (self.isIdentityOK) {
-                AddBankCardViewController *addBankController = [[AddBankCardViewController alloc] init];
-                addBankController.name = @"张三";
-                [self.navigationController pushViewController:addBankController
-                                                     animated:YES];
-            } else {
-                AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
-                accountController.isRechargePush = YES;
-                [self.navigationController pushViewController:accountController
-                                                     animated:YES];
-                
-            }
-            
+            //未实名认证
+            AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
+            accountController.isFirstRechargePush = YES;
+            [self.navigationController pushViewController:accountController
+                                                 animated:YES];
         }
-    });
+    }
+
 }
 
 

@@ -47,6 +47,9 @@ typedef NS_ENUM(NSUInteger, AuthenticationStatusType) {
 //总金额
 @property (assign, nonatomic) CGFloat totalMoney;
 
+//0 未设置 1 设置过
+@property (assign, nonatomic) NSInteger hasTransactionPwd;
+
 //可用余额
 @property (assign, nonatomic) CGFloat availableMoney;
 

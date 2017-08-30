@@ -24,6 +24,7 @@ MJExtensionCodingImplementation
              @"currentMoney" : @"body.currentMoney",
              @"regularMoney" : @"body.regularMoney",
              @"freezeMoney" : @"body.freezeMoney",
+             @"hasTransactionPwd" : @"body.hasTransactionPwd",
              @"availableMoney" : @"body.availableMoney",
              @"totalMoney" : @"body.totalMoney",
              @"authStatusType" : @"body.authentication",

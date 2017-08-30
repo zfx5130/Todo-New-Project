@@ -95,11 +95,11 @@
             self.alertErrorLabel.text = @"银行卡号有误";
             [self showErrorAlert];
         } else {
-            //下一步操作
-            ResetPasswordViewController *modifyController = [[ResetPasswordViewController alloc] init];
-            modifyController.isTradingPw = YES;
-            [self.navigationController pushViewController:modifyController
-                                                 animated:YES];
+            //连连充值
+//            ResetPasswordViewController *modifyController = [[ResetPasswordViewController alloc] init];
+//            modifyController.isTradingPw = YES;
+//            [self.navigationController pushViewController:modifyController
+//                                                 animated:YES];
         }
     });
 }

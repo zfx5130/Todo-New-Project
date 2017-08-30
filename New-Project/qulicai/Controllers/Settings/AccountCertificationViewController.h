@@ -14,6 +14,7 @@
 @property (assign, nonatomic) BOOL isProductPush;
 
 //充值第一次认证
-@property (assign, nonatomic) BOOL isRechargePush;
+@property (assign, nonatomic) BOOL isFirstRechargePush;
+
 
 @end

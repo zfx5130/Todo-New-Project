@@ -17,6 +17,8 @@
 #import "User.h"
 #import "LoginViewController.h"
 #import "PropertyPickupViewController.h"
+#import "AddBankCardViewController.h"
+#import "AccountCertificationViewController.h"
 
 @interface ResetPasswordViewController ()
 <UITextViewDelegate>
@@ -90,7 +92,6 @@
         [self.errorLabel addShakeAnimation];
         return;
     }
-    
     [self showSVProgressHUD];
     if (self.isTradingPw) {
         QRRequestSetingTranPassword *request = [[QRRequestSetingTranPassword alloc] init];
@@ -103,22 +104,55 @@
             SettingTransPassword *transPassword = [SettingTransPassword mj_objectWithKeyValues:request.responseJSONObject];
             if (transPassword.statusType == IndentityStatusSuccess) {
                 //设置交易密码跳转
-                [weakSelf showSuccessWithTitle:@"交易密码设置成功"];
-                if (self.isPickUpPw) {
-                    for( UIViewController *controller in self.navigationController.viewControllers ) {
-                        if( [controller isKindOfClass:[PropertyPickupViewController class]] ) {
-                            [self.navigationController popToViewController:controller animated:YES];
-                            return ;
+                [weakSelf showSuccessWithTitle:@"交易密码设置成功跳转中"];
+                
+                QRRequestGetUserInfo *request = [[QRRequestGetUserInfo alloc] init];
+                request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
+                [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+                    User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
+                    SLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
+                    if (userInfo.statusType == IndentityStatusSuccess) {
+                        [UserUtil saving:userInfo];
+                        if (weakSelf.isPickUpPw) {
+                            for( UIViewController *controller in self.navigationController.viewControllers ) {
+                                if( [controller isKindOfClass:[PropertyPickupViewController class]] ) {
+                                    [weakSelf.navigationController popToViewController:controller animated:YES];
+                                    return ;
+                                }
+                            }
+                        } else if (weakSelf.isFirstSetingTradPw) {
+                            //判断是否认证。
+                            User *user = [UserUtil currentUser];
+                            if (user.authStatusType == AuthenticationStatusSuccess) {
+                                //添加银行卡
+                                AddBankCardViewController *addBankController = [[AddBankCardViewController alloc] init];
+                                addBankController.name = [NSString getStringWithString:user.realName];
+                                addBankController.identify = [NSString getStringWithString:user.cardId];
+                                [weakSelf.navigationController pushViewController:addBankController
+                                                                     animated:YES];
+                            } else {
+                                //跳转认证界面
+                                AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
+                                accountController.isFirstRechargePush = YES;
+                                [self.navigationController pushViewController:accountController
+                                                                     animated:YES];
+                            }
+                            
+                        } else {
+                            for( UIViewController *controller in weakSelf.navigationController.viewControllers ) {
+                                if( [controller isKindOfClass:[SettingsTableViewController class]] ) {
+                                    [weakSelf.navigationController popToViewController:controller animated:YES];
+                                    return ;
+                                }
+                            }
                         }
+                    } else {
+                        NSLog(@"error:::::%@",request.error);
                     }
-                } else {
-                    for( UIViewController *controller in self.navigationController.viewControllers ) {
-                        if( [controller isKindOfClass:[SettingsTableViewController class]] ) {
-                            [self.navigationController popToViewController:controller animated:YES];
-                            return ;
-                        }
-                    }
-                }
+                } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+                    NSLog(@"error:- %@", request.error);
+                }];
+                
             } else {
                 weakSelf.alertErrorLabel.text = transPassword.desc;
                 [weakSelf showErrorAlert];
