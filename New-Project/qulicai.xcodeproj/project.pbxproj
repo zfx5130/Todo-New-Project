@@ -196,6 +196,16 @@
 		84B51CCC1F55A81000840F94 /* TransactionPwd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B51CCB1F55A81000840F94 /* TransactionPwd.m */; };
 		84B51CCF1F565C9000840F94 /* QRRequestGetMarkDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B51CCE1F565C9000840F94 /* QRRequestGetMarkDetail.m */; };
 		84B51CD21F565F3E00840F94 /* MarkDetailInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B51CD11F565F3E00840F94 /* MarkDetailInfo.m */; };
+		84B51CDF1F56B5F000840F94 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = 84B51CD51F56B5F000840F94 /* CHANGELOG.md */; };
+		84B51CE01F56B5F100840F94 /* libLLPaySDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B51CD61F56B5F000840F94 /* libLLPaySDK.a */; };
+		84B51CE11F56B5F100840F94 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 84B51CD81F56B5F000840F94 /* README.md */; };
+		84B51CE21F56B5F100840F94 /* walletResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84B51CD91F56B5F000840F94 /* walletResources.bundle */; };
+		84B51CE31F56B5F100840F94 /* libRsaCrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B51CDB1F56B5F000840F94 /* libRsaCrypto.a */; };
+		84B51CE41F56B5F100840F94 /* LLPayUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B51CDD1F56B5F000840F94 /* LLPayUtil.m */; };
+		84B51CE51F56B5F100840F94 /* 集成加密库请读.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84B51CDE1F56B5F000840F94 /* 集成加密库请读.txt */; };
+		84B51CE81F56B9BB00840F94 /* QRRequestLLPayBinQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B51CE71F56B9BB00840F94 /* QRRequestLLPayBinQuery.m */; };
+		84B51CEE1F56BC9500840F94 /* QRRequestGetLLKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B51CED1F56BC9500840F94 /* QRRequestGetLLKey.m */; };
+		84B51CF11F56C1D400840F94 /* LLOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B51CF01F56C1D400840F94 /* LLOrder.m */; };
 		84CE16F51F4F0CD300E61C7D /* MoneyRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CE16F31F4F0CD300E61C7D /* MoneyRechargeViewController.m */; };
 		84CE16F61F4F0CD300E61C7D /* MoneyRechargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CE16F41F4F0CD300E61C7D /* MoneyRechargeViewController.xib */; };
 		84CE16FA1F4FCF3800E61C7D /* FirstRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CE16F81F4FCF3800E61C7D /* FirstRechargeViewController.m */; };
@@ -597,6 +607,21 @@
 		84B51CCE1F565C9000840F94 /* QRRequestGetMarkDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestGetMarkDetail.m; sourceTree = "<group>"; };
 		84B51CD01F565F3E00840F94 /* MarkDetailInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkDetailInfo.h; sourceTree = "<group>"; };
 		84B51CD11F565F3E00840F94 /* MarkDetailInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkDetailInfo.m; sourceTree = "<group>"; };
+		84B51CD51F56B5F000840F94 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		84B51CD61F56B5F000840F94 /* libLLPaySDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLLPaySDK.a; sourceTree = "<group>"; };
+		84B51CD71F56B5F000840F94 /* LLPaySdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLPaySdk.h; sourceTree = "<group>"; };
+		84B51CD81F56B5F000840F94 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		84B51CD91F56B5F000840F94 /* walletResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = walletResources.bundle; sourceTree = "<group>"; };
+		84B51CDB1F56B5F000840F94 /* libRsaCrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libRsaCrypto.a; sourceTree = "<group>"; };
+		84B51CDC1F56B5F000840F94 /* LLPayUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLPayUtil.h; sourceTree = "<group>"; };
+		84B51CDD1F56B5F000840F94 /* LLPayUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLPayUtil.m; sourceTree = "<group>"; };
+		84B51CDE1F56B5F000840F94 /* 集成加密库请读.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "集成加密库请读.txt"; sourceTree = "<group>"; };
+		84B51CE61F56B9BB00840F94 /* QRRequestLLPayBinQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestLLPayBinQuery.h; sourceTree = "<group>"; };
+		84B51CE71F56B9BB00840F94 /* QRRequestLLPayBinQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestLLPayBinQuery.m; sourceTree = "<group>"; };
+		84B51CEC1F56BC9500840F94 /* QRRequestGetLLKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestGetLLKey.h; sourceTree = "<group>"; };
+		84B51CED1F56BC9500840F94 /* QRRequestGetLLKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestGetLLKey.m; sourceTree = "<group>"; };
+		84B51CEF1F56C1D400840F94 /* LLOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLOrder.h; sourceTree = "<group>"; };
+		84B51CF01F56C1D400840F94 /* LLOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLOrder.m; sourceTree = "<group>"; };
 		84CE16F21F4F0CD300E61C7D /* MoneyRechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyRechargeViewController.h; sourceTree = "<group>"; };
 		84CE16F31F4F0CD300E61C7D /* MoneyRechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyRechargeViewController.m; sourceTree = "<group>"; };
 		84CE16F41F4F0CD300E61C7D /* MoneyRechargeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoneyRechargeViewController.xib; sourceTree = "<group>"; };
@@ -699,7 +724,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B51CE31F56B5F100840F94 /* libRsaCrypto.a in Frameworks */,
 				CE03FA1168B914E52EDD9D4E /* libPods-qulicai.a in Frameworks */,
+				84B51CE01F56B5F100840F94 /* libLLPaySDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -991,6 +1018,8 @@
 		8435E5001F316E9200424E5E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				84B51CEF1F56C1D400840F94 /* LLOrder.h */,
+				84B51CF01F56C1D400840F94 /* LLOrder.m */,
 				84CE17071F5156F300E61C7D /* BaseModel.h */,
 				84CE17081F5156F300E61C7D /* BaseModel.m */,
 				84CE16FC1F502EF600E61C7D /* CertificationLogin.h */,
@@ -1084,6 +1113,7 @@
 		8435E5031F316E9200424E5E /* Venders */ = {
 			isa = PBXGroup;
 			children = (
+				84B51CD31F56B5F000840F94 /* LLPay */,
 				84DCF33D1F4EE43A002F117A /* ASPopupController */,
 				84FEBADA1F4ABB730020B42D /* WRNavigationBar */,
 				84FEBA931F4AA58B0020B42D /* FDFullscreenPopGesture */,
@@ -1288,6 +1318,10 @@
 				84B51CC81F55A79400840F94 /* QRrequestVerifyTrasPwd.m */,
 				84B51CCD1F565C9000840F94 /* QRRequestGetMarkDetail.h */,
 				84B51CCE1F565C9000840F94 /* QRRequestGetMarkDetail.m */,
+				84B51CE61F56B9BB00840F94 /* QRRequestLLPayBinQuery.h */,
+				84B51CE71F56B9BB00840F94 /* QRRequestLLPayBinQuery.m */,
+				84B51CEC1F56BC9500840F94 /* QRRequestGetLLKey.h */,
+				84B51CED1F56BC9500840F94 /* QRRequestGetLLKey.m */,
 			);
 			path = ApiRequest;
 			sourceTree = "<group>";
@@ -1475,6 +1509,38 @@
 				844FB8161F4D665D001772AF /* AllIncomeTableViewCell.xib */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		84B51CD31F56B5F000840F94 /* LLPay */ = {
+			isa = PBXGroup;
+			children = (
+				84B51CD41F56B5F000840F94 /* LLPaySDK */,
+				84B51CDA1F56B5F000840F94 /* LLPayUtils */,
+			);
+			path = LLPay;
+			sourceTree = "<group>";
+		};
+		84B51CD41F56B5F000840F94 /* LLPaySDK */ = {
+			isa = PBXGroup;
+			children = (
+				84B51CD51F56B5F000840F94 /* CHANGELOG.md */,
+				84B51CD61F56B5F000840F94 /* libLLPaySDK.a */,
+				84B51CD71F56B5F000840F94 /* LLPaySdk.h */,
+				84B51CD81F56B5F000840F94 /* README.md */,
+				84B51CD91F56B5F000840F94 /* walletResources.bundle */,
+			);
+			path = LLPaySDK;
+			sourceTree = "<group>";
+		};
+		84B51CDA1F56B5F000840F94 /* LLPayUtils */ = {
+			isa = PBXGroup;
+			children = (
+				84B51CDB1F56B5F000840F94 /* libRsaCrypto.a */,
+				84B51CDC1F56B5F000840F94 /* LLPayUtil.h */,
+				84B51CDD1F56B5F000840F94 /* LLPayUtil.m */,
+				84B51CDE1F56B5F000840F94 /* 集成加密库请读.txt */,
+			);
+			path = LLPayUtils;
 			sourceTree = "<group>";
 		};
 		84DCF33D1F4EE43A002F117A /* ASPopupController */ = {
@@ -1666,6 +1732,7 @@
 				8426169C1F4B0FDF00A96EFD /* ProductHeadTableViewCell.xib in Resources */,
 				842616EC1F4C0C8E00A96EFD /* ProductRecordViewController.xib in Resources */,
 				842616AC1F4BDF1300A96EFD /* InputTextView1.xib in Resources */,
+				84B51CE51F56B5F100840F94 /* 集成加密库请读.txt in Resources */,
 				844FB85B1F4EC604001772AF /* PropertyInfoTableViewCell.xib in Resources */,
 				8426168A1F4B005E00A96EFD /* CustomerViewController.storyboard in Resources */,
 				84DCF35C1F4F08F7002F117A /* PropertyIncomeViewController.xib in Resources */,
@@ -1687,6 +1754,7 @@
 				84FEBAE21F4ABF630020B42D /* MainHeadView.xib in Resources */,
 				84CE16F61F4F0CD300E61C7D /* MoneyRechargeViewController.xib in Resources */,
 				84825E151F457468006A921F /* ModifyLoginPwViewController.xib in Resources */,
+				84B51CE21F56B5F100840F94 /* walletResources.bundle in Resources */,
 				84DCF34E1F4EE43A002F117A /* ASPopupController.bundle in Resources */,
 				84E5F6621F5563E6004432BF /* ProductHistoryThreeViewController.xib in Resources */,
 				844FB83B1F4E7913001772AF /* ProductDetailListTableViewCell.xib in Resources */,
@@ -1799,6 +1867,7 @@
 				844402BB1F44217400F5AFEE /* UIViewController+Addition.m in Sources */,
 				844402921F41B2B000F5AFEE /* UITextView+Custom.m in Sources */,
 				84E5F6461F554C91004432BF /* QRRequestSendSuggest.m in Sources */,
+				84B51CEE1F56BC9500840F94 /* QRRequestGetLLKey.m in Sources */,
 				842616A51F4BD53300A96EFD /* ProductDetailTableViewCell.m in Sources */,
 				8435E5B21F399C1E00424E5E /* CLLockInfoView.m in Sources */,
 				84FEBAE01F4ABF510020B42D /* MainHeadView.m in Sources */,
@@ -1846,13 +1915,16 @@
 				842A93001F52CE18001822EF /* QRRequestModifyLoginPassword.m in Sources */,
 				84E5F6611F5563E6004432BF /* ProductHistoryThreeViewController.m in Sources */,
 				84B51CCF1F565C9000840F94 /* QRRequestGetMarkDetail.m in Sources */,
+				84B51CE41F56B5F100840F94 /* LLPayUtil.m in Sources */,
 				84DCF3531F4EE46E002F117A /* ProductPasswordView.m in Sources */,
 				84CE17091F5156F300E61C7D /* BaseModel.m in Sources */,
 				844FB80C1F4D60F3001772AF /* YesterdayIncomeView.m in Sources */,
 				844402931F41B2B000F5AFEE /* UIView+Custom.m in Sources */,
 				844402821F41B2B000F5AFEE /* NSNumber+Custom.m in Sources */,
 				84E5F64F1F5553D9004432BF /* ExpectedTotal.m in Sources */,
+				84B51CE81F56B9BB00840F94 /* QRRequestLLPayBinQuery.m in Sources */,
 				8435E4B21F316BCE00424E5E /* main.m in Sources */,
+				84B51CDF1F56B5F000840F94 /* CHANGELOG.md in Sources */,
 				844402831F41B2B000F5AFEE /* NSObject+Custom.m in Sources */,
 				842A931B1F53C40D001822EF /* SettingTransPassword.m in Sources */,
 				84B51CD21F565F3E00840F94 /* MarkDetailInfo.m in Sources */,
@@ -1878,6 +1950,7 @@
 				842616FA1F4C17BA00A96EFD /* ProductIncomeTableViewCell.m in Sources */,
 				844402B81F441DB200F5AFEE /* MineTableViewController.m in Sources */,
 				CE30A3DB1F547AEE00FB7763 /* PackList.m in Sources */,
+				84B51CE11F56B5F100840F94 /* README.md in Sources */,
 				842A92F11F527759001822EF /* UserUtil.m in Sources */,
 				8444024A1F41A0E700F5AFEE /* LoginViewController.m in Sources */,
 				84E5F6521F5556B5004432BF /* QRRequestBuyHistory.m in Sources */,
@@ -1908,6 +1981,7 @@
 				844FB85F1F4ECE65001772AF /* PropertyPickupViewController.m in Sources */,
 				CE30A3D81F5478F600FB7763 /* QRRequestProductPackList.m in Sources */,
 				844402851F41B2B000F5AFEE /* NSString+Custom.m in Sources */,
+				84B51CF11F56C1D400840F94 /* LLOrder.m in Sources */,
 				CE30A3D21F5469A900FB7763 /* ProductMask.m in Sources */,
 				84B51CCC1F55A81000840F94 /* TransactionPwd.m in Sources */,
 				844FB8121F4D6496001772AF /* IncomeTableViewCell.m in Sources */,
@@ -2118,12 +2192,16 @@
 			baseConfigurationReference = 777FE8CAA66E080E2873B281 /* Pods-qulicai.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = A76S262L77;
-				GCC_PREFIX_HEADER = "/Users/admin/个人资料/个人项目/Todo-New-Project/New-Project/qulicai/Headers/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/qulicai/Headers/PrefixHeader.pch";
 				INFOPLIST_FILE = qulicai/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/qulicai/Venders/LLPay/LLPaySDK",
+					"$(PROJECT_DIR)/qulicai/Venders/LLPay/LLPayUtils",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = qurong.qulicai.3435;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -2134,12 +2212,16 @@
 			baseConfigurationReference = 8092F52885BA6EA29FD5EFA1 /* Pods-qulicai.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = A76S262L77;
-				GCC_PREFIX_HEADER = "/Users/admin/个人资料/个人项目/Todo-New-Project/New-Project/qulicai/Headers/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/qulicai/Headers/PrefixHeader.pch";
 				INFOPLIST_FILE = qulicai/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/qulicai/Venders/LLPay/LLPaySDK",
+					"$(PROJECT_DIR)/qulicai/Venders/LLPay/LLPayUtils",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = qurong.qulicai.3435;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -125,7 +125,7 @@
 - (void)config {
     [self.view endEditing:YES];
     
-    if ([self.moneyTextField.text floatValue] < 50) {
+    if ([self.moneyTextField.text floatValue] < 0.001) {
         self.errorLabel.text = @"*充值金额小于最低充值金额";
         [self.errorLabel addShakeAnimation];
         return;
