@@ -51,7 +51,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupViews];
-    self.markId = @"16547";
+    //self.markId = @"16547";
     [self requestApi];
 }
 

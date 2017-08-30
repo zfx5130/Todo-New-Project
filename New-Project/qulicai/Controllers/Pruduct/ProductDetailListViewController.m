@@ -102,7 +102,7 @@ UITableViewDataSource>
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    return 1;//self.contracts.count;
+    return self.contracts.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -112,10 +112,10 @@ UITableViewDataSource>
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ProductDetailListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductDetailListTableViewCell class])];
-//    Contract *contract = self.contracts[indexPath.row];
-//    cell.nameLabel.text = [NSString getStringWithString:contract.borrower_name];
-//    cell.moneyLabel.text = [NSString stringWithFormat:@"%.2f", contract.amount];
-//    cell.contractLabel.text = [NSString getStringWithString:contract.contractId];
+    Contract *contract = self.contracts[indexPath.row];
+    cell.nameLabel.text = [NSString getStringWithString:contract.borrower_name];
+    cell.moneyLabel.text = [NSString stringWithFormat:@"%.2f", contract.amount];
+    cell.contractLabel.text = [NSString getStringWithString:contract.contractId];
     return cell;
 }
 
