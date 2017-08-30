@@ -41,6 +41,17 @@
 
 @property (weak, nonatomic) IBOutlet UIView *bankView;
 
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageViewTopConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bankCardTopConstraint;
+
+@property (weak, nonatomic) IBOutlet UIImageView *bankImageView;
+
+@property (weak, nonatomic) IBOutlet UILabel *cardNameLabel;
+
+@property (copy, nonatomic) NSArray *bankArray;
+
 // -100
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLabelCenterYConstraint;
 
@@ -66,9 +77,21 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - Setters && Getters
+
+- (NSArray *)bankArray {
+    if (!_bankArray) {
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Bank" ofType:@"plist"];
+        NSMutableArray *bankArr = [[NSMutableArray alloc] initWithContentsOfFile:filePath];
+        _bankArray = [bankArr copy];
+    }
+    return _bankArray;
+}
+
 #pragma mark - Private
 
 - (void)setupViews {
+    
     self.bottomContainView.hidden = YES;
     [self.view addTapGestureForDismissingKeyboard];
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
@@ -77,14 +100,19 @@
     
     CGFloat balance = user.availableMoney;
     self.backViewHeightConstraint.constant = balance > 0 ? 90.0f : 28.0f;
-    self.loginViewHeightConstraint.constant = balance > 0 ? 240.0f : 178.0f;
+    self.loginViewHeightConstraint.constant = balance > 0 ? 240.0f : 180.0f;
     self.balanceHeadView.hidden = balance > 0 ? NO : YES;
     self.balanceCenterView.hidden = balance > 0 ? NO : YES;
     
-    self.bankView.hidden = (user.appBanks.count > 0);
+    
+    self.bankView.hidden = !(user.appBanks.count > 0);
     CGFloat value = user.appBanks.count > 0 ? 0.0f : 55.0f;
+    self.imageViewTopConstraint.constant = user.appBanks.count > 0 ? 10.0f : 0.0f;
+    self.bankCardTopConstraint.constant = user.appBanks.count > 0 ? 10.0f : 0.0f;
     self.loginViewHeightConstraint.constant = self.loginViewHeightConstraint.constant - value;
     
+    
+    self.balanceLabel.text = [NSString stringWithFormat:@"%.2f",balance];
     self.remainMoneyLabel.text =
     [NSString stringWithFormat:@"剩余可购额度%ld",self.product.residualAmount];
     
@@ -92,6 +120,26 @@
                             forText:@"剩余可购额度"];
     if (IS_IPHONE_5) {
         self.bottomLabelCenterYConstraint.constant = -80.0f;
+    }
+    
+    Bank *bank = [user.appBanks firstObject];
+    
+    NSString *num = @"";
+    if (bank.bankNo.length > 6) {
+        num = [[NSString getStringWithString:bank.bankNo] substringWithRange:NSMakeRange(bank.bankNo.length - 5, 5)];
+    }
+    self.cardNameLabel.text =
+    [NSString getStringWithString:[NSString stringWithFormat:@"%@(尾号%@)", [NSString getStringWithString:bank.bankName], num]];
+    [self.cardNameLabel addColor:RGBColor(51.0f, 51.0f, 51.0f)
+                            forText:[NSString getStringWithString:bank.bankName]];
+    
+    for (int i = 0; i < [self.bankArray count]; i++) {
+        NSDictionary *dic = self.bankArray[i];
+        NSString *bankName = dic[@"bankName"];
+        if ([bank.bankName isEqualToString:bankName]) {
+            NSString *bankImageName = dic[@"bankImageName"];
+            self.bankImageView.image = [UIImage imageNamed:bankImageName];
+        }
     }
     
 }
@@ -154,6 +202,20 @@
 }
 
 #pragma mark - Handlers
+
+
+- (IBAction)selectButtonWasPressed:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    if (sender.selected) {
+        [sender setImage:[UIImage imageNamed:@"buy_icon_unchoose_down_image"] forState:UIControlStateNormal];
+        
+        NSLog(@"去掉余额.不扣余额");
+    } else {
+        [sender setImage:[UIImage imageNamed:@"buy_icon_choose_down_image"] forState:UIControlStateNormal];
+        NSLog(@"加上余额扣除");
+    }
+}
+
 
 - (IBAction)editingChanged:(UITextField *)sender {
     [self updateResetButtonStatus];
