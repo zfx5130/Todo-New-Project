@@ -18,6 +18,10 @@
     return @"https://queryapi.lianlianpay.com/bankcardbin.htm";
 }
 
+- (NSDictionary *)requestHeaderFieldValueDictionary {
+    return nil;
+}
+
 - (id)requestArgument {
     return @{
              @"oid_partner" : self.oid_partner,

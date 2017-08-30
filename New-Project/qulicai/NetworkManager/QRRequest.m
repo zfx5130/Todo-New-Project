@@ -55,6 +55,9 @@ static NSString *const kRequestLogSeparatorSingleLine = @"----------------------
     return @"POST";
 }
 
+- (NSString *)baseUrl {
+    return @"";
+}
 
 - (void)start {
     [super start];

@@ -125,14 +125,14 @@
     self.llOrder.notify_url = QR_NOTIFY_URL;
     self.llOrder.acct_name = [NSString getStringWithString:[UserUtil currentUser].realName];
     
-//    NSString *cardNameStr = [[NSString getStringWithString:cartNumber] stringByReplacingOccurrencesOfString:@" "
+//  NSString *cardNameStr = [[NSString getStringWithString:cartNumber] stringByReplacingOccurrencesOfString:@" "
 //                                                                                                withString:@""];
-    self.llOrder.card_no = @"6212261702009651381";
+    self.llOrder.card_no = @"6214855712479407";
     NSLog(@":::cardNo:::::%@",self.llOrder.card_no);
     
     self.llOrder.id_no = [NSString getStringWithString:[UserUtil currentUser].cardId];
     self.llOrder.risk_item = [LLOrder llJsonStringOfObj:@{@"user_info_dt_register" : @"20131030122130"}];
-    self.llOrder.user_id = [UserUtil currentUser].userId;
+    self.llOrder.user_id = @"88888";//[UserUtil currentUser].userId;
     self.llOrder.name_goods = @"充值";
 
     self.resultTitle = @"充值结果";
@@ -148,6 +148,22 @@
     [[LLPaySdk sharedSdk] presentLLPaySDKInViewController:self
                                               withPayType:LLPayTypeVerify
                                             andTraderInfo:signedOrder];
+    
+
+    NSLog(@"::::::%@",signedOrder);
+    
+//    QRRequestLLPayBinQuery *request = [[QRRequestLLPayBinQuery alloc] init];
+//    request.oid_partner = signedOrder[@"oid_partner"];
+//    request.sign_type = signedOrder[@"sign_type"];
+//    request.card_no = signedOrder[@"card_no"];
+//    request.sign = signedOrder[@"sign"];
+//    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+//        NSLog(@"sycee::::::%@",request.responseJSONObject);
+//        NSLog(@"sycee::::::%@",request.responseJSONObject[@"ret_msg"]);
+//    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+//        NSLog(@"errror::::::%@",request.error);
+//    }];
+    
     
 }
 
