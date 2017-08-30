@@ -16,7 +16,7 @@
 #import "UserUtil.h"
 #import "User.h"
 #import "LoginViewController.h"
-
+#import "PropertyPickupViewController.h"
 
 @interface ResetPasswordViewController ()
 <UITextViewDelegate>
@@ -104,10 +104,19 @@
             if (transPassword.statusType == IndentityStatusSuccess) {
                 //设置交易密码跳转
                 [weakSelf showSuccessWithTitle:@"交易密码设置成功"];
-                for( UIViewController *controller in self.navigationController.viewControllers ) {
-                    if( [controller isKindOfClass:[SettingsTableViewController class]] ) {
-                        [self.navigationController popToViewController:controller animated:YES];
-                        return ;
+                if (self.isPickUpPw) {
+                    for( UIViewController *controller in self.navigationController.viewControllers ) {
+                        if( [controller isKindOfClass:[PropertyPickupViewController class]] ) {
+                            [self.navigationController popToViewController:controller animated:YES];
+                            return ;
+                        }
+                    }
+                } else {
+                    for( UIViewController *controller in self.navigationController.viewControllers ) {
+                        if( [controller isKindOfClass:[SettingsTableViewController class]] ) {
+                            [self.navigationController popToViewController:controller animated:YES];
+                            return ;
+                        }
                     }
                 }
             } else {

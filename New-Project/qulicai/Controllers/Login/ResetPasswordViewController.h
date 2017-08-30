@@ -15,6 +15,9 @@
 
 @property (copy, nonatomic) NSString *phone;
 
+//是否提现交易密码
+@property (assign, nonatomic) BOOL isPickUpPw;
+
 //注册页面忘记密码跳转
 @property (assign, nonatomic) BOOL isRegisterSwip;
 
