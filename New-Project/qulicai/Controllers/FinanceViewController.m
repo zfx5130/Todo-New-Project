@@ -58,6 +58,7 @@ UITableViewDataSource>
                                              selector:@selector(requestProduct)
                                                  name:QR_NOTIFICATION_IDENTITY_SUCCEED
                                                object:nil];
+    [self loadNewData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -89,7 +90,6 @@ UITableViewDataSource>
                                          selector:@selector(loadNewData)];
     self.currentPage = 1;
     self.limit = 8;
-    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)loadNewData {
@@ -102,6 +102,7 @@ UITableViewDataSource>
 }
 
 - (void)requestProduct {
+    [self showSVProgressHUD];
     QRRequestProductList *request = [[QRRequestProductList alloc] init];
     request.currentPage = [NSString stringWithFormat:@"%@",@(self.currentPage)];
     request.pageSize = [NSString stringWithFormat:@"%@",@(self.limit)];
@@ -109,6 +110,7 @@ UITableViewDataSource>
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [weakSelf.tableView.mj_header endRefreshing];
         [weakSelf.tableView.mj_footer endRefreshing];
+        [SVProgressHUD dismiss];
         ProductList *productList = [ProductList mj_objectWithKeyValues:request.responseJSONObject];
         if (productList.statusType == IndentityStatusSuccess) {
             SLog(@"------%@",request.responseJSONObject);
@@ -134,6 +136,7 @@ UITableViewDataSource>
             }
         }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
         [self showErrorWithTitle:@"请求失败"];
         [weakSelf.tableView.mj_header endRefreshing];
         [weakSelf.tableView.mj_footer endRefreshing];
