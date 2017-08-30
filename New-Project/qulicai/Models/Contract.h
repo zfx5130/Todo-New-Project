@@ -24,4 +24,6 @@
 
 @property (copy, nonatomic) NSString *endDate;
 
+@property (copy, nonatomic) NSString *markId;
+
 @end
