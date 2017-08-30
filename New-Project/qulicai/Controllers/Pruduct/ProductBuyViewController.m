@@ -12,6 +12,8 @@
 #import "User.h"
 #import "UserUtil.h"
 #import "Bank.h"
+#import "ResetPasswordViewController.h"
+#import "AddBankCardViewController.h"
 
 @interface ProductBuyViewController ()
 <UITextFieldDelegate>
@@ -178,22 +180,39 @@
         [self.errorLabel addShakeAnimation];
         return;
     }
-    [self showSVProgressHUD];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [SVProgressHUD dismiss];
-//        if (self.isFirstBuy) {
-//            AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
-//            accountController.isProductPush = YES;
-//            [self.navigationController pushViewController:accountController
-//                                                 animated:YES];
-//        } else {
-//            [self showSuccessWithTitle:@"购买成功"];
-//            ProductBuySuccessViewController *successController = [[ProductBuySuccessViewController alloc] init];
-//            successController.isBuySuccess = YES;
-//            [self.navigationController pushViewController:successController
-//                                                 animated:YES];
-//        }
-    });
+    
+    
+    User *user = [UserUtil currentUser];
+    
+    if (user.appBanks.count) {
+        //认证成功 去购买
+        
+    } else {
+        if (!user.hasTransactionPwd) {
+            //未设置交易密码
+            ResetPasswordViewController *modifyController = [[ResetPasswordViewController alloc] init];
+            modifyController.isFirstSetingTradPw = YES;
+            modifyController.isTradingPw = YES;
+            [self.navigationController pushViewController:modifyController
+                                                 animated:YES];
+        } else {
+            //设置过交易密码
+            if (user.authStatusType == AuthenticationStatusSuccess) {
+                //已实名认证
+                AddBankCardViewController *addBankController = [[AddBankCardViewController alloc] init];
+                addBankController.name = [NSString getStringWithString:[UserUtil currentUser].realName];
+                addBankController.identify = [NSString getStringWithString:[UserUtil currentUser].cardId];
+                [self.navigationController pushViewController:addBankController
+                                                     animated:YES];
+            } else {
+                //未实名认证
+                AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
+                accountController.isFirstRechargePush = YES;
+                [self.navigationController pushViewController:accountController
+                                                     animated:YES];
+            }
+        }
+    }
 }
 
 #pragma mark - UITextViewDelegate
