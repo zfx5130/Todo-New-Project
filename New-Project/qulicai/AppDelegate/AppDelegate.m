@@ -30,7 +30,7 @@
                                              selector:@selector(handleRequestApi)
                                                  name:QR_NOTIFICATIONCENTER_INDENTITY_KEY_IS_NULL
                                                object:nil];
-    sleep(1.5f);
+    sleep(1.5);
     return YES;
 }
 

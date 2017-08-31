@@ -22,6 +22,7 @@
 #import "QRRequestHeader.h"
 
 @interface SettingsTableViewController ()
+<UIAlertViewDelegate>
 
 @property (strong, nonatomic) ZXCImagePicker *imagePicker;
 
@@ -220,11 +221,25 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)outLogin {
-    if ([UserUtil outLoginIn]) {
-        [self showSuccessWithTitle:@"退出成功"];
-        [self.navigationController popToRootViewControllerAnimated:NO];
-    } else {
-        [self showErrorWithTitle:@"退出失败"];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:@"你确定要退出登录吗"
+                                                       delegate:self
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:@"取消", nil];
+    alertView.delegate = self;
+    [alertView show];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (!buttonIndex) {
+        if ([UserUtil outLoginIn]) {
+            [self showSuccessWithTitle:@"退出成功"];
+            [self.navigationController popToRootViewControllerAnimated:NO];
+        } else {
+            [self showErrorWithTitle:@"退出失败"];
+        }
     }
 }
 

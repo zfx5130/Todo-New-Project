@@ -26,4 +26,9 @@
 //注册页面忘记密码跳转
 @property (assign, nonatomic) BOOL isRegisterSwip;
 
+
+@property (copy, nonatomic) NSString *prductMoney;
+@property (copy, nonatomic) NSString *productName;
+@property (copy, nonatomic) NSString *packId;
+
 @end

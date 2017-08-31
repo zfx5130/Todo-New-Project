@@ -129,6 +129,9 @@
                                 addBankController.name = [NSString getStringWithString:user.realName];
                                 addBankController.identify = [NSString getStringWithString:user.cardId];
                                 addBankController.money = self.money;
+                                addBankController.productName = self.productName;
+                                addBankController.productMoney = self.productName;
+                                addBankController.packId = self.packId;
                                 [weakSelf.navigationController pushViewController:addBankController
                                                                      animated:YES];
                             } else {
@@ -136,6 +139,9 @@
                                 AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
                                 accountController.isFirstRechargePush = YES;
                                 accountController.money = self.money;
+                                accountController.productName = self.productName;
+                                accountController.productMoney = self.prductMoney;
+                                accountController.packId = self.packId;
                                 [self.navigationController pushViewController:accountController
                                                                      animated:YES];
                             }

@@ -18,4 +18,8 @@
 
 @property (copy, nonatomic) NSString *money;
 
+@property (copy, nonatomic) NSString *productMoney;
+@property (copy, nonatomic) NSString *productName;
+@property (copy, nonatomic) NSString *packId;
+
 @end

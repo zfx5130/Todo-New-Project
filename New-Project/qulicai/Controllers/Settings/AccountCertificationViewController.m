@@ -115,6 +115,10 @@
                         AddBankCardViewController *addBankController = [[AddBankCardViewController alloc] init];
                         addBankController.name = self.nameLabel.text;
                         addBankController.identify = self.userIdentifyLabel.text;
+                        addBankController.money = self.money;
+                        addBankController.productMoney = self.productMoney;
+                        addBankController.productName = self.productName;
+                        addBankController.packId = self.packId;
                         [weakSelf.navigationController pushViewController:addBankController
                                                                  animated:YES];
                     } else {

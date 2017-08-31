@@ -97,6 +97,8 @@
 		8435E5C01F399C6C00424E5E /* CoreArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E5BE1F399C6C00424E5E /* CoreArchive.m */; };
 		8435E6031F3D885200424E5E /* QRRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E6021F3D885200424E5E /* QRRequest.m */; };
 		8435E60A1F3D9AE500424E5E /* QRRequestCertificationLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E6091F3D9AE500424E5E /* QRRequestCertificationLogin.m */; };
+		843D43031F58149C0079A364 /* QRRequestProductBuy.m in Sources */ = {isa = PBXBuildFile; fileRef = 843D43021F58149C0079A364 /* QRRequestProductBuy.m */; };
+		843D43061F58171A0079A364 /* ProductBuy.m in Sources */ = {isa = PBXBuildFile; fileRef = 843D43051F58171A0079A364 /* ProductBuy.m */; };
 		8444023D1F4186E100F5AFEE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444023C1F4186E100F5AFEE /* MainViewController.m */; };
 		844402401F41874C00F5AFEE /* FinanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444023F1F41874C00F5AFEE /* FinanceViewController.m */; };
 		844402461F418F1400F5AFEE /* QRTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402451F418F1400F5AFEE /* QRTabbarController.m */; };
@@ -445,6 +447,10 @@
 		8435E6081F3D9AE500424E5E /* QRRequestCertificationLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestCertificationLogin.h; sourceTree = "<group>"; };
 		8435E6091F3D9AE500424E5E /* QRRequestCertificationLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestCertificationLogin.m; sourceTree = "<group>"; };
 		8435E60B1F3DAE9900424E5E /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		843D43011F58149C0079A364 /* QRRequestProductBuy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestProductBuy.h; sourceTree = "<group>"; };
+		843D43021F58149C0079A364 /* QRRequestProductBuy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestProductBuy.m; sourceTree = "<group>"; };
+		843D43041F58171A0079A364 /* ProductBuy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductBuy.h; sourceTree = "<group>"; };
+		843D43051F58171A0079A364 /* ProductBuy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductBuy.m; sourceTree = "<group>"; };
 		8444023B1F4186E100F5AFEE /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../MainViewController.h; sourceTree = "<group>"; };
 		8444023C1F4186E100F5AFEE /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
 		8444023E1F41874C00F5AFEE /* FinanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinanceViewController.h; path = ../FinanceViewController.h; sourceTree = "<group>"; };
@@ -1103,6 +1109,8 @@
 				84D7066A1F57F0A9007EB86B /* VerifyCardPay.m */,
 				84D7066F1F57F6B9007EB86B /* RechargeInfo.h */,
 				84D706701F57F6B9007EB86B /* RechargeInfo.m */,
+				843D43041F58171A0079A364 /* ProductBuy.h */,
+				843D43051F58171A0079A364 /* ProductBuy.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1337,6 +1345,8 @@
 				84B51CED1F56BC9500840F94 /* QRRequestGetLLKey.m */,
 				84D7066C1F57F2FC007EB86B /* QRRequestUserRecharge.h */,
 				84D7066D1F57F2FC007EB86B /* QRRequestUserRecharge.m */,
+				843D43011F58149C0079A364 /* QRRequestProductBuy.h */,
+				843D43021F58149C0079A364 /* QRRequestProductBuy.m */,
 			);
 			path = ApiRequest;
 			sourceTree = "<group>";
@@ -1875,6 +1885,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843D43061F58171A0079A364 /* ProductBuy.m in Sources */,
 				844FB8451F4EAF69001772AF /* TotalPropertyViewController.m in Sources */,
 				844FB8301F4E755A001772AF /* BuyProductDetailViewController.m in Sources */,
 				844402BF1F443F9A00F5AFEE /* SettingsTableViewController.m in Sources */,
@@ -2004,6 +2015,7 @@
 				84B51CCC1F55A81000840F94 /* TransactionPwd.m in Sources */,
 				844FB8121F4D6496001772AF /* IncomeTableViewCell.m in Sources */,
 				84DCF3571F4EE58E002F117A /* JCRBlurView.m in Sources */,
+				843D43031F58149C0079A364 /* QRRequestProductBuy.m in Sources */,
 				842A93361F5443E1001822EF /* NSString+Addition.m in Sources */,
 				842616FF1F4C1D0000A96EFD /* ProductRecordTableViewCell.m in Sources */,
 				8426167A1F4ADEC900A96EFD /* AboutQRViewController.m in Sources */,
