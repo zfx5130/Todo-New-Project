@@ -72,6 +72,8 @@ LLPaySdkDelegate>
 
 @property (copy, nonatomic) NSString *resultTitle;
 
+@property (assign, nonatomic) BOOL isDeductionBalance;
+
 @end
 
 @implementation ProductBuyViewController
@@ -80,6 +82,8 @@ LLPaySdkDelegate>
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //默认扣除余额
+    self.isDeductionBalance = YES;
     [self setupViews];
 }
 
@@ -194,7 +198,19 @@ LLPaySdkDelegate>
         return;
     }
     
+    CGFloat amountStr = self.isDetailSwap ? self.productDetail.residualAmount : self.product.residualAmount;
+    if ([self.moneyTextField.text floatValue] > amountStr) {
+        self.errorLabel.text = @"*购买金额大于可剩余金额";
+        [self.errorLabel addShakeAnimation];
+        return;
+    }
+    
     User *user = [UserUtil currentUser];
+    //余额
+    CGFloat amount = user.availableMoney;
+    
+    CGFloat lastMoney =
+    self.isDeductionBalance ? ([self.moneyTextField.text floatValue] - amount) : [self.moneyTextField.text floatValue];
     
     if (user.appBanks.count) {
         //认证成功 去购买
@@ -206,7 +222,7 @@ LLPaySdkDelegate>
         QRRequestProductBuy *buyProduct = [[QRRequestProductBuy alloc] init];
         buyProduct.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
         buyProduct.packId = pickId;
-        buyProduct.money = [self.moneyTextField.text doubleValue];
+        buyProduct.money = lastMoney;
         __weak typeof(self) weakSelf = self;
         [buyProduct startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             [SVProgressHUD dismiss];
@@ -235,7 +251,7 @@ LLPaySdkDelegate>
             ResetPasswordViewController *modifyController = [[ResetPasswordViewController alloc] init];
             modifyController.isFirstSetingTradPw = YES;
             modifyController.isTradingPw = YES;
-            modifyController.prductMoney = self.moneyTextField.text;
+            modifyController.prductMoney = [NSString stringWithFormat:@"%@",@(lastMoney)];
             modifyController.productName = self.product.productName;
             modifyController.packId = self.product.productId;
             [self.navigationController pushViewController:modifyController
@@ -245,7 +261,7 @@ LLPaySdkDelegate>
             if (user.authStatusType == AuthenticationStatusSuccess) {
                 //已实名认证
                 AddBankCardViewController *addBankController = [[AddBankCardViewController alloc] init];
-                addBankController.productMoney = self.moneyTextField.text;
+                addBankController.productMoney = [NSString stringWithFormat:@"%@",@(lastMoney)];
                 addBankController.productName = self.product.productName;
                 addBankController.packId = self.product.productId;
                 addBankController.name = [NSString getStringWithString:[UserUtil currentUser].realName];
@@ -256,7 +272,7 @@ LLPaySdkDelegate>
                 //未实名认证
                 AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
                 accountController.isFirstRechargePush = YES;
-                accountController.productMoney = self.moneyTextField.text;
+                accountController.productMoney = [NSString stringWithFormat:@"%@",@(lastMoney)];
                 accountController.productName = self.product.productName;
                 accountController.packId = self.product.productId;
                 [self.navigationController pushViewController:accountController
@@ -367,9 +383,12 @@ LLPaySdkDelegate>
     if (sender.selected) {
         [sender setImage:[UIImage imageNamed:@"buy_icon_unchoose_down_image"] forState:UIControlStateNormal];
         NSLog(@"去掉余额.不扣余额");
+        self.isDeductionBalance = NO;
+        
     } else {
         [sender setImage:[UIImage imageNamed:@"buy_icon_choose_down_image"] forState:UIControlStateNormal];
         NSLog(@"加上余额扣除");
+        self.isDeductionBalance = YES;
     }
 }
 
@@ -385,6 +404,9 @@ LLPaySdkDelegate>
     CGFloat value = [sender.text floatValue];
     CGFloat result = value * rate / 365 * periodDay;
     self.rateMoneyLabel.text = [NSString stringWithFormat:@"+%.2f",result];
+    CGFloat amount = self.isDetailSwap ? self.productDetail.residualAmount : self.product.residualAmount;
+    CGFloat lastAmount = [sender.text floatValue] - amount;
+    self.balanceRechangeLabel.text = [NSString stringWithFormat:@"%.2f",lastAmount];
     
 }
 
