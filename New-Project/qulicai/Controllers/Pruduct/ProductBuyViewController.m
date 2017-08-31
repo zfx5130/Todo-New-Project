@@ -20,6 +20,10 @@
 #import "LLOrder.h"
 #import "LLPaySdk.h"
 
+#import "ProductPasswordView.h"
+#import "ASPopupController.h"
+#import "ForgetPasswordViewController.h"
+#import "TransactionPwd.h"
 
 @interface ProductBuyViewController ()
 <UITextFieldDelegate,
@@ -72,7 +76,14 @@ LLPaySdkDelegate>
 
 @property (copy, nonatomic) NSString *resultTitle;
 
+//是否是选择抵消余额
 @property (assign, nonatomic) BOOL isDeductionBalance;
+
+@property (strong, nonatomic) ProductPasswordView *passwordView;
+
+@property (strong, nonatomic) ASPopupController *popController;
+
+@property (copy, nonatomic) NSString *password;
 
 @end
 
@@ -82,8 +93,7 @@ LLPaySdkDelegate>
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //默认扣除余额
-    self.isDeductionBalance = YES;
+    
     [self setupViews];
 }
 
@@ -123,6 +133,8 @@ LLPaySdkDelegate>
     self.balanceHeadView.hidden = balance > 0 ? NO : YES;
     self.balanceCenterView.hidden = balance > 0 ? NO : YES;
     
+    //默认扣除余额YES
+    self.isDeductionBalance = balance > 0 ? YES : NO;
     
     self.bankView.hidden = !(user.appBanks.count > 0);
     CGFloat value = user.appBanks.count > 0 ? 0.0f : 55.0f;
@@ -193,14 +205,14 @@ LLPaySdkDelegate>
 - (void)buy {
     [self.view endEditing:YES];
     if ([self.moneyTextField.text floatValue] < 0.01) {
-        self.errorLabel.text = @"*购买金额不得少于50";
+        self.errorLabel.text = @"*购买金额不得少于0.01";
         [self.errorLabel addShakeAnimation];
         return;
     }
     
     CGFloat amountStr = self.isDetailSwap ? self.productDetail.residualAmount : self.product.residualAmount;
     if ([self.moneyTextField.text floatValue] > amountStr) {
-        self.errorLabel.text = @"*购买金额大于可剩余金额";
+        self.errorLabel.text = @"*购买金额大于剩余金额";
         [self.errorLabel addShakeAnimation];
         return;
     }
@@ -209,51 +221,69 @@ LLPaySdkDelegate>
     //余额
     CGFloat amount = user.availableMoney;
     
-    CGFloat lastMoney =
-    self.isDeductionBalance ? ([self.moneyTextField.text floatValue] - amount) : [self.moneyTextField.text floatValue];
-    
     if (user.appBanks.count) {
-        //认证成功 去购买
-        
-        NSString *pickId =  self.isDetailSwap ? self.productDetail.productId : self.product.productId;
-        
-        [self showSVProgressHUD];
         Bank *bank = [[UserUtil currentUser].appBanks firstObject];
-        QRRequestProductBuy *buyProduct = [[QRRequestProductBuy alloc] init];
-        buyProduct.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
-        buyProduct.packId = pickId;
-        buyProduct.money = lastMoney;
-        __weak typeof(self) weakSelf = self;
-        [buyProduct startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-            [SVProgressHUD dismiss];
-            ProductBuy *recharge = [ProductBuy mj_objectWithKeyValues:request.responseJSONObject];
-            NSLog(@"后台购买::::::%@",request.responseJSONObject);
-            NSLog(@"后台购买::::::%@",request.responseJSONObject[@"ret_msg"]);
-            if (recharge.statusType == IndentityStatusSuccess) {
-                NSLog(@"购买成功跳转中");
-                [weakSelf showSuccessWithTitle:@"购买跳转中"];
-                [weakSelf swapLLpayWithCardNumer:bank.bankNo
-                                       withMoney:self.moneyTextField.text];
-                
+        CGFloat lastMoney = 0.0f;
+        //认证成功 直接去购买
+        if (self.isDeductionBalance) {
+            //如果选择余额抵扣
+            //1.购买金额小于余额,直接调用购买接口。
+            if ([self.moneyTextField.text floatValue] < amount) {
+                lastMoney = amount - [self.moneyTextField.text floatValue];
+                //先弹出交易密码 然后购买
+                [self inputPickPW];
             } else {
-                [weakSelf showErrorWithTitle:recharge.desc];
+                //2.购买金额大于余额，调到连连支付充值。还需调用购买接口。
+                lastMoney = [self.moneyTextField.text floatValue] - amount;
+                //NSLog(@"last::::::%@",@(lastMoney));
+                NSString *pickId =  self.isDetailSwap ? self.productDetail.productId : self.product.productId;
+                [self showSVProgressHUD];
+                QRRequestProductBuy *buyProduct = [[QRRequestProductBuy alloc] init];
+                buyProduct.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
+                buyProduct.packId = pickId;
+                buyProduct.money = amount;
+                __weak typeof(self) weakSelf = self;
+                [buyProduct startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+                    [SVProgressHUD dismiss];
+                    ProductBuy *recharge = [ProductBuy mj_objectWithKeyValues:request.responseJSONObject];
+                    NSLog(@"后台购买::::::%@",request.responseJSONObject);
+                    NSLog(@"后台购买::::::%@",request.responseJSONObject[@"ret_msg"]);
+                    if (recharge.statusType == IndentityStatusSuccess) {
+                        NSLog(@"购买成功跳转中");
+                        [weakSelf showSuccessWithTitle:@"购买跳转中"];
+                        [weakSelf swapLLpayWithCardNumer:bank.bankNo
+                                               withMoney:[NSString stringWithFormat:@"%@",@(lastMoney)]];
+                        
+                    } else {
+                        [weakSelf showErrorWithTitle:recharge.desc];
+                    }
+                    
+                } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+                    [SVProgressHUD dismiss];
+                    [weakSelf showErrorWithTitle:@"充值失败"];
+                    NSLog(@"errror::::::%@",request.error);
+                }];
+                
             }
             
-        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-            [SVProgressHUD dismiss];
-            [weakSelf showErrorWithTitle:@"充值失败"];
-            NSLog(@"errror::::::%@",request.error);
-        }];
-        
+        } else {
+            //不抵扣,直接跳转连连去支付
+            lastMoney = [self.moneyTextField.text floatValue];
+            [self swapLLpayWithCardNumer:bank.bankNo
+                               withMoney:[NSString stringWithFormat:@"%@",@(lastMoney)]];
+        }
     } else {
+        NSString *pickId =  self.isDetailSwap ? self.productDetail.productId : self.product.productId;
+        NSString *productName =  self.isDetailSwap ? self.productDetail.productName : self.product.productName;
         if (!user.hasTransactionPwd) {
             //未设置交易密码
             ResetPasswordViewController *modifyController = [[ResetPasswordViewController alloc] init];
             modifyController.isFirstSetingTradPw = YES;
             modifyController.isTradingPw = YES;
-            modifyController.prductMoney = [NSString stringWithFormat:@"%@",@(lastMoney)];
-            modifyController.productName = self.product.productName;
-            modifyController.packId = self.product.productId;
+            modifyController.prductMoney = [NSString stringWithFormat:@"%@",self.moneyTextField.text];
+            modifyController.productName = productName;
+            modifyController.packId = pickId;
+            modifyController.isDeductionBalance = self.isDeductionBalance;
             [self.navigationController pushViewController:modifyController
                                                  animated:YES];
         } else {
@@ -261,9 +291,10 @@ LLPaySdkDelegate>
             if (user.authStatusType == AuthenticationStatusSuccess) {
                 //已实名认证
                 AddBankCardViewController *addBankController = [[AddBankCardViewController alloc] init];
-                addBankController.productMoney = [NSString stringWithFormat:@"%@",@(lastMoney)];
-                addBankController.productName = self.product.productName;
-                addBankController.packId = self.product.productId;
+                addBankController.productMoney = [NSString stringWithFormat:@"%@",self.moneyTextField.text];
+                addBankController.productName = productName;
+                addBankController.packId = pickId;
+                addBankController.isDeductionBalance = self.isDeductionBalance;
                 addBankController.name = [NSString getStringWithString:[UserUtil currentUser].realName];
                 addBankController.identify = [NSString getStringWithString:[UserUtil currentUser].cardId];
                 [self.navigationController pushViewController:addBankController
@@ -272,9 +303,10 @@ LLPaySdkDelegate>
                 //未实名认证
                 AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
                 accountController.isFirstRechargePush = YES;
-                accountController.productMoney = [NSString stringWithFormat:@"%@",@(lastMoney)];
-                accountController.productName = self.product.productName;
-                accountController.packId = self.product.productId;
+                accountController.productMoney = [NSString stringWithFormat:@"%@",self.moneyTextField.text];
+                accountController.productName = productName;
+                accountController.packId = pickId;
+                accountController.isDeductionBalance = self.isDeductionBalance;
                 [self.navigationController pushViewController:accountController
                                                      animated:YES];
             }
@@ -368,6 +400,109 @@ LLPaySdkDelegate>
 }
 
 
+- (void)inputPickPW {
+    self.passwordView =
+    [[ProductPasswordView alloc] initWithFrame:CGRectMake(0.0f, -100.0f, 270, 200)];
+    [self.passwordView.cancleButton addTarget:self
+                                       action:@selector(passwordDismiss)
+                             forControlEvents:UIControlEventTouchUpInside];
+    [self.passwordView.configureButton addTarget:self
+                                          action:@selector(configurePassword)
+                                forControlEvents:UIControlEventTouchUpInside];
+    [self.passwordView.forgetPasswordButton addTarget:self
+                                               action:@selector(forgetButtonWasPressed)
+                                     forControlEvents:UIControlEventTouchUpInside];
+    self.popController =
+    [ASPopupController  alertWithPresentStyle:ASPopupPresentStyleSlideDown
+                                 dismissStyle:ASPopupDismissStyleSlideDown
+                                    alertView:self.passwordView];
+    [self.popController setAlertViewCornerRadius:20.0f];
+    __weak typeof(self) weakSelf = self;
+    self.passwordView.pwBlock = ^(NSString *password) {
+        weakSelf.password = password;
+        [weakSelf configurePassword];
+    };
+    [self presentViewController:self.popController
+                       animated:YES
+                     completion:nil];
+}
+
+- (void)forgetButtonWasPressed {
+    [self passwordDismiss];
+    ForgetPasswordViewController *passwordController = [[ForgetPasswordViewController alloc] init];
+    passwordController.isBuyRechargePw = YES;
+    passwordController.isTradingPw = YES;
+    [self.navigationController pushViewController:passwordController
+                                         animated:YES];
+}
+
+- (void)passwordDismiss {
+    [self.view endEditing:YES];
+    if (self.popController) {
+        [self.popController dismissViewControllerAnimated:YES
+                                               completion:nil];
+    }
+}
+
+- (void)configurePassword {
+    if (self.passwordView.passwordTextField.text.length < 6 || self.passwordView.passwordTextField.text.length > 16) {
+        self.passwordView.errorLabel.text = @"*密码格式错误";
+        [self.passwordView addShakeAnimation];
+        return;
+    }
+    [self passwordDismiss];
+    [self showSVProgressHUD];
+    
+    QRrequestVerifyTrasPwd *request = [[QRrequestVerifyTrasPwd alloc] init];
+    request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
+    request.transactionPwd = [NSString getStringWithString:self.passwordView.passwordTextField.text];
+    [self showSVProgressHUD];
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        TransactionPwd *pickup = [TransactionPwd mj_objectWithKeyValues:request.responseJSONObject];
+        [SVProgressHUD dismiss];
+        NSLog(@"验证交易密码接口::::%@",request.responseJSONObject[@"head"][@"responseDescription"]);
+        NSLog(@"验证交易密码接口::::%@",request.responseJSONObject);
+        if (pickup.statusType == IndentityStatusSuccess) {
+            
+            [self showSuccessWithTitle:@"产品购买中"];
+            NSString *pickId = self.isDetailSwap ? self.productDetail.productId : self.product.productId;
+            [self showSVProgressHUD];
+            QRRequestProductBuy *buyProduct = [[QRRequestProductBuy alloc] init];
+            buyProduct.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
+            buyProduct.packId = pickId;
+            buyProduct.money = [self.moneyTextField.text floatValue];
+            __weak typeof(self) weakSelf = self;
+            [buyProduct startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+                [SVProgressHUD dismiss];
+                ProductBuy *recharge = [ProductBuy mj_objectWithKeyValues:request.responseJSONObject];
+                NSLog(@"后台购买::::::%@",request.responseJSONObject);
+                NSLog(@"后台购买::::::%@",request.responseJSONObject[@"ret_msg"]);
+                if (recharge.statusType == IndentityStatusSuccess) {
+                    NSLog(@"购买成功跳转中");
+                    [weakSelf showSuccessWithTitle:@"购买跳转中"];
+                    //调转到购买成功页面
+                    [weakSelf rechargeSuccess];
+                } else {
+                    [weakSelf showErrorWithTitle:recharge.desc];
+                }
+                
+            } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+                [SVProgressHUD dismiss];
+                [weakSelf showErrorWithTitle:@"充值失败"];
+                NSLog(@"errror::::::%@",request.error);
+            }];
+            
+            
+        } else {
+            [self showErrorWithTitle:@"交易验证失败"];
+        }
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        [self showErrorWithTitle:@"交易验证失败"];
+    }];
+}
+
 #pragma mark - UITextViewDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -384,10 +519,14 @@ LLPaySdkDelegate>
         [sender setImage:[UIImage imageNamed:@"buy_icon_unchoose_down_image"] forState:UIControlStateNormal];
         NSLog(@"去掉余额.不扣余额");
         self.isDeductionBalance = NO;
+        CGFloat lastAmount = [self.balanceRechangeLabel.text floatValue] + [UserUtil currentUser].availableMoney;
+        self.balanceRechangeLabel.text = [NSString stringWithFormat:@"%.2f",lastAmount];
         
     } else {
         [sender setImage:[UIImage imageNamed:@"buy_icon_choose_down_image"] forState:UIControlStateNormal];
         NSLog(@"加上余额扣除");
+        CGFloat lastAmount = [self.balanceRechangeLabel.text floatValue] - [UserUtil currentUser].availableMoney;
+        self.balanceRechangeLabel.text = [NSString stringWithFormat:@"%.2f",lastAmount];
         self.isDeductionBalance = YES;
     }
 }
@@ -395,7 +534,16 @@ LLPaySdkDelegate>
 
 - (IBAction)editingChanged:(UITextField *)sender {
     [self updateResetButtonStatus];
-    
+    [self updateWithTextField:sender];
+}
+
+- (IBAction)editingBegin:(UITextField *)sender {
+    self.errorLabel.text = @"";
+    [self updateResetButtonStatus];
+    [self updateWithTextField:sender];
+}
+
+- (void)updateWithTextField:(UITextField *)sender {
     NSInteger period = self.isDetailSwap ? [self.productDetail.periods integerValue]: [self.product.periods integerValue];
     NSInteger periodDay = period;
     CGFloat activityRate= self.isDetailSwap ? self.productDetail.activityRate : self.product.activityRate;
@@ -404,16 +552,13 @@ LLPaySdkDelegate>
     CGFloat value = [sender.text floatValue];
     CGFloat result = value * rate / 365 * periodDay;
     self.rateMoneyLabel.text = [NSString stringWithFormat:@"+%.2f",result];
-    CGFloat amount = self.isDetailSwap ? self.productDetail.residualAmount : self.product.residualAmount;
-    CGFloat lastAmount = [sender.text floatValue] - amount;
+    
+    CGFloat lastAmount = [sender.text floatValue] - [UserUtil currentUser].availableMoney;
     self.balanceRechangeLabel.text = [NSString stringWithFormat:@"%.2f",lastAmount];
     
-}
-
-- (IBAction)editingBegin:(UITextField *)sender {
-    self.errorLabel.text = @"";
-    [self updateResetButtonStatus];
-    self.rateMoneyLabel.text = [NSString stringWithFormat:@"+0.0"];
+    if ([self.balanceRechangeLabel.text floatValue] <= 0) {
+        self.balanceRechangeLabel.text = @"0.0";
+    }
 }
 
 - (IBAction)editingEnd:(UITextField *)sender {

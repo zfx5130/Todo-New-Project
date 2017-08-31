@@ -90,6 +90,7 @@ UITableViewDataSource>
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [weakSelf.tableView.mj_header endRefreshing];
         [weakSelf.tableView.mj_footer endRefreshing];
+        SLog(@"资产流水:::::%@",request.responseJSONObject);
         TotalMoneyList *list = [TotalMoneyList mj_objectWithKeyValues:request.responseJSONObject];
         if (list.statusType == IndentityStatusSuccess) {
             self.titleLabel.hidden = NO;

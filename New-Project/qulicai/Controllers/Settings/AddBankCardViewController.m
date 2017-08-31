@@ -59,7 +59,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
+    [self.bankCartNumberLabel becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -131,33 +131,38 @@
         VerifyCardPay *card = [VerifyCardPay mj_objectWithKeyValues:request.responseJSONObject];
         if (card.statusType == IndentityStatusSuccess) {
             //发送到服务器
+            [SVProgressHUD dismiss];
             //判断是充值 还是 购买
-            if (!self.productName.length && !self.packId.length && !self.productMoney.length) {
+            NSLog(@"namee::::::::%@:::::::%@::::::%@",self.productName, self.packId, self.productMoney);
+            if (self.productName.length && self.packId.length && self.productMoney.length) {
                 //购买
-                QRRequestProductBuy *buyProduct = [[QRRequestProductBuy alloc] init];
-                buyProduct.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
-                buyProduct.packId = [NSString getStringWithString:self.packId];
-                buyProduct.money = [self.money doubleValue];
-                [buyProduct startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-                    [SVProgressHUD dismiss];
-                    ProductBuy *recharge = [ProductBuy mj_objectWithKeyValues:request.responseJSONObject];
-                    NSLog(@"后台购买::::::%@",request.responseJSONObject);
-                    NSLog(@"后台购买::::::%@",request.responseJSONObject[@"ret_msg"]);
-                    if (recharge.statusType == IndentityStatusSuccess) {
-                        NSLog(@"购买成功跳转中");
-                        [weakSelf showSuccessWithTitle:@"购买跳转中"];
-                        [weakSelf swapLLpayWithCardNumer:cardNumberStr
-                                              isRecharge:NO];
-                        
-                    } else {
-                        [weakSelf showErrorWithTitle:recharge.desc];
-                    }
-                    
-                } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-                    [SVProgressHUD dismiss];
-                    [weakSelf showErrorWithTitle:@"充值失败"];
-                    NSLog(@"errror::::::%@",request.error);
-                }];
+//                QRRequestProductBuy *buyProduct = [[QRRequestProductBuy alloc] init];
+//                buyProduct.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
+//                buyProduct.packId = [NSString getStringWithString:self.packId];
+//                buyProduct.money = [self.productMoney floatValue];
+//                [buyProduct startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+//                    [SVProgressHUD dismiss];
+//                    ProductBuy *recharge = [ProductBuy mj_objectWithKeyValues:request.responseJSONObject];
+//                    NSLog(@"后台购买::::::%@",request.responseJSONObject);
+//                    NSLog(@"后台购买::::::%@",request.responseJSONObject[@"ret_msg"]);
+//                    if (recharge.statusType == IndentityStatusSuccess) {
+//                        NSLog(@"购买成功跳转中");
+//                        [weakSelf showSuccessWithTitle:@"购买跳转中"];
+//                        [weakSelf swapLLpayWithCardNumer:cardNumberStr
+//                                              isRecharge:NO];
+//                        
+//                    } else {
+//                        [weakSelf showErrorWithTitle:recharge.desc];
+//                    }
+//                    
+//                } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+//                    [SVProgressHUD dismiss];
+//                    [weakSelf showErrorWithTitle:@"充值失败"];
+//                    NSLog(@"errror::::::%@",request.error);
+//                }];
+                
+                [weakSelf swapLLpayWithCardNumer:cardNumberStr
+                                      isRecharge:NO];
 
             } else {
                 
@@ -166,7 +171,7 @@
                 recharge.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
                 recharge.banNo = [NSString getStringWithString:cardNumberStr];
                 recharge.bankName = [NSString getStringWithString:card.bankName];
-                recharge.money = [self.money doubleValue];
+                recharge.money = [self.money floatValue];
                 
                 [recharge startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
                     [SVProgressHUD dismiss];

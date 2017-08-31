@@ -241,9 +241,28 @@ LLPaySdkDelegate>
 }
 
 - (void)rechargeSuccess {
-    ProductBuySuccessViewController *successController = [[ProductBuySuccessViewController alloc] init];
-    successController.isChargeSuccess = YES;
-    [self.navigationController pushViewController:successController animated:YES];
+    
+    [self showSVProgressHUD];
+    QRRequestGetUserInfo *request = [[QRRequestGetUserInfo alloc] init];
+    request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
+    __weak typeof(self) weakSelf = self;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        [self showSuccessWithTitle:@"充值成功跳转中"];
+        User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
+        NSLog(@"reuqestUserInfo:::::::::::::%@",request.responseJSONObject);
+        if (userInfo.statusType == IndentityStatusSuccess) {
+            [UserUtil saving:userInfo];
+            ProductBuySuccessViewController *successController = [[ProductBuySuccessViewController alloc] init];
+            successController.isChargeSuccess = YES;
+            [weakSelf.navigationController pushViewController:successController animated:YES];
+        } else {
+            NSLog(@"error:::::%@",request.error);
+        }
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        NSLog(@"error:- %@", request.error);
+    }];
 }
 
 - (void)rechargeErrorWithMessage:(NSString *)message {
