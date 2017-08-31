@@ -16,5 +16,6 @@
 //充值第一次认证
 @property (assign, nonatomic) BOOL isFirstRechargePush;
 
+@property (copy, nonatomic) NSString *money;
 
 @end

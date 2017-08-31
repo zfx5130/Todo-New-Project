@@ -98,6 +98,7 @@
         ResetPasswordViewController *modifyController = [[ResetPasswordViewController alloc] init];
         modifyController.isFirstSetingTradPw = YES;
         modifyController.isTradingPw = YES;
+        modifyController.money = self.moneyTextField.text;
         [self.navigationController pushViewController:modifyController
                                              animated:YES];
     } else {
@@ -107,12 +108,14 @@
             AddBankCardViewController *addBankController = [[AddBankCardViewController alloc] init];
             addBankController.name = [NSString getStringWithString:[UserUtil currentUser].realName];
             addBankController.identify = [NSString getStringWithString:[UserUtil currentUser].cardId];
+            addBankController.money = self.moneyTextField.text;
             [self.navigationController pushViewController:addBankController
                                                  animated:YES];
         } else {
             //未实名认证
             AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
             accountController.isFirstRechargePush = YES;
+            accountController.money = self.moneyTextField.text;
             [self.navigationController pushViewController:accountController
                                                  animated:YES];
         }

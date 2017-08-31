@@ -11,12 +11,15 @@
 @implementation VerifyCardPay
 
 + (NSDictionary *)mj_replacedKeyFromPropertyName {
+    
     return @{
+             @"bankCode" : @"body.bankCode",
+             @"cardType" : @"body.cardType",
+             @"bankName" : @"body.bankName",
              @"code" : @"head.responseCode",
              @"desc" : @"head.responseDescription",
              @"statusType" : @"head.status"
              };
 }
-
 
 @end

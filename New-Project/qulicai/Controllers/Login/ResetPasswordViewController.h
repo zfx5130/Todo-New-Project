@@ -13,6 +13,8 @@
 //第一次充值设置交易密码
 @property (assign, nonatomic) BOOL isFirstSetingTradPw;
 
+@property (copy, nonatomic) NSString *money;
+
 //是否时交易密码
 @property (assign, nonatomic) BOOL isTradingPw;
 

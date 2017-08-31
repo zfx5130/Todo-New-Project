@@ -20,7 +20,8 @@
 
 - (id)requestArgument {
     return @{
-             @"card_no" : self.card_no
+             @"head" : @{ @"serviceName" : @"queryBankCardBin" },
+             @"body" : @{ @"card_no" : self.card_no}
              };
 }
 

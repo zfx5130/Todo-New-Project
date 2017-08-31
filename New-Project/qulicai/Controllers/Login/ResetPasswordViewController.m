@@ -128,12 +128,14 @@
                                 AddBankCardViewController *addBankController = [[AddBankCardViewController alloc] init];
                                 addBankController.name = [NSString getStringWithString:user.realName];
                                 addBankController.identify = [NSString getStringWithString:user.cardId];
+                                addBankController.money = self.money;
                                 [weakSelf.navigationController pushViewController:addBankController
                                                                      animated:YES];
                             } else {
                                 //跳转认证界面
                                 AccountCertificationViewController *accountController = [[AccountCertificationViewController alloc] init];
                                 accountController.isFirstRechargePush = YES;
+                                accountController.money = self.money;
                                 [self.navigationController pushViewController:accountController
                                                                      animated:YES];
                             }

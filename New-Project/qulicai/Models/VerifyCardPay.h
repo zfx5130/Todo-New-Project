@@ -10,5 +10,12 @@
 
 @interface VerifyCardPay : BaseModel
 
+//所属银行编号
+@property (copy, nonatomic) NSString *bankCode;
+
+//类型 2 储蓄卡 3 信用卡
+@property (assign, nonatomic) NSInteger cardType;
+
+@property (copy, nonatomic) NSString *bankName;
 
 @end

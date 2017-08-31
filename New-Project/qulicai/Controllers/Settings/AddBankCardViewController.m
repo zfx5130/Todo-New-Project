@@ -42,7 +42,7 @@
 
 @property (strong, nonatomic) LLOrder *llOrder;
 
-@property (nonatomic, retain) NSMutableDictionary *orderDic;
+@property (nonatomic, strong) NSMutableDictionary *orderDic;
 
 @property (copy, nonatomic) NSString *resultTitle;
 
@@ -125,8 +125,8 @@
     __weak typeof(self) weakSelf = self;
     [query startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
 
-        NSLog(@"sycee::::::%@",request.responseJSONObject);
-        NSLog(@"sycee::::::%@",request.responseJSONObject[@"ret_msg"]);
+        NSLog(@"后台Card查询::::::%@",request.responseJSONObject);
+        NSLog(@"后台Card查询::::::%@",request.responseJSONObject[@"ret_msg"]);
         //请求成功，返回银行卡信息
         VerifyCardPay *card = [VerifyCardPay mj_objectWithKeyValues:request.responseJSONObject];
         if (card.statusType == IndentityStatusSuccess) {
@@ -134,17 +134,18 @@
             QRRequestUserRecharge *recharge = [[QRRequestUserRecharge alloc] init];
             recharge.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
             recharge.banNo = [NSString getStringWithString:cardNumberStr];
-            recharge.bankName = @"银行卡姓名";
-            recharge.money = 0.01;
+            recharge.bankName = [NSString getStringWithString:card.bankName];
+            recharge.money = [self.money floatValue];
             
             [recharge startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
                 [SVProgressHUD dismiss];
                 RechargeInfo *recharge = [RechargeInfo mj_objectWithKeyValues:request.responseJSONObject];
+                NSLog(@"后台充值::::::%@",request.responseJSONObject);
+                NSLog(@"后台充值::::::%@",request.responseJSONObject[@"ret_msg"]);
                 if (recharge.statusType == IndentityStatusSuccess) {
                     NSLog(@"充值成功跳转中");
                     [weakSelf showSuccessWithTitle:@"充值跳转中"];
-                    
-                    [self swapLLpayWithCardNumer:cardNumberStr];
+                    [weakSelf swapLLpayWithCardNumer:cardNumberStr];
                     
                 } else {
                     [weakSelf showErrorWithTitle:recharge.desc];
@@ -178,7 +179,7 @@
         self.llOrder.busi_partner = @"101001";
         self.llOrder.no_order = [NSString stringWithFormat:@"CZ%@",timeStamp];
         self.llOrder.dt_order = timeStamp;
-        self.llOrder.money_order = @"0.01";
+        self.llOrder.money_order = self.money;
         self.llOrder.notify_url = QR_NOTIFY_URL;
         self.llOrder.acct_name = [NSString getStringWithString:[UserUtil currentUser].realName];
         self.llOrder.card_no = cardNumber;

@@ -14,4 +14,6 @@
 
 @property (copy, nonatomic) NSString *identify;
 
+@property (copy, nonatomic) NSString *money;
+
 @end
