@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>bankName</key>
-		<string>工商银行</string>
+		<string>中国工商银行</string>
 		<key>bankImageName</key>
 		<string>bank_gongs_image</string>
 	</dict>
@@ -22,7 +22,7 @@
 	</dict>
 	<dict>
 		<key>bankName</key>
-		<string>建设银行</string>
+		<string>中国建设银行</string>
 		<key>bankImageName</key>
 		<string>bank_jians_image</string>
 	</dict>
@@ -34,7 +34,7 @@
 	</dict>
 	<dict>
 		<key>bankName</key>
-		<string>储蓄银行</string>
+		<string>中国储蓄储蓄银行</string>
 		<key>bankImageName</key>
 		<string>bank_youzheng_image</string>
 	</dict>

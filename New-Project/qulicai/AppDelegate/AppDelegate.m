@@ -30,6 +30,7 @@
                                              selector:@selector(handleRequestApi)
                                                  name:QR_NOTIFICATIONCENTER_INDENTITY_KEY_IS_NULL
                                                object:nil];
+    sleep(1.5f);
     return YES;
 }
 
@@ -53,16 +54,6 @@
 - (void)configQRNetwork {
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
     config.baseUrl = kBaseUrl;
-    YTKNetworkAgent *agent = [YTKNetworkAgent sharedAgent];
-    NSSet *acceptableContentTypes =
-    [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/plain", @"text/html", @"text/css", nil];
-    NSString *keypath = @"jsonResponseSerializer.acceptableContentTypes";
-    @try {
-        [agent setValue:acceptableContentTypes forKeyPath:keypath];
-    } @catch (NSException *exception) {
-        NSLog(@"%@", exception);
-    } @finally {
-    }
 }
 
 - (void)certificateApi {

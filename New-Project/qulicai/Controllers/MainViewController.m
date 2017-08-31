@@ -24,6 +24,7 @@
 #import "User.h"
 #import "ProductList.h"
 #import "Product.h"
+#import "CertificationLogin.h"
 
 #define NAVBAR_COLORCHANGE_POINT (-IMAGE_HEIGHT + NAV_HEIGHT*2)
 #define NAV_HEIGHT 64
@@ -54,16 +55,11 @@ UITableViewDataSource>
     [self setupTableHeadView];
     [self setupNavigationItemLeft:[UIImage imageNamed:@""]];
     [self reloadUI];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(requestProduct)
-                                                 name:QR_NOTIFICATION_IDENTITY_SUCCEED
-                                               object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self updateUserInfo];
-    [self requestProduct];
+    [self requestToken];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,6 +67,36 @@ UITableViewDataSource>
 }
 
 #pragma mark - Priavte
+
+- (void)requestToken {
+    QRRequestCertificationLogin *request = [[QRRequestCertificationLogin alloc] init];
+    request.userName = QR_IDENTITY_USERNAME;
+    request.passWord = QR_IDENTITY_PASSWROD;
+    
+    NSString *tokenKey =  [[A0SimpleKeychain keychain] stringForKey:QR_IDENTITY_KEY];
+    if (tokenKey) {
+        [self requestProduct];
+    } else {
+        __weak typeof(self) weakSelf = self;
+        [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+            CertificationLogin *certification = [CertificationLogin mj_objectWithKeyValues:request.responseJSONObject];
+            if (certification.statusType == IndentityStatusSuccess) {
+                NSLog(@"登录认证成功");
+                NSString *identityKey = [NSString stringWithFormat:@"%@",certification.identityKey];
+                [[A0SimpleKeychain keychain] setString:identityKey forKey:QR_IDENTITY_KEY];
+                [[A0SimpleKeychain keychain] setString:certification.endTime forKey:QR_ENDTIME_EXT];
+                //获取产品列表
+                [weakSelf requestProduct];
+                //获取个人信息
+                [weakSelf updateUserInfo];
+            } else {
+                NSLog(@"登录认证失败");
+            }
+        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+            NSLog(@"error:- %@", request.error);
+        }];
+    }
+}
 
 - (void)requestProduct {
     QRRequestProductList *request = [[QRRequestProductList alloc] init];

@@ -151,16 +151,11 @@
 //                                            andTraderInfo:signedOrder];
 
     
-    QRRequestGetLLKey *llKey = [[QRRequestGetLLKey alloc] init];
-    llKey.sign = [NSString stringWithFormat:@"card_no=%@&oid_partner=%@&sign_type=%@&key=%@",@"6214855712479407",QR_PARTNER_ID,QR_SING_TYPE,QR_MD5_KEY];
     
-    [llKey startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        NSLog(@"sign::::::::%@",request.responseJSONObject);
-
+    
         QRRequestLLPayBinQuery *query = [[QRRequestLLPayBinQuery alloc] init];
         query.oid_partner = QR_PARTNER_ID;
         query.sign_type = QR_SING_TYPE;
-        query.sign = request.responseJSONObject[@"body"][@"sign"];
         query.card_no = @"6214855712479407";
         [query startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             NSLog(@"sycee::::::%@",request.responseJSONObject);
@@ -168,10 +163,6 @@
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
             NSLog(@"errror::::::%@",request.error);
         }];
-        
-    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        NSLog(@"rwquqetefasdfasd::::::::%@",request.error);
-    }];
     
 }
 

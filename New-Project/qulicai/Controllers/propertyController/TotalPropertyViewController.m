@@ -255,15 +255,15 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (IBAction)charge:(UIButton *)sender {
     User *currentUser = [UserUtil currentUser];
-//    if (currentUser.appBanks.count) {
-//        MoneyRechargeViewController *rechargeController = [[MoneyRechargeViewController alloc] init];
-//        [self.navigationController pushViewController:rechargeController
-//                                             animated:YES];
-//    } else {
+    if (currentUser.appBanks.count) {
+        MoneyRechargeViewController *rechargeController = [[MoneyRechargeViewController alloc] init];
+        [self.navigationController pushViewController:rechargeController
+                                             animated:YES];
+    } else {
         FirstRechargeViewController *firstController = [[FirstRechargeViewController alloc] init];
         [self.navigationController pushViewController:firstController
                                              animated:YES];
-//    }
+    }
 }
 
 - (IBAction)pickup:(UIButton *)sender {
