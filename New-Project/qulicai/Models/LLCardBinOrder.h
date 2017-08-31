@@ -26,4 +26,5 @@
 /// 银行卡号,银行卡号前置，卡号可以在商户的页面输入.
 @property (nonatomic, strong) NSString *card_no;
 
+
 @end

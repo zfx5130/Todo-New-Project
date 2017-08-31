@@ -24,9 +24,9 @@
 
 - (id)requestArgument {
     return @{
+             @"sign" : self.sign,
              @"oid_partner" : self.oid_partner,
              @"sign_type" : self.sign_type,
-             @"sign" : self.sign,
              @"card_no" : self.card_no
              };
 }
