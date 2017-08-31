@@ -60,4 +60,6 @@
 
 + (NSString *)image2DataURL:(UIImage *)image;
 
++ (NSString *)timeStamp;
+
 @end

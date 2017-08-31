@@ -31,6 +31,7 @@
     [self initKeyboardObserver];
     self.textField.delegate = self;
     self.resultLabel.text = @"0.0";
+    self.descPeriodDayLabel.text = [NSString stringWithFormat:@"预计%@天收益",@(self.periodDay)];
 }
 
 +(instancetype)creatInputTextView1 {

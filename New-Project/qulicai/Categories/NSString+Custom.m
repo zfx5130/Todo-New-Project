@@ -410,4 +410,11 @@
             alpha == kCGImageAlphaPremultipliedLast);
 }
 
++ (NSString *)timeStamp {
+    NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
+    [dateFormater setDateFormat:@"yyyyMMddHHmmss"];
+    NSString *simOrder = [dateFormater stringFromDate:[NSDate date]];
+    return simOrder;
+}
+
 @end

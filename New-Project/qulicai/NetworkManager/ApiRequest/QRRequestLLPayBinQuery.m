@@ -14,19 +14,12 @@
     return YTKRequestMethodPOST;
 }
 
-- (NSString *)baseUrl {
-    return @"https://queryapi.lianlianpay.com/bankcardbin.htm";
-}
-
-- (NSDictionary *)requestHeaderFieldValueDictionary {
-    return nil;
+- (NSString *)requestUrl {
+    return @"service";
 }
 
 - (id)requestArgument {
     return @{
-             @"sign" : self.sign,
-             @"oid_partner" : self.oid_partner,
-             @"sign_type" : self.sign_type,
              @"card_no" : self.card_no
              };
 }

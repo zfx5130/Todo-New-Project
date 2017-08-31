@@ -17,6 +17,9 @@
 #import "UserUtil.h"
 #import "User.h"
 #import "LLCardBinOrder.h"
+#import "VerifyCardPay.h"
+#import "RechargeInfo.h"
+#import "ProductBuySuccessViewController.h"
 
 @interface AddBankCardViewController ()
 <LLPaySdkDelegate>
@@ -115,55 +118,86 @@
 - (void)requestLLPayWithCardNumber:(NSString *)cartNumber {
     
     NSLog(@"连连支付");
-//    self.llOrder = [[LLOrder alloc] initWithLLPayType:LLPayTypeVerify];
-//    NSString *timeStamp = [LLOrder timeStamp];
-//    self.llOrder.oid_partner = QR_PARTNER_ID;
-//    self.llOrder.sign_type = QR_SING_TYPE;
-//    self.llOrder.busi_partner = @"101001";
-//    self.llOrder.no_order = [NSString stringWithFormat:@"LL%@",timeStamp];
-//    self.llOrder.dt_order = timeStamp;
-//    self.llOrder.money_order = @"0.01";
-//    self.llOrder.notify_url = QR_NOTIFY_URL;
-//    self.llOrder.acct_name = [NSString getStringWithString:[UserUtil currentUser].realName];
-    
-//    NSString *cardNameStr = [[NSString getStringWithString:cartNumber] stringByReplacingOccurrencesOfString:@" "
-//                                                                                                 withString:@""];
-    
-//    self.llOrder.card_no = @"6214855712479407";
-//    
-//    self.llOrder.id_no = [NSString getStringWithString:[UserUtil currentUser].cardId];
-//    self.llOrder.risk_item = [LLOrder llJsonStringOfObj:@{@"user_info_dt_register" : @"20131030122130"}];
-//    self.llOrder.user_id = @"88888";//[UserUtil currentUser].userId;
-//    self.llOrder.name_goods = @"充值";
-//    
-//    self.resultTitle = @"充值结果";
-//    
-//    self.orderDic = [[self.llOrder tradeInfoForPayment] mutableCopy];
-//    LLPayUtil *payUtil = [[LLPayUtil alloc] init];
-//    //进行签名
-//    NSDictionary *signedOrder = [payUtil signedOrderDic:self.orderDic andSignKey:QR_MD5_KEY];
-//    
-//    [LLPaySdk sharedSdk].sdkDelegate = self;
-//    
-//    //接入什么产品就传什么LLPayType
-//    [[LLPaySdk sharedSdk] presentLLPaySDKInViewController:self
-//                                              withPayType:LLPayTypeVerify
-//                                            andTraderInfo:signedOrder];
+    [self showSVProgressHUD];
+    NSString *cardNumberStr = [[NSString getStringWithString:cartNumber] stringByReplacingOccurrencesOfString:@" " withString:@""];
+    QRRequestLLPayBinQuery *query = [[QRRequestLLPayBinQuery alloc] init];
+    query.card_no = cardNumberStr;
+    __weak typeof(self) weakSelf = self;
+    [query startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
 
+        NSLog(@"sycee::::::%@",request.responseJSONObject);
+        NSLog(@"sycee::::::%@",request.responseJSONObject[@"ret_msg"]);
+        //请求成功，返回银行卡信息
+        VerifyCardPay *card = [VerifyCardPay mj_objectWithKeyValues:request.responseJSONObject];
+        if (card.statusType == IndentityStatusSuccess) {
+            //发送到服务器
+            QRRequestUserRecharge *recharge = [[QRRequestUserRecharge alloc] init];
+            recharge.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
+            recharge.banNo = [NSString getStringWithString:cardNumberStr];
+            recharge.bankName = @"银行卡姓名";
+            recharge.money = 0.01;
+            
+            [recharge startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+                [SVProgressHUD dismiss];
+                RechargeInfo *recharge = [RechargeInfo mj_objectWithKeyValues:request.responseJSONObject];
+                if (recharge.statusType == IndentityStatusSuccess) {
+                    NSLog(@"充值成功跳转中");
+                    [weakSelf showSuccessWithTitle:@"充值跳转中"];
+                    
+                    [self swapLLpayWithCardNumer:cardNumberStr];
+                    
+                } else {
+                    [weakSelf showErrorWithTitle:recharge.desc];
+                }
+                
+            } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+                [SVProgressHUD dismiss];
+                [weakSelf showErrorWithTitle:@"充值失败"];
+                NSLog(@"errror::::::%@",request.error);
+            }];
+            
+        } else {
+            [SVProgressHUD dismiss];
+            [weakSelf showErrorWithTitle:card.desc];
+        }
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSLog(@"errror::::::%@",request.error);
+        [SVProgressHUD dismiss];
+        [weakSelf showErrorWithTitle:@"充值失败"];
+    }];
     
+}
+
+- (void)swapLLpayWithCardNumer:(NSString *)cardNumber {
     
+        self.llOrder = [[LLOrder alloc] initWithLLPayType:LLPayTypeVerify];
+        NSString *timeStamp = [LLOrder timeStamp];
+        self.llOrder.oid_partner = QR_PARTNER_ID;
+        self.llOrder.sign_type = QR_SING_TYPE;
+        self.llOrder.busi_partner = @"101001";
+        self.llOrder.no_order = [NSString stringWithFormat:@"CZ%@",timeStamp];
+        self.llOrder.dt_order = timeStamp;
+        self.llOrder.money_order = @"0.01";
+        self.llOrder.notify_url = QR_NOTIFY_URL;
+        self.llOrder.acct_name = [NSString getStringWithString:[UserUtil currentUser].realName];
+        self.llOrder.card_no = cardNumber;
+        self.llOrder.id_no = [NSString getStringWithString:[UserUtil currentUser].cardId];
+        self.llOrder.risk_item = [LLOrder llJsonStringOfObj:@{@"user_info_dt_register" : @"20131030122130"}];
+        self.llOrder.user_id = [UserUtil currentUser].userId;
+        self.llOrder.name_goods = @"充值";
     
-        QRRequestLLPayBinQuery *query = [[QRRequestLLPayBinQuery alloc] init];
-        query.oid_partner = QR_PARTNER_ID;
-        query.sign_type = QR_SING_TYPE;
-        query.card_no = @"6214855712479407";
-        [query startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-            NSLog(@"sycee::::::%@",request.responseJSONObject);
-            NSLog(@"sycee::::::%@",request.responseJSONObject[@"ret_msg"]);
-        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-            NSLog(@"errror::::::%@",request.error);
-        }];
+        self.resultTitle = @"充值结果";
+        self.orderDic = [[self.llOrder tradeInfoForPayment] mutableCopy];
+        LLPayUtil *payUtil = [[LLPayUtil alloc] init];
+        //进行签名
+        NSDictionary *signedOrder = [payUtil signedOrderDic:self.orderDic andSignKey:QR_MD5_KEY];
     
+        [LLPaySdk sharedSdk].sdkDelegate = self;
+    
+        [[LLPaySdk sharedSdk] presentLLPaySDKInViewController:self
+                                                  withPayType:LLPayTypeVerify
+                                                andTraderInfo:signedOrder];
 }
 
 #pragma mark - LLPaySdkDelegate
@@ -173,35 +207,49 @@
     switch (resultCode) {
         case kLLPayResultSuccess: {
             msg = @"成功";
+            [self rechargeSuccess];
+            return;
         } break;
         case kLLPayResultFail: {
             msg = @"失败";
+            [self rechargeErrorWithMessage:msg];
+            return;
         } break;
         case kLLPayResultCancel: {
             msg = @"取消";
+            return;
         } break;
         case kLLPayResultInitError: {
             msg = @"sdk初始化异常";
+            [self rechargeErrorWithMessage:msg];
+            return;
         } break;
         case kLLPayResultInitParamError: {
             msg = dic[@"ret_msg"];
+            [self rechargeErrorWithMessage:msg];
+            return;
         } break;
         default:
             break;
     }
-    NSString *showMsg =
-    [msg stringByAppendingString:[LLPayUtil jsonStringOfObj:dic]];
     
+}
+
+- (void)rechargeSuccess {
+    ProductBuySuccessViewController *successController = [[ProductBuySuccessViewController alloc] init];
+    successController.isChargeSuccess = YES;
+    [self.navigationController pushViewController:successController animated:YES];
+}
+
+- (void)rechargeErrorWithMessage:(NSString *)message {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:self.resultTitle
-                                                                   message:showMsg
+                                                                   message:message
                                                             preferredStyle:UIAlertControllerStyleAlert];
-    
     [alert addAction:[UIAlertAction actionWithTitle:@"确认"
                                               style:UIAlertActionStyleDefault
                                             handler:nil]];
     [self presentViewController:alert animated:YES completion:nil];
 }
-
 
 
 #pragma mark - UITextViewDelegate

@@ -38,5 +38,6 @@
 #import "QRRequestGetMarkDetail.h"
 #import "QRRequestLLPayBinQuery.h"
 #import "QRRequestGetLLKey.h"
+#import "QRRequestUserRecharge.h"
 
 #endif /* QRRequestHeader_h */

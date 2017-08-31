@@ -15,7 +15,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *secondLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *thirdLabel;
+@property (weak, nonatomic) IBOutlet UIButton *configButton;
+
 
 @end
 
@@ -43,15 +44,18 @@
     if (self.isPickupSuccess) {
         self.titleLabel.text = @"提现成功!";
         self.secondLabel.text = @"预计到账时间为07-31 13:22";
-        self.thirdLabel.hidden = YES;
+        [self.configButton setTitle:@"返回首页"
+                           forState:UIControlStateNormal];
     } else if (self.isBuySuccess) {
         self.titleLabel.text = @"购买成功!";
         self.secondLabel.text = @"认购金额(元)  2000";
-        self.thirdLabel.hidden = YES;
+        [self.configButton setTitle:@"确定"
+                           forState:UIControlStateNormal];
     } else if (self.isChargeSuccess) {
         self.titleLabel.text = @"充值成功!";
         self.secondLabel.text = @"快去选购定期产品赚钱吧！";
-        self.thirdLabel.hidden = YES;
+        [self.configButton setTitle:@"前往选购"
+                           forState:UIControlStateNormal];
     }
 }
 
@@ -62,6 +66,7 @@
 }
 
 - (IBAction)config:(UIButton *)sender {
+    
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

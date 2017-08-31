@@ -10,12 +10,6 @@
 
 @interface QRRequestLLPayBinQuery : QRRequest
 
-@property (copy, nonatomic) NSString *oid_partner;
-
-@property (copy, nonatomic) NSString *sign_type;
-
-@property (copy, nonatomic) NSString *sign;
-
 @property (copy, nonatomic) NSString *card_no;
 
 @end

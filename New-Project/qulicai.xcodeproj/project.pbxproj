@@ -215,6 +215,9 @@
 		84CE17041F5149E200E61C7D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CE17031F5149E200E61C7D /* User.m */; };
 		84CE17091F5156F300E61C7D /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CE17081F5156F300E61C7D /* BaseModel.m */; };
 		84CE170C1F5164A500E61C7D /* Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CE170B1F5164A500E61C7D /* Bank.m */; };
+		84D7066B1F57F0A9007EB86B /* VerifyCardPay.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D7066A1F57F0A9007EB86B /* VerifyCardPay.m */; };
+		84D7066E1F57F2FC007EB86B /* QRRequestUserRecharge.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D7066D1F57F2FC007EB86B /* QRRequestUserRecharge.m */; };
+		84D706711F57F6B9007EB86B /* RechargeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D706701F57F6B9007EB86B /* RechargeInfo.m */; };
 		84DCF34B1F4EE43A002F117A /* ASPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF33F1F4EE43A002F117A /* ASPopupController.m */; };
 		84DCF34C1F4EE43A002F117A /* ASPopupDismissAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF3421F4EE43A002F117A /* ASPopupDismissAnimator.m */; };
 		84DCF34D1F4EE43A002F117A /* ASPopupPresentAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DCF3461F4EE43A002F117A /* ASPopupPresentAnimator.m */; };
@@ -640,6 +643,12 @@
 		84CE17081F5156F300E61C7D /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		84CE170A1F5164A500E61C7D /* Bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bank.h; sourceTree = "<group>"; };
 		84CE170B1F5164A500E61C7D /* Bank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bank.m; sourceTree = "<group>"; };
+		84D706691F57F0A9007EB86B /* VerifyCardPay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyCardPay.h; sourceTree = "<group>"; };
+		84D7066A1F57F0A9007EB86B /* VerifyCardPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyCardPay.m; sourceTree = "<group>"; };
+		84D7066C1F57F2FC007EB86B /* QRRequestUserRecharge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestUserRecharge.h; sourceTree = "<group>"; };
+		84D7066D1F57F2FC007EB86B /* QRRequestUserRecharge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestUserRecharge.m; sourceTree = "<group>"; };
+		84D7066F1F57F6B9007EB86B /* RechargeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeInfo.h; sourceTree = "<group>"; };
+		84D706701F57F6B9007EB86B /* RechargeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeInfo.m; sourceTree = "<group>"; };
 		84DCF33E1F4EE43A002F117A /* ASPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPopupController.h; sourceTree = "<group>"; };
 		84DCF33F1F4EE43A002F117A /* ASPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPopupController.m; sourceTree = "<group>"; };
 		84DCF3411F4EE43A002F117A /* ASPopupDismissAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPopupDismissAnimator.h; sourceTree = "<group>"; };
@@ -1095,6 +1104,10 @@
 				84B51CCB1F55A81000840F94 /* TransactionPwd.m */,
 				84B51CD01F565F3E00840F94 /* MarkDetailInfo.h */,
 				84B51CD11F565F3E00840F94 /* MarkDetailInfo.m */,
+				84D706691F57F0A9007EB86B /* VerifyCardPay.h */,
+				84D7066A1F57F0A9007EB86B /* VerifyCardPay.m */,
+				84D7066F1F57F6B9007EB86B /* RechargeInfo.h */,
+				84D706701F57F6B9007EB86B /* RechargeInfo.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1327,6 +1340,8 @@
 				84B51CE71F56B9BB00840F94 /* QRRequestLLPayBinQuery.m */,
 				84B51CEC1F56BC9500840F94 /* QRRequestGetLLKey.h */,
 				84B51CED1F56BC9500840F94 /* QRRequestGetLLKey.m */,
+				84D7066C1F57F2FC007EB86B /* QRRequestUserRecharge.h */,
+				84D7066D1F57F2FC007EB86B /* QRRequestUserRecharge.m */,
 			);
 			path = ApiRequest;
 			sourceTree = "<group>";
@@ -1876,6 +1891,7 @@
 				842616A51F4BD53300A96EFD /* ProductDetailTableViewCell.m in Sources */,
 				8435E5B21F399C1E00424E5E /* CLLockInfoView.m in Sources */,
 				84FEBAE01F4ABF510020B42D /* MainHeadView.m in Sources */,
+				84D7066B1F57F0A9007EB86B /* VerifyCardPay.m in Sources */,
 				CE30A3DE1F547B0100FB7763 /* ProductPack.m in Sources */,
 				842A92F71F52A3F9001822EF /* QRRequestUserAvatar.m in Sources */,
 				842A92FA1F52B6F7001822EF /* QRRequestNameAuthorware.m in Sources */,
@@ -1906,6 +1922,7 @@
 				842616751F4AD33200A96EFD /* QRInfoTableViewCell.m in Sources */,
 				84E5F6741F5594B3004432BF /* TotalMoneyList.m in Sources */,
 				844FB8501F4EB950001772AF /* MorePropertyTableViewCell.m in Sources */,
+				84D7066E1F57F2FC007EB86B /* QRRequestUserRecharge.m in Sources */,
 				8435E5C01F399C6C00424E5E /* CoreArchive.m in Sources */,
 				842616951F4B0BE300A96EFD /* PruductDetailViewController.m in Sources */,
 				84B51CC31F55A36300840F94 /* QRRequestMoneyPickup.m in Sources */,
@@ -1922,6 +1939,7 @@
 				84B51CCF1F565C9000840F94 /* QRRequestGetMarkDetail.m in Sources */,
 				84B51CE41F56B5F100840F94 /* LLPayUtil.m in Sources */,
 				84DCF3531F4EE46E002F117A /* ProductPasswordView.m in Sources */,
+				84D706711F57F6B9007EB86B /* RechargeInfo.m in Sources */,
 				84CE17091F5156F300E61C7D /* BaseModel.m in Sources */,
 				844FB80C1F4D60F3001772AF /* YesterdayIncomeView.m in Sources */,
 				844402931F41B2B000F5AFEE /* UIView+Custom.m in Sources */,
