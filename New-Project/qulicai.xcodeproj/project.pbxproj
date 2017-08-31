@@ -260,7 +260,6 @@
 		CE30A3D81F5478F600FB7763 /* QRRequestProductPackList.m in Sources */ = {isa = PBXBuildFile; fileRef = CE30A3D71F5478F600FB7763 /* QRRequestProductPackList.m */; };
 		CE30A3DB1F547AEE00FB7763 /* PackList.m in Sources */ = {isa = PBXBuildFile; fileRef = CE30A3DA1F547AEE00FB7763 /* PackList.m */; };
 		CE30A3DE1F547B0100FB7763 /* ProductPack.m in Sources */ = {isa = PBXBuildFile; fileRef = CE30A3DD1F547B0100FB7763 /* ProductPack.m */; };
-		CE30A3E11F57259D00FB7763 /* LLCardBinOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = CE30A3E01F57259D00FB7763 /* LLCardBinOrder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -727,8 +726,6 @@
 		CE30A3DA1F547AEE00FB7763 /* PackList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackList.m; sourceTree = "<group>"; };
 		CE30A3DC1F547B0100FB7763 /* ProductPack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductPack.h; sourceTree = "<group>"; };
 		CE30A3DD1F547B0100FB7763 /* ProductPack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductPack.m; sourceTree = "<group>"; };
-		CE30A3DF1F57259D00FB7763 /* LLCardBinOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLCardBinOrder.h; sourceTree = "<group>"; };
-		CE30A3E01F57259D00FB7763 /* LLCardBinOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLCardBinOrder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1032,8 +1029,6 @@
 			children = (
 				84B51CEF1F56C1D400840F94 /* LLOrder.h */,
 				84B51CF01F56C1D400840F94 /* LLOrder.m */,
-				CE30A3DF1F57259D00FB7763 /* LLCardBinOrder.h */,
-				CE30A3E01F57259D00FB7763 /* LLCardBinOrder.m */,
 				84CE17071F5156F300E61C7D /* BaseModel.h */,
 				84CE17081F5156F300E61C7D /* BaseModel.m */,
 				84CE16FC1F502EF600E61C7D /* CertificationLogin.h */,
@@ -1965,7 +1960,6 @@
 				84DCF35B1F4F08F7002F117A /* PropertyIncomeViewController.m in Sources */,
 				842A93091F52D4F8001822EF /* UpdateTransactionPassword.m in Sources */,
 				84CE17041F5149E200E61C7D /* User.m in Sources */,
-				CE30A3E11F57259D00FB7763 /* LLCardBinOrder.m in Sources */,
 				84DCF34B1F4EE43A002F117A /* ASPopupController.m in Sources */,
 				8435E5B61F399C1E00424E5E /* CLLockView.m in Sources */,
 				84B51CC61F55A3F800840F94 /* PickupMoney.m in Sources */,

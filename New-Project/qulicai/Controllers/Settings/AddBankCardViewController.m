@@ -16,7 +16,6 @@
 #import "LLOrder.h"
 #import "UserUtil.h"
 #import "User.h"
-#import "LLCardBinOrder.h"
 #import "VerifyCardPay.h"
 #import "RechargeInfo.h"
 #import "ProductBuySuccessViewController.h"

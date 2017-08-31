@@ -13,7 +13,6 @@
 #import "Bank.h"
 #import "QRRequestHeader.h"
 #import "RechargeInfo.h"
-#import "LLCardBinOrder.h"
 #import "LLOrder.h"
 #import "LLPaySdk.h"
 #import "LLPayUtil.h"
@@ -150,7 +149,7 @@ LLPaySdkDelegate>
     recharge.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
     recharge.banNo = [NSString getStringWithString:bank.bankNo];
     recharge.bankName = [NSString getStringWithString:bank.bankName];
-    recharge.money = [self.moneyTextField.text floatValue];
+    recharge.money = [self.moneyTextField.text doubleValue];
     __weak typeof(self) weakSelf = self;
     [recharge startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [SVProgressHUD dismiss];
@@ -161,7 +160,7 @@ LLPaySdkDelegate>
             NSLog(@"充值成功跳转中");
             [weakSelf showSuccessWithTitle:@"充值跳转中"];
             [weakSelf swapLLpayWithCardNumer:bank.bankNo
-                                       money:[self.moneyTextField.text floatValue]];
+                                       money:[self.moneyTextField.text doubleValue]];
             
         } else {
             [weakSelf showErrorWithTitle:recharge.desc];
