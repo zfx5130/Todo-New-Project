@@ -42,7 +42,7 @@
 #pragma mark - Private
 
 - (NSString *)currentTime {
-    NSDate *date = [NSDate dateWithTimeIntervalSinceNow:10 * 60];
+    NSDate *date = [NSDate dateWithTimeIntervalSinceNow:60 * 60 * 2];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MM-dd hh:mm:ss"];
     NSString *dateString = [formatter stringFromDate:date];
