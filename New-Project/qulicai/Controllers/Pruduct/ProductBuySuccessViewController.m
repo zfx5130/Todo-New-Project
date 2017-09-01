@@ -41,15 +41,23 @@
 
 #pragma mark - Private
 
+- (NSString *)currentTime {
+    NSDate *date = [NSDate dateWithTimeIntervalSinceNow:10 * 60];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM-dd hh:mm:ss"];
+    NSString *dateString = [formatter stringFromDate:date];
+    return dateString;
+}
+
 - (void)setupViews {
     if (self.isPickupSuccess) {
         self.titleLabel.text = @"提现成功!";
-        self.secondLabel.text = @"预计到账时间为07-31 13:22";
+        self.secondLabel.text = [NSString stringWithFormat:@"预计到账时间为%@",[self currentTime]];
         [self.configButton setTitle:@"返回首页"
                            forState:UIControlStateNormal];
     } else if (self.isBuySuccess) {
         self.titleLabel.text = @"购买成功!";
-        self.secondLabel.text = @"认购金额(元)  2000";
+        self.secondLabel.text = [NSString stringWithFormat:@"认购金额(元)   %@",self.money];
         [self.configButton setTitle:@"确定"
                            forState:UIControlStateNormal];
     } else if (self.isChargeSuccess) {

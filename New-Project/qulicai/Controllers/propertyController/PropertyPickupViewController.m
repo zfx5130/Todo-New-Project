@@ -147,7 +147,7 @@
 
 - (void)config {
     [self.view endEditing:YES];
-    if ([self.moneyTextField.text floatValue] < 0.1) {
+    if ([self.moneyTextField.text floatValue] < 0.01) {
         self.errorLabel.text = @"*提现金额小于最低取现金额";
         [self.errorLabel addShakeAnimation];
         return;

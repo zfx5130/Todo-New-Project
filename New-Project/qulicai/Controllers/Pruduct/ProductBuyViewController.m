@@ -207,7 +207,7 @@ LLPaySdkDelegate>
 
 - (void)buy {
     [self.view endEditing:YES];
-    if ([self.moneyTextField.text floatValue] < 0.1) {
+    if ([self.moneyTextField.text floatValue] < 0.01) {
         self.errorLabel.text = @"*购买金额不得少于0.1";
         [self.errorLabel addShakeAnimation];
         return;
