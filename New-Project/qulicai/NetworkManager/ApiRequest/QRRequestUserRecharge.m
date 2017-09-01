@@ -24,7 +24,7 @@
     self.no_order = order;
     return @{
              @"head" : @{ @"serviceName" : @"recharge" },
-             @"body" : @{ @"userId" : self.userId, @"bankNo" : self.banNo, @"bankName" : self.bankName, @"money" : @(self.money), @"no_order" : self.no_order }
+             @"body" : @{ @"userId" : self.userId, @"bankNo" : self.banNo, @"bankName" : self.bankName, @"money" : self.money, @"no_order" : self.no_order }
              };
 }
 

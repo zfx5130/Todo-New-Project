@@ -39,7 +39,7 @@
 
 - (void)setNavBarAppearence {
     // 设置导航栏默认的背景颜色
-    [UIColor wr_setDefaultNavBarBarTintColor:[UIColor whiteColor]];
+    //[UIColor wr_setDefaultNavBarBarTintColor:[UIColor whiteColor]];
    // 设置导航栏所有按钮的默认颜色
    // [UIColor wr_setDefaultNavBarTintColor:[UIColor whiteColor]];
     // 设置导航栏标题默认颜色

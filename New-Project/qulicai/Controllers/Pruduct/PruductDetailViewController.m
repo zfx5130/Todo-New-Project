@@ -245,7 +245,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 - (IBAction)calculate:(UIButton *)sender {
     InputTextView1 *input = [InputTextView1 creatInputTextView1];
     input.delegate = self;
-    input.periodDay = [self.productDetail.periods integerValue];
+    input.periodDay = self.productDetail.periods;
     CGFloat rate = self.productDetail.activityRate + self.productDetail.interestRate;
     input.rate  = rate;
     [input show];

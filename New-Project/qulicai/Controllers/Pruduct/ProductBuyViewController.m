@@ -294,7 +294,7 @@ LLPaySdkDelegate>
     recharge.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
     recharge.banNo = [NSString getStringWithString:bank.bankNo];
     recharge.bankName = [NSString getStringWithString:bank.bankName];
-    recharge.money = rechargeMoney;
+    recharge.money = [NSString stringWithFormat:@"%.2f",rechargeMoney];
     __weak typeof(self) weakSelf = self;
     [recharge startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [SVProgressHUD dismiss];
@@ -398,8 +398,8 @@ LLPaySdkDelegate>
     QRRequestProductBuy *buyProduct = [[QRRequestProductBuy alloc] init];
     buyProduct.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
     buyProduct.packId = pickId;
-    buyProduct.money = [self.totalMoney floatValue];
-    NSLog(@"购买总金钱：：：：%@",@(buyProduct.money));
+    buyProduct.money = self.totalMoney;
+    NSLog(@"购买总金钱：：：：%@",buyProduct.money);
     __weak typeof(self) weakSelf = self;
     [buyProduct startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [SVProgressHUD dismiss];
@@ -505,7 +505,7 @@ LLPaySdkDelegate>
             QRRequestProductBuy *buyProduct = [[QRRequestProductBuy alloc] init];
             buyProduct.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
             buyProduct.packId = pickId;
-            buyProduct.money = [self.moneyTextField.text floatValue];
+            buyProduct.money = self.moneyTextField.text;
             __weak typeof(self) weakSelf = self;
             [buyProduct startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
                 [SVProgressHUD dismiss];

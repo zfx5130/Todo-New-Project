@@ -14,6 +14,6 @@
 
 @property (copy, nonatomic) NSString *packId;
 
-@property (assign, nonatomic) CGFloat money;
+@property (assign, nonatomic) NSString *money;
 
 @end

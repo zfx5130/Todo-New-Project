@@ -149,7 +149,7 @@ LLPaySdkDelegate>
     recharge.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
     recharge.banNo = [NSString getStringWithString:bank.bankNo];
     recharge.bankName = [NSString getStringWithString:bank.bankName];
-    recharge.money = [self.moneyTextField.text doubleValue];
+    recharge.money = self.moneyTextField.text;
     __weak typeof(self) weakSelf = self;
     [recharge startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [SVProgressHUD dismiss];
@@ -160,7 +160,7 @@ LLPaySdkDelegate>
             NSLog(@"充值成功跳转中");
             [weakSelf showSuccessWithTitle:@"充值跳转中"];
             [weakSelf swapLLpayWithCardNumer:bank.bankNo
-                                       money:[self.moneyTextField.text doubleValue]];
+                                       money:self.moneyTextField.text];
             
         } else {
             [weakSelf showErrorWithTitle:recharge.desc];
@@ -174,7 +174,7 @@ LLPaySdkDelegate>
 
 }
 
-- (void)swapLLpayWithCardNumer:(NSString *)cardNumber money:(CGFloat)money {
+- (void)swapLLpayWithCardNumer:(NSString *)cardNumber money:(NSString *)money {
     
     self.llOrder = [[LLOrder alloc] initWithLLPayType:LLPayTypeVerify];
     NSString *timeStamp = [LLOrder timeStamp];
@@ -183,7 +183,7 @@ LLPaySdkDelegate>
     self.llOrder.busi_partner = @"101001";
     self.llOrder.no_order = [NSString stringWithFormat:@"CZ%@",timeStamp];
     self.llOrder.dt_order = timeStamp;
-    self.llOrder.money_order = [NSString stringWithFormat:@"%@",@(money)];
+    self.llOrder.money_order = [NSString stringWithFormat:@"%@",money];
     self.llOrder.notify_url = QR_NOTIFY_URL;
     self.llOrder.acct_name = [NSString getStringWithString:[UserUtil currentUser].realName];
     self.llOrder.card_no = cardNumber;

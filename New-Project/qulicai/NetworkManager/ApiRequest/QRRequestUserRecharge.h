@@ -16,7 +16,7 @@
 
 @property (copy, nonatomic) NSString *bankName;
 
-@property (assign, nonatomic) CGFloat money;
+@property (assign, nonatomic) NSString *money;
 
 //订单号 生成当前时间 + CZ
 @property (copy, nonatomic) NSString *no_order;

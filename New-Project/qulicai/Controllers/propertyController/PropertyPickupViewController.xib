@@ -173,7 +173,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="mVv-cO-Zdx"/>
                                             </constraints>
-                                            <state key="normal" title="24小时内到账，确认提现" backgroundImage="login_enabled_button_image">
+                                            <state key="normal" title="2小时内到账，确认提现" backgroundImage="login_enabled_button_image">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <state key="disabled" backgroundImage="login_disabled_button_image"/>

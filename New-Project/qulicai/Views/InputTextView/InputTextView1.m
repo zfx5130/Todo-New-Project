@@ -31,7 +31,6 @@
     [self initKeyboardObserver];
     self.textField.delegate = self;
     self.resultLabel.text = @"0.0";
-    self.descPeriodDayLabel.text = [NSString stringWithFormat:@"预计%@天收益",@(self.periodDay)];
 }
 
 +(instancetype)creatInputTextView1 {
@@ -50,6 +49,11 @@
     [_overView addTarget:self
                   action:@selector(dismiss)
         forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)setPeriodDay:(NSString *)periodDay {
+    _periodDay = periodDay;
+    self.descPeriodDayLabel.text = [NSString stringWithFormat:@"预计%@天收益",self.periodDay];
 }
 
 -(void)show {
@@ -89,7 +93,7 @@
 
 - (void)calculateWithText:(NSString *)text {
     CGFloat value = [text floatValue];
-    CGFloat result = value * self.rate / 365 * self.periodDay;
+    CGFloat result = value * self.rate / 365 * [self.periodDay integerValue];
     self.resultLabel.text = [NSString stringWithFormat:@"%.2f",result];
 }
 

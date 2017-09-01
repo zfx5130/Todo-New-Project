@@ -146,7 +146,7 @@
                 recharge.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
                 recharge.banNo = [NSString getStringWithString:cardNumberStr];
                 recharge.bankName = [NSString getStringWithString:card.bankName];
-                recharge.money = [self.money floatValue];
+                recharge.money = self.money;
                 
                 [recharge startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
                     [SVProgressHUD dismiss];
@@ -191,8 +191,8 @@
     recharge.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
     recharge.banNo = [NSString getStringWithString:cardNo];
     recharge.bankName = [NSString getStringWithString:bankName];
-    recharge.money = [self.productMoney floatValue];
-    NSLog(@"第一次购买后台充值：：：%@",@(recharge.money));
+    recharge.money = self.productMoney;
+    NSLog(@"第一次购买后台充值：：：%@",recharge.money);
     __weak typeof(self) weakSelf = self;
     [recharge startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [SVProgressHUD dismiss];
@@ -292,8 +292,8 @@
         QRRequestProductBuy *buyProduct = [[QRRequestProductBuy alloc] init];
         buyProduct.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
         buyProduct.packId = self.packId;
-        buyProduct.money = [self.productMoney floatValue];
-        NSLog(@"第一次购买总金钱：：：：%@",@(buyProduct.money));
+        buyProduct.money = self.productMoney;
+        NSLog(@"第一次购买总金钱：：：：%@",buyProduct.money);
         __weak typeof(self) weakSelf = self;
         [buyProduct startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             [SVProgressHUD dismiss];

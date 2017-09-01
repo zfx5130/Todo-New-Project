@@ -25,7 +25,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *descPeriodDayLabel;
 
-@property (assign, nonatomic) NSInteger periodDay;
+@property (copy, nonatomic) NSString *periodDay;
 
 @property (assign, nonatomic) CGFloat rate;
 
