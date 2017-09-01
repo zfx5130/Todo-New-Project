@@ -19,6 +19,7 @@
 #import "LLPayUtil.h"
 #import "LLOrder.h"
 #import "LLPaySdk.h"
+#import "RechargeInfo.h"
 
 #import "ProductPasswordView.h"
 #import "ASPopupController.h"
@@ -84,6 +85,8 @@ LLPaySdkDelegate>
 @property (strong, nonatomic) ASPopupController *popController;
 
 @property (copy, nonatomic) NSString *password;
+
+@property (copy, nonatomic) NSString *totalMoney;
 
 @end
 
@@ -220,9 +223,8 @@ LLPaySdkDelegate>
     User *user = [UserUtil currentUser];
     //余额
     CGFloat amount = user.availableMoney;
-    
+    Bank *bank = [[UserUtil currentUser].appBanks firstObject];
     if (user.appBanks.count) {
-        Bank *bank = [[UserUtil currentUser].appBanks firstObject];
         CGFloat lastMoney = 0.0f;
         //认证成功 直接去购买
         if (self.isDeductionBalance) {
@@ -233,44 +235,17 @@ LLPaySdkDelegate>
                 //先弹出交易密码 然后购买
                 [self inputPickPW];
             } else {
-                //2.购买金额大于余额，调到连连支付充值。还需调用购买接口。
+                //2.购买金额大于余额，调到连连支付充值(先调用本地充值接口)。还需调用购买接口。
                 lastMoney = [self.moneyTextField.text floatValue] - amount;
-                //NSLog(@"last::::::%@",@(lastMoney));
-                NSString *pickId =  self.isDetailSwap ? self.productDetail.productId : self.product.productId;
-                [self showSVProgressHUD];
-                QRRequestProductBuy *buyProduct = [[QRRequestProductBuy alloc] init];
-                buyProduct.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
-                buyProduct.packId = pickId;
-                buyProduct.money = amount;
-                __weak typeof(self) weakSelf = self;
-                [buyProduct startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-                    [SVProgressHUD dismiss];
-                    ProductBuy *recharge = [ProductBuy mj_objectWithKeyValues:request.responseJSONObject];
-                    NSLog(@"后台购买::::::%@",request.responseJSONObject);
-                    NSLog(@"后台购买::::::%@",request.responseJSONObject[@"ret_msg"]);
-                    if (recharge.statusType == IndentityStatusSuccess) {
-                        NSLog(@"购买成功跳转中");
-                        [weakSelf showSuccessWithTitle:@"购买跳转中"];
-                        [weakSelf swapLLpayWithCardNumer:bank.bankNo
-                                               withMoney:[NSString stringWithFormat:@"%@",@(lastMoney)]];
-                        
-                    } else {
-                        [weakSelf showErrorWithTitle:recharge.desc];
-                    }
-                    
-                } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-                    [SVProgressHUD dismiss];
-                    [weakSelf showErrorWithTitle:@"充值失败"];
-                    NSLog(@"errror::::::%@",request.error);
-                }];
-                
+                [self rechargeMoneyAndBuyProductWithTotalMoney:self.moneyTextField.text
+                                                 rechargeMoney:lastMoney];
             }
             
         } else {
             //不抵扣,直接跳转连连去支付
             lastMoney = [self.moneyTextField.text floatValue];
-            [self swapLLpayWithCardNumer:bank.bankNo
-                               withMoney:[NSString stringWithFormat:@"%@",@(lastMoney)]];
+            [self rechargeMoneyAndBuyProductWithTotalMoney:self.moneyTextField.text
+                                             rechargeMoney:lastMoney];
         }
     } else {
         NSString *pickId =  self.isDetailSwap ? self.productDetail.productId : self.product.productId;
@@ -315,10 +290,47 @@ LLPaySdkDelegate>
 }
 
 
+- (void)rechargeMoneyAndBuyProductWithTotalMoney:(NSString *)totalMoney
+                                   rechargeMoney:(CGFloat)rechargeMoney {
+    
+    //充值
+    Bank *bank = [[UserUtil currentUser].appBanks firstObject];
+    QRRequestUserRecharge *recharge = [[QRRequestUserRecharge alloc] init];
+    recharge.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
+    recharge.banNo = [NSString getStringWithString:bank.bankNo];
+    recharge.bankName = [NSString getStringWithString:bank.bankName];
+    recharge.money = rechargeMoney;
+    __weak typeof(self) weakSelf = self;
+    [recharge startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        RechargeInfo *recharge = [RechargeInfo mj_objectWithKeyValues:request.responseJSONObject];
+        NSLog(@"购买前不够余额后台充值::::::%@",request.responseJSONObject);
+        NSLog(@"购买前不够余额后台充值::::::%@",request.responseJSONObject[@"ret_msg"]);
+        if (recharge.statusType == IndentityStatusSuccess) {
+            NSLog(@"购买充值跳转中");
+            [weakSelf showSuccessWithTitle:@"购买充值跳转中"];
+            [weakSelf swapLLpayWithCardNumer:bank.bankNo
+                                  withRechargeMoney:rechargeMoney
+                                  totalMoney:totalMoney];
+            
+        } else {
+            [weakSelf showErrorWithTitle:recharge.desc];
+        }
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        [weakSelf showErrorWithTitle:@"充值失败"];
+        NSLog(@"errror::::::%@",request.error);
+    }];
+    
+}
+
 
 - (void)swapLLpayWithCardNumer:(NSString *)cardNumber
-                     withMoney:(NSString *)money {
+                     withRechargeMoney:(CGFloat)rechargeMoney
+                    totalMoney:(NSString *)totalMoney {
     
+    self.totalMoney = totalMoney;
     self.llOrder = [[LLOrder alloc] initWithLLPayType:LLPayTypeVerify];
     NSString *timeStamp = [LLOrder timeStamp];
     self.llOrder.oid_partner = QR_PARTNER_ID;
@@ -326,7 +338,8 @@ LLPaySdkDelegate>
     self.llOrder.busi_partner = @"101001";
     self.llOrder.no_order = [NSString stringWithFormat:@"CZ%@",timeStamp];
     self.llOrder.dt_order = timeStamp;
-    self.llOrder.money_order = money;
+    self.llOrder.money_order = [NSString stringWithFormat:@"%@",@(rechargeMoney)];
+    NSLog(@"剩余充值总金钱：：：：%@",self.llOrder.money_order);
     self.llOrder.notify_url = QR_NOTIFY_URL;
     self.llOrder.acct_name = [NSString getStringWithString:[UserUtil currentUser].realName];
     self.llOrder.card_no = cardNumber;
@@ -384,9 +397,35 @@ LLPaySdkDelegate>
 }
 
 - (void)rechargeSuccess {
-    ProductBuySuccessViewController *successController = [[ProductBuySuccessViewController alloc] init];
-    successController.isBuySuccess = YES;
-    [self.navigationController pushViewController:successController animated:YES];
+    
+    NSString *pickId =  self.isDetailSwap ? self.productDetail.productId : self.product.productId;
+    QRRequestProductBuy *buyProduct = [[QRRequestProductBuy alloc] init];
+    buyProduct.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
+    buyProduct.packId = pickId;
+    buyProduct.money = [self.totalMoney floatValue];
+    NSLog(@"购买总金钱：：：：%@",@(buyProduct.money));
+    __weak typeof(self) weakSelf = self;
+    [buyProduct startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        ProductBuy *recharge = [ProductBuy mj_objectWithKeyValues:request.responseJSONObject];
+        NSLog(@"后台购买::::::%@",request.responseJSONObject);
+        NSLog(@"后台购买::::::%@",request.responseJSONObject[@"ret_msg"]);
+        if (recharge.statusType == IndentityStatusSuccess) {
+            NSLog(@"购买成功跳转中");
+            [weakSelf showSuccessWithTitle:@"购买成功"];
+            ProductBuySuccessViewController *successController = [[ProductBuySuccessViewController alloc] init];
+            successController.isBuySuccess = YES;
+            [weakSelf.navigationController pushViewController:successController animated:YES];
+            
+        } else {
+            [weakSelf showErrorWithTitle:recharge.desc];
+        }
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [SVProgressHUD dismiss];
+        [weakSelf showErrorWithTitle:@"充值失败"];
+        NSLog(@"errror::::::%@",request.error);
+    }];
 }
 
 - (void)rechargeErrorWithMessage:(NSString *)message {
