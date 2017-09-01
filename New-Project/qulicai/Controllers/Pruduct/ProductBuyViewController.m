@@ -224,24 +224,21 @@ LLPaySdkDelegate>
     //余额
     CGFloat amount = user.availableMoney;
     if (user.appBanks.count) {
-        CGFloat lastMoney = 0.0f;
         //认证成功 直接去购买
+        CGFloat lastMoney = amount - [self.moneyTextField.text doubleValue];
         if (self.isDeductionBalance) {
             //如果选择余额抵扣
-            //1.购买金额小于余额,直接调用购买接口。
-            if ([self.moneyTextField.text floatValue] <= amount) {
-                lastMoney = amount - [self.moneyTextField.text floatValue];
+            //1.购买金额小于余额,直接调用购买接口
+            if (lastMoney >= 0) {
                 //先弹出交易密码 然后购买
                 [self inputPickPW];
             } else {
                 //2.购买金额大于余额，调到连连支付充值(先调用本地充值接口)。还需调用购买接口。
-                lastMoney = [self.moneyTextField.text floatValue] - amount;
                 [self rechargeMoneyAndBuyProductWithTotalMoney:self.moneyTextField.text
                                                  rechargeMoney:lastMoney];
             }
         } else {
             //不抵扣,直接跳转连连去支付
-            lastMoney = [self.moneyTextField.text floatValue];
             [self rechargeMoneyAndBuyProductWithTotalMoney:self.moneyTextField.text
                                              rechargeMoney:lastMoney];
         }
