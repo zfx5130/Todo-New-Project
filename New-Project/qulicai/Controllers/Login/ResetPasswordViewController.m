@@ -133,7 +133,6 @@
                                 addBankController.productName = self.productName;
                                 addBankController.productMoney = self.productName;
                                 addBankController.packId = self.packId;
-                                addBankController.isDeductionBalance = self.isDeductionBalance;
                                 [weakSelf.navigationController pushViewController:addBankController
                                                                      animated:YES];
                             } else {
@@ -144,7 +143,6 @@
                                 accountController.productName = self.productName;
                                 accountController.productMoney = self.prductMoney;
                                 accountController.packId = self.packId;
-                                accountController.isDeductionBalance = self.isDeductionBalance;
                                 [self.navigationController pushViewController:accountController
                                                                      animated:YES];
                             }

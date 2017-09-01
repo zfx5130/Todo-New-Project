@@ -223,7 +223,6 @@ LLPaySdkDelegate>
     User *user = [UserUtil currentUser];
     //余额
     CGFloat amount = user.availableMoney;
-    Bank *bank = [[UserUtil currentUser].appBanks firstObject];
     if (user.appBanks.count) {
         CGFloat lastMoney = 0.0f;
         //认证成功 直接去购买
@@ -240,7 +239,6 @@ LLPaySdkDelegate>
                 [self rechargeMoneyAndBuyProductWithTotalMoney:self.moneyTextField.text
                                                  rechargeMoney:lastMoney];
             }
-            
         } else {
             //不抵扣,直接跳转连连去支付
             lastMoney = [self.moneyTextField.text floatValue];
@@ -258,7 +256,6 @@ LLPaySdkDelegate>
             modifyController.prductMoney = [NSString stringWithFormat:@"%@",self.moneyTextField.text];
             modifyController.productName = productName;
             modifyController.packId = pickId;
-            modifyController.isDeductionBalance = self.isDeductionBalance;
             [self.navigationController pushViewController:modifyController
                                                  animated:YES];
         } else {
@@ -269,7 +266,6 @@ LLPaySdkDelegate>
                 addBankController.productMoney = [NSString stringWithFormat:@"%@",self.moneyTextField.text];
                 addBankController.productName = productName;
                 addBankController.packId = pickId;
-                addBankController.isDeductionBalance = self.isDeductionBalance;
                 addBankController.name = [NSString getStringWithString:[UserUtil currentUser].realName];
                 addBankController.identify = [NSString getStringWithString:[UserUtil currentUser].cardId];
                 [self.navigationController pushViewController:addBankController
@@ -281,7 +277,6 @@ LLPaySdkDelegate>
                 accountController.productMoney = [NSString stringWithFormat:@"%@",self.moneyTextField.text];
                 accountController.productName = productName;
                 accountController.packId = pickId;
-                accountController.isDeductionBalance = self.isDeductionBalance;
                 [self.navigationController pushViewController:accountController
                                                      animated:YES];
             }
@@ -292,8 +287,8 @@ LLPaySdkDelegate>
 
 - (void)rechargeMoneyAndBuyProductWithTotalMoney:(NSString *)totalMoney
                                    rechargeMoney:(CGFloat)rechargeMoney {
-    
     //充值
+    [self showSVProgressHUDWithStatus:@"购买充值中"];
     Bank *bank = [[UserUtil currentUser].appBanks firstObject];
     QRRequestUserRecharge *recharge = [[QRRequestUserRecharge alloc] init];
     recharge.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
@@ -397,7 +392,7 @@ LLPaySdkDelegate>
 }
 
 - (void)rechargeSuccess {
-    
+    [self showSVProgressHUDWithStatus:@"充值成功购买中"];
     NSString *pickId =  self.isDetailSwap ? self.productDetail.productId : self.product.productId;
     QRRequestProductBuy *buyProduct = [[QRRequestProductBuy alloc] init];
     buyProduct.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
@@ -423,7 +418,7 @@ LLPaySdkDelegate>
         
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         [SVProgressHUD dismiss];
-        [weakSelf showErrorWithTitle:@"充值失败"];
+        [weakSelf showErrorWithTitle:@"购买失败"];
         NSLog(@"errror::::::%@",request.error);
     }];
 }

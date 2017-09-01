@@ -22,6 +22,8 @@
 - (NSString *)getCurrentLocaleCode;
 
 
+- (void)showSVProgressHUDWithStatus:(NSString *)status;
+
 - (void)showSVProgressHUD;
 
 - (void)showSuccessWithTitle:(NSString *)title;

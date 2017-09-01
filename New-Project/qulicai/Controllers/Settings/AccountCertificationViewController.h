@@ -22,7 +22,4 @@
 @property (copy, nonatomic) NSString *productName;
 @property (copy, nonatomic) NSString *packId;
 
-//是否抵消余额，默认抵消yes
-@property (assign, nonatomic) BOOL isDeductionBalance;
-
 @end

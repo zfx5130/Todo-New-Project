@@ -119,7 +119,6 @@
                         addBankController.productMoney = self.productMoney;
                         addBankController.productName = self.productName;
                         addBankController.packId = self.packId;
-                        addBankController.isDeductionBalance = self.isDeductionBalance;
                         [weakSelf.navigationController pushViewController:addBankController
                                                                  animated:YES];
                     } else {

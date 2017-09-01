@@ -29,10 +29,6 @@
 //注册页面忘记密码跳转
 @property (assign, nonatomic) BOOL isRegisterSwip;
 
-//是否抵消余额，默认抵消yes
-@property (assign, nonatomic) BOOL isDeductionBalance;
-
-
 @property (copy, nonatomic) NSString *prductMoney;
 @property (copy, nonatomic) NSString *productName;
 @property (copy, nonatomic) NSString *packId;

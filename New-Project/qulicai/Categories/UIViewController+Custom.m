@@ -135,6 +135,13 @@
     [SVProgressHUD show];
 }
 
+- (void)showSVProgressHUDWithStatus:(NSString *)status {
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD setForegroundColor:[UIColor appDefaultColor]];
+    [SVProgressHUD setBackgroundColor:[UIColor whiteColor]];
+    [SVProgressHUD showWithStatus:status];
+}
+
 - (void)showSuccessWithTitle:(NSString *)title {
     [SVProgressHUD setForegroundColor:[UIColor appDefaultColor]];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
