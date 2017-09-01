@@ -18,7 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *configButton;
 
-
 @end
 
 @implementation ProductBuySuccessViewController
@@ -33,6 +32,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self setupViews];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,8 +84,8 @@
         [self.navigationController popToRootViewControllerAnimated:YES];
     } else if (self.isBuySuccess) {
         //购买成功跳转
-        self.tabBarController.selectedIndex = 1;
         BuyHistoryViewController *historyController = [[BuyHistoryViewController alloc] init];
+        historyController.isPresent = YES;
         historyController.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:historyController
                                              animated:YES];

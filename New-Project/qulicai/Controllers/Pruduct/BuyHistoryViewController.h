@@ -10,4 +10,6 @@
 
 @interface BuyHistoryViewController : UIViewController
 
+@property (assign, nonatomic) BOOL isPresent;
+
 @end

@@ -301,7 +301,11 @@ UICollectionViewDelegate>
 
 
 - (void)leftBarButtonAction {
-    [self.navigationController popViewControllerAnimated:YES];
+    if (self.isPresent) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (IBAction)goBuy:(UIButton *)sender {
