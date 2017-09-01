@@ -8,6 +8,7 @@
 
 #import "ProductBuySuccessViewController.h"
 #import "ResetPasswordViewController.h"
+#import "BuyHistoryViewController.h"
 
 @interface ProductBuySuccessViewController ()
 
@@ -67,7 +68,24 @@
 
 - (IBAction)config:(UIButton *)sender {
     
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    if (self.isPickupSuccess) {
+        //提现成功跳转
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    } else if (self.isBuySuccess) {
+        //购买成功跳转
+        self.tabBarController.selectedIndex = 1;
+        BuyHistoryViewController *historyController = [[BuyHistoryViewController alloc] init];
+        historyController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:historyController
+                                             animated:YES];
+        
+    } else if (self.isChargeSuccess) {
+        //充值成功跳转
+        self.tabBarController.selectedIndex = 1;
+        [self.navigationController popViewControllerAnimated:NO];
+    } else {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
 }
 
 

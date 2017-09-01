@@ -305,6 +305,7 @@
                 [weakSelf showSuccessWithTitle:@"购买成功"];
                 ProductBuySuccessViewController *successController = [[ProductBuySuccessViewController alloc] init];
                 successController.isBuySuccess = YES;
+                successController.money = self.productMoney;
                 [weakSelf.navigationController pushViewController:successController animated:YES];
             } else {
                 [weakSelf showErrorWithTitle:recharge.desc];

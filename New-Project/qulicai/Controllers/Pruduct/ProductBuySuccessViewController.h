@@ -19,4 +19,6 @@
 //充值成功
 @property (assign, nonatomic) BOOL isChargeSuccess;
 
+@property (copy, nonatomic) NSString *money;
+
 @end

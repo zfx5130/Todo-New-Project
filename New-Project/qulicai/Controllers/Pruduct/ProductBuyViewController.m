@@ -408,6 +408,7 @@ LLPaySdkDelegate>
             [weakSelf showSuccessWithTitle:@"购买成功"];
             ProductBuySuccessViewController *successController = [[ProductBuySuccessViewController alloc] init];
             successController.isBuySuccess = YES;
+            successController.money = self.totalMoney;
             [weakSelf.navigationController pushViewController:successController animated:YES];
             
         } else {
@@ -515,6 +516,7 @@ LLPaySdkDelegate>
                     //调转到购买成功页面
                     ProductBuySuccessViewController *successController = [[ProductBuySuccessViewController alloc] init];
                     successController.isBuySuccess = YES;
+                    successController.money = self.totalMoney;
                     [weakSelf.navigationController pushViewController:successController animated:YES];
                 } else {
                     [weakSelf showErrorWithTitle:recharge.desc];

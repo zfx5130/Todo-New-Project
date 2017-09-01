@@ -29,6 +29,7 @@
 
 @property (copy, nonatomic) NSArray *totalMoneys;
 
+@property (strong, nonatomic) EmptyPropertyTableViewCell *cell;
 @end
 
 @implementation TotalPropertyViewController
@@ -86,6 +87,7 @@
         if (list.statusType == IndentityStatusSuccess) {
             NSLog(@"reque:__success_:::::::%@",request.responseJSONObject);
             weakSelf.totalMoneys = list.moneys;
+            weakSelf.cell.contentView.hidden = NO;
             [weakSelf renderUI];
         } else {
             [weakSelf showErrorWithTitle:@"请求失败"];
@@ -191,10 +193,9 @@
         return cell;
     } else if (indexPath.section == 2) {
         if (!self.totalMoneys.count) {
-            EmptyPropertyTableViewCell *cell =
+            self.cell =
             [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EmptyPropertyTableViewCell class])];
-            cell.contentView.hidden = NO;
-            return cell;
+            return self.cell;
         } else {
             PropertyInfoTableViewCell *cell =
             [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PropertyInfoTableViewCell class])];
