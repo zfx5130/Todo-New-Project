@@ -137,7 +137,7 @@ LLPaySdkDelegate>
 - (void)config {
     
     [self.view endEditing:YES];
-    if ([self.moneyTextField.text floatValue] < 0.001) {
+    if ([self.moneyTextField.text floatValue] < 0.1) {
         self.errorLabel.text = @"*充值金额小于最低充值金额";
         [self.errorLabel addShakeAnimation];
         return;

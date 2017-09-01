@@ -229,6 +229,7 @@
     self.llOrder.no_order = [NSString stringWithFormat:@"CZ%@",timeStamp];
     self.llOrder.dt_order = timeStamp;
     self.llOrder.money_order = isRecharge ? self.money : self.productMoney;
+    NSLog(@"充值money:::::::%@",self.llOrder.money_order);
     self.llOrder.notify_url = QR_NOTIFY_URL;
     self.llOrder.acct_name = [NSString getStringWithString:[UserUtil currentUser].realName];
     self.llOrder.card_no = cardNumber;

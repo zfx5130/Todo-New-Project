@@ -207,8 +207,8 @@ LLPaySdkDelegate>
 
 - (void)buy {
     [self.view endEditing:YES];
-    if ([self.moneyTextField.text floatValue] < 0.01) {
-        self.errorLabel.text = @"*购买金额不得少于0.01";
+    if ([self.moneyTextField.text floatValue] < 0.1) {
+        self.errorLabel.text = @"*购买金额不得少于0.1";
         [self.errorLabel addShakeAnimation];
         return;
     }
@@ -229,7 +229,7 @@ LLPaySdkDelegate>
         if (self.isDeductionBalance) {
             //如果选择余额抵扣
             //1.购买金额小于余额,直接调用购买接口。
-            if ([self.moneyTextField.text floatValue] < amount) {
+            if ([self.moneyTextField.text floatValue] <= amount) {
                 lastMoney = amount - [self.moneyTextField.text floatValue];
                 //先弹出交易密码 然后购买
                 [self inputPickPW];
@@ -333,7 +333,7 @@ LLPaySdkDelegate>
     self.llOrder.busi_partner = @"101001";
     self.llOrder.no_order = [NSString stringWithFormat:@"CZ%@",timeStamp];
     self.llOrder.dt_order = timeStamp;
-    self.llOrder.money_order = [NSString stringWithFormat:@"%@",@(rechargeMoney)];
+    self.llOrder.money_order = [NSString stringWithFormat:@"%.2f",rechargeMoney];
     NSLog(@"剩余充值总金钱：：：：%@",self.llOrder.money_order);
     self.llOrder.notify_url = QR_NOTIFY_URL;
     self.llOrder.acct_name = [NSString getStringWithString:[UserUtil currentUser].realName];
@@ -344,11 +344,12 @@ LLPaySdkDelegate>
     NSString *productName = self.isDetailSwap ? self.productDetail.productName : self.product.productName;
     self.llOrder.name_goods = productName;
     self.resultTitle = @"购买结果";
+    
     self.orderDic = [[self.llOrder tradeInfoForPayment] mutableCopy];
     LLPayUtil *payUtil = [[LLPayUtil alloc] init];
     //进行签名
     NSDictionary *signedOrder = [payUtil signedOrderDic:self.orderDic andSignKey:QR_MD5_KEY];
-    
+    NSLog(@"购买::参数信息:::%@",signedOrder);
     [LLPaySdk sharedSdk].sdkDelegate = self;
     
     [[LLPaySdk sharedSdk] presentLLPaySDKInViewController:self
@@ -515,7 +516,9 @@ LLPaySdkDelegate>
                     NSLog(@"购买成功跳转中");
                     [weakSelf showSuccessWithTitle:@"购买跳转中"];
                     //调转到购买成功页面
-                    [weakSelf rechargeSuccess];
+                    ProductBuySuccessViewController *successController = [[ProductBuySuccessViewController alloc] init];
+                    successController.isBuySuccess = YES;
+                    [weakSelf.navigationController pushViewController:successController animated:YES];
                 } else {
                     [weakSelf showErrorWithTitle:recharge.desc];
                 }
