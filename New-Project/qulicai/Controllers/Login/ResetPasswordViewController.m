@@ -19,6 +19,7 @@
 #import "PropertyPickupViewController.h"
 #import "AddBankCardViewController.h"
 #import "AccountCertificationViewController.h"
+#import "ProductBuyViewController.h"
 
 @interface ResetPasswordViewController ()
 <UITextViewDelegate>
@@ -132,6 +133,7 @@
                                 addBankController.productName = self.productName;
                                 addBankController.productMoney = self.productName;
                                 addBankController.packId = self.packId;
+                                addBankController.isDeductionBalance = self.isDeductionBalance;
                                 [weakSelf.navigationController pushViewController:addBankController
                                                                      animated:YES];
                             } else {
@@ -142,10 +144,18 @@
                                 accountController.productName = self.productName;
                                 accountController.productMoney = self.prductMoney;
                                 accountController.packId = self.packId;
+                                accountController.isDeductionBalance = self.isDeductionBalance;
                                 [self.navigationController pushViewController:accountController
                                                                      animated:YES];
                             }
                             
+                        } else if (weakSelf.isBuyRechargePw) {
+                            for( UIViewController *controller in self.navigationController.viewControllers ) {
+                                if( [controller isKindOfClass:[ProductBuyViewController class]] ) {
+                                    [weakSelf.navigationController popToViewController:controller animated:YES];
+                                    return ;
+                                }
+                            }
                         } else {
                             for( UIViewController *controller in weakSelf.navigationController.viewControllers ) {
                                 if( [controller isKindOfClass:[SettingsTableViewController class]] ) {
@@ -207,44 +217,6 @@
         }];
     }
     
-    
-
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [SVProgressHUD dismiss];
-        if (self.passwordTextField.text.length < 8) {
-            self.alertErrorLabel.text = @"密码设置失败";
-            [self showErrorAlert];
-        } else {
-//            [self showSuccessWithTitle:@"密码设置成功"];
-//            if (self.isTradingPw) {
-//                if (self.isPickUpPw) {
-//                    for( UIViewController *controller in self.navigationController.viewControllers ) {
-//                        if( [controller isKindOfClass:[PropertyPickupViewController class]] ) {
-//                            [self.navigationController popToViewController:controller animated:YES];
-//                            return ;
-//                        }
-//                    }
-//                } else {
-//                    ProductBuySuccessViewController *productController = [[ProductBuySuccessViewController alloc] init];
-//                    productController.isBuySuccess = YES;
-//                    UserDefaultsSet(@"isIdentity", @"YES");
-//                    [self.navigationController pushViewController:productController
-//                                                         animated:YES];
-//                }
-//            } else {
-//                if (self.isModifyPW) {
-//                    for( UIViewController *controller in self.navigationController.viewControllers ) {
-//                        if( [controller isKindOfClass:[SettingsTableViewController class]] ) {
-//                            [self.navigationController popToViewController:controller animated:YES];
-//                            return ;
-//                        }
-//                    }
-//                } else {
-//                    [self.navigationController popToRootViewControllerAnimated:YES];
-//                }
-//            }
-        }
-    });
 }
 
 #pragma mark - UITextViewDelegate

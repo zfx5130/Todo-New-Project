@@ -13,6 +13,9 @@
 //第一次充值设置交易密码
 @property (assign, nonatomic) BOOL isFirstSetingTradPw;
 
+//产品购买时忘记交易密码
+@property (assign, nonatomic) BOOL isBuyRechargePw;
+
 @property (copy, nonatomic) NSString *money;
 
 //是否时交易密码
@@ -25,6 +28,9 @@
 
 //注册页面忘记密码跳转
 @property (assign, nonatomic) BOOL isRegisterSwip;
+
+//是否抵消余额，默认抵消yes
+@property (assign, nonatomic) BOOL isDeductionBalance;
 
 
 @property (copy, nonatomic) NSString *prductMoney;

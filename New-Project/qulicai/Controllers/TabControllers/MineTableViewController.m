@@ -18,6 +18,7 @@
 #import "UserUtil.h"
 #import "User.h"
 #import "UIImage+Custom.h"
+#import "QRRequestHeader.h"
 
 @interface MineTableViewController ()
 
@@ -52,6 +53,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupView];
+    [self updateUserInfo];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -64,6 +66,29 @@
 }
 
 #pragma mark - Priavte
+
+- (void)updateUserInfo {
+    if ([UserUtil isLoginIn]) {
+        QRRequestGetUserInfo *request = [[QRRequestGetUserInfo alloc] init];
+        request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
+        __weak typeof(self) weakSelf = self;
+        [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+            User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
+            //NSLog(@"reuqestUserInfo:::::::::::::%@",request.responseJSONObject);
+            if (userInfo.statusType == IndentityStatusSuccess) {
+                [UserUtil saving:userInfo];
+                [weakSelf renderUI];
+            } else {
+                NSLog(@"error:::::%@",request.error);
+            }
+        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+            NSLog(@"error:- %@", request.error);
+        }];
+    }
+}
+
+
+
 
 - (void)renderUI {
     BOOL isLogin = [UserUtil isLoginIn];

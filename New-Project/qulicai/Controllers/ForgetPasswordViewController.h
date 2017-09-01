@@ -16,6 +16,9 @@
 //是否提现交易密码
 @property (assign, nonatomic) BOOL isPickUpPw;
 
+////是否购买时交易密码
+@property (assign, nonatomic) BOOL isBuyRechargePw;
+
 //注册页面忘记密码跳转
 @property (assign, nonatomic) BOOL isRegisterSwip;
 

@@ -60,6 +60,7 @@ UITableViewDataSource>
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self requestToken];
+    [self updateUserInfo];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -86,9 +87,9 @@ UITableViewDataSource>
                 [[A0SimpleKeychain keychain] setString:identityKey forKey:QR_IDENTITY_KEY];
                 [[A0SimpleKeychain keychain] setString:certification.endTime forKey:QR_ENDTIME_EXT];
                 //获取产品列表
+               // [weakSelf updateUserInfo];
                 [weakSelf requestProduct];
                 //获取个人信息
-                [weakSelf updateUserInfo];
             } else {
                 NSLog(@"登录认证失败");
             }
@@ -141,7 +142,7 @@ UITableViewDataSource>
         __weak typeof(self) weakSelf = self;
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
-            NSLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
+            NSLog(@"reuqestUserInfo:::::::::::::%@",request.responseJSONObject);
             if (userInfo.statusType == IndentityStatusSuccess) {
                 [UserUtil saving:userInfo];
                 [weakSelf reloadUI];

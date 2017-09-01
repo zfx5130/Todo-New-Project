@@ -118,6 +118,7 @@
     resetController.isTradingPw = self.isTradingPw;
     resetController.isPickUpPw = self.isPickUpPw;
     resetController.isRegisterSwip = self.isRegisterSwip;
+    resetController.isBuyRechargePw = self.isBuyRechargePw;
     [self.navigationController pushViewController:resetController
                                          animated:YES];
     

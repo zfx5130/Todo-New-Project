@@ -295,6 +295,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)buyButtonWasPressed:(UIButton *)sender {
     if ([UserUtil isLoginIn]) {
         ProductBuyViewController *productController = [[ProductBuyViewController alloc] init];
+        Product *product = [self.productArray firstObject];
+        productController.product = product;
         productController.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:productController
                                              animated:YES];

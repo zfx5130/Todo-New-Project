@@ -22,7 +22,7 @@
 - (id)requestArgument {
     
     return @{
-             @"head" : @{ @"serviceName" : @"serviceName" },
+             @"head" : @{ @"serviceName" : @"buyPack" },
              @"body" : @{ @"userId" : self.userId, @"packId" : self.packId, @"money" : @(self.money) }
              };
 }
