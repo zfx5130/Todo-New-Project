@@ -44,7 +44,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.tableView  reloadData];
+    [self updateUserInfo];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,6 +52,28 @@
 }
 
 #pragma mark - Private
+
+- (void)updateUserInfo {
+    if ([UserUtil isLoginIn]) {
+        QRRequestGetUserInfo *request = [[QRRequestGetUserInfo alloc] init];
+        request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
+        __weak typeof(self) weakSelf = self;
+        [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+            User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
+            NSLog(@"reuqestUserInfo:::::::::::::%@",request.responseJSONObject);
+            if (userInfo.statusType == IndentityStatusSuccess) {
+                [UserUtil saving:userInfo];
+                [weakSelf.tableView reloadData];
+            } else {
+                NSLog(@"error:::::%@",request.error);
+            }
+        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+            NSLog(@"error:- %@", request.error);
+        }];
+    }
+}
+
+
 
 - (void)reloadTotalProperty {
     QRRequestTotalMoneyDetail *request = [[QRRequestTotalMoneyDetail alloc] init];

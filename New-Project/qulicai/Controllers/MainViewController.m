@@ -87,7 +87,6 @@ UITableViewDataSource>
                 [[A0SimpleKeychain keychain] setString:identityKey forKey:QR_IDENTITY_KEY];
                 [[A0SimpleKeychain keychain] setString:certification.endTime forKey:QR_ENDTIME_EXT];
                 //获取产品列表
-               // [weakSelf updateUserInfo];
                 [weakSelf requestProduct];
                 //获取个人信息
             } else {
