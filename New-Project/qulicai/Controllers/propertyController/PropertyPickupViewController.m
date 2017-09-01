@@ -191,7 +191,7 @@
 - (void)forgetButtonWasPressed {
     [self passwordDismiss];
     ForgetPasswordViewController *passwordController = [[ForgetPasswordViewController alloc] init];
-    passwordController.isBuyRechargePw = YES;
+    passwordController.isPickUpPw = YES;
     passwordController.isTradingPw = YES;
     [self.navigationController pushViewController:passwordController
                                          animated:YES];

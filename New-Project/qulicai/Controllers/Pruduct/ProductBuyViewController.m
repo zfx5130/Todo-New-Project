@@ -225,11 +225,11 @@ LLPaySdkDelegate>
     CGFloat amount = user.availableMoney;
     if (user.appBanks.count) {
         //认证成功 直接去购买
-        CGFloat lastMoney = amount - [self.moneyTextField.text doubleValue];
+        CGFloat lastMoney = [self.moneyTextField.text doubleValue] - amount;
         if (self.isDeductionBalance) {
             //如果选择余额抵扣
             //1.购买金额小于余额,直接调用购买接口
-            if (lastMoney >= 0) {
+            if (lastMoney <= 0) {
                 //先弹出交易密码 然后购买
                 [self inputPickPW];
             } else {
@@ -588,11 +588,16 @@ LLPaySdkDelegate>
     CGFloat value = [sender.text floatValue];
     CGFloat result = value * rate / 365 * periodDay;
     self.rateMoneyLabel.text = [NSString stringWithFormat:@"+%.2f",result];
-    
-    CGFloat lastAmount = [sender.text floatValue] - [UserUtil currentUser].availableMoney;
+
+    CGFloat lastAmount = [sender.text doubleValue];
+    if (self.isDeductionBalance) {
+        lastAmount = [sender.text doubleValue] - [UserUtil currentUser].availableMoney;
+    } else {
+        lastAmount = [sender.text doubleValue];
+    }
     self.balanceRechangeLabel.text = [NSString stringWithFormat:@"%.2f",lastAmount];
     
-    if ([self.balanceRechangeLabel.text floatValue] <= 0) {
+    if ([self.balanceRechangeLabel.text doubleValue] <= 0) {
         self.balanceRechangeLabel.text = @"0.0";
     }
 }

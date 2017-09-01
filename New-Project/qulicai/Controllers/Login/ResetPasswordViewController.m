@@ -111,7 +111,6 @@
                 request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
                 [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
                     User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
-                    SLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
                     if (userInfo.statusType == IndentityStatusSuccess) {
                         [UserUtil saving:userInfo];
                         if (weakSelf.isPickUpPw) {
@@ -148,6 +147,7 @@
                             }
                             
                         } else if (weakSelf.isBuyRechargePw) {
+                            NSLog(@"____asdfadsfadsfasdfadfadsfasdfasdfd");
                             for( UIViewController *controller in self.navigationController.viewControllers ) {
                                 if( [controller isKindOfClass:[ProductBuyViewController class]] ) {
                                     [weakSelf.navigationController popToViewController:controller animated:YES];
