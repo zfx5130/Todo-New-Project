@@ -135,11 +135,12 @@ heightForFooterInSection:(NSInteger)section {
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath
                              animated:YES];
-    
+    Contract *contract = self.contracts[indexPath.row];
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:NSStringFromClass([BorrowMoneyDetailTableViewController class])
                                                          bundle:nil];
     BorrowMoneyDetailTableViewController *borrowController =
     [storyBoard instantiateViewControllerWithIdentifier:NSStringFromClass([BorrowMoneyDetailTableViewController class])];
+    borrowController.markId = contract.markId;
     [self.navigationController pushViewController:borrowController
                                          animated:YES];
 }
