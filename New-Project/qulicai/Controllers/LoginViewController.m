@@ -63,8 +63,8 @@
 #pragma mark - Private
 
 - (void)setupViews {
+    self.headImageHeightConstraint.constant = SCREEN_WIDTH * 150 / IPHONE6_WIDTH;
     if (IS_IPHONE_5) {
-        self.headImageHeightConstraint.constant = IPHONE5_WIDTH * 150 / IPHONE6_WIDTH;
         self.loginButtonTopConstraint.constant = 25.0f;
         self.centerViewHeightCostraint.constant = 95.0f;
     }

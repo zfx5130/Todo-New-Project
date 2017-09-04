@@ -79,8 +79,8 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self setupNavigationItemLeft:[UIImage imageNamed:@"back_image"]];
     
+    self.headImageHeightConstraint.constant = SCREEN_WIDTH * 150 / IPHONE6_WIDTH;
     if (IS_IPHONE_5) {
-        self.headImageHeightConstraint.constant = IPHONE5_WIDTH * 150 / IPHONE6_WIDTH;
         self.registerButtonTopConstraint.constant = 25.0f;
         self.centerViewHeightConstraint.constant = 145.0f;
     }

@@ -423,11 +423,15 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)leftBarButtonAction {
-    User *user = [UserUtil currentUser];
-    if (user.availableMoney <= 0) {
-        [self showAlert];
+    if ([UserUtil isLoginIn]) {
+        User *user = [UserUtil currentUser];
+        if (user.availableMoney <= 0) {
+            [self showAlert];
+        } else {
+            [self pickupMoney];
+        }
     } else {
-        [self pickupMoney];
+        [self login];
     }
 }
 
