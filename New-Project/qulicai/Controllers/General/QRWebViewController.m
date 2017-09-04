@@ -19,13 +19,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.hidesBackButton = YES;
     UIImage *backIndicatorImage = [UIImage imageNamed:@"forget_back_image"];
     UIBarButtonItem *backIndicatorBarButtonItem =
     [[UIBarButtonItem alloc] initWithImage:backIndicatorImage
                                      style:UIBarButtonItemStyleDone
                                     target:self
-                                    action:@selector(modalTypeBackIndicatorButtonWasPressed:)];
-    self.navigationItem.leftBarButtonItem = backIndicatorBarButtonItem;
+                                    action:@selector(dimiss)];
+    self.applicationLeftBarButtonItems = @[backIndicatorBarButtonItem];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -53,6 +55,10 @@
         self.navigationButtonsHidden = YES;
     }
     return self;
+}
+
+- (void)dimiss {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
