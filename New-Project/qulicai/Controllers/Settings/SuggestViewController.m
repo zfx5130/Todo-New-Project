@@ -78,7 +78,7 @@
     request.content = self.textView.text;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [SVProgressHUD dismiss];
-        //NSLog(@"code::::%@",request.responseJSONObject);
+        NSLog(@"code::::%@",request.responseJSONObject);
         Suggest *suggest = [Suggest mj_objectWithKeyValues:request.responseJSONObject];
         if (suggest.statusType == IndentityStatusSuccess) {
             [self showSuccessWithTitle:@"提交成功"];

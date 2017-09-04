@@ -153,17 +153,17 @@ UITableViewDataSource>
 
 - (void)setupTableViewHeadView {
     self.title = @"理财";
-    [UIColor wr_setDefaultNavBarTitleColor:[UIColor blackColor]];
-    self.tableView.contentInset = UIEdgeInsetsMake(IMAGE_HEIGHT - 64, 0, 0, 0);
-    self.cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, -IMAGE_HEIGHT, SCREEN_WIDTH, IMAGE_HEIGHT)
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    [self wr_setNavBarTitleColor:[UIColor clearColor]];
+    self.cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, IMAGE_HEIGHT)
                                                               delegate:self
                                                       placeholderImage:[UIImage imageNamed:@"fiscal_bg_image"]];
     self.cycleScrollView.currentPageDotImage = [UIImage imageNamed:@"fiscal_rotation_down_image"];
     self.cycleScrollView.pageDotImage = [UIImage imageNamed:@"fiscal_rotation_up_image"];
     self.cycleScrollView.imageURLStringsGroup = self.imagesUrlString;
     self.cycleScrollView.bannerImageViewContentMode = UIViewContentModeScaleAspectFill;
-    [self.tableView addSubview:self.cycleScrollView];
-    [self wr_setNavBarBackgroundAlpha:1.0f];
+    self.tableView.tableHeaderView = self.cycleScrollView;
+    [self wr_setNavBarBackgroundAlpha:0.0f];
 }
 
 #pragma mark - Getters && Setters
@@ -312,25 +312,17 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat offsetY = scrollView.contentOffset.y;
-
-    if (offsetY > NAVBAR_COLORCHANGE_POINT) {
-        CGFloat alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / NAV_HEIGHT;
+    if (offsetY > 0) {
+        CGFloat alpha = offsetY  / IMAGE_HEIGHT;
         [self wr_setNavBarBackgroundAlpha:alpha];
+        [self wr_setNavBarTitleColor:[UIColor colorWithWhite:0.0f alpha:alpha]];
         [self wr_setNavBarTitleColor:[RGBColor(51, 51, 51) colorWithAlphaComponent:alpha]];
+        [self wr_setNavBarShadowImageHidden:NO];
     } else {
+        [self wr_setNavBarShadowImageHidden:YES];
         [self wr_setNavBarBackgroundAlpha:0];
         [self wr_setNavBarTitleColor:[UIColor clearColor]];
     }
-    
-    //限制下拉的距离
-//    if(offsetY < LIMIT_OFFSET_Y) {
-//        [scrollView setContentOffset:CGPointMake(0, LIMIT_OFFSET_Y)];
-//    }
-//
-//    CGFloat newOffsetY = scrollView.contentOffset.y;
-//    if (newOffsetY < -IMAGE_HEIGHT) {
-//        self.cycleScrollView.frame = CGRectMake(0, newOffsetY, kScreenWidth, -newOffsetY);
-//    }
 }
 
 
