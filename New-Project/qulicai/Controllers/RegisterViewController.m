@@ -42,6 +42,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *errorAlertLabel;
 
 @property (copy, nonatomic) NSString *verifyCode;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headImageHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *registerButtonTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *centerViewHeightConstraint;
 
 @end
 
@@ -75,6 +78,12 @@
     [self.view addTapGestureForDismissingKeyboard];
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self setupNavigationItemLeft:[UIImage imageNamed:@"back_image"]];
+    
+    if (IS_IPHONE_5) {
+        self.headImageHeightConstraint.constant = IPHONE5_WIDTH * 150 / IPHONE6_WIDTH;
+        self.registerButtonTopConstraint.constant = 25.0f;
+        self.centerViewHeightConstraint.constant = 145.0f;
+    }
 }
 
 - (void)updateResetButtonStatus {

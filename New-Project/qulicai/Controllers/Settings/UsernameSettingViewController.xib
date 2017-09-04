@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="alertErrorLabel" destination="lca-5l-PDP" id="e7V-Xi-t8X"/>
                 <outlet property="bottomViewButtomConstraint" destination="k8a-UT-n3s" id="ZN9-kK-cOs"/>
+                <outlet property="nickNameTopConstraint" destination="QBO-La-4yB" id="XdS-Tb-2jb"/>
                 <outlet property="saveButton" destination="rk9-qH-BXb" id="yZM-Jo-uNo"/>
                 <outlet property="usernameTextField" destination="QIr-p7-HRI" id="KKZ-mv-n1k"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

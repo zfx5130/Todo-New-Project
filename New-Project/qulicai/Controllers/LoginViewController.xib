@@ -12,9 +12,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
                 <outlet property="bottomErrorViewBottomConstraint" destination="lnq-6p-irH" id="ZgH-d7-JU6"/>
+                <outlet property="centerViewHeightCostraint" destination="1vY-p0-zSz" id="qDp-At-oGv"/>
                 <outlet property="errorLabel" destination="DgL-yH-XIn" id="oJI-I5-uQD"/>
+                <outlet property="headImageHeightConstraint" destination="7nB-l2-22l" id="yBW-s1-m9K"/>
                 <outlet property="lockButton" destination="zgB-QP-Kny" id="isS-uC-reK"/>
                 <outlet property="loginButton" destination="bVW-WU-Lku" id="qk4-nJ-8gl"/>
+                <outlet property="loginButtonTopConstraint" destination="H5F-YE-VKE" id="8eG-4k-yCL"/>
                 <outlet property="passwordTextField" destination="W2z-K5-M5l" id="8c3-oM-Jz0"/>
                 <outlet property="phoneButtton" destination="0WE-vN-4LF" id="syi-Xb-qrY"/>
                 <outlet property="phoneTextField" destination="6Pl-m5-rYp" id="a2W-mp-gxz"/>
@@ -139,7 +142,6 @@
                                                         <constraint firstItem="FMJ-XL-E8X" firstAttribute="leading" secondItem="bdM-x4-Oan" secondAttribute="leading" constant="30" id="E3v-5i-1bG"/>
                                                         <constraint firstItem="W2z-K5-M5l" firstAttribute="leading" secondItem="zgB-QP-Kny" secondAttribute="trailing" constant="13" id="I3k-lk-o6X"/>
                                                         <constraint firstAttribute="bottom" secondItem="FMJ-XL-E8X" secondAttribute="bottom" id="NGc-Bd-UWe"/>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="XKi-o7-1cS"/>
                                                         <constraint firstItem="W2z-K5-M5l" firstAttribute="top" secondItem="bdM-x4-Oan" secondAttribute="top" id="fcd-t0-Q5Z"/>
                                                         <constraint firstItem="zgB-QP-Kny" firstAttribute="centerY" secondItem="bdM-x4-Oan" secondAttribute="centerY" id="kU6-yJ-mbZ"/>
                                                         <constraint firstItem="FMJ-XL-E8X" firstAttribute="top" secondItem="W2z-K5-M5l" secondAttribute="bottom" id="qCf-e7-yKy"/>
@@ -307,7 +309,7 @@
                 <constraint firstItem="2MX-x3-gQf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="X9e-Q1-C2o"/>
                 <constraint firstItem="2MX-x3-gQf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uGr-eS-scq"/>
             </constraints>
-            <point key="canvasLocation" x="48.5" y="80.5"/>
+            <point key="canvasLocation" x="-49" y="60"/>
         </view>
     </objects>
     <resources>

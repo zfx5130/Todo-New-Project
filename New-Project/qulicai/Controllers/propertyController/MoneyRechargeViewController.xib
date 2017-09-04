@@ -19,6 +19,7 @@
                 <outlet property="errorLabel" destination="arZ-Xd-TPe" id="UZW-aW-qWP"/>
                 <outlet property="moneyTextField" destination="Y2P-o0-RIB" id="3vP-30-EG1"/>
                 <outlet property="nextButton" destination="EPF-9g-0EI" id="Cxr-9h-mAz"/>
+                <outlet property="scrollView" destination="qRH-iq-c8j" id="bhm-v9-5Fe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

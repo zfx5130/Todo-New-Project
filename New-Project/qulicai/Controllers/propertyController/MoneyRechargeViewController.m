@@ -42,6 +42,9 @@ LLPaySdkDelegate>
 
 @property (nonatomic, strong) NSMutableDictionary *orderDic;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+
 @end
 
 @implementation MoneyRechargeViewController
@@ -266,7 +269,7 @@ LLPaySdkDelegate>
     __weak typeof(self) weakSelf = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [SVProgressHUD dismiss];
-        [self showSuccessWithTitle:@"充值成功跳转中"];
+        [weakSelf showSuccessWithTitle:@"充值成功跳转中"];
         User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
         NSLog(@"reuqestUserInfo:::::::::::::%@",request.responseJSONObject);
         if (userInfo.statusType == IndentityStatusSuccess) {
@@ -302,6 +305,7 @@ LLPaySdkDelegate>
 - (IBAction)editingBegined:(UITextField *)sender {
     self.errorLabel.text = @"";
     [self updateResetButtonStatus];
+   // self.scrollView.contentOffset = CGPointMake(0.0f, 300);
 }
 
 - (IBAction)config:(UIButton *)sender {

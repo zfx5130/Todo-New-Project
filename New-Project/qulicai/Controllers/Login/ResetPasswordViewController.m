@@ -33,6 +33,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *titleNameLabel;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *confirmButtonTopConstraint;
 @end
 
 @implementation ResetPasswordViewController
@@ -59,6 +60,9 @@
     [self.view addTapGestureForDismissingKeyboard];
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
     self.titleNameLabel.text = self.isTradingPw ? @"设置交易密码" : @"设置登录密码";
+    if (IS_IPHONE_5) {
+        self.confirmButtonTopConstraint.constant = 60.0f;
+    }
 }
 
 - (void)updateResetButtonStatus {

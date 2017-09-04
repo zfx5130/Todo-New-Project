@@ -28,6 +28,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *alertErrorLabel;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *saveTopConstraint;
+
 @end
 
 @implementation ModifyLoginPwViewController
@@ -53,6 +55,9 @@
 - (void)setupViews {
     [self.view addTapGestureForDismissingKeyboard];
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
+    if (IS_IPHONE_5) {
+        self.saveTopConstraint.constant = 80.0f;
+    }
 }
 
 - (void)updateResetButtonStatus {

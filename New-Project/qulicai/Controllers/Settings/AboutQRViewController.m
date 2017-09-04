@@ -40,7 +40,7 @@
 #pragma mark - Handlers
 
 - (IBAction)qrInfo:(UIButton *)sender {
-    NSString *urlString = @"https://www.baidu.com";
+    NSString *urlString = @"https://demo.qulicai8.com/#/companyAndproduct";
     QRWebViewController *webViewController = [[QRWebViewController alloc] initWithTitle:@"公司介绍"
                                                                               URLString:urlString];
     webViewController.hidesBottomBarWhenPushed = YES;

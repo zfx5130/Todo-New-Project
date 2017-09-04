@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewButtomConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *alertErrorLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nickNameTopConstraint;
 
 @end
 
@@ -50,6 +51,9 @@
 - (void)setupViews {
     [self.view addTapGestureForDismissingKeyboard];
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
+    if (IS_IPHONE_5) {
+        self.nickNameTopConstraint.constant = 70.0f;
+    }
 }
 
 - (void)updateResetButtonStatus {

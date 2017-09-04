@@ -315,7 +315,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (offsetY > 0) {
         CGFloat alpha = offsetY  / IMAGE_HEIGHT;
         [self wr_setNavBarBackgroundAlpha:alpha];
-        [self wr_setNavBarTitleColor:[UIColor colorWithWhite:0.0f alpha:alpha]];
         [self wr_setNavBarTitleColor:[RGBColor(51, 51, 51) colorWithAlphaComponent:alpha]];
         [self wr_setNavBarShadowImageHidden:NO];
     } else {

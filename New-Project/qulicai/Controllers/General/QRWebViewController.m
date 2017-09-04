@@ -19,12 +19,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIImage *backIndicatorImage = [UIImage imageNamed:@"forget_back_image"];
+    UIBarButtonItem *backIndicatorBarButtonItem =
+    [[UIBarButtonItem alloc] initWithImage:backIndicatorImage
+                                     style:UIBarButtonItemStyleDone
+                                    target:self
+                                    action:@selector(modalTypeBackIndicatorButtonWasPressed:)];
+    self.navigationItem.leftBarButtonItem = backIndicatorBarButtonItem;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = NO;
-    [UIColor wr_setDefaultNavBarTintColor:RGBColor(51, 51, 51)];
+    [self wr_setNavBarTitleColor:RGBColor(51.0f, 51.0f, 51.0f)];
+    [self wr_setNavBarShadowImageHidden:NO];
+    [self wr_setNavBarTintColor:RGBColor(51.0f, 51.0f, 51.0f)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +50,7 @@
         self.loadingBarTintColor = [UIColor appDefaultColor];
         self.buttonTintColor = [UIColor appDefaultColor];
         self.showActionButton = NO;
+        self.navigationButtonsHidden = YES;
     }
     return self;
 }

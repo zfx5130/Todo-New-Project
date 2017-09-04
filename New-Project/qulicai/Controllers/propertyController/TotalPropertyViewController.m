@@ -292,7 +292,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (IBAction)pickup:(UIButton *)sender {
     User *user = [UserUtil currentUser];
-    if (user.totalMoney <= 0) {
+    if (user.availableMoney <= 0) {
         [self showAlert];
     } else {
         [self pickUpMoney];

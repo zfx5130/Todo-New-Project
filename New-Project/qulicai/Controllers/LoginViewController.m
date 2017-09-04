@@ -32,6 +32,11 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *shakeErrorLabel;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headImageHeightConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *loginButtonTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *centerViewHeightCostraint;
+
 @end
 
 @implementation LoginViewController
@@ -58,6 +63,11 @@
 #pragma mark - Private
 
 - (void)setupViews {
+    if (IS_IPHONE_5) {
+        self.headImageHeightConstraint.constant = IPHONE5_WIDTH * 150 / IPHONE6_WIDTH;
+        self.loginButtonTopConstraint.constant = 25.0f;
+        self.centerViewHeightCostraint.constant = 95.0f;
+    }
     [self.phoneTextField becomeFirstResponder];
     [self.view addTapGestureForDismissingKeyboard];
     [self wr_setNavBarBackgroundAlpha:0.0f];

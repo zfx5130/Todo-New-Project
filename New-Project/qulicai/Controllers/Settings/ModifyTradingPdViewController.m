@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewBottomConstraint;
 
 @property (weak, nonatomic) IBOutlet UILabel *alertErrorLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *saveButtonTopConstrait;
 
 
 @end
@@ -54,6 +55,9 @@
 - (void)setupViews {
     [self.view addTapGestureForDismissingKeyboard];
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
+    if (IS_IPHONE_5) {
+        self.saveButtonTopConstrait.constant = 80.0f;
+    }
 }
 
 - (void)updateResetButtonStatus {

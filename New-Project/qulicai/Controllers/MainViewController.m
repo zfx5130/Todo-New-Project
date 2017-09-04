@@ -385,7 +385,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)platformDataButtonWasPressed:(UIButton *)sender {
-    NSString *urlString = @"https://www.baidu.com";
+    NSString *urlString = @"https://demo.qulicai8.com/#/companyAndproduct?m=c1";
     QRWebViewController *webViewController = [[QRWebViewController alloc] initWithTitle:@"安全保障"
                                                                               URLString:urlString];
     webViewController.hidesBottomBarWhenPushed = YES;
@@ -394,7 +394,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)qrInfoButtonWasPressed:(UIButton *)sender {
-    NSString *urlString = @"https://www.baidu.com";
+    NSString *urlString = @"https://demo.qulicai8.com/#/companyAndproduct?m=c2";
     QRWebViewController *webViewController = [[QRWebViewController alloc] initWithTitle:@"平台数据"
                                                                               URLString:urlString];
     webViewController.hidesBottomBarWhenPushed = YES;
@@ -403,7 +403,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)safeButtonWasPressed:(UIButton *)sender {
-    NSString *urlString = @"https://www.baidu.com";
+    NSString *urlString = @"https://demo.qulicai8.com/#/companyAndproduct?m=c3";
     QRWebViewController *webViewController = [[QRWebViewController alloc] initWithTitle:@"企业简介"
                                                                               URLString:urlString];
     webViewController.hidesBottomBarWhenPushed = YES;
@@ -411,8 +411,22 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                                          animated:YES];
 }
 
+- (void)showAlert {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:@"对不起，你无余额可提现!"
+                                                       delegate:self
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:nil, nil];
+    [alertView show];
+}
+
 - (void)leftBarButtonAction {
-    [self pickupMoney];
+    User *user = [UserUtil currentUser];
+    if (user.availableMoney <= 0) {
+        [self showAlert];
+    } else {
+        [self pickupMoney];
+    }
 }
 
 

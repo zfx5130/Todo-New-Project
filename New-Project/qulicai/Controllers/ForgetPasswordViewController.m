@@ -37,6 +37,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @property (copy, nonatomic) NSString *verifyCode;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nextButtonTopConstrant;
 
 @end
 
@@ -68,6 +69,9 @@
 - (void)setupView {
     [self.view addTapGestureForDismissingKeyboard];
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
+    if (IS_IPHONE_5) {
+        self.nextButtonTopConstrant.constant = 60.0f;
+    }
 }
 
 - (void)setupViews {

@@ -156,7 +156,7 @@
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.60061306420000005" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="MEH-YO-DSg" secondAttribute="trailing" id="2YR-B1-JE9"/>
                                         <constraint firstAttribute="height" constant="40" id="2ts-r2-9Pq"/>

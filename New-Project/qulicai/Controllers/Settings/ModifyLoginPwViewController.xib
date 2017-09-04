@@ -17,6 +17,7 @@
                 <outlet property="nowPasswordLabel" destination="8Ru-0i-Oyf" id="TZC-lL-gqZ"/>
                 <outlet property="oldPasswordLabel" destination="j53-Xg-aoN" id="bdA-aW-RFM"/>
                 <outlet property="saveButton" destination="lwU-kB-KlE" id="6Ug-AB-wdr"/>
+                <outlet property="saveTopConstraint" destination="WDf-Cw-fq5" id="Bl2-nw-ooR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @property (weak, nonatomic) IBOutlet UIView *textViewContainView;
 @property (strong, nonatomic) YYTextView *textView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewHeightConstraint;
 
 @end
 
@@ -55,6 +56,10 @@
     [self.textViewContainView addSubview:self.textView];
     self.textView.clearsOnInsertion = YES;
     self.textView.delegate = self;
+    
+    if (IS_IPHONE_5) {
+        self.textViewHeightConstraint.constant = 120.0f;
+    }
     
 }
 

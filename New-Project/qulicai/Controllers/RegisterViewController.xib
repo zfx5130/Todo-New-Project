@@ -12,13 +12,16 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController">
             <connections>
                 <outlet property="bottomErrorViewBottomConstraint" destination="vgs-h3-4rc" id="vQT-l5-6Jx"/>
+                <outlet property="centerViewHeightConstraint" destination="qIk-2g-m44" id="Gib-T8-ZzT"/>
                 <outlet property="errorAlertLabel" destination="suJ-m0-8ch" id="18k-Hp-B1c"/>
                 <outlet property="errorLabel" destination="eH8-Zk-rGw" id="X4I-Ex-89e"/>
+                <outlet property="headImageHeightConstraint" destination="XrB-JN-HKl" id="QsS-3T-0yK"/>
                 <outlet property="lockButton" destination="yZd-YC-QBo" id="vgk-Sd-PQP"/>
                 <outlet property="lockTextField" destination="no2-Cj-2cX" id="kkM-7H-IpE"/>
                 <outlet property="phoneButton" destination="xqN-3J-PPh" id="qs6-DR-rVn"/>
                 <outlet property="phoneTextField" destination="Jff-FD-3tf" id="AZS-RV-5P2"/>
                 <outlet property="registerButton" destination="stE-j8-25e" id="8wq-As-Z9p"/>
+                <outlet property="registerButtonTopConstraint" destination="wiS-GQ-nf3" id="0LM-kx-Q9M"/>
                 <outlet property="verifyButton" destination="X4e-Sc-31n" id="szg-Gf-rQZ"/>
                 <outlet property="verifyCodeButton" destination="xCu-i5-Hy3" id="wtl-ab-6Fh"/>
                 <outlet property="verifyTextField" destination="QFn-ak-5ym" id="tvF-MO-CJh"/>
@@ -160,7 +163,6 @@
                                                         <constraint firstItem="42O-Nf-Myv" firstAttribute="top" secondItem="xCu-i5-Hy3" secondAttribute="bottom" id="nQG-WM-PyT"/>
                                                         <constraint firstItem="xCu-i5-Hy3" firstAttribute="leading" secondItem="QFn-ak-5ym" secondAttribute="trailing" constant="10" id="qpN-1C-1vJ"/>
                                                         <constraint firstItem="X4e-Sc-31n" firstAttribute="centerY" secondItem="yLw-km-rko" secondAttribute="centerY" id="swr-FI-Pis"/>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="vgg-Wq-TQN"/>
                                                         <constraint firstItem="xCu-i5-Hy3" firstAttribute="top" secondItem="yLw-km-rko" secondAttribute="top" id="zzj-WM-Dbj"/>
                                                     </constraints>
                                                 </view>
@@ -213,14 +215,13 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="yLw-km-rko" firstAttribute="top" secondItem="2QX-tE-ver" secondAttribute="bottom" constant="20" id="2fs-cT-z7N"/>
                                                 <constraint firstAttribute="trailing" secondItem="yLw-km-rko" secondAttribute="trailing" id="5ax-ho-1ah"/>
                                                 <constraint firstItem="2QX-tE-ver" firstAttribute="leading" secondItem="DGZ-wr-uXw" secondAttribute="leading" id="7rb-YN-Ibk"/>
                                                 <constraint firstItem="yLw-km-rko" firstAttribute="leading" secondItem="DGZ-wr-uXw" secondAttribute="leading" id="ORd-8a-6AG"/>
                                                 <constraint firstAttribute="bottom" secondItem="3Zd-gQ-WuH" secondAttribute="bottom" id="QE8-0l-HcL"/>
-                                                <constraint firstItem="3Zd-gQ-WuH" firstAttribute="top" secondItem="yLw-km-rko" secondAttribute="bottom" constant="20" id="Y3Q-57-v91"/>
                                                 <constraint firstAttribute="trailing" secondItem="3Zd-gQ-WuH" secondAttribute="trailing" id="co4-eN-eoJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="2QX-tE-ver" secondAttribute="trailing" id="mOQ-5M-QU5"/>
+                                                <constraint firstItem="yLw-km-rko" firstAttribute="centerY" secondItem="DGZ-wr-uXw" secondAttribute="centerY" id="nQw-lB-faA"/>
                                                 <constraint firstAttribute="height" constant="175" id="qIk-2g-m44"/>
                                                 <constraint firstItem="2QX-tE-ver" firstAttribute="top" secondItem="DGZ-wr-uXw" secondAttribute="top" id="urH-2h-LfU"/>
                                                 <constraint firstItem="3Zd-gQ-WuH" firstAttribute="leading" secondItem="DGZ-wr-uXw" secondAttribute="leading" id="xgO-WB-T8d"/>
