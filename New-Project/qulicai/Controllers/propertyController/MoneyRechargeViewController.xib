@@ -291,6 +291,9 @@
                         <constraint firstItem="5KN-8F-Rx9" firstAttribute="top" secondItem="qRH-iq-c8j" secondAttribute="top" id="JAD-Ra-f8t"/>
                         <constraint firstItem="5KN-8F-Rx9" firstAttribute="width" secondItem="qRH-iq-c8j" secondAttribute="width" id="lrH-Nf-r4B"/>
                     </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="C2s-1i-tkd"/>
+                    </connections>
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kmm-u7-Z3R">
                     <rect key="frame" x="0.0" y="673" width="375" height="44"/>

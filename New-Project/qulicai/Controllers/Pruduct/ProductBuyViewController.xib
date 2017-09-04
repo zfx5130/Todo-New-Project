@@ -437,6 +437,9 @@
                         <constraint firstAttribute="trailing" secondItem="gBp-aO-rCl" secondAttribute="trailing" id="Y7S-K0-gUX"/>
                         <constraint firstItem="gBp-aO-rCl" firstAttribute="height" secondItem="OSj-hN-zvf" secondAttribute="height" id="ylC-dM-Icz"/>
                     </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="3SX-wG-Ip1"/>
+                    </connections>
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWx-jf-ymz">
                     <rect key="frame" x="0.0" y="673" width="375" height="44"/>

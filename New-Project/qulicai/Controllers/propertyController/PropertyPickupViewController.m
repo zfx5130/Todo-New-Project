@@ -19,7 +19,8 @@
 #import "QRRequestHeader.h"
 
 @interface PropertyPickupViewController ()
-<UITextViewDelegate>
+<UITextViewDelegate,
+UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *bankCartLabel;
 
@@ -134,6 +135,14 @@
         self.bottomViewHeightConstraint.constant = -50.0f;
         [self.view layoutIfNeeded];
     }];
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (IS_IPHONE_5) {
+        [self.view endEditing:YES];
+    }
 }
 
 #pragma mark - UITextViewDelegate

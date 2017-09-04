@@ -19,7 +19,8 @@
 
 @interface MoneyRechargeViewController ()
 <UITextViewDelegate,
-LLPaySdkDelegate>
+LLPaySdkDelegate,
+UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *moneyTextField;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
@@ -133,6 +134,14 @@ LLPaySdkDelegate>
         self.bottomViewBottomConstraint.constant = -50.0f;
         [self.view layoutIfNeeded];
     }];
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (IS_IPHONE_5) {
+        [self.view endEditing:YES];
+    }
 }
 
 #pragma mark - UITextViewDelegate

@@ -28,7 +28,8 @@
 
 @interface ProductBuyViewController ()
 <UITextFieldDelegate,
-LLPaySdkDelegate>
+LLPaySdkDelegate,
+UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewBottomConstraint;
 @property (weak, nonatomic) IBOutlet UIView *bottomContainView;
@@ -548,6 +549,14 @@ LLPaySdkDelegate>
         [SVProgressHUD dismiss];
         [self showErrorWithTitle:@"交易验证失败"];
     }];
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (IS_IPHONE_5) {
+        [self.view endEditing:YES];        
+    }
 }
 
 #pragma mark - UITextViewDelegate

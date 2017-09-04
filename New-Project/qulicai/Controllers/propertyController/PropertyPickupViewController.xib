@@ -262,6 +262,9 @@
                         <constraint firstAttribute="trailing" secondItem="WNg-Lj-l3b" secondAttribute="trailing" id="gj3-Ge-4M9"/>
                         <constraint firstItem="WNg-Lj-l3b" firstAttribute="height" secondItem="WEh-qK-ou0" secondAttribute="height" id="qzR-Ce-PbH"/>
                     </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="h47-aQ-XfG"/>
+                    </connections>
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbf-Pb-dOd">
                     <rect key="frame" x="0.0" y="673" width="375" height="44"/>

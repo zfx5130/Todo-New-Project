@@ -51,7 +51,6 @@ UITableViewDataSource>
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registerCell];
-    [self wr_setNavBarBackgroundAlpha:0];
     [self setupTableHeadView];
     [self setupNavigationItemLeft:[UIImage imageNamed:@""]];
     [self reloadUI];
@@ -59,8 +58,10 @@ UITableViewDataSource>
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self wr_setNavBarBackgroundAlpha:0];
     [self requestToken];
     [self updateUserInfo];
+    //[self showSVProgressHUD];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -103,6 +104,7 @@ UITableViewDataSource>
 }
 
 - (void)requestProduct {
+    
     QRRequestProductList *request = [[QRRequestProductList alloc] init];
     request.currentPage = @"1";
     request.pageSize = @"8";
