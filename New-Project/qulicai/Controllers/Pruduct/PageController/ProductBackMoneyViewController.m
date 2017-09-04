@@ -67,7 +67,7 @@
     self.planStatusLabel.text = self.backDetail.planStatus ? @"已还款" : @"待还款";
     self.endTotalMoneyLabel.text = [NSString stringWithFormat:@"%.1f",self.backDetail.planTotalMoney];
     self.endTotalRateLabel.text =
-    [NSString stringWithFormat:@"%.1f",self.backDetail.planTotalRate];
+    [NSString stringWithFormat:@"%.2f",self.backDetail.planTotalRate];
     
     
 }
@@ -88,7 +88,7 @@
 
 - (void)updateBackMoneyInfo {
     QRRequestBackMoneyDetail *request = [[QRRequestBackMoneyDetail alloc] init];
-    request.packId = [NSString getStringWithString:self.productDetail.packRuleId];
+    request.packId = [NSString getStringWithString:self.productDetail.productId];
     __weak typeof(self) weakSelf = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         SLog(@"request::::::%@", request.responseJSONObject);

@@ -17,7 +17,8 @@
 }
 
 + (NSDictionary *)mj_replacedKeyFromPropertyName {
-    return @{ 
+    return @{
+             @"productId" : @"id",
              @"packRuleId" : @"packRule.id",
              @"productName" : @"name",
              @"limitAmount" : @"packRule.limitAmount",

@@ -76,7 +76,7 @@ InputTextView1Delgate>
         [SVProgressHUD dismiss];
         ProductBody *productBody = [ProductBody mj_objectWithKeyValues:request.responseJSONObject];
         if (productBody.statusType == IndentityStatusSuccess) {
-            //SLog(@"reuqe::++++::::%@",request.responseJSONObject);
+            SLog(@"详情::++++::::%@",request.responseJSONObject);
             weakSelf.productDetail = [productBody.productBody firstObject];
             [self renderUI];
         } else {

@@ -87,7 +87,7 @@ UITableViewDelegate>
     QRRequestProductPackList *request = [[QRRequestProductPackList alloc] init];
     request.pageIndex = [NSString stringWithFormat:@"%@",@(self.currentPage)];
     request.pageSize = [NSString stringWithFormat:@"%@",@(self.limit)];
-    request.packId = [NSString getStringWithString:self.productDetail.packRuleId];
+    request.packId = [NSString getStringWithString:self.productDetail.productId];
     __weak typeof(self) weakSelf = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [weakSelf.tableView.mj_header endRefreshing];
@@ -141,11 +141,15 @@ UITableViewDelegate>
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ProductRecordTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductRecordTableViewCell class])];
     ProductPack *pack = self.packs[indexPath.row];
-    cell.nameLabel.text =
-    [NSString getStringWithString:[NSString stringWithFormat:@"%@",pack.realName]];
+    NSString *name = [NSString stringWithFormat:@"%@",[NSString getStringWithString:pack.realName]];
+    NSLog(@"nameLLLL::::::::%@",name);
+    if (!name.length) {
+        name = @"未知用户";
+    }
+    cell.nameLabel.text = name;
     cell.addTimeLabel.text =
     [NSString getStringWithString:[NSString stringWithFormat:@"%@",pack.addTime]];
-    cell.moneyLabel.text = [NSString stringWithFormat:@"%.f",pack.money];
+    cell.moneyLabel.text = [NSString stringWithFormat:@"%.2f",pack.money];
     return cell;
 }
 

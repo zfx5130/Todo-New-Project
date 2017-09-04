@@ -78,7 +78,7 @@ UITableViewDelegate>
     QRRequestProductMarkList *request = [[QRRequestProductMarkList alloc] init];
     request.pageIndex = [NSString stringWithFormat:@"%@",@(self.currentPage)];
     request.pageSize = [NSString stringWithFormat:@"%@",@(self.limit)];
-    request.packId = [NSString getStringWithString:self.productDetail.packRuleId];
+    request.packId = [NSString getStringWithString:self.productDetail.productId];
     __weak typeof(self) weakSelf = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [weakSelf.tableView.mj_header endRefreshing];
@@ -145,10 +145,10 @@ UITableViewDelegate>
     [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductIncomeTableViewCell class])];
     ProductMask *mask = self.maskArray[indexPath.row];
     
-    cell.nameLabel.text =
-    [NSString getStringWithString:[NSString stringWithFormat:@"%@",mask.userName]];
-    cell.moneyLabel.text = [NSString stringWithFormat:@"%@",@(mask.amount)];
+    NSString *name = [NSString getStringWithString:[NSString stringWithFormat:@"%@",[NSString getStringWithString:mask.userName]]];
     
+    cell.nameLabel.text = name;
+    cell.moneyLabel.text = [NSString stringWithFormat:@"%@",@(mask.amount)];
     NSString *cardId = [NSString stringWithFormat:@"%@",[NSString getStringWithString:mask.userCardId]];
     cell.indentifyLabel.text = cardId;
     if (cardId.length >= 14) {
