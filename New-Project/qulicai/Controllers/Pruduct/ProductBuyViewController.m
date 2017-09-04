@@ -336,7 +336,18 @@ LLPaySdkDelegate>
     self.llOrder.acct_name = [NSString getStringWithString:[UserUtil currentUser].realName];
     self.llOrder.card_no = cardNumber;
     self.llOrder.id_no = [NSString getStringWithString:[UserUtil currentUser].cardId];
-    self.llOrder.risk_item = [LLOrder llJsonStringOfObj:@{@"user_info_dt_register" : @"20131030122130"}];
+    User *user = [UserUtil currentUser];
+    NSDictionary *dicString = @{
+                                @"user_info_bind_phone" : user.mobilePhone,
+                                @"user_info_dt_register" : QR_PARTNER_ID,
+                                @"user_info_id_no" : user.cardId,
+                                @"user_info_full_name" : user.realName,
+                                @"frms_ware_category" :  @"2009",
+                                @"user_info_mercht_userno" : user.userId,
+                                @"user_info_identify_type" : @"1",
+                                @"user_info_identify_state" : @"1"
+                                };
+    self.llOrder.risk_item = [LLOrder llJsonStringOfObj:dicString];
     self.llOrder.user_id = [UserUtil currentUser].userId;
     NSString *productName = self.isDetailSwap ? self.productDetail.productName : self.product.productName;
     self.llOrder.name_goods = productName;
