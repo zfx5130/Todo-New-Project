@@ -19,6 +19,7 @@
 #import "User.h"
 #import "UIImage+Custom.h"
 #import "QRRequestHeader.h"
+#import "QRWebViewController.h"
 
 @interface MineTableViewController ()
 
@@ -236,11 +237,17 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)setupCustomer {
-    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:NSStringFromClass([CustomerViewController class])
-                                                         bundle:nil];
-    CustomerViewController *settingsController = [storyBoard instantiateViewControllerWithIdentifier:NSStringFromClass([CustomerViewController class])];
-    settingsController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:settingsController
+//    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:NSStringFromClass([CustomerViewController class])
+//                                                         bundle:nil];
+//    CustomerViewController *settingsController = [storyBoard instantiateViewControllerWithIdentifier:NSStringFromClass([CustomerViewController class])];
+//    settingsController.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:settingsController
+//                                         animated:YES];
+    NSString *urlString = @"https://demo.qulicai8.com/#/service";
+    QRWebViewController *webViewController = [[QRWebViewController alloc] initWithTitle:@"客服"
+                                                                              URLString:urlString];
+    webViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:webViewController
                                          animated:YES];
 }
 
