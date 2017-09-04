@@ -19,7 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.hidesBackButton = YES;
     UIImage *backIndicatorImage = [UIImage imageNamed:@"forget_back_image"];
     UIBarButtonItem *backIndicatorBarButtonItem =
     [[UIBarButtonItem alloc] initWithImage:backIndicatorImage
@@ -27,7 +26,6 @@
                                     target:self
                                     action:@selector(dimiss)];
     self.applicationLeftBarButtonItems = @[backIndicatorBarButtonItem];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -35,6 +33,13 @@
     [self wr_setNavBarTitleColor:RGBColor(51.0f, 51.0f, 51.0f)];
     [self wr_setNavBarShadowImageHidden:NO];
     [self wr_setNavBarTintColor:RGBColor(51.0f, 51.0f, 51.0f)];
+    self.navigationItem.hidesBackButton = YES;
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    self.navigationItem.hidesBackButton = NO;
+    [self wr_setNavBarShadowImageHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning {
