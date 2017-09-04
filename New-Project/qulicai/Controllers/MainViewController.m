@@ -73,11 +73,13 @@ UITableViewDataSource>
     QRRequestCertificationLogin *request = [[QRRequestCertificationLogin alloc] init];
     request.userName = QR_IDENTITY_USERNAME;
     request.passWord = QR_IDENTITY_PASSWROD;
-    
-    NSString *tokenKey =  [[A0SimpleKeychain keychain] stringForKey:QR_IDENTITY_KEY];
-    if (tokenKey) {
-        [self requestProduct];
-    } else {
+    NSString *endTime = [[A0SimpleKeychain keychain] stringForKey:QR_ENDTIME_EXT];
+    NSString  *currentTime = [NSString getCurrentTimestamp];
+    NSInteger value  = [endTime integerValue] / 1000 - [currentTime integerValue];
+    NSString *indentityKey = [[A0SimpleKeychain keychain] stringForKey:QR_IDENTITY_KEY];
+    NSLog(@"令牌秘钥：：：：：：%@",indentityKey);
+    if (value < 30 * 60 || !indentityKey) {
+        NSLog(@"主页GetToken后获取产品列表");
         __weak typeof(self) weakSelf = self;
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             CertificationLogin *certification = [CertificationLogin mj_objectWithKeyValues:request.responseJSONObject];
@@ -95,6 +97,8 @@ UITableViewDataSource>
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
             NSLog(@"error:- %@", request.error);
         }];
+    } else {
+        [self requestProduct];
     }
 }
 
