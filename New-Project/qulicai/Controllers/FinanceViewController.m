@@ -83,7 +83,7 @@ UITableViewDataSource>
                                             pullingTitle:@"释放加载更多"
                                                   target:self
                                                 selector:@selector(loadMoreData)
-                                                  bottom:0];
+                                                  bottom:49];
     [self.tableView addHeaderControlWithIdleTitle:@"下拉刷新"
                                      pullingTitle:@"松开刷新"
                                   refreshingTitle:@"正在刷新"
