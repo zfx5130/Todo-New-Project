@@ -142,23 +142,40 @@ InputTextView1Delgate>
         [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductHeadTableViewCell class])];
         CGFloat rate = self.productDetail.interestRate * 100;
         CGFloat actRate = self.productDetail.activityRate * 100;
-        cell.yearIncomeLabel.text = [NSString stringWithFormat:@"%.1f%%+%.1f%%", rate, actRate];
-        NSMutableAttributedString *numText=
-        [[NSMutableAttributedString alloc]initWithString:cell.yearIncomeLabel.text
-                                              attributes:nil];
-        if (rate < 10 && cell.yearIncomeLabel.text.length > 6) {
-            [numText addAttribute:NSFontAttributeName
-                            value:[UIFont systemFontOfSize:14.0f]
-                            range:NSMakeRange(3, 2)];
+        
+        NSString *yearText = @"";
+        if (actRate <= 0) {
+            yearText = [NSString stringWithFormat:@"%.1f%%",rate];
+            NSDictionary *dic = @{
+                                  NSFontAttributeName : [UIFont systemFontOfSize:14.0f]
+                                  };
+            cell.yearIncomeLabel.text = yearText;
+            [cell.yearIncomeLabel addAttributes:dic
+                                        forText:@"%"];
+            
         } else {
+            yearText = [NSString stringWithFormat:@"%.1f%%+%.1f%%", rate, actRate];
+            cell.yearIncomeLabel.text = yearText;
+            NSMutableAttributedString *numText=
+            [[NSMutableAttributedString alloc]initWithString:cell.yearIncomeLabel.text
+                                                  attributes:nil];
+            if (rate < 10 && cell.yearIncomeLabel.text.length > 6) {
+                [numText addAttribute:NSFontAttributeName
+                                value:[UIFont systemFontOfSize:14.0f]
+                                range:NSMakeRange(3, 2)];
+            } else {
+                [numText addAttribute:NSFontAttributeName
+                                value:[UIFont systemFontOfSize:14.0f]
+                                range:NSMakeRange(4, 2)];
+            }
             [numText addAttribute:NSFontAttributeName
                             value:[UIFont systemFontOfSize:14.0f]
-                            range:NSMakeRange(4, 2)];
+                            range:NSMakeRange(cell.yearIncomeLabel.text.length - 1, 1)];
+            
+            cell.yearIncomeLabel.attributedText = numText;
         }
-        [numText addAttribute:NSFontAttributeName
-                        value:[UIFont systemFontOfSize:14.0f]
-                        range:NSMakeRange(cell.yearIncomeLabel.text.length - 1, 1)];
-        cell.yearIncomeLabel.attributedText = numText;
+        
+        
         BOOL isSellOut = self.productDetail.residualAmount > 0 ? NO : YES;
         cell.sellOutImageView.hidden = !isSellOut;
 

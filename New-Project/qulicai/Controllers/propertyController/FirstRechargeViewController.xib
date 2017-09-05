@@ -269,6 +269,7 @@
                 <constraint firstAttribute="trailing" secondItem="J1l-X4-whr" secondAttribute="trailing" id="c1R-I7-uqp"/>
                 <constraint firstItem="5qf-9w-Qnw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="t40-gT-kkB"/>
             </constraints>
+            <point key="canvasLocation" x="26.5" y="51.5"/>
         </view>
     </objects>
     <resources>

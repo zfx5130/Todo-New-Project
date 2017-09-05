@@ -58,7 +58,7 @@ UITableViewDataSource>
                                              selector:@selector(requestProduct)
                                                  name:QR_NOTIFICATION_IDENTITY_SUCCEED
                                                object:nil];
-    [self loadNewData];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -76,6 +76,7 @@ UITableViewDataSource>
 #pragma mark - Private
 
 - (void)addRefreshControl {
+    
     [self.tableView addBackFooterRefreshControlIdleTitle:@"上拉加载更多"
                                               noMoreData:@"没有更多产品"
                                          refreshingTitle:@"正在加载"
@@ -89,7 +90,9 @@ UITableViewDataSource>
                                            target:self
                                          selector:@selector(loadNewData)];
     self.currentPage = 1;
-    self.limit = 8;
+    self.limit = 10;
+    [self.tableView.mj_header beginRefreshing];
+    
 }
 
 - (void)loadNewData {
@@ -206,25 +209,41 @@ UITableViewDataSource>
                  forControlEvents:UIControlEventTouchUpInside];
     }
     Product *product = self.productArray[indexPath.section];
+    
     CGFloat rate = product.interestRate * 100;
     CGFloat actRate = product.activityRate * 100;
-    cell.yearSaleLabel.text = [NSString stringWithFormat:@"%.1f%%+%.1f%%", rate, actRate];
-    NSMutableAttributedString *numText=
-    [[NSMutableAttributedString alloc]initWithString:cell.yearSaleLabel.text
-                                          attributes:nil];
-    if (rate < 10 && cell.yearSaleLabel.text.length > 6) {
-        [numText addAttribute:NSFontAttributeName
-                        value:[UIFont systemFontOfSize:14.0f]
-                        range:NSMakeRange(3, 2)];
+    
+    NSString *yearText = @"";
+    if (actRate <= 0) {
+        yearText = [NSString stringWithFormat:@"%.1f%%",rate];
+        NSDictionary *dic = @{
+                              NSFontAttributeName : [UIFont systemFontOfSize:14.0f]
+                              };
+        cell.yearSaleLabel.text = yearText;
+        [cell.yearSaleLabel addAttributes:dic
+                                  forText:@"%"];
+        
     } else {
+        yearText = [NSString stringWithFormat:@"%.1f%%+%.1f%%", rate, actRate];
+        cell.yearSaleLabel.text = yearText;
+        NSMutableAttributedString *numText=
+        [[NSMutableAttributedString alloc]initWithString:cell.yearSaleLabel.text
+                                              attributes:nil];
+        if (rate < 10 && cell.yearSaleLabel.text.length > 6) {
+            [numText addAttribute:NSFontAttributeName
+                            value:[UIFont systemFontOfSize:14.0f]
+                            range:NSMakeRange(3, 2)];
+        } else {
+            [numText addAttribute:NSFontAttributeName
+                            value:[UIFont systemFontOfSize:14.0f]
+                            range:NSMakeRange(4, 2)];
+        }
         [numText addAttribute:NSFontAttributeName
                         value:[UIFont systemFontOfSize:14.0f]
-                        range:NSMakeRange(4, 2)];
+                        range:NSMakeRange(cell.yearSaleLabel.text.length - 1, 1)];
+        
+        cell.yearSaleLabel.attributedText = numText;
     }
-    [numText addAttribute:NSFontAttributeName
-                    value:[UIFont systemFontOfSize:14.0f]
-                    range:NSMakeRange(cell.yearSaleLabel.text.length - 1, 1)];
-    cell.yearSaleLabel.attributedText = numText;
     
     cell.deadlineLabel.text = product.periods;
     cell.productTagLabel.text = cell.yearSaleLabel.text;
@@ -234,8 +253,8 @@ UITableViewDataSource>
     
     BOOL isSellOut = product.residualAmount > 0 ? NO : YES;
     cell.sellOutImageView.hidden = !isSellOut ;
-    cell.buyButton.hidden = isSellOut;
-    cell.bottomViewHeightConstraint.constant = !isSellOut ? 50.0f : 0.0f;
+    cell.buyButton.hidden = !(indexPath.section == 0);
+    cell.bottomViewHeightConstraint.constant = (indexPath.section == 0 && !isSellOut)  ? 50.0f : 0.0f;
     
     cell.progressView.progressTintColor = !isSellOut ? RGBColor(247.0f, 97.0f, 34.0f) : RGBColor(221.0f, 221.0f, 221.0f);
     cell.progressView.progress = !isSellOut ? 0.8f : 1.0f;
@@ -257,7 +276,7 @@ UITableViewDataSource>
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     Product *product = self.productArray[indexPath.section];
     BOOL isSellOut = product.residualAmount > 0 ? NO : YES;
-    CGFloat height = isSellOut ? 161.0f : 210.0f;
+    CGFloat height = indexPath.section == 0 && !isSellOut ? 210.0f : 161.0f;
     return height;
 }
 

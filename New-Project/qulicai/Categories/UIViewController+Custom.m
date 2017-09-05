@@ -11,6 +11,7 @@
 #import "UILabel+Custom.h"
 #import "UIImage+Custom.h"
 #import "UIColor+Custom.h"
+#import "UIImage+GIF.h"
 
 @implementation UIViewController (Custom)
 

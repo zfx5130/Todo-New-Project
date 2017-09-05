@@ -61,7 +61,6 @@ UITableViewDataSource>
     [self wr_setNavBarBackgroundAlpha:0];
     [self requestToken];
     [self updateUserInfo];
-    //[self showSVProgressHUD];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -107,7 +106,7 @@ UITableViewDataSource>
     
     QRRequestProductList *request = [[QRRequestProductList alloc] init];
     request.currentPage = @"1";
-    request.pageSize = @"8";
+    request.pageSize = @"5";
     __weak typeof(self) weakSelf = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         ProductList *productList = [ProductList mj_objectWithKeyValues:request.responseJSONObject];
@@ -209,23 +208,39 @@ UITableViewDataSource>
         
         CGFloat rate = self.product.interestRate * 100;
         CGFloat actRate = self.product.activityRate * 100;
-        cell.yearSaleLabel.text = [NSString stringWithFormat:@"%.1f%%+%.1f%%", rate, actRate];
-        NSMutableAttributedString *numText=
-        [[NSMutableAttributedString alloc]initWithString:cell.yearSaleLabel.text
-                                              attributes:nil];
-        if (rate < 10 && cell.yearSaleLabel.text.length > 6) {
-            [numText addAttribute:NSFontAttributeName
-                            value:[UIFont systemFontOfSize:14.0f]
-                            range:NSMakeRange(3, 2)];
+        
+        NSString *yearText = @"";
+        if (actRate <= 0) {
+            yearText = [NSString stringWithFormat:@"%.1f%%",rate];
+            NSDictionary *dic = @{
+                                  NSFontAttributeName : [UIFont systemFontOfSize:14.0f]
+                                  };
+            cell.yearSaleLabel.text = yearText;
+            [cell.yearSaleLabel addAttributes:dic
+                                      forText:@"%"];
+            
         } else {
+            yearText = [NSString stringWithFormat:@"%.1f%%+%.1f%%", rate, actRate];
+            cell.yearSaleLabel.text = yearText;
+            NSMutableAttributedString *numText=
+            [[NSMutableAttributedString alloc]initWithString:cell.yearSaleLabel.text
+                                                  attributes:nil];
+            if (rate < 10 && cell.yearSaleLabel.text.length > 6) {
+                [numText addAttribute:NSFontAttributeName
+                                value:[UIFont systemFontOfSize:14.0f]
+                                range:NSMakeRange(3, 2)];
+            } else {
+                [numText addAttribute:NSFontAttributeName
+                                value:[UIFont systemFontOfSize:14.0f]
+                                range:NSMakeRange(4, 2)];
+            }
             [numText addAttribute:NSFontAttributeName
                             value:[UIFont systemFontOfSize:14.0f]
-                            range:NSMakeRange(4, 2)];
+                            range:NSMakeRange(cell.yearSaleLabel.text.length - 1, 1)];
+            
+            cell.yearSaleLabel.attributedText = numText;
         }
-        [numText addAttribute:NSFontAttributeName
-                        value:[UIFont systemFontOfSize:14.0f]
-                        range:NSMakeRange(cell.yearSaleLabel.text.length - 1, 1)];
-        cell.yearSaleLabel.attributedText = numText;
+        
         
         cell.deadlineLabel.text = self.product.periods;
         cell.productTagLabel.text = cell.yearSaleLabel.text;

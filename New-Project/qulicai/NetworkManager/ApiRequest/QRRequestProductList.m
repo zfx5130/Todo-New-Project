@@ -19,10 +19,9 @@
 }
 
 - (id)requestArgument {
-    self.periods = @"10";
     return @{
              @"head" : @{ @"serviceName" : @"getPackInfo" },
-             @"body" : @{ @"pageIndex" : self.currentPage , @"pageSize" : self.pageSize, @"periods" : self.periods }
+             @"body" : @{ @"pageIndex" : self.currentPage , @"pageSize" : self.pageSize }
              };
 }
 
