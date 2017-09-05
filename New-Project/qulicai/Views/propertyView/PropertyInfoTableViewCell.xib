@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIA-V7-p62">
@@ -48,6 +48,13 @@
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpW-et-agv">
+                        <rect key="frame" x="15" y="59" width="345" height="0.0"/>
+                        <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="SuC-6p-TDv"/>
+                        </constraints>
+                    </view>
                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dP8-rt-ZKb">
                         <rect key="frame" x="360" y="33" width="0.0" height="17"/>
                         <constraints>
@@ -61,9 +68,12 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="xIA-V7-p62" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="8EN-SE-sVK"/>
+                    <constraint firstAttribute="trailing" secondItem="vpW-et-agv" secondAttribute="trailing" constant="15" id="A9H-7L-SPl"/>
                     <constraint firstItem="xIA-V7-p62" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="BXK-7n-1OE"/>
+                    <constraint firstItem="vpW-et-agv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="DQC-QY-f87"/>
                     <constraint firstItem="dP8-rt-ZKb" firstAttribute="top" secondItem="DHU-cp-gJK" secondAttribute="bottom" constant="5" id="Gfw-eJ-XJY"/>
                     <constraint firstItem="Zcn-Zl-AZc" firstAttribute="top" secondItem="xIA-V7-p62" secondAttribute="bottom" constant="5" id="HpS-Yt-Wah"/>
+                    <constraint firstAttribute="bottom" secondItem="vpW-et-agv" secondAttribute="bottom" constant="0.5" id="TKI-oX-h1v"/>
                     <constraint firstAttribute="trailing" secondItem="DHU-cp-gJK" secondAttribute="trailing" constant="15" id="Vud-CS-RSq"/>
                     <constraint firstItem="Zcn-Zl-AZc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="e1d-Hx-oTJ"/>
                     <constraint firstAttribute="trailing" secondItem="dP8-rt-ZKb" secondAttribute="trailing" constant="15" id="fHv-4P-Vjy"/>
