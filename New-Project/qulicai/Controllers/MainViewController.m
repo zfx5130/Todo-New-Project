@@ -25,6 +25,7 @@
 #import "ProductList.h"
 #import "Product.h"
 #import "CertificationLogin.h"
+#import "UIView+ADGifLoading.h"
 
 #define NAVBAR_COLORCHANGE_POINT (-IMAGE_HEIGHT + NAV_HEIGHT*2)
 #define NAV_HEIGHT 64

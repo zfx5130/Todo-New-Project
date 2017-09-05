@@ -68,12 +68,16 @@ InputTextView1Delgate>
 
 - (void)requestProductDetail {
     [self showSVProgressHUD];
+    
+    //[GiFHUD setGifWithImageName:@"loading.gif"];
+    [GiFHUD showWithOverlay];
     QRRequestProductDetail *request = [[QRRequestProductDetail alloc] init];
     request.packId = [NSString getStringWithString:self.pickId];
     
     __weak typeof(self) weakSelf = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [SVProgressHUD dismiss];
+        //[GiFHUD dismiss];
         ProductBody *productBody = [ProductBody mj_objectWithKeyValues:request.responseJSONObject];
         if (productBody.statusType == IndentityStatusSuccess) {
             SLog(@"详情::++++::::%@",request.responseJSONObject);

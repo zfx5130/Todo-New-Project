@@ -10,6 +10,7 @@
 		8422BF221F5E7F2900F5B0FC /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 8422BF211F5E7F2900F5B0FC /* UIImage+GIF.m */; };
 		8422BF241F5E7FE500F5B0FC /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8422BF231F5E7FE500F5B0FC /* loading.gif */; };
 		8422BF2F1F5E87A000F5B0FC /* UIView+ADGifLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 8422BF2E1F5E87A000F5B0FC /* UIView+ADGifLoading.m */; };
+		8422BF381F5EB1A800F5B0FC /* GiFHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8422BF371F5EB1A800F5B0FC /* GiFHUD.m */; };
 		842616751F4AD33200A96EFD /* QRInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842616731F4AD33200A96EFD /* QRInfoTableViewCell.m */; };
 		842616761F4AD33200A96EFD /* QRInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842616741F4AD33200A96EFD /* QRInfoTableViewCell.xib */; };
 		8426167A1F4ADEC900A96EFD /* AboutQRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842616781F4ADEC900A96EFD /* AboutQRViewController.m */; };
@@ -296,6 +297,8 @@
 		8422BF231F5E7FE500F5B0FC /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		8422BF2D1F5E87A000F5B0FC /* UIView+ADGifLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ADGifLoading.h"; sourceTree = "<group>"; };
 		8422BF2E1F5E87A000F5B0FC /* UIView+ADGifLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ADGifLoading.m"; sourceTree = "<group>"; };
+		8422BF361F5EB1A800F5B0FC /* GiFHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiFHUD.h; sourceTree = "<group>"; };
+		8422BF371F5EB1A800F5B0FC /* GiFHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiFHUD.m; sourceTree = "<group>"; };
 		842616721F4AD33200A96EFD /* QRInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRInfoTableViewCell.h; sourceTree = "<group>"; };
 		842616731F4AD33200A96EFD /* QRInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRInfoTableViewCell.m; sourceTree = "<group>"; };
 		842616741F4AD33200A96EFD /* QRInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QRInfoTableViewCell.xib; sourceTree = "<group>"; };
@@ -1199,6 +1202,8 @@
 				844FB8471F4EB205001772AF /* propertyView */,
 				844402A11F42F21100F5AFEE /* SendVerifyCodeButton.h */,
 				844402A21F42F21100F5AFEE /* SendVerifyCodeButton.m */,
+				8422BF361F5EB1A800F5B0FC /* GiFHUD.h */,
+				8422BF371F5EB1A800F5B0FC /* GiFHUD.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2104,6 +2109,7 @@
 				8435E5B31F399C1E00424E5E /* CLLockItemView.m in Sources */,
 				842A932D1F541E07001822EF /* QRRequestProductDetail.m in Sources */,
 				84825E2A1F4687B6006A921F /* FinanceCarouselTableViewCell.m in Sources */,
+				8422BF381F5EB1A800F5B0FC /* GiFHUD.m in Sources */,
 				84CE16F51F4F0CD300E61C7D /* MoneyRechargeViewController.m in Sources */,
 				844402891F41B2B000F5AFEE /* UIFont+Custom.m in Sources */,
 				842A930F1F52D86F001822EF /* VerifyCode.m in Sources */,
