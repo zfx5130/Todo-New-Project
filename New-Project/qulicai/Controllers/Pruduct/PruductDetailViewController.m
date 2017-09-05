@@ -70,7 +70,7 @@ InputTextView1Delgate>
     [self showSVProgressHUD];
     
     //[GiFHUD setGifWithImageName:@"loading.gif"];
-    [GiFHUD showWithOverlay];
+   // [GiFHUD showWithOverlay];
     QRRequestProductDetail *request = [[QRRequestProductDetail alloc] init];
     request.packId = [NSString getStringWithString:self.pickId];
     
