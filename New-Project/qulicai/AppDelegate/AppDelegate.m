@@ -30,6 +30,8 @@
                                              selector:@selector(handleRequestApi)
                                                  name:QR_NOTIFICATIONCENTER_INDENTITY_KEY_IS_NULL
                                                object:nil];
+    [self requestVersionInfo];
+    [self addTestGCD];
     sleep(1.5);
     return YES;
 }
@@ -97,6 +99,27 @@
         }];
     }
 }
+
+
+- (void)requestVersionInfo {
+    
+    //获取版本号信息
+    //NSString *apiVersion = @"1.0.0";
+    NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
+    NSString *currentBuildVersion = [infoDic objectForKey:@"CFBundleVersion"];
+    NSString *currentVersion = [infoDic objectForKey:@"CFBundleShortVersionString"];
+    NSLog(@"currentVersion::::::::%@::::currentBuildVersion::::%@",currentVersion, currentBuildVersion);
+    
+}
+
+
+- (void)addTestGCD {
+    
+    
+    
+}
+
+
 
 #pragma mark -lifecycle
 

@@ -12,4 +12,7 @@
 
 - (NSDictionary *)dictionaryByReplacingNullsWithBlanks;
 
+//json格式字符串转字典
+- (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString;
+
 @end

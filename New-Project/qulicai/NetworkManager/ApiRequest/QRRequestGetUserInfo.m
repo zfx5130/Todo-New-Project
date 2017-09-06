@@ -19,10 +19,14 @@
 }
 
 - (id)requestArgument {
+    NSDictionary *bodyDic = @{ @"userId" : self.userId};
+    NSString *currentStr = [[[NSString dictionaryToJson:bodyDic] stringByReplacingOccurrencesOfString:@" " withString:@""] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSLog(@"::::::::::%@",currentStr);
+    NSString *keyValue = [NSString getMd5_32Bit_String:currentStr];
+    NSLog(@"md5::::::%@",keyValue);// @"key" : keyValue
     return @{
              @"head" : @{ @"serviceName" : @"getAppUserByUserId" },
-             @"body" : @{ @"userId" : self.userId }
-//             @"body" : @{ @"userId" : @"2" }
+             @"body" : bodyDic
              };
 }
 

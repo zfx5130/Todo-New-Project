@@ -62,4 +62,10 @@
 
 + (NSString *)timeStamp;
 
+//MD5 32位 大写加密 小写x
++ (NSString *)getMd5_32Bit_String:(NSString *)srcString;
+
+//字典转json格式字符串
++ (NSString*)dictionaryToJson:(NSDictionary *)dic;
+
 @end
