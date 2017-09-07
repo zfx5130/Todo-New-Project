@@ -12,6 +12,7 @@
 #import "QRRequestHeader.h"
 #import "MaskList.h"
 #import "ProductMask.h"
+#import "BorrowMoneyDetailTableViewController.h"
 
 @interface ProductIncomeViewController ()
 <UITableViewDataSource,
@@ -175,6 +176,17 @@ heightForFooterInSection:(NSInteger)section {
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    ProductMask *mask = self.maskArray[indexPath.row];
+    [tableView deselectRowAtIndexPath:indexPath
+                             animated:YES];
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:NSStringFromClass([BorrowMoneyDetailTableViewController class])
+                                                         bundle:nil];
+    BorrowMoneyDetailTableViewController *borrowController =
+    [storyBoard instantiateViewControllerWithIdentifier:NSStringFromClass([BorrowMoneyDetailTableViewController class])];
+    borrowController.markId = mask.maskId;
+    [self.navigationController pushViewController:borrowController
+                                         animated:YES];
     
 }
 

@@ -2288,7 +2288,7 @@
 					"$(PROJECT_DIR)/qulicai/Venders/LLPay/LLPaySDK",
 					"$(PROJECT_DIR)/qulicai/Venders/LLPay/LLPayUtils",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = qurong.qulicai.3435;
+				PRODUCT_BUNDLE_IDENTIFIER = qurong.qulicai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -2308,7 +2308,7 @@
 					"$(PROJECT_DIR)/qulicai/Venders/LLPay/LLPaySDK",
 					"$(PROJECT_DIR)/qulicai/Venders/LLPay/LLPayUtils",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = qurong.qulicai.3435;
+				PRODUCT_BUNDLE_IDENTIFIER = qurong.qulicai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

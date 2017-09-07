@@ -50,8 +50,8 @@
                         <color key="textColor" red="0.94901960784313721" green="0.34901960784313724" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jl0-uf-3V5">
-                        <rect key="frame" x="15" y="202" width="0.0" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预期年化收益" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jl0-uf-3V5">
+                        <rect key="frame" x="15" y="202" width="74" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="Vrk-fR-xE8"/>
                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="Zgg-ZC-wPL"/>
