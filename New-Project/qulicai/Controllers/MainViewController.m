@@ -27,10 +27,12 @@
 #import "CertificationLogin.h"
 #import "UIView+ADGifLoading.h"
 
-#define NAVBAR_COLORCHANGE_POINT (-IMAGE_HEIGHT + NAV_HEIGHT*2)
+
 #define NAV_HEIGHT 64
-#define IMAGE_HEIGHT 250
+#define IMAGE_HEIGHT IS_IPHONE_5 ? 230 : 250
 #define SCROLL_DOWN_LIMIT 100
+
+#define NAVBAR_COLORCHANGE_POINT (-IMAGE_HEIGHT + NAV_HEIGHT*2)
 #define LIMIT_OFFSET_Y -(IMAGE_HEIGHT + SCROLL_DOWN_LIMIT)
 
 @interface MainViewController ()
@@ -309,6 +311,8 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = 150.0f;
     if (!indexPath.section) {
         height = self.product.residualAmount > 0 ? 210.0f : 160.0f;
+    } else {
+        height = IS_IPHONE_5 ? 140.0f : 150.0f;
     }
     return height;
 }

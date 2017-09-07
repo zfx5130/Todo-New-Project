@@ -13,6 +13,8 @@
             <connections>
                 <outlet property="aView" destination="iN0-l3-epB" id="C6q-lq-9ia"/>
                 <outlet property="allMoneyLabel" destination="joO-zc-Noo" id="5o5-8A-JPe"/>
+                <outlet property="bottomLabelBottomConstraint" destination="Gdh-ae-h2Z" id="IsV-bt-7aE"/>
+                <outlet property="centerLabelBottonConstraint" destination="6oq-V5-s2R" id="WYb-FQ-vmd"/>
                 <outlet property="incomeButton" destination="UYD-5O-AzF" id="7H9-xu-3BF"/>
                 <outlet property="pickMoneyButton" destination="29F-0B-IGZ" id="euo-jP-PtX"/>
                 <outlet property="pickTagImageView" destination="raI-QI-jhn" id="PhX-5Q-9yM"/>
@@ -68,8 +70,8 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="224,2345,352" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joO-zc-Noo">
-                    <rect key="frame" x="123" y="178" width="131" height="24"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joO-zc-Noo">
+                    <rect key="frame" x="188.5" y="178" width="0.0" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="7ky-TL-key"/>
                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="230" id="rZq-Dy-fmM"/>
@@ -94,7 +96,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9a-2T-DDh">
                     <rect key="frame" x="144" y="181" width="88" height="67"/>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Sl6-35-pd9">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Sl6-35-pd9">
                     <rect key="frame" x="74" y="76" width="227" height="56"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="227" id="AQV-u5-f9f"/>

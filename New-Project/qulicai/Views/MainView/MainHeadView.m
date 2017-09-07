@@ -29,7 +29,10 @@
 }
 
 - (void)setupView {
-
+    if (IS_IPHONE_5) {
+        self.bottomLabelBottomConstraint.constant = 17.0f;
+        self.centerLabelBottonConstraint.constant = 15.0f;
+    }
 }
 
 

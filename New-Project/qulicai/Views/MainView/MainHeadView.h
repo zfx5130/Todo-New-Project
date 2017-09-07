@@ -24,4 +24,10 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *totalPropertyButton;
 
+//27
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLabelBottomConstraint;
+
+//24
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *centerLabelBottonConstraint;
+
 @end

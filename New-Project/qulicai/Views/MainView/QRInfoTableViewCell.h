@@ -16,4 +16,11 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *qrInfoButton;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftTopConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *centerTopConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightTopConstraint;
+
+
 @end

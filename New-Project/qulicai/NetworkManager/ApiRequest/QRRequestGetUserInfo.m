@@ -20,12 +20,15 @@
 
 - (id)requestArgument {
     NSDictionary *bodyDic = @{ @"userId" : self.userId};
-    NSString *currentStr = [[[NSString dictionaryToJson:bodyDic] stringByReplacingOccurrencesOfString:@" " withString:@""] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSString *currentStr =
+    [NSString stringWithFormat:@"%@qr",[NSString dictionaryToJson:bodyDic]];
+    //
+    //[[[NSString dictionaryToJson:bodyDic] stringByReplacingOccurrencesOfString:@" " withString:@""] stringByReplacingOccurrencesOfString:@"\n" withString:@""]
     NSLog(@"::::::::::%@",currentStr);
     NSString *keyValue = [NSString getMd5_32Bit_String:currentStr];
     NSLog(@"md5::::::%@",keyValue);// @"key" : keyValue
     return @{
-             @"head" : @{ @"serviceName" : @"getAppUserByUserId" },
+             @"head" : @{ @"serviceName" : @"getAppUserByUserId", @"key" : keyValue },
              @"body" : bodyDic
              };
 }

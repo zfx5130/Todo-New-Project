@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oip-mD-3NW" userLabel="Head View">
@@ -191,15 +191,18 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="centerTopConstraint" destination="CaY-lh-5Oc" id="C3U-AM-mgz"/>
+                <outlet property="leftTopConstraint" destination="0jQ-u3-bFc" id="Zvi-n2-P2F"/>
                 <outlet property="platformDataButton" destination="wuj-fP-Mvm" id="3K7-Ux-N27"/>
                 <outlet property="qrInfoButton" destination="eVu-Ce-ykp" id="IRt-ro-8Dq"/>
+                <outlet property="rightTopConstraint" destination="Jrn-PG-k4d" id="QRY-bY-yOX"/>
                 <outlet property="safeButton" destination="d9r-zM-dvz" id="shP-rq-FID"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="123"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="qr_data_image" width="30" height="27"/>
+        <image name="qr_data_image" width="30" height="30"/>
         <image name="qr_info_image" width="16" height="15"/>
         <image name="qr_infomation_image" width="26" height="30"/>
         <image name="qr_save_image" width="24" height="29"/>
