@@ -31,7 +31,6 @@
                                                  name:QR_NOTIFICATIONCENTER_INDENTITY_KEY_IS_NULL
                                                object:nil];
     [self requestVersionInfo];
-    [self addTestGCD];
     sleep(1.5);
     return YES;
 }
@@ -111,15 +110,6 @@
     NSLog(@"currentVersion::::::::%@::::currentBuildVersion::::%@",currentVersion, currentBuildVersion);
     
 }
-
-
-- (void)addTestGCD {
-    
-    
-    
-}
-
-
 
 #pragma mark -lifecycle
 
