@@ -114,7 +114,7 @@ UITableViewDataSource>
         [weakSelf.tableView.mj_footer endRefreshing];
         ProductList *productList = [ProductList mj_objectWithKeyValues:request.responseJSONObject];
         if (productList.statusType == IndentityStatusSuccess) {
-            SLog(@"------%@",request.responseJSONObject);
+            //SLog(@"productList------%@",request.responseJSONObject);
            // NSLog(@"count:::::%@",@(productList.products.count));
             if (weakSelf.currentPage == 1) {
                 weakSelf.productArray = [NSMutableArray arrayWithArray:productList.products];
@@ -138,6 +138,7 @@ UITableViewDataSource>
         }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         [self showErrorWithTitle:@"请求失败"];
+       // NSLog(@"producterror::::::::%@",request.error);
         [weakSelf.tableView.mj_header endRefreshing];
         [weakSelf.tableView.mj_footer endRefreshing];
     }];
