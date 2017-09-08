@@ -225,6 +225,8 @@
 		84CE17041F5149E200E61C7D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CE17031F5149E200E61C7D /* User.m */; };
 		84CE17091F5156F300E61C7D /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CE17081F5156F300E61C7D /* BaseModel.m */; };
 		84CE170C1F5164A500E61C7D /* Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CE170B1F5164A500E61C7D /* Bank.m */; };
+		84D0A5C91F6237B200011027 /* QRRequestGetVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D0A5C81F6237B200011027 /* QRRequestGetVersion.m */; };
+		84D0A5CC1F62383C00011027 /* Version.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D0A5CB1F62383C00011027 /* Version.m */; };
 		84D7066B1F57F0A9007EB86B /* VerifyCardPay.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D7066A1F57F0A9007EB86B /* VerifyCardPay.m */; };
 		84D7066E1F57F2FC007EB86B /* QRRequestUserRecharge.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D7066D1F57F2FC007EB86B /* QRRequestUserRecharge.m */; };
 		84D706711F57F6B9007EB86B /* RechargeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D706701F57F6B9007EB86B /* RechargeInfo.m */; };
@@ -672,6 +674,10 @@
 		84CE17081F5156F300E61C7D /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		84CE170A1F5164A500E61C7D /* Bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bank.h; sourceTree = "<group>"; };
 		84CE170B1F5164A500E61C7D /* Bank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bank.m; sourceTree = "<group>"; };
+		84D0A5C71F6237B200011027 /* QRRequestGetVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestGetVersion.h; sourceTree = "<group>"; };
+		84D0A5C81F6237B200011027 /* QRRequestGetVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestGetVersion.m; sourceTree = "<group>"; };
+		84D0A5CA1F62383C00011027 /* Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Version.h; sourceTree = "<group>"; };
+		84D0A5CB1F62383C00011027 /* Version.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Version.m; sourceTree = "<group>"; };
 		84D706691F57F0A9007EB86B /* VerifyCardPay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyCardPay.h; sourceTree = "<group>"; };
 		84D7066A1F57F0A9007EB86B /* VerifyCardPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyCardPay.m; sourceTree = "<group>"; };
 		84D7066C1F57F2FC007EB86B /* QRRequestUserRecharge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestUserRecharge.h; sourceTree = "<group>"; };
@@ -1155,6 +1161,8 @@
 				84D706701F57F6B9007EB86B /* RechargeInfo.m */,
 				843D43041F58171A0079A364 /* ProductBuy.h */,
 				843D43051F58171A0079A364 /* ProductBuy.m */,
+				84D0A5CA1F62383C00011027 /* Version.h */,
+				84D0A5CB1F62383C00011027 /* Version.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1395,6 +1403,8 @@
 				84D7066D1F57F2FC007EB86B /* QRRequestUserRecharge.m */,
 				843D43011F58149C0079A364 /* QRRequestProductBuy.h */,
 				843D43021F58149C0079A364 /* QRRequestProductBuy.m */,
+				84D0A5C71F6237B200011027 /* QRRequestGetVersion.h */,
+				84D0A5C81F6237B200011027 /* QRRequestGetVersion.m */,
 			);
 			path = ApiRequest;
 			sourceTree = "<group>";
@@ -1956,6 +1966,7 @@
 				844402881F41B2B000F5AFEE /* UIColor+RGBValues.m in Sources */,
 				842A932A1F54094D001822EF /* UIScrollView+Custom.m in Sources */,
 				84E5F6681F5571CF004432BF /* QRRequestLoanContract.m in Sources */,
+				84D0A5CC1F62383C00011027 /* Version.m in Sources */,
 				8435E5AF1F399C1E00424E5E /* CALayer+Anim.m in Sources */,
 				844402961F41B2B000F5AFEE /* UIViewController+Custom.m in Sources */,
 				844402AF1F43F9F600F5AFEE /* ResetPasswordViewController.m in Sources */,
@@ -2064,6 +2075,7 @@
 				844402461F418F1400F5AFEE /* QRTabbarController.m in Sources */,
 				844FB85F1F4ECE65001772AF /* PropertyPickupViewController.m in Sources */,
 				CE30A3D81F5478F600FB7763 /* QRRequestProductPackList.m in Sources */,
+				84D0A5C91F6237B200011027 /* QRRequestGetVersion.m in Sources */,
 				844402851F41B2B000F5AFEE /* NSString+Custom.m in Sources */,
 				84B51CF11F56C1D400840F94 /* LLOrder.m in Sources */,
 				CE30A3D21F5469A900FB7763 /* ProductMask.m in Sources */,

@@ -108,7 +108,7 @@
 
 #define QR_PARTNER_ID @"201408071000001543"
 #define QR_MD5_KEY @"201408071000001543test_20140812"
-#define QR_NOTIFY_URL @"https://demo.qulicai8.com:8996/p2p-notify/service"
+#define QR_NOTIFY_URL @"https://tnotify.qulicai8.com/p2p-notify/service"
 #define QR_SING_TYPE @"MD5"
 
 
