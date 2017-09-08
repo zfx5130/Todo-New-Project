@@ -40,5 +40,6 @@
 #import "QRRequestGetLLKey.h"
 #import "QRRequestUserRecharge.h"
 #import "QRRequestProductBuy.h"
+#import "QRRequestGetVersion.h"
 
 #endif /* QRRequestHeader_h */

@@ -100,15 +100,15 @@
 }
 
 
-- (void)requestVersionInfo {
-    
+- (void)requestVersionInfo {    
     //获取版本号信息
-    //NSString *apiVersion = @"1.0.0";
-    NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
-    NSString *currentBuildVersion = [infoDic objectForKey:@"CFBundleVersion"];
-    NSString *currentVersion = [infoDic objectForKey:@"CFBundleShortVersionString"];
-    NSLog(@"currentVersion::::::::%@::::currentBuildVersion::::%@",currentVersion, currentBuildVersion);
-    
+   // NSString *apiVersion = @"1.0.0";
+//    NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
+//    NSString *currentBuildVersion = [infoDic objectForKey:@"CFBundleVersion"];
+//    NSString *currentVersion = [infoDic objectForKey:@"CFBundleShortVersionString"];
+//    NSLog(@"currentVersion::::::::%@::::currentBuildVersion::::%@",currentVersion, currentBuildVersion);
+//    NSString *apiFirstLetter = [currentVersion substringToIndex:1];
+//    NSLog(@"apl:::::%@",apiFirstLetter);
 }
 
 #pragma mark -lifecycle

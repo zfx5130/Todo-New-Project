@@ -26,6 +26,7 @@
 #import "Product.h"
 #import "CertificationLogin.h"
 #import "UIView+ADGifLoading.h"
+#import "Version.h"
 
 
 #define NAV_HEIGHT 64
@@ -37,7 +38,8 @@
 
 @interface MainViewController ()
 <UITableViewDelegate,
-UITableViewDataSource>
+UITableViewDataSource,
+UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -57,6 +59,7 @@ UITableViewDataSource>
     [self setupTableHeadView];
     [self setupNavigationItemLeft:[UIImage imageNamed:@""]];
     [self reloadUI];
+    [self getAppVersion];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -71,6 +74,49 @@ UITableViewDataSource>
 }
 
 #pragma mark - Priavte
+
+- (void)getAppVersion {
+    QRRequestGetVersion *request = [[QRRequestGetVersion alloc] init];
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        Version *version = [Version mj_objectWithKeyValues:request.responseJSONObject];
+        if (version.statusType == IndentityStatusSuccess) {
+            NSLog(@"版本信息::：%@",version);
+            NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
+            NSString *systemVersion = [infoDic objectForKey:@"CFBundleVersion"];
+            NSString *apiVersion = version.appVersion;
+            if ([apiVersion isEqualToString:systemVersion]) {
+                //版本相同
+            } else {
+                NSString *apiFirstLetter = [apiVersion substringToIndex:1];
+                NSString *systemFirstLetter = [systemVersion substringToIndex:1];
+                if (![apiFirstLetter isEqualToString:systemFirstLetter]) {
+                    //大版本
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                                    message:@"当前版本与最新版本变动较大，需要下载最新版本"
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"去下载"
+                                                          otherButtonTitles:nil, nil];
+                    alert.tag = 1;
+                    [alert show];
+                } else {
+                    //小版本
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                                    message:@"当前版本不是最新版本，是否去下载"
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"否"
+                                                          otherButtonTitles:@"去下载", nil];
+                    alert.tag = 2;
+                    [alert show];
+                }
+            }
+            
+        } else {
+            NSLog(@"error:::%@",version.desc);
+        }
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSLog(@"error:- %@",request.error);
+    }];
+}
 
 - (void)requestToken {
     QRRequestCertificationLogin *request = [[QRRequestCertificationLogin alloc] init];
@@ -187,6 +233,26 @@ UITableViewDataSource>
     [self.headView.totalPropertyButton addTarget:self
                                           action:@selector(totalPropertyButtonWasPressed:)
                                 forControlEvents:UIControlEventTouchUpInside];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (alertView.tag == 1) {
+        NSLog(@"大版本");
+        [self swapAppStoreUrl];
+    } else {
+        NSLog(@"小版本");
+        if (buttonIndex) {
+            [self swapAppStoreUrl];
+        }
+    }
+    
+}
+
+- (void)swapAppStoreUrl {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/cn/app/%E5%BE%AE%E4%BF%A1/id414478124?mt=8"]];
 }
 
 

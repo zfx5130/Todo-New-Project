@@ -12,4 +12,11 @@
 
 @property (copy, nonatomic) NSString *versionId;
 
+@property (copy, nonatomic) NSString *appVersion;
+
+@property (copy, nonatomic) NSString *appName;
+
+@property (copy, nonatomic) NSString *versionMessage;
+
+
 @end
