@@ -112,7 +112,21 @@ UITableViewDataSource>
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ProductDetailListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductDetailListTableViewCell class])];
     Contract *contract = self.contracts[indexPath.row];
-    cell.nameLabel.text = [NSString getStringWithString:contract.borrower_name].length == 0 ? @"未知用户" : [NSString getStringWithString:contract.borrower_name];
+    NSString *name = [NSString getStringWithString:contract.borrower_name];
+    if (!name.length) {
+        name = @"未知用户";
+    }
+    if (name.length == 2) {
+        name = [NSString replaceStrWithRange:NSMakeRange(1, 1)
+                                      string:name
+                                  withString:@"*"];
+        
+    } else if(name.length >= 3) {
+        name = [NSString replaceStrWithRange:NSMakeRange(1, 2)
+                                      string:name
+                                  withString:@"**"];
+    }
+    cell.nameLabel.text = name;
     cell.moneyLabel.text = [NSString stringWithFormat:@"%.2f", contract.amount];
     cell.contractLabel.text = [NSString getStringWithString:contract.contractId];
     return cell;

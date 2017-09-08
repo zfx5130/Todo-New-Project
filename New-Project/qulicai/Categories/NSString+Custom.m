@@ -14,7 +14,7 @@
 
 + (NSString *)currentRegion {
     NSLocale *currentLocale = [NSLocale currentLocale];
-    NSLog(@"regionCode::::%@", [currentLocale objectForKey:NSLocaleCountryCode]);
+   // NSLog(@"regionCode::::%@", [currentLocale objectForKey:NSLocaleCountryCode]);
     return [currentLocale objectForKey:NSLocaleCountryCode];
 }
 
@@ -99,8 +99,6 @@
 }
 
 - (void)call {
-    NSString *phoneScheme = [NSString stringWithFormat:@"tel:%@", self];
-    [phoneScheme openLink];
 }
 
 + (void)openURLInBrowser:(NSString *)url {

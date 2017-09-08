@@ -73,7 +73,7 @@ UITableViewDataSource>
     [self showSVProgressHUD];
     __weak typeof(self) weakSelf = self;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        //NSLog(@"数据：:：：：%@",request.responseJSONObject);
+        SLog(@"数据：:：：：%@",request.responseJSONObject);
         [SVProgressHUD dismiss];
         YesterdayIncomeList *incomeList = [YesterdayIncomeList mj_objectWithKeyValues:request.responseJSONObject];
         if (incomeList.statusType == IndentityStatusSuccess) {

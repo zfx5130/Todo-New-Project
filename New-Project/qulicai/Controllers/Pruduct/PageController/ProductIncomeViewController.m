@@ -147,8 +147,21 @@ UITableViewDelegate>
     ProductMask *mask = self.maskArray[indexPath.row];
     
     NSString *name = [NSString getStringWithString:[NSString stringWithFormat:@"%@",[NSString getStringWithString:mask.userName]]];
-    
+    if (!name.length) {
+        name = @"未知用户";
+    }
+    if (name.length == 2) {
+        name = [NSString replaceStrWithRange:NSMakeRange(1, 1)
+                                      string:name
+                                  withString:@"*"];
+        
+    } else if(name.length >= 3) {
+        name = [NSString replaceStrWithRange:NSMakeRange(1, 2)
+                                      string:name
+                                  withString:@"**"];
+    }
     cell.nameLabel.text = name;
+    
     cell.moneyLabel.text = [NSString stringWithFormat:@"%@",@(mask.amount)];
     NSString *cardId = [NSString stringWithFormat:@"%@",[NSString getStringWithString:mask.userCardId]];
     cell.indentifyLabel.text = cardId;

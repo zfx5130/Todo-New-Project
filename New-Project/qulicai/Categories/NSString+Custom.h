@@ -18,7 +18,6 @@
 + (NSString *)md5:(NSString *)input;
 + (NSString *)nonNullStringForObject:(id )object;
 
-- (void)openLink;
 - (void)call;
 + (NSString *)stringFromObject:(id)object;
 

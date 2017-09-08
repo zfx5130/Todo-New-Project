@@ -79,14 +79,16 @@ UIAlertViewDelegate>
     QRRequestGetVersion *request = [[QRRequestGetVersion alloc] init];
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         Version *version = [Version mj_objectWithKeyValues:request.responseJSONObject];
+        NSLog(@"版本信息：:：:%@",request.responseJSONObject);
         if (version.statusType == IndentityStatusSuccess) {
-            NSLog(@"版本信息::：%@",version);
             NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
             NSString *systemVersion = [infoDic objectForKey:@"CFBundleVersion"];
             NSString *apiVersion = version.appVersion;
             if ([apiVersion isEqualToString:systemVersion]) {
                 //版本相同
+                NSLog(@"版本号相同");
             } else {
+                NSLog(@"版本号不同");
                 NSString *apiFirstLetter = [apiVersion substringToIndex:1];
                 NSString *systemFirstLetter = [systemVersion substringToIndex:1];
                 if (![apiFirstLetter isEqualToString:systemFirstLetter]) {
@@ -126,7 +128,7 @@ UIAlertViewDelegate>
     NSString  *currentTime = [NSString getCurrentTimestamp];
     NSInteger value  = [endTime integerValue] / 1000 - [currentTime integerValue];
     NSString *indentityKey = [[A0SimpleKeychain keychain] stringForKey:QR_IDENTITY_KEY];
-    NSLog(@"令牌秘钥：：：：：：%@",indentityKey);
+   // NSLog(@"令牌秘钥：：：：：：%@",indentityKey);
     if (value < 30 * 60 || !indentityKey) {
         NSLog(@"主页GetToken后获取产品列表");
         __weak typeof(self) weakSelf = self;

@@ -2291,6 +2291,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A76S262L77;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/qulicai/Headers/PrefixHeader.pch";
 				INFOPLIST_FILE = qulicai/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2300,7 +2301,63 @@
 					"$(PROJECT_DIR)/qulicai/Venders/LLPay/LLPaySDK",
 					"$(PROJECT_DIR)/qulicai/Venders/LLPay/LLPayUtils",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = qurong.qulicai;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"MTLog\"",
+					"-l\"Masonry\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"SVProgressHUD\"",
+					"-l\"SimpleKeychain\"",
+					"-l\"TOWebViewController\"",
+					"-l\"UITableView+FDTemplateLayoutCell\"",
+					"-l\"WZLBadge\"",
+					"-l\"YTKNetwork\"",
+					"-l\"YYKit\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreImage\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"WebP\"",
+					"-weak_framework",
+					"\"MessageUI\"",
+					"-weak_framework",
+					"\"Twitter\"",
+					"-force_load",
+					"\"$(SRCROOT)/qulicai/Venders/LLPay/LLPaySDK/libLLPaySDK.a\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = qurong.qulicai.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -2311,6 +2368,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A76S262L77;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/qulicai/Headers/PrefixHeader.pch";
 				INFOPLIST_FILE = qulicai/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2320,7 +2378,63 @@
 					"$(PROJECT_DIR)/qulicai/Venders/LLPay/LLPaySDK",
 					"$(PROJECT_DIR)/qulicai/Venders/LLPay/LLPayUtils",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = qurong.qulicai;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"MTLog\"",
+					"-l\"Masonry\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"SVProgressHUD\"",
+					"-l\"SimpleKeychain\"",
+					"-l\"TOWebViewController\"",
+					"-l\"UITableView+FDTemplateLayoutCell\"",
+					"-l\"WZLBadge\"",
+					"-l\"YTKNetwork\"",
+					"-l\"YYKit\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreImage\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"WebP\"",
+					"-weak_framework",
+					"\"MessageUI\"",
+					"-weak_framework",
+					"\"Twitter\"",
+					"-force_load",
+					"\"$(SRCROOT)/qulicai/Venders/LLPay/LLPaySDK/libLLPaySDK.a\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = qurong.qulicai.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

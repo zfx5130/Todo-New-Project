@@ -189,8 +189,8 @@ InputTextView1Delgate>
         cell.periodsDayLabel.text = [NSString stringWithFormat:@"%@天期限", [NSString getStringWithString:self.productDetail.periods]];
         
         cell.progressView.progress = (1 - self.productDetail.residualAmount * 1.0f / self.productDetail.totalAmount);
-        cell.balanceLabel.text = [NSString stringWithFormat:@"剩余%@",@(self.productDetail.residualAmount)];
-        cell.totalProgressLabel.text = [NSString stringWithFormat:@"%@/%@",@(self.productDetail.residualAmount), @(self.productDetail.totalAmount)];
+        cell.balanceLabel.text = [NSString stringWithFormat:@"剩余%.2f",self.productDetail.residualAmount];
+        cell.totalProgressLabel.text = [NSString stringWithFormat:@"%.2f/%.2f",(self.productDetail.totalAmount - self.productDetail.residualAmount), self.productDetail.totalAmount];
         
         return cell;
     } else if (indexPath.section == 1) {

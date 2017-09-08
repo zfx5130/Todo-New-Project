@@ -8,6 +8,7 @@
 
 #import "QRRequest.h"
 
+
 static NSString *const kRequestLogSeparatorDoubleLines = @"==================================================";
 static NSString *const kRequestLogSeparatorSingleLine = @"--------------------------------------------------";
 

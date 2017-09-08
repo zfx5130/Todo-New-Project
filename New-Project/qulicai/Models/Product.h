@@ -53,7 +53,7 @@
 @property (assign, nonatomic) NSInteger totalAmount;
 
 //可购买余额
-@property (assign, nonatomic) NSInteger residualAmount;
+@property (assign, nonatomic) CGFloat residualAmount;
 
 //0 定期 1 活期
 @property (assign, nonatomic) NSInteger type;

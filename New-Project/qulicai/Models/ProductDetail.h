@@ -68,7 +68,7 @@
 @property (copy, nonatomic) NSString *productIntroduction;
 
 //可购买余额
-@property (assign, nonatomic) NSInteger residualAmount;
+@property (assign, nonatomic)  CGFloat residualAmount;
 
 //产品生成时间
 @property (copy, nonatomic) NSString *startTime;
@@ -77,7 +77,7 @@
 @property (assign, nonatomic) NSInteger status;
 
 //总金额
-@property (assign, nonatomic) NSInteger totalAmount;
+@property (assign, nonatomic) CGFloat totalAmount;
 
 //0 定期 1 活期
 @property (assign, nonatomic) NSInteger type;

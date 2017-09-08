@@ -142,11 +142,22 @@ UITableViewDelegate>
     ProductRecordTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductRecordTableViewCell class])];
     ProductPack *pack = self.packs[indexPath.row];
     NSString *name = [NSString stringWithFormat:@"%@",[NSString getStringWithString:pack.realName]];
-    NSLog(@"nameLLLL::::::::%@",name);
     if (!name.length) {
         name = @"未知用户";
     }
+    
+    if (name.length == 2) {
+        name = [NSString replaceStrWithRange:NSMakeRange(1, 1)
+                                      string:name
+                                  withString:@"*"];
+        
+    } else if(name.length >= 3) {
+        name = [NSString replaceStrWithRange:NSMakeRange(1, 2)
+                                      string:name
+                                  withString:@"**"];
+    }
     cell.nameLabel.text = name;
+    
     cell.addTimeLabel.text =
     [NSString getStringWithString:[NSString stringWithFormat:@"%@",pack.addTime]];
     cell.moneyLabel.text = [NSString stringWithFormat:@"%.2f",pack.money];
