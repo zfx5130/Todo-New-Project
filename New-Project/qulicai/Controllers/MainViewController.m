@@ -478,7 +478,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)platformDataButtonWasPressed:(UIButton *)sender {
-    NSString *urlString = @"https://demo.qulicai8.com/#/companyAndproduct?m=c1";
+    NSString *urlString = @"https://www.qulicai8.com/#/companyAndproduct?m=c1";
     QRWebViewController *webViewController = [[QRWebViewController alloc] initWithTitle:@"安全保障"
                                                                               URLString:urlString];
     webViewController.hidesBottomBarWhenPushed = YES;
@@ -487,7 +487,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)qrInfoButtonWasPressed:(UIButton *)sender {
-    NSString *urlString = @"https://demo.qulicai8.com/#/companyAndproduct?m=c2";
+    NSString *urlString = @"https://www.qulicai8.com/#/companyAndproduct?m=c2";
     QRWebViewController *webViewController = [[QRWebViewController alloc] initWithTitle:@"平台数据"
                                                                               URLString:urlString];
     webViewController.hidesBottomBarWhenPushed = YES;
@@ -496,7 +496,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)safeButtonWasPressed:(UIButton *)sender {
-    NSString *urlString = @"https://demo.qulicai8.com/#/companyAndproduct?m=c3";
+    NSString *urlString = @"https://www.qulicai8.com/#/companyAndproduct?m=c3";
     QRWebViewController *webViewController = [[QRWebViewController alloc] initWithTitle:@"企业简介"
                                                                               URLString:urlString];
     webViewController.hidesBottomBarWhenPushed = YES;

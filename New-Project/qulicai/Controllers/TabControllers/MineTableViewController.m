@@ -243,7 +243,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 //    settingsController.hidesBottomBarWhenPushed = YES;
 //    [self.navigationController pushViewController:settingsController
 //                                         animated:YES];
-    NSString *urlString = @"https://demo.qulicai8.com/#/service";
+    NSString *urlString = @"https://www.qulicai8.com/#/service";
     QRWebViewController *webViewController = [[QRWebViewController alloc] initWithTitle:@"客服"
                                                                               URLString:urlString];
     webViewController.hidesBottomBarWhenPushed = YES;

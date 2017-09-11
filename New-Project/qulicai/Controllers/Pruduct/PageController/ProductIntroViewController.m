@@ -12,6 +12,7 @@
 #import "ProductBody.h"
 #import "ProductDetail.h"
 #import "UIScrollView+Custom.h"
+#import "QRWebViewController.h"
 
 @interface ProductIntroViewController ()
 <UITableViewDelegate,
@@ -207,7 +208,28 @@ viewForHeaderInSection:(NSInteger)section {
 - (UIView *)tableView:(UITableView *)tableView
 viewForFooterInSection:(NSInteger)section {
     UIView *aView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, SCREEN_WIDTH, 100.0f)];
-    UILabel *aLabel = [[UILabel alloc] initWithFrame:CGRectMake(15.0f, 15.0f, SCREEN_WIDTH - 30.0f, 60.0f)];
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15.0f, 0.0f, 90.0f, 30.0f)];
+    titleLabel.font = [UIFont systemFontOfSize:14.0f];
+    titleLabel.textColor = RGBColor(153.0f, 153.0f, 153.0f);
+    titleLabel.text = @"提资前请预览";
+    titleLabel.minimumScaleFactor = 0.6f;
+    [aView addSubview:titleLabel];
+    
+    UIButton *protocolButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [protocolButton setTitle:@"《投资服务协议》"
+                    forState:UIControlStateNormal];
+    [protocolButton setTitleColor:RGBColor(113.0f, 175.0f, 255.0f)
+                         forState:UIControlStateNormal];
+    protocolButton.frame = CGRectMake(108.0f, 0.0f, 115.0f, 30.0f);
+    protocolButton.titleLabel.font = [UIFont systemFontOfSize:14.0f];
+    [protocolButton addTarget:self
+                       action:@selector(protocol:)
+             forControlEvents:UIControlEventTouchUpInside];
+    [aView addSubview:protocolButton];
+    
+    
+    UILabel *aLabel = [[UILabel alloc] initWithFrame:CGRectMake(15.0f, 30, SCREEN_WIDTH - 30.0f, 60.0f)];
     aLabel.text = @"本产品是由杭州趣融信息科技有限公司匹配给个人供投资者提供投资信息的资产管理工具，趣钱宝提供5-30天短期灵活的资产配置方案，供投资者选择。";
     aLabel.font = [UIFont systemFontOfSize:14.0f];
     aLabel.textColor = RGBColor(153.0f, 153.0f, 153.0f);
@@ -222,6 +244,18 @@ viewForFooterInSection:(NSInteger)section {
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+}
+
+#pragma mark - Handlers
+
+- (void)protocol:(UIButton *)sender {
+    NSString *urlString = @"https://www.qulicai8.com/#/agreement_service";
+    QRWebViewController *webViewController = [[QRWebViewController alloc] initWithTitle:@"投资服务协议"
+                                                                              URLString:urlString];
+    webViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:webViewController
+                                         animated:YES];
+
 }
 
 @end

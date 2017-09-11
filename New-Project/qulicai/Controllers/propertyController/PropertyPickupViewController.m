@@ -17,6 +17,7 @@
 #import "PickupMoney.h"
 #import "TransactionPwd.h"
 #import "QRRequestHeader.h"
+#import "QRWebViewController.h"
 
 @interface PropertyPickupViewController ()
 <UITextViewDelegate,
@@ -289,7 +290,13 @@ UIScrollViewDelegate>
 }
 
 - (IBAction)pickInfo:(UIButton *)sender {
-    NSLog(@"注意事项");
+
+    NSString *urlString = @"https://www.qulicai8.com/#/agreement_attention";
+    QRWebViewController *webViewController = [[QRWebViewController alloc] initWithTitle:@"提现注意事项"
+                                                                              URLString:urlString];
+    webViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:webViewController
+                                         animated:YES];
 }
 
 @end

@@ -275,9 +275,10 @@
 
 - (IBAction)QRAgreement:(UIButton *)sender {
     //趣融管理协议
-    NSString *urlString = @"https://www.baidu.com";
-    QRWebViewController *webViewController = [[QRWebViewController alloc] initWithTitle:@"趣融协议"
+    NSString *urlString = @"https://www.qulicai8.com/#/agreement_register";
+    QRWebViewController *webViewController = [[QRWebViewController alloc] initWithTitle:@"趣理财管理协议"
                                                                               URLString:urlString];
+    webViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:webViewController
                                          animated:YES];
 }
