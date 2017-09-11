@@ -275,8 +275,11 @@ UIAlertViewDelegate>
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (!indexPath.section) {
+
         NewUserBuyTableViewCell *cell =
         [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([NewUserBuyTableViewCell class])];
+        
+        cell.contentView.hidden = self.product == nil;
         [cell.buyButton addTarget:self
                            action:@selector(buyButtonWasPressed:)
                  forControlEvents:UIControlEventTouchUpInside];
@@ -381,7 +384,11 @@ UIAlertViewDelegate>
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = 150.0f;
     if (!indexPath.section) {
-        height = self.product.residualAmount > 0 ? 210.0f : 160.0f;
+        if (self.product) {
+            height = self.product.residualAmount > 0 ? 210.0f : 160.0f;
+        } else {
+            height = 0.0f;
+        }
     } else {
         height = IS_IPHONE_5 ? 140.0f : 150.0f;
     }
