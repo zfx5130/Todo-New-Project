@@ -7,9 +7,11 @@
 //
 
 static NSString *const kFormatterYYYYMMDDBirthday = @"yyyy-MM-dd";
+
 static NSString *const kFormatterHHMMTime = @"HH:mm";
 static NSString *const kFormatterEEEEWeekday = @"EEEE";
 static NSString *const kFormatterYYYYMMDDRidingDate = @"yyyy.MM.dd";
+static NSString *const kFormatterMMDD = @"MM-dd";
 
 #import "NSDate+Custom.h"
 #import "NSObject+Custom.h"
@@ -123,6 +125,10 @@ static NSString *const kFormatterYYYYMMDDRidingDate = @"yyyy.MM.dd";
 
 - (NSString *)dateStringWithRidingDateFormatterYYYYMMDD {
     return [self dateStringWithDateFormatter:kFormatterYYYYMMDDRidingDate];
+}
+
+- (NSString *)dateStringWithFormatterMMDD {
+    return [self dateStringWithDateFormatter:kFormatterMMDD];
 }
 
 - (NSString *)dateStringWithDateFormatter:(NSString *)formatter {

@@ -162,7 +162,8 @@ UITableViewDelegate>
     }
     cell.nameLabel.text = name;
     
-    cell.moneyLabel.text = [NSString stringWithFormat:@"%@",@(mask.amount)];
+    cell.moneyLabel.text =
+    [NSString stringWithFormat:@"%@",[NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",mask.amount]]];
     NSString *cardId = [NSString stringWithFormat:@"%@",[NSString getStringWithString:mask.userCardId]];
     cell.indentifyLabel.text = cardId;
     if (cardId.length >= 14) {

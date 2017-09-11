@@ -250,6 +250,7 @@ UITableViewDataSource>
     cell.productTagLabel.text = cell.yearSaleLabel.text;
     cell.balanceLabel.text = [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%@",@(product.residualAmount)]];
     cell.productNameLabel.text = [NSString stringWithFormat:@"%@", product.productName];
+    
     cell.progressView.progress = (1 - product.residualAmount * 1.0 / product.totalAmount);
     
     BOOL isSellOut = product.residualAmount > 0 ? NO : YES;
@@ -258,7 +259,6 @@ UITableViewDataSource>
     cell.bottomViewHeightConstraint.constant = (indexPath.section == 0 && !isSellOut)  ? 50.0f : 0.0f;
     
     cell.progressView.progressTintColor = !isSellOut ? RGBColor(247.0f, 97.0f, 34.0f) : RGBColor(221.0f, 221.0f, 221.0f);
-    cell.progressView.progress = !isSellOut ? 0.8f : 1.0f;
     cell.sellOutImageView.hidden = !isSellOut;
     cell.yearSaleLabel.textColor =
     !isSellOut ? RGBColor(242.0f, 89.0f, 47.0f) : RGBColor(153.0f, 153.0f, 153.0f);

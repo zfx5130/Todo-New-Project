@@ -67,4 +67,7 @@
 //字典转json格式字符串
 + (NSString*)dictionaryToJson:(NSDictionary *)dic;
 
+//获取MM-dd格式时间
++ (NSString *)getMMddDateStringWithTimeString:(NSString *)time;
+
 @end

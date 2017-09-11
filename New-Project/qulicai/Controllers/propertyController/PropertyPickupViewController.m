@@ -105,7 +105,8 @@ UIScrollViewDelegate>
             self.bankLogoImageView.image = [UIImage imageNamed:bankImageName];
         }
     }
-    self.balanceLabel.text = [NSString stringWithFormat:@"账户余额%.2f元",user.availableMoney];
+    self.balanceLabel.text =
+    [NSString stringWithFormat:@"账户余额%@元",[NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",user.availableMoney]]];
     
 }
 

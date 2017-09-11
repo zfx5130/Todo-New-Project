@@ -186,9 +186,9 @@
         PropertyHeadTableViewCell *cell =
         [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([PropertyHeadTableViewCell class])];
         User *user = [UserUtil currentUser];
-        cell.totalPropertyLabel.text = [NSString stringWithFormat:@"%.2f",user.totalMoney];
-        cell.balanceLabel.text = [NSString stringWithFormat:@"%.2f", user.availableMoney];
-        cell.regularLabel.text = [NSString stringWithFormat:@"%.2f",user.freezeMoney];
+        cell.totalPropertyLabel.text = [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",user.totalMoney]];
+        cell.balanceLabel.text = [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f", user.availableMoney]];
+        cell.regularLabel.text = [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",user.freezeMoney]];
         [self addScacleCircleWithCell:cell];
         return cell;
     } else if (indexPath.section == 2) {
@@ -202,7 +202,7 @@
             TotalMoney *money = self.totalMoneys[indexPath.row];
             cell.nameLabel.text = [money getNameWithType:money.type];
             cell.timeLabel.text = [NSString getStringWithString:money.transactionDate];
-            cell.moneyLabel.text = [NSString stringWithFormat:@"%.2f",money.money];
+            cell.moneyLabel.text = [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",money.money]];
             cell.moneyLabel.textColor =
             money.money > 0 ? RGBColor(52.0f, 198.0f, 61.0f) : RGBColor(255.0f, 0.0f, 0.0f);
             return cell;

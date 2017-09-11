@@ -58,7 +58,7 @@ UITableViewDataSource>
 #pragma mark - Private
 
 - (void)renderUI {
-    self.headView.incomeMoneyLabel.text = [NSString stringWithFormat:@"%.2f",self.incomeList.totalYestEaring];
+    self.headView.incomeMoneyLabel.text = [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",self.incomeList.totalYestEaring]];
     NSString *dateTime = [[[NSString getStringWithString:self.incomeList.settleDate] componentsSeparatedByString:@" "] firstObject];
     self.headView.dateLabel.text = dateTime;
     [self.tableView reloadData];
@@ -134,7 +134,7 @@ UITableViewDataSource>
     }
     AllIncomeTableViewCell *cell =
     [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([AllIncomeTableViewCell class])];
-    cell.incomeLabel.text = [NSString stringWithFormat:@"%.2f", self.incomeList.totalEarning];
+    cell.incomeLabel.text = [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f", self.incomeList.totalEarning]];
     return cell;
 }
 

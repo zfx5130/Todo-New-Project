@@ -62,12 +62,16 @@
     self.endTimeLabel.text =
     [NSString stringWithFormat:@"%@", [NSString getStringWithString:dateTime]];
     
-    [self.totalMoneyLabel setTitle:[NSString stringWithFormat:@"%.1f",self.backDetail.planTotalMoneyAndRate]
+    NSString *title =
+    [NSString stringWithFormat:@"%@",[NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",self.backDetail.planTotalMoneyAndRate]]];
+    [self.totalMoneyLabel setTitle:title
                           forState:UIControlStateNormal];
     self.planStatusLabel.text = self.backDetail.planStatus ? @"已还款" : @"待还款";
-    self.endTotalMoneyLabel.text = [NSString stringWithFormat:@"%.1f",self.backDetail.planTotalMoney];
+    
+    self.endTotalMoneyLabel.text =
+    [NSString stringWithFormat:@"%@",[NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",self.backDetail.planTotalMoney]]];
     self.endTotalRateLabel.text =
-    [NSString stringWithFormat:@"%.2f",self.backDetail.planTotalRate];
+    [NSString stringWithFormat:@"%@",[NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",self.backDetail.planTotalRate]]];
     
     
 }

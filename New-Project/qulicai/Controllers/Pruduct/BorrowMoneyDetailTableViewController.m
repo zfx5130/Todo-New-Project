@@ -98,7 +98,7 @@
 - (void)renderData {
     
     NSLog(@":::::%@,,,,%@,,%@", self.detailInfo.sex, self.detailInfo.userMobilePhone, self.detailInfo.userName);
-    self.borrowMoneyLabel.text = [NSString stringWithFormat:@"%.2f",self.detailInfo.amount];
+    self.borrowMoneyLabel.text = [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",self.detailInfo.amount]];
     self.periodLabel.text = [NSString getStringWithString:self.detailInfo.peroid];
     self.rateLabel.text = [NSString stringWithFormat:@"%.2f%%", self.detailInfo.apr * 100];
     self.contractNoLabel.text = [NSString getStringWithString:self.detailInfo.contractNo];

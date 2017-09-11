@@ -34,6 +34,8 @@ UITableViewDataSource>
     [self registerCell];
     if (self.pickId) {
         [self addRefreshControl];
+    } else {
+        [self renderUI];
     }
 }
 
@@ -61,12 +63,21 @@ UITableViewDataSource>
 }
 
 - (void)renderUI {
-    CGFloat rate = (self.productDetail.activityRate + self.productDetail.interestRate) * 100;
+    
+    CGFloat rate = self.productDetail.interestRate * 100;
+    CGFloat actRate = self.productDetail.activityRate * 100;
+    NSString *yearText = @"";
+    if (actRate <= 0) {
+        yearText = [NSString stringWithFormat:@"%.1f%%",rate];
+    } else {
+        yearText = [NSString stringWithFormat:@"%.1f%%+%.1f%%", rate, actRate];
+    }
+    
     NSString *name = [NSString getStringWithString:self.productDetail.productName];
     NSString *limit = [NSString stringWithFormat:@"%@元起投",[NSString getStringWithString:self.productDetail.limitAmount]];
     NSString *period = [NSString stringWithFormat:@"%@天",[NSString getStringWithString:self.productDetail.periods]];
     NSString *bala = @"到期一次性还本付息";
-    NSString *rateStr = [NSString stringWithFormat:@"%.1f%%",rate];
+    NSString *rateStr = [NSString stringWithFormat:@"%@",yearText];
     NSString *startTime = [NSString stringWithFormat:@"%@",[NSString getStringWithString:self.productDetail.startTime]];
     NSString *inerTime = [NSString stringWithFormat:@"%@",[NSString getStringWithString:self.productDetail.interestTime]];
     NSString *endTime = [NSString stringWithFormat:@"%@",[NSString getStringWithString:self.productDetail.endTime]];

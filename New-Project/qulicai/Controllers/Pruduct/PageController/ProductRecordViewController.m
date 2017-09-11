@@ -160,7 +160,8 @@ UITableViewDelegate>
     
     cell.addTimeLabel.text =
     [NSString getStringWithString:[NSString stringWithFormat:@"%@",pack.addTime]];
-    cell.moneyLabel.text = [NSString stringWithFormat:@"%.2f",pack.money];
+    cell.moneyLabel.text =
+    [NSString stringWithFormat:@"%@",[NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",pack.money]]];
     return cell;
 }
 

@@ -127,7 +127,7 @@ UITableViewDataSource>
                                   withString:@"**"];
     }
     cell.nameLabel.text = name;
-    cell.moneyLabel.text = [NSString stringWithFormat:@"%.2f", contract.amount];
+    cell.moneyLabel.text = [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f", contract.amount]];
     cell.contractLabel.text = [NSString getStringWithString:contract.contractId];
     return cell;
 }

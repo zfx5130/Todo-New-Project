@@ -102,7 +102,8 @@ UICollectionViewDelegate>
 }
 
 - (void)renderData {
-    self.totalMoneyLabel.text = [NSString stringWithFormat:@"%.2f",self.expectedTotal.collectionPAI];
+    self.totalMoneyLabel.text =
+    [NSString stringWithFormat:@"%@",[NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",self.expectedTotal.collectionPAI]]];
     //方便车市
     self.historyView.hidden = !(self.expectedTotal.collectionPAI > 0) ;
     self.noBuyHistoryView.hidden = !self.historyView.hidden;

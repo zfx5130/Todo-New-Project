@@ -151,7 +151,7 @@ UIScrollViewDelegate>
     
     CGFloat amount = self.isDetailSwap ? self.productDetail.residualAmount : self.product.residualAmount;
     self.remainMoneyLabel.text =
-    [NSString stringWithFormat:@"剩余可购额度%.0f",amount];
+    [NSString stringWithFormat:@"剩余可购额度%@",[NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",amount]]];
     
     [self.remainMoneyLabel addColor:RGBColor(204, 204, 204)
                             forText:@"剩余可购额度"];

@@ -189,13 +189,25 @@ InputTextView1Delgate>
         cell.periodsDayLabel.text = [NSString stringWithFormat:@"%@天期限", [NSString getStringWithString:self.productDetail.periods]];
         
         cell.progressView.progress = (1 - self.productDetail.residualAmount * 1.0f / self.productDetail.totalAmount);
-        cell.balanceLabel.text = [NSString stringWithFormat:@"剩余%.2f",self.productDetail.residualAmount];
-        cell.totalProgressLabel.text = [NSString stringWithFormat:@"%.2f/%.2f",(self.productDetail.totalAmount - self.productDetail.residualAmount), self.productDetail.totalAmount];
+        cell.balanceLabel.text =
+        [NSString stringWithFormat:@"剩余%@",[NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",self.productDetail.residualAmount]]];
+        
+        NSString *buyTotal =
+        [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",(self.productDetail.totalAmount - self.productDetail.residualAmount)]];
+        NSString *totalString =
+        [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",self.productDetail.totalAmount]];
+        cell.totalProgressLabel.text = [NSString stringWithFormat:@"%@/%@",buyTotal, totalString];
         
         return cell;
     } else if (indexPath.section == 1) {
         ProductCycleTableViewCell *cell =
         [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductCycleTableViewCell class])];
+        BOOL isSellOut = self.productDetail.residualAmount <= 0;
+        cell.progressImageView.image = isSellOut ? [UIImage imageNamed:@"detail_strp_all_image"] : [UIImage imageNamed:@"detail_strp_image"];
+        
+        cell.expectLabel.text = [NSString getMMddDateStringWithTimeString:[NSString getStringWithString:self.productDetail.interestTime]];
+        cell.endDateLabel.text = [NSString getMMddDateStringWithTimeString:[NSString getStringWithString:self.productDetail.endTime]];
+        
         return cell;
     }
     ProductDetailTableViewCell *cell =

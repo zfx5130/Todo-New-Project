@@ -11,7 +11,7 @@
 @interface ProductMask : NSObject
 
 //借款金额
-@property (assign, nonatomic) NSInteger amount;
+@property (assign, nonatomic) CGFloat amount;
 
 @property (copy, nonatomic) NSString *userName;
 

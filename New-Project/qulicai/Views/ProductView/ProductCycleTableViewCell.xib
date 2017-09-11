@@ -31,7 +31,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PFQ-1p-vqV">
                         <rect key="frame" x="0.0" y="45" width="375" height="101"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail_strp_image" translatesAutoresizingMaskIntoConstraints="NO" id="JnA-bN-87y">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail_strp_image" translatesAutoresizingMaskIntoConstraints="NO" id="JnA-bN-87y">
                                 <rect key="frame" x="15" y="48" width="345" height="5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="5" id="T3i-xR-i2G"/>
@@ -120,7 +120,7 @@
                                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08-11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLq-6a-BLJ">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLq-6a-BLJ">
                                                 <rect key="frame" x="94" y="0.0" width="93" height="38"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -148,7 +148,7 @@
                                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09-30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yg-nI-wL7">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yg-nI-wL7">
                                                 <rect key="frame" x="94" y="0.0" width="93" height="38"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -206,6 +206,11 @@
                     <constraint firstItem="PFQ-1p-vqV" firstAttribute="top" secondItem="0y2-uu-yKZ" secondAttribute="bottom" id="sdc-nb-IKC"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="endDateLabel" destination="8yg-nI-wL7" id="BRx-5j-auc"/>
+                <outlet property="expectLabel" destination="hLq-6a-BLJ" id="Zsb-gG-z7p"/>
+                <outlet property="progressImageView" destination="JnA-bN-87y" id="x93-0e-BNj"/>
+            </connections>
             <point key="canvasLocation" x="52.5" y="103"/>
         </tableViewCell>
     </objects>

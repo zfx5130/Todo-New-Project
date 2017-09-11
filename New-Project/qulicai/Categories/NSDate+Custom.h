@@ -52,9 +52,7 @@
  */
 - (NSString *)dateStringWithFormatterEEEE;
 
-+ (NSString *)hoursStringWithDuration:(long long)duration;
-+ (NSString *)minutesStringWithDuration:(long long)duration;
-+ (NSString *)secondsStringWithDuration:(long long)duration;
-+ (NSString *)durationStringWithDuration:(long long)duration;
+//MM-DD
+- (NSString *)dateStringWithFormatterMMDD;
 
 @end

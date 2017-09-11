@@ -140,7 +140,9 @@ UIAlertViewDelegate>
                 [[A0SimpleKeychain keychain] setString:identityKey forKey:QR_IDENTITY_KEY];
                 [[A0SimpleKeychain keychain] setString:certification.endTime forKey:QR_ENDTIME_EXT];
                 //获取产品列表
-                [weakSelf requestProduct];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakSelf requestProduct];
+                });
                 //获取个人信息
             } else {
                 NSLog(@"登录认证失败");
@@ -185,9 +187,9 @@ UIAlertViewDelegate>
 - (void)reloadUI {
     User *user = [UserUtil currentUser];
     BOOL isLogin = [UserUtil isLoginIn];
-    self.headView.pickTagImageView.hidden = !isLogin;
-    self.headView.allMoneyLabel.text = isLogin ? [NSString stringWithFormat:@"%.2f",user.totalMoney] : @"0.0";
-    self.headView.yesterdayEarningLabel.text = isLogin ? [NSString stringWithFormat:@"%.2f",user.dailyEarnings] : @"0.0";
+    self.headView.pickTagImageView.hidden = YES;//!isLogin;
+    self.headView.allMoneyLabel.text = isLogin ? [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",user.totalMoney]] : @"0.0";
+    self.headView.yesterdayEarningLabel.text = isLogin ? [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",user.dailyEarnings]] : @"0.0";
 }
 
 - (void)updateUserInfo {
@@ -207,6 +209,8 @@ UIAlertViewDelegate>
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
             NSLog(@"error:- %@", request.error);
         }];
+    } else {
+        [self reloadUI];
     }
 }
 
@@ -325,7 +329,6 @@ UIAlertViewDelegate>
         cell.bottomViewHeightConstraint.constant = !isSellOut ? 50.0f : 0.0f;
         
         cell.progressView.progressTintColor = !isSellOut ? RGBColor(247.0f, 97.0f, 34.0f) : RGBColor(221.0f, 221.0f, 221.0f);
-        cell.progressView.progress = !isSellOut ? 0.8f : 1.0f;
         cell.sellOutImageView.hidden = !isSellOut;
         cell.yearSaleLabel.textColor =
        !isSellOut ? RGBColor(242.0f, 89.0f, 47.0f) : RGBColor(153.0f, 153.0f, 153.0f);

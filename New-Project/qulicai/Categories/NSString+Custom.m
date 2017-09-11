@@ -9,6 +9,7 @@
 #import "NSString+Custom.h"
 #import <AVFoundation/AVFoundation.h>
 #include <CommonCrypto/CommonDigest.h>
+#import "NSDate+Custom.h"
 
 @implementation NSString (Custom)
 
@@ -431,6 +432,14 @@
                                                        options:NSJSONWritingPrettyPrinted
                                                          error:&parseError];
     return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+}
+
++ (NSString *)getMMddDateStringWithTimeString:(NSString *)time {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *date = [dateFormat dateFromString:time];
+    NSString *mmddString = [date dateStringWithFormatterMMDD];
+    return mmddString;
 }
 
 @end
