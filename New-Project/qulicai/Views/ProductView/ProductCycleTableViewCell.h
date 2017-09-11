@@ -17,5 +17,6 @@
 
 //到期
 @property (weak, nonatomic) IBOutlet UILabel *endDateLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *progressViewHeightConstraint;
 
 @end

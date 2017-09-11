@@ -210,6 +210,7 @@
                 <outlet property="endDateLabel" destination="8yg-nI-wL7" id="BRx-5j-auc"/>
                 <outlet property="expectLabel" destination="hLq-6a-BLJ" id="Zsb-gG-z7p"/>
                 <outlet property="progressImageView" destination="JnA-bN-87y" id="x93-0e-BNj"/>
+                <outlet property="progressViewHeightConstraint" destination="T3i-xR-i2G" id="lrY-k8-f3T"/>
             </connections>
             <point key="canvasLocation" x="52.5" y="103"/>
         </tableViewCell>

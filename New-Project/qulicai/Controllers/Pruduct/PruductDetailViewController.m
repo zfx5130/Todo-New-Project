@@ -204,6 +204,17 @@ InputTextView1Delgate>
         [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ProductCycleTableViewCell class])];
         BOOL isSellOut = self.productDetail.residualAmount <= 0;
         cell.progressImageView.image = isSellOut ? [UIImage imageNamed:@"detail_strp_all_image"] : [UIImage imageNamed:@"detail_strp_image"];
+
+        cell.progressImageView.contentMode = IS_IPHONE_6 ? UIViewContentModeCenter : UIViewContentModeScaleToFill;
+        CGFloat height = 5.0f;
+        if (IS_IPHONE_6) {
+            height = 5.0f;
+        } else if (IS_IPHONE_6P) {
+            height = 8.0f;
+        } else {
+            height = 6.0f;
+        }
+        cell.progressViewHeightConstraint.constant = height;
         
         cell.expectLabel.text = [NSString getMMddDateStringWithTimeString:[NSString getStringWithString:self.productDetail.interestTime]];
         cell.endDateLabel.text = [NSString getMMddDateStringWithTimeString:[NSString getStringWithString:self.productDetail.endTime]];
