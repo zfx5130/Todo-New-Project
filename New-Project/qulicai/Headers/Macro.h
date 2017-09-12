@@ -106,15 +106,15 @@
 #define IS_IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
 
 
-#define QR_PARTNER_ID @"201408071000001543"
-#define QR_MD5_KEY @"201408071000001543test_20140812"
-#define QR_NOTIFY_URL @"https://tnotify.qulicai8.com/p2p-notify/service"
+#define QR_PARTNER_ID @"201708091001932509"
+#define QR_MD5_KEY @"hdjjas_fj123asak699_rpoyijbdsdf"
+#define QR_NOTIFY_URL @"http://www.qulicai8.com:8996/p2p-notify/service"
 #define QR_SING_TYPE @"MD5"
 
 
 
 #define QR_IDENTITY_USERNAME @"node_h5"
-#define QR_IDENTITY_PASSWROD @"EDA70AF62F2D3D2B96BE3C455060AF4A"
+#define QR_IDENTITY_PASSWROD @"F5864EED1BE20D314369963253FDCFA2"
 
 #define QR_ENDTIME_EXT @"ENDTIME"
 #define QR_IDENTITY_KEY @"IDENITYKEY"
