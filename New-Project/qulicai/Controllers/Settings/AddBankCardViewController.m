@@ -129,8 +129,6 @@
         NSLog(@"后台Card查询::::::%@",request.responseJSONObject[@"ret_msg"]);
         //请求成功，返回银行卡信息
         VerifyCardPay *card = [VerifyCardPay mj_objectWithKeyValues:request.responseJSONObject];
-#warning 测试使用
-        card.statusType = IndentityStatusSuccess;
         if (card.statusType == IndentityStatusSuccess) {
             //发送到服务器
             [SVProgressHUD dismiss];
