@@ -89,6 +89,7 @@
         self.errorLabel.text = @"*充值金额小于最低充值金额";
         [self.errorLabel addShakeAnimation];
         return;
+        
     }
     
     User *user = [UserUtil currentUser];

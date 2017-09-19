@@ -115,7 +115,7 @@
                                                             <rect key="frame" x="36" y="0.0" width="324" height="50"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                            <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="go"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="go"/>
                                                             <connections>
                                                                 <action selector="editingBegin:" destination="-1" eventType="editingDidBegin" id="Aov-AG-5Ws"/>
                                                                 <action selector="editingChanged:" destination="-1" eventType="editingChanged" id="gkN-xk-sbX"/>

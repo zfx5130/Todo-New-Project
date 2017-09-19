@@ -10,4 +10,8 @@
 
 @interface Authorware : BaseModel
 
+
+@property (assign, nonatomic) BOOL authentication;
+
+
 @end

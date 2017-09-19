@@ -101,36 +101,42 @@
         [SVProgressHUD dismiss];
         Authorware *authorware = [Authorware mj_objectWithKeyValues:request.responseJSONObject];
         NSLog(@"实名认证:::::%@",request.responseJSONObject);
+        //操作成功
         if (authorware.statusType == IndentityStatusSuccess) {
-            [weakSelf showSuccessWithTitle:@"实名认证成功跳转中"];
-            QRRequestGetUserInfo *request = [[QRRequestGetUserInfo alloc] init];
-            request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
-            [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-                User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
-                SLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
-                if (userInfo.statusType == IndentityStatusSuccess) {
-                    [UserUtil saving:userInfo];
-                    if (weakSelf.isProductPush || weakSelf.isFirstRechargePush) {
-                        NSLog(@":跳转页面:::::::%@:::::::%@", @(self.isProductPush), @(self.isFirstRechargePush));
-                        AddBankCardViewController *addBankController = [[AddBankCardViewController alloc] init];
-                        addBankController.name = self.nameLabel.text;
-                        addBankController.identify = self.userIdentifyLabel.text;
-                        addBankController.money = self.money;
-                        addBankController.productMoney = self.productMoney;
-                        addBankController.productName = self.productName;
-                        addBankController.packId = self.packId;
-                        [weakSelf.navigationController pushViewController:addBankController
-                                                                 animated:YES];
+            
+            if (authorware.authentication) {
+                [weakSelf showSuccessWithTitle:@"实名认证成功跳转中"];
+                QRRequestGetUserInfo *request = [[QRRequestGetUserInfo alloc] init];
+                request.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
+                [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+                    User *userInfo = [User mj_objectWithKeyValues:request.responseJSONObject];
+                    SLog(@"reuqestUserInfo::::::::::%@",request.responseJSONObject);
+                    if (userInfo.statusType == IndentityStatusSuccess) {
+                        [UserUtil saving:userInfo];
+                        if (weakSelf.isProductPush || weakSelf.isFirstRechargePush) {
+                            NSLog(@":跳转页面:::::::%@:::::::%@", @(self.isProductPush), @(self.isFirstRechargePush));
+                            AddBankCardViewController *addBankController = [[AddBankCardViewController alloc] init];
+                            addBankController.name = self.nameLabel.text;
+                            addBankController.identify = self.userIdentifyLabel.text;
+                            addBankController.money = self.money;
+                            addBankController.productMoney = self.productMoney;
+                            addBankController.productName = self.productName;
+                            addBankController.packId = self.packId;
+                            [weakSelf.navigationController pushViewController:addBankController
+                                                                     animated:YES];
+                        } else {
+                            [weakSelf.navigationController popViewControllerAnimated:YES];
+                        }
                     } else {
-                        [weakSelf.navigationController popViewControllerAnimated:YES];
+                        NSLog(@"error:::::%@",request.error);
                     }
-                } else {
-                    NSLog(@"error:::::%@",request.error);
-                }
-            } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-                NSLog(@"error:- %@", request.error);
-            }];
-
+                } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+                    NSLog(@"error:- %@", request.error);
+                }];
+            } else {
+                self.alertErrorLabel.text = @"实名认证失败";
+                [self showErrorAlert];
+            }
         } else {
             self.alertErrorLabel.text = authorware.desc;
             [self showErrorAlert];

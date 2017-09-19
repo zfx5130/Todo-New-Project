@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductBackMoneyViewController">
             <connections>
                 <outlet property="endTimeLabel" destination="DBa-pI-Y6R" id="WgO-Xu-Q3K"/>
+                <outlet property="endTotalLabelLeftConstraint" destination="IEH-Jd-F7q" id="jSZ-wr-f6A"/>
                 <outlet property="endTotalMoneyLabel" destination="3cT-gI-qhh" id="Nyt-An-yqO"/>
                 <outlet property="endTotalRateLabel" destination="Efj-WK-ycn" id="C0r-V9-zed"/>
                 <outlet property="holderView" destination="i5M-Pr-FkT" id="MVZ-ra-xBT"/>

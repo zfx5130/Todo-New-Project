@@ -84,9 +84,7 @@
 		842FC9D41F5E4CA900090DB9 /* PMLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 842FC9CF1F5E4CA900090DB9 /* PMLineLayer.m */; };
 		842FC9D51F5E4CA900090DB9 /* UIScrollView+ElasticRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 842FC9D11F5E4CA900090DB9 /* UIScrollView+ElasticRefresh.m */; };
 		8435E4B21F316BCE00424E5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E4B11F316BCE00424E5E /* main.m */; };
-		8435E4BB1F316BCE00424E5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4B91F316BCE00424E5E /* Main.storyboard */; };
 		8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4BC1F316BCE00424E5E /* Assets.xcassets */; };
-		8435E4C01F316BCE00424E5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8435E4BE1F316BCE00424E5E /* LaunchScreen.storyboard */; };
 		8435E4CB1F316BCE00424E5E /* qulicaiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E4CA1F316BCE00424E5E /* qulicaiTests.m */; };
 		8435E4D61F316BCE00424E5E /* qulicaiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E4D51F316BCE00424E5E /* qulicaiUITests.m */; };
 		8435E50B1F31726D00424E5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E50A1F31726D00424E5E /* AppDelegate.m */; };
@@ -105,13 +103,21 @@
 		8435E5C01F399C6C00424E5E /* CoreArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E5BE1F399C6C00424E5E /* CoreArchive.m */; };
 		8435E6031F3D885200424E5E /* QRRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E6021F3D885200424E5E /* QRRequest.m */; };
 		8435E60A1F3D9AE500424E5E /* QRRequestCertificationLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435E6091F3D9AE500424E5E /* QRRequestCertificationLogin.m */; };
+		843612F91F68E22C00EDFD9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843612F71F68E22C00EDFD9A /* LaunchScreen.storyboard */; };
+		843612FA1F68E22C00EDFD9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843612F81F68E22C00EDFD9A /* Main.storyboard */; };
+		843613011F68E27E00EDFD9A /* FinanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843612FC1F68E27E00EDFD9A /* FinanceViewController.m */; };
+		843613021F68E27E00EDFD9A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843612FE1F68E27E00EDFD9A /* MainViewController.m */; };
+		843613031F68E27E00EDFD9A /* QRTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843613001F68E27E00EDFD9A /* QRTabbarController.m */; };
+		8436130D1F68E28B00EDFD9A /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843613051F68E28B00EDFD9A /* ForgetPasswordViewController.m */; };
+		8436130E1F68E28B00EDFD9A /* ForgetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843613061F68E28B00EDFD9A /* ForgetPasswordViewController.xib */; };
+		8436130F1F68E28B00EDFD9A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843613081F68E28B00EDFD9A /* LoginViewController.m */; };
+		843613101F68E28B00EDFD9A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843613091F68E28B00EDFD9A /* LoginViewController.xib */; };
+		843613111F68E28C00EDFD9A /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8436130B1F68E28B00EDFD9A /* RegisterViewController.m */; };
+		843613121F68E28C00EDFD9A /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8436130C1F68E28B00EDFD9A /* RegisterViewController.xib */; };
+		843613161F68E2C600EDFD9A /* FinanceCarouselTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 843613141F68E2C600EDFD9A /* FinanceCarouselTableViewCell.m */; };
+		843613171F68E2C600EDFD9A /* FinanceCarouselTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843613151F68E2C600EDFD9A /* FinanceCarouselTableViewCell.xib */; };
 		843D43031F58149C0079A364 /* QRRequestProductBuy.m in Sources */ = {isa = PBXBuildFile; fileRef = 843D43021F58149C0079A364 /* QRRequestProductBuy.m */; };
 		843D43061F58171A0079A364 /* ProductBuy.m in Sources */ = {isa = PBXBuildFile; fileRef = 843D43051F58171A0079A364 /* ProductBuy.m */; };
-		8444023D1F4186E100F5AFEE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444023C1F4186E100F5AFEE /* MainViewController.m */; };
-		844402401F41874C00F5AFEE /* FinanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444023F1F41874C00F5AFEE /* FinanceViewController.m */; };
-		844402461F418F1400F5AFEE /* QRTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402451F418F1400F5AFEE /* QRTabbarController.m */; };
-		8444024A1F41A0E700F5AFEE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402481F41A0E700F5AFEE /* LoginViewController.m */; };
-		8444024B1F41A0E700F5AFEE /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844402491F41A0E700F5AFEE /* LoginViewController.xib */; };
 		8444027F1F41B2B000F5AFEE /* NSArray+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444024F1F41B2AF00F5AFEE /* NSArray+Custom.m */; };
 		844402801F41B2B000F5AFEE /* NSDate+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402511F41B2AF00F5AFEE /* NSDate+Custom.m */; };
 		844402811F41B2B000F5AFEE /* NSDictionary+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402531F41B2AF00F5AFEE /* NSDictionary+Custom.m */; };
@@ -131,10 +137,6 @@
 		844402921F41B2B000F5AFEE /* UITextView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402751F41B2B000F5AFEE /* UITextView+Custom.m */; };
 		844402931F41B2B000F5AFEE /* UIView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402771F41B2B000F5AFEE /* UIView+Custom.m */; };
 		844402961F41B2B000F5AFEE /* UIViewController+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444027D1F41B2B000F5AFEE /* UIViewController+Custom.m */; };
-		8444029A1F42CB6600F5AFEE /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402981F42CB6600F5AFEE /* RegisterViewController.m */; };
-		8444029B1F42CB6600F5AFEE /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844402991F42CB6600F5AFEE /* RegisterViewController.xib */; };
-		8444029F1F42CB9400F5AFEE /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444029D1F42CB9400F5AFEE /* ForgetPasswordViewController.m */; };
-		844402A01F42CB9400F5AFEE /* ForgetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8444029E1F42CB9400F5AFEE /* ForgetPasswordViewController.xib */; };
 		844402A31F42F21100F5AFEE /* SendVerifyCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402A21F42F21100F5AFEE /* SendVerifyCodeButton.m */; };
 		844402AA1F42FC8100F5AFEE /* QRWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844402A81F42FC8100F5AFEE /* QRWebViewController.m */; };
 		844402AB1F42FC8100F5AFEE /* QRWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844402A91F42FC8100F5AFEE /* QRWebViewController.xib */; };
@@ -196,8 +198,6 @@
 		84825E191F458F02006A921F /* ModifyTradingPdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E171F458F02006A921F /* ModifyTradingPdViewController.m */; };
 		84825E1A1F458F02006A921F /* ModifyTradingPdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E181F458F02006A921F /* ModifyTradingPdViewController.xib */; };
 		84825E261F45BF7E006A921F /* DZ_ScaleCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E251F45BF7E006A921F /* DZ_ScaleCircle.m */; };
-		84825E2A1F4687B6006A921F /* FinanceCarouselTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E281F4687B6006A921F /* FinanceCarouselTableViewCell.m */; };
-		84825E2B1F4687B6006A921F /* FinanceCarouselTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E291F4687B6006A921F /* FinanceCarouselTableViewCell.xib */; };
 		84825E301F469A16006A921F /* NewUserBuyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84825E2E1F469A16006A921F /* NewUserBuyTableViewCell.m */; };
 		84825E311F469A16006A921F /* NewUserBuyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84825E2F1F469A16006A921F /* NewUserBuyTableViewCell.xib */; };
 		84B51CC31F55A36300840F94 /* QRRequestMoneyPickup.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B51CC21F55A36300840F94 /* QRRequestMoneyPickup.m */; };
@@ -429,9 +429,7 @@
 		842FC9D11F5E4CA900090DB9 /* UIScrollView+ElasticRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ElasticRefresh.m"; sourceTree = "<group>"; };
 		8435E4AD1F316BCE00424E5E /* qulicai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qulicai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8435E4B11F316BCE00424E5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8435E4BA1F316BCE00424E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8435E4BC1F316BCE00424E5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8435E4BF1F316BCE00424E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8435E4C11F316BCE00424E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8435E4C61F316BCE00424E5E /* qulicaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = qulicaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8435E4CA1F316BCE00424E5E /* qulicaiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = qulicaiTests.m; sourceTree = "<group>"; };
@@ -473,19 +471,30 @@
 		8435E6081F3D9AE500424E5E /* QRRequestCertificationLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestCertificationLogin.h; sourceTree = "<group>"; };
 		8435E6091F3D9AE500424E5E /* QRRequestCertificationLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestCertificationLogin.m; sourceTree = "<group>"; };
 		8435E60B1F3DAE9900424E5E /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		843612F71F68E22C00EDFD9A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		843612F81F68E22C00EDFD9A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		843612FB1F68E27E00EDFD9A /* FinanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceViewController.h; sourceTree = "<group>"; };
+		843612FC1F68E27E00EDFD9A /* FinanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceViewController.m; sourceTree = "<group>"; };
+		843612FD1F68E27E00EDFD9A /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		843612FE1F68E27E00EDFD9A /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		843612FF1F68E27E00EDFD9A /* QRTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRTabbarController.h; sourceTree = "<group>"; };
+		843613001F68E27E00EDFD9A /* QRTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRTabbarController.m; sourceTree = "<group>"; };
+		843613041F68E28B00EDFD9A /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
+		843613051F68E28B00EDFD9A /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
+		843613061F68E28B00EDFD9A /* ForgetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgetPasswordViewController.xib; sourceTree = "<group>"; };
+		843613071F68E28B00EDFD9A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		843613081F68E28B00EDFD9A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		843613091F68E28B00EDFD9A /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		8436130A1F68E28B00EDFD9A /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		8436130B1F68E28B00EDFD9A /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		8436130C1F68E28B00EDFD9A /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		843613131F68E2C600EDFD9A /* FinanceCarouselTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceCarouselTableViewCell.h; sourceTree = "<group>"; };
+		843613141F68E2C600EDFD9A /* FinanceCarouselTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceCarouselTableViewCell.m; sourceTree = "<group>"; };
+		843613151F68E2C600EDFD9A /* FinanceCarouselTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinanceCarouselTableViewCell.xib; sourceTree = "<group>"; };
 		843D43011F58149C0079A364 /* QRRequestProductBuy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRRequestProductBuy.h; sourceTree = "<group>"; };
 		843D43021F58149C0079A364 /* QRRequestProductBuy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRRequestProductBuy.m; sourceTree = "<group>"; };
 		843D43041F58171A0079A364 /* ProductBuy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductBuy.h; sourceTree = "<group>"; };
 		843D43051F58171A0079A364 /* ProductBuy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductBuy.m; sourceTree = "<group>"; };
-		8444023B1F4186E100F5AFEE /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../MainViewController.h; sourceTree = "<group>"; };
-		8444023C1F4186E100F5AFEE /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
-		8444023E1F41874C00F5AFEE /* FinanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinanceViewController.h; path = ../FinanceViewController.h; sourceTree = "<group>"; };
-		8444023F1F41874C00F5AFEE /* FinanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinanceViewController.m; path = ../FinanceViewController.m; sourceTree = "<group>"; };
-		844402441F418F1400F5AFEE /* QRTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QRTabbarController.h; path = ../QRTabbarController.h; sourceTree = "<group>"; };
-		844402451F418F1400F5AFEE /* QRTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QRTabbarController.m; path = ../QRTabbarController.m; sourceTree = "<group>"; };
-		844402471F41A0E700F5AFEE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = qulicai/Controllers/LoginViewController.h; sourceTree = SOURCE_ROOT; };
-		844402481F41A0E700F5AFEE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = qulicai/Controllers/LoginViewController.m; sourceTree = SOURCE_ROOT; };
-		844402491F41A0E700F5AFEE /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = qulicai/Controllers/LoginViewController.xib; sourceTree = SOURCE_ROOT; };
 		8444024E1F41B2AF00F5AFEE /* NSArray+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Custom.h"; sourceTree = "<group>"; };
 		8444024F1F41B2AF00F5AFEE /* NSArray+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Custom.m"; sourceTree = "<group>"; };
 		844402501F41B2AF00F5AFEE /* NSDate+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Custom.h"; sourceTree = "<group>"; };
@@ -524,12 +533,6 @@
 		844402771F41B2B000F5AFEE /* UIView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Custom.m"; sourceTree = "<group>"; };
 		8444027C1F41B2B000F5AFEE /* UIViewController+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Custom.h"; sourceTree = "<group>"; };
 		8444027D1F41B2B000F5AFEE /* UIViewController+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Custom.m"; sourceTree = "<group>"; };
-		844402971F42CB6600F5AFEE /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = ../RegisterViewController.h; sourceTree = "<group>"; };
-		844402981F42CB6600F5AFEE /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = ../RegisterViewController.m; sourceTree = "<group>"; };
-		844402991F42CB6600F5AFEE /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegisterViewController.xib; path = ../RegisterViewController.xib; sourceTree = "<group>"; };
-		8444029C1F42CB9400F5AFEE /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForgetPasswordViewController.h; path = ../ForgetPasswordViewController.h; sourceTree = "<group>"; };
-		8444029D1F42CB9400F5AFEE /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForgetPasswordViewController.m; path = ../ForgetPasswordViewController.m; sourceTree = "<group>"; };
-		8444029E1F42CB9400F5AFEE /* ForgetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ForgetPasswordViewController.xib; path = ../ForgetPasswordViewController.xib; sourceTree = "<group>"; };
 		844402A11F42F21100F5AFEE /* SendVerifyCodeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendVerifyCodeButton.h; sourceTree = "<group>"; };
 		844402A21F42F21100F5AFEE /* SendVerifyCodeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendVerifyCodeButton.m; sourceTree = "<group>"; };
 		844402A71F42FC8100F5AFEE /* QRWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRWebViewController.h; sourceTree = "<group>"; };
@@ -624,9 +627,6 @@
 		84825E181F458F02006A921F /* ModifyTradingPdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModifyTradingPdViewController.xib; sourceTree = "<group>"; };
 		84825E241F45BF7E006A921F /* DZ_ScaleCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZ_ScaleCircle.h; sourceTree = "<group>"; };
 		84825E251F45BF7E006A921F /* DZ_ScaleCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZ_ScaleCircle.m; sourceTree = "<group>"; };
-		84825E271F4687B6006A921F /* FinanceCarouselTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinanceCarouselTableViewCell.h; path = ../FinanceCarouselTableViewCell.h; sourceTree = "<group>"; };
-		84825E281F4687B6006A921F /* FinanceCarouselTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinanceCarouselTableViewCell.m; path = ../FinanceCarouselTableViewCell.m; sourceTree = "<group>"; };
-		84825E291F4687B6006A921F /* FinanceCarouselTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FinanceCarouselTableViewCell.xib; path = ../FinanceCarouselTableViewCell.xib; sourceTree = "<group>"; };
 		84825E2D1F469A16006A921F /* NewUserBuyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserBuyTableViewCell.h; sourceTree = "<group>"; };
 		84825E2E1F469A16006A921F /* NewUserBuyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserBuyTableViewCell.m; sourceTree = "<group>"; };
 		84825E2F1F469A16006A921F /* NewUserBuyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewUserBuyTableViewCell.xib; sourceTree = "<group>"; };
@@ -1178,8 +1178,8 @@
 		8435E5021F316E9200424E5E /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				8435E4BE1F316BCE00424E5E /* LaunchScreen.storyboard */,
-				8435E4B91F316BCE00424E5E /* Main.storyboard */,
+				843612F71F68E22C00EDFD9A /* LaunchScreen.storyboard */,
+				843612F81F68E22C00EDFD9A /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1412,15 +1412,15 @@
 		844402A41F42FBE800F5AFEE /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				844402471F41A0E700F5AFEE /* LoginViewController.h */,
-				844402481F41A0E700F5AFEE /* LoginViewController.m */,
-				844402491F41A0E700F5AFEE /* LoginViewController.xib */,
-				844402971F42CB6600F5AFEE /* RegisterViewController.h */,
-				844402981F42CB6600F5AFEE /* RegisterViewController.m */,
-				844402991F42CB6600F5AFEE /* RegisterViewController.xib */,
-				8444029C1F42CB9400F5AFEE /* ForgetPasswordViewController.h */,
-				8444029D1F42CB9400F5AFEE /* ForgetPasswordViewController.m */,
-				8444029E1F42CB9400F5AFEE /* ForgetPasswordViewController.xib */,
+				843613041F68E28B00EDFD9A /* ForgetPasswordViewController.h */,
+				843613051F68E28B00EDFD9A /* ForgetPasswordViewController.m */,
+				843613061F68E28B00EDFD9A /* ForgetPasswordViewController.xib */,
+				843613071F68E28B00EDFD9A /* LoginViewController.h */,
+				843613081F68E28B00EDFD9A /* LoginViewController.m */,
+				843613091F68E28B00EDFD9A /* LoginViewController.xib */,
+				8436130A1F68E28B00EDFD9A /* RegisterViewController.h */,
+				8436130B1F68E28B00EDFD9A /* RegisterViewController.m */,
+				8436130C1F68E28B00EDFD9A /* RegisterViewController.xib */,
 				844402AC1F43F9F500F5AFEE /* ResetPasswordViewController.h */,
 				844402AD1F43F9F500F5AFEE /* ResetPasswordViewController.m */,
 				844402AE1F43F9F500F5AFEE /* ResetPasswordViewController.xib */,
@@ -1431,12 +1431,12 @@
 		844402A51F42FC0600F5AFEE /* TabControllers */ = {
 			isa = PBXGroup;
 			children = (
-				844402441F418F1400F5AFEE /* QRTabbarController.h */,
-				844402451F418F1400F5AFEE /* QRTabbarController.m */,
-				8444023B1F4186E100F5AFEE /* MainViewController.h */,
-				8444023C1F4186E100F5AFEE /* MainViewController.m */,
-				8444023E1F41874C00F5AFEE /* FinanceViewController.h */,
-				8444023F1F41874C00F5AFEE /* FinanceViewController.m */,
+				843612FB1F68E27E00EDFD9A /* FinanceViewController.h */,
+				843612FC1F68E27E00EDFD9A /* FinanceViewController.m */,
+				843612FD1F68E27E00EDFD9A /* MainViewController.h */,
+				843612FE1F68E27E00EDFD9A /* MainViewController.m */,
+				843612FF1F68E27E00EDFD9A /* QRTabbarController.h */,
+				843613001F68E27E00EDFD9A /* QRTabbarController.m */,
 				844402B61F441DB200F5AFEE /* MineTableViewController.h */,
 				844402B71F441DB200F5AFEE /* MineTableViewController.m */,
 			);
@@ -1562,9 +1562,9 @@
 		84825E2C1F46993B006A921F /* FinanceView */ = {
 			isa = PBXGroup;
 			children = (
-				84825E271F4687B6006A921F /* FinanceCarouselTableViewCell.h */,
-				84825E281F4687B6006A921F /* FinanceCarouselTableViewCell.m */,
-				84825E291F4687B6006A921F /* FinanceCarouselTableViewCell.xib */,
+				843613131F68E2C600EDFD9A /* FinanceCarouselTableViewCell.h */,
+				843613141F68E2C600EDFD9A /* FinanceCarouselTableViewCell.m */,
+				843613151F68E2C600EDFD9A /* FinanceCarouselTableViewCell.xib */,
 				84825E2D1F469A16006A921F /* NewUserBuyTableViewCell.h */,
 				84825E2E1F469A16006A921F /* NewUserBuyTableViewCell.m */,
 				84825E2F1F469A16006A921F /* NewUserBuyTableViewCell.xib */,
@@ -1763,7 +1763,7 @@
 				TargetAttributes = {
 					8435E4AC1F316BCE00424E5E = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = A76S262L77;
+						DevelopmentTeam = 77QN48H22R;
 						ProvisioningStyle = Automatic;
 					};
 					8435E4C51F316BCE00424E5E = {
@@ -1807,13 +1807,14 @@
 			files = (
 				844FB84C1F4EB21B001772AF /* PropertyHeadTableViewCell.xib in Resources */,
 				844FB8221F4D7AA4001772AF /* BuyHistoryViewController.xib in Resources */,
+				843613101F68E28B00EDFD9A /* LoginViewController.xib in Resources */,
 				842616F11F4C0C9C00A96EFD /* ProductBackMoneyViewController.xib in Resources */,
 				844402AB1F42FC8100F5AFEE /* QRWebViewController.xib in Resources */,
 				842616E71F4C0C7D00A96EFD /* ProductIncomeViewController.xib in Resources */,
 				842616761F4AD33200A96EFD /* QRInfoTableViewCell.xib in Resources */,
-				844402A01F42CB9400F5AFEE /* ForgetPasswordViewController.xib in Resources */,
 				8426169C1F4B0FDF00A96EFD /* ProductHeadTableViewCell.xib in Resources */,
 				842616EC1F4C0C8E00A96EFD /* ProductRecordViewController.xib in Resources */,
+				843612F91F68E22C00EDFD9A /* LaunchScreen.storyboard in Resources */,
 				842616AC1F4BDF1300A96EFD /* InputTextView1.xib in Resources */,
 				84B51CE51F56B5F100840F94 /* 集成加密库请读.txt in Resources */,
 				844FB85B1F4EC604001772AF /* PropertyInfoTableViewCell.xib in Resources */,
@@ -1821,7 +1822,6 @@
 				84DCF35C1F4F08F7002F117A /* PropertyIncomeViewController.xib in Resources */,
 				8426167B1F4ADEC900A96EFD /* AboutQRViewController.xib in Resources */,
 				844FB7FA1F4C5B8A001772AF /* Bank.plist in Resources */,
-				8444024B1F41A0E700F5AFEE /* LoginViewController.xib in Resources */,
 				84825E311F469A16006A921F /* NewUserBuyTableViewCell.xib in Resources */,
 				844FB8601F4ECE65001772AF /* PropertyPickupViewController.xib in Resources */,
 				844FB8311F4E755A001772AF /* BuyProductDetailViewController.xib in Resources */,
@@ -1842,7 +1842,6 @@
 				84DCF34E1F4EE43A002F117A /* ASPopupController.bundle in Resources */,
 				84E5F6621F5563E6004432BF /* ProductHistoryThreeViewController.xib in Resources */,
 				844FB83B1F4E7913001772AF /* ProductDetailListTableViewCell.xib in Resources */,
-				8435E4C01F316BCE00424E5E /* LaunchScreen.storyboard in Resources */,
 				8435E4BD1F316BCE00424E5E /* Assets.xcassets in Resources */,
 				844FB8401F4E7BD0001772AF /* BorrowMoneyDetailTableViewController.storyboard in Resources */,
 				844FB8091F4D5D1D001772AF /* YesterdayIncomeViewController.xib in Resources */,
@@ -1853,6 +1852,7 @@
 				844FB8181F4D665D001772AF /* AllIncomeTableViewCell.xib in Resources */,
 				842616E21F4C0C6C00A96EFD /* ProductIntroViewController.xib in Resources */,
 				842616961F4B0BE300A96EFD /* PruductDetailViewController.xib in Resources */,
+				8436130E1F68E28B00EDFD9A /* ForgetPasswordViewController.xib in Resources */,
 				844FB8561F4EC229001772AF /* EmptyPropertyTableViewCell.xib in Resources */,
 				844FB8511F4EB950001772AF /* MorePropertyTableViewCell.xib in Resources */,
 				844402B01F43F9F600F5AFEE /* ResetPasswordViewController.xib in Resources */,
@@ -1861,14 +1861,14 @@
 				844FB8361F4E7871001772AF /* ProductDetailListViewController.xib in Resources */,
 				844FB8041F4D327C001772AF /* ProductBuySuccessViewController.xib in Resources */,
 				84825E101F456E2C006A921F /* AccountCertificationViewController.xib in Resources */,
-				84825E2B1F4687B6006A921F /* FinanceCarouselTableViewCell.xib in Resources */,
+				843613121F68E28C00EDFD9A /* RegisterViewController.xib in Resources */,
+				843613171F68E2C600EDFD9A /* FinanceCarouselTableViewCell.xib in Resources */,
 				84DCF3541F4EE46E002F117A /* ProductPasswordView.xib in Resources */,
-				8435E4BB1F316BCE00424E5E /* Main.storyboard in Resources */,
 				842616FB1F4C17BA00A96EFD /* ProductIncomeTableViewCell.xib in Resources */,
 				842617001F4C1D0000A96EFD /* ProductRecordTableViewCell.xib in Resources */,
 				844FB80E1F4D6109001772AF /* YesterdayIncomeView.xib in Resources */,
-				8444029B1F42CB6600F5AFEE /* RegisterViewController.xib in Resources */,
 				8426170F1F4C4F6700A96EFD /* BankCardSelectedViewController.xib in Resources */,
+				843612FA1F68E22C00EDFD9A /* Main.storyboard in Resources */,
 				842616F61F4C106B00A96EFD /* ProductIntroTableViewCell.xib in Resources */,
 				84825E0B1F456330006A921F /* UserBankCartViewController.xib in Resources */,
 				842617141F4C53EA00A96EFD /* BankCartTableViewCell.xib in Resources */,
@@ -1974,6 +1974,7 @@
 				CE30A3D51F546A5900FB7763 /* MaskList.m in Sources */,
 				8435E6031F3D885200424E5E /* QRRequest.m in Sources */,
 				8426170E1F4C4F6700A96EFD /* BankCardSelectedViewController.m in Sources */,
+				843613111F68E28C00EDFD9A /* RegisterViewController.m in Sources */,
 				8435E5BF1F399C6C00424E5E /* NSString+File.m in Sources */,
 				84E5F65C1F556381004432BF /* ProductHistoryTwoViewController.m in Sources */,
 				842A93031F52D1F2001822EF /* UpdateLoginPassword.m in Sources */,
@@ -1993,11 +1994,13 @@
 				84D7066E1F57F2FC007EB86B /* QRRequestUserRecharge.m in Sources */,
 				8435E5C01F399C6C00424E5E /* CoreArchive.m in Sources */,
 				842616951F4B0BE300A96EFD /* PruductDetailViewController.m in Sources */,
+				843613011F68E27E00EDFD9A /* FinanceViewController.m in Sources */,
 				84B51CC31F55A36300840F94 /* QRRequestMoneyPickup.m in Sources */,
 				844402871F41B2B000F5AFEE /* UIColor+Custom.m in Sources */,
 				844402901F41B2B000F5AFEE /* UITableView+Custom.m in Sources */,
 				8426167F1F4AEB9100A96EFD /* SuggestViewController.m in Sources */,
 				844FB8171F4D665D001772AF /* AllIncomeTableViewCell.m in Sources */,
+				8436130D1F68E28B00EDFD9A /* ForgetPasswordViewController.m in Sources */,
 				842A933F1F55070D001822EF /* BackMoneyDetail.m in Sources */,
 				8422BF221F5E7F2900F5B0FC /* UIImage+GIF.m in Sources */,
 				84DCF34D1F4EE43A002F117A /* ASPopupPresentAnimator.m in Sources */,
@@ -2045,19 +2048,21 @@
 				CE30A3DB1F547AEE00FB7763 /* PackList.m in Sources */,
 				84B51CE11F56B5F100840F94 /* README.md in Sources */,
 				842A92F11F527759001822EF /* UserUtil.m in Sources */,
-				8444024A1F41A0E700F5AFEE /* LoginViewController.m in Sources */,
+				843613031F68E27E00EDFD9A /* QRTabbarController.m in Sources */,
+				8436130F1F68E28B00EDFD9A /* LoginViewController.m in Sources */,
 				84E5F6521F5556B5004432BF /* QRRequestBuyHistory.m in Sources */,
+				843613161F68E2C600EDFD9A /* FinanceCarouselTableViewCell.m in Sources */,
 				84FEBA961F4AA58B0020B42D /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				842FC9D21F5E4CA900090DB9 /* PMBallLayer.m in Sources */,
 				844402811F41B2B000F5AFEE /* NSDictionary+Custom.m in Sources */,
 				844402C81F44539700F5AFEE /* ZXCImagePicker.m in Sources */,
 				842A93271F53F4E4001822EF /* ProductMark.m in Sources */,
-				8444029A1F42CB6600F5AFEE /* RegisterViewController.m in Sources */,
 				84825E0F1F456E2C006A921F /* AccountCertificationViewController.m in Sources */,
 				84E5F63A1F553E9D004432BF /* SettingUserName.m in Sources */,
 				84E5F6431F55437C004432BF /* YesterdayIncome.m in Sources */,
 				844FB8551F4EC229001772AF /* EmptyPropertyTableViewCell.m in Sources */,
 				842617131F4C53EA00A96EFD /* BankCartTableViewCell.m in Sources */,
+				843613021F68E27E00EDFD9A /* MainViewController.m in Sources */,
 				8435E50B1F31726D00424E5E /* AppDelegate.m in Sources */,
 				842616F01F4C0C9C00A96EFD /* ProductBackMoneyViewController.m in Sources */,
 				84E5F66B1F557292004432BF /* ContractList.m in Sources */,
@@ -2069,10 +2074,8 @@
 				842616A01F4BD13300A96EFD /* ProductCycleTableViewCell.m in Sources */,
 				842616E61F4C0C7D00A96EFD /* ProductIncomeViewController.m in Sources */,
 				84CE16FA1F4FCF3800E61C7D /* FirstRechargeViewController.m in Sources */,
-				8444023D1F4186E100F5AFEE /* MainViewController.m in Sources */,
 				8426169B1F4B0FDF00A96EFD /* ProductHeadTableViewCell.m in Sources */,
 				842617091F4C324B00A96EFD /* AddBankCardViewController.m in Sources */,
-				844402461F418F1400F5AFEE /* QRTabbarController.m in Sources */,
 				844FB85F1F4ECE65001772AF /* PropertyPickupViewController.m in Sources */,
 				CE30A3D81F5478F600FB7763 /* QRRequestProductPackList.m in Sources */,
 				84D0A5C91F6237B200011027 /* QRRequestGetVersion.m in Sources */,
@@ -2101,10 +2104,8 @@
 				844FB8211F4D7AA4001772AF /* BuyHistoryViewController.m in Sources */,
 				8435E5B01F399C1E00424E5E /* CoreLockConst.m in Sources */,
 				84E5F6581F5557F1004432BF /* BuyHistory.m in Sources */,
-				844402401F41874C00F5AFEE /* FinanceViewController.m in Sources */,
 				84CE16FE1F502EF600E61C7D /* CertificationLogin.m in Sources */,
 				84DCF34C1F4EE43A002F117A /* ASPopupDismissAnimator.m in Sources */,
-				8444029F1F42CB9400F5AFEE /* ForgetPasswordViewController.m in Sources */,
 				844FB7FE1F4C6B89001772AF /* ProductBuyViewController.m in Sources */,
 				844FB83A1F4E7913001772AF /* ProductDetailListTableViewCell.m in Sources */,
 				844402A31F42F21100F5AFEE /* SendVerifyCodeButton.m in Sources */,
@@ -2120,7 +2121,6 @@
 				84DCF34F1F4EE43A002F117A /* ASPopupView.m in Sources */,
 				8435E5B31F399C1E00424E5E /* CLLockItemView.m in Sources */,
 				842A932D1F541E07001822EF /* QRRequestProductDetail.m in Sources */,
-				84825E2A1F4687B6006A921F /* FinanceCarouselTableViewCell.m in Sources */,
 				8422BF381F5EB1A800F5B0FC /* GiFHUD.m in Sources */,
 				84CE16F51F4F0CD300E61C7D /* MoneyRechargeViewController.m in Sources */,
 				844402891F41B2B000F5AFEE /* UIFont+Custom.m in Sources */,
@@ -2170,27 +2170,6 @@
 			targetProxy = 8435E4D21F316BCE00424E5E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		8435E4B91F316BCE00424E5E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8435E4BA1F316BCE00424E5E /* Base */,
-			);
-			name = Main.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		8435E4BE1F316BCE00424E5E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8435E4BF1F316BCE00424E5E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8435E4D81F316BCE00424E5E /* Debug */ = {
@@ -2290,7 +2269,8 @@
 			baseConfigurationReference = 777FE8CAA66E080E2873B281 /* Pods-qulicai.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = A76S262L77;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 77QN48H22R;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/qulicai/Headers/PrefixHeader.pch";
 				INFOPLIST_FILE = qulicai/Info.plist;
@@ -2357,8 +2337,10 @@
 					"-force_load",
 					"\"$(SRCROOT)/qulicai/Venders/LLPay/LLPaySDK/libLLPaySDK.a\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = qurong.qulicai.com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qurong.qulicai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2367,7 +2349,8 @@
 			baseConfigurationReference = 8092F52885BA6EA29FD5EFA1 /* Pods-qulicai.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = A76S262L77;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 77QN48H22R;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/qulicai/Headers/PrefixHeader.pch";
 				INFOPLIST_FILE = qulicai/Info.plist;
@@ -2434,8 +2417,10 @@
 					"-force_load",
 					"\"$(SRCROOT)/qulicai/Venders/LLPay/LLPaySDK/libLLPaySDK.a\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = qurong.qulicai.com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qurong.qulicai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

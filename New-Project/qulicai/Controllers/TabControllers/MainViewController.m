@@ -248,7 +248,7 @@ UIAlertViewDelegate>
     if (alertView.tag == 1) {
         NSLog(@"大版本");
         [self swapAppStoreUrl];
-    } else {
+    } else if (alertView.tag == 2) {
         NSLog(@"小版本");
         if (buttonIndex) {
             [self swapAppStoreUrl];
@@ -258,7 +258,7 @@ UIAlertViewDelegate>
 }
 
 - (void)swapAppStoreUrl {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/cn/app/%E5%BE%AE%E4%BF%A1/id414478124?mt=8"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/%E8%B6%A3%E7%90%86%E8%B4%A2-%E8%B6%A3%E8%9E%8D%E9%87%91%E6%9C%8D%E6%97%97%E4%B8%8B%E4%BF%A1%E7%94%A8%E8%B4%B7%E6%AC%BE%E4%BF%A1%E6%81%AF%E4%B8%AD%E4%BB%8B%E5%B9%B3%E5%8F%B0/id1282823112?l=zh&ls=1&mt=8"]];
 }
 
 
@@ -437,12 +437,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)pickupMoney {
     if ([UserUtil isLoginIn]) {
-        if ([UserUtil currentUser].totalMoney > 0) {
+        if ([UserUtil currentUser].availableMoney > 0) {
             PropertyPickupViewController *pickContoller = [[PropertyPickupViewController alloc] init];
             pickContoller.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:pickContoller animated:YES];
         } else {
-            [self showSuccessWithTitle:@"余额不足"];
+            [self showAlert];
         }
     } else {
         [self login];
@@ -458,6 +458,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)pickMoneyWasPressed:(UIButton *)sender {
+    NSLog(@"ASDFASDFASD345345345345345345");
     [self pickupMoney];
 }
 
@@ -517,20 +518,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                                                        delegate:self
                                               cancelButtonTitle:@"确定"
                                               otherButtonTitles:nil, nil];
+    
     [alertView show];
 }
 
 - (void)leftBarButtonAction {
-    if ([UserUtil isLoginIn]) {
-        User *user = [UserUtil currentUser];
-        if (user.availableMoney <= 0) {
-            [self showAlert];
-        } else {
-            [self pickupMoney];
-        }
-    } else {
-        [self login];
-    }
+    [self pickupMoney];
 }
 
 

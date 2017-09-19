@@ -15,7 +15,8 @@
     return @{
              @"code" : @"head.responseCode",
              @"desc" : @"head.responseDescription",
-             @"statusType" : @"head.status"
+             @"statusType" : @"head.status",
+             @"authentication" : @"body.authentication"
              };
 }
 

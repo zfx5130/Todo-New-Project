@@ -31,6 +31,10 @@
 
 @property (weak, nonatomic) IBOutlet UIView *holderView;
 
+//80
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *endTotalLabelLeftConstraint;
+
+
 @end
 
 @implementation ProductBackMoneyViewController
@@ -40,6 +44,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addRefreshControl];
+    if (IS_IPHONE_5) {
+        self.endTotalLabelLeftConstraint.constant = 25.0f;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

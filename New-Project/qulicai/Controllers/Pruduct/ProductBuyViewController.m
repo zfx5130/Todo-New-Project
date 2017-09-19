@@ -209,7 +209,7 @@ UIScrollViewDelegate>
 - (void)buy {
     [self.view endEditing:YES];
     if ([self.moneyTextField.text floatValue] < 0.01) {
-        self.errorLabel.text = @"*购买金额不得少于0.1";
+        self.errorLabel.text = @"*购买金额不得少于0.01";
         [self.errorLabel addShakeAnimation];
         return;
     }
@@ -240,8 +240,9 @@ UIScrollViewDelegate>
             }
         } else {
             //不抵扣,直接跳转连连去支付
+            //NSLog(@"不抵扣,直接跳转连连去支付");
             [self rechargeMoneyAndBuyProductWithTotalMoney:self.moneyTextField.text
-                                             rechargeMoney:lastMoney];
+                                             rechargeMoney:[self.moneyTextField.text doubleValue]];
         }
     } else {
         NSString *pickId =  self.isDetailSwap ? self.productDetail.productId : self.product.productId;
