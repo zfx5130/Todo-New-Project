@@ -46,6 +46,8 @@
 
 @property (copy, nonatomic) NSString *resultTitle;
 
+@property (assign, nonatomic) BOOL isBuyProduct;
+
 @end
 
 @implementation AddBankCardViewController
@@ -220,7 +222,7 @@
 
 - (void)swapLLpayWithCardNumer:(NSString *)cardNumber
                     isRecharge:(BOOL)isRecharge {
-    
+    self.isBuyProduct = !isRecharge;
     self.llOrder = [[LLOrder alloc] initWithLLPayType:LLPayTypeVerify];
     NSString *timeStamp = [LLOrder timeStamp];
     self.llOrder.oid_partner = QR_PARTNER_ID;
@@ -298,7 +300,7 @@
 
 - (void)rechargeSuccess {
 
-    if (!self.productName.length && !self.packId.length && !self.productMoney.length) {
+    if (self.isBuyProduct) {
         [self showSVProgressHUDWithStatus:@"购买中"];
         QRRequestProductBuy *buyProduct = [[QRRequestProductBuy alloc] init];
         buyProduct.userId = [NSString getStringWithString:[UserUtil currentUser].userId];
