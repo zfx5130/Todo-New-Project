@@ -30,4 +30,7 @@
 //24
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *centerLabelBottonConstraint;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *pickViewTopConstraint;
+
+
 @end

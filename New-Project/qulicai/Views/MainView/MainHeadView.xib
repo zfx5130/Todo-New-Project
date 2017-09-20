@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="PingFang.ttc">
+            <string>PingFangSC-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainHeadView">
             <connections>
@@ -18,6 +23,7 @@
                 <outlet property="incomeButton" destination="UYD-5O-AzF" id="7H9-xu-3BF"/>
                 <outlet property="pickMoneyButton" destination="29F-0B-IGZ" id="euo-jP-PtX"/>
                 <outlet property="pickTagImageView" destination="raI-QI-jhn" id="PhX-5Q-9yM"/>
+                <outlet property="pickViewTopConstraint" destination="coF-UU-tye" id="LNm-3X-FxY"/>
                 <outlet property="totalPropertyButton" destination="x9a-2T-DDh" id="Oxh-Kv-HKC"/>
                 <outlet property="yesterdayEarningLabel" destination="Sl6-35-pd9" id="R0X-hT-5uF"/>
             </connections>
@@ -55,7 +61,7 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29F-0B-IGZ">
-                    <rect key="frame" x="16" y="33" width="156" height="26"/>
+                    <rect key="frame" x="16" y="35" width="156" height="26"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="26" id="RaR-J1-uI6"/>
                         <constraint firstAttribute="width" constant="156" id="eTO-Il-JFE"/>
@@ -120,6 +126,7 @@
                 <constraint firstItem="Rig-C8-bmr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="JNr-FP-wa1"/>
                 <constraint firstItem="x9a-2T-DDh" firstAttribute="centerX" secondItem="XME-9S-6b7" secondAttribute="centerX" id="NmI-wq-Upg"/>
                 <constraint firstItem="29F-0B-IGZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="PvV-we-A9W"/>
+                <constraint firstItem="29F-0B-IGZ" firstAttribute="centerY" secondItem="Rig-C8-bmr" secondAttribute="centerY" id="Vgw-BS-obq"/>
                 <constraint firstItem="UYD-5O-AzF" firstAttribute="width" secondItem="22I-uF-23d" secondAttribute="width" constant="30" id="Vs9-U6-Ev4"/>
                 <constraint firstItem="axJ-tQ-8pv" firstAttribute="centerY" secondItem="Rig-C8-bmr" secondAttribute="centerY" id="XKw-01-xNE"/>
                 <constraint firstItem="22I-uF-23d" firstAttribute="centerX" secondItem="XME-9S-6b7" secondAttribute="centerX" id="aAA-zC-piP"/>
@@ -129,7 +136,6 @@
                 <constraint firstItem="XME-9S-6b7" firstAttribute="top" secondItem="joO-zc-Noo" secondAttribute="bottom" constant="4" id="fhN-8s-BjK"/>
                 <constraint firstAttribute="bottom" secondItem="8k9-QJ-FX3" secondAttribute="bottom" id="gjc-xZ-aF1"/>
                 <constraint firstItem="x9a-2T-DDh" firstAttribute="height" secondItem="XME-9S-6b7" secondAttribute="height" constant="50" id="jwM-EJ-lxX"/>
-                <constraint firstItem="29F-0B-IGZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="33" id="mux-rG-FAt"/>
                 <constraint firstItem="22I-uF-23d" firstAttribute="top" secondItem="Sl6-35-pd9" secondAttribute="bottom" constant="1" id="oZu-Yy-ev7"/>
                 <constraint firstItem="raI-QI-jhn" firstAttribute="leading" secondItem="axJ-tQ-8pv" secondAttribute="trailing" constant="1" id="ouv-xU-KdI"/>
                 <constraint firstItem="UYD-5O-AzF" firstAttribute="centerX" secondItem="22I-uF-23d" secondAttribute="centerX" id="p1g-fd-XHV"/>

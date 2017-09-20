@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController">
             <connections>
+                <outlet property="backButton" destination="MLO-iy-PCN" id="nP5-Pp-guv"/>
                 <outlet property="bottomErrorViewBottomConstraint" destination="vgs-h3-4rc" id="vQT-l5-6Jx"/>
                 <outlet property="centerViewHeightConstraint" destination="qIk-2g-m44" id="Gib-T8-ZzT"/>
                 <outlet property="errorAlertLabel" destination="suJ-m0-8ch" id="18k-Hp-B1c"/>
@@ -22,6 +23,7 @@
                 <outlet property="phoneTextField" destination="Jff-FD-3tf" id="AZS-RV-5P2"/>
                 <outlet property="registerButton" destination="stE-j8-25e" id="8wq-As-Z9p"/>
                 <outlet property="registerButtonTopConstraint" destination="wiS-GQ-nf3" id="0LM-kx-Q9M"/>
+                <outlet property="scrollView" destination="Q6e-hd-mtR" id="O3X-4l-tUb"/>
                 <outlet property="verifyButton" destination="X4e-Sc-31n" id="szg-Gf-rQZ"/>
                 <outlet property="verifyCodeButton" destination="xCu-i5-Hy3" id="wtl-ab-6Fh"/>
                 <outlet property="verifyTextField" destination="QFn-ak-5ym" id="tvF-MO-CJh"/>
@@ -45,6 +47,17 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_head_bg_image" translatesAutoresizingMaskIntoConstraints="NO" id="NgF-gW-LsY">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLO-iy-PCN">
+                                            <rect key="frame" x="0.0" y="20" width="45" height="45"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="2l6-XP-i1Q"/>
+                                                <constraint firstAttribute="width" constant="45" id="JaI-mF-b6o"/>
+                                            </constraints>
+                                            <state key="normal" image="back_image"/>
+                                            <connections>
+                                                <action selector="back:" destination="-1" eventType="touchUpInside" id="EJT-hl-nwX"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -53,6 +66,8 @@
                                         <constraint firstItem="NgF-gW-LsY" firstAttribute="leading" secondItem="xW3-v9-EIv" secondAttribute="leading" id="ApM-iB-k5s"/>
                                         <constraint firstAttribute="trailing" secondItem="NgF-gW-LsY" secondAttribute="trailing" id="GvS-s1-Lip"/>
                                         <constraint firstAttribute="height" constant="150" id="XrB-JN-HKl"/>
+                                        <constraint firstItem="MLO-iy-PCN" firstAttribute="top" secondItem="xW3-v9-EIv" secondAttribute="top" constant="20" id="qAa-nH-qkQ"/>
+                                        <constraint firstItem="MLO-iy-PCN" firstAttribute="leading" secondItem="xW3-v9-EIv" secondAttribute="leading" id="qSH-er-Yjg"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zh1-9e-QAB" userLabel=" Bottom View">
@@ -378,6 +393,7 @@
     </objects>
     <resources>
         <image name="alert_error_image" width="13" height="12"/>
+        <image name="back_image" width="13" height="21"/>
         <image name="login_disabled_button_image" width="315" height="40"/>
         <image name="login_enabled_button_image" width="315" height="40"/>
         <image name="login_head_bg_image" width="375" height="148"/>

@@ -45,6 +45,9 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headImageHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *registerButtonTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *centerViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 
 @end
 
@@ -73,8 +76,15 @@
 
 #pragma mark - Private
 
-
 - (void)setupViews {
+    if (@available(iOS 11.0, *)) {
+        self.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        self.fd_prefersNavigationBarHidden = YES;
+        self.backButton.hidden = NO;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+
     [self.view addTapGestureForDismissingKeyboard];
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self setupNavigationItemLeft:[UIImage imageNamed:@"back_image"]];
@@ -272,6 +282,11 @@
 - (IBAction)registerButtonWasPressed:(UIButton *)sender {
     [self registerUser];
 }
+
+- (IBAction)back:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 - (IBAction)QRAgreement:(UIButton *)sender {
     //趣融管理协议

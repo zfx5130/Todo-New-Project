@@ -127,7 +127,11 @@ InputTextView1Delgate>
 }
 
 - (void)setupViews {
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     [self setupNavigationItemLeft:[UIImage imageNamed:@"forget_back_image"]];
 }
 

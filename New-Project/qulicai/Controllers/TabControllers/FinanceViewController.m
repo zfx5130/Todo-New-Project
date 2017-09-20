@@ -63,6 +63,14 @@ UITableViewDataSource>
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        self.navigationController.navigationBarHidden = YES;
+        self.tableView.contentInset = UIEdgeInsetsMake(44, 0, 49, 0);
+        self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -157,7 +165,6 @@ UITableViewDataSource>
 
 - (void)setupTableViewHeadView {
     self.title = @"理财";
-    self.automaticallyAdjustsScrollViewInsets = NO;
     [self wr_setNavBarTitleColor:[UIColor clearColor]];
     self.cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, IMAGE_HEIGHT)
                                                               delegate:self

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="bottomErrorViewBottomConstraint" destination="lnq-6p-irH" id="ZgH-d7-JU6"/>
                 <outlet property="centerViewHeightCostraint" destination="1vY-p0-zSz" id="qDp-At-oGv"/>
+                <outlet property="closeButton" destination="F9M-f8-Vmv" id="UFL-X5-obZ"/>
                 <outlet property="errorLabel" destination="DgL-yH-XIn" id="oJI-I5-uQD"/>
                 <outlet property="headImageHeightConstraint" destination="7nB-l2-22l" id="yBW-s1-m9K"/>
                 <outlet property="lockButton" destination="zgB-QP-Kny" id="isS-uC-reK"/>
@@ -21,6 +22,7 @@
                 <outlet property="passwordTextField" destination="W2z-K5-M5l" id="8c3-oM-Jz0"/>
                 <outlet property="phoneButtton" destination="0WE-vN-4LF" id="syi-Xb-qrY"/>
                 <outlet property="phoneTextField" destination="6Pl-m5-rYp" id="a2W-mp-gxz"/>
+                <outlet property="scrollView" destination="2MX-x3-gQf" id="d2f-wC-yHT"/>
                 <outlet property="shakeErrorLabel" destination="Cag-g3-BgG" id="aoE-zH-QoS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -42,14 +44,27 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_head_bg_image" translatesAutoresizingMaskIntoConstraints="NO" id="cZ5-EZ-DFY">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                         </imageView>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9M-f8-Vmv">
+                                            <rect key="frame" x="322" y="15" width="45" height="45"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="RND-jt-SBP"/>
+                                                <constraint firstAttribute="width" constant="45" id="ted-tG-GDf"/>
+                                            </constraints>
+                                            <state key="normal" image="close_image"/>
+                                            <connections>
+                                                <action selector="close:" destination="-1" eventType="touchUpInside" id="DE1-Ps-gfq"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="150" id="7nB-l2-22l"/>
+                                        <constraint firstItem="F9M-f8-Vmv" firstAttribute="top" secondItem="Xwf-lT-Jot" secondAttribute="top" constant="15" id="Lku-HV-CRz"/>
                                         <constraint firstItem="cZ5-EZ-DFY" firstAttribute="leading" secondItem="Xwf-lT-Jot" secondAttribute="leading" id="fTj-88-aKT"/>
                                         <constraint firstAttribute="bottom" secondItem="cZ5-EZ-DFY" secondAttribute="bottom" id="ryn-87-H44"/>
                                         <constraint firstItem="cZ5-EZ-DFY" firstAttribute="top" secondItem="Xwf-lT-Jot" secondAttribute="top" id="shY-03-IsR"/>
                                         <constraint firstAttribute="trailing" secondItem="cZ5-EZ-DFY" secondAttribute="trailing" id="u2u-cp-gcz"/>
+                                        <constraint firstAttribute="trailing" secondItem="F9M-f8-Vmv" secondAttribute="trailing" constant="8" id="yJR-K8-880"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HxS-NH-li2" userLabel=" Bottom View">
@@ -314,6 +329,7 @@
     </objects>
     <resources>
         <image name="alert_error_image" width="13" height="12"/>
+        <image name="close_image" width="15" height="15"/>
         <image name="login_disabled_button_image" width="315" height="40"/>
         <image name="login_enabled_button_image" width="315" height="40"/>
         <image name="login_head_bg_image" width="375" height="148"/>

@@ -957,7 +957,6 @@
 				8435E5001F316E9200424E5E /* Models */,
 				8435E5021F316E9200424E5E /* Storyboards */,
 				8435E4FE1F316E9200424E5E /* Headers */,
-				8435E4FF1F316E9200424E5E /* Helpers */,
 				8435E5011F316E9200424E5E /* Resources */,
 				8435E5031F316E9200424E5E /* Venders */,
 				8435E4FC1F316E9200424E5E /* Categories */,
@@ -1071,13 +1070,6 @@
 				8435E60B1F3DAE9900424E5E /* PrefixHeader.pch */,
 			);
 			path = Headers;
-			sourceTree = "<group>";
-		};
-		8435E4FF1F316E9200424E5E /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		8435E5001F316E9200424E5E /* Models */ = {

@@ -141,7 +141,7 @@
     if (user.totalMoney > 0) {
         circle.firstColor = [UIColor colorWithRed:113.0f / 255 green:175.0f / 255 blue:255.0f / 255 alpha:1.0];
         circle.secondColor =[UIColor colorWithRed:255.0f / 255 green:168.0f / 255 blue:0 alpha:1.0];
-        CGFloat rate = user.availableMoney * 1.0f / (user.availableMoney + user.freezeMoney);
+        CGFloat rate = user.availableMoney * 1.0f / (user.availableMoney + user.regularMoney);
         circle.firstScale = 1 - rate;
         circle.secondScale = rate;
         circle.lineWith = 20;
@@ -188,7 +188,7 @@
         User *user = [UserUtil currentUser];
         cell.totalPropertyLabel.text = [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",user.totalMoney]];
         cell.balanceLabel.text = [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f", user.availableMoney]];
-        cell.regularLabel.text = [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",user.freezeMoney]];
+        cell.regularLabel.text = [NSString countNumAndChangeformat:[NSString stringWithFormat:@"%.2f",user.regularMoney]];
         [self addScacleCircleWithCell:cell];
         return cell;
     } else if (indexPath.section == 2) {
