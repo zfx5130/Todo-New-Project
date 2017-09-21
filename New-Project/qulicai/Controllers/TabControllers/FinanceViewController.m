@@ -63,14 +63,6 @@ UITableViewDataSource>
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    if (@available(iOS 11.0, *)) {
-        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        self.navigationController.navigationBarHidden = YES;
-        self.tableView.contentInset = UIEdgeInsetsMake(44, 0, 49, 0);
-        self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
-    } else {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -174,6 +166,11 @@ UITableViewDataSource>
     self.cycleScrollView.imageURLStringsGroup = self.imagesUrlString;
     self.cycleScrollView.bannerImageViewContentMode = UIViewContentModeScaleAspectFill;
     self.tableView.tableHeaderView = self.cycleScrollView;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     [self wr_setNavBarBackgroundAlpha:0.0f];
 }
 

@@ -37,7 +37,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *loginButtonTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *centerViewHeightCostraint;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIButton *closeButton;
 
 @end
 
@@ -67,8 +66,6 @@
 - (void)setupViews {
     if (@available(iOS 11.0, *)) {
         self.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        self.fd_prefersNavigationBarHidden = YES;
-        self.closeButton.hidden = NO;
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
@@ -80,6 +77,7 @@
     [self.phoneTextField becomeFirstResponder];
     [self.view addTapGestureForDismissingKeyboard];
     [self wr_setNavBarBackgroundAlpha:0.0f];
+    [self wr_setNavBarShadowImageHidden:YES];
     [self setupNavigationItemRight:[UIImage imageNamed:@"close_image"]];
 }
 
@@ -237,12 +235,5 @@
     [self.navigationController pushViewController:passwordController
                                          animated:YES];
 }
-
-- (IBAction)close:(UIButton *)sender {
-    [self.view endEditing:YES];
-    [self dismissViewControllerAnimated:YES
-                             completion:nil];
-}
-
 
 @end

@@ -9,6 +9,7 @@
 
 #import "WRNavigationBar.h"
 #import <objc/runtime.h>
+#import "UIImage+Custom.h"
 
 
 //===============================================================================================
@@ -190,8 +191,12 @@ static int kWRNavBarBottom = 64;
 // set _UIBarBackground alpha (_UIBarBackground subviews alpha <= _UIBarBackground alpha)
 - (void)wr_setBackgroundAlpha:(CGFloat)alpha
 {
-    UIView *barBackgroundView = self.subviews.firstObject;
-    barBackgroundView.alpha = alpha;
+    if (@available(iOS 11.0, *)) {
+        [self wr_setBackgroundImage:[UIImage imageWithColor:[[UIColor whiteColor] colorWithAlphaComponent:alpha]]];
+    } else {
+        UIView *barBackgroundView = self.subviews.firstObject;
+        barBackgroundView.alpha = alpha;
+    }
 }
 
 - (void)wr_setBarButtonItemsAlpha:(CGFloat)alpha hasSystemBackIndicator:(BOOL)hasSystemBackIndicator

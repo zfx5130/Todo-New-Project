@@ -33,11 +33,6 @@
         self.bottomLabelBottomConstraint.constant = 17.0f;
         self.centerLabelBottonConstraint.constant = 15.0f;
     }
-    if (@available(iOS 11.0, *)) {
-        self.pickViewTopConstraint.constant = 80.0f;
-    } else {
-        self.pickViewTopConstraint.constant = 30.0f;
-    }
 }
 
 
