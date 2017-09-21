@@ -208,8 +208,8 @@ UIScrollViewDelegate>
 
 - (void)buy {
     [self.view endEditing:YES];
-    if ([self.moneyTextField.text floatValue] < 0.01) {
-        self.errorLabel.text = @"*购买金额不得少于0.01";
+    if ([self.moneyTextField.text floatValue] < 50) {
+        self.errorLabel.text = @"*购买金额不得少于50";
         [self.errorLabel addShakeAnimation];
         return;
     }

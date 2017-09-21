@@ -101,14 +101,22 @@ UIAlertViewDelegate>
                     alert.tag = 1;
                     [alert show];
                 } else {
-                    //小版本
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                                    message:@"当前版本不是最新版本，是否去下载"
-                                                                   delegate:self
-                                                          cancelButtonTitle:@"否"
-                                                          otherButtonTitles:@"去下载", nil];
-                    alert.tag = 2;
-                    [alert show];
+                    if (apiVersion.length >= 5 && systemVersion.length >= 5) {
+                        NSString *apiNum = [apiVersion substringWithRange:NSMakeRange(2, 1)];
+                        NSString *sysNum = [systemVersion substringWithRange:NSMakeRange(2, 1)];
+                        if (apiNum < sysNum) {
+                            //0 小于 1 不更新
+                        } else {
+                            //小版本
+                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                                            message:@"当前版本不是最新版本，是否去下载"
+                                                                           delegate:self
+                                                                  cancelButtonTitle:@"否"
+                                                                  otherButtonTitles:@"去下载", nil];
+                            alert.tag = 2;
+                            [alert show];
+                        }
+                    }
                 }
             }
             
