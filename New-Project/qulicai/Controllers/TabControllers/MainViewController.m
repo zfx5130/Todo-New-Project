@@ -104,7 +104,7 @@ UIAlertViewDelegate>
                     if (apiVersion.length >= 5 && systemVersion.length >= 5) {
                         NSString *apiNum = [apiVersion substringWithRange:NSMakeRange(2, 1)];
                         NSString *sysNum = [systemVersion substringWithRange:NSMakeRange(2, 1)];
-                        if (apiNum < sysNum) {
+                        if ((apiNum < sysNum) || [apiVersion isEqualToString:@"1.1.3"]) {
                             //0 小于 1 不更新
                         } else {
                             //小版本
