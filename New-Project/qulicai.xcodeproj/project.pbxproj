@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840142491F7367AB00392EEB /* YesterdayIncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840142481F7367AA00392EEB /* YesterdayIncomeViewController.m */; };
 		8422BF221F5E7F2900F5B0FC /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 8422BF211F5E7F2900F5B0FC /* UIImage+GIF.m */; };
 		8422BF241F5E7FE500F5B0FC /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8422BF231F5E7FE500F5B0FC /* loading.gif */; };
 		8422BF2F1F5E87A000F5B0FC /* UIView+ADGifLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 8422BF2E1F5E87A000F5B0FC /* UIView+ADGifLoading.m */; };
@@ -155,7 +156,6 @@
 		844FB7FF1F4C6B89001772AF /* ProductBuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB7FD1F4C6B89001772AF /* ProductBuyViewController.xib */; };
 		844FB8031F4D327C001772AF /* ProductBuySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB8011F4D327C001772AF /* ProductBuySuccessViewController.m */; };
 		844FB8041F4D327C001772AF /* ProductBuySuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB8021F4D327C001772AF /* ProductBuySuccessViewController.xib */; };
-		844FB8081F4D5D1D001772AF /* YesterdayIncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB8061F4D5D1D001772AF /* YesterdayIncomeViewController.m */; };
 		844FB8091F4D5D1D001772AF /* YesterdayIncomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB8071F4D5D1D001772AF /* YesterdayIncomeViewController.xib */; };
 		844FB80C1F4D60F3001772AF /* YesterdayIncomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FB80B1F4D60F3001772AF /* YesterdayIncomeView.m */; };
 		844FB80E1F4D6109001772AF /* YesterdayIncomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844FB80D1F4D6109001772AF /* YesterdayIncomeView.xib */; };
@@ -294,6 +294,7 @@
 /* Begin PBXFileReference section */
 		777FE8CAA66E080E2873B281 /* Pods-qulicai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qulicai.debug.xcconfig"; path = "Pods/Target Support Files/Pods-qulicai/Pods-qulicai.debug.xcconfig"; sourceTree = "<group>"; };
 		8092F52885BA6EA29FD5EFA1 /* Pods-qulicai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qulicai.release.xcconfig"; path = "Pods/Target Support Files/Pods-qulicai/Pods-qulicai.release.xcconfig"; sourceTree = "<group>"; };
+		840142481F7367AA00392EEB /* YesterdayIncomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YesterdayIncomeViewController.m; sourceTree = "<group>"; };
 		8422BF201F5E7F2900F5B0FC /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
 		8422BF211F5E7F2900F5B0FC /* UIImage+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
 		8422BF231F5E7FE500F5B0FC /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
@@ -563,7 +564,6 @@
 		844FB8011F4D327C001772AF /* ProductBuySuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductBuySuccessViewController.m; sourceTree = "<group>"; };
 		844FB8021F4D327C001772AF /* ProductBuySuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductBuySuccessViewController.xib; sourceTree = "<group>"; };
 		844FB8051F4D5D1D001772AF /* YesterdayIncomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YesterdayIncomeViewController.h; sourceTree = "<group>"; };
-		844FB8061F4D5D1D001772AF /* YesterdayIncomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YesterdayIncomeViewController.m; sourceTree = "<group>"; };
 		844FB8071F4D5D1D001772AF /* YesterdayIncomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YesterdayIncomeViewController.xib; sourceTree = "<group>"; };
 		844FB80A1F4D60F3001772AF /* YesterdayIncomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YesterdayIncomeView.h; sourceTree = "<group>"; };
 		844FB80B1F4D60F3001772AF /* YesterdayIncomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YesterdayIncomeView.m; sourceTree = "<group>"; };
@@ -815,7 +815,7 @@
 				844FB8011F4D327C001772AF /* ProductBuySuccessViewController.m */,
 				844FB8021F4D327C001772AF /* ProductBuySuccessViewController.xib */,
 				844FB8051F4D5D1D001772AF /* YesterdayIncomeViewController.h */,
-				844FB8061F4D5D1D001772AF /* YesterdayIncomeViewController.m */,
+				840142481F7367AA00392EEB /* YesterdayIncomeViewController.m */,
 				844FB8071F4D5D1D001772AF /* YesterdayIncomeViewController.xib */,
 				844FB81E1F4D7AA4001772AF /* BuyHistoryViewController.h */,
 				844FB81F1F4D7AA4001772AF /* BuyHistoryViewController.m */,
@@ -1968,6 +1968,7 @@
 				8426170E1F4C4F6700A96EFD /* BankCardSelectedViewController.m in Sources */,
 				843613111F68E28C00EDFD9A /* RegisterViewController.m in Sources */,
 				8435E5BF1F399C6C00424E5E /* NSString+File.m in Sources */,
+				840142491F7367AB00392EEB /* YesterdayIncomeViewController.m in Sources */,
 				84E5F65C1F556381004432BF /* ProductHistoryTwoViewController.m in Sources */,
 				842A93031F52D1F2001822EF /* UpdateLoginPassword.m in Sources */,
 				84CE17011F512FB300E61C7D /* QRRequestLogin.m in Sources */,
@@ -2089,7 +2090,6 @@
 				84E5F6401F554362004432BF /* YesterdayIncomeList.m in Sources */,
 				844402C51F44516100F5AFEE /* WeiXinPickView.m in Sources */,
 				842A93181F53C38D001822EF /* QRRequestSetingTranPassword.m in Sources */,
-				844FB8081F4D5D1D001772AF /* YesterdayIncomeViewController.m in Sources */,
 				84825E261F45BF7E006A921F /* DZ_ScaleCircle.m in Sources */,
 				842616E11F4C0C6C00A96EFD /* ProductIntroViewController.m in Sources */,
 				8435E5B11F399C1E00424E5E /* CLLockNavVC.m in Sources */,

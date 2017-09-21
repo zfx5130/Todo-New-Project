@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *incomeMoneyLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 
 @end

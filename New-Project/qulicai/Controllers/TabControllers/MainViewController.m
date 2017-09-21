@@ -68,10 +68,8 @@ UIAlertViewDelegate>
     if (@available(iOS 11.0, *)) {
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
         self.navigationController.navigationBarHidden = YES;
-        self.tableView.contentInset = UIEdgeInsetsMake(IMAGE_HEIGHT, 0, 0, 0);
+        self.tableView.contentInset = UIEdgeInsetsMake(IMAGE_HEIGHT + 20, 0, 0, 0);
         self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
-    } else {
-        self.tableView.contentInset = UIEdgeInsetsMake(IMAGE_HEIGHT - 64, 0, 0, 0);
     }
 
     [self requestToken];
@@ -236,7 +234,10 @@ UIAlertViewDelegate>
 }
 
 - (void)setupTableHeadView {
-   // self.tableView.contentInset = UIEdgeInsetsMake(IMAGE_HEIGHT-64, 0, 0, 0);
+    if (@available(iOS 11.0, *)) {
+    } else {
+        self.tableView.contentInset = UIEdgeInsetsMake(IMAGE_HEIGHT - 64, 0, 0, 0);
+    }
     self.headView = [[MainHeadView alloc] initWithFrame:CGRectMake(0, -IMAGE_HEIGHT,SCREEN_WIDTH, IMAGE_HEIGHT)];
     [self.tableView addSubview:self.headView];
     [self.headView.pickMoneyButton addTarget:self

@@ -49,6 +49,12 @@ UITableViewDataSource>
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self loadNewData];
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+        self.navigationController.navigationBarHidden = YES;
+        self.tableView.contentInset = UIEdgeInsetsMake(IMAGE_HEIGHT - 20, 0, 0, 0);
+        self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -109,6 +115,12 @@ UITableViewDataSource>
     self.tableView.contentInset = UIEdgeInsetsMake(IMAGE_HEIGHT-64, 0, 0, 0);
     self.headView = [[YesterdayIncomeView alloc] initWithFrame:CGRectMake(0, -IMAGE_HEIGHT,SCREEN_WIDTH, IMAGE_HEIGHT)];
     [self.tableView addSubview:self.headView];
+    if (@available(iOS 11.0, *)) {
+        self.headView.backButton.hidden = NO;
+        [self.headView.backButton  addTarget:self
+                                      action:@selector(back:)
+                            forControlEvents:UIControlEventTouchUpInside];
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -198,6 +210,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 #pragma mark - Handlers
 
 - (void)leftBarButtonAction {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)back:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
